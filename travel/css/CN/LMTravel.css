@@ -1,0 +1,761 @@
+@charset "utf-8";
+/* 定义变量 */
+.lm-container {
+  width: 940px;
+  min-height: 600px;
+  margin: 0 auto;
+}
+.lm-container .travel-diary {
+  margin-top: 30px;
+}
+.lm-container .travel-diary .t-title {
+  height: 70px;
+  border-bottom: 1px solid #ccc;
+}
+.lm-container .travel-diary .t-title > h2 {
+  float: left;
+  font-size: 24px;
+  height: 70px;
+  line-height: 70px;
+  color: #1f2c5c;
+  margin-right: 30px;
+}
+.lm-container .travel-diary .t-title .t-country {
+  float: left;
+  position: relative;
+  height: 70px;
+  line-height: 70px;
+}
+.lm-container .travel-diary .t-title .t-country > span {
+  font-size: 18px;
+  color: #00908c;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.lm-container .travel-diary .t-title .t-country .t-menu {
+  display: none;
+  position: absolute;
+  top: 50px;
+  width: 130px;
+  padding: 10px;
+  background: #fff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+.lm-container .travel-diary .t-title .t-country .t-menu > li {
+  font-size: 14px;
+  color: #1f2c5c;
+  line-height: 30px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.lm-container .travel-diary .t-title .t-country .t-menu > li:hover {
+  color: #8ec060;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.lm-container .travel-diary .t-title .hot {
+  float: right;
+  height: 70px;
+  line-height: 70px;
+  color: #1f2c5c;
+}
+.lm-container .travel-diary .t-title .hot a {
+  font-size: 18px;
+}
+.lm-container .travel-diary .t-title .hot .a1 {
+  color: #8ec060;
+  margin-right: 20px;
+}
+.lm-container .travel-diary .t-title .hot .a2 {
+  color: #ccc;
+  margin-left: 20px;
+}
+.lm-container .travel-diary .t-content {
+  padding: 20px 10px;
+  overflow: hidden;
+}
+.lm-container .travel-diary .t-content .t-head {
+  float: left;
+  width: 80px;
+  margin-right: 20px;
+}
+.lm-container .travel-diary .t-content .t-head img {
+  width: 80px;
+}
+.lm-container .travel-diary .t-content .t-main {
+  float: left;
+  width: 820px;
+  padding-top: 20px;
+}
+.lm-container .travel-diary .t-content .t-main > h2 a {
+  font-size: 20px;
+  color: #1f2c5c;
+  margin-bottom: 18px;
+}
+.lm-container .travel-diary .t-content .t-main .t-time {
+  margin-bottom: 24px;
+  margin-top: 6px;
+}
+.lm-container .travel-diary .t-content .t-main .t-time > a {
+  color: #00908c;
+  font-size: 14px;
+  margin-right: 20px;
+}
+.lm-container .travel-diary .t-content .t-main .t-time > span {
+  font-size: 14px;
+  color: #ccc;
+}
+.lm-container .travel-diary .t-content .t-main .t-time > p {
+  float: right;
+}
+.lm-container .travel-diary .t-content .t-main .t-time > p span {
+  font-size: 14px;
+  color: #ccc;
+  margin-right: 10px;
+}
+.lm-container .travel-diary .t-content .t-main .t-money {
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.lm-container .travel-diary .t-content .t-main .t-money li {
+  float: left;
+  height: 26px;
+  font-size: 14px;
+  padding: 3px 10px;
+  margin-right: 10px;
+  color: #fff;
+}
+.lm-container .travel-diary .t-content .t-main .t-money .n1 {
+  background-image: linear-gradient(-90deg, #c1e199 0%, #8ec060 100%);
+}
+.lm-container .travel-diary .t-content .t-main .t-money .n2 {
+  background-image: linear-gradient(-90deg, #81d0ac 2%, #4aa374 100%);
+}
+.lm-container .travel-diary .t-content .t-main .t-money .n3 {
+  background-image: linear-gradient(-90deg, #00c3c0 0%, #00908c 100%);
+}
+.lm-container .travel-diary .t-content .t-main .t-money .n4 {
+  background-image: linear-gradient(-90deg, #00a6c6 0%, #006d94 100%);
+}
+.lm-container .travel-diary .t-content .t-main .t-money .n5 {
+  background-image: linear-gradient(-90deg, #0076c3 0%, #004190 100%);
+}
+.lm-container .travel-diary .t-content .t-main .t-imgs {
+  overflow: hidden;
+}
+.lm-container .travel-diary .t-content .t-main .t-imgs > li {
+  float: left;
+  width: 198px;
+  height: 136px;
+  margin-right: 8px;
+}
+.lm-container .travel-diary .t-content .t-main .t-imgs > li img {
+  width: 100%;
+  height: 100%;
+}
+.lm-container .travel-diary .t-content .t-main .t-imgs .n4 {
+  margin-right: 0;
+}
+.lm-container .t-comment-page {
+  padding: 60px 100px 100px;
+  font-size: 18px;
+  overflow: hidden;
+  text-align: center;
+  clear: both;
+}
+.lm-container .t-comment-page .prevPage {
+  float: left;
+  margin: 0 15px;
+}
+.lm-container .t-comment-page .nextPage {
+  float: right;
+  margin: 0 15px;
+}
+.lm-container .t-comment-page .current {
+  color: #8ec060;
+  margin: 0 15px;
+}
+.lm-container .t-comment-page > a {
+  margin: 0 15px;
+  font-size: 18px;
+  color: #1f2c5c;
+}
+.lm-container .t-comment-page > a:hover {
+  color: #8ec060;
+}
+.lm-container .t-comment-page .disabled {
+  color: #ccc;
+  margin: 0 15px;
+}
+.lm-travel {
+  width: 960px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+.lm-travel .lm-travel-title {
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+.lm-travel .lm-travel-title h2 {
+  font-size: 24px;
+  color: #1f2c5c;
+}
+.lm-travel .lm-travel-inner {
+  position: relative;
+  width: 100%;
+  height: 940px;
+}
+.lm-travel .lm-travel-inner > div {
+  position: absolute;
+  width: 50%;
+  height: 470px;
+}
+.lm-travel .lm-travel-inner .nth-child1,
+.lm-travel .lm-travel-inner .nth-child3,
+.lm-travel .lm-travel-inner .nth-child4 {
+  position: absolute;
+  overflow: hidden;
+}
+.lm-travel .lm-travel-inner .nth-child1 .t-maskBox,
+.lm-travel .lm-travel-inner .nth-child3 .t-maskBox,
+.lm-travel .lm-travel-inner .nth-child4 .t-maskBox {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  height: 470px;
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  background: rgba(31, 44, 92, 0.5);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#7F1f2c5c;", endColorstr="#7F1f2c5c;");
+}
+.lm-travel .lm-travel-inner .nth-child1 > a img,
+.lm-travel .lm-travel-inner .nth-child3 > a img,
+.lm-travel .lm-travel-inner .nth-child4 > a img {
+  width: 100%;
+}
+.lm-travel .lm-travel-inner .active .t-maskBox {
+  display: none;
+}
+.lm-travel .lm-travel-inner .nth-child1 {
+  left: 0;
+  top: 0;
+}
+.lm-travel .lm-travel-inner .nth-child2 {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  z-index: 1;
+  background: #8ec060;
+}
+.lm-travel .lm-travel-inner .nth-child2 > img {
+  position: absolute;
+  left: -49px;
+  top: 50%;
+  margin-top: -50px;
+}
+.lm-travel .lm-travel-inner .nth-child2 .m-travel-detail {
+  display: none;
+}
+.lm-travel .lm-travel-inner .nth-child2 .lm-travel-detail {
+  height: 100%;
+  padding: 30px;
+  padding-left: 40px;
+}
+.lm-travel .lm-travel-inner .nth-child2 .lm-travel-detail .lm-travel-deltail-title {
+  height: 52px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  white-space: normal !important;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+}
+.lm-travel .lm-travel-inner .nth-child2 .lm-travel-detail .lm-travel-detail-con {
+  height: 250px;
+  font-size: 18px;
+  color: #fff;
+  margin-bottom: 50px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 9;
+  overflow: hidden;
+  white-space: normal !important;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+}
+.lm-travel .lm-travel-inner .nth-child2 .lm-travel-detail .lm-travel-detail-local {
+  position: absolute;
+  bottom: 80px;
+  left: 10px;
+  color: #1f2c5c;
+  font-size: 14px;
+}
+.lm-travel .lm-travel-inner .nth-child2 .lm-travel-detail .lm-travel-detail-local img {
+  margin-right: 10px;
+}
+.lm-travel .lm-travel-inner .nth-child2 .lm-travel-detail .lm-travel-detail-see {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  overflow: hidden;
+}
+.lm-travel .lm-travel-inner .nth-child2 .lm-travel-detail .lm-travel-detail-see .lm-travel-see-left {
+  float: left;
+  margin-left: 40px;
+}
+.lm-travel .lm-travel-inner .nth-child2 .lm-travel-detail .lm-travel-detail-see .lm-travel-see-left img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+.lm-travel .lm-travel-inner .nth-child2 .lm-travel-detail .lm-travel-detail-see .lm-travel-see-left span {
+  color: #fff;
+  font-size: 14px;
+}
+.lm-travel .lm-travel-inner .nth-child2 .lm-travel-detail .lm-travel-detail-see .lm-travel-see-right {
+  float: right;
+  margin-right: 30px;
+}
+.lm-travel .lm-travel-inner .nth-child2 .lm-travel-detail .lm-travel-detail-see .lm-travel-see-right img {
+  margin-left: 10px;
+}
+.lm-travel .lm-travel-inner .nth-child2 .lm-travel-detail .lm-travel-detail-see .lm-travel-see-right span {
+  color: #fff;
+  font-size: 14px;
+}
+.lm-travel .lm-travel-inner .nth-child3 {
+  left: 0;
+  top: 50%;
+}
+.lm-travel .lm-travel-inner .nth-child4 {
+  left: 50%;
+  top: 50%;
+}
+.lm-travel .pc-travel-inner {
+  height: 235px;
+}
+.lm-travel .pc-travel-inner > div {
+  position: absolute;
+  width: 235px;
+  height: 235px;
+}
+.lm-travel .pc-travel-inner .nth-child1,
+.lm-travel .pc-travel-inner .nth-child3,
+.lm-travel .pc-travel-inner .nth-child4 {
+  top: 0;
+}
+.lm-travel .pc-travel-inner .nth-child1 .t-maskBox,
+.lm-travel .pc-travel-inner .nth-child3 .t-maskBox,
+.lm-travel .pc-travel-inner .nth-child4 .t-maskBox {
+  height: 235px;
+  line-height: 235px;
+}
+.lm-travel .pc-travel-inner .nth-child1 {
+  left: 0;
+}
+.lm-travel .pc-travel-inner .nth-child2 {
+  left: 235px;
+}
+.lm-travel .pc-travel-inner .nth-child2 .p-travel-detail {
+  width: 70px;
+  left: -35px;
+  margin-top: -35px;
+}
+.lm-travel .pc-travel-inner .nth-child2 .lm-travel-detail {
+  padding: 10px;
+  padding-left: 30px;
+}
+.lm-travel .pc-travel-inner .nth-child2 .lm-travel-detail .lm-travel-deltail-title {
+  font-size: 16px;
+  height: 30px;
+}
+.lm-travel .pc-travel-inner .nth-child2 .lm-travel-detail .lm-travel-detail-con {
+  height: auto;
+  font-size: 14px;
+  margin-bottom: 10px;
+  -webkit-line-clamp: 6;
+}
+.lm-travel .pc-travel-inner .nth-child2 .lm-travel-detail .lm-travel-detail-local {
+  bottom: 50px;
+  font-size: 12px;
+}
+.lm-travel .pc-travel-inner .nth-child2 .lm-travel-detail .lm-travel-detail-see {
+  bottom: 10px;
+}
+.lm-travel .pc-travel-inner .nth-child2 .lm-travel-detail .lm-travel-detail-see .lm-travel-see-left {
+  margin-left: 10px;
+}
+.lm-travel .pc-travel-inner .nth-child2 .lm-travel-detail .lm-travel-detail-see .lm-travel-see-left img {
+  width: 20px;
+  height: 20px;
+}
+.lm-travel .pc-travel-inner .nth-child2 .lm-travel-detail .lm-travel-detail-see .lm-travel-see-right span {
+  font-size: 12px;
+}
+.lm-travel .pc-travel-inner .nth-child3 {
+  left: 470px;
+}
+.lm-travel .pc-travel-inner .nth-child4 {
+  left: 705px;
+}
+.lm-travel .moreNews {
+  text-align: right;
+  margin-top: 20px;
+  padding-right: 20px;
+}
+.lm-travel .moreNews a {
+  font-weight: bold;
+  font-size: 18px;
+  color: #1f2c5c;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+.lm-travel .moreNews a:hover {
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  color: #8ec060;
+}
+/* PC端增加hover事件 */
+@media screen and (min-width: 1100px) {
+  .lm-travel .lm-travel-inner .nth-child1 > a img,
+  .lm-travel .lm-travel-inner .nth-child3 > a img,
+  .lm-travel .lm-travel-inner .nth-child4 > a img {
+    transition: all 1s;
+    -ms-transition: all 1s;
+    -webkit-transition: all 1s;
+  }
+  .lm-travel .lm-travel-inner .nth-child1 > a img:hover,
+  .lm-travel .lm-travel-inner .nth-child3 > a img:hover,
+  .lm-travel .lm-travel-inner .nth-child4 > a img:hover {
+    transition: all 1s;
+    transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2);
+    /* IE 9 */
+    -webkit-transform: scale(1.2, 1.2);
+    /* Safari */
+  }
+  .lm-travel .lm-travel-inner .nth-child1 .t-maskBox,
+  .lm-travel .lm-travel-inner .nth-child3 .t-maskBox,
+  .lm-travel .lm-travel-inner .nth-child4 .t-maskBox {
+    -webkit-transition: all 1s;
+    transition: all 1s;
+  }
+  .lm-travel .lm-travel-inner .nth-child1 .t-maskBox:hover,
+  .lm-travel .lm-travel-inner .nth-child3 .t-maskBox:hover,
+  .lm-travel .lm-travel-inner .nth-child4 .t-maskBox:hover {
+    -webkit-transition: all 1s;
+    transition: all 1s;
+    background: rgba(0, 144, 140, 0.4);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#6600908c;", endColorstr="#6600908c;");
+  }
+}
+.m-travel-inner {
+  display: none;
+}
+@media screen and (max-width: 992px) {
+  .hiSlider-wrap {
+    margin-top: 0.4rem;
+  }
+  .hiSlider-wrap .hiSlider-pages {
+    bottom: 0.04rem;
+    margin-left: -0.31rem;
+  }
+  .hiSlider-wrap .hiSlider-pages a {
+    border-width: 0.01rem;
+    width: 0.2rem;
+    height: 0.02rem;
+    margin: 0 0.01rem;
+    background: #1f2c5c;
+  }
+  .hiSlider-wrap .hiSlider-pages .active {
+    background: #8ec060;
+  }
+  .lm-container {
+    width: 100%;
+    padding: 0 0.15rem;
+  }
+  .lm-container .travel-diary {
+    width: 100%;
+    margin-top: 0.2rem;
+  }
+  .lm-container .travel-diary .t-title {
+    width: 100%;
+    height: 0.3rem;
+  }
+  .lm-container .travel-diary .t-title > h2 {
+    height: 0.3rem;
+    line-height: 0.3rem;
+    font-size: 0.15rem;
+    margin-right: 0.12rem;
+  }
+  .lm-container .travel-diary .t-title .t-country {
+    height: 0.3rem;
+    line-height: 0.3rem;
+  }
+  .lm-container .travel-diary .t-title .t-country > span {
+    font-size: 0.12rem;
+  }
+  .lm-container .travel-diary .t-title .t-country .t-menu {
+    width: 1rem;
+    top: 0.22rem;
+  }
+  .lm-container .travel-diary .t-title .t-country .t-menu > li {
+    font-size: 0.12rem;
+    line-height: 0.22rem;
+  }
+  .lm-container .travel-diary .t-title .hot {
+    height: 0.3rem;
+    line-height: 0.3rem;
+  }
+  .lm-container .travel-diary .t-title .hot a {
+    font-size: 0.12rem;
+  }
+  .lm-container .travel-diary .t-title .hot .a1 {
+    margin-right: 0.1rem;
+  }
+  .lm-container .travel-diary .t-title .hot .a2 {
+    margin-left: 0.1rem;
+  }
+  .lm-container .travel-diary .t-content {
+    width: 100%;
+    padding: 0.1rem 0.05rem;
+  }
+  .lm-container .travel-diary .t-content .t-head {
+    width: 100%;
+    margin-right: 0;
+    text-align: center;
+  }
+  .lm-container .travel-diary .t-content .t-head img {
+    width: 0.4rem;
+  }
+  .lm-container .travel-diary .t-content .t-main {
+    width: 100%;
+    padding-top: 0;
+  }
+  .lm-container .travel-diary .t-content .t-main > h2 a {
+    font-size: 0.13rem;
+    margin-bottom: 0.1rem;
+  }
+  .lm-container .travel-diary .t-content .t-main .t-time {
+    margin-bottom: 0.1rem;
+  }
+  .lm-container .travel-diary .t-content .t-main .t-time > a,
+  .lm-container .travel-diary .t-content .t-main .t-time > span,
+  .lm-container .travel-diary .t-content .t-main .t-time > p span {
+    font-size: 0.12rem;
+  }
+  .lm-container .travel-diary .t-content .t-main .t-money {
+    margin-bottom: 0.1rem;
+  }
+  .lm-container .travel-diary .t-content .t-main .t-money > li {
+    height: 0.26rem;
+    line-height: 0.26rem;
+    font-size: 0.12rem;
+    padding: 0 0.1rem;
+    margin-bottom: 0.05rem;
+    margin-right: 0.05rem;
+  }
+  .lm-container .travel-diary .t-content .t-main .t-imgs > li {
+    width: 23.5%;
+    margin-right: 2%;
+    margin-bottom: 2%;
+  }
+  .lm-container .travel-diary .t-content .t-main .t-imgs .n4 {
+    margin-right: 0;
+  }
+  .lm-container .t-comment-page {
+    width: 100%;
+    padding: 0.1rem 0.05rem;
+    font-size: 0.12rem;
+    margin-bottom: 0.2rem;
+  }
+  .lm-container .t-comment-page > a,
+  .lm-container .t-comment-page .disabled,
+  .lm-container .t-comment-page .current {
+    font-size: 0.12rem;
+    margin: 0 0.08rem;
+  }
+  .lm-container .t-comment-page .prevPage,
+  .lm-container .t-comment-page .nextPage {
+    margin: 0;
+  }
+  .pc-travel-inner {
+    display: none;
+  }
+  .m-travel-inner {
+    display: block;
+  }
+  .lm-travel {
+    width: 100%;
+    padding: 0;
+  }
+  .lm-travel .lm-travel-title {
+    margin-top: 0.2rem;
+    margin-bottom: 0.1rem;
+  }
+  .lm-travel .lm-travel-title h2 {
+    font-size: 0.15rem;
+    color: #1f2c5c;
+  }
+  .lm-travel .lm-travel-inner .nth-child2 .lm-travel-detail {
+    padding: 20px;
+    padding-left: 40px;
+  }
+  .lm-travel .lm-travel-inner .nth-child2 .lm-travel-detail .lm-travel-deltail-title {
+    height: 52px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    white-space: normal !important;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+  }
+  .lm-travel .lm-travel-inner .nth-child2 .lm-travel-detail .lm-travel-detail-con {
+    height: auto;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 7;
+    overflow: hidden;
+    white-space: normal !important;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    margin-bottom: 0;
+  }
+  .lm-travel .lm-travel-inner .nth-child2 .lm-travel-detail .lm-travel-detail-local {
+    left: 40px;
+  }
+  .lm-travel .lm-travel-inner .nth-child2 .lm-travel-detail .lm-travel-detail-see {
+    margin-top: 38px;
+  }
+  .lm-travel .moreNews {
+    margin-top: 4px;
+    padding-right: 0;
+  }
+  .lm-travel .moreNews a {
+    font-size: 18px;
+  }
+  .lm-travel .moreNews a .icon-xiangshang-copy-copy-copy:before {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .lm-travel-detail-con {
+    -webkit-line-clamp: 10 !important;
+  }
+  .lm-travel {
+    padding: 0;
+  }
+  .lm-travel .lm-travel-inner .nth-child1 .t-maskBox,
+  .lm-travel .lm-travel-inner .nth-child3 .t-maskBox,
+  .lm-travel .lm-travel-inner .nth-child4 .t-maskBox {
+    font-size: .18rem;
+  }
+  .lm-travel .lm-travel-inner .nth-child2 > img {
+    width: .3rem;
+    left: -0.15rem;
+    margin-top: -0.15rem;
+  }
+  .lm-travel .lm-travel-inner .nth-child2 .lm-travel-detail {
+    padding: .08rem;
+    padding-left: .12rem;
+  }
+  .lm-travel .lm-travel-inner .nth-child2 .lm-travel-detail .lm-travel-deltail-title {
+    font-size: .12rem;
+    height: .15rem;
+    overflow: hidden;
+  }
+  .lm-travel .lm-travel-inner .nth-child2 .lm-travel-detail .lm-travel-detail-con {
+    width: 100%;
+    margin-top: .08rem;
+    margin-bottom: .08rem;
+    font-size: .08rem;
+    height: auto;
+    overflow: hidden;
+  }
+  .lm-travel .lm-travel-inner .nth-child2 .lm-travel-detail .lm-travel-detail-local {
+    width: 82%;
+    left: .12rem;
+    bottom: .3rem;
+    font-size: .06rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 90%;
+  }
+  .lm-travel .lm-travel-inner .nth-child2 .lm-travel-detail .lm-travel-detail-local img {
+    width: .07rem;
+    margin-right: .05rem;
+  }
+  .lm-travel .lm-travel-inner .nth-child2 .lm-travel-detail .lm-travel-detail-see {
+    bottom: .1rem;
+    left: .12rem;
+    width: 82%;
+    height: .12rem;
+    line-height: .12rem;
+  }
+  .lm-travel .lm-travel-inner .nth-child2 .lm-travel-detail .lm-travel-detail-see .lm-travel-see-left {
+    margin-left: 0;
+    width: 50%;
+    color: #fff;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .lm-travel .lm-travel-inner .nth-child2 .lm-travel-detail .lm-travel-detail-see .lm-travel-see-left img {
+    width: .1rem;
+    height: .1rem;
+    margin-right: .05rem;
+  }
+  .lm-travel .lm-travel-inner .nth-child2 .lm-travel-detail .lm-travel-detail-see .lm-travel-see-left span {
+    font-size: .06rem;
+  }
+  .lm-travel .lm-travel-inner .nth-child2 .lm-travel-detail .lm-travel-detail-see .lm-travel-see-right {
+    text-align: right;
+    width: 50%;
+    margin-right: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .lm-travel .lm-travel-inner .nth-child2 .lm-travel-detail .lm-travel-detail-see .lm-travel-see-right span {
+    font-size: .06rem;
+  }
+  .lm-travel .lm-travel-inner .nth-child2 .lm-travel-detail .lm-travel-detail-see .lm-travel-see-right img {
+    width: .1rem;
+    margin-left: .05rem;
+  }
+  .lm-travel .moreNews {
+    margin-top: 0px;
+    padding-right: 0;
+  }
+  .lm-travel .moreNews a {
+    font-size: 12px;
+  }
+  .lm-travel .moreNews a .icon-xiangshang-copy-copy-copy:before {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 670px) {
+  .lm-travel-detail-con {
+    -webkit-line-clamp: 5 !important;
+  }
+}
+@media screen and (max-width: 400px) {
+  .lm-travel-detail-con {
+    -webkit-line-clamp: 4 !important;
+  }
+}

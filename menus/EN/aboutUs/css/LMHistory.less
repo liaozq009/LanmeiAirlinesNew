@@ -1,0 +1,107 @@
+/* 定义变量 */
+@url:"../images/";
+/* 定义颜色变量 */
+@green:#8ec060;
+@purple:#1f2c5c;
+@gray:#808080;
+@red:#d0011b;
+@link:#4aa374;
+
+.lm-section{
+	width: 940px;
+	min-height: 300px;
+	margin:0 auto;
+	.title{
+		h1{
+			span{color:@green;}
+			font-size: 30px;
+			font-weight: bold;
+			color: #1f2c5c;
+			text-align: center;
+		}
+	}
+	.content{
+		min-height: 500px;
+		margin:30px 0;
+		padding: 30px 20px;
+		border-left:2px solid @purple;
+		.timeline{
+			.t-title{
+				position: relative;
+				width: 400px;
+				height: 40px;
+				line-height: 40px;
+				border-radius: 4px;
+				margin-bottom: 20px;
+				background: -webkit-linear-gradient(left,#1f2c5c , #425795); /* Safari 5.1 - 6.0 */
+				background: -o-linear-gradient(left,#1f2c5c , #425795); /* Opera 11.1 - 12.0 */
+				background: -moz-linear-gradient(left,#1f2c5c , #425795); /* Firefox 3.6 - 15 */
+				background: linear-gradient(left,#1f2c5c , #425795); /* 标准的语法 */
+				font-size: 24px;
+				color:#fff;
+				text-align: center;
+				cursor: pointer;
+				b{
+					position: absolute;
+					left: -20px;
+					top: 20px;
+					width: 20px;
+					height: 2px;
+					background: @purple;
+				}
+			}
+			.t-tip{
+				// display: none;
+				font-size: 18px;
+				color: @green;
+				margin-bottom: 20px;
+			}
+			.t-menu{
+				>p{
+					font-size: 16px;
+					color: @gray;
+					line-height: 26px;
+					margin-bottom: 20px;
+					text-indent: 2em;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width:992px){
+	.lm-section{
+		width: 100%;
+		padding:0.15rem;
+		margin-top: 0.4rem;
+		.title{
+			display: none;
+			h1{
+				font-size: 0.2rem;
+			}
+		}
+		.content{
+			margin:0.1rem 0;
+			.timeline{
+				.t-title{
+					font-size: 0.16rem;
+					width: 2.6rem;
+					height: 0.3rem;
+					line-height: 0.3rem;
+					b{
+						top: 0.15rem;
+					}
+				}
+				.t-tip{
+					font-size: 0.16rem;
+				}
+				.t-menu{
+					>p{
+						font-size: 0.14rem;
+						line-height: 0.26rem;
+					}
+				}
+			}
+		}
+	}
+}

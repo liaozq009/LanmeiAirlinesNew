@@ -1,0 +1,655 @@
+@charset "utf-8";
+/* 定义变量 */
+body {
+  overflow: hidden;
+  background: #1291ff;
+}
+/* 拖拽 */
+.img-com {
+  position: absolute;
+  width: 210px;
+  height: 153px;
+  padding: 37px 30px;
+  cursor: pointer;
+}
+.img-com h2 {
+  position: relative;
+  padding: 10px;
+  padding-bottom: 0;
+  margin-bottom: 10px;
+  font-size: 14px;
+  background: -webkit-linear-gradient(0deg, #81E5FE 0%, #1639AE 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.img-com h2 img {
+  float: left;
+  margin-right: 10px;
+}
+.img-com h2:after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -10px;
+  width: 130px;
+  height: 2px;
+  background: #aac7f9;
+}
+.img-com h2 > span {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  white-space: normal!important;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+}
+.img-com p {
+  padding: 10px;
+  font-size: 12px;
+  color: #3772d5;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.img-com p img {
+  float: left;
+  margin-right: 10px;
+  margin-top: 4px;
+}
+.img-bg-topRight {
+  background: url('../../images/EN/travel-map-topRight.png') no-repeat;
+}
+.img-bg-topLeft {
+  background: url('../../images/EN/travel-map-topLeft.png') no-repeat;
+}
+.img-bg-bottomLeft {
+  padding: 30px;
+  background: url('../../images/EN/travel-map-bottomLeft.png') no-repeat;
+}
+.img-bg-bottomRight {
+  padding: 30px;
+  background: url('../../images/EN/travel-map-bottomRight.png') no-repeat;
+}
+.img-seoul {
+  top: 18px;
+  left: 960px;
+}
+.img-macao {
+  top: 420px;
+  left: 660px;
+}
+.img-sihanoukville {
+  top: 690px;
+  left: 450px;
+}
+.img-HoChiMinh {
+  top: 695px;
+  left: 655px;
+}
+.img-HongKong {
+  top: 326px;
+  left: 824px;
+}
+.img-Palau {
+  top: 670px;
+  left: 1275px;
+}
+.img-PhnomPenh {
+  top: 580px;
+  left: 626px;
+}
+.img-Hanoi {
+  top: 340px;
+  left: 490px;
+}
+.img-SiemReap {
+  top: 534px;
+  left: 460px;
+}
+.dragWrap {
+  z-index: 10;
+  left: 0px;
+  width: 0px;
+  position: absolute;
+  top: 0px;
+  height: 0px;
+}
+.dragWrap .m-hotCity-title {
+  display: none;
+}
+.dragWrap .travel-map {
+  cursor: move;
+}
+.travel-nav {
+  position: fixed;
+  top: 40px;
+  left: 0;
+  z-index: 11;
+  width: 100%;
+  height: 50px;
+  padding: 0 80px;
+}
+.travel-nav > p {
+  height: 50px;
+  line-height: 50px;
+  background: #fff;
+  box-shadow: 0 0 50px 0 rgba(170, 199, 249, 0.5);
+  border-radius: 4px;
+  text-align: center;
+  cursor: pointer;
+}
+.travel-nav > p img {
+  height: 20px;
+  margin-top: -6px;
+  margin-right: 7px;
+}
+.travel-nav > p span {
+  font-size: 20px;
+  background: -webkit-linear-gradient(0deg, #81E5FE 0%, #1639AE 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.travel-nav .t-return {
+  float: left;
+  width: 200px;
+}
+.travel-nav .t-share,
+.travel-nav .t-plan {
+  padding: 0 20px;
+  float: right;
+}
+.travel-nav .t-share {
+  margin-right: 40px;
+}
+/* 模态框 */
+.modal-com .modal-dialog {
+  width: 80%;
+}
+.modal-backdrop {
+  background: #fff;
+}
+.modal-header {
+  position: relative;
+  padding: 40px 70px 0;
+  border-bottom: none;
+}
+.modal-body {
+  padding: 0 70px 0;
+}
+.modal-content {
+  width: 100%;
+  height: 760px;
+  background: rgba(241, 250, 255, 0.8);
+  box-shadow: 0 0 50px 0 rgba(111, 162, 246, 0.5);
+  border-radius: 10px;
+  border: none;
+}
+.modal-hot {
+  position: relative;
+  width: 100px;
+  height: 30px;
+  background: #fff;
+  box-shadow: 0 0 30px 0 rgba(170, 199, 249, 0.5);
+  border-radius: 4px;
+}
+.modal-hot > span {
+  display: block;
+  height: 30px;
+  line-height: 30px;
+  padding-left: 30px;
+  font-size: 12px;
+  background: url('../../images/EN/t-down-arrow.png') 90% no-repeat;
+  cursor: pointer;
+  color: #3772D5;
+}
+.modal-hot .modal-hot-menu {
+  display: none;
+  position: absolute;
+  top: 30px;
+  z-index: 9;
+  width: 100px;
+  background: #fff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+.modal-hot .modal-hot-menu > li {
+  font-size: 12px;
+  cursor: pointer;
+  padding: 6px;
+  padding-left: 30px;
+  color: #3772D5;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.modal-hot .modal-hot-menu > li:hover {
+  color: #1639AE;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.modal-header .close {
+  position: absolute;
+  top: 40px;
+  right: 70px;
+  background: url('../../images/EN/mobal-close.png') center no-repeat #fff;
+  box-shadow: 0 0 30px 0 rgba(170, 199, 249, 0.5);
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  opacity: 1;
+}
+.t-content {
+  overflow-y: auto;
+  height: 680px;
+}
+.t-content > li {
+  float: left;
+  width: 20%;
+  margin-top: 20px;
+  padding-left: 1%;
+  padding-right: 1%;
+}
+.t-content > li > div {
+  border-radius: 4px;
+  padding: 10px;
+  cursor: pointer;
+  background: #fff;
+  transition: all .6s;
+  -webkit-transition: all .6s;
+}
+.t-content > li > div > h2 {
+  width: 100%;
+  height: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background: -webkit-linear-gradient(0deg, #81E5FE 0%, #1639AE 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
+}
+.t-content > li > div > img {
+  width: 100%;
+}
+.t-content > li > div > p {
+  color: #3772D5;
+  margin-top: 10px;
+  overflow: hidden;
+}
+.t-content > li > div > p .m-s5-local,
+.t-content > li > div > p .s1 {
+  float: left;
+}
+.t-content > li > div > p .m-s5-see,
+.t-content > li > div > p .s2 {
+  float: right;
+}
+.t-content > li > div > p .m-s5-local {
+  margin-top: 3px;
+  margin-right: 6px;
+}
+.t-content > li > div > p .m-s5-see {
+  margin-top: 5px;
+  margin-left: 6px;
+}
+.t-content > li > div > p .s1 {
+  display: inline-block;
+  width: 50%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.t-content > li > h3 {
+  margin-top: 10px;
+  padding-left: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.t-content > li > h3 > span {
+  color: #1639AE;
+  margin-left: 10px;
+  display: inline-block;
+  width: 70%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/* 分享游记和旅行计划 */
+.shareModal .modal-dialog {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+.shareModal .modal-dialog .modal-content {
+  height: 100%;
+  border-radius: 0;
+  background: rgba(255, 255, 255, 0.95);
+}
+.shareModal .modal-dialog .modal-body {
+  margin-top: 300px;
+}
+.shareModal .modal-dialog .search-box {
+  position: relative;
+  width: 960px;
+  margin: 0 auto;
+}
+.shareModal .modal-dialog .search-box input {
+  width: 100%;
+  font-size: 24px;
+  color: #aac7f9;
+  padding: 20px 30px;
+  border-bottom: 2px solid #aac7f9;
+}
+.shareModal .modal-dialog .search-box ::-webkit-input-placeholder {
+  /* WebKit browsers */
+  font-size: 36px;
+  color: #aac7f9;
+}
+.shareModal .modal-dialog .search-box :-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  font-size: 36px;
+  color: #aac7f9;
+}
+.shareModal .modal-dialog .search-box ::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  font-size: 36px;
+  color: #aac7f9;
+}
+.shareModal .modal-dialog .search-box :-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  font-size: 36px;
+  color: #aac7f9;
+}
+.shareModal .modal-dialog .search-box .search-clear {
+  display: none;
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  background: url(../../images/EN/mobal-close.png) center no-repeat #fff;
+  box-shadow: 0 0 30px 0 rgba(170, 199, 249, 0.5);
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+}
+.shareModal .modal-dialog .search-box .search-hot {
+  margin-top: 30px;
+}
+.shareModal .modal-dialog .search-box .search-hot a {
+  float: left;
+  display: inline-block;
+  height: 58px;
+  line-height: 58px;
+  padding: 0 10px;
+  text-align: center;
+  font-size: 18px;
+  color: #aac7f9;
+  margin-left: 30px;
+  margin-top: 10px;
+  background: #fff;
+  border-radius: 8px;
+  transition: all 0.6s;
+  -webkit-transition: all 0.6s;
+}
+.shareModal .modal-dialog .search-box .search-hot a:hover {
+  box-shadow: 0 0 50px 0 rgba(170, 199, 249, 0.5);
+  transition: all 0.6s;
+  -webkit-transition: all 0.6s;
+}
+.shareModal .modal-dialog .search-box .search-title {
+  display: none;
+  font-size: 36px;
+  font-weight: bold;
+  color: #1639ae;
+  margin-top: 40px;
+}
+.shareModal .modal-dialog .search-box .search-menu {
+  display: none;
+  clear: both;
+  margin-top: 30px;
+  padding: 0 10px;
+}
+.shareModal .modal-dialog .search-box .search-menu > li {
+  background: #fff;
+  padding: 0 30px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  transition: all 0.6s;
+  -webkit-transition: all 0.6s;
+}
+.shareModal .modal-dialog .search-box .search-menu > li > a {
+  display: block;
+  font-size: 16px;
+  text-align: right;
+}
+.shareModal .modal-dialog .search-box .search-menu > li > a .s1 {
+  float: left;
+  color: #3772d5;
+}
+.shareModal .modal-dialog .search-box .search-menu > li > a .s2 {
+  color: #aac7f9;
+}
+.shareModal .modal-dialog .search-box .search-menu > li:hover {
+  box-shadow: 0 0 30px 0 rgba(170, 199, 249, 0.5);
+  transition: all 0.6s;
+  -webkit-transition: all 0.6s;
+}
+@media screen and (max-width: 1600px) {
+  .t-content > li {
+    width: 25%;
+  }
+}
+@media screen and (max-width: 1366px) {
+  .t-content > li {
+    width: 33.33%;
+  }
+}
+@media screen and (max-width: 992px) {
+  .travel-nav {
+    top: 10px;
+    padding: 0 40px;
+  }
+  .travel-nav .t-plan,
+  .travel-nav .t-share {
+    margin-right: 0;
+  }
+  .travel-nav .t-plan {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .modal-header {
+    padding: 20px 30px 0;
+  }
+  .modal-header .close {
+    top: 20px;
+    right: 30px;
+  }
+  .modal-body {
+    padding: 0 30px 0;
+  }
+  .modal-com .modal-dialog {
+    width: 90%;
+  }
+  .shareModal .modal-dialog .search-box {
+    width: 100%;
+  }
+  .shareModal .modal-dialog .search-box input {
+    font-size: 0.16rem;
+  }
+  .shareModal .modal-dialog .search-box ::-webkit-input-placeholder {
+    /* WebKit browsers */
+    font-size: 0.16rem;
+  }
+  .shareModal .modal-dialog .search-box :-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    font-size: 0.16rem;
+  }
+  .shareModal .modal-dialog .search-box ::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    font-size: 0.16rem;
+  }
+  .shareModal .modal-dialog .search-box :-ms-input-placeholder {
+    /* Internet Explorer 10+ */
+    font-size: 0.16rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  body {
+    background: #f1faff;
+    overflow: inherit;
+  }
+  .travel-nav {
+    top: 0;
+    width: 100%;
+    padding: 0;
+    margin-top: 0;
+  }
+  .travel-nav .t-return,
+  .travel-nav .t-plan,
+  .travel-nav .t-share {
+    width: 33.33%;
+    margin: 0;
+    text-align: center;
+    box-shadow: none;
+  }
+  .travel-nav > p span {
+    display: none;
+  }
+  .dragWrap {
+    position: static;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    margin-top: 70px;
+    margin-bottom: 0.2rem;
+    padding: 0 15px;
+  }
+  .dragWrap .m-hotCity-title {
+    display: block;
+    font-size: 0.2rem;
+    margin-bottom: 0;
+    text-align: center;
+    background: -webkit-linear-gradient(0deg, #81E5FE 0%, #1639AE 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .dragWrap .travel-map {
+    display: none;
+  }
+  .img-com {
+    width: 100%;
+    padding: 0.1rem;
+    margin-top: 0.1rem;
+    margin-right: 0;
+    float: left;
+    position: static;
+    background: #fff;
+    height: auto;
+  }
+  .img-com > h2 {
+    overflow: hidden;
+    padding: 0 0 0.1rem;
+    margin-bottom: 0;
+    border-bottom: 2px solid #AAC7F9;
+  }
+  .img-com > h2:after {
+    height: 0;
+  }
+  .img-com p {
+    padding: 0.1rem 0 0;
+  }
+  .modal-header {
+    padding: 0.1rem 0.1rem 0;
+  }
+  .modal-header .close {
+    top: 0.1rem;
+    right: 0.1rem;
+  }
+  .modal-body {
+    padding: 0 0.1rem 0;
+  }
+  .modal-open .modal {
+    padding-left: 0 !important;
+  }
+  .modal-content,
+  .t-content {
+    height: auto;
+  }
+  .modal-com .modal-dialog {
+    width: 100%;
+    margin: 0;
+  }
+  .t-content > li {
+    width: 50%;
+    margin-top: 0.1rem;
+    padding: 0;
+  }
+  .shareModal .modal-dialog .modal-body {
+    margin-top: 0.6rem;
+  }
+  .shareModal .modal-dialog .search-box {
+    width: 100%;
+  }
+  .shareModal .modal-dialog .search-box input {
+    width: 100%;
+    font-size: 0.14rem;
+    color: #aac7f9;
+    padding: 0.1rem;
+    border-bottom: 2px solid #aac7f9;
+  }
+  .shareModal .modal-dialog .search-box ::-webkit-input-placeholder {
+    /* WebKit browsers */
+    font-size: 0.14rem;
+  }
+  .shareModal .modal-dialog .search-box :-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    font-size: 0.14rem;
+  }
+  .shareModal .modal-dialog .search-box ::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    font-size: 0.14rem;
+  }
+  .shareModal .modal-dialog .search-box :-ms-input-placeholder {
+    /* Internet Explorer 10+ */
+    font-size: 0.14rem;
+  }
+  .shareModal .modal-dialog .search-box .search-hot {
+    margin-top: 0.06rem;
+  }
+  .shareModal .modal-dialog .search-box .search-hot a {
+    font-size: 0.12rem;
+    height: 0.2rem;
+    line-height: 0.2rem;
+    margin-left: 0.1rem;
+  }
+  .shareModal .modal-dialog .search-box .search-menu {
+    margin-top: 0.1rem;
+    padding: 0 0.1rem;
+  }
+  .shareModal .modal-dialog .search-box .search-menu li {
+    padding: 0;
+    height: 0.3rem;
+    line-height: 0.3rem;
+  }
+  .shareModal .modal-dialog .search-box .search-menu li > a {
+    font-size: 0.12rem;
+  }
+  .shareModal .modal-dialog .search-box .search-menu li > a .s1 {
+    width: 100%;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .shareModal .modal-dialog .search-box .search-menu li > a .s2 {
+    display: none;
+  }
+  .shareModal .modal-dialog .search-box .search-clear {
+    top: 0.06rem;
+    right: 0.1rem;
+  }
+}

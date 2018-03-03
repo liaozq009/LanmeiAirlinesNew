@@ -1,0 +1,116 @@
+/* 定义变量 */
+@url:"../images/CN/";
+/* 定义颜色变量 */
+@green:#8ec060;
+@purple:#1f2c5c;
+@gray:#808080;
+@red:#d0011b;
+@link:#4aa374;
+
+.lm-section{
+	width: 940px;
+	min-height: 300px;
+	margin:0 auto;
+	.title{
+		h1{
+			font-size: 50px;
+			color: @purple;
+		}
+	}
+	.check-start{
+		height: 140px;
+		background: rgba(31, 44, 92, 0.8);
+		padding:35px 20px;
+		border-radius: 6px;
+		margin-top: 20px;
+		>div{
+			float: left;
+			width: 28%;
+			margin-right: 20px;
+			>p{
+				font-size: 14px;
+				color: #fff;
+				margin-bottom: 20px;
+				line-height: 26px;
+			}
+			input{
+				width: 100%;
+				height: 40px;
+				line-height: 40px;
+				background: #fff;
+				border-radius: 2px;
+				font-size: 14px;
+				color: #121c3e;
+				padding: 0 20px;
+			}
+		}
+		.startBtn{
+			margin-bottom: 0;
+			margin-top: 30px;
+			a{
+				float: left;
+				width: 120px;
+				font-size: 16px;
+				img{left: 8px;}
+			}
+		}
+	}
+	.check-steps{
+		margin-top: 30px;
+		margin-bottom: 50px;
+		h2{
+			font-size: 18px;
+			font-weight: bold;
+			color:@purple;
+			margin-bottom: 20px;
+			line-height: 28px;
+		}
+		.h2-steps{font-size: 14px;text-indent: 2em;}
+		h3{
+			font-size: 16px;
+			font-weight: bold;
+			color:@purple;
+			margin-bottom: 20px;
+			line-height: 28px;
+			text-indent: 2em;
+		}
+		p{
+			font-size: 14px;
+			color:@gray;
+			margin-bottom: 20px;
+			line-height: 26px;
+			text-indent: 2em;
+		}
+	}
+}
+
+@media screen and (max-width:992px){
+	.lm-section{
+		width: 100%;
+		padding:15px;
+	}
+}
+
+@media screen and (max-width:767px){
+	.lm-section{
+		.title{
+			h1{
+				font-size: 0.26rem;
+				text-align: center;
+			}
+		}
+		.check-start{
+			height: 250px;
+			padding:15px;
+			>div{
+				float: none;
+				width: 2.6rem;
+			}
+			.startBtn{
+				float: left;
+				a{font-weight: normal;}
+			}
+			.c-2,.startBtn{margin-top: 15px;}
+		}
+	}
+}

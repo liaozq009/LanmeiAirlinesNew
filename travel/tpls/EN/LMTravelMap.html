@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- 让 Bootstrap 兼容 IE 兼容模型 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- 让 Bootstrap 兼容 国产浏览器的高速模型 -->
+	<meta name="renderer" content="webkit">
+	<!-- 实现响应式的设置 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Be Unique,lanmei Airlines offical website find great deals now&nbsp;to our worldwide destinations.Cambodia,booking flights">
+	<meta name="keywords" content="lanmei airlines,六国,柬埔寨,澜湄航空,机票预订,lanmei,LQ,Fly to Cambodia,Special Ticket,lanmei A320,booking,ticket booking,booking flights">
+	<meta name="baidu-site-verification" content="wL5we2b5k5" />
+	<title>Be Unique, Lanmei Airlines</title>
+
+	<!-- 引入图标 -->
+	<link rel="icon" href="../../images/EN/lanmeiLogo.ico">
+	<link rel="stylesheet" type="text/css" href="../../common/EN/fonts/lm-iconfont.css">
+	<link rel="stylesheet" type="text/css" href="../../libs/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../../common/EN/css/animate.css">
+	<link rel="stylesheet" type="text/css" href="../../common/EN/css/LMTravel-common.css">
+	<link rel="stylesheet" type="text/css" href="../../css/EN/LMTravelMap.css">
+	<!--[if lt IE 9]>
+	<script src="../../libs/bootstrap/js/html5shiv.min.js"></script>
+	<script src="../../libs/bootstrap/js/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div class="lm-loading" style="display:none;width: 100%;height: 100%;position: fixed;z-index: 99999;background: #f2f2f2;">
+		<div style="position: absolute;left: 50%;margin-left: -150px;right: 0;top: 50%;width: 300px;height: 200px;margin-top: -100px;bottom: 0;text-align: center;">
+			<img src="../../images/EN/construction.gif" alt="loading">
+			<p style="font-size: 16px;">游记加载中......</p>
+		</div>
+	</div>
+	<!-- 菜单 -->
+	<div class="travel-nav">
+		<p class="t-return"><a href="../../LMTravel.html"><img src="../../images/EN/travel-arrow-left.png" alt=""><span>Return</span></a></p>
+		<p class="t-plan"><img src="../../images/EN/travel-plan.png"><span>Tourism planning</span></p>
+		<p class="t-share"><img src="../../images/EN/travel-share.png"><span>Travel to share</span></p>
+	</div>
+
+	<!-- 主体内容 -->
+	<div class="dragWrap" id="dragMap" onMouseOver="dragObj=dragMap; drag=1;" onMouseOut="" drag="0">
+		<p class="m-hotCity-title">Hot Cities</p>
+	    <div class="img-seoul img-bg-topRight img-com" data-local="seoulModal">
+	        <h2><img src="../../images/EN/t-guide-icon.png"><span>Happy trip to Seoul</span></h2>
+	        <p><img src="../../images/EN/m-s5-local.png"><span>Seoul</span></p>
+	    </div>
+	    <div class="img-macao img-bg-topRight img-com" data-local="macaoModal">
+	        <h2><img src="../../images/EN/t-guide-icon.png"><span>Happy trip to Macao</span></h2>
+	        <p><img src="../../images/EN/m-s5-local.png"><span>Macao</span></p>
+	    </div>
+	    <div class="img-sihanoukville img-bg-topRight img-com">
+	        <h2><img src="../../images/EN/t-guide-icon.png"><span>Happy trip to Sihanoukville</span></h2>
+	        <p><img src="../../images/EN/m-s5-local.png"><span>Sihanoukville</span></p>
+	    </div>
+	    <div class="img-HoChiMinh img-bg-topLeft img-com">
+	        <h2><img src="../../images/EN/t-guide-icon.png"><span>Happy trip to 46465456465464</span></h2>
+	        <p><img src="../../images/EN/m-s5-local.png"><span>Ho Chi Minh</span></p>
+	    </div>
+	    <div class="img-HongKong img-bg-bottomLeft img-com">
+	        <h2><img src="../../images/EN/t-guide-icon.png"><span>Happy trip to Seoul</span></h2>
+	        <p><img src="../../images/EN/m-s5-local.png"><span>Hong Kong</span></p>
+	    </div>
+	     <div class="img-Palau img-bg-bottomLeft img-com">
+	        <h2><img src="../../images/EN/t-guide-icon.png"><span>Happy trip to Seoul</span></h2>
+	        <p><img src="../../images/EN/m-s5-local.png"><span>Palau</span></p>
+	    </div>
+	    <div class="img-PhnomPenh img-bg-bottomLeft img-com">
+	        <h2><img src="../../images/EN/t-guide-icon.png"><span>Happy trip to Phnom</span></h2>
+	        <p><img src="../../images/EN/m-s5-local.png"><span>Phnom Penh</span></p>
+	    </div>
+	    <div class="img-Hanoi img-bg-bottomRight img-com">
+	        <h2><img src="../../images/EN/t-guide-icon.png"><span>Happy trip to Phnom</span></h2>
+	        <p><img src="../../images/EN/m-s5-local.png"><span>Hanoi</span></p>
+	    </div>
+	    <div class="img-SiemReap img-bg-bottomRight img-com">
+	        <h2><img src="../../images/EN/t-guide-icon.png"><span>Happy trip to Phnom</span></h2>
+	        <p><img src="../../images/EN/m-s5-local.png"><span>Siem Reap</span></p>
+	    </div>
+	    <img style="zoom: 1" src="../../images/EN/travel-map.jpg" border="0" name="images1" class="travel-map">
+	</div>
+
+	<!-- 弹出游记列表模态框 -->
+	<div class="travel-modal">
+		<div class="modal fade modal-com" id="js-seoulModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		     	<div class="modal-header">
+     		    	<div class="modal-hot">
+     					<span class="modal-hot-val">Hot</span>
+     					<ul class="modal-hot-menu">
+     						<li>Hot</li>
+     						<li>New</li>
+     					</ul>
+     				</div>
+     				<button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+     		    	<!-- <a href="" class="modal__close map-close"></a> -->
+		     	</div>
+		     	<div class="modal-body">
+			      	<ul class="t-content">
+      					<li>
+      						<div data-id="diary-1">
+      							<h2>Happy trip to Phnom Penh</h2>
+      							<img src="../../images/EN/m-s5-1.png">
+      							<p>
+      								<img src="../../images/EN/m-s5-local.png" class="m-s5-local">
+      								<span class="s1">Phnom Penh</span>
+      								<img src="../../images/EN/m-s5-see.png" class="m-s5-see">
+      								<span class="s2">1000</span>
+      							</p>
+      						</div>
+      						<h3><img src="../../images/EN/m-s5-head.png"><span>Bobby Edwards</span></h3>
+      					</li>
+      					<li>
+      						<div data-id="diary-2">
+      							<h2>Happy trip to Phnom Penh</h2>
+      							<img src="../../images/EN/m-s5-1.png">
+      							<p>
+      								<img src="../../images/EN/m-s5-local.png" class="m-s5-local">
+      								<span class="s1">Phnom Penh</span>
+      								<img src="../../images/EN/m-s5-see.png" class="m-s5-see">
+      								<span class="s2">1000</span>
+      							</p>
+      						</div>
+      						<h3><img src="../../images/EN/m-s5-head.png"><span>Bobby Edwards</span></h3>
+      					</li>
+      					<li>
+      						<div data-id="diary-3">
+      							<h2>Happy trip to Phnom Penh</h2>
+      							<img src="../../images/EN/m-s5-1.png">
+      							<p>
+      								<img src="../../images/EN/m-s5-local.png" class="m-s5-local">
+      								<span class="s1">Phnom Penh</span>
+      								<img src="../../images/EN/m-s5-see.png" class="m-s5-see">
+      								<span class="s2">1000</span>
+      							</p>
+      						</div>
+      						<h3><img src="../../images/EN/m-s5-head.png"><span>Bobby Edwards</span></h3>
+      					</li>
+      					<li>
+      						<div>
+      							<h2>Happy trip to Phnom Penh</h2>
+      							<img src="../../images/EN/m-s5-1.png">
+      							<p>
+      								<img src="../../images/EN/m-s5-local.png" class="m-s5-local">
+      								<span class="s1">Phnom Penh</span>
+      								<img src="../../images/EN/m-s5-see.png" class="m-s5-see">
+      								<span class="s2">1000</span>
+      							</p>
+      						</div>
+      						<h3><img src="../../images/EN/m-s5-head.png"><span>Bobby Edwards</span></h3>
+      					</li>
+      					<li>
+      						<div>
+      							<h2>Happy trip to Phnom Penh</h2>
+      							<img src="../../images/EN/m-s5-1.png">
+      							<p>
+      								<img src="../../images/EN/m-s5-local.png" class="m-s5-local">
+      								<span class="s1">Phnom Penh</span>
+      								<img src="../../images/EN/m-s5-see.png" class="m-s5-see">
+      								<span class="s2">1000</span>
+      							</p>
+      						</div>
+      						<h3><img src="../../images/EN/m-s5-head.png"><span>Bobby Edwards</span></h3>
+      					</li>
+      					<li>
+      						<div>
+      							<h2>Happy trip to Phnom Penh</h2>
+      							<img src="../../images/EN/m-s5-1.png">
+      							<p>
+      								<img src="../../images/EN/m-s5-local.png" class="m-s5-local">
+      								<span class="s1">Phnom Penh</span>
+      								<img src="../../images/EN/m-s5-see.png" class="m-s5-see">
+      								<span class="s2">1000</span>
+      							</p>
+      						</div>
+      						<h3><img src="../../images/EN/m-s5-head.png"><span>Bobby Edwards</span></h3>
+      					</li>
+      				</ul>
+		     	</div>
+		    </div>
+		  </div>
+		</div>
+	</div>
+
+	<!-- 弹出游记内容模态框 -->
+	<div class="travel-diary">
+		<div class="modal fade diaryModal" id="js-diaryModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="padding-left: 0;">
+		  <div class="modal-dialog" role="document" style="width: 100%;margin:0;">
+		    <div class="modal-content">
+		    	<button type="button" class="close-diary"></button>
+		    	<div class="ifram-content">
+		    		
+		    	</div>
+		    </div>
+		  </div>
+		</div>
+	</div>
+
+	<!-- 分享游记和旅行计划模态框 -->
+	<div class="travel-share">
+		<div class="modal fade shareModal" id="js-shareModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		     	<div class="modal-header">
+     				<button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+		     	</div>
+		     	<div class="modal-body">
+		     		<div class="search-box">
+		     			<button type="button" class="search-clear"></button>
+		     			<input type="text" name="" value="" class="search-input" placeholder="Enter your itinerary">
+		     			<p class="search-hot">
+		     				<!-- <a href="LMTravelPlanning.html" target="_blank">Phnom Penh</a> -->
+		     				<a href="LMTravelNeeds.html" target="_blank">Phnom Penh</a>
+		     				<a href="javascript:void(0)">Sihanoukville</a>
+		     				<a href="javascript:void(0)">Ho Chi Minh</a>
+		     				<a href="javascript:void(0)">Macao</a>
+		     				<a href="javascript:void(0)">Hong Kong</a>
+		     			</p>
+		     			<!-- <p class="search-title">Palau 3 search results</p> -->
+		     			<ul class="search-menu">
+		     				<li>
+		     					<a href="javascript:void(0)">
+		     						<span class="s1">Palau International Travel Agency</span>
+		     						<span class="s2">Chaoyang District, Beijing</span>
+		     					</a>
+		     				</li>
+		     				<li>
+		     					<a href="javascript:void(0)">
+		     						<span class="s1">Palau China Association for the promotion of economic and trade</span>
+		     						<span class="s2">Zhengzhou City, Guancheng Hui District</span>
+		     					</a>
+		     				</li>
+		     				<li>
+		     					<a href="javascript:void(0)">
+		     						<span class="s1">Palau</span>
+		     						<span class="s2">Palau</span>
+		     					</a>
+		     				</li>
+		     			</ul>
+		     		</div>
+		     	</div>
+		    </div>
+		  </div>
+		</div>
+	</div>
+
+	<!-- 第三方库-->
+	<script type="text/javascript" src="../../libs/jQuery/jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="../../libs/bootstrap/js/bootstrap.min.js"></script>
+	<!-- 背景拖拽 -->
+	<script type="text/javascript" src="../../libs/drag/dragMap.js"></script>
+	<!-- 翻页 -->
+	<!-- <script type="text/javascript" src="../../libs/diary/turn/modernizr.2.5.3.min.js"></script> -->
+	<!-- 公共JS -->
+	<script type="text/javascript" src="../../common/EN/js/LMTravel-common.js"></script>
+	<!-- 业务代码 -->
+	<script type="text/javascript" src="../../js/EN/LMTravelMap.js"></script>
+
+</body>
+</html>

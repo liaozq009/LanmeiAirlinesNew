@@ -1,0 +1,40 @@
+/************重置样式************/
+*{margin: 0px;padding:0px;}
+ul,li{list-style: none;}
+a{text-decoration: none;}
+/***独立样式**/
+.carousel-wrap{width: 1000px;margin:20px auto;}
+.poster-main{
+	width: 640px;
+	height: 270px;
+	position: relative;
+}
+.poster-main .poster-btn{
+	width: 100px;
+	height: 270px;
+    position: absolute;
+    top:0;
+    cursor: pointer;
+}
+.poster-main .poster-prev-btn{
+    left: 0;
+    background:url('./prev.png') no-repeat;
+    background-position: left center;
+}
+.poster-main .poster-next-btn{
+	right:0;
+	background:url('./next.png') no-repeat;
+    background-position: right center;
+}
+.poster-main .poster-list .list-item{ 
+	position: absolute;
+    top:0;
+    left:0;
+}
+.list-item a,.list-item a img{
+	display: block;
+	width: 100%;
+	height: 100%;
+	border: 0;
+}
+

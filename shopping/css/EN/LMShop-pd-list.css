@@ -1,0 +1,298 @@
+/* 定义变量 */
+.lm-container {
+  width: 960px;
+  padding: 0 10px;
+  margin: 50px auto 260px;
+}
+.lm-container .pd-search-wrap {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  position: relative;
+}
+.lm-container .pd-search-wrap .pd-search-input {
+  width: 890px;
+  height: 40px;
+  line-height: 40px;
+  margin-right: 50px;
+  padding-left: 84px;
+  padding-right: 20px;
+  font-size: 20px;
+  color: #1f2c5c;
+  border: 1px solid #ccc;
+  border-radius: 100px;
+}
+.lm-container .pd-search-wrap .pd-search-img {
+  position: absolute;
+  left: 40px;
+  top: 8px;
+}
+.lm-container .pd-search-wrap .pd-search-more {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.lm-container .pd-select-wrap {
+  margin: 50px 0;
+}
+.lm-container .pd-select-wrap > div {
+  overflow: hidden;
+}
+.lm-container .pd-select-wrap > div > div {
+  float: left;
+  width: 170px;
+  text-align: right;
+  font-size: 16px;
+  font-weight: bold;
+  color: #1f2c5c;
+}
+.lm-container .pd-select-wrap > div > ul {
+  width: 760px;
+  margin-left: 180px;
+  overflow: hidden;
+}
+.lm-container .pd-select-wrap > div > ul li {
+  float: left;
+  width: 20%;
+  margin-bottom: 20px;
+}
+.lm-container .pd-select-wrap > div > ul li a {
+  color: #808080;
+  font-size: 14px;
+}
+.lm-container .pd-select-wrap > div > ul .active a {
+  background: #8ec060;
+  border-radius: 100px;
+  padding: 3px 20px;
+  color: #fff;
+}
+.lm-container .pd-list-wrap .pd-list-inner {
+  min-height: 320px;
+}
+.lm-container .pd-list-wrap .pd-list-inner > li {
+  float: left;
+  width: 220px;
+  height: 320px;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #f2f2f2;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+.lm-container .pd-list-wrap .pd-list-inner > li .pd-img {
+  width: 100%;
+  height: 220px;
+}
+.lm-container .pd-list-wrap .pd-list-inner > li .pd-img img {
+  width: 100%;
+  height: 220px;
+}
+.lm-container .pd-list-wrap .pd-list-inner > li .pd-slider-title {
+  height: 53px;
+}
+.lm-container .pd-list-wrap .pd-list-inner > li .pd-slider-title > a,
+.lm-container .pd-list-wrap .pd-list-inner > li .pd-slider-title > p {
+  font-size: 14px;
+  color: #1f2c5c;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 0 10px;
+}
+.lm-container .pd-list-wrap .pd-list-inner > li .pd-slider-title > a {
+  display: inline-block;
+  width: 100%;
+}
+.lm-container .pd-list-wrap .pd-list-inner > li .pd-slider-title > a:hover {
+  color: #8ec060;
+}
+.lm-container .pd-list-wrap .pd-list-inner > li .pd-slider-cart {
+  position: relative;
+  height: 52px;
+}
+.lm-container .pd-list-wrap .pd-list-inner > li .pd-slider-cart .pd-slider-price {
+  float: left;
+  height: 52px;
+  line-height: 52px;
+  padding-left: 5px;
+}
+.lm-container .pd-list-wrap .pd-list-inner > li .pd-slider-cart .pd-slider-price .new-price {
+  font-size: 16px;
+  font-weight: bold;
+  color: #8ec060;
+  margin-left: 14px;
+}
+.lm-container .pd-list-wrap .pd-list-inner > li .pd-slider-cart .pd-slider-price .old-price {
+  font-size: 14px;
+  color: #cccccc;
+  text-decoration: line-through;
+  margin-left: 4px;
+}
+.lm-container .pd-list-wrap .pd-list-inner > li .pd-slider-cart .pd-add-cart-img {
+  float: right;
+  width: 66px;
+  height: 44px;
+  line-height: 44px;
+  text-align: center;
+  background: #8ec060;
+  box-shadow: 0 0 20px 0 rgba(142, 192, 96, 0.8);
+  cursor: pointer;
+  -webkit-transition-duration: .6s;
+  transition-duration: .6s;
+}
+.lm-container .pd-list-wrap .pd-list-inner > li .pd-slider-cart .pd-add-cart-img:hover {
+  background: #1f2c5c;
+  box-shadow: 0 10px 20px 0 rgba(31, 44, 92, 0.5);
+  -webkit-transition-duration: .6s;
+  transition-duration: .6s;
+}
+.lm-container .pd-list-wrap .pd-list-inner > li .pd-slider-cart .pd-detail-select {
+  position: absolute;
+  bottom: 0;
+  right: -500px;
+  z-index: 99;
+  width: 500px;
+  height: 388px;
+  display: none;
+  background: #fff;
+  -webkit-box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.16);
+  box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.16);
+  border-radius: 2px;
+  padding: 30px;
+}
+.lm-container .pd-list-wrap .pd-list-inner > li .pd-slider-cart .pd-detail-select .pd-detail-title {
+  overflow: hidden;
+}
+.lm-container .pd-list-wrap .pd-list-inner > li .pd-slider-cart .pd-detail-select .pd-detail-title h2 {
+  float: left;
+  font-size: 18px;
+  color: #1f2c5c;
+}
+.lm-container .pd-list-wrap .pd-list-inner > li .pd-slider-cart .pd-detail-select .pd-detail-title .pd-close {
+  float: right;
+  cursor: pointer;
+}
+.lm-container .pd-list-wrap .pd-list-inner > li .pd-slider-cart .pd-detail-select .pd-price {
+  margin-top: 20px;
+  text-align: left;
+}
+.lm-container .pd-list-wrap .pd-list-inner > li .pd-slider-cart .pd-detail-select .pd-price .old-price {
+  text-decoration: line-through;
+  font-size: 20px;
+  margin-left: 12px;
+  color: #ccc;
+}
+.lm-container .pd-list-wrap .pd-list-inner > li .pd-slider-cart .pd-detail-select .pd-price .new-price {
+  font-size: 30px;
+  color: #8ec060;
+}
+.lm-container .pd-list-wrap .pd-list-inner > li .pd-slider-cart .pd-detail-select .pd-silder-select {
+  text-align: left;
+  color: #1a1a1a;
+  font-weight: 100;
+  margin-top: 20px;
+}
+.lm-container .pd-list-wrap .pd-list-inner > li .pd-slider-cart .pd-detail-select .pd-silder-select > span {
+  text-align: left;
+}
+.lm-container .pd-list-wrap .pd-list-inner > li .pd-slider-cart .pd-detail-select .pd-silder-select .m-model-title {
+  display: none;
+}
+.lm-container .pd-list-wrap .pd-list-inner > li .pd-slider-cart .pd-detail-select .pd-add-cart {
+  height: 90px;
+  margin-top: 20px;
+  overflow: hidden;
+}
+.lm-container .pd-list-wrap .pd-list-inner > li .pd-slider-cart .pd-detail-select .pd-add-cart .pd-add-cart-lf {
+  float: left;
+  color: #808080;
+  text-align: left;
+  margin-top: 20px;
+}
+.lm-container .pd-list-wrap .pd-list-inner > li .pd-slider-cart .pd-detail-select .pd-add-cart .pd-add-cart-lf p {
+  font-size: 14px;
+  color: #808080;
+}
+.lm-container .pd-list-wrap .pd-list-inner > li .pd-slider-cart .pd-detail-select .pd-add-cart .pd-add-cart-lf .p2 {
+  margin-top: 10px;
+}
+.lm-container .pd-list-wrap .pd-list-inner > li .pd-slider-cart .pd-detail-select .pd-add-cart .pd-add-cart-rt {
+  float: right;
+  margin-left: 40px;
+  margin-top: 26px;
+}
+.lm-container .pd-list-wrap .pd-list-inner > li .pd-slider-cart .pd-detail-select .pd-add-cart .pd-add-cart-rt button {
+  width: 120px;
+  height: 40px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  color: #fff;
+  font-weight: bold;
+  background: #8ec060;
+  -webkit-box-shadow: 0 10px 20px 0 rgba(142, 192, 96, 0.5);
+  box-shadow: 0 10px 20px 0 rgba(142, 192, 96, 0.5);
+  border-radius: 100px;
+}
+.lm-container .pd-list-wrap .pd-list-inner > li .pd-slider-cart .pd-detail-select .pd-add-cart .pd-detail-smallImg {
+  float: left;
+  width: 90px;
+  height: 90px;
+}
+.lm-container .pd-list-wrap .pd-list-inner > li .pd-slider-cart .pd-detail-select .pd-model-num {
+  color: #1a1a1a;
+  text-align: left;
+  font-size: 18px;
+  margin-top: 20px;
+}
+.lm-container .pd-list-wrap .pd-list-inner > li .pd-slider-cart .pd-detail-select .pd-model-num .pd-num-change {
+  display: inline-block;
+  margin-left: 10px;
+}
+.lm-container .pd-list-wrap .pd-list-inner > li .pd-slider-cart .pd-detail-select .pd-model-num .pd-num-change span {
+  position: relative;
+  top: 4px;
+  display: inline-block;
+  width: 20px;
+  font-size: 18px;
+  margin: 0 28px;
+}
+.lm-container .pd-list-wrap .pd-list-inner > li .pd-slider-cart .pd-detail-select .pd-model-num .pd-num-change a {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+.lm-container .pd-list-wrap .pd-list-inner > li .pd-slider-cart .pd-detail-select .pd-model-num .pd-num-change a i {
+  cursor: pointer;
+}
+.lm-container .p-comment-page {
+  padding: 80px 100px 256px;
+  font-size: 18px;
+  overflow: hidden;
+  text-align: center;
+  clear: both;
+}
+.lm-container .p-comment-page .prevPage {
+  float: left;
+  margin: 0 15px;
+}
+.lm-container .p-comment-page .nextPage {
+  float: right;
+  margin: 0 15px;
+}
+.lm-container .p-comment-page .current {
+  color: #8ec060;
+  margin: 0 15px;
+}
+.lm-container .p-comment-page > a {
+  margin: 0 15px;
+  font-size: 18px;
+  color: #1f2c5c;
+}
+.lm-container .p-comment-page > a:hover {
+  color: #8ec060;
+}
+.lm-container .p-comment-page .disabled {
+  color: #ccc;
+  margin: 0 15px;
+}

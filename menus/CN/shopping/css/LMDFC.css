@@ -1,0 +1,43 @@
+@charset "utf-8";
+/* 定义变量 */
+/* 定义颜色变量 */
+/* 主体代码 */
+.lm-section {
+  width: 940px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+.lm-section > div img {
+  margin-top: 10px;
+}
+.lm-section .shop-title {
+  text-align: center;
+}
+.lm-section .shop-title h1 {
+  font-size: 45px;
+  color: #006C92;
+}
+.lm-section .shop-title .p1 {
+  font-size: 40px;
+  color: red;
+  margin: 10px 0;
+}
+.lm-section .shop-title .p2 {
+  font-size: 16px;
+  color: red;
+}
+@media screen and (max-width: 992px) {
+  .lm-section {
+    width: 100%;
+    padding: 15px;
+  }
+  .lm-section .shop-title h1 {
+    font-size: 0.24rem;
+  }
+  .lm-section .shop-title .p1 {
+    font-size: 0.24rem;
+  }
+  .lm-section .shop-title .p2 {
+    font-size: 0.14rem;
+  }
+}

@@ -1,0 +1,376 @@
+
+/* 定义变量 */
+@green:#8ec060;
+@purple:#1f2c5c;
+@gray:#808080;
+@red:#d0011b;
+@link:#00908c;
+@green2:#81E5FE;
+@green3:#F7FAFF;
+@blue:#1639AE;
+@blue2:#3772D5;
+@blue3:#AAC7F9;
+@linear:-webkit-linear-gradient(0deg, #81E5FE 0%, #1639AE 100%);
+
+/* 登录模态框 */
+.modal{
+	z-index: 99999;
+	background:rgba(0,0,0,0.5);
+	.modal-dialog{
+		width: 400px;
+		.modal-content{
+			border-radius: 10px;
+			.modal-header{
+				border-bottom:none;
+				.close{
+					position: relative;
+					color: @blue;
+					opacity: 1;
+					font-size:18px;
+					font-weight: 100;
+					text-shadow: none; 
+					top: -3px;
+					right: 30px;
+					outline: none;
+					span{
+						margin-left: 10px;
+						font-size: 30px;
+						position: absolute;
+						top: -8px;
+					}
+				}
+			}
+			.modal-body{
+				padding:0;
+				.loginTitle{
+					width: 100%;
+					text-align: center;
+					color:#1a41b2;
+					font-size:24px;
+					font-weight: bold;
+					margin-top: 24px;
+				}
+				.verifyInfo{
+					visibility: hidden;
+					display: inline-block;
+					width: 100%;
+					height: 12px;
+					line-height: 12px;
+					text-align: center;
+					color: @red;
+					margin-top: 8px;
+				}
+				.visible{visibility: visible;}
+				form{
+					margin-top: 20px;
+					margin-bottom: 30px;
+					.form-group{
+						position: relative;
+						text-align: center;
+						margin:0;
+						padding:0;
+					}
+					input{
+						width: 340px;
+						height: 50px;
+						// line-height: 50px;
+						font-size: 14px;
+						color:@blue;
+						font-weight: bold;
+						padding:0 20px;
+						margin:0 auto;
+						background:#f2f2f2;
+						border:none;
+						border-radius:2px;
+						&:focus{
+							border:1px solid @blue;
+						}
+					}
+					
+					.on_changes{
+						width:340px; 
+						position:absolute; 
+						top:49px; 
+						left: 29px;
+						z-index: 99;
+						list-style:none; 
+						background:#FFF; 
+						border:1px solid @blue; 
+						display:none; 
+						padding:10px 0;
+						li{
+							margin:4px 0;
+							padding:2px 0;
+							cursor: pointer;
+							color: @gray;
+						}
+						li.active{ background:@blue;color:#fff;}
+					}
+					.form-control:focus{
+						box-shadow: none;
+						border-color:@blue !important;
+					}
+					#LanmeiPassword{
+						margin-top: 30px;
+					}
+					#f-LanmeiPassword{
+						margin-top: 30px;
+						width: 210px;
+						display: inline-block;
+					}
+					#f-getPasswordBtn{
+						width: 120px;
+						height: 50px;
+						background: @blue2;
+						color:#fff;
+						font-size: 14px;
+						border:none;
+						margin-left: 10px;
+					}
+					.getPwActive{
+						background: @purple;
+					}
+					.agree{
+						margin-top: 10px;
+						padding:0 30px;
+						overflow: hidden;
+						span{
+							float: left;
+							display: inline-block;
+							width: 16px;
+							height: 16px;
+							border: 1px solid #cccccc;
+							border-radius: 2px;
+							margin-right: 10px;
+							margin-top: 4px;
+							cursor: pointer;
+						}
+						.active{
+							background:@blue;
+						}
+						.active + p{
+							color: @purple;
+						}
+						p{
+							float: left;
+							display: inline-block;
+							text-align: left;
+							color:  @gray;
+							line-height: 25px;
+						}
+						a{
+							float: right;
+							color: @gray;
+							transition:all 0.6s;
+							-webkit-transition:all 0.6s;
+							&:hover{
+								color: @link;
+								transition:all 0.6s;
+								-webkit-transition:all 0.6s;
+							}
+						}
+					}
+					button{
+						width: 340px;
+						height: 40px;
+						line-height: 40px;
+						text-align: center;
+						margin:0 auto;
+						padding:0;
+						border-radius:2px;
+					}
+					.userLoginBtn,.f-userLoginBtn{
+						margin-top: 30px;
+						background:@linear;
+						color:#fff;
+						font-size:14px;
+						font-weight: bold;
+					}
+				}
+			}
+			.modal-footer{
+				width: 100%;
+				overflow: hidden;
+				text-align: center;
+				color:#cccccc;
+				border-top: none;
+				padding:0 30px;
+				padding-bottom: 30px;
+				a{
+					color: @blue;
+				}
+				.a_login{
+					float: left;
+					font-size: 14px;
+				}
+				.a_registered{
+					float: right;
+					font-size: 14px;
+					color: @link;
+				}
+			}
+		}
+	}
+}
+
+/* 注册模态框 */
+.registerWrapper{
+	width: 100%;
+	margin:50px auto;
+	text-align: center;
+	>h2{
+		font-weight: bold;
+		font-size:24px;
+		color:#1a41b2;
+	}
+	>p{
+		font-size:14px;
+		color:@gray;
+		margin-top:10px;
+		a{
+			color:@blue;
+			transition:all 0.6s;
+			-webkit-transition:all 0.6s;
+			&:hover{
+				color:@blue;
+				transition:all 0.6s;
+				-webkit-transition:all 0.6s;
+			}
+		}
+	}
+	.registerContent{
+		margin-top: 20px;
+		.registerInfo,.registerPassword,.repeatPassword{
+			position: relative;
+			img{
+				position: absolute;
+				left:50px;
+				top:18px;
+			}
+			input{
+				font-size:14px;
+				color:@gray;
+				border:1px solid #cccccc;
+				border-radius:2px;
+				width:338px;
+				padding-left: 60px !important;
+				padding-right: 10px !important;
+				&:focus{border-color:@blue;}
+			}
+			p{
+				color:@red;
+				text-align: left;
+				padding:8px 10px 10px 29px;
+				visibility: hidden;
+			}
+			.visible{visibility: visible;}
+		}
+		.registerInfo{
+			.on_changes{
+				width:338px; 
+				position:absolute; 
+				top:40px; 
+				left: 1px;
+				z-index: 99;
+				list-style:none; 
+				background:#FFF; 
+				border:1px solid @blue; 
+				display:none; 
+				padding:10px 0;
+				li{
+					margin:4px 0;
+					padding:2px 0;
+					cursor: pointer;
+					color: @gray;
+				}
+				li.active{ background:@blue;color:#fff;}
+			}
+		}
+		.registerPassword{
+			p{
+				color:#ccc;
+				span{margin-left: 5px;}
+				i{
+					display: inline-block;
+					width:30px;
+					height:4px;
+					margin-right: 4px;
+				}
+				.i1{background: #1f2c5c;}
+				.i2{background: #004190;}
+				.i3{background: #006d94;}
+				.i4{background: #00908c;}
+				.i5{background: #4aa374;}
+				.i6{background: #8ec060;}
+			}
+		}
+		.repeatPassword{
+			span{
+				display: inline-block;
+				font-size:14px;
+				color:@gray;
+				padding:0;
+				text-align: left;
+				display: none;
+			}
+		}
+		.agree{
+			margin-top:0 !important;
+			margin-bottom: 10px;
+			overflow: hidden;
+			padding:0 0 0 29px!important;
+			span{
+				float: left;
+				display: inline-block;
+				width: 16px;
+				height: 16px;
+				border:1px solid #ccc;
+				border-radius:2px;
+				margin-right: 10px;
+				margin-top:4px;
+				cursor: pointer;
+			}
+			.agreeConditions{
+				background: @blue;
+			}
+			p{
+				float: left;
+				width: 314px;
+				display: inline-block;
+				font-size:14px;
+				text-align: left;
+				color:@gray;
+				line-height: 25px;
+				a{
+					float: none !important;
+					font-size:14px;
+					color:@link !important;
+				}
+			}
+		}
+		.registerBtn{
+			button{
+				border:none;
+				outline: none;
+				background:@linear;
+				border-radius:2px;
+				width:340px;
+				color:#fff;
+				font-size:18px;
+				font-weight: bold;
+			}
+		}
+	}
+}
+
+/* layer样式 */
+body .layui-layer-btn .layui-layer-btn0{
+	border-color: @green;
+	background-color: @green;
+}
+body .layui-layer-title{
+	background-color: @green;
+	color:#fff;
+}
+
+

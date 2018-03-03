@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- 让 Bootstrap 兼容 IE 兼容模型 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- 让 Bootstrap 兼容 国产浏览器的高速模型 -->
+	<meta name="renderer" content="webkit">
+	<!-- 实现响应式的设置 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>LanmeiAirlines</title>
+	<!-- 引入图标 -->
+	<link rel="icon" href="../../images/CN/lanmeiLogo.ico">
+	<link rel="stylesheet" type="text/css" href="../../libs/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../../common/EN/fonts/lm-iconfont.css">
+	<link rel="stylesheet" type="text/css" href="../../libs/dataRange/lanmei-calendar.css">
+	<link rel="stylesheet" type="text/css" href="../../libsEdit/css/lanmeiLibsEdit.css">
+	<link rel="stylesheet" type="text/css" href="../../common/CN/css/Lanmei-common.css">
+	<link rel="stylesheet" type="text/css" href="../../css/CN/LanmeiAirlinesMultiCities.css">
+	<!--[if lt IE 9]>
+	<script src="../../libs/bootstrap/js/html5shiv.min.js"></script>
+	<script src="../../libs/bootstrap/js/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<!-- 页面顶部 -->
+	<header class="lanmeiHeader">
+		<nav class="lanmeiNav">
+			<div class="lanmeiLogo">
+				<a class="navbar-brand" href="../../index-zh.html"><img src="../../images/CN/lanmeiLogo.png"></a>
+			</div>
+			<div class="lanmeiHeadInfo">
+				<ul class="">
+					<li>
+						<img src="../../images/CN/phone.png">
+						<span>+855 23881865（柬埔寨）</span>
+					</li>
+					<li><a href="#" class="btn loginBtn">登陆</a></li>
+					<li><a href="#" class="btn REGISTEREDBtn">注册</a></li>
+				</ul>
+			</div>
+		</nav>
+
+		<!-- 菜单选择 -->
+		<div class="LMCompanyInfo">
+			<ul class="lm-nav">
+				<li class="nth-child1">
+					<a href="#PLANTOTRAVEL">计划旅行</a>
+					<!-- <i></i>  -->
+				</li>
+				<li class="nth-child2">
+					<a href="#LANMEIMEMBERVS">澜湄会员</a>
+					<!-- <i></i> -->
+				</li>
+				<li class="nth-child3">
+					<a href="#LANMEICOMMUNITY">澜湄社区</a>
+					<i></i>
+					
+				</li>
+				<li class="nth-child5">
+					<a href="#DUTYFERR">澜湄免税</a>
+					<!-- <i></i> -->
+				</li>
+				<li class="nth-child6">
+					<a href="#ABOUTUS">关于我们</a>
+				</li>
+			</ul>
+			<ul class="LMCompanyDownMenu" id="LANMEICOMMUNITY">
+				<li><a href="shopping/LMShopping.html" target="_blank">澜湄商城</a></li>
+				<li><a href="LMLive/LMLive.html" target="_blank">澜湄直播</a></li>
+			</ul>
+		</div>
+	</header>
+
+	<!-- 订票步骤列表 -->
+	<div class="buyTicketList">
+		<dl class="SelectDate">
+			<dt><img src="../../images/CN/date-icon-active.png"></dt>
+			<dd>选择日期</dd>
+		</dl>
+		<dl class="circleArrow">
+			<dt><img src="../../images/CN/circleArrowGray-active.png"></dt>
+		</dl>
+		<dl class="SelectFlight">
+			<dt><img src="../../images/CN/Select-the-flight-icon.png"></dt>
+			<dd>选择航班</dd>
+		</dl>
+		<dl class="circleArrow">
+			<dt><img src="../../images/CN/circleArrowGray.png"></dt>
+		</dl>
+		<dl class="PassengerInformation">
+			<dt><img src="../../images/CN/Passenger-informatio-icon.png"></dt>
+			<dd>乘客资料</dd>
+		</dl>
+		<dl class="circleArrow">
+			<dt><img src="../../images/CN/circleArrowGray.png"></dt>
+		</dl>
+		<dl class="LanmeiPay">
+			<dt><img src="../../images/CN/pay-icon.png"></dt>
+			<dd>支付</dd>
+		</dl>
+		<dl class="circleArrow">
+			<dt><img src="../../images/CN/circleArrowGray.png"></dt>
+		</dl>
+		<dl class="Complete">
+			<dt><img src="../../images/CN/Complete-icon.png"></dt>
+			<dd>完成</dd>
+		</dl>
+	</div>
+
+	<!-- 选择机票信息 -->
+	<div class="changeSearch">
+		<div class="changeSearchTitle">
+			<h2>
+				<img src="../../images/EN/leftTitleLine.png">
+				多航段预订
+			</h2>
+		</div>
+		<div class="selectWay">
+			<a href="#" class="OneWay nth-child1" data-way="oneWay" data-Multi="true">单程</a>
+			<a href="#" class="RoundTrip" data-way="roundTrip" data-Multi="true">往返</a>
+			<a href="#" class="Stopover active" data-way="multi" data-Multi="true">中转 / 多航段</a>
+		</div>
+		<div class="selectAirMulti selectAirCommon">
+			<div class="local_timeSelect">
+				<div class="local_timeSelectList1 local_timeSelectList">
+					<div class="serialNum">1</div>
+					<div class="localSelectStart autoClick">
+						<p><img src="../../images/EN/originStart2.png"><span>出发地</span></p>
+						<input type="text" class="fromcityinput inputDown Autocomplete" id="fromcity1" value="" placeholder="">
+						<img src="../../images/EN/downArrow.png">
+						<span class="clear">X</span>
+						<i class="img01 localChangeImg"></i>
+						<b class="bottomLine"></b>
+						<ul class="fromcityMenu menu-com">
+							
+						</ul>
+					</div>
+					<div class="localSelectEnd autoClick autoFocus">
+						<p><img src="../../images/EN/originEnd2.png"><span>目的地</span></p>
+						<input type="text" class="tocityinput inputDown Autocomplete" id="tocity1" value="" placeholder="">
+						<img src="../../images/EN/downArrow.png">
+						<span class="clear">X</span>
+						<b class="bottomLine"></b>
+						<ul class="tocityMenu menu-com">
+							
+						</ul>
+					</div>
+					<div class="timeSelectStart">
+						<p><img src="../../images/EN/departureDate2.png"><span>出发日期</span></p>
+						<input type="text" id="timeFrom1" class="timeFrom" name="from" value="" placeholder="" readonly>
+						<img src="../../images/EN/downArrow.png">
+					</div>
+					<div class="delete-icon"></div>
+				</div>
+				<div class="local_timeSelectList2 local_timeSelectList">
+					<div class="serialNum">2</div>
+					<div class="localSelectStart autoClick">
+						<p><img src="../../images/EN/originStart2.png"><span>出发地</span></p>
+						<input type="text" class="fromcityinput inputDown Autocomplete" id="fromcity2" value="" placeholder="">
+						<img src="../../images/EN/downArrow.png">
+						<span class="clear">X</span>
+						<i class="img01 localChangeImg"></i>
+						<b class="bottomLine"></b>
+						<ul class="fromcityMenu menu-com">
+							
+						</ul>
+					</div>
+					<div class="localSelectEnd autoClick autoFocus">
+						<p><img src="../../images/EN/originEnd2.png"><span>目的地</span></p>
+						<input type="text" class="tocityinput inputDown Autocomplete" id="tocity2" value="" placeholder="">
+						<img src="../../images/EN/downArrow.png">
+						<span class="clear">X</span>
+						<b class="bottomLine"></b>
+						<ul class="tocityMenu menu-com">
+							
+						</ul>
+					</div>
+					<div class="timeSelectStart">
+						<p><img src="../../images/EN/departureDate2.png"><span>出发日期</span></p>
+						<input type="text" id="timeFrom2" class="timeFrom" name="from" value="" placeholder="" readonly>
+						<img src="../../images/EN/downArrow.png">
+					</div>
+					<div class="delete-icon"></div>
+				</div>
+				<div class="local_timeSelectList3 local_timeSelectList">
+					<div class="serialNum">3</div>
+					<div class="localSelectStart autoClick">
+						<p><img src="../../images/EN/originStart2.png"><span>出发地</span></p>
+						<input type="text" class="fromcityinput inputDown Autocomplete" id="fromcity3" value="" placeholder="">
+						<img src="../../images/EN/downArrow.png">
+						<span class="clear">X</span>
+						<i class="img01 localChangeImg"></i>
+						<b class="bottomLine"></b>
+						<ul class="fromcityMenu menu-com">
+							
+						</ul>
+					</div>
+					<div class="localSelectEnd autoClick autoFocus">
+						<p><img src="../../images/EN/originEnd2.png"><span>目的地</span></p>
+						<input type="text" class="tocityinput inputDown Autocomplete" id="tocity3" value="" placeholder="">
+						<img src="../../images/EN/downArrow.png">
+						<span class="clear">X</span>
+						<b class="bottomLine"></b>
+						<ul class="tocityMenu menu-com">
+							
+						</ul>
+					</div>
+					<div class="timeSelectStart">
+						<p><img src="../../images/EN/departureDate2.png"><span>出发日期</span></p>
+						<input type="text" id="timeFrom3" class="timeFrom" name="from" value="" placeholder="" readonly>
+						<img src="../../images/EN/downArrow.png">
+					</div>
+					<div class="delete-icon"></div>
+				</div>
+			</div>
+			<div class="addLocaSelect"><img src="../../images/EN/slideUp-icon.png"></div>
+			<div class="subLocaSelect"><img src="../../images/EN/slideDown-icon.png"></div>
+			<div class="passenger_Select">
+				<div class="CabinSelect">
+					<p><img src="../../images/EN/cabin-icon2.png"><span>服务等级</span></p>
+					<input type="text" class="cityinput inputDown" id="Cabin" value="" placeholder="" readonly>
+					<img src="../../images/EN/downArrow.png">
+					<b class="bottomLine"></b>
+					<ul class="CabinMenu menu-com">
+						<li><a href="#">经济舱</a></li>
+						<!-- <li><a href="#">头等舱</a></li>
+						<li><a href="#">无限制</a></li> -->
+					</ul>
+				</div>
+				<div class="AdultSelect">
+					<p><img src="../../images/EN/adult-icon2.png"><span>成人</span></p>
+					<div>
+						<input type="text" class="cityinput" id="Adult" value="1" readonly>
+						<i class="addArrow"><img src="../../images/EN/addArrow.png"></i>
+						<i class="downArrow"><img src="../../images/EN/downArrow.png" ></i>
+					</div>
+				</div>
+				<div class="ChildSelect">
+					<p><img src="../../images/EN/child-icon2.png"><span>儿童</span></p>
+					<div>
+						<input type="text" readonly="readonly" id="Child" value="0" class=""/>
+						<i class="addArrow"><img src="../../images/EN/addArrow.png"></i>
+						<i class="downArrow"><img src="../../images/EN/downArrow.png" ></i>
+						<span class="ageTip">2-11years</span>
+					</div>
+				</div>
+				<!-- <div class="InfantSelect">
+					<p><img src="../../images/EN/infant-icon2.png"><span>Infant</span></p>
+					<div>
+						<input type="text" readonly="readonly" id="Infant" value="0" class=""/>
+						<i class="addArrow"><img src="../../images/EN/addArrow.png"></i>
+						<i class="downArrow"><img src="../../images/EN/downArrow.png" ></i>
+						<span class="ageTip">0-23 months</span>
+					</div>
+				</div> -->
+				<div class="CurrencySelect">
+					<p><img src="../../images/EN/Currency.png"><span>Currency</span></p>
+					<input type="text" class="cityinput inputDown" id="Currency" value="RMB" placeholder="" readonly>
+					<img src="../../images/EN/downArrow.png">
+					<b class="bottomLine"></b>
+					<ul class="CabinMenu menu-com">
+						<li><a href="#">RMB</a></li>
+						<!-- <li><a href="#">头等舱</a></li>
+						<li><a href="#">无限制</a></li> -->
+					</ul>
+				</div>
+			</div>
+			<div class="searchAir">
+				<a href="LanmeiAirlinesSelectFlight2.html" class="btn">搜索</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- 页脚 -->
+	<div class="footerInfo">
+		<div class="footerBg">
+			<div class="HelpfulInformation">
+				<p>帮助信息</p>
+			</div>
+			<div class="contactUs">
+				<div class="nth-child1"><img src="../../images/CN/email.png"><span>LM-EC@lanmeiairlines.com</span></div>
+				<div class="nth-child2">
+					<span>FOLLOW</span>
+					<a href="https://www.facebook.com/lanmeiairlines/">
+						<i class="iconfont icon-facebook"></i>
+					</a>
+					<a href="#"><i class="iconfont icon-in"></i></a>
+					<a href="#"><i class="iconfont icon-inst"></i></a>
+					<a href="#"><i class="iconfont icon-youtube"></i></a>
+					<a href="#"><i class="iconfont icon-googleplus"></i></a>
+					<a href="http://weibo.com/lanmeiair"><i class="iconfont icon-wb"></i></a>
+					<a href="#"><i class="iconfont icon-tuite"></i></a>
+				</div>
+			</div>
+			<div class="location">
+				<img src="../../images/CN/location.png"><a href="http://www.google.cn/maps/place/Lanmei+Airlines/@11.5637363,104.8836365,17.75z/data=!4m5!3m4!1s0x310951a3c5cdaf97:0x77359b117b2ff068!8m2!3d11.5637363!4d104.8852876" target="_blank">柬埔寨金边市俄罗斯大道575号</a>
+			</div>
+			<div class="LanmeiAirlinesBerhad">
+				<div class="nth-child1"><a href="../../index-zh.html"><img src="../../images/CN/lanmeiFooterLogo.png"></a><span>© Copyright 2017 澜湄航空 粤<a href="http://www.miitbeian.gov.cn" target="_Blank">ICP备17005494-1</a></span></div>
+				<div class="nth-child2">
+					<span>使用条款 | 隐私策略 | Cookies</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 回到顶部 -->
+	<div class="BackToTop">
+		<img src="../../images/CN/ToTop-icon-active.png" class="img02">
+		<p>UP</p>
+	</div>
+
+	<!-- 第三方库-->
+	<script type="text/javascript" src="../../libs/jQuery/jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="../../libs/layer/layer.js"></script>
+	<script type="text/javascript" src="../../libs/mobile-libs/fastclick/fastclick.js"></script>
+	<script type="text/javascript" src="../../libs/dataRange/lanmei-calendar-zh.js"></script>
+	<script type="text/javascript" src="../../libs/lanmei-date-select.js"></script>
+	<script type="text/javascript" src="../../libs/bootstrap/js/bootstrap.min.js"></script>
+	<!-- 公共JS -->
+	<script type="text/javascript" src="../../common/CN/js/Lanmei-common.js"></script>
+	<script type="text/javascript" src="../../common/CN/js/flight-info.js"></script>
+	<!-- 业务代码 -->
+	<script type="text/javascript" src="../../js/CN/LanmeiAirlinesMultiCities.js"></script>
+</body>
+</html>

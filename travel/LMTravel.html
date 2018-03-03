@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- 让 Bootstrap 兼容 IE 兼容模型 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- 让 Bootstrap 兼容 国产浏览器的高速模型 -->
+	<meta name="renderer" content="webkit">
+	<!-- 实现响应式的设置 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Be Unique,lanmei Airlines offical website find great deals now&nbsp;to our worldwide destinations.Cambodia,booking flights">
+	<meta name="keywords" content="lanmei airlines,六国,柬埔寨,澜湄航空,机票预订,lanmei,LQ,Fly to Cambodia,Special Ticket,lanmei A320,booking,ticket booking,booking flights">
+	<meta name="baidu-site-verification" content="wL5we2b5k5" />
+	<title>Be Unique, Lanmei Airlines</title>
+
+	<!-- 引入图标 -->
+	<link rel="icon" href="images/EN/lanmeiLogo.ico">
+	<link rel="stylesheet" type="text/css" href="common/EN/fonts/lm-iconfont.css">
+	<link rel="stylesheet" type="text/css" href="libs/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="libs/slider/LM-carousel.css">
+	<link rel="stylesheet" type="text/css" href="libs/travelMap/travel-map.css">
+	<link rel="stylesheet" type="text/css" href="libs/swiper/lm-swiper.css">
+	<link rel="stylesheet" type="text/css" href="libsEdit/css/LMTravel-libs-edit.css">
+	<link rel="stylesheet" type="text/css" href="common/EN/css/animate.css">
+	<link rel="stylesheet" type="text/css" href="common/EN/css/LMTravel-common.css">
+	<link rel="stylesheet" type="text/css" href="css/EN/LMTravel.css">
+	<!--[if lt IE 9]>
+	<script src="libs/bootstrap/js/html5shiv.min.js"></script>
+	<script src="libs/bootstrap/js/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+	<!-- 页面顶部 -->
+	<header class="lanmeiHeader">
+		<nav class="lanmeiNav">
+			<a class="lanmeiLogo" href="../index.html""><img src="images/EN/lanmeiLogo.png"></a>
+			<ul class="lanmeiHeadInfo">
+				<li class="li-login">
+					<a href="javascript:void(0)" class="btn loginBtn"><img src="images/EN/login.png">Login</a>
+					<ul class="user-menu">
+						<li><a href="javascript:void(0)">My Tracks</a></li>
+						<li><a href="javascript:void(0)">My Journey</a></li>
+						<li><a href="javascript:void(0)">My Drafts</a></li>
+						<li><a href="javascript:void(0)">My Favorite</a></li>
+					</ul>
+				</li>
+				<li class="li-register"><a href="javascript:void(0)" class="btn registerBtn"><img src="images/EN/registered.png">Sign up</a></li>
+				<li class="languageSelectBox">
+					<div class="languageBox">
+						<a href="javascript:void(0)" class="languageSelect"></a>
+						<b class="ENbottomLine"></b>
+						<ul class="languageDownMenu">
+							<li class="nth-child1"><a href="index-zh.html"></a></li>
+							<li class="nth-child2"><a href="index.html"></a></li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</nav>
+	</header>
+	<!-- <header class="m-header">
+		<a href="../index.html"><i class="iconfont icon-left-arrow"></i></a>
+		<h2 class="m-nav-title" data-title="f-nav-title">Travel</h2>
+	</header> -->
+
+	<!-- 登录模态框 -->
+	<div class="modal fade" id="travel-logonModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">Close<span aria-hidden="true">&times;</span></button>
+				</div>
+				<div class="modal-body">
+					<h2 class="loginTitle">Login</h2>
+					<span class="verifyInfo">Account or password error !</span>
+					<form id="travel-loginForm" method="POST" action="">
+						<div class="form-group">
+							<input type="text" class="form-control" id="LanmeiUserName" placeholder="Email">
+							<ul class="login_on_changes on_changes">
+								<li email="@gmail.com"></li>
+								<li email="@qq.com"></li>
+								<li email="@sina.com"></li>
+								<li email="@163.com"></li>
+								<li email="@hotmail.com"></li>
+								<li email="@126.com"></li>
+								<li email="@yahoo.com"></li>
+							</ul>
+						</div>
+						<div class="form-group">
+							<input type="password" class="form-control" id="LanmeiPassword" placeholder="Password">
+						</div>
+						<div class="agree form-group">
+							<a href="#" class="forgetBtn">Forget ?</a>
+						</div>
+						<div class="form-group">
+							<button type="button" class="btn userLoginBtn">Login</button>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					Still no account ? Immediately <a href="javascript:void(0)" class="regBtn">registered</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 注册模态框 -->
+	<div class="modal fade" id="travel-registerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">Close<span aria-hidden="true">&times;</span></button>
+				</div>
+				<div class="modal-body">
+						<form class="registerWrapper" method="POST" action="">
+							<h2>Registered</h2>
+							<div class="registerContent">
+								<div class="registerInfo">
+									<input type="text" name="" value="" id="registerUserName" placeholder="Please enter email address">
+									<img src="images/EN/register-email.png">
+									<p>This email is already in use !</p>
+									<ul class="register_on_changes on_changes">
+										<li email="@gmail.com"></li>
+										<li email="@qq.com"></li>
+										<li email="@sina.com"></li>
+										<li email="@163.com"></li>
+										<li email="@hotmail.com"></li>
+										<li email="@126.com"></li>
+										<li email="@yahoo.com"></li>
+									</ul>
+								</div>
+								<div class="registerPassword">
+									<input type="password" name="" value="" id="registerPassword" placeholder="Password with 8-16 characters">
+									<img src="images/EN/register-password.png">
+									<p>Password strength : <span><i class="i1"></i><i class="i2"></i><i class="i3"></i><i class="i4"></i><i class="i5"></i><i class="i6"></i></span></p>
+								</div>
+								<div class="repeatPassword">
+									<input type="password" name="" value="" id="repeatPassword" placeholder="Please repeat password">
+									<img src="images/EN/register-password.png">
+									<p>Passwords don’t match !</p>
+									<span>
+										Password must be with 3 or 4 combination with 
+										number (0-9), lowercase letter (a-z), uppercase 
+										letter (A-Z) or special characters.
+									</span>
+								</div>
+								<div class="agree">
+									<span></span>
+									<p>I hereby agree to    <a href="#">Lanmeiairlines’ terms and conditions</a></p>
+								</div>
+								<div class="registerBtn">
+									<button id="registerBtn">Register</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 忘记密码模态框 -->
+	<div class="modal fade" id="travel-forgetModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">Close<span aria-hidden="true">&times;</span></button>
+				</div>
+				<div class="modal-body">
+					<h2 class="loginTitle">Forget Password</h2>
+					<span class="verifyInfo">Account or password error !</span>
+					<form id="f-loginForm" method="POST" action="">
+						<div class="form-group">
+							<input type="text" class="form-control" id="f-LanmeiUserName" placeholder="Email">
+							<ul class="forget_on_changes on_changes">
+								<li email="@gmail.com"></li>
+								<li email="@qq.com"></li>
+								<li email="@sina.com"></li>
+								<li email="@163.com"></li>
+								<li email="@hotmail.com"></li>
+								<li email="@126.com"></li>
+								<li email="@yahoo.com"></li>
+							</ul>
+						</div>
+						<div class="form-group">
+							<input type="password" class="form-control" id="f-LanmeiPassword" placeholder="Password">
+							<button type="button" id="f-getPasswordBtn">Get Password</button>
+						</div>
+						<div class="agree form-group">
+							<p>Please pay attention to the E-mail information</p>
+						</div>
+						<div class="form-group">
+							<button type="button" class="btn f-userLoginBtn">Login</button>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<a href="#" class="a_login">Login</a><a href="tpls/EN/LanmeiAirlinesRegister.html" class="a_registered">Registered</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="lm-banner">
+		<div class="lm-banner-left">
+			<img src="images/EN/lm-banner-1.png" alt="" class="img01">
+			<img src="images/EN/lm-banner-1-992.png" alt="" class="img02">
+			<div class="travel-start animated fadeInLeft">
+				<h2>Your ideal journey starts here</h2>
+				<p>—</p>
+				<p>Easy to operate,</p> 
+				<p>get rid of all the trouble price comparisons, put aside all the Raiders,</p> 
+				<p>compare the travel you want,</p> 
+				<p>we can help you decide, just choose the place you want to go, </p>
+				<p>the goods than three That's our job</p>
+				<a href="tpls/EN/LMTravelMap.html" target="_blank"><span>Get started</span></a>
+			</div>
+		</div>
+		<div class="lm-banner-right">
+			<div class="earth-d2 animated zoomInUp" id="earth-content">
+			    <div class="d2-box" id="earth-box">
+			        <img class="img2-1" alt="" src="images/EN/earth-map.png" />
+			        <img class="img2-2" alt="" src="images/EN/earth-map.png" />
+			    </div>
+			</div>
+			<div class="d3 animated slideInUp"><img src="images/EN/lm-banner-3.png" alt="" class="img3"></div>
+			<div class="d4 animated bounceInDown"><img src="images/EN/lm-banner-4.png" alt="" class="img4"></div>
+			<div class="d5 animated slideInUp"><img src="images/EN/lm-banner-5.png" alt="" class="img5"></div>
+		</div>
+	</div>
+
+	<!-- 主体内容 -->
+	<section class="section-1">
+		<ul>
+			<li class="nth-child1 lm-page-moveFromLeft animated fadeInUp">
+				<a href="javascript:void(0)"><img src="images/EN/m-s1-1.png"><p class="p1">One-stop service</p><p class="p2">One stop shopping necessities, no worries,convenient and quick</p></a>
+			</li>
+			<li class="nth-child2 lm-page-moveFromBottom animated fadeInUp">
+				<a href="javascript:void(0)"><img src="images/EN/m-s1-2.png"><p class="p1">Travel to share</p><p class="p2">Share your travel notes and recommend your experiences to others</p></a>
+			</li>
+			<li class="nth-child3 lm-page-moveFromBottom animated fadeInUp">
+				<a href="javascript:void(0)"><img src="images/EN/m-s1-3.png"><p class="p1">Tourism planning</p><p class="p2">Plan the trip you want, and prepare for the next trip</p></a>
+			</li>
+			<li class="nth-child4 lm-page-moveFromRight animated fadeInUp">
+				<a href="javascript:void(0)" target="_blank"><img src="images/EN/m-s1-4.png"><p class="p1">Private custom route</p><p class="p2">Help you customize the itinerary that suits you best</p></a>
+			</li>
+		</ul>
+	</section>
+
+	<section class="section-2">
+		<div id="s-carousel"></div>
+	</section>
+
+	<section class="section-3">
+		<ul>
+			<li class="n1">
+				<img src="images/EN/m-s3-1.png" alt="">
+				<p>Hilton Hotel</p>
+				<h2>$ 54.00+<p>[吊牌价:<span>$ 99.00</span>]</p></h2>
+				<ul>
+					<li class="s-n1">
+						Ratings :
+						<div>
+							<img src="images/EN/m-s3-4.png">
+							<img src="images/EN/m-s3-4.png">
+							<img src="images/EN/m-s3-4.png">
+							<img src="images/EN/m-s3-4.png">
+							<img src="images/EN/m-s3-4.png">
+						</div>
+					</li>
+					<li class="s-n2">
+						<span>Scenic spot :</span> 
+						<div>
+							<p>Lisbon</p>
+							<p>Sevilla</p>
+							<p>Granada</p>
+							<p>Casablanca</p>
+							<p>Chefchaouen</p>
+							<p>Madrid</p>
+						</div>
+					</li>
+				</ul>
+				<a href="javascript:void(0)" class="js-n1-view">View</a>
+			</li>
+			<li class="n2">
+				<img src="images/EN/m-s3-2.png" alt="">
+				<p>Trip to Europe</p>
+				<h2>$ 230.00+</h2>
+				<ul>
+					<li class="s-n1">
+						Ratings :
+						<div>
+							<img src="images/EN/m-s3-4.png">
+							<img src="images/EN/m-s3-4.png">
+							<img src="images/EN/m-s3-4.png">
+						</div>
+					</li>
+					<li class="s-n2">
+						<span>Scenic spot :</span> 
+						<div>
+							<p>Lisbon</p>
+							<p>Sevilla</p>
+							<p>Granada</p>
+							<p>Casablanca</p>
+							<p>Chefchaouen</p>
+							<p>Madrid</p>
+						</div>
+					</li>
+				</ul>
+				<a href="javascript:void(0)" class="js-n1-view">View</a>
+			</li>
+			<li class="n3">
+				<img src="images/EN/m-s3-3.jpg" alt="">
+				<p>Trip to Phnom penh</p>
+				<h2>$ 158.00+</h2>
+				<ul>
+					<li class="s-n1">
+						Ratings :
+						<div>
+							<img src="images/EN/m-s3-4.png">
+							<img src="images/EN/m-s3-4.png">
+						</div>
+					</li>
+					<li class="s-n2">
+						<span>Scenic spot :</span> 
+						<div>
+							<p>Lisbon</p>
+							<p>Sevilla</p>
+							<p>Granada</p>
+							<p>Casablanca</p>
+							<p>Chefchaouen</p>
+							<p>Madrid</p>
+						</div>
+					</li>
+				</ul>
+				<a href="javascript:void(0)" class="js-n1-view">View</a>
+			</li>
+		</ul>
+		<div class="clearfloat"></div>
+	</section>
+
+	<section class="section-4">
+		<div class="s4-content">
+			<h2>Recommended travel</h2>
+			<div class="s4-wrapper">
+				<div class="s4-slide-large">
+					<div class="s4-inner-1">
+						<a href="javascript:void(0)"><img src="images/EN/m-s4-2.jpg" alt=""></a>
+						<div>
+							<h3>Mysterious Iceland Tour111</h3>
+							<p class="p1">- By <img src="images/EN/m-s4-3.png" alt=""><span>David Fox</span></p>
+							<p class="p2">Looking at Aurora is a journey that many people dream about, and this time I'm going to take you to the mysterious Iceland, in the Arctic night sky, or on foot or out of the sea, looking for the vagaries of the gorgeous aurora. In addition, I have arranged the breathtaking northern scenery of volcanoes, polar waterfalls, Blue Lake hot springs and so on to open your ice and fire songs!</p>
+							<p class="p3">
+								<img src="images/EN/m-s4-4.png" alt="">
+								<span>Western Iceland</span>
+								<a href="javascript:void(0)"><span>View</span></a>
+							</p>
+						</div>
+					</div>
+					<div class="s4-inner-2">
+						<a href="javascript:void(0)"><img src="images/EN/m-s4-2.jpg" alt=""></a>
+						<div>
+							<h3>Mysterious Iceland Tour222</h3>
+							<p class="p1">- By <img src="images/EN/m-s4-3.png" alt=""><span>David Fox</span></p>
+							<p class="p2">Looking at Aurora is a journey that many people dream about, and this time I'm going to take you to the mysterious Iceland, in the Arctic night sky, or on foot or out of the sea, looking for the vagaries of the gorgeous aurora. In addition, I have arranged the breathtaking northern scenery of volcanoes, polar waterfalls, Blue Lake hot springs and so on to open your ice and fire songs!</p>
+							<p class="p3">
+								<img src="images/EN/m-s4-4.png" alt="">
+								<span>Western Iceland</span>
+								<a href="javascript:void(0)"><span>View</span></a>
+							</p>
+						</div>
+					</div>
+					<div class="s4-inner-3">
+						<a href="javascript:void(0)"><img src="images/EN/m-s4-2.jpg" alt=""></a>
+						<div>
+							<h3>Mysterious Iceland Tour333</h3>
+							<p class="p1">- By <img src="images/EN/m-s4-3.png" alt=""><span>David Fox</span></p>
+							<p class="p2">Looking at Aurora is a journey that many people dream about, and this time I'm going to take you to the mysterious Iceland, in the Arctic night sky, or on foot or out of the sea, looking for the vagaries of the gorgeous aurora. In addition, I have arranged the breathtaking northern scenery of volcanoes, polar waterfalls, Blue Lake hot springs and so on to open your ice and fire songs!</p>
+							<p class="p3">
+								<img src="images/EN/m-s4-4.png" alt="">
+								<span>Western Iceland</span>
+								<a href="javascript:void(0)"><span>View</span></a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<p class="s4-arrow-prev js-pre-1"><span>P<br>R<br>E<br>V<br>I<br>O<br>U<br>S</span><img src="images/EN/m-s4-5.png" alt=""></p>
+			<p class="s4-arrow-next js-nex-1"><img src="images/EN/m-s4-6.png" alt=""><span>N<br>E<br>X<br>T</span></p>
+		</div>
+	</section>
+
+	<section class="section-5">
+		<div class="travel-diary">
+			<div class="t-title">
+				<h2>Travel diary</h2>
+				<div class="t-country">
+					<span class="t-country-val">Sihanoukville</span>
+					<ul class="t-menu">
+						<li>Sihanoukville</li>
+						<!-- <li>Siem Reap</li>
+						<li>Macau</li>
+						<li>Phnom Penh</li> -->
+					</ul>
+				</div>
+				<div class="hot">
+					<a href="javascript:void(0)" class="a1">New</a>
+					/
+					<a href="javascript:void(0)" class="a2">Hot</a>
+				</div>
+			</div>
+			<ul class="t-content">
+				<li>
+					<div>
+						<h2>Happy trip to Phnom Penh</h2>
+						<img src="images/EN/m-s5-1.png">
+						<p>
+							<img src="images/EN/m-s5-local.png" class="m-s5-local">
+							<span class="s1">Phnom Penh</span>
+							<img src="images/EN/m-s5-see.png" class="m-s5-see">
+							<span class="s2">1000</span>
+						</p>
+					</div>
+					<h3><img src="images/EN/m-s5-head.png"><span>Bobby Edwards</span></h3>
+				</li>
+				<li>
+					<div>
+						<h2>Happy trip to Phnom Penh</h2>
+						<img src="images/EN/m-s5-1.png">
+						<p>
+							<img src="images/EN/m-s5-local.png" class="m-s5-local">
+							<span class="s1">Phnom Penh</span>
+							<img src="images/EN/m-s5-see.png" class="m-s5-see">
+							<span class="s2">1000</span>
+						</p>
+					</div>
+					<h3><img src="images/EN/m-s5-head.png"><span>Bobby Edwards</span></h3>
+				</li>
+				<li>
+					<div>
+						<h2>Happy trip to Phnom Penh</h2>
+						<img src="images/EN/m-s5-1.png">
+						<p>
+							<img src="images/EN/m-s5-local.png" class="m-s5-local">
+							<span class="s1">Phnom Penh</span>
+							<img src="images/EN/m-s5-see.png" class="m-s5-see">
+							<span class="s2">1000</span>
+						</p>
+					</div>
+					<h3><img src="images/EN/m-s5-head.png"><span>Bobby Edwards</span></h3>
+				</li>
+				<li>
+					<div>
+						<h2>Happy trip to Phnom Penh</h2>
+						<img src="images/EN/m-s5-1.png">
+						<p>
+							<img src="images/EN/m-s5-local.png" class="m-s5-local">
+							<span class="s1">Phnom Penh</span>
+							<img src="images/EN/m-s5-see.png" class="m-s5-see">
+							<span class="s2">1000</span>
+						</p>
+					</div>
+					<h3><img src="images/EN/m-s5-head.png"><span>Bobby Edwards</span></h3>
+				</li>
+				<li>
+					<div>
+						<h2>Happy trip to Phnom Penh</h2>
+						<img src="images/EN/m-s5-1.png">
+						<p>
+							<img src="images/EN/m-s5-local.png" class="m-s5-local">
+							<span class="s1">Phnom Penh</span>
+							<img src="images/EN/m-s5-see.png" class="m-s5-see">
+							<span class="s2">1000</span>
+						</p>
+					</div>
+					<h3><img src="images/EN/m-s5-head.png"><span>Bobby Edwards</span></h3>
+				</li>
+				<li>
+					<div>
+						<h2>Happy trip to Phnom Penh</h2>
+						<img src="images/EN/m-s5-1.png">
+						<p>
+							<img src="images/EN/m-s5-local.png" class="m-s5-local">
+							<span class="s1">Phnom Penh</span>
+							<img src="images/EN/m-s5-see.png" class="m-s5-see">
+							<span class="s2">1000</span>
+						</p>
+					</div>
+					<h3><img src="images/EN/m-s5-head.png"><span>Bobby Edwards</span></h3>
+				</li>
+			</ul>
+			<div class="clearfloat"></div>
+		</div>
+	</section>
+
+	<section class="section-6">
+		<div id="boxMap">
+		    <pre class="prev">prev</pre>
+		    <pre class="next">next</pre>
+		    <ul>
+		        <li><img src="images/EN/Africa.png" /><span>Africa</span></li>
+		        <li><img src="images/EN/Asia.png" /><span>Asia</span></li>
+		        <li><img src="images/EN/Europe.png" /><span>Europe</span></li>
+		        <li><img src="images/EN/North America.png" /><span>North America</span></li>
+		        <li><img src="images/EN/South America.png" /><span>South America</span></li>
+		        <li><img src="images/EN/Africa.png" /><span>Africa</span></li>
+		    </ul>
+		    <a href="tpls/EN/LMTravelMap.html" class="s6-view" target="_blank">View</a>
+		</div>
+		<div class="m-boxMap js-m-boxMap swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide"><img src="images/EN/Africa.png" /><span>Africa</span></div>
+				<div class="swiper-slide"><img src="images/EN/Asia.png" /><span>Asia</span></div>
+				<div class="swiper-slide"><img src="images/EN/Europe.png" /><span>Europe</span></div>
+				<div class="swiper-slide"><img src="images/EN/North America.png" /><span>North America</span></div>
+				<div class="swiper-slide"><img src="images/EN/South America.png" /><span>South America</span></div>
+			</div>
+		</div>
+	</section>
+
+	<!-- 页脚 -->
+	<footer class="lm-footer">
+		<div class="footerBg">
+			<div class="HelpfulInformation">
+				<p>Helpful Information</p>
+			</div>
+			<div class="contactUs">
+				<div class="nth-child1"><img src="images/EN/email.png"><span>lm-ec@lanmeiairlines.com</span></div>
+				<div class="nth-child2">
+					<span>FOLLOW</span>
+					<a href="https://www.facebook.com/lanmeiairlines/"><img src="images/EN/contact1.png"></a>
+					<a href="#"><img src="images/EN/contact2.png"></a>
+					<a href="#"><img src="images/EN/contact3.png"></a>
+					<a href="#"><img src="images/EN/contact4.png"></a>
+					<a href="#"><img src="images/EN/contact5.png"></a>
+					<a href="http://weibo.com/lanmeiair"><img src="images/EN/contact6.png"></a>
+					<a href="#"><img src="images/EN/contact7.png"></a>
+				</div>
+			</div>
+			<div class="location">
+				<img src="images/EN/location.png"><a href="https://www.google.com.kh/maps/place/Lanmei+Airlines/@11.5637415,104.8830989,17z/data=!3m1!4b1!4m5!3m4!1s0x310951a3c5cdaf97:0x77359b117b2ff068!8m2!3d11.5637363!4d104.8852876" target="_Blank">No.575 D&E, Russian Federation Boulevard, Phnom Penh, Cambodia</a>
+			</div>
+			<div class="LanmeiAirlinesBerhad">
+				<a href="../index.html"><img src="images/EN/lanmeiFooterLogo.png"></a>
+				<div>
+					<p class="p1">Terms of Use | Privacy Policy | Cookies</p>
+					<p class="p2">© Copyright 2017 Lanmei Airlines. All Rights Reserved. ICP: Guangdong Province <a href="http://www.miitbeian.gov.cn" target="_Blank">ICP-17005494-1</a></p>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<!-- 回到顶部 -->
+	<div class="lm-toTop">
+		<div class="QRcode">
+			<p>Official Account</p>
+			<img src="images/EN/QR-code-s.png" class="small-code">
+			<img src="images/EN/QR-code-b.png" class="big-code">
+		</div>
+		<div class="top">
+			<img src="images/EN/ToTop-icon-active.png" class="img02">
+			<p>UP</p>
+		</div>
+	</div>
+
+	<!-- 第三方库-->
+	<script type="text/javascript" src="libs/jQuery/jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="libs/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="libs/layer/layer.js"></script>
+	<script type="text/javascript" src="libs/jqueryPage.js"></script>
+	<script type="text/javascript" src="libs/mobile-libs/fastclick/fastclick.js"></script>
+	<script type="text/javascript" src="libs/swiper/lm-swiper.min.js"></script>
+	<script type="text/javascript" src="libs/slider/LM-carousel.js"></script>
+	<script type="text/javascript" src="libs/travelMap/travel-map.js"></script>
+	<!-- 公共JS -->
+	<script type="text/javascript" src="common/EN/js/LMTravel-common.js"></script>
+	<!-- 业务代码 -->
+	<script type="text/javascript" src="js/EN/LMTravel.js"></script>
+</body>
+</html>

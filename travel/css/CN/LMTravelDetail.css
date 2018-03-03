@@ -1,0 +1,317 @@
+@charset "utf-8";
+/* 定义变量 */
+.lm-container {
+  width: 940px;
+  min-height: 600px;
+  margin: 0 auto;
+}
+.lm-container .travel-diary {
+  margin-top: 30px;
+}
+.lm-container .travel-diary .t-title {
+  height: 70px;
+  border-bottom: 1px solid #ccc;
+}
+.lm-container .travel-diary .t-title > h2 {
+  float: left;
+  font-size: 24px;
+  height: 70px;
+  line-height: 70px;
+  color: #1f2c5c;
+  margin-right: 30px;
+}
+.lm-container .travel-diary .t-title .t-country {
+  float: left;
+  position: relative;
+  height: 70px;
+  line-height: 70px;
+}
+.lm-container .travel-diary .t-title .t-country > span {
+  font-size: 18px;
+  color: #4aa374;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.lm-container .travel-diary .t-title .t-country .t-menu {
+  display: none;
+  position: absolute;
+  top: 50px;
+  width: 130px;
+  padding: 10px;
+  background: #fff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+.lm-container .travel-diary .t-title .t-country .t-menu > li {
+  font-size: 14px;
+  color: #1f2c5c;
+  line-height: 30px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.lm-container .travel-diary .t-title .t-country .t-menu > li:hover {
+  color: #8ec060;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.lm-container .travel-diary .t-title .hot {
+  float: right;
+  height: 70px;
+  line-height: 70px;
+  color: #1f2c5c;
+}
+.lm-container .travel-diary .t-title .hot a {
+  font-size: 18px;
+}
+.lm-container .travel-diary .t-title .hot .a1 {
+  color: #8ec060;
+  margin-right: 20px;
+}
+.lm-container .travel-diary .t-title .hot .a2 {
+  color: #ccc;
+  margin-left: 20px;
+}
+.lm-container .travel-diary .t-content {
+  padding: 20px 10px;
+  overflow: hidden;
+}
+.lm-container .travel-diary .t-content .t-head {
+  float: left;
+  width: 80px;
+  margin-right: 20px;
+}
+.lm-container .travel-diary .t-content .t-head img {
+  width: 80px;
+}
+.lm-container .travel-diary .t-content .t-main {
+  float: left;
+  width: 820px;
+}
+.lm-container .travel-diary .t-content .t-main > h2 {
+  font-size: 20px;
+  color: #1f2c5c;
+  margin-bottom: 18px;
+}
+.lm-container .travel-diary .t-content .t-main .t-time {
+  margin-bottom: 24px;
+}
+.lm-container .travel-diary .t-content .t-main .t-time > a {
+  color: #4aa374;
+  font-size: 14px;
+  margin-right: 20px;
+}
+.lm-container .travel-diary .t-content .t-main .t-time > span {
+  font-size: 14px;
+  color: #ccc;
+}
+.lm-container .travel-diary .t-content .t-main .t-time > p {
+  float: right;
+}
+.lm-container .travel-diary .t-content .t-main .t-time > p span {
+  font-size: 14px;
+  color: #ccc;
+  margin-right: 10px;
+}
+.lm-container .travel-diary .t-content .t-main .t-money {
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.lm-container .travel-diary .t-content .t-main .t-money li {
+  float: left;
+  height: 26px;
+  font-size: 14px;
+  padding: 6px 10px;
+  margin-right: 10px;
+  color: #fff;
+}
+.lm-container .travel-diary .t-content .t-main .t-money .n1 {
+  background-image: linear-gradient(-90deg, #c1e199 0%, #8ec060 100%);
+}
+.lm-container .travel-diary .t-content .t-main .t-money .n2 {
+  background-image: linear-gradient(-90deg, #81d0ac 2%, #4aa374 100%);
+}
+.lm-container .travel-diary .t-content .t-main .t-money .n3 {
+  background-image: linear-gradient(-90deg, #00c3c0 0%, #00908c 100%);
+}
+.lm-container .travel-diary .t-content .t-main .t-money .n4 {
+  background-image: linear-gradient(-90deg, #00a6c6 0%, #006d94 100%);
+}
+.lm-container .travel-diary .t-content .t-main .t-money .n5 {
+  background-image: linear-gradient(-90deg, #0076c3 0%, #004190 100%);
+}
+.lm-container .travel-diary .t-content .t-main .t-imgs {
+  overflow: hidden;
+}
+.lm-container .travel-diary .t-content .t-main .t-imgs > li {
+  float: left;
+  width: 198px;
+  height: 136px;
+  margin-right: 8px;
+}
+.lm-container .travel-diary .t-content .t-main .t-imgs > li img {
+  width: 100%;
+  height: 100%;
+}
+.lm-container .travel-diary .t-content .t-main .t-imgs .n4 {
+  margin-right: 0;
+}
+.lm-container .t-comment-page {
+  padding: 60px 100px 100px;
+  font-size: 18px;
+  overflow: hidden;
+  text-align: center;
+  clear: both;
+}
+.lm-container .t-comment-page .prevPage {
+  float: left;
+  margin: 0 15px;
+}
+.lm-container .t-comment-page .nextPage {
+  float: right;
+  margin: 0 15px;
+}
+.lm-container .t-comment-page .current {
+  color: #8ec060;
+  margin: 0 15px;
+}
+.lm-container .t-comment-page > a {
+  margin: 0 15px;
+  font-size: 18px;
+  color: #1f2c5c;
+}
+.lm-container .t-comment-page > a:hover {
+  color: #8ec060;
+}
+.lm-container .t-comment-page .disabled {
+  color: #ccc;
+  margin: 0 15px;
+}
+@media screen and (max-width: 992px) {
+  .hiSlider-wrap {
+    margin-top: 0.4rem;
+  }
+  .hiSlider-wrap .hiSlider-pages {
+    bottom: 0.04rem;
+    margin-left: -0.31rem;
+  }
+  .hiSlider-wrap .hiSlider-pages a {
+    border-width: 0.01rem;
+    width: 0.2rem;
+    height: 0.02rem;
+    margin: 0 0.01rem;
+    background: #1f2c5c;
+  }
+  .hiSlider-wrap .hiSlider-pages .active {
+    background: #8ec060;
+  }
+  .lm-container {
+    width: 100%;
+    padding: 0 0.15rem;
+  }
+  .lm-container .travel-diary {
+    margin-top: 0.1rem;
+  }
+  .lm-container .travel-diary .t-title {
+    height: 0.3rem;
+  }
+  .lm-container .travel-diary .t-title > h2 {
+    height: 0.3rem;
+    line-height: 0.3rem;
+    font-size: 0.15rem;
+    margin-right: 0.12rem;
+  }
+  .lm-container .travel-diary .t-title .t-country {
+    height: 0.3rem;
+    line-height: 0.3rem;
+  }
+  .lm-container .travel-diary .t-title .t-country > span {
+    font-size: 0.12rem;
+  }
+  .lm-container .travel-diary .t-title .t-country .t-menu {
+    top: 0.22rem;
+  }
+  .lm-container .travel-diary .t-title .t-country .t-menu > li {
+    font-size: 0.12rem;
+    line-height: 0.22rem;
+  }
+  .lm-container .travel-diary .t-title .hot {
+    height: 0.3rem;
+    line-height: 0.3rem;
+  }
+  .lm-container .travel-diary .t-title .hot a {
+    font-size: 0.12rem;
+  }
+  .lm-container .travel-diary .t-title .hot .a1 {
+    margin-right: 0.1rem;
+  }
+  .lm-container .travel-diary .t-title .hot .a2 {
+    margin-left: 0.1rem;
+  }
+  .lm-container .travel-diary .t-content {
+    padding: 0.1rem 0.05rem;
+  }
+  .lm-container .travel-diary .t-content .t-head {
+    width: 100%;
+    margin-right: 0;
+    text-align: center;
+  }
+  .lm-container .travel-diary .t-content .t-head img {
+    width: 0.4rem;
+  }
+  .lm-container .travel-diary .t-content .t-main {
+    width: 100%;
+  }
+  .lm-container .travel-diary .t-content .t-main > h2 {
+    font-size: 0.13rem;
+    margin-bottom: 0.1rem;
+  }
+  .lm-container .travel-diary .t-content .t-main .t-time {
+    margin-bottom: 0.1rem;
+  }
+  .lm-container .travel-diary .t-content .t-main .t-time > a,
+  .lm-container .travel-diary .t-content .t-main .t-time > span,
+  .lm-container .travel-diary .t-content .t-main .t-time > p span {
+    font-size: 0.12rem;
+  }
+  .lm-container .travel-diary .t-content .t-main .t-money {
+    margin-bottom: 0.1rem;
+  }
+  .lm-container .travel-diary .t-content .t-main .t-money > li {
+    height: 0.26rem;
+    line-height: 0.26rem;
+    font-size: 0.12rem;
+    padding: 0 0.1rem;
+    margin-bottom: 0.05rem;
+    margin-right: 0.05rem;
+  }
+  .lm-container .travel-diary .t-content .t-main .t-imgs > li {
+    width: 49%;
+    margin-right: 2%;
+    margin-bottom: 2%;
+  }
+  .lm-container .travel-diary .t-content .t-main .t-imgs .n2,
+  .lm-container .travel-diary .t-content .t-main .t-imgs .n4 {
+    margin-right: 0;
+  }
+  .lm-container .t-comment-page {
+    width: 100%;
+    padding: 0.1rem 0.05rem;
+    font-size: 0.12rem;
+    margin-bottom: 0.2rem;
+  }
+  .lm-container .t-comment-page > a,
+  .lm-container .t-comment-page .disabled,
+  .lm-container .t-comment-page .current {
+    font-size: 0.12rem;
+    margin: 0 0.08rem;
+  }
+  .lm-container .t-comment-page .prevPage,
+  .lm-container .t-comment-page .nextPage {
+    margin: 0;
+  }
+}
+@media screen and (max-width: 767px) {
+  .lm-travel-detail-con {
+    -webkit-line-clamp: 3 !important;
+  }
+}

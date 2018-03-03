@@ -1,0 +1,60 @@
+/* 定义颜色变量 */
+.lm-section {
+  width: 940px;
+  min-height: 473px;
+  margin: 0 auto;
+}
+.lm-section .lm-title h1 {
+  font-size: 36px;
+  color: #1f2c5c;
+}
+.lm-section .lm-content {
+  margin: 30px 0;
+}
+.lm-section .lm-content h2 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #1f2c5c;
+  margin-bottom: 10px;
+  line-height: 28px;
+}
+.lm-section .lm-content p {
+  font-size: 14px;
+  color: #808080;
+  margin-bottom: 20px;
+  line-height: 26px;
+}
+.lm-section .lm-content a {
+  color: #4aa374;
+}
+.lm-section .lm-content span {
+  color: #1f2c5c;
+  font-weight: bold;
+}
+@media screen and (max-width: 992px) {
+  body .lm-section {
+    width: 100%;
+    padding: 0.15rem;
+    margin-top: 0.4rem;
+  }
+  body .lm-section > .title {
+    display: none;
+  }
+  body .lm-section > .check-steps {
+    margin-top: 0;
+  }
+  body .lm-section > .content {
+    margin-top: 0;
+  }
+  .lm-section {
+    width: 100%;
+    padding: 0.15rem;
+    margin-top: 0.4rem;
+  }
+  .lm-section .lm-title {
+    display: none;
+  }
+  .lm-section .lm-content {
+    margin-top: 0;
+  }
+}

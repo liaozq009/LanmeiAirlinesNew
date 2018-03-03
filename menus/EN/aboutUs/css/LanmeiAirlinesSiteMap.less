@@ -1,0 +1,152 @@
+@charset "utf-8";
+
+
+/* 定义变量 */
+@url:"../images/";
+/* 定义颜色变量 */
+@green:#8ec060;
+@purple:#1f2c5c;
+@gray:#808080;
+@red:#d0011b;
+@link:#4aa374;
+
+body{
+	background:#f2f2f2;
+}
+
+.siteMapBanner{
+	position: absolute;
+	top: 98px;
+	z-index: -1;
+	width: 100%;
+	height: 200px;
+	background: url('@{url}site-map-bg.png') center no-repeat;
+	h2{
+		width: 100%;
+		height: 200px;
+		text-align: center;
+		line-height: 230px;
+		background-image:linear-gradient(-45deg, rgba(142,192,96,0.7) 0%, rgba(31,44,92,0.7) 100%);
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2212C5C,endColorstr=#B2212C5C);
+		font-weight:bold;
+		font-size:60px;
+		color:#ffffff;
+		text-shadow:0 2px 20px rgba(0,0,0,0.50);
+	}
+}
+
+.siteMapWrapper{
+	width: 960px;
+	min-height: 300px;
+	margin:120px auto 56px;
+	padding:0 10px;
+	.site-map-box{
+		background:#fff;
+		border-radius:10px;
+		padding:0 20px;
+		margin-bottom: 20px;
+		.site-map-title{
+			height: 60px;
+			padding:0 10px;
+			cursor:pointer;
+			h2{
+				float: left;
+				height: 60px;
+				line-height: 60px;
+				font-size: 20px;
+				color: @purple;
+			}
+			img{
+				float: right;
+				margin-top: 28px;
+			}
+			.img01{
+				display: none;
+				margin-top: 20px;
+			}
+		}
+		.site-map-content{
+			overflow:hidden;
+			padding-bottom: 30px;
+			border-top:1px solid #ccc;
+			>li{
+				float: left;
+				width: 20%;
+				height: 160px;
+				margin-top:20px;
+				padding-left: 10px;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				>a{
+					display: inline-block;
+					width: 160px;
+					font-size: 14px;
+					color: @purple;
+					margin-bottom: 6px;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+				}
+				>ul{
+					li{
+						height: 26px;
+						overflow: hidden;
+						text-overflow: ellipsis;
+						white-space: nowrap;
+						a{
+							display: inline-block;
+							width: 160px;
+							color: @gray;
+							font-size: 14px;
+							overflow: hidden;
+							text-overflow: ellipsis;
+							white-space: nowrap;
+							-webkit-transition:all 0.3s;
+							transition:all 0.3s;
+							&:hover{
+								-webkit-transition:all 0.3s;
+								transition:all 0.3s;
+								color: @green;
+							}
+						}
+					}
+				}
+			}
+		}
+		.site-about-us,.site-travel,.site-shopping{
+			li{height: 30px;}
+		}
+	}
+}
+
+/* 配置屏幕 */
+@media screen and (max-width: 992px) {
+	.siteMapBanner{
+		position: static;
+		height: 1.3rem;
+		margin-top: 0.4rem;
+		h2{
+			height: 1.3rem;
+			line-height: 1.3rem;
+			font-size: 0.3rem;
+		}
+	}
+	.siteMapWrapper{
+		width: 100%;
+		padding:15px;
+		margin-top: 0.1rem;
+		.site-map-box{
+			.site-map-title{
+				
+			}
+			.site-map-content{
+				>li{width: 25%;}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.siteMapWrapper .site-map-box .site-map-content > li{width: 50%;}
+}

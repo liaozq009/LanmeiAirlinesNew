@@ -1,0 +1,524 @@
+/* 定义变量 */
+/* Bootstrap修改样式 */
+.carousel-control {
+  width: 30px;
+  height: 45px;
+  top: 9px;
+}
+.carousel-control.PreviousArrow {
+  left: 6px;
+  z-index: 999;
+}
+.carousel-control.NextArrow {
+  right: 20px;
+  left: auto;
+  z-index: 999;
+}
+.carousel-indicators {
+  bottom: 16px;
+  margin-bottom: 0;
+}
+.carousel-indicators .active {
+  width: 30px;
+  height: 14px;
+  background: #8EC060;
+  border-color: #8EC060;
+}
+.carousel-indicators li {
+  margin: 1px 12px;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16);
+}
+label {
+  margin-bottom: 0;
+  font-weight: 100;
+}
+.arrowBox {
+  width: 270px;
+  height: 60px;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  margin-left: -135px;
+}
+/* 登录模态框 */
+.modal {
+  z-index: 99999;
+  background: rgba(0, 0, 0, 0.5);
+}
+.modal .modal-dialog {
+  width: 400px;
+}
+.modal .modal-dialog .modal-content {
+  border-radius: 10px;
+}
+.modal .modal-dialog .modal-content .modal-header {
+  background: url('../../images/EN/login-close.png') no-repeat top right;
+  border-bottom: none;
+}
+.modal .modal-dialog .modal-content .modal-header .close {
+  position: relative;
+  color: #fff;
+  opacity: 1;
+  font-size: 18px;
+  font-weight: 100;
+  text-shadow: none;
+  top: -3px;
+  right: 30px;
+  outline: none;
+  transition: all 0.6s;
+  -webkit-transition: all 0.6s;
+}
+.modal .modal-dialog .modal-content .modal-header .close:hover {
+  color: #fff;
+  transition: all 0.6s;
+  -webkit-transition: all 0.6s;
+}
+.modal .modal-dialog .modal-content .modal-header .close span {
+  margin-left: 10px;
+  font-size: 30px;
+  position: absolute;
+  top: -8px;
+}
+.modal .modal-dialog .modal-content .modal-body {
+  padding: 0;
+}
+.modal .modal-dialog .modal-content .modal-body .loginTitle {
+  width: 100%;
+  text-align: center;
+  color: #1f2c5c;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 24px;
+}
+.modal .modal-dialog .modal-content .modal-body .verifyInfo {
+  visibility: hidden;
+  display: inline-block;
+  width: 100%;
+  height: 12px;
+  line-height: 12px;
+  text-align: center;
+  color: #d0011b;
+  margin-top: 8px;
+}
+.modal .modal-dialog .modal-content .modal-body .visible {
+  visibility: visible;
+}
+.modal .modal-dialog .modal-content .modal-body form {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+.modal .modal-dialog .modal-content .modal-body form .form-group {
+  position: relative;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+.modal .modal-dialog .modal-content .modal-body form input {
+  width: 340px;
+  height: 50px;
+  font-size: 14px;
+  color: #1f2c5c;
+  font-weight: bold;
+  padding: 0 20px;
+  margin: 0 auto;
+  background: #f2f2f2;
+  border: none;
+  border-radius: 2px;
+}
+.modal .modal-dialog .modal-content .modal-body form input:focus {
+  border: 1px solid #8ec060;
+}
+.modal .modal-dialog .modal-content .modal-body form .on_changes {
+  width: 340px;
+  position: absolute;
+  top: 49px;
+  left: 29px;
+  z-index: 99;
+  list-style: none;
+  background: #FFF;
+  border: 1px solid #8ec060;
+  display: none;
+  padding: 10px 0;
+}
+.modal .modal-dialog .modal-content .modal-body form .on_changes li {
+  margin: 4px 0;
+  padding: 2px 0;
+  cursor: pointer;
+  color: #808080;
+}
+.modal .modal-dialog .modal-content .modal-body form .on_changes li.active {
+  background: #1f2c5c;
+  color: #fff;
+}
+.modal .modal-dialog .modal-content .modal-body form .form-control:focus {
+  box-shadow: none;
+  border-color: #8ec060 !important;
+}
+.modal .modal-dialog .modal-content .modal-body form #LanmeiPassword {
+  margin-top: 30px;
+}
+.modal .modal-dialog .modal-content .modal-body form #f-LanmeiPassword {
+  margin-top: 30px;
+  width: 210px;
+  display: inline-block;
+}
+.modal .modal-dialog .modal-content .modal-body form #f-getPasswordBtn {
+  width: 120px;
+  height: 50px;
+  background: #1f2c5c;
+  color: #fff;
+  font-size: 14px;
+  border: none;
+  margin-left: 10px;
+}
+.modal .modal-dialog .modal-content .modal-body form .getPwActive {
+  background: #1f2c5c;
+}
+.modal .modal-dialog .modal-content .modal-body form .agree {
+  margin-top: 10px;
+  padding: 0 30px;
+  overflow: hidden;
+}
+.modal .modal-dialog .modal-content .modal-body form .agree span {
+  float: left;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #cccccc;
+  border-radius: 2px;
+  margin-right: 10px;
+  margin-top: 4px;
+  cursor: pointer;
+}
+.modal .modal-dialog .modal-content .modal-body form .agree .active {
+  background: #8ec060;
+}
+.modal .modal-dialog .modal-content .modal-body form .agree .active + p {
+  color: #1f2c5c;
+}
+.modal .modal-dialog .modal-content .modal-body form .agree p {
+  float: left;
+  display: inline-block;
+  text-align: left;
+  color: #808080;
+  line-height: 25px;
+}
+.modal .modal-dialog .modal-content .modal-body form .agree a {
+  float: right;
+  color: #808080;
+  transition: all 0.6s;
+  -webkit-transition: all 0.6s;
+}
+.modal .modal-dialog .modal-content .modal-body form .agree a:hover {
+  color: #4aa374;
+  transition: all 0.6s;
+  -webkit-transition: all 0.6s;
+}
+.modal .modal-dialog .modal-content .modal-body form button {
+  width: 340px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0;
+  border-radius: 2px;
+}
+.modal .modal-dialog .modal-content .modal-body form .userLoginBtn,
+.modal .modal-dialog .modal-content .modal-body form .f-userLoginBtn {
+  margin-top: 30px;
+  background: #8ec060;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  transition: all 0.6s;
+  -webkit-transition: all 0.6s;
+}
+.modal .modal-dialog .modal-content .modal-body form .userLoginBtn:hover,
+.modal .modal-dialog .modal-content .modal-body form .f-userLoginBtn:hover {
+  transition: all 0.6s;
+  -webkit-transition: all 0.6s;
+  background: #1f2c5c;
+  color: #fff;
+}
+.modal .modal-dialog .modal-content .modal-body form .loginOther {
+  position: relative;
+  width: 340px;
+  margin: 0 auto;
+  margin-top: 36px;
+  border-top: 2px solid #d8d8d8;
+}
+.modal .modal-dialog .modal-content .modal-body form .loginOther > p {
+  position: absolute;
+  left: 50%;
+  width: 70px;
+  text-align: center;
+  margin-left: -30px;
+  top: -8px;
+  background: #fff;
+  color: #cccccc;
+}
+.modal .modal-dialog .modal-content .modal-body form .loginOther .Facebook {
+  margin-top: 34px;
+  background: #f2f2f2;
+  font-size: 14px;
+  font-weight: bold;
+  color: #cccccc;
+}
+.modal .modal-dialog .modal-content .modal-body form .loginOther .Facebook:hover {
+  background-image: linear-gradient(-90deg, #6c8fca 0%, #3a569a 100%);
+  color: #fff;
+}
+.modal .modal-dialog .modal-content .modal-body form .loginOther .Wechat {
+  margin-top: 20px;
+  background: #f2f2f2;
+  font-size: 14px;
+  font-weight: bold;
+  color: #cccccc;
+}
+.modal .modal-dialog .modal-content .modal-body form .loginOther .Wechat:hover {
+  background-image: linear-gradient(-90deg, #12d421 0%, #00b80d 100%);
+  color: #fff;
+}
+.modal .modal-dialog .modal-content .modal-footer {
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+  color: #cccccc;
+  border-top: none;
+  padding: 0 30px;
+  padding-bottom: 30px;
+}
+.modal .modal-dialog .modal-content .modal-footer a {
+  color: #8ec060;
+  transition: all 0.6s;
+  -webkit-transition: all 0.6s;
+}
+.modal .modal-dialog .modal-content .modal-footer a:hover {
+  color: #1f2c5c;
+  transition: all 0.6s;
+  -webkit-transition: all 0.6s;
+}
+.modal .modal-dialog .modal-content .modal-footer .a_login {
+  float: left;
+  font-size: 14px;
+}
+.modal .modal-dialog .modal-content .modal-footer .a_registered {
+  float: right;
+  font-size: 14px;
+  color: #4aa374;
+}
+/* 注册模态框 */
+.registerWrapper {
+  width: 100%;
+  margin: 50px auto;
+  text-align: center;
+}
+.registerWrapper > h2 {
+  font-weight: bold;
+  font-size: 24px;
+  color: #1f2c5c;
+}
+.registerWrapper > p {
+  font-size: 14px;
+  color: #808080;
+  margin-top: 10px;
+}
+.registerWrapper > p a {
+  color: #8ec060;
+  transition: all 0.6s;
+  -webkit-transition: all 0.6s;
+}
+.registerWrapper > p a:hover {
+  color: #1f2c5c;
+  transition: all 0.6s;
+  -webkit-transition: all 0.6s;
+}
+.registerWrapper .registerContent {
+  margin-top: 20px;
+}
+.registerWrapper .registerContent .registerInfo,
+.registerWrapper .registerContent .registerPassword,
+.registerWrapper .registerContent .repeatPassword {
+  position: relative;
+}
+.registerWrapper .registerContent .registerInfo img,
+.registerWrapper .registerContent .registerPassword img,
+.registerWrapper .registerContent .repeatPassword img {
+  position: absolute;
+  left: 50px;
+  top: 18px;
+}
+.registerWrapper .registerContent .registerInfo input,
+.registerWrapper .registerContent .registerPassword input,
+.registerWrapper .registerContent .repeatPassword input {
+  font-size: 14px;
+  color: #808080;
+  border: 1px solid #cccccc;
+  border-radius: 2px;
+  width: 338px;
+  padding-left: 60px !important;
+  padding-right: 10px !important;
+}
+.registerWrapper .registerContent .registerInfo input:focus,
+.registerWrapper .registerContent .registerPassword input:focus,
+.registerWrapper .registerContent .repeatPassword input:focus {
+  border-color: #8ec060;
+}
+.registerWrapper .registerContent .registerInfo p,
+.registerWrapper .registerContent .registerPassword p,
+.registerWrapper .registerContent .repeatPassword p {
+  color: #d0011b;
+  text-align: left;
+  padding: 8px 10px 10px 29px;
+  visibility: hidden;
+}
+.registerWrapper .registerContent .registerInfo .visible,
+.registerWrapper .registerContent .registerPassword .visible,
+.registerWrapper .registerContent .repeatPassword .visible {
+  visibility: visible;
+}
+.registerWrapper .registerContent .registerInfo .on_changes {
+  width: 338px;
+  position: absolute;
+  top: 40px;
+  left: 1px;
+  z-index: 99;
+  list-style: none;
+  background: #FFF;
+  border: 1px solid #8ec060;
+  display: none;
+  padding: 10px 0;
+}
+.registerWrapper .registerContent .registerInfo .on_changes li {
+  margin: 4px 0;
+  padding: 2px 0;
+  cursor: pointer;
+  color: #808080;
+}
+.registerWrapper .registerContent .registerInfo .on_changes li.active {
+  background: #1f2c5c;
+  color: #fff;
+}
+.registerWrapper .registerContent .registerPassword p {
+  color: #ccc;
+}
+.registerWrapper .registerContent .registerPassword p span {
+  margin-left: 5px;
+}
+.registerWrapper .registerContent .registerPassword p i {
+  display: inline-block;
+  width: 30px;
+  height: 4px;
+  margin-right: 4px;
+}
+.registerWrapper .registerContent .registerPassword p .i1 {
+  background: #1f2c5c;
+}
+.registerWrapper .registerContent .registerPassword p .i2 {
+  background: #004190;
+}
+.registerWrapper .registerContent .registerPassword p .i3 {
+  background: #006d94;
+}
+.registerWrapper .registerContent .registerPassword p .i4 {
+  background: #00908c;
+}
+.registerWrapper .registerContent .registerPassword p .i5 {
+  background: #4aa374;
+}
+.registerWrapper .registerContent .registerPassword p .i6 {
+  background: #8ec060;
+}
+.registerWrapper .registerContent .repeatPassword span {
+  display: inline-block;
+  font-size: 14px;
+  color: #808080;
+  padding: 0;
+  text-align: left;
+  display: none;
+}
+.registerWrapper .registerContent .agree {
+  margin-top: 0 !important;
+  margin-bottom: 10px;
+  overflow: hidden;
+  padding: 0 0 0 29px!important;
+}
+.registerWrapper .registerContent .agree span {
+  float: left;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #cccccc;
+  border-radius: 2px;
+  margin-right: 10px;
+  margin-top: 4px;
+  cursor: pointer;
+}
+.registerWrapper .registerContent .agree .agreeConditions {
+  background: #8ec060;
+}
+.registerWrapper .registerContent .agree p {
+  float: left;
+  width: 314px;
+  display: inline-block;
+  font-size: 14px;
+  text-align: left;
+  color: #808080;
+  line-height: 25px;
+}
+.registerWrapper .registerContent .agree p a {
+  float: none !important;
+  font-size: 14px;
+  color: #4aa374 !important;
+  transition: all 0.6s;
+  -webkit-transition: all 0.6s;
+}
+.registerWrapper .registerContent .agree p a:hover {
+  color: #1f2c5c !important;
+  transition: all 0.6s;
+  -webkit-transition: all 0.6s;
+}
+.registerWrapper .registerContent .registerBtn button {
+  border: none;
+  outline: none;
+  background: #8ec060;
+  border-radius: 2px;
+  width: 340px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  transition: all 0.6s;
+  -webkit-transition: all 0.6s;
+}
+.registerWrapper .registerContent .registerBtn button:hover {
+  background: #1f2c5c;
+  transition: all 0.6s;
+  -webkit-transition: all 0.6s;
+}
+/* layer弹出框修改样式 */
+body .layui-layer-title {
+  color: #fff;
+  background: #8ec060;
+}
+body .layui-layer-setwin .layui-layer-close1 {
+  background-position: -187px -40px;
+}
+body .layui-layer-setwin a {
+  width: 15px;
+  height: 15px;
+}
+body .layui-layer-btn .layui-layer-btn0 {
+  border-color: #8ec060;
+  background-color: #8ec060;
+}
+body .layui-layer-page .layui-layer-content {
+  padding: 20px;
+  line-height: 24px;
+  font-size: 20px;
+  text-align: center;
+}
+body .layui-layer-page {
+  min-width: 300px !important;
+  max-width: 500px !important;
+}

@@ -1,0 +1,84 @@
+@charset "utf-8";
+.section-6{
+	margin-bottom: 160px;
+}
+#boxMap{position:relative;height:292px;margin:0 auto;}
+#boxMap ul{position:relative;width:880px;height:292px;margin:0 auto;}
+#boxMap li{position:absolute;list-style:none;background:#fff;width:0;height:0;top:146px;left:377px;z-index:0;cursor:pointer;border-radius:3px;text-align: center;}
+#boxMap li:nth-child(1){overflow: hidden;}
+#boxMap li img{width:100%;height:88%;vertical-align:top;}
+#boxMap li span{
+	position: relative;
+	top: 10px;
+	display: inline-block;
+	width: 100%;
+	font-size:20px;
+	background: -webkit-linear-gradient(135deg, #81E5FE 0%, #1639AE 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+// #boxMap .prev, #boxMap .next{position:absolute;top:50%;width:39px;height:80px;margin-top:-40px;overflow:hidden;text-indent:-999px;cursor:pointer;background:url(../images/btn.png) no-repeat;}
+#boxMap .prev, #boxMap .next{display:none}
+#boxMap .next{right:-60px;background-position:-39px 0;}
+#boxMap .s6-view{
+	display: block;
+	width: 150px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	font-size: 20px;
+	font-weight: bold;
+	color: #fff;
+	margin: 0 auto;
+	margin-top: 50px;
+	background: linear-gradient(135deg, #81E5FE 0%, #1639AE 100%);
+	border-radius: 4px;
+	transition: all .6s;
+	-webkit-transition: all .6s;
+}
+#boxMap .s6-view:hover{
+	box-shadow: 0 0 50px 0 rgba(170, 199, 249, 0.5);
+	transition: all .6s;
+	-webkit-transition: all .6s;
+}
+
+.m-boxMap .swiper-slide{
+	text-align: center;
+	width: 1.6rem !important;
+}
+.m-boxMap .swiper-slide span{
+	display: block;
+	font-weight: bold;
+	background: linear-gradient(135deg, #81E5FE 0%, #1639AE 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+.m-boxMap .swiper-slide img{
+	margin-bottom: 10px;
+}
+
+.m-boxMap{
+	display: none;
+}
+
+@media screen and (min-width: 992px) {
+	.m-boxMap{display: none;}
+	#boxMap{
+		display:block;
+	}
+}
+
+@media screen and (max-width: 992px) {
+	.m-boxMap{
+		display: block;
+	}
+	#boxMap{
+		display: none;
+	}
+	.section-6 {
+		margin-bottom: 30px;
+	}
+}
+@media screen and (max-width: 767px) {
+	
+}

@@ -1,0 +1,1814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="Cache-Control" content="no-transform">
+	<meta http-equiv="Cache-Control" content="no-siteapp" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<!-- uc强制竖屏 -->
+	<meta name="screen-orientation" content="portrait">
+	<!-- QQ强制竖屏 -->
+	<meta name="x5-orientation" content="portrait">
+
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+	<meta name="description" content="澜湄航空,澜湄官网, 独特,柬埔寨,预订航班,东盟六国,一带一路">
+	<meta name="keywords" content="澜湄航空,官网,六国,柬埔寨,机票预订,lanmei,LQ,便宜机票,澜湄 A320,预订机票">
+	<meta name="baidu-site-verification" content="wL5we2b5k5" />
+	<title>独特的澜湄航空</title>
+
+	<!-- 引入图标 -->
+	<link rel="icon" href="images/CN/lanmeiLogo.ico">
+	<link rel="stylesheet" type="text/css" href="libs/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="libs/dataRange/lanmei-calendar.css">
+	<link rel="stylesheet" type="text/css" href="libs/slider/lm-hiSlider.css">
+	<link rel="stylesheet" type="text/css" href="libs/carousel/carousel.css">
+	<link rel="stylesheet" type="text/css" href="libs/mobile-libs/swiper/lm-swiper.css">
+	<link rel="stylesheet" type="text/css" href="libs/mobile-libs/city/lm-cityPicker.css">
+	<link rel="stylesheet" type="text/css" href="libs/mobile-libs/date/lm-dateRange-zh.css">
+	<link rel="stylesheet" type="text/css" href="libs/mobile-libs/mobileSelect/mobileSelect.css">
+	<link rel="stylesheet" type="text/css" href="common/CN/fonts/lm-iconfont.css">
+	<link rel="stylesheet" type="text/css" href="common/CN/css/lm-animation.css">
+	<link rel="stylesheet" type="text/css" href="libsEdit/css/lanmeiLibsEdit.css">
+	<link rel="stylesheet" type="text/css" href="common/CN/css/Lanmei-common.css?rev=20170817">
+	<link rel="stylesheet" type="text/css" href="css/CN/LanmeiAirlines.css?rev=20170817">
+
+	<!--[if lt IE 9]>
+	<script src="libs/bootstrap/js/html5shiv.min.js"></script>
+	<script src="libs/bootstrap/js/respond.min.js"></script>
+<![endif]-->
+	<!--[if IE 8]>
+	<style>
+	    .leftAside .listSelectBox,.leftAside .listSelect{
+			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#C81f2c5c',endColorstr='#C81f2c5c');
+	    }
+	</style>
+<![endif]-->
+
+<script type="text/javascript">
+
+	/* 小于ie8的版本跳转到浏览器版本过低下载新浏览器页面 */
+	var browser=navigator.appName; 
+	var b_version=navigator.appVersion; 
+	var version=b_version.split(";"); 
+	var trim_Version=version[1].replace(/[ ]/g,""); 
+	if(browser=="Microsoft Internet Explorer" && trim_Version=="MSIE6.0"){ 
+			// alert("IE 7.0"); 
+			window.location.href = './browser/CN/browser.html';
+		}else if(browser=="Microsoft Internet Explorer" && trim_Version=="MSIE7.0"){ 
+			// alert("IE 7.0"); 
+			window.location.href = './browser/CN/browser.html';
+		}else if(browser=="Microsoft Internet Explorer" && trim_Version=="MSIE8.0"){ 
+			// alert("IE 8.0"); 
+		}else if(browser=="Microsoft Internet Explorer" && trim_Version=="MSIE9.0"){ 
+			// alert("IE 9.0"); 
+		} 
+
+		/* 判断横屏和竖屏 */
+		window.addEventListener('orientationchange', function(event){
+			if ( window.orientation == 180 || window.orientation==0 ) {
+		        // alert("竖屏");
+		    }
+		    if( window.orientation == 90 || window.orientation == -90 ) {
+		        // alert("横屏");
+		        alert('建议使用竖屏浏览网站，体验更佳！');
+		    }
+		    window.location.reload();
+		});
+	</script>
+</head>
+<body>
+	<!-- 页面loading -->
+	<div class="lm-loading"><img src="images/CN/construction.gif" alt="loading"></div>
+
+	<!-- 页面顶部 -->
+	<header class="lanmeiHeader">
+		<nav class="lanmeiNav">
+			<div class="lanmeiLogo">
+				<a class="navbar-brand" href="index-zh.html""><img src="images/CN/lanmeiLogo.png"></a>
+			</div>
+			<div class="lanmeiHeadInfo">
+				<ul class="">
+					<li class="nth-child1">
+						<img src="images/CN/phone.png">
+						<div>
+							<span>+855 23881890</span>/
+							<span>+855 23881893</span>/
+							<span>+855 23881865</span>
+						</div>
+					</li>
+					<li class="nth-child2"><a href="#" class="btn loginBtn"><img src="images/CN/login.png">登陆</a></li>
+					<li class="nth-child3"><a href="javascript:void(0)" class="btn REGISTEREDBtn"><img src="images/CN/registered.png">注册</a></li>
+					<li class="nth-child4 languageSelectBox">
+						<div class="languageBox">
+							<a href="javascript:void(0)" class="languageSelect"></a>
+							<b class="ENbottomLine"></b>
+							<ul class="languageDownMenu">
+								<li class="nth-child1"><a href="index-zh.html"></a></li>
+								<li class="nth-child2"><a href="index.html"></a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<a href="#" class="mobile-menu"><img src="images/CN/mobile-menu.png"></a>
+			<a href="#" class="mobile-user"><img src="images/CN/mobile-user.png" class="m-user-btn"></a>
+		</nav>
+
+		<!-- 登录模态框 -->
+		<div class="modal fade" id="logonModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">Close<span aria-hidden="true">&times;</span></button>
+					</div>
+					<div class="modal-body">
+						<h2 class="loginTitle">Login</h2>
+						<span class="verifyInfo">Account or password error !</span>
+						<form id="loginForm" method="POST" action="">
+							<div class="form-group">
+								<input type="text" class="form-control" id="LanmeiUserName" placeholder="Email">
+								<ul class="login_on_changes on_changes">
+									<li email="@gmail.com"></li>
+									<li email="@qq.com"></li>
+									<li email="@sina.com"></li>
+									<li email="@163.com"></li>
+									<li email="@hotmail.com"></li>
+									<li email="@126.com"></li>
+									<li email="@yahoo.com"></li>
+								</ul>
+							</div>
+							<div class="form-group">
+								<input type="password" class="form-control" id="LanmeiPassword" placeholder="Password">
+							</div>
+							<div class="agree form-group">
+								<span class=""></span>
+								<p>Remember me next 30 days</p>
+								<a href="#" class="forgetBtn">Forget ?</a>
+							</div>
+							<div class="form-group">
+								<button type="button" class="btn userLoginBtn">Login</button>
+							</div>
+							<!-- <div class="loginOther">
+								<p>Login With</p>
+								<button  type="button" class="btn Facebook">Facebook</button>
+								<button class="btn Wechat">Wechat</button>
+							</div> -->
+						</form>
+					</div>
+					<div class="modal-footer">
+						Still no account ? Immediately <a href="javascript:void(0)" class="regBtn">registered</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- 注册模态框 -->
+		<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">Close<span aria-hidden="true">&times;</span></button>
+					</div>
+					<div class="modal-body">
+						<!-- <h2 class="loginTitle">Registered</h2>
+						<span class="verifyInfo">Account or password error !</span> -->
+						<form class="registerWrapper" method="POST" action="">
+							<h2>Registered</h2>
+							<!-- <p>There have been accounts ? <a href="#" data-toggle="modal" data-target="#logonModal">Login</a></p> -->
+							<img src="images/EN/verticalTitleLine.png">
+							<div class="registerContent">
+								<div class="registerInfo">
+									<input type="text" name="" value="" id="registerUserName" placeholder="Please enter email address">
+									<img src="images/EN/register-email.png">
+									<p>This email is already in use !</p>
+									<ul class="register_on_changes on_changes">
+										<li email="@gmail.com"></li>
+										<li email="@qq.com"></li>
+										<li email="@sina.com"></li>
+										<li email="@163.com"></li>
+										<li email="@hotmail.com"></li>
+										<li email="@126.com"></li>
+										<li email="@yahoo.com"></li>
+									</ul>
+								</div>
+								<div class="registerPassword">
+									<input type="password" name="" value="" id="registerPassword" placeholder="Password with 8-16 characters">
+									<img src="images/EN/register-password.png">
+									<p>Password strength : <span><i class="i1"></i><i class="i2"></i><i class="i3"></i><i class="i4"></i><i class="i5"></i><i class="i6"></i></span></p>
+								</div>
+								<div class="repeatPassword">
+									<input type="password" name="" value="" id="repeatPassword" placeholder="Please repeat password">
+									<img src="images/EN/register-password.png">
+									<p>Passwords don’t match !</p>
+									<span>
+										Password must be with 3 or 4 combination with 
+										number (0-9), lowercase letter (a-z), uppercase 
+										letter (A-Z) or special characters.
+									</span>
+								</div>
+								<div class="agree">
+									<span></span>
+									<p>I hereby agree to    <a href="#">Lanmeiairlines’ terms and conditions</a></p>
+								</div>
+								<div class="registerBtn">
+									<button id="registerBtn">Register</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- 忘记密码模态框 -->
+		<div class="modal fade" id="forgetModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">Close<span aria-hidden="true">&times;</span></button>
+					</div>
+					<div class="modal-body">
+						<h2 class="loginTitle">Forget Password</h2>
+						<span class="verifyInfo">Account or password error !</span>
+						<form id="f-loginForm" method="POST" action="">
+							<div class="form-group">
+								<input type="text" class="form-control" id="f-LanmeiUserName" placeholder="Email">
+								<ul class="forget_on_changes on_changes">
+									<li email="@gmail.com"></li>
+									<li email="@qq.com"></li>
+									<li email="@sina.com"></li>
+									<li email="@163.com"></li>
+									<li email="@hotmail.com"></li>
+									<li email="@126.com"></li>
+									<li email="@yahoo.com"></li>
+								</ul>
+							</div>
+							<div class="form-group">
+								<input type="password" class="form-control" id="f-LanmeiPassword" placeholder="Password">
+								<button type="button" id="f-getPasswordBtn">Get Password</button>
+							</div>
+							<div class="agree form-group">
+								<p>Please pay attention to the E-mail information</p>
+							</div>
+							<div class="form-group">
+								<button type="button" class="btn f-userLoginBtn">Login</button>
+							</div>
+							<!-- <div class="loginOther">
+								<p>Login With</p>
+								<button  type="button" class="btn Facebook">Facebook</button>
+								<button class="btn Wechat">Wechat</button>
+							</div> -->
+						</form>
+					</div>
+					<div class="modal-footer">
+						<a href="#" class="a_login">Login</a><a href="tpls/CN/LanmeiAirlinesRegister.html" class="a_registered">Registered</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- 菜单选择 -->
+		<div class="LMCompanyInfo">
+			<ul class="lm-nav">
+				<li class="nth-child1">
+					<a href="#play-travel">计划旅行</a>
+					<i></i> 
+				</li>
+				<li class="nth-child2">
+					<a href="#lm-experience">体验澜湄</a>
+					<i></i>
+				</li>
+				<li class="nth-child3">
+					<a href="#lm-community">澜湄社区</a>
+					<i></i>
+					
+				</li>
+				<li class="nth-child4">
+					<a href="#lm-travel">澜湄旅游</a>
+					<i></i>
+					
+				</li>
+				<li class="nth-child5">
+					<a href="#lm-shop" target="_blank">澜湄商品</a>
+					<!-- <i></i> -->
+				</li>
+				<li class="nth-child6">
+					<a href="#about-us">关于我们</a>
+					<i></i>
+				</li>
+			</ul>
+			<b class="lm-nav-line"></b>
+			<ul class="LMCompanyDownMenu" id="play-travel">
+				<li>
+					<a href="#">特价优惠</a>
+					<ul class="subMenu">
+						<li><a href="javascript:void(0)" target="_blank">特价机票</a></li>
+						<li><a href="javascript:void(0)" target="_blank">特价酒店</a></li>
+						<li><a href="javascript:void(0)" target="_blank">特价租车</a></li>
+						<li><a href="javascript:void(0)" target="_blank">特价商品促销</a></li>
+						<li><a href="javascript:void(0)" target="_blank">特价旅游</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">旅行目的地</a>
+					<ul class="subMenu">
+						<li><a href="javascript:void(0)" target="_blank">金边</a></li>
+						<li><a href="travel/tpls/CN/LMTravelInfo.html" target="_blank">西港</a></li>
+						<li><a href="javascript:void(0)" target="_blank">暹粒</a></li>
+						<li><a href="javascript:void(0)" target="_blank">澳门</a></li>
+						<li><a href="javascript:void(0)" target="_blank">帕劳</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">航班预订</a>
+					<ul class="subMenu">
+						<li><a href="javascript:void(0)" class="a-search-flight" target="_blank">搜索航班</a></li>
+						<li><a href="javascript:void(0)" target="_blank">办理值机手续</a></li>
+						<li><a href="javascript:void(0)" target="_blank">我的行程</a></li>
+						<li><a href="javascript:void(0)" target="_blank">变更或取消航班</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">酒店预订</a>
+					<ul class="subMenu">
+						<li><a href="javascript:void(0)" target="_blank">搜索酒店</a></li>
+						<li><a href="javascript:void(0)" target="_blank">我的酒店</a></li>
+						<li><a href="javascript:void(0)" target="_blank">租车</a></li>
+					</ul>
+				</li>
+			</ul>
+			<ul class="LMCompanyDownMenu" id="lm-experience">
+				<li>
+					<a href="#">旅行准备</a>
+					<ul class="subMenu">
+						<li><a href="menus/CN/experience/LMVisa.html" target="_blank">护照和签证</a></li>
+						<li><a href="menus/CN/experience/LMTransport.html" target="_blank">运输总条件</a></li>
+						<li><a href="javascript:void(0)" target="_blank">特殊旅客服务</a></li>
+						<li><a href="javascript:void(0)" target="_blank">旅客须知</a></li>
+						<li><a href="javascript:void(0)" target="_blank">客户服务承诺</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">航班动态</a>
+					<ul class="subMenu">
+						<li><a href="javascript:void(0)" target="_blank">动态信息</a></li>
+						<li><a href="javascript:void(0)" target="_blank">航班订阅</a></li>
+						<li><a href="javascript:void(0)" target="_blank">航班信息实时通知</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#" title="基础设施乘机流程服务内容">机场服务</a>
+					<ul class="subMenu">
+						<li><a href="menus/CN/experience/LMPNHAirportService.html" target="_blank">金边国际机场</a></li>
+						<li><a href="menus/CN/experience/LMREPAirportService.html" target="_blank">暹粒国际机场</a></li>
+						<li><a href="menus/CN/experience/LMMFMAirportService.html" target="_blank">澳门国际机场</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#" title="值机平台值机操作指南开通城市服务协议自助退、改签值机常见问题">办理值机</a>
+					<ul class="subMenu">
+						<li><a href="menus/CN/experience/LMCheckOnline.html" target="_blank">网上值机</a></li>
+						<li><a href="menus/CN/experience/LMCheckAirport.html" target="_blank">机场办理值机</a></li>
+						<li><a href="menus/CN/experience/LMCheckTime.html" target="_blank">登机和行李托运时间</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">您的行李</a>
+					<ul class="subMenu">
+						<li><a href="menus/CN/experience/LMBaggage.html" target="_blank">关于行李</a></li>
+						<li><a href="menus/CN/experience/LMMisBaggage.html" target="_blank">行李事故</a></li>
+						<li><a href="javascript:void(0)" target="_blank">危险物品</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">货单跟踪</a>
+					<ul class="subMenu">
+						<li><a href="javascript:void(0)" target="_blank">货单查询</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">尊享服务</a>
+					<ul class="subMenu">
+						<li><a href="menus/CN/experience/LMCate.html" target="_blank">餐食服务</a></li>
+						<li><a href="javascript:void(0)" target="_blank">逾重行李服务</a></li>
+						<li><a href="javascript:void(0)" target="_blank">加长座位服务</a></li>
+						<li><a href="javascript:void(0)" target="_blank">提前选座</a></li>
+						<li><a href="javascript:void(0)" target="_blank">特殊服务申请</a></li>
+					</ul>
+				</li>
+			</ul>
+			<ul class="LMCompanyDownMenu" id="lm-community">
+				<li>
+					<a href="javascript:void(0)">澜湄会员</a>
+					<ul class="subMenu">
+						<li><a href="javascript:void(0)" target="_blank">会员注册</a></li>
+						<li><a href="javascript:void(0)" target="_blank">澜湄旅行结伴</a></li>
+						<li><a href="javascript:void(0)" target="_blank">会员常见问题</a></li>
+						<li><a href="javascript:void(0)" target="_blank">会员信息</a></li>
+						<li><a href="javascript:void(0)" target="_blank">飞行图</a></li>
+						<li><a href="javascript:void(0)" target="_blank">优惠卷</a></li>
+						<li><a href="javascript:void(0)" target="_blank">订单</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:void(0)">澜湄论坛</a>
+					<ul class="subMenu">
+						
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:void(0)">澜湄直播</a>
+					<ul class="subMenu">
+						
+					</ul>
+				</li>
+			</ul>
+			<ul class="LMCompanyDownMenu" id="lm-travel">
+				<li>
+					<a href="javascript:void(0)">金边</a>
+					<ul class="subMenu">
+						
+					</ul>
+				</li>
+				<li>
+					<a href="travel/tpls/CN/LMTravelInfo.html" target="_blank">西港</a>
+					<ul class="subMenu">
+						
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:void(0)">暹粒</a>
+					<ul class="subMenu">
+						
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:void(0)">澳门</a>
+					<ul class="subMenu">
+						
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:void(0)">帕劳</a>
+					<ul class="subMenu">
+						
+					</ul>
+				</li>
+			</ul>
+			<ul class="LMCompanyDownMenu" id="lm-shop">
+				<!-- <li>
+					<a href="menus/CN/shopping/LMDFC20170907.html" target="_blank">吴哥免税店</a>
+					<ul class="subMenu">
+						
+					</ul>
+				</li> -->
+			</ul>
+			<ul class="LMCompanyDownMenu" id="about-us">
+				<li>
+					<a href="menus/CN/aboutUs/LMSiteMap.html" target="_blank">网站地图</a>
+					<ul class="subMenu">
+						
+					</ul>
+				</li>
+				<li>
+					<a href="menus/CN/aboutUs/LMHistory.html" target="_blank">澜湄历史</a>
+					<ul class="subMenu">
+						
+					</ul>
+				</li>
+				<li>
+					<a href="menus/CN/aboutUs/LMContact.html" target="_blank">联系我们</a>
+					<ul class="subMenu">
+						
+					</ul>
+				</li>
+				<li>
+					<a href="menus/CN/aboutUs/LMHire.html" target="_blank">招贤纳士</a>
+					<ul class="subMenu">
+						
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:void(0)" target="_blank">社会责任</a>
+					<ul class="subMenu">
+						
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:void(0)" target="_blank">版权</a>
+					<ul class="subMenu">
+						
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:void(0)" target="_blank">澜湄合作伙伴</a>
+					<ul class="subMenu">
+						
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:void(0)" target="_blank">《澜湄航空》电子版</a>
+					<ul class="subMenu">
+						
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:void(0)" target="_blank">FAQ</a>
+					<ul class="subMenu">
+						
+					</ul>
+				</li>
+				<li>
+					<a href="menus/CN/aboutUs/LMPrivacy.html" target="_blank">隐私条款</a>
+					<ul class="subMenu">
+						
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:void(0)" target="_blank">法律声明</a>
+					<ul class="subMenu">
+						
+					</ul>
+				</li>
+			</ul>
+		</div>
+		
+		<!-- 滚动信息 -->
+		<div class="sliderInfo">
+			<p><img src="images/CN/important-icon.png">重要信息 :</p>
+			<ul class="line">
+				<li style="margin-top: 0px; ">
+					<a href="#">网站正在建设中，请期待...</a>
+				</li>
+				
+				
+			</ul>
+			<div class="view-all">
+				<a href="#">更多信息 <i class="iconfont icon-xiangshang-copy-copy-copy lm-page-bounceRight"></i></a>
+			</div>
+		</div>
+	</header>
+
+	<!-- 轮播 -->
+	<ul class="LM-hiSlider hiSlider">
+		<li class="hiSlider-item"><img src="images/CN/banner01.jpg" alt="banner01"></li>
+		<li class="hiSlider-item"><img src="images/CN/banner02.jpg" alt="banner02"></li>
+		<li class="hiSlider-item"><img src="images/CN/banner03.jpg" alt="banner03"></li>
+		<li class="hiSlider-item"><img src="images/CN/banner04.jpg" alt="banner04"></li>
+	</ul>
+
+	<!-- 左边固定菜单 -->
+	<div class="leftAside">
+		<div class="listSelect">
+			<ul>
+				<li class="li-child1"><a href="ticket-content" class="nth-child1"><span>机票</span></a></li>
+				<li class="li-child2"><a href="hotel-content" class="nth-child2"><span>酒店</span></a></li>
+				<li class="li-child3"><a href="car-content" class="nth-child3"><span>租车</span></a></li>
+				<li class="li-child4"><a href="flight-content" class="nth-child4"><span>航班动态</span></a></li>
+				<li class="li-slide"></li>
+			</ul>
+		</div>
+		<div class="listSelectBox">
+			<!-- 关闭箭头 -->
+			<div class="closeArrow"><a href="#"><img src="images/CN/close-icon.png"></a></div>
+			<!-- 内容 -->
+			<div class="ticket-content  listSelectContent">
+				<form id="airTicketForm" action="http://b2c.lanmeiairlines.com/lqWeb/reservation/AVQuery.do" method="GET" target="_blank">
+					<input type="hidden" name="orgcity" id ="orgcity">
+					<input type="hidden" name="dstcity" id ="dstcity">
+					<input type="hidden" name="language"  value="CN">
+					<input type="hidden" name="CURRENCY"  value="USD">
+					<!-- <input type="hidden" name="tripType" id ="tripType" > -->
+
+					<div class="radioSelect js-ticket-radio">
+						<label><input type="radio" name="tripType" value="OW" checked><i class="active"></i><b></b><span data-way="oneWay">单程</span></label>
+						<label><input type="radio" name="tripType" value="RT"><i></i><b></b><span data-way="roundTrip">往返</span></label>
+						<label><input type="radio" name="tripType" value="MT"><i></i><b></b><span data-way="multi">中转/多航段</span></label>
+						<label class="resetBtn"><img src="images/CN/reset-icon2.png"><span>重置</span></label>
+					</div>
+					<div class="selectAirTime selectAirCommon">
+						<div class="local_timeSelect">
+							<div class="localSelectStart autoClick">
+								<p><img src="images/CN/originStart.png"><span>出发地</span></p>
+								<input type="text" class="fromcityinput inputDown Autocomplete" id="fromcity" value="" placeholder="">
+								<img src="images/CN/downArrow.png">
+								<span class="clear">X</span>
+								<i class="img01" id="localChangeImg"></i>
+								<b class="bottomLine"></b>
+								<ul class="fromcityMenu menu-com">
+									
+								</ul>
+							</div>
+							<div class="localSelectEnd autoClick autoFocus">
+								<p><img src="images/CN/originEnd.png"><span>目的地</span></p>
+								<input type="text" class="tocityinput inputDown Autocomplete" id="tocity" value="" placeholder="">
+								<img src="images/CN/downArrow.png">
+								<span class="clear">X</span>
+								<b class="bottomLine"></b>
+								<ul class="tocityMenu menu-com">
+									
+								</ul>
+							</div>
+							<div class="timeSelectStart">
+								<p><img src="images/CN/departureDate.png"><span>出发日期</span></p>
+								<input type="text" id="timeFrom" name="takeoffDate" value="" placeholder="" readonly>
+								<img src="images/CN/downArrow.png">
+							</div>
+							<div class="CabinSelect">
+								<p><img src="images/CN/cabin-icon.png"><span>服务等级</span></p>
+								<input type="text" class="cityinput inputDown" id="Cabin" name="cabinType" value="ECONOMY" placeholder="" readonly>
+								<img src="images/CN/downArrow.png">
+								<b class="bottomLine"></b>
+								<ul class="CabinMenu menu-com">
+									<li><a href="#">ECONOMY</a></li>
+									<!-- <li><a href="#">头等舱</a></li>
+										<li><a href="#">无限制</a></li> -->
+									</ul>
+								</div>
+								<div class="AdultSelect">
+									<p><img src="images/CN/adult-icon.png"><span>成人</span></p>
+									<div>
+										<input type="text" class="cityinput" id="Adult" name="adultCount" value="1" readonly>
+										<i class="addArrow"><img src="images/CN/addArrow.png"></i>
+										<i class="downArrow"><img src="images/CN/downArrow.png" ></i>
+									</div>
+								</div>
+								<div class="ChildSelect">
+									<p><img src="images/CN/child-icon.png"><span>儿童</span></p>
+									<div>
+										<input type="text" readonly="readonly" id="Child" name="childCount" value="0" class=""/>
+										<i class="addArrow"><img src="images/CN/addArrow.png"></i>
+										<i class="downArrow"><img src="images/CN/downArrow.png" ></i>
+										<span class="ageTip">2-12 岁</span>
+									</div>
+								</div>
+								<div class="timeSelectEnd js-ticket-timeEnd">
+									<p><img src="images/CN/departureDate.png"><span>返程日期</span></p>
+									<input type="text" id="timeTo" name="returnDate" value="" placeholder="" readonly>
+									<img src="images/CN/downArrow.png">
+								</div>
+							</div>
+							<div class="viewSchedules js-ticket-search">
+								<!-- <a href="tpls/CN/LanmeiAirlinesSelectDate.html">搜索<img src="images/CN/schedulesArrow.png"></a> -->
+								<a href="javascript:void(0)">搜索<img src="images/CN/schedulesArrow.png"></a>
+							</div>
+						</div>
+					</form>
+				</div>
+				<!-- Hotel内容 -->
+				<div class="hotel-content listSelectContent">
+					<div class="hotel-title">
+						酒店查询
+					</div>
+					<div class="selectAirTime selectAirCommon">
+						<div class="local_timeSelect">
+							<div class="localSelectStart autoClick autoFocus">
+								<p><img src="images/CN/location.png"><span>目的地</span></p>
+								<input type="text" class="fromcityinput inputDown Autocomplete" id="h-fromcity" name="fromCity" value="" placeholder="">
+								<img src="images/CN/downArrow.png">
+								<span class="clear">X</span>
+								<b class="bottomLine"></b>
+								<ul class="hotelMenu menu-com">
+									<li><a href="javascript:void(0)">广州</a></li>
+									<li><a href="javascript:void(0)">深圳</a></li>
+								</ul>
+							</div>
+							<div class="timeSelectStart">
+								<p><img src="images/CN/departureDate.png"><span>入住日期</span></p>
+								<input type="text" id="h-timeFrom" name="timeFrom" value="" placeholder="" readonly>
+								<img src="images/CN/downArrow.png">
+							</div>
+							<div class="timeSelectEnd">
+								<p><img src="images/CN/departureDate.png"><span>离店日期</span></p>
+								<input type="text" id="h-timeTo" name="timeTo" value="" placeholder="" readonly>
+								<img src="images/CN/downArrow.png">
+							</div>
+							<div class="viewSchedules">
+								<a href="http://holidays.lanmeiairlines.com/hotels" target="_blank">搜索<img src="images/CN/schedulesArrow.png"></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Car内容 -->
+				<div class="car-content listSelectContent">
+					<div class="car-title" style="font-size: 18px;color:#fff;font-weight: bold;">
+						敬请期待...
+					</div>
+					<div class="selectAirTime selectAirCommon">
+
+					</div>
+				</div>
+				<!-- flightStatus内容 -->
+				<div class="flight-content listSelectContent">
+					<form id="f-content-form" action="tpls/CN/LMFlightDetail.html" target="_blank">
+						<div class="radioSelect js-flight-radio">
+							<label><input type="radio" value="0" name="routeType" checked><i class="active"></i><b></b><span data-way="b-route">行程</span></label>
+							<label><input type="radio" value="1" name="routeType"><i></i><b></b><span data-way="f-num">航班号</span></label>
+						</div>
+						<div class="selectAirTime selectAirCommon">
+							<div class="local_timeSelect js-route-select">
+								<div class="localSelectStart autoClick">
+									<p><img src="images/CN/originStart.png"><span>出发地</span></p>
+									<input type="text" class="fromcityinput inputDown Autocomplete" id="f-fromCity" name="fromCity" value="" placeholder="">
+									<img src="images/CN/downArrow.png">
+									<span class="clear">X</span>
+									<b class="bottomLine"></b>
+									<ul class="fromcityMenu menu-com js-route-menu">
+
+									</ul>
+								</div>
+								<div class="localSelectEnd autoClick autoFocus">
+									<p><img src="images/CN/originEnd.png"><span>目的地</span></p>
+									<input type="text" class="tocityinput inputDown Autocomplete" id="f-toCity" name="toCity" value="" placeholder="">
+									<img src="images/CN/downArrow.png">
+									<span class="clear">X</span>
+									<b class="bottomLine"></b>
+									<ul class="tocityMenu menu-com">
+
+									</ul>
+								</div>
+								<div class="f-num-Select js-flight-num autoClick autoFocus">
+									<p><img src="images/CN/f-num-select.png"><span>航班号</span></p>
+									<input type="text" class="fromcityinput inputDown" id="f-num-select" name="flightNum" value="XU-738" placeholder="">
+									<img src="images/CN/downArrow.png">
+									<span class="clear">X</span>
+									<b class="bottomLine"></b>
+									<ul class="flightMenu menu-com js-f-menu">
+										<li><a href="javascript:void(0)">XU-738</a></li>
+										<li><a href="javascript:void(0)">XU-739</a></li>
+									</ul>
+								</div>
+								<div class="timeSelectStart">
+									<p><img src="images/CN/departureDate.png"><span>日期</span></p>
+									<input type="text" id="f-timeFrom" name="timeFrom" value="" placeholder="" readonly>
+									<img src="images/CN/downArrow.png">
+								</div>
+							</div>
+							<div class="viewSchedules js-flight-search">
+								<a href="javascript:void(0)">搜索<img src="images/CN/schedulesArrow.png"></a>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 移动端导航栏 -->
+	<div class="m-nav-menu">
+		<div class="m-nav-menu-close"><i class="iconfont icon-left-arrow"></i><h2 class="m-nav-title" data-title="f-nav-title">菜单选择</h2></div>
+		<div class="m-nav-wrap">
+			<!-- 一级菜单 -->
+			<ul class="m-nav-1 m-nav-list">
+				<li><a href="#f-list-1">计划旅行</a></li>
+				<li><a href="#f-list-2">体验澜湄</a></li>
+				<li><a href="#f-list-3">澜湄社区</a></li>
+				<li><a href="#f-list-4">澜湄旅游</a></li>
+				<li><a href="#f-list-5">澜湄商品</a></li>
+				<li><a href="#f-list-6">关于我们</a></li>
+			</ul>
+			<!-- 二级菜单 -->
+			<div class="m-nav-2">
+				<ul class="m-nav-list" id="f-list-1">
+					<li><a href="#one-s-list-1">特价优惠</a></li>
+					<li><a href="#one-s-list-2">旅行目的地</a></li>
+					<li><a href="#one-s-list-3">航班预订</a></li>
+					<li><a href="#one-s-list-4">酒店预订</a></li>
+				</ul>
+				<ul class="m-nav-list" id="f-list-2">
+					<li><a href="#two-s-list-1">旅行准备</a></li>
+					<li><a href="#two-s-list-2">航班动态</a></li>
+					<li><a href="#two-s-list-3">机场服务</a></li>
+					<li><a href="#two-s-list-4">办理值机</a></li>
+					<li><a href="#two-s-list-5">您的行李</a></li>
+					<li><a href="#two-s-list-6">您货单跟踪</a></li>
+					<li><a href="#two-s-list-7">尊享服务</a></li>
+				</ul>
+				<ul class="m-nav-list" id="f-list-3">
+					<li><a href="#three-s-list-1">澜湄会员</a></li>
+					<li><a href="#three-s-list-2">澜湄论坛</a></li>
+					<li><a href="#three-s-list-3">澜湄直播</a></li>
+				</ul>
+				<ul class="m-nav-list" id="f-list-4">
+					<li><a href="#four-s-list-1">金边</a></li>
+					<li><a href="travel/LMTravel-zh.html" data-href>西港</a></li>
+					<li><a href="#four-s-list-3">暹粒</a></li>
+					<li><a href="#four-s-list-3">澳门</a></li>
+					<li><a href="#four-s-list-4">帕劳</a></li>
+				</ul>
+				<ul class="m-nav-list" id="f-list-5">
+					<!-- <li><a href="menus/CN/shopping/LMDFC20170907.html" data-href="true">吴哥免税店</a></li> -->
+				</ul>
+				<ul class="m-nav-list" id="f-list-6">
+					<li><a href="menus/CN/aboutUs/LMSiteMap.html" data-href="true">网站地图</a></li>
+					<li><a href="menus/CN/aboutUs/LMHistory.html" data-href="true">澜湄历史</a></li>
+					<li><a href="menus/CN/aboutUs/LMContact.html" data-href="true">联系方式</a></li>
+					<li><a href="menus/CN/aboutUs/LMHire.html" data-href="true">招贤纳士</a></li>
+					<li><a href="#six-s-list-3">社会责任</a></li>
+					<li><a href="#six-s-list-4">《澜湄航空》电子版</a></li>
+					<li><a href="#six-s-list-6">澜湄合作伙伴</a></li>
+					<li><a href="#six-s-list-7">版权</a></li>
+					<li><a href="#six-s-list-8">FQA</a></li>
+					<li><a href="menus/CN/aboutUs/LMPrivacy.html" data-href="true">隐私条款</a></li>
+					<li><a href="#six-s-list-10">法律声明</a></li>
+				</ul>
+			</div>
+			<!-- 三级菜单 -->
+			<div class="m-nav-3">
+				<!-- 计划旅行 -->
+				<ul class="m-nav-list" id="one-s-list-1">
+					<li><a href="javascript:void(0)">特价机票</a></li>
+					<li><a href="javascript:void(0)">特价酒店</a></li>
+					<li><a href="javascript:void(0)">特价租车</a></li>
+					<li><a href="javascript:void(0)">特价商品促销</a></li>
+					<li><a href="javascript:void(0)">特价旅游</a></li>
+				</ul>
+				<ul class="m-nav-list" id="one-s-list-2">
+					<li><a href="javascript:void(0)">金边</a></li>
+					<li><a href="travel/LMTravel-zh.html">西港</a></li>
+					<li><a href="javascript:void(0)">暹粒</a></li>
+					<li><a href="javascript:void(0)">澳门</a></li>
+					<li><a href="javascript:void(0)">帕劳</a></li>
+				</ul>
+				<ul class="m-nav-list" id="one-s-list-3">
+					<li><a href="javascript:void(0)" class="a-search-flight">搜索航班</a></li>
+					<li><a href="javascript:void(0)">办理值机手续</a></li>
+					<li><a href="javascript:void(0)">我的行程</a></li>
+					<li><a href="javascript:void(0)">变更或取消航班</a></li>
+				</ul>
+				<ul class="m-nav-list" id="one-s-list-4">
+					<li><a href="javascript:void(0)">搜索酒店</a></li>
+					<li><a href="javascript:void(0)">我的酒店</a></li>
+					<li><a href="javascript:void(0)">租车</a></li>
+				</ul>
+				<!-- 体验澜湄 -->
+				<ul class="m-nav-list" id="two-s-list-1">
+					<li><a href="menus/CN/experience/LMVisa.html">护照和签证</a></li>
+					<li><a href="menus/CN/experience/LMTransport.html">运输总条件</a></li>
+					<li><a href="javascript:void(0)">特殊旅客服务</a></li>
+					<li><a href="javascript:void(0)">旅客须知</a></li>
+					<li><a href="javascript:void(0)">客户服务承诺</a></li>
+				</ul>
+				<ul class="m-nav-list" id="two-s-list-2">
+					<li><a href="javascript:void(0)">动态信息</a></li>
+					<li><a href="javascript:void(0)">航班订阅</a></li>
+					<li><a href="javascript:void(0)">航班信息实时通知</a></li>
+				</ul>
+				<ul class="m-nav-list" id="two-s-list-3">
+					<li><a href="menus/CN/experience/LMPNHAirportService.html">金边国际机场</a></li>
+					<li><a href="menus/CN/experience/LMREPAirportService.html">暹粒国际机场</a></li>
+					<li><a href="menus/CN/experience/LMMFMAirportService.html">澳门国际机场</a></li>
+				</ul>
+				<ul class="m-nav-list" id="two-s-list-4">
+					<li><a href="menus/CN/experience/LMCheckOnline.html">网上值机</a></li>
+					<li><a href="menus/CN/experience/LMCheckAirport.html">机场办理值机</a></li>
+					<li><a href="menus/CN/experience/LMCheckTime.html">登机和行李托运时间</a></li>
+				</ul>
+				<ul class="m-nav-list" id="two-s-list-5">
+					<li><a href="menus/CN/experience/LMBaggage.html">关于行李</a></li>
+					<li><a href="menus/CN/experience/LMMisBaggage.html">行李事故</a></li>
+					<li><a href="javascript:void(0)">危险物品</a></li>
+				</ul>
+				<ul class="m-nav-list" id="two-s-list-6">
+					<li><a href="javascript:void(0)">货单查询</a></li>
+				</ul>
+				<ul class="m-nav-list" id="two-s-list-7">
+					<li><a href="menus/CN/experience/LMCate.html">餐食服务</a></li>
+					<li><a href="javascript:void(0)">逾重行李服务</a></li>
+					<li><a href="javascript:void(0)">加长座位服务</a></li>
+					<li><a href="javascript:void(0)">提前选座</a></li>
+					<li><a href="javascript:void(0)">特殊服务申请</a></li>
+				</ul>
+				<!-- 澜湄社区 -->
+				<ul class="m-nav-list" id="three-s-list-1">
+					<li><a href="javascript:void(0)">会员注册</a></li>
+					<li><a href="javascript:void(0)">澜湄旅行结伴</a></li>
+					<li><a href="javascript:void(0)">会员常见问题</a></li>
+					<li><a href="javascript:void(0)">会员信息</a></li>
+					<li><a href="javascript:void(0)">飞行图</a></li>
+					<li><a href="javascript:void(0)">优惠卷</a></li>
+					<li><a href="javascript:void(0)">订单</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="m-nav-mask"></div>
+
+	<!-- 移动端机票选择 -->
+	<div class="m-flight-select">
+		<div class="m-ticket-wrap">
+			<div class="m-ticket-title m-title-com" data="ticket">
+				<div class="m-ticket-left">
+					<img src="images/CN/m-tickit-icon.png" class="img01"><img src="images/CN/m-tickit-icon-active.png" class="img02">航班
+				</div>
+				<div class="m-ticket-right">
+					<img src="images/CN/m-upAdrrow.png" alt="" class="img01">
+					<img src="images/CN/m-downArrow.png" alt="" class="img02">
+				</div>
+			</div>
+			<div class="m-ticket-menu m-menu-com">
+				<form id="m-airTicketForm" action="http://b2c.lanmeiairlines.com/lqWeb/reservation/AVQuery.do" method="GET" target="_blank">
+					<input type="hidden" name="orgcity" id ="m-orgcity">
+					<input type="hidden" name="dstcity" id ="m-dstcity">
+					<input type="hidden" name="takeoffDate" id ="m-takeoffDate">
+					<input type="hidden" name="returnDate" id ="m-returnDate">
+					<input type="hidden" name="tripType" value="RT" id="m-tripType">
+					<input type="hidden" name="language"  value="CN">
+					<input type="hidden" name="CURRENCY"  value="USD">
+
+					<div class="m-ticket-tab">
+						<a href="#one" class="m-ticket-one active" data-way="oneWay">单程</a>
+						<a href="#round" class="m-ticket-round" data-way="roundTrip">往返</a>
+						<a href="#multi" class="m-ticket-multi" data-way="multi">中转/多航段</a>
+					</div>
+					<div class="m-ticket-con">
+						<div class="m-ticket-local">
+							<div class="m-ticket-local-start">
+								<img src="images/CN/m-local-start.png">
+								<input type="text" class="m-local-start" value="Phnom Penh/PNH/Cambodia" placeholder="出发地" readonly>
+							</div>
+							<div class="m-ticket-local-end">
+								<img src="images/CN/m-local-end.png">
+								<input type="text" class="m-local-end" value="" placeholder="目的地" readonly>
+							</div>
+							<img src="images/CN/m-local-change.png" class="m-localChange">
+						</div>
+						<div class="m-ticket-num">
+							<div class="m-ticket-cabin">
+								<img src="images/CN/m-cabin.png">
+								<input type="text" name="cabinType"  class="ticket-cabin-select" value="ECONOMY" readonly>
+							</div>
+							<div class="m-ticket-box">
+								<div class="m-ticket-adult">
+									<img src="images/CN/m-adult.png">
+									<input type="text" name="adultCount" class="ticket-adult-select" value="1" readonly>
+								</div>
+								<div class="m-ticket-child">
+									<img src="images/CN/m-child.png">
+									<input type="text" name="childCount" class="ticket-child-select" value="0" readonly>
+								</div>
+							</div>
+						</div>
+						<div class="m-ticket-date">
+							<img src="images/CN/m-date.png">
+							<input type="text" class="ticket-selectTime" id="m-ticket-selectTime" value="" readonly>
+						</div>
+						<div class="m-ticket-search-wrap">
+							<div class="m-ticket-reset js-ticket-reset">
+								<img src="images/CN/m-ticket-search.png">重置
+							</div>
+							<div class="m-ticket-search js-mTicket-search">
+								搜索<img src="images/CN/schedulesArrow.png">
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="m-hotel-wrap">
+			<div class="m-hotel-title m-title-com" data="hotel">
+				<div class="m-ticket-left">
+					<img src="images/CN/m-hotel-icon.png" class="img01"><img src="images/CN/m-hotel-active.png" class="img02">酒店
+				</div>
+				<div class="m-ticket-right">
+					<img src="images/CN/m-upAdrrow.png" alt="" class="img01">
+					<img src="images/CN/m-downArrow.png" alt="" class="img02">
+				</div>
+			</div>
+			<div class="m-ticket-menu m-menu-com">
+				<div class="m-ticket-con">
+					<div class="m-ticket-local">
+						<div class="m-ticket-local-start m-h-local-start">
+							<img src="images/CN/m-location.png">
+							<input type="text" name="" class="h-local-start" value="广州" placeholder="From" readonly>
+						</div>
+					</div>
+					<div class="m-ticket-date">
+						<img src="images/CN/m-date.png">
+						<input type="text" name="" class="ticket-selectTime" id="m-hotel-selectTime" value="" readonly>
+					</div>
+					<div class="m-ticket-search-wrap js-hotel-reset">
+						<div class="m-ticket-reset">
+							<img src="images/CN/m-ticket-search.png">重置
+						</div>
+						<div class="m-ticket-search">
+							搜索<img src="images/CN/schedulesArrow.png">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="m-car-wrap">
+			<div class="m-car-title m-title-com" data="car">
+				<div class="m-ticket-left">
+					<img src="images/CN/m-car-icon.png" class="img01"><img src="images/CN/m-car-active.png" class="img02">租车
+				</div>
+				<div class="m-ticket-right">
+					<img src="images/CN/m-upAdrrow.png" alt="" class="img01">
+					<img src="images/CN/m-downArrow.png" alt="" class="img02">
+				</div>
+			</div>
+			<div class="m-car-menu m-menu-com">敬请期待...</div>
+		</div>
+		<div class="m-flight-wrap">
+			<div class="m-flight-title m-title-com" data="flight">
+				<div class="m-ticket-left">
+					<img src="images/CN/m-flight-icon.png" class="img01"><img src="images/CN/m-flight-active.png" class="img02">航班动态
+				</div>
+				<div class="m-ticket-right">
+					<img src="images/CN/m-upAdrrow.png" alt="" class="img01">
+					<img src="images/CN/m-downArrow.png" alt="" class="img02">
+				</div>
+			</div>
+			<div class="m-flight-menu m-menu-com">
+				<div class="m-flight-tab">
+					<a href="route" class="js-ticket-route active" data-way="b-route">行程</a>
+					<a href="num" class="js-ticket-num" data-way="f-num">航班号</a>
+				</div>
+				<div class="m-ticket-con">
+					<div class="m-ticket-local js-f-local">
+						<div class="m-ticket-local-start">
+							<img src="images/CN/m-local-start.png">
+							<input type="text" class="f-local-start" name="localStart" value="广州" placeholder="From" readonly>
+						</div>
+						<div class="m-ticket-local-end">
+							<img src="images/CN/m-local-end.png">
+							<input type="text" class="f-local-end" name="localEnd" value="" placeholder="To" readonly>
+						</div>
+						<img src="images/CN/m-local-change.png" class="m-localChange">
+					</div>
+					<div class="m-ticket-num js-f-num">
+						<div class="m-ticket-cabin">
+							<img src="images/CN/m-flight-select.png">
+							<input type="text" name="" class="js-flight-select" value="XU-738" readonly="">
+						</div>
+					</div>
+					<div class="m-ticket-date">
+						<img src="images/CN/m-date.png">
+						<input type="text" class="ticket-selectTime" name="time" id="m-flight-selectTime" value="" readonly>
+					</div>
+					<div class="m-ticket-search-wrap">
+						<div class="m-ticket-reset  js-flight-reset">
+							<img src="images/CN/m-ticket-search.png">重置
+						</div>
+						<div class="m-ticket-search js-f-search">
+							搜索<img src="images/CN/schedulesArrow.png">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- pad端机票选择 -->
+	<div class="p-flight-select">
+		<div class="p-flight-title">
+			<a href="p-ticket-wrap" class="active">
+				<img src="images/CN/m-tickit-icon.png" class="img01"><img src="images/CN/m-tickit-icon-active.png" class="img02">机票
+			</a>
+			<a href="p-hotel-wrap">
+				<img src="images/CN/hotel-icon.png" class="img01"><img src="images/CN/m-hotel-active.png" class="img02">酒店
+			</a>
+			<a href="p-car-wrap">
+				<img src="images/CN/car-icon.png" class="img01"><img src="images/CN/m-car-active.png" class="img02">租车
+			</a>
+			<a href="p-flight-wrap">
+				<img src="images/CN/flight-icon.png" class="img01"><img src="images/CN/m-flight-active.png" class="img02">航班动态
+			</a>
+		</div>
+		<div class="p-flight-wrap">
+			<div class="p-ticket-wrap p-com-memu">
+				<form id="p-airTicketForm" action="http://b2c.lanmeiairlines.com/lqWeb/reservation/AVQuery.do" method="GET" target="_blank">
+					<input type="hidden" name="orgcity" id ="p-orgcity">
+					<input type="hidden" name="dstcity" id ="p-dstcity">
+					<input type="hidden" name="takeoffDate" id ="p-takeoffDate">
+					<input type="hidden" name="returnDate" id ="p-returnDate">
+					<input type="hidden" name="tripType" value="RT" id="p-tripType">
+					<input type="hidden" name="language"  value="CN">
+					<input type="hidden" name="CURRENCY"  value="USD">
+
+					<div class="p-radioSelect">
+						<label><i class="active"></i><span data-way="oneWay">单程</span></label>
+						<label><i></i><span data-way="roundTrip">往返</span></label>
+						<label><i></i><span data-way="multi">中转/多航段</span></label>
+					</div>
+					<div class="p-localSelect">
+						<div class="p-localSelect-start">
+							<p><img src="images/CN/originStart2.png">出发地</p>
+							<input type="text" value="Phnom Penh/PNH/Cambodia" class="p-local-start" readonly>
+						</div>
+						<div class="p-changeLocal-wrap"><img src="images/CN/localChange2-active.png" class="p-changeLocal"></div>
+						<div class="p-localSelect-end">
+							<p><img src="images/CN/originEnd2.png">目的地</p>
+							<input type="text" value="" class="p-local-end" readonly>
+						</div>
+					</div>
+					<div class="p-cabin-wrap">
+						<div class="p-cabin">
+							<p><img src="images/CN/cabin-icon2.png">服务等级</p>
+							<input type="text" name="cabinType" value="ECONOMY" class="p-cabin-input js-ticket-cabin" readonly>
+						</div>
+						<div class="p-ticket-box">
+							<div class="p-adult">
+								<p><img src="images/CN/adult-icon2.png">成人</p>
+								<input type="text" name="adultCount" value="1" class="p-adult-input" readonly>
+							</div>
+							<div class="p-child">
+								<p><img src="images/CN/child-icon2.png">儿童</p>
+								<input type="text" name="childCount" value="0" class="p-child-input" readonly>
+							</div>
+						</div>
+					</div>
+					<div class="p-dateSelect">
+						<div class="p-dataSelect-inner">
+							<p><img src="images/CN/departureDate2.png">日期</p>
+							<input type="text" value="" id="p-ticket-selectTime" readonly>
+						</div>
+						<div class="p-reset js-pTicket-reset">
+							<img src="images/CN/p-ticket-search.png">重置
+						</div>
+					</div>
+					<div class="p-search">
+						<a href="javascript:void(0)" class="p-search-btn js-pTicket-search">搜索<img src="images/CN/schedulesArrow.png"></a>
+					</div>
+				</form>
+			</div>
+			<div class="p-hotel-wrap p-com-memu">
+				<div class="p-localSelect">
+					<div class="p-localSelect-start">
+						<p><img src="images/CN/m-location.png">目的地</p>
+						<input type="text" name="" value="广州" class="p-local-start" readonly>
+					</div>
+				</div>
+				<div class="p-dateSelect">
+					<div class="p-dataSelect-inner">
+						<p><img src="images/CN/departureDate2.png">日期</p>
+						<input type="text" name="" value="" id="p-hotel-selectTime" readonly>
+					</div>
+				</div>
+				<div class="p-search">
+					<a href="javascript:void(0)" class="p-search-btn">搜索<img src="images/CN/schedulesArrow.png"></a>
+				</div>
+			</div>
+			<div class="p-car-wrap p-com-memu">
+				敬请期待...
+			</div>
+			<div class="p-flight-wrap p-com-memu">
+				<div class="p-radioSelect">
+					<label><i class="active"></i><span data-way="b-route">行程</span></label>
+					<label><i></i><span data-way="f-num">航班号</span></label>
+				</div>
+				<div class="p-localSelect">
+					<div class="p-localSelect-start">
+						<p><img src="images/CN/originStart2.png">出发地</p>
+						<input type="text" name="" value="广州" class="p-local-start" readonly>
+					</div>
+					<div class="p-changeLocal-wrap"><img src="images/CN/localChange2-active.png" class="p-changeLocal"></div>
+					<div class="p-localSelect-end">
+						<p><img src="images/CN/originEnd2.png">目的地</p>
+						<input type="text" name="" value="" class="p-local-end" readonly>
+					</div>
+				</div>
+				<div class="p-flightSelect">
+					<div class="p-localSelect-start">
+						<p><img src="images/CN/m-flight-select.png">航班号</p>
+						<input type="text" name="" value="XU-738" class="js-pFlight-select" readonly>
+					</div>
+				</div>
+				<div class="p-dateSelect">
+					<div class="p-dataSelect-inner">
+						<p><img src="images/CN/departureDate2.png">日期</p>
+						<input type="text" name="" value="" id="p-flight-selectTime" readonly>
+					</div>
+					<div class="p-reset js-pFlight-reset">
+						<img src="images/CN/p-ticket-search.png">重置
+					</div>
+				</div>
+				<div class="p-search">
+					<a href="javascript:void(0)" class="p-search-btn">搜索<img src="images/CN/schedulesArrow.png"></a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 折扣券 -->
+	<div class="ticketCoupon">
+		<div class="ticketCouponTitle lanmeiCommonTitle">
+			<h2>官网特享优惠券</h2>
+			<p><i class="i1"></i><i class="i2"></i><i class="i3"></i><i class="i4"></i><i class="i5"></i><i class="i6"></i></p>
+		</div>
+		<div class="coupon-wrap">
+			<div class='poster-main carousel' data-setting='{
+			         "width":940,
+		             "height":160,
+		             "posterWidth":450,
+		             "posterHeight":160,
+		             "verticalAlign":"middle",
+		             "autoPlay":false,
+		             "speed":1000,
+		             "delay":1000,
+		             "scale":0.9
+			}'>
+			<div class='poster-btn poster-prev-btn'></div>
+			<ul class='poster-list'>
+				<li class="list-item">
+					<div class="coupon-con">
+						<h2><span class="s1">$</span><span class="s2">200</span></h2>
+						<p class="p1">机票优惠券</p>
+						<p class="p2">立即领取</p>
+					</div>
+					<a href="#"><img src="images/EN/coupon1.png" alt=""></a>
+				</li>
+				<li class="list-item">
+					<div class="coupon-con">
+						<h2><span class="s1">$</span><span class="s2">200</span></h2>
+						<p class="p1">机票优惠券</p>
+						<p class="p2">立即领取</p>
+					</div>
+					<a href="#"><img src="./images/EN/coupon2.png" alt=""></a>
+				</li>
+				<li class="list-item">
+					<div class="coupon-con">
+						<h2><span class="s1">$</span><span class="s2">200</span></h2>
+						<p class="p1">机票优惠券</p>
+						<p class="p2">立即领取</p>
+					</div>
+					<a href="#"><img src="images/EN/coupon1.png" alt=""></a>
+				</li>
+			</ul>
+				<div class='poster-btn poster-next-btn'></div>
+			</div>
+		</div>
+		<!-- 移动端 -->
+		<div class="mobile-coupon-container">
+			<div class="swiper-container c-swiper-container">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<div class="coupon-con">
+							<h2><span class="s1">$</span><span class="s2">200</span></h2>
+							<p class="p1">机票优惠券</p>
+							<p class="p2">立即领取</p>
+						</div>
+						<a href="#"><img src="images/EN/coupon1.png" alt=""></a>
+					</div>
+					<div class="swiper-slide">
+						<div class="coupon-con">
+							<h2><span class="s1">$</span><span class="s2">200</span></h2>
+							<p class="p1">机票优惠券</p>
+							<p class="p2">立即领取</p>
+						</div>
+						<a href="#"><img src="images/EN/coupon1.png" alt=""></a>
+					</div>
+					<div class="swiper-slide">
+						<div class="coupon-con">
+							<h2><span class="s1">$</span><span class="s2">200</span></h2>
+							<p class="p1">机票优惠券</p>
+							<p class="p2">立即领取</p>
+						</div>
+						<a href="#"><img src="images/EN/coupon1.png" alt=""></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="pagination c-pagination"></div>
+	</div>
+
+	<!-- 特价机票 -->
+	<div class="lowestFares">
+		<div class="lowestFaresTitle lanmeiCommonTitle">
+			<h2>特别优惠</h2>
+			<p><i class="i1"></i><i class="i2"></i><i class="i3"></i><i class="i4"></i><i class="i5"></i><i class="i6"></i></p>
+		</div>
+		<!-- 滚动信息 -->
+		<div class='slide_container'>
+			<div class="slide_content"> <!-- 小框 -->
+				<!-- 左右箭头 -->
+				<div class="prev_arrow">
+					<i class="iconfont icon-fangxiang-copy1"></i>
+				</div>
+				<div class="next_arrow">
+					<i class="iconfont icon-fangxiang-copy"></i>
+				</div>
+				<!-- IPAD 显示-->
+				<div class="prev_arrow iPad_prev_arrow">
+					<i class="iconfont icon-fangxiang-copy1"></i>
+				</div>
+				<div class="next_arrow iPad_next_arrow">
+					<i class="iconfont icon-fangxiang-copy"></i>
+				</div>
+				<!-- 小圆点 -->
+				<div class="circle_arrow"></div>
+				<div class="tabslider"> <!-- 大框 -->
+					<!-- 一级菜单1 -->
+					<div id="tabslider1"> <!-- 小框 -->
+						<div class="second_slider"> <!-- 大框 -->
+							<ul class="slider-ul-1">
+								<li class="nth-child1">
+									<div class="pathSelectWrapper">
+										<div class="localPath">
+											<img src="images/CN/fly-icon.png">
+											<p class="startPath">金边</p>
+											<p class="endPath">暹粒</p>
+										</div>
+										<div class="priceInfo">
+											<div class="nth-child1">
+												<p>From <br/><span>USD</span></p>
+												<h3>--</h3>
+											</div>
+											<div class="nth-child2">
+												<p>经济舱</p>
+											</div>
+											<p class="line-icon">
+												<i class="i1"></i><i class="i2"></i><i class="i3"></i><i class="i4"></i><i class="i5"></i><i class="i6"></i>
+											</p>
+										</div>
+									</div>
+								</li>
+								<li class="nth-child2">
+									<div class="pathSelectWrapper">
+										<div class="localPath">
+											<img src="images/CN/fly-icon.png">
+											<p class="startPath">金边</p>
+											<p class="endPath">暹粒</p>
+										</div>
+										<div class="priceInfo">
+											<div class="nth-child1">
+												<p>From <br/><span>USD</span></p>
+												<h3>--</h3>
+											</div>
+											<div class="nth-child2">
+												<p>经济舱</p>
+											</div>
+											<p class="line-icon">
+												<i class="i1"></i><i class="i2"></i><i class="i3"></i><i class="i4"></i><i class="i5"></i><i class="i6"></i>
+											</p>
+										</div>
+									</div>
+								</li>
+								<li class="nth-child3">
+									<div class="pathSelectWrapper">
+										<div class="localPath">
+											<img src="images/CN/fly-icon.png">
+											<p class="startPath">金边</p>
+											<p class="endPath">暹粒</p>
+										</div>
+										<div class="priceInfo">
+											<div class="nth-child1">
+												<p>From <br/><span>USD</span></p>
+												<h3>--</h3>
+											</div>
+											<div class="nth-child2">
+												<p>经济舱</p>
+											</div>
+											<p class="line-icon">
+												<i class="i1"></i><i class="i2"></i><i class="i3"></i><i class="i4"></i><i class="i5"></i><i class="i6"></i>
+											</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<ul class="slider-ul-2">
+								<li class="nth-child1">
+									<div class="pathSelectWrapper">
+										<div class="localPath">
+											<img src="images/CN/fly-icon.png">
+											<p class="startPath">金边</p>
+											<p class="endPath">暹粒</p>
+										</div>
+										<div class="priceInfo">
+											<div class="nth-child1">
+												<p>From <br/><span>USD</span></p>
+												<h3>--</h3>
+											</div>
+											<div class="nth-child2">
+												<p>经济舱</p>
+											</div>
+											<p class="line-icon">
+												<i class="i1"></i><i class="i2"></i><i class="i3"></i><i class="i4"></i><i class="i5"></i><i class="i6"></i>
+											</p>
+										</div>
+									</div>
+								</li>
+								<li class="nth-child2">
+									<div class="pathSelectWrapper">
+										<div class="localPath">
+											<img src="images/CN/fly-icon.png">
+											<p class="startPath">金边</p>
+											<p class="endPath">暹粒</p>
+										</div>
+										<div class="priceInfo">
+											<div class="nth-child1">
+												<p>From <br/><span>USD</span></p>
+												<h3>--</h3>
+											</div>
+											<div class="nth-child2">
+												<p>经济舱</p>
+											</div>
+											<p class="line-icon">
+												<i class="i1"></i><i class="i2"></i><i class="i3"></i><i class="i4"></i><i class="i5"></i><i class="i6"></i>
+											</p>
+										</div>
+									</div>
+								</li>
+								<li class="nth-child3">
+									<div class="pathSelectWrapper">
+										<div class="localPath">
+											<img src="images/CN/fly-icon.png">
+											<p class="startPath">金边</p>
+											<p class="endPath">暹粒</p>
+										</div>
+										<div class="priceInfo">
+											<div class="nth-child1">
+												<p>From <br/><span>USD</span></p>
+												<h3>--</h3>
+											</div>
+											<div class="nth-child2">
+												<p>经济舱</p>
+											</div>
+											<p class="line-icon">
+												<i class="i1"></i><i class="i2"></i><i class="i3"></i><i class="i4"></i><i class="i5"></i><i class="i6"></i>
+											</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<ul class="slider-ul-3">
+								<li class="nth-child1">
+									<div class="pathSelectWrapper">
+										<div class="localPath">
+											<img src="images/CN/fly-icon.png">
+											<p class="startPath">金边</p>
+											<p class="endPath">暹粒</p>
+										</div>
+										<div class="priceInfo">
+											<div class="nth-child1">
+												<p>From <br/><span>USD</span></p>
+												<h3>--</h3>
+											</div>
+											<div class="nth-child2">
+												<p>经济舱</p>
+											</div>
+											<p class="line-icon">
+												<i class="i1"></i><i class="i2"></i><i class="i3"></i><i class="i4"></i><i class="i5"></i><i class="i6"></i>
+											</p>
+										</div>
+									</div>
+								</li>
+								<li class="nth-child2">
+									<div class="pathSelectWrapper">
+										<div class="localPath">
+											<img src="images/CN/fly-icon.png">
+											<p class="startPath">金边</p>
+											<p class="endPath">暹粒</p>
+										</div>
+										<div class="priceInfo">
+											<div class="nth-child1">
+												<p>From <br/><span>USD</span></p>
+												<h3>--</h3>
+											</div>
+											<div class="nth-child2">
+												<p>经济舱</p>
+											</div>
+											<p class="line-icon">
+												<i class="i1"></i><i class="i2"></i><i class="i3"></i><i class="i4"></i><i class="i5"></i><i class="i6"></i>
+											</p>
+										</div>
+									</div>
+								</li>
+								<li class="nth-child3">
+									<div class="pathSelectWrapper">
+										<div class="localPath">
+											<img src="images/CN/fly-icon.png">
+											<p class="startPath">金边</p>
+											<p class="endPath">暹粒</p>
+										</div>
+										<div class="priceInfo">
+											<div class="nth-child1">
+												<p>From <br/><span>USD</span></p>
+												<h3>--</h3>
+											</div>
+											<div class="nth-child2">
+												<p>经济舱</p>
+											</div>
+											<p class="line-icon">
+												<i class="i1"></i><i class="i2"></i><i class="i3"></i><i class="i4"></i><i class="i5"></i><i class="i6"></i>
+											</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="mobile-slide-container">
+			<div class="swiper-container d-swiper-container">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<div class="pathSelectWrapper">
+							<div class="localPath">
+								<img src="images/CN/fly-icon.png">
+								<p class="startPath">PhnomPenh</p>
+								<p class="endPath">SiemReap</p>
+							</div>
+							<div class="priceInfo">
+								<div class="nth-child1">
+									<p>From <br/><span>USD</span></p>
+									<h3>--</h3>
+								</div>
+								<div class="nth-child2">
+									<p>Economy class</p>
+								</div>
+								<p class="line-icon">
+									<i class="i1"></i><i class="i2"></i><i class="i3"></i><i class="i4"></i><i class="i5"></i><i class="i6"></i>
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="pathSelectWrapper">
+							<div class="localPath">
+								<img src="images/CN/fly-icon.png">
+								<p class="startPath">PhnomPenh</p>
+								<p class="endPath">SiemReap</p>
+							</div>
+							<div class="priceInfo">
+								<div class="nth-child1">
+									<p>From <br/><span>USD</span></p>
+									<h3>--</h3>
+								</div>
+								<div class="nth-child2">
+									<p>Economy class</p>
+								</div>
+								<p class="line-icon">
+									<i class="i1"></i><i class="i2"></i><i class="i3"></i><i class="i4"></i><i class="i5"></i><i class="i6"></i>
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="pathSelectWrapper">
+							<div class="localPath">
+								<img src="images/CN/fly-icon.png">
+								<p class="startPath">PhnomPenh</p>
+								<p class="endPath">SiemReap</p>
+							</div>
+							<div class="priceInfo">
+								<div class="nth-child1">
+									<p>From <br/><span>USD</span></p>
+									<h3>--</h3>
+								</div>
+								<div class="nth-child2">
+									<p>Economy class</p>
+								</div>
+								<p class="line-icon">
+									<i class="i1"></i><i class="i2"></i><i class="i3"></i><i class="i4"></i><i class="i5"></i><i class="i6"></i>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="pagination d-pagination"></div>
+	</div>
+
+	<!-- 澜湄服务 -->
+	<div class="characteristicServe">
+		<div class="characteristicServeTitle lanmeiCommonTitle">
+			<h2>旅行服务</h2>
+			<p><i class="i1"></i><i class="i2"></i><i class="i3"></i><i class="i4"></i><i class="i5"></i><i class="i6"></i></p>
+		</div>
+		<div class="characteristicServeList">
+			<ul>
+				<li class="nth-child1">
+					<a href="javascript:void(0)"><img src="images/CN/lanmeiServe1.png"><p>托运行李</p></a>
+				</li>
+				<li class="nth-child2">
+					<a href="javascript:void(0)"><img src="images/CN/lanmeiServe2.png"><p>机上餐食</p></a>
+				</li>
+				<li class="nth-child3">
+					<a href="javascript:void(0)"><img src="images/CN/lanmeiServe3.png"><p>提前选座</p></a>
+				</li>
+				<li class="nth-child4">
+					<a href="http://www.travelsky.com/tsky/validate.jsp" target="_blank"><img src="images/CN/lanmeiServe4.png"><p>机票验真</p></a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- 旅行日记 -->
+	<div class="lm-travel">
+		<div class="lm-travel-title lanmeiCommonTitle">
+			<h2>旅行日记</h2>
+			<p><i class="i1"></i><i class="i2"></i><i class="i3"></i><i class="i4"></i><i class="i5"></i><i class="i6"></i></p>
+		</div>
+		<div class="lm-travel-inner pc-travel-inner">
+			<div class="nth-child1 active transformBox">
+				<a href="javascript:void(0)"><img class="lazy" src="images/CN/travel-01.jpg"></a>
+				<p class="t-maskBox" data="mask-1">金边</p>
+			</div>
+			<div class="nth-child2">
+				<img src="images/CN/travel-detail.png" class="p-travel-detail">
+				<img src="images/CN/m-travel-detail.png" class="m-travel-detail">
+				<div class="lm-travel-detail">
+					<a href="javascript:void(0)">
+						<h2 class="lm-travel-deltail-title">柬埔寨(金边皇宫)</h2>
+					</a>
+					<p class="lm-travel-detail-con">
+					金边皇宫也称四臂湾大王宫，因位于上湄公河、洞里萨河、下湄公河与巴萨河的交汇处而得名，是诺罗敦国王于1866-1870年建造的，是柬埔寨国王的皇宫。</br>王宫的建筑具有高棉传统建筑风格和宗教色彩，宫殿均有尖塔，代表繁荣；殿身涂以黄、白两色，黄色代表佛教，白色代表婆罗门教,大小宫殿二十多座。
+					</p>
+					<a href="https://goo.gl/maps/SfKrMapEBXN2" class="lm-travel-detail-local" target="_blank"><img src="images/CN/travel-local.png"><span>Phnom Penh</span></a>
+					<div class="lm-travel-detail-see">
+						<p class="lm-travel-see-left"><img src="images/CN/travel-head-icon.png" alt=""><span>Lanmei Airlines</span></p>
+						<p class="lm-travel-see-right"><span>1729</span><img src="images/CN/travel-see.png" alt=""></p>
+					</div>
+				</div>
+			</div>
+			<div class="nth-child3 transformBox">
+				<a href="javascript:void(0)"><img class="lazy" src="images/CN/travel-02.jpg"></a>
+				<p class="t-maskBox" data="mask-2">澳门</p>
+			</div>
+			<div class="nth-child4 transformBox">
+				<a href="javascript:void(0)"><img class="lazy" src="images/CN/travel-03.jpg"></a>
+				<p class="t-maskBox" data="mask-3">暹粒</p>
+			</div>
+		</div>
+		<div class="lm-travel-inner m-travel-inner">
+			<div class="nth-child1 active transformBox">
+				<a href="javascript:void(0)"><img class="lazy" src="images/EN/travel-01.jpg"></a>
+				<p class="t-maskBox" data="mask-1">Phnom Penh</p>
+			</div>
+			<div class="nth-child2">
+				<img src="images/EN/travel-detail.png" class="p-travel-detail">
+				<img src="images/EN/m-travel-detail.png" class="m-travel-detail">
+				<div class="lm-travel-detail">
+					<a href="javascript:void(0)">
+						<h2 class="lm-travel-deltail-title">Cambodia,Royal Palace</h2>
+					</a>
+					<p class="lm-travel-detail-con">
+						The Royal Palace of Phnom Penh, also known as the four-arm bay palace, was named because of the river junction among the Up-Mekong River, the Tonle Sap River, the Down- Mekong River and the Bassac River. It was built by King Norodom in 1866-1870 to be the palace of the Kingdom of Cambodia.</ Br> The building of palaces has traditional Khmer architectural style with religious characters. All palaces have a minaret, which has the meaning of prosperity; the hall of palaces was painted by yellow and white, yellow represents Buddhism, white represents Brahmanism, the scale of palaces is more than twenty.
+					</p>
+					<a href="https://goo.gl/maps/SfKrMapEBXN2" class="lm-travel-detail-local" target="_blank"><img src="images/EN/travel-local.png"><span>Phnom Penh</span></a>
+					<div class="lm-travel-detail-see">
+						<p class="lm-travel-see-left"><img src="images/EN/travel-head-icon.png" alt=""><span>Lanmeiairlines</span></p>
+						<p class="lm-travel-see-right"><span>1729</span><img src="images/EN/travel-see.png" alt=""></p>
+					</div>
+				</div>
+			</div>
+			<div class="nth-child3 transformBox">
+				<a href="javascript:void(0)"><img class="lazy" src="images/EN/travel-02.jpg"></a>
+				<p class="t-maskBox" data="mask-2"> Macau</p>
+			</div>
+			<div class="nth-child4 transformBox">
+				<a href="javascript:void(0)"><img class="lazy" src="images/EN/travel-03.jpg"></a>
+				<p class="t-maskBox" data="mask-3">Siem Reap</p>
+			</div>
+		</div>
+		<p class="moreNews js-travel-more"><a href="travel/LMTravel-zh.html" target="_Blank">更多 <i class="iconfont icon-xiangshang-copy-copy-copy lm-page-bounceRight"></i></a></p>
+	</div>
+
+	<!-- 澜湄动态 -->
+	<div class="lanmeiDynamic">
+		<div class="lanmeiDynamicTitle lanmeiCommonTitle">
+			<h2>澜湄动态</h2>
+			<p><i class="i1"></i><i class="i2"></i><i class="i3"></i><i class="i4"></i><i class="i5"></i><i class="i6"></i></p>
+		</div>
+		<div class="lanmeiDynamicInfo">
+			<div class="nth-child1" title="澜湄航空圆满完成首次中国籍乘务员招聘" alt="澜湄航空圆满完成首次中国籍乘务员招聘">
+				<div class="dynamicInfo-hover hover-shadow">
+					<a href="tpls/CN/LanmeiNews201705060001.html" target="_Blank"><img class="lazy" src="images/CN/lanmeiNews1.jpg"></a>
+					<span><img src="images/CN/lanmeiNewsHot.png"></span>
+					<p class="maskBox">澜湄航空圆满完成首次中国籍乘务员招聘</p>
+				</div>
+			</div>
+			<div class="nth-child2">
+				<div class="dynamicInfo-hover hover-shadow">
+					<a href="javascript:void(0)"></a><img src="images/CN/lanmeiNews2.jpg">
+					<p class="maskBox">澜湄航空</p>
+				</div>
+			</div>
+			<div class="nth-child3"> 
+				<div class="dynamicInfo-hover hover-shadow">
+					<a href="javascript:void(0)"><img src="images/CN/lanmeiNews3.jpg"></a>
+					<p class="maskBox">澜湄航空</p>
+				</div>
+			</div>
+			<div class="nth-child4">
+				<div class="dynamicInfo-hover hover-shadow">
+					<a href="javascript:void(0)"><img src="images/CN/lanmeiNews4.jpg"></a>
+					<p class="maskBox">澜湄航空</p>
+				</div>
+			</div>
+			<div class="nth-child5">
+				<div class="dynamicInfo-hover hover-shadow">
+					<a href="javascript:void(0)"><img src="images/CN/lanmeiNews5.jpg"></a>
+					<p class="maskBox">澜湄航空</p>
+				</div>
+			</div>
+		</div>
+		<p class="moreNews js-dynamic-more"><a href="javascript:void(0)" target="_Blank">更多 <i class="iconfont icon-xiangshang-copy-copy-copy lm-page-bounceRight"></i></a></p>
+	</div>
+
+	<!-- 页脚 -->
+	<div class="footerInfo">
+		<div class="footerBg">
+			<div class="HelpfulInformation">
+				<p>帮助信息</p>
+				<div class="languageSelectBox">
+					<span>目前选择的语言</span>
+					<div class="languageBox">
+						<a href="javascript:void(0)" class="languageSelect"></a>
+						<b class="ENbottomLine"></b>
+						<ul class="languageDownMenu">
+							<li class="nth-child1"><a href="index-zh.html"></a></li>
+							<li class="nth-child2"><a href="index.html"></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="contactUs">
+				<div class="nth-child1"><img src="images/CN/email.png"><span>LM-EC@lanmeiairlines.com</span></div>
+				<div class="nth-child2">
+					<span>FOLLOW</span>
+					<a href="https://www.facebook.com/lanmeiairlines/">
+						<i class="iconfont icon-facebook"></i>
+					</a>
+					<a href="#"><i class="iconfont icon-in"></i></a>
+					<a href="#"><i class="iconfont icon-inst"></i></a>
+					<a href="#"><i class="iconfont icon-youtube"></i></a>
+					<a href="#"><i class="iconfont icon-googleplus"></i></a>
+					<a href="http://weibo.com/lanmeiair"><i class="iconfont icon-wb"></i></a>
+					<a href="#"><i class="iconfont icon-tuite"></i></a>
+				</div>
+			</div>
+			<div class="location">
+				<img src="images/CN/location.png"><a href="http://www.google.cn/maps/place/Lanmei+Airlines/@11.5637363,104.8836365,17.75z/data=!4m5!3m4!1s0x310951a3c5cdaf97:0x77359b117b2ff068!8m2!3d11.5637363!4d104.8852876" target="_blank">柬埔寨金边市俄罗斯大道575号</a>
+			</div>
+			<div class="mobile-contactUs" style="display: none;">
+				<a href="https://www.facebook.com/lanmeiairlines/">
+					<i class="iconfont icon-facebook"></i>
+				</a>
+				<a href="#"><i class="iconfont icon-in"></i></a>
+				<a href="#"><i class="iconfont icon-inst"></i></a>
+				<a href="#"><i class="iconfont icon-youtube"></i></a>
+				<a href="#"><i class="iconfont icon-googleplus"></i></a>
+				<a href="http://weibo.com/lanmeiair"><i class="iconfont icon-wb"></i></a>
+				<a href="#"><i class="iconfont icon-tuite"></i></a>
+			</div>
+			<div class="LanmeiAirlinesBerhad">
+				<div class="nth-child2">
+					<span>使用条款 | 隐私策略 | Cookies</span>
+				</div>
+				<div class="nth-child1"><a href="index.html" rel="nofollow"><img src="images/CN/lanmeiFooterLogo.png"></a><span>© Copyright 2017 澜湄航空 粤<a href="http://www.miitbeian.gov.cn" target="_Blank">ICP备17005494-1</a></span></div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 回到顶部 -->
+	<div class="BackToTop">
+		<div class="QRcode">
+			<p>微信<br>公众号</p>
+			<img src="images/EN/QR-code-s.png" class="small-code">
+			<img src="images/EN/QR-code-b.png" class="big-code">
+		</div>
+		<div class="top">
+			<img src="images/EN/ToTop-icon-active.png" class="img02">
+			<p>置顶</p>
+		</div>
+	</div>
+
+	<!-- 第三方库-->
+	<script type="text/javascript" src="libs/jQuery/jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="libs/layer/layer.js"></script>
+	<script type="text/javascript" src="libs/auto-complete-mail.js"></script>
+	<script type="text/javascript" src="libs/dataRange/lanmei-calendar-zh.js"></script>
+	<script type="text/javascript" src="libs/lanmei-date-select.js"></script>
+	<script type="text/javascript" src="libs/slider/lm-hiSlider.js"></script>
+	<script type="text/javascript" src="libs/lazyload/lm-lazyload.js"></script>
+	<script type="text/javascript" src="libs/lm-nicescroll.min.js"></script>
+	<script type="text/javascript" src="libs/carousel/carousel.js"></script>
+	<script type="text/javascript" src="libs/bootstrap/js/bootstrap.min.js"></script>
+
+	<script type="text/javascript" src="libs/mobile-libs/fastclick/fastclick.js"></script>
+	<script type="text/javascript" src="libs/mobile-libs/swiper/lm-swiper.min.js"></script>
+	<script type="text/javascript" src="libs/mobile-libs/city/lm-cityPicker.js"></script>
+	<script type="text/javascript" src="libs/mobile-libs/date/lm-dateRange-zh.js"></script>
+	<script type="text/javascript" src="libs/mobile-libs/mobileSelect/mobileSelect.js"></script>
+
+	<!-- 公共JS -->
+	<script type="text/javascript" src="common/CN/js/flight-info.js"></script>
+	<script type="text/javascript" src="common/CN/js/Lanmei-common.js?rev=20170817"></script>
+	<!-- 业务代码 -->
+	<script type="text/javascript" src="js/CN/LanmeiAirlines.js?rev=20170817"></script>
+	<script type="text/javascript" charset="utf-8">
+		$(function(){
+	        
+		})
+	</script>
+</body>
+</html>

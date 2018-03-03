@@ -1,0 +1,307 @@
+@charset "utf-8";
+/* 定义变量 */
+/* 定义颜色变量 */
+/* 公共样式 */
+.menu-wrap {
+  overflow: hidden;
+}
+.menu-wrap > li {
+  float: left;
+  width: 33.33%;
+  height: 350px;
+  text-align: center;
+  padding: 20px;
+}
+.menu-wrap > li h2 {
+  margin-top: 20px;
+  font-size: 22px;
+  color: #1f2c5c;
+}
+.menu-wrap > li p {
+  margin: 20px 0;
+  font-size: 16px;
+  color: #808080;
+  text-align: left;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
+  overflow: hidden;
+  white-space: normal !important;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+}
+.menu-wrap > li a {
+  display: inline-block;
+  width: 100%;
+  text-align: left;
+  font-size: 16px;
+  color: #1f2c5c;
+}
+.menu-wrap > li a img {
+  margin-left: 10px;
+}
+.menu-wrap .n2,
+.menu-wrap .n5 {
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+.menu-wrap .n4,
+.menu-wrap .n5,
+.menu-wrap .n6 {
+  margin-top: 60px;
+}
+/* 主体代码 */
+.lm-section {
+  width: 940px;
+  min-height: 300px;
+  margin: 0 auto;
+}
+.lm-section .title h1 {
+  font-size: 50px;
+  color: #1f2c5c;
+}
+.lm-section .title h2 {
+  font-size: 32px;
+  color: #1f2c5c;
+  margin-top: 30px;
+}
+.lm-section .title p {
+  font-size: 16px;
+  color: #808080;
+  margin-top: 30px;
+}
+.lm-section .content {
+  margin: 30px 0;
+}
+.lm-section .searchFlight {
+  background: #f2f2f2;
+  height: 70px;
+  padding: 15px;
+  overflow: hidden;
+}
+.lm-section .searchFlight h2 {
+  float: left;
+  height: 40px;
+  line-height: 40px;
+  font-size: 32px;
+  color: #1f2c5c;
+}
+.lm-section .searchFlight h2 img {
+  margin-right: 10px;
+}
+.lm-section .service {
+  width: 100%;
+  overflow: hidden;
+}
+.lm-section .service .s-1 {
+  width: 100%;
+  position: relative;
+}
+.lm-section .service .s-1 > img {
+  width: 100%;
+}
+.lm-section .service .s-1 .s-content {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  margin-top: -115px;
+  width: 600px;
+  height: 230px;
+}
+.lm-section .service .s-1 .s-content > h2 {
+  font-size: 60px;
+  color: #fff;
+}
+.lm-section .service .s-1 .s-content > p {
+  font-size: 16px;
+  color: #fff;
+  margin: 20px 0;
+}
+.lm-section .service .s-1 .s-content .restBtn {
+  margin: 0;
+}
+.lm-section .service .s-1 .s-content .restBtn a {
+  float: left;
+  font-size: 16px;
+}
+.lm-section .service .s-1 .s-content .restBtn a img {
+  left: 16px;
+}
+.lm-section .service .s-2 {
+  width: 100%;
+  float: left;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.lm-section .service .s-2 .s-menu-wrap > li {
+  width: 49%;
+  padding: 0;
+  border: none;
+}
+.lm-section .service .s-2 .s-menu-wrap > li > img {
+  width: 100%;
+}
+.lm-section .service .s-2 .s-menu-wrap .n2 {
+  margin-left: 2%;
+}
+.lm-section .facility {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.lm-section .facility > h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #1f2c5c;
+  border-left: 4px solid #8ec060;
+  padding-left: 10px;
+}
+.lm-section .facility .f-menu-wrap > li > img {
+  width: 100%;
+}
+/*************** 屏幕适配 ********************/
+@media screen and (min-width: 767px) {
+  .menu-wrap > li {
+    position: relative;
+  }
+  .menu-wrap > li a {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+  }
+}
+/* pad端 */
+@media screen and (max-width: 992px) {
+  .lm-section {
+    width: 100%;
+    padding: 15px;
+  }
+  .lm-section .title h1 {
+    font-size: 0.26rem;
+    text-align: center;
+  }
+  .lm-section .title h2 {
+    font-size: 0.16rem;
+    text-align: center;
+  }
+  .lm-section .title p {
+    font-size: 18px;
+    text-indent: 2em;
+  }
+  .lm-section .service .s-2 {
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+  .menu-wrap > li h2 {
+    font-size: 18px;
+  }
+  .menu-wrap > li p {
+    font-size: 14px;
+  }
+}
+/* 手机端 */
+@media screen and (max-width: 767px) {
+  .lm-section .title h2 {
+    margin-top: 0.15rem;
+  }
+  .lm-section .title p {
+    font-size: 0.14rem;
+    margin-top: 0.15rem;
+  }
+  .lm-section .content {
+    margin-top: 0;
+    margin-bottom: 0.3rem;
+  }
+  .lm-section .searchFlight {
+    height: 0.5rem;
+    padding: 0.1rem;
+    margin-top: 0.1rem;
+    margin-bottom: 0.1rem;
+  }
+  .lm-section .searchFlight h2 {
+    height: 0.3rem;
+    line-height: 0.3rem;
+    font-size: 0.14rem;
+  }
+  .lm-section .searchFlight h2 img {
+    width: 0.2rem;
+  }
+  .lm-section .searchFlight > a {
+    width: 1.1rem;
+    height: 0.3rem;
+    line-height: 0.3rem;
+    font-size: 0.14rem;
+    font-weight: normal;
+  }
+  .lm-section .searchFlight > a img {
+    width: 0.14rem;
+    left: 0.06rem;
+  }
+  .lm-section .service {
+    margin-top: 0.3rem;
+  }
+  .lm-section .service .s-1 .s-content {
+    width: 2rem;
+    height: 1.2rem;
+    margin-top: -0.6rem;
+  }
+  .lm-section .service .s-1 .s-content > h2 {
+    font-size: 0.16rem;
+  }
+  .lm-section .service .s-1 .s-content > p {
+    font-size: 0.1rem;
+    margin: 0.06rem 0;
+  }
+  .lm-section .service .s-1 .s-content .restBtn a {
+    width: 1.2rem;
+    height: 0.3rem;
+    line-height: 0.3rem;
+    font-size: 0.12rem;
+  }
+  .lm-section .service .s-1 .s-content .restBtn a img {
+    width: 0.12rem;
+    left: 0.06rem;
+  }
+  .lm-section .service .s-2 {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .lm-section .service .s-2 .s-menu-wrap > li {
+    width: 100%;
+  }
+  .lm-section .service .s-2 .s-menu-wrap .n2 {
+    margin-left: 0;
+    margin-top: 0.2rem;
+  }
+  .lm-section .facility {
+    margin: 0.3rem 0;
+  }
+  .lm-section .facility > h2 {
+    font-size: 0.2rem;
+  }
+  .menu-wrap > li {
+    width: 100%;
+    height: auto;
+    padding: 0.1rem;
+    margin-top: 0.2rem;
+  }
+  .menu-wrap > li h2 {
+    font-size: 0.16rem;
+    margin-top: 0.15rem;
+  }
+  .menu-wrap > li p {
+    font-size: 0.14rem;
+    margin: 0.1rem 0;
+  }
+  .menu-wrap > li a {
+    font-size: 0.16rem;
+  }
+  .menu-wrap .n2,
+  .menu-wrap .n5 {
+    border: none;
+  }
+  .menu-wrap .n4,
+  .menu-wrap .n5,
+  .menu-wrap .n6 {
+    margin-top: 0.2rem;
+  }
+}

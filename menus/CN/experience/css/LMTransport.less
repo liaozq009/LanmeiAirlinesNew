@@ -1,0 +1,64 @@
+/* 定义变量 */
+@url:"../images/CN/";
+/* 定义颜色变量 */
+@green:#8ec060;
+@purple:#1f2c5c;
+@gray:#808080;
+@red:#d0011b;
+@link:#4aa374;
+
+.lm-section{
+	width: 940px;
+	min-height: 300px;
+	margin:0 auto;
+	.title{
+		h1{
+			font-size: 36px;
+			color: @purple;
+		}
+	}
+	.check-steps{
+		margin-top: 30px;
+		margin-bottom: 50px;
+		font-size: 14px;
+		color:@gray;
+		margin-top:10px;
+		h2{
+			font-size: 22px;
+			font-weight: bold;
+			color:@purple;
+			margin:26px 0 20px;
+			text-align: center;
+			text-indent: 2em;
+			line-height: 30px;
+		}
+		h3{
+			font-size: 16px;
+			font-weight: bold;
+			color:@purple;
+			margin:20px 0 20px;
+			line-height: 28px;
+			text-indent: 2em;
+		}
+		p{
+			font-size: 14px;
+			color:@gray;
+			margin-top:20px;
+			text-indent: 2em;
+			line-height: 26px;
+		}
+	}
+}
+
+@media screen and (max-width:992px){
+	.lm-section{
+		width: 100%;
+		padding:15px;
+		.title{
+			h1{
+				font-size: 0.26rem;
+				text-align: center;
+			}
+		}
+	}
+}

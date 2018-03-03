@@ -1,0 +1,50 @@
+
+/* 定义变量 */
+@green:#8ec060;
+@purple:#1f2c5c;
+@gray:#808080;
+@red:#d0011b;
+@link:#4aa374;
+
+
+/* Bootstrap修改样式 */
+.carousel-control {
+	top:50%;
+	margin-top: -125px;
+	width: 90px;
+	height: 250px;
+	line-height: 250px;
+	background:rgba(0,0,0,0.30);
+	border-radius:2px;
+	z-index: 99;
+}
+.carousel-control.left {
+	left: 160px;
+	background-image:none !important;
+}
+.carousel-control.right {
+	right:160px;
+	background-image:none !important;
+}
+.carousel-indicators li {
+	width:30px;
+	height:4px;
+	border:2px solid @purple;
+}
+.carousel-indicators .active{
+	border-color:@green;
+	width:30px;
+	height:4px;
+}
+
+/* layer样式 */
+body .layui-layer-btn .layui-layer-btn0{
+	border-color: @green;
+	background-color: @green;
+}
+body .layui-layer-title{
+	background-color: @green;
+	color:#fff;
+}
+
+

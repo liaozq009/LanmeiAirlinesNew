@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- 让 Bootstrap 兼容 IE 兼容模型 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- 让 Bootstrap 兼容 国产浏览器的高速模型 -->
+	<meta name="renderer" content="webkit">
+	<!-- 实现响应式的设置 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>LanmeiAirlines</title>
+	<!-- 引入图标 -->
+	<link rel="icon" href="../../images/EN/lanmeiLogo.ico">
+	<link rel="stylesheet" type="text/css" href="../../libs/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../../common/EN/fonts/lm-iconfont.css">
+	<link rel="stylesheet" type="text/css" href="../../common/EN/css/Lanmei-common.css">
+	<link rel="stylesheet" type="text/css" href="../../libsEdit/css/lanmeiLibsEdit.css">
+	<!--[if lt IE 9]>
+	<script src="../../libs/bootstrap/js/html5shiv.min.js"></script>
+	<script src="../../libs/bootstrap/js/respond.min.js"></script>
+<![endif]-->
+<style type="text/css">
+.lm-section{
+	width: 960px;
+	min-height: 500px;
+	margin: 0 auto;
+	margin-bottom: 50px;
+}
+.lm-section-title{
+	width: 100%;
+	font-size: 30px;
+	font-weight: 700;
+	color: #1f2c5c;
+	text-align: center;
+	margin-bottom: 20px;
+}
+.flight-table{
+	font-size: 14px;
+}
+.flight-table tbody tr th{
+	text-align: center;
+	vertical-align:middle;
+	color: #1f2c5c;
+	font-weight: bold;
+}
+.flight-title{
+	background: #f2f2f2;
+}
+.flight-table tbody tr td{
+	text-align: center;
+	vertical-align:middle;
+}
+.flight-table .table-line{
+	height: 34px;
+}
+.flight-table .flight-style{
+	text-align: left;
+	font-weight: bold;
+	color: #1f2c5c;
+	background: #f5f5f5;
+}
+.flight-table .air-line{
+	text-align: center;
+	color: #1f2c5c;
+	font-weight: bold;
+}
+
+
+@media screen and (max-width: 992px){
+	.lm-section{
+		width: 100%;
+		padding: 0 0.1rem;
+		margin-top: 0.5rem;
+	}
+	.table-wrap{
+		width: 100%;
+	}
+}
+@media screen and (max-width: 767px){
+	
+}
+</style>
+</head>
+<body>
+	<!-- 页面顶部 -->
+	<header class="lanmeiHeader-subpage">
+		<nav class="lanmeiNav">
+			<div class="lanmeiLogo">
+				<a class="navbar-brand" href="../../index.html""><img src="../../images/EN/lanmeiLogo.png"></a>
+				<!-- <a class="navbar-brand" href="/index.html"><img src="../../images/CN/lanmeiLogo.png"></a> -->
+			</div>
+			<div class="lanmeiHeadInfo">
+				<ul class="">
+					<li class="nth-child1">
+						<img src="../../images/EN/phone.png">
+						<div>
+							<span>+855 23881890</span>/
+							<span>+855 23881893</span>/
+							<span>+855 23881865</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+	<header class="m-header">
+		<a href="../../index.html"><i class="iconfont icon-left-arrow"></i></a>
+		<h2 class="m-nav-title" data-title="f-nav-title">Routes Schedule</h2>
+	</header>
+
+	<!-- 页面主体 -->
+	<section class="lm-section">
+		<h2 class="lm-section-title">Routes Schedule</h2>
+		<div class="table-wrap">
+			<table class="flight-table table table-bordered table-responsive">
+				<thead>
+					
+				</thead>
+				<tbody>
+					<tr class="flight-title">
+						<th rowspan="2">Flight No.</th>
+						<th rowspan="2">City Pair</th>
+						<th rowspan="2">City Pair (ICAO Code)</th>
+						<th colspan="7">Period</th>
+						<th>Take off</th>
+						<th>Landing</th>
+						<th rowspan="2">Remarks</th>
+					</tr>
+					<tr class="flight-title">
+						<th>1</th>
+						<th>2</th>
+						<th>3</th>
+						<th>4</th>
+						<th>5</th>
+						<th>6</th>
+						<th>7</th>
+						<th>Local Time</th>
+						<th>Local Time</th>
+					</tr>
+
+					<!-- PNH-REP- PNH -->
+					<tr>
+						<td colspan="13" class="flight-style">I. Domestic Flight </td>
+					</tr>
+					<tr>
+						<td colspan="13" class="air-line">PNH-REP- PNH</td>
+					</tr>
+					<!-- 4行 -->
+					<tr>
+						<td rowspan="2">LQ806</td>
+						<td rowspan="4">Phnom Penh-Siem Reap</td>
+						<td rowspan="2">PNH-REP</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>4</td>
+						<td></td>
+						<td>6</td>
+						<td></td>
+						<td>11:40</td>
+						<td>12:30</td>
+						<td rowspan="2"></td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>11:50</td>
+						<td>12:40</td>
+					</tr>
+					<tr>
+						<td rowspan="2">LQ315</td>
+						<td rowspan="2">PNH-REP</td>
+						<td></td>
+						<td>2</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>13:10</td>
+						<td>13:55</td>
+						<td rowspan="2"></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td>3</td>
+						<td></td>
+						<td>5</td>
+						<td></td>
+						<td>7</td>
+						<td>12:55</td>
+						<td>13:50</td>
+					</tr>
+					<!-- 分割行 -->
+					<tr>
+						<td colspan="13" class="table-line"></td>
+					</tr>
+					<!-- 2行 -->
+					<tr>
+						<td rowspan="2">LQ316</td>
+						<td rowspan="2">Siem Reap-Phnom Penh</td>
+						<td rowspan="2">REP-PNH</td>
+						<td></td>
+						<td>2</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>20:15</td>
+						<td>21:05</td>
+						<td rowspan="2"></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td>3</td>
+						<td></td>
+						<td>5</td>
+						<td></td>
+						<td>7</td>
+						<td>19:00</td>
+						<td>19:50</td>
+					</tr>
+
+					<!-- REP-SGN-REP -->
+					<tr>
+						<td colspan="13" class="flight-style">II. International Flight</td>
+					</tr>
+					<tr>
+						<td colspan="13" class="air-line">REP-SGN-REP</td>
+					</tr>
+					<!-- 2行 -->
+					<tr>
+						<td rowspan="2">LQ660</td>
+						<td rowspan="2">Siem Reap-Ho Chi Minh</td>
+						<td rowspan="2">REP-SGN</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>5</td>
+						<td></td>
+						<td></td>
+						<td>14:35</td>
+						<td>16:00</td>
+						<td rowspan="2"></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>2</td>
+						<td>3</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>7</td>
+						<td>14:55</td>
+						<td>16:00</td>
+					</tr>
+					<!-- 分割行 -->
+					<tr>
+						<td colspan="13" class="table-line"></td>
+					</tr>
+					<!-- 3行 -->
+					<tr>
+						<td rowspan="3">LQ661</td>
+						<td rowspan="3">Ho Chi Minh-Siem Reap</td>
+						<td rowspan="3">SGN-REP</td>
+						<td></td>
+						<td>2</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>17:00</td>
+						<td>18:00</td>
+						<td rowspan="3"></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td>3</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>7</td>
+						<td>17:00</td>
+						<td>17:50</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>5</td>
+						<td></td>
+						<td></td>
+						<td>17:00</td>
+						<td>18:05</td>
+					</tr>
+					<!-- 分割行 -->
+					<tr>
+						<td colspan="13" class="table-line"></td>
+					</tr>
+
+					<!-- PNH-HAN-PNH -->
+					<tr>
+						<td colspan="13" class="air-line">PNH-HAN-PNH</td>
+					</tr>
+					<!-- 2行 -->
+					<tr>
+						<td rowspan="2">LQ666</td>
+						<td rowspan="2">Phnom Penh-Hanoi</td>
+						<td rowspan="2">PNH-HAN</td>
+						<td></td>
+						<td>2</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>7:00</td>
+						<td>8:45</td>
+						<td rowspan="2"></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td>3</td>
+						<td></td>
+						<td>5</td>
+						<td></td>
+						<td>7</td>
+						<td>7:35</td>
+						<td>9:20</td>
+					</tr>
+					<!-- 分割行 -->
+					<tr>
+						<td colspan="13" class="table-line"></td>
+					</tr>
+					<!-- 2行 -->
+					<tr>
+						<td rowspan="2">LQ667</td>
+						<td rowspan="2">Hanoi-Phnom Penh</td>
+						<td rowspan="2">HAN-PNH</td>
+						<td></td>
+						<td>2</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>9:55</td>
+						<td>11:40</td>
+						<td rowspan="2"></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td>3</td>
+						<td></td>
+						<td>5</td>
+						<td></td>
+						<td>7</td>
+						<td>10:30</td>
+						<td>12:10</td>
+					</tr>
+					<!-- 分割行 -->
+					<tr>
+						<td colspan="13" class="table-line"></td>
+					</tr>
+
+					<!-- REP-MFM-PNH -->
+					<tr>
+						<td colspan="13" class="air-line">REP-MFM-PNH</td>
+					</tr>
+					<!-- 2行 -->
+					<tr>
+						<td rowspan="2">LQ806</td>
+						<td rowspan="2">Siem Reap-Macao</td>
+						<td rowspan="2">REP-MFM</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>4</td>
+						<td></td>
+						<td>6</td>
+						<td></td>
+						<td>13:30</td>
+						<td>17:10</td>
+						<td rowspan="2"></td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>14:20</td>
+						<td>17:55</td>
+					</tr>
+					<!-- 分割行 -->
+					<tr>
+						<td colspan="13" class="table-line"></td>
+					</tr>
+					<!-- 4行 -->
+					<tr>
+						<td rowspan="2">LQ807</td>
+						<td rowspan="2">Macao-Phnom Penh</td>
+						<td rowspan="2">MFM-PNH</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>4</td>
+						<td></td>
+						<td>6</td>
+						<td></td>
+						<td>18:00</td>
+						<td>19:50</td>
+						<td rowspan="2"></td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>18:40</td>
+						<td>20:10</td>
+					</tr>
+					<tr>
+						<td rowspan="2">LQ806</td>
+						<td rowspan="2">Phnom Penh-Macao</td>
+						<td rowspan="2">PNH-MFM</td>
+						<td>1</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>11:55</td>
+						<td>17:55</td>
+						<td rowspan="2">Stopover：Siem Reap(REP)</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>4</td>
+						<td></td>
+						<td>6</td>
+						<td></td>
+						<td>11:40</td>
+						<td>17:10</td>
+					</tr>
+					<!-- 分割行 -->
+					<tr>
+						<td colspan="13" class="table-line"></td>
+					</tr>
+
+					<!-- KOS-MFM-KOS -->
+					<tr>
+						<td colspan="13" class="air-line">KOS-MFM-KOS</td>
+					</tr>
+					<!-- 2行 -->
+					<tr>
+						<td rowspan="2">LQ502</td>
+						<td rowspan="2">Sihanoukville-Macao</td>
+						<td rowspan="2">KOS-MFM</td>
+						<td></td>
+						<td>2</td>
+						<td></td>
+						<td></td>
+						<td>5</td>
+						<td></td>
+						<td></td>
+						<td>17:15</td>
+						<td>21:00</td>
+						<td rowspan="2"></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>7</td>
+						<td>8:50</td>
+						<td>12:30</td>
+					</tr>
+					<!-- 分割行 -->
+					<tr>
+						<td colspan="13" class="table-line"></td>
+					</tr>
+					<!-- 2行 -->
+					<tr>
+						<td rowspan="2">LQ503</td>
+						<td rowspan="2">Macao-Sihanoukville</td>
+						<td rowspan="2">MFM-KOS</td>
+						<td></td>
+						<td>2</td>
+						<td></td>
+						<td></td>
+						<td>5</td>
+						<td></td>
+						<td>7</td>
+						<td>23:05</td>
+						<td>00:50+1</td>
+						<td rowspan="2"></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<!-- 分割行 -->
+					<tr>
+						<td colspan="13" class="table-line"></td>
+					</tr>
+
+					<!-- PNH-REP- PNH -->
+					<!-- <tr >
+						<td colspan="13" class="flight-style">III. Charter Schedule</td>
+					</tr> -->
+					<!-- HKG-KOS-HKG -->
+					<tr>
+						<td colspan="13" class="air-line">HKG-KOS-HKG</td>
+					</tr>
+					<!-- 1行 -->
+					<tr>
+						<td>LQ971</td>
+						<td>Hong Kong-Sihanoukville</td>
+						<td>HKG-KOS</td>
+						<td>1</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>20:25</td>
+						<td>22:25</td>
+						<td></td>
+					</tr>
+					<!-- 1行 -->
+					<tr>
+						<td>LQ970</td>
+						<td>Sihanoukville-Hong Kong</td>
+						<td>KOS-HKG</td>
+						<td>1</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>15:15</td>
+						<td>19:25</td>
+						<td></td>
+					</tr>
+					<!-- 1行 -->
+					<tr>
+						<td>LQ971</td>
+						<td>Hong Kong-Sihanoukville</td>
+						<td>HKG-KOS</td>
+						<td></td>
+						<td></td>
+						<td>3</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>7</td>
+						<td>14:10</td>
+						<td>16:10</td>
+						<td></td>
+					</tr>
+					<!-- 1行 -->
+					<tr>
+						<td>LQ970</td>
+						<td>Sihanoukville-Hong Kong</td>
+						<td>KOS-HKG</td>
+						<td></td>
+						<td></td>
+						<td>3</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>7</td>
+						<td>8:40</td>
+						<td>12:50</td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</section>
+
+	<!-- 页脚 -->
+	<footer class="footerInfo">
+		<div class="footerBg">
+			<div class="HelpfulInformation">
+				<p>Helpful Information</p>
+			</div>
+			<div class="contactUs">
+				<div class="nth-child1"><img src="../../images/EN/email.png"><span>lm-ec@lanmeiairlines.com</span></div>
+				<div class="nth-child2">
+					<span>FOLLOW</span>
+					<a href="https://www.facebook.com/lanmeiairlines/">
+						<i class="iconfont icon-facebook"></i>
+					</a>
+					<a href="#"><i class="iconfont icon-in"></i></a>
+					<a href="#"><i class="iconfont icon-inst"></i></a>
+					<a href="#"><i class="iconfont icon-youtube"></i></a>
+					<a href="#"><i class="iconfont icon-googleplus"></i></a>
+					<a href="http://weibo.com/lanmeiair"><i class="iconfont icon-wb"></i></a>
+					<a href="#"><i class="iconfont icon-tuite"></i></a>
+				</div>
+			</div>
+			<div class="location">
+				<img src="../../images/EN/location.png"><a href="https://www.google.com.kh/maps/place/Lanmei+Airlines/@11.5637415,104.8830989,17z/data=!3m1!4b1!4m5!3m4!1s0x310951a3c5cdaf97:0x77359b117b2ff068!8m2!3d11.5637363!4d104.8852876" target="_Blank">No.575 D&E, Russian Federation Boulevard, Phnom Penh, Cambodia</a>
+			</div>
+			<div class="LanmeiAirlinesBerhad">
+				<a href="../../index.html"><img src="../../images/EN/lanmeiFooterLogo.png"></a>
+				<div>
+					<p class="p1">Terms of Use | Privacy Policy | Cookies</p>
+					<p class="p2">© Copyright 2017 Lanmei Airlines. All Rights Reserved. ICP: Guangdong Province <a href="http://www.miitbeian.gov.cn" target="_Blank">ICP-17005494-1</a></p>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<!-- 第三方库-->
+	<script type="text/javascript" src="../../libs/jQuery/jquery-1.11.3.js"></script>
+	<!-- <script type="text/javascript" src="../../libs/jQuery/jquery.cookie.js"></script> -->
+	<script type="text/javascript" src="../../libs/layer/layer.js"></script>
+	<script type="text/javascript" src="../../common/EN/js/Lanmei-common.js"></script>
+	<script type="text/javascript" src="../../libs/mobile-libs/fastclick/fastclick.js"></script>
+	<script type="text/javascript" src="../../libs/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

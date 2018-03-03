@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- 让 Bootstrap 兼容 IE 兼容模型 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- 让 Bootstrap 兼容 国产浏览器的高速模型 -->
+	<meta name="renderer" content="webkit">
+	<!-- 实现响应式的设置 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Be Unique,lanmei Airlines offical website find great deals now&nbsp;to our worldwide destinations.Cambodia,booking flights">
+	<meta name="keywords" content="lanmei airlines,六国,柬埔寨,澜湄航空,机票预订,lanmei,LQ,Fly to Cambodia,Special Ticket,lanmei A320,booking,ticket booking,booking flights">
+	<meta name="baidu-site-verification" content="wL5we2b5k5" />
+	<title>Be Unique, Lanmei Airlines</title>
+
+	<!-- 引入图标 -->
+	<link rel="icon" href="../../images/EN/lanmeiLogo.ico">
+	<link rel="stylesheet" type="text/css" href="../../common/EN/fonts/lm-iconfont.css">
+	<link rel="stylesheet" type="text/css" href="../../libs/bootstrap/css/bootstrap.min.css">
+	
+	<!-- 编辑器的样式 -->
+	<link rel="stylesheet" type="text/css" href="../../libs/wysiwyg/css/font-awesome.css" />
+	<link rel="stylesheet" type="text/css" href="../../libs/wysiwyg/css/wysiwyg-editor.css" />
+	<!-- 调色板样式 -->
+	<link rel="stylesheet" type="text/css" href="../../libs/spectrum/spectrum.css" />
+	<link rel="stylesheet" type="text/css" href="../../libs/rangeNum/jquery.range.css">
+	<link rel="stylesheet" type="text/css" href="../../libs/jedate/skin/jedate.css">
+	<link rel="stylesheet" type="text/css" href="../../common/EN/css/animate.css">
+	<link rel="stylesheet" type="text/css" href="../../common/EN/css/LMTravel-common.css">
+	<link rel="stylesheet" type="text/css" href="../../css/EN/LMTravelPlanning.css">
+	<link rel="stylesheet" type="text/css" href="../../css/EN/LMTravelDiary.css">
+	
+
+	<!--[if lt IE 9]>
+	<script src="../../libs/bootstrap/js/html5shiv.min.js"></script>
+	<script src="../../libs/bootstrap/js/respond.min.js"></script>
+<![endif]-->
+</head>
+<body>
+	<header class="p-header">
+		<div class="p-header-title">
+			<img src="../../images/EN/p-lanmeiLogo.png" class="p-logo">
+			<p class="p-local">Palau</p>
+			<p class="p-line"></p>
+			<p class="p-time"><span class="s1">Travel time :</span><span class="s2">2017-12-25</span></p>
+			<img src="../../images/EN/p-editor.png" class="p-edit">
+			<img src="../../images/EN/p-headPort.png" class="p-headPort">
+		</div>
+		<!-- 标题和人数等编辑框 -->
+		<div class="p-editor">
+			<div class="p-editor-title">
+				Title
+				<input type="text" name="" value="Palau" >
+			</div>
+			<div class="p-editor-time">
+				Travel time
+				<input type="text" id="travel-edit-time" name="" value="2017-12-25" readonly>
+			</div>
+			<div class="p-editor-people">
+				<p class="p-editor-adult">
+					People 
+					<a href="javascript:void(0)" class="people-add">+</a>
+					<input type="text" name="" value="1" readonly>
+					<a href="javascript:void(0)" class="people-sub">-</a>
+				</p>
+				<p class="p-editor-child">
+					Child
+					<a href="javascript:void(0)" class="child-add">+</a>
+					<input type="text" name="" value="0" readonly>
+					<a href="javascript:void(0)" class="child-sub">-</a>
+				</p>
+			</div>
+			<div class="p-editor-money">
+				Money
+				<select class="min-money">
+					<option value="0">0</option>
+					<option value="10000">10000</option>
+					<option value="20000">20000</option>
+					<option value="30000">30000</option>
+					<option value="40000">40000</option>
+					<option value="50000">50000</option>
+					<option value="60000">60000</option>
+					<option value="70000">70000</option>
+					<option value="80000">80000</option>
+				</select>
+				<div class="range-money">
+					<input class="range-slider" type="text" name="" value="0,10000" placeholder="0">
+				</div>
+				<select class="max-money">
+					<option value="10000">10000</option>
+				</select>
+			</div>
+			<div class="p-editor-type">
+				<div class="p-editor-group">
+					Group
+					<select name="">
+						<option value="1">parent-child</option>
+						<option value="2">parents</option>
+						<option value="3">friend</option>
+						<option value="4">one</option>
+						<option value="5">man and wife</option>
+						<option value="6">lovers</option>
+					</select>
+				</div>
+				<div class="p-editor-share">
+					Share to
+					<select name="">
+						<option value="1">everyone</option>
+						<option value="2">oneself</option>
+						<option value="3">friend</option>
+					</select>
+				</div>
+			</div>
+			<div class="p-editor-ok">
+				<button class="p-ok">OK</button>
+				<button class="p-cancel">Cancel</button>
+			</div>
+		</div>
+	</header>
+	<!-- 操作栏 -->
+	<div class="p-toolbar">
+		<ul class="p-toolbar-left">
+			<li class="n1"><a href="#route">Route</a></li>
+			<li class="n2 active"><a href="#diary">Diary</a></li>
+			<li class="n3"><a href="#cover">Cover</a></li>
+			<li class="bottom-line"></li>
+		</ul>
+		<!-- 分页 -->
+		<div class="t-comment-page"></div>
+		<div class="p-toolbar-right">
+			<a href="#route" class="p-preview">Preview</a>
+			<a href="#diary" class="p-save">Save</a>
+			<a href="#cover" class="p-next">Next</a>
+		</div>
+	</div>
+	<!-- 游记主体内容 -->
+	<section class="p-diary-section">
+		<!--游记书本上传按钮左边位置-->
+		<div class="p-diary-secyion-leftall" >
+			<!--背景色选择-->
+			<div class="p-diary-secyion-left left-bg" >
+				<ul class="p-bg-ul">
+					<li class="add-bg">bg</li>	
+					<li id="bgUpload" class="add-box"></li>
+				</ul>
+			</div>
+			<!--图片、音乐、视频上传-->
+			<div class="p-diary-secyion-left left-upload">
+				<ul class="p-bg-ul" style="position: relative;">
+					<li class="add-bg upload" id="picUpload">
+						<span class="glyphicon glyphicon-picture"></span>
+					</li>	
+					<li class="add-bg upload" id="playVideo">
+						<span class="glyphicon glyphicon-facetime-video"></span>
+					</li>
+					<li class="add-bg upload upload-play" id="playAudio">
+						<input type="hidden" value="1" id="radioStatus" />
+						<audio controls id="MyAudio" hidden>
+					        <source src="../../myMusic.mp3" type="audio/mpeg" id="audioSrc"> 
+					    </audio>
+						<span class="glyphicon glyphicon glyphicon-signal radioPlay" id="playAudioSpan"></span>
+					</li>
+					<div class="play-tips">
+						<span id="tipName"></span>
+						<i class="glyphicon glyphicon-open" title="重新上传" onclick="reupload()"></i>
+					</div>
+				</ul>
+			</div>
+		</div>
+		<!-- 游记书本div -->
+		<div class="p-diary-secyion-center">
+			<!-- 游记书本左半部分 -->
+			<div class="p-diary-book-left" placeholder="Write your travels here..." ><div></div></div>
+			<!--游记书本中间书页效果部分-->
+			<div class="p-diary-book-center"></div>
+			<!--游记书本右半部分-->
+			<div class="p-diary-book-right"   placeholder="Write your travels here..." ><div></div></div>
+		</div>
+		<!--游记书本右边相关按钮-->
+		<div class="p-diary-secyion-right" style="position: relative;">
+			<div class="p-diary-tag">
+				<ul class="p-tag-ul">
+					<li class="add-tag">+</li>	
+					<li class="add-content">
+						Add
+					</li>
+					<li class="tag-content">
+						tag
+					</li>
+				</ul>
+			</div>
+			<div class="p-diary-upload">
+				<ul class="p-tag-ul">
+					<li class="add-tag">
+						<img src="../../images/EN/arrow-up.png" />
+					</li>	
+					<li class="add-content">
+						Upload 
+					</li>
+					<li class="tag-content">
+						bg
+					</li>
+				</ul>
+			</div>
+			<div class="p-diary-remove">
+				<ul class="p-tag-ul">
+					<li class="add-tag">
+						<img src="../../images/EN/arrow-up.png" />
+					</li>	
+					<li class="add-content">
+						Remove
+					</li>
+					<li class="tag-content">
+						bg
+					</li>
+				</ul>
+			</div>
+			<div class="uploadbg-tip">
+				<input type="file" style="display: none;" id='bguploadfile_l' />
+				<input type="file" style="display: none;" id='bguploadfile_r' />
+				<button type="button" class="btn-l">bgLeft</button>
+				<button type="button" class="btn-r">bgRight</button>
+			</div>
+			<div class="removebg-tip">
+				<button id="removebgL" type="button" class="btn-l">bgLeftRemove</button>
+				<button id="removebgR" type="button" class="btn-r">bgRightRemove</button>
+			</div>
+		</div>
+		<!--书本下方按钮-->
+		<div class="p-diary-secyion-bottom">
+				<div class="p-diary-next" id="book-next">
+					<ul class="p-tag-ul">
+						<li class="add-tag">
+							<img class="diary-upLoad" src="../../images/EN/diary-upLoad.png" />
+						</li>	
+						<li class="add-content">
+							Save
+						</li>
+						<li class="tag-content">
+							Next
+						</li>
+						
+					</ul>
+				</div>
+		</div>
+	</section>
+	<div class="popup" id="popup">
+		<div class="page">
+			<div class="title" id="popupTitle"></div>
+			<div class="content">
+				<div class="wysiwyg-toolbar-form" unselectable="on">
+					<div class="wysiwyg-browse">Drop file or click
+						<input id="fileChoose" type="file" name="fileTrans" onchange="showName(this)" draggable="true" style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; opacity: 0; cursor: pointer;">
+					</div>
+					<p id="fileName"></p>
+					<div class="btn-div">
+						<button type="button" id="fileUpload" class="insertBtn" onclick="fileUpload2()">File Upload</button>
+						<button type="button" id="cancelBtn" class="cancelBtn" onclick="popupClose()">Cancel</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 第三方库-->
+	<script type="text/javascript" src="../../libs/jQuery/jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="../../libs/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../../libs/rangeNum/jquery.range.js"></script>
+	<script type="text/javascript" src="../../libs/jedate/jquery.jedate.js"></script>
+	<script type="text/javascript" src="../../libs/wysiwyg/js/wysiwyg.js"></script>
+	<script type="text/javascript" src="../../libs/wysiwyg/js/wysiwyg-editor.js"></script>
+	<script type="text/javascript" src="../../libs/spectrum/spectrum.js"></script>
+	<script type="text/javascript" src="../../libs/layer/layer.js"></script>
+	<!-- 公共JS -->
+	<script type="text/javascript" src="../../common/EN/js/LMTravel-common.js"></script>
+	<!-- 业务代码 -->
+	<script type="text/javascript" src="../../libs/jqueryPage.js"></script>
+	<script type="text/javascript" src="../../js/EN/LMTravelDiary.js"></script>
+
+</body>
+</html>

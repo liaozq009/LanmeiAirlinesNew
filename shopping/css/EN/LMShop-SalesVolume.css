@@ -1,0 +1,136 @@
+/* 定义变量 */
+.lm-sales {
+  width: 960px;
+  margin: 0 auto;
+  padding: 50px 10px 50px;
+}
+.lm-sales .pd-sales-title {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  color: #8ec060;
+}
+.lm-sales .pd-sales-title span {
+  color: #1f2c5c;
+}
+.lm-sales .pd-sales-list {
+  margin-top: 50px;
+  overflow: hidden;
+}
+.lm-sales .pd-sales-list dl {
+  float: left;
+  text-align: center;
+  margin-left: 50px;
+}
+.lm-sales .pd-sales-list dl dt img {
+  cursor: pointer;
+}
+.lm-sales .pd-sales-list dl dt .pd-sales-img2 {
+  display: none;
+}
+.lm-sales .pd-sales-list dl dd {
+  font-size: 14px;
+  color: #808080;
+  margin-top: 20px;
+}
+.lm-sales .pd-sales-list .pd-sales-list-1 {
+  margin-left: 95px;
+}
+.lm-sales .pd-sales-rule {
+  width: 600px;
+  margin: 20px 0 20px 300px;
+}
+.lm-sales .pd-sales-rule h2 {
+  font-size: 14px;
+  font-weight: bold;
+  color: #8ec060;
+  line-height: 24px;
+  padding-left: 150px;
+}
+.lm-sales .pd-sales-rule p {
+  font-size: 14px;
+  font-weight: bold;
+  color: #1f2c5c;
+  line-height: 24px;
+}
+.lm-sales .pd-sales-discount .pd-discount-list {
+  overflow: hidden;
+}
+.lm-sales .pd-sales-discount .pd-discount-list li {
+  position: relative;
+  float: left;
+  width: 300px;
+  height: 150px;
+  background-image: url("../../images/EN/pd-discount-1.png");
+  text-align: center;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+.lm-sales .pd-sales-discount .pd-discount-list li > h2 {
+  font-size: 30px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.16);
+  margin-top: 42px;
+}
+.lm-sales .pd-sales-discount .pd-discount-list li > p {
+  font-weight: bold;
+  font-size: 14px;
+  color: #ffffff;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.16);
+  margin-top: 10px;
+}
+.lm-sales .pd-sales-discount .pd-discount-list li img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+.lm-sales .pd-sales-discount .pd-discount-list .discount-1 {
+  background-image: url("../../images/EN/pd-discount-1.png");
+}
+.lm-sales .pd-sales-discount .pd-discount-list .discount-2 {
+  background-image: url("../../images/EN/pd-discount-2.png");
+}
+.lm-sales .pd-sales-discount .pd-discount-list .discount-3 {
+  background-image: url("../../images/EN/pd-discount-3.png");
+}
+.lm-sales .pd-sales-discount .pd-discount-list .discount-4 {
+  background-image: url("../../images/EN/pd-discount-3.png");
+}
+.lm-sales .pd-sales-discount .pd-discount-list .discount-5 {
+  background-image: url("../../images/EN/pd-discount-2.png");
+}
+.lm-sales .pd-sales-discount .pd-discount-list .discount-6 {
+  background-image: url("../../images/EN/pd-discount-1.png");
+}
+.lm-sales .pd-sales-discount .pd-discount-list .discount-7 {
+  background-image: url("../../images/EN/pd-discount-3.png");
+}
+.lm-sales .pd-sales-discount .pd-discount-list .discount-8 {
+  background-image: url("../../images/EN/pd-discount-2.png");
+}
+.lm-sales .pd-sales-discount .pd-discount-list .discount-9 {
+  background-image: url("../../images/EN/pd-discount-3.png");
+}
+.lm-sales .pd-sales-discount .pd-discount-more {
+  overflow: hidden;
+}
+.lm-sales .pd-sales-discount .pd-discount-more .pd-discount-select {
+  float: left;
+}
+.lm-sales .pd-sales-discount .pd-discount-more .pd-discount-select a img {
+  cursor: pointer;
+}
+.lm-sales .pd-sales-discount .pd-discount-more .pd-discount-select span {
+  font-size: 14px;
+  color: #1a1a1a;
+  margin: 0 24px;
+}
+.lm-sales .pd-sales-discount .pd-discount-more .pd-discount-arrow {
+  float: right;
+}
+.lm-sales .pd-sales-discount .pd-discount-more .pd-discount-arrow a {
+  font-size: 14px;
+  color: #1a1a1a;
+}

@@ -1,0 +1,97 @@
+/* 定义变量 */
+@url:"../images/CN/";
+/* 定义颜色变量 */
+@green:#8ec060;
+@purple:#1f2c5c;
+@gray:#808080;
+@red:#d0011b;
+@link:#4aa374;
+
+.lm-section{
+	width: 940px;
+	min-height: 300px;
+	margin:0 auto;
+	.title{
+		h1{
+			font-size: 36px;
+			color: @purple;
+		}
+	}
+	.catalog{
+		overflow: hidden;
+		border:1px solid #808080;
+		margin-top: 30px;
+		>div{
+			float: left;
+			width: 25%;
+			padding:10px;
+			a{
+				display: block;
+				margin-top: 6px;
+				color:#00908c;
+				font-size: 14px;
+				overflow: hidden;
+			    text-overflow: ellipsis;
+			    white-space: nowrap;
+			}
+		}
+	}
+	.check-steps{
+		margin-top: 30px;
+		margin-bottom: 50px;
+		font-size: 14px;
+		color:@gray;
+		margin-top:10px;
+		line-height: 24px;
+		h2{
+			font-size: 22px;
+			font-weight: bold;
+			color:@purple;
+			margin:26px 0 20px;
+			text-align: center;
+			line-height: 30px;
+		}
+		h3{
+			font-size: 16px;
+			font-weight: bold;
+			color:@purple;
+			margin:20px 0 20px;
+			line-height: 28px;
+		}
+		p{
+			font-size: 14px;
+			color:@gray;
+			margin-bottom:20px;
+			line-height: 26px;
+		}
+	}
+}
+
+@media screen and (max-width:992px){
+	.lm-section{
+		width: 100%;
+		padding:15px;
+		.title{
+			h1{
+				font-size: 0.26rem;
+				text-align: center;
+			}
+		}
+		.catalog{
+			margin-top: 0;
+			>div{
+				width: 50%;
+			}
+		}
+	}
+}
+@media screen and (max-width:767px){
+	.lm-section{
+		.catalog{
+			>div{
+				width: 100%;
+				padding:6px 10px;
+			}
+		}
+	}
+}

@@ -1,0 +1,39 @@
+/* 定义变量 */
+/* Bootstrap修改样式 */
+.carousel-control {
+  top: 50%;
+  margin-top: -125px;
+  width: 90px;
+  height: 250px;
+  line-height: 250px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 2px;
+  z-index: 99;
+}
+.carousel-control.left {
+  left: 160px;
+  background-image: none !important;
+}
+.carousel-control.right {
+  right: 160px;
+  background-image: none !important;
+}
+.carousel-indicators li {
+  width: 30px;
+  height: 4px;
+  border: 2px solid #1f2c5c;
+}
+.carousel-indicators .active {
+  border-color: #8ec060;
+  width: 30px;
+  height: 4px;
+}
+/* layer样式 */
+body .layui-layer-btn .layui-layer-btn0 {
+  border-color: #8ec060;
+  background-color: #8ec060;
+}
+body .layui-layer-title {
+  background-color: #8ec060;
+  color: #fff;
+}

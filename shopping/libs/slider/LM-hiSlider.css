@@ -1,0 +1,96 @@
+*{
+    box-sizing: border-box;
+}
+.hiSlider{
+    overflow: hidden;
+    background: #eee;
+}
+.hiSlider-item{
+    width: 100%;
+    float: left;
+}
+.hiSlider-item img{
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+/* jquery.hiSlider.css */
+.hiSlider-pages,
+.hiSlider-title{
+    position: absolute;
+    z-index: 3;
+}
+
+.hiSlider-btn-prev{
+    position: absolute;
+    z-index: 99;
+    top: 50%;
+    left: 160px;
+    height: 250px;
+    width: 90px;
+    margin-top: -125px;
+    line-height: 250px;
+    text-align: center;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.3);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endColorstr=#4C000000);
+    border-radius: 2px;
+    -webkit-transition:all 1s;
+    transition:all 1s;
+}
+.hiSlider-btn-next{
+    position: absolute;
+    z-index: 99;
+    top: 50%;
+    right: 160px;
+    height: 250px;
+    width: 90px;
+    margin-top: -125px;
+    line-height: 250px;
+    text-align: center;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.3);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endColorstr=#4C000000);
+    border-radius: 2px;
+    -webkit-transition:all 1s;
+    transition:all 1s;
+}
+.hiSlider-btn-prev:hover,
+.hiSlider-btn-next:hover{
+    -webkit-transition:all 1s;
+    transition:all 1s;
+    background: rgba(0, 0, 0, 0.8);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#33000000,endColorstr=#33000000);
+}
+.hiSlider-title{
+    bottom: 0;
+    width: 100%;
+    padding: 6px 0;
+    color: #fff;
+    text-indent: 10px;
+    background: rgba(0,0,0,.6);
+    z-index: 2;
+    font: 14px/2 "Microsoft YaHei", "Arial", "Tahoma"
+}
+.hiSlider-pages{
+    bottom: 10px;
+    left: 50%;
+    margin-left: -48px;
+    text-align: right;
+}
+.hiSlider-pages a{
+    display: inline-block;
+    width:30px;
+    height:4px;
+    border:2px solid #1f2c5c;
+    margin:1px;
+    overflow: hidden;
+    background:#1f2c5c;
+}
+.hiSlider-pages a.active{
+    border-color:#8ec060;
+    width:30px;
+    height:4px;
+     background:#8ec060;
+}

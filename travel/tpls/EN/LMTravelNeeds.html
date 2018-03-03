@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- 让 Bootstrap 兼容 IE 兼容模型 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- 让 Bootstrap 兼容 国产浏览器的高速模型 -->
+	<meta name="renderer" content="webkit">
+	<!-- 实现响应式的设置 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Be Unique,lanmei Airlines offical website find great deals now&nbsp;to our worldwide destinations.Cambodia,booking flights">
+	<meta name="keywords" content="lanmei airlines,六国,柬埔寨,澜湄航空,机票预订,lanmei,LQ,Fly to Cambodia,Special Ticket,lanmei A320,booking,ticket booking,booking flights">
+	<meta name="baidu-site-verification" content="wL5we2b5k5" />
+	<title>Be Unique, Lanmei Airlines</title>
+
+	<!-- 引入图标 -->
+	<link rel="icon" href="../../images/EN/lanmeiLogo.ico">
+	<link rel="stylesheet" type="text/css" href="../../common/EN/fonts/lm-iconfont.css">
+	<link rel="stylesheet" type="text/css" href="../../libs/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../../libs/dataRange/dateRange.css">
+	<link rel="stylesheet" type="text/css" href="../../libs/rangeNum/jquery.range.css">
+	<link rel="stylesheet" type="text/css" href="../../common/EN/css/animate.css">
+	<link rel="stylesheet" type="text/css" href="../../common/EN/css/LMTravel-common.css">
+	<link rel="stylesheet" type="text/css" href="../../css/EN/LMTravelNeeds.css">
+	<!--[if lt IE 9]>
+	<script src="../../libs/bootstrap/js/html5shiv.min.js"></script>
+	<script src="../../libs/bootstrap/js/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div class="toolbar-wrap">
+		<div class="toolbar-return">
+			<a href="LMTravelMap.html">
+				<img src="../../images/EN/travel-arrow-left.png" alt="">
+				<span>Return</span>
+			</a>
+		</div>
+		<div class="toolbar-complete"><a href="LMTravelPlanning.html" target="_blank"><span>Complete</span></a></div>
+		<div class="toolbar-needs">Choose your travel needs</div>
+	</div>
+	<div class="needs-wrap">
+		<div class="needs-ticket">
+			<img src="../../images/EN/t-needs-ticket.png">
+		</div>
+		<div class="needs-ticket">
+			<img src="../../images/EN/t-needs-hotel.png">
+		</div>
+		<div class="needs-ticket">
+			<img src="../../images/EN/t-needs-car.png">
+		</div>
+		<div class="needs-ticket">
+			<img src="../../images/EN/t-needs-guide.png">
+		</div>
+	</div>
+
+	<!-- 日期选择模态框 -->
+	<div class="modal fade timeModal" id="js-timeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	     	<div class="modal-header">
+ 				<div class="modal-back js-time-back">
+ 					<a href="LMTravelMap.html">
+ 						<img src="../../images/EN/travel-arrow-left.png" alt="">
+ 						<span>Back</span>
+ 					</a>
+ 				</div>
+ 				<div class="modal-next js-time-next">
+ 					<a href="javascript:void(0)">
+ 						<span>Next</span>
+ 						<img src="../../images/EN/travel-arrow-right.png" alt="">
+	 				</a>
+	 			</div>
+ 				<div class="modal-needs">Choose your journey conditions</div>
+	     	</div>
+	     	<div class="modal-body">
+	     		<div class="t-content-left">
+	     			<img src="../../images/EN/select-calendar.jpg" class="img-calendar">
+	     			<img src="../../images/EN/select-right-arrow.png" class="img-arrow">
+	     		</div>
+	     		<div class="t-content-right">
+	     			<img src="../../images/EN/select-calendar-bg.jpg" class="img-calendar-bg">
+	     			<div class="date-wrap">
+	     				<h2>WHAT ARE YOUR TRAVEL DATES?</h2>
+	     				<div>
+	     					<span class="date-title" id="select-date"></span>
+	     				</div>
+	     			</div>
+	     		</div>
+	     	</div>
+	    </div>
+	  </div>
+	</div>
+
+	<!-- 价钱选择模态框 -->
+	<div class="modal fade moneyModal" id="js-moneyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	     	<div class="modal-header">
+ 				<div class="modal-back js-money-back">
+ 					<a href="javascript:void(0)">
+ 						<img src="../../images/EN/travel-arrow-left.png" alt="">
+ 						<span>Back</span>
+ 					</a>
+ 				</div>
+ 				<div class="modal-next js-money-next">
+ 					<a href="javascript:void(0)">
+ 						<span>Next</span>
+ 						<img src="../../images/EN/travel-arrow-right.png" alt="">
+	 				</a>
+	 			</div>
+ 				<div class="modal-needs">Choose your journey conditions</div>
+	     	</div>
+	     	<div class="modal-body">
+	     		<div class="t-content-left">
+	     			<img src="../../images/EN/select-money.jpg" class="img-calendar">
+	     			<img src="../../images/EN/select-right-arrow.png" class="img-arrow">
+	     		</div>
+	     		<div class="t-content-right">
+	     			<img src="../../images/EN/select-calendar-bg.jpg" class="img-calendar-bg">
+	     			<div class="date-wrap">
+	     				<h2>WHAT IS YOUR BUDGET?</h2>
+	     				<div class="p-editor-money">
+	     					<div class="range-money">
+	     						<input class="range-slider" type="text" name="" value="0,1000" placeholder="0">
+	     						<button class="s-range-btn">Select Range</button>
+	     					</div>
+	     					<div class="momey-symbol">$<span>-</span></div>
+	     					<select class="min-money">
+	     						<option value="0">0</option>
+	     						<option value="1000">1000</option>
+	     						<option value="2000">2000</option>
+	     						<option value="3000">3000</option>
+	     					</select>
+	     					<select class="max-money">
+	     						<option value="1000">1000</option>
+	     					</select>
+	     				</div>
+	     			</div>
+	     		</div>
+	     	</div>
+	    </div>
+	  </div>
+	</div>
+
+	<!-- 酒店选择模态框 -->
+	<div class="modal fade hotelModal" id="js-hotelModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	     	<div class="modal-header">
+ 				<div class="modal-back js-hotel-back">
+ 					<a href="javascript:void(0)">
+ 						<img src="../../images/EN/travel-arrow-left.png" alt="">
+ 						<span>Back</span>
+ 					</a>
+ 				</div>
+ 				<div class="modal-next js-hotel-next">
+ 					<a href="javascript:void(0)">
+ 						<span>Next</span>
+ 						<img src="../../images/EN/travel-arrow-right.png" alt="">
+	 				</a>
+	 			</div>
+ 				<div class="modal-needs">Choose your journey conditions</div>
+	     	</div>
+	     	<div class="modal-body">
+	     		<div class="t-content-left">
+	     			<img src="../../images/EN/select-hotel.jpg" class="img-calendar">
+	     			<img src="../../images/EN/select-right-arrow.png" class="img-arrow">
+	     		</div>
+	     		<div class="t-content-right">
+	     			<img src="../../images/EN/select-calendar-bg.jpg" class="img-calendar-bg">
+	     			<div class="date-wrap">
+	     				<h2>WHAT KIND OF HOTEL?</h2>
+	     				<div class="p-hotel-wrap">
+	     					<div class="h-star-rating">
+	     						<h3>Star rating</h3>
+	     						<ul>
+	     							<li class="n1">
+	     								<a href="javascript:void(0)">
+	     									<img src="../../images/EN/select-start-3.png" class="img-01">
+	     									<img src="../../images/EN/select-start-3g.png" class="img-02">
+	     									<p>3 stars and below</p>
+	     								</a>
+	     							</li>
+	     							<li class="n2">
+	     								<a href="javascript:void(0)">
+	     									<img src="../../images/EN/select-start-4.png" class="img-01">
+	     									<img src="../../images/EN/select-start-4g.png" class="img-02">
+	     									<p class="p-active">4 stars</p>
+	     								</a>
+	     							</li>
+	     							<li class="n3">
+	     								<a href="javascript:void(0)">
+	     									<img src="../../images/EN/select-start-5.png" class="img-01">
+	     									<img src="../../images/EN/select-start-5g.png" class="img-02">
+	     									<p>5 stars</p>
+	     								</a>
+	     							</li>
+	     						</ul>
+	     					</div>
+	     					<div class="h-num-people">
+	     						<h3>Number of people</h3>
+	     						<div class="h-num-range">
+	     							<p class="h-title-wrap">
+	     								<img src="../../images/EN/select-people.png">
+	     								<span id="h-num-title">×</span>
+	     							</p>
+	     							<input type="hidden" class="h-scale-panel" value="0" />
+	     						</div>
+	     					</div>
+	     				</div>
+	     			</div>
+	     		</div>
+	     	</div>
+	    </div>
+	  </div>
+	</div>
+
+	<!-- 第三方库-->
+	<script type="text/javascript" src="../../libs/jQuery/jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="../../libs/bootstrap/js/bootstrap.min.js"></script>
+	<!-- 日期 -->
+	<script type="text/javascript" src="../../libs/dataRange/dateRange.js"></script>
+	<!-- 价钱范围 -->
+	<script type="text/javascript" src="../../libs/rangeNum/jquery.range.js"></script>
+	<script type="text/javascript" src="../../libs/rangeNum/jquery.single.js"></script>
+	<!-- 公共JS -->
+	<script type="text/javascript" src="../../common/EN/js/LMTravel-common.js"></script>
+	<!-- 业务代码 -->
+	<script type="text/javascript" src="../../js/EN/LMTravelNeeds.js"></script>
+
+</body>
+</html>

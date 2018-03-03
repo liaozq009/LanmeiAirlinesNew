@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- 让 Bootstrap 兼容 IE 兼容模型 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- 让 Bootstrap 兼容 国产浏览器的高速模型 -->
+	<meta name="renderer" content="webkit">
+	<!-- 实现响应式的设置 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>LanmeiAirlines</title>
+	<!-- 引入图标 -->
+	<link rel="icon" href="../../images/CN/lanmeiLogo.ico">
+	<link rel="stylesheet" type="text/css" href="../../libs/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../../common/EN/fonts/lm-iconfont.css">
+	<link rel="stylesheet" type="text/css" href="../../libs/dataRange/lanmei-calendar.css">
+	<link rel="stylesheet" type="text/css" href="../../libsEdit/css/lanmeiLibsEdit.css">
+	<link rel="stylesheet" type="text/css" href="../../common/CN/css/Lanmei-common.css">
+	<link rel="stylesheet" type="text/css" href="../../css/CN/LanmeiAirlinesSelectDate.css">
+	<!--[if lt IE 9]>
+	<script src="../../libs/bootstrap/js/html5shiv.min.js"></script>
+	<script src="../../libs/bootstrap/js/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<!-- 页面顶部 -->
+	<header class="lanmeiHeader">
+		<img src="../../images/CN/navbarBg.png" class="headImg">
+		<nav class="lanmeiNav">
+			<div class="lanmeiLogo">
+				<a class="navbar-brand" href="../../index-zh.html""><img src="../../images/CN/lanmeiLogo.png"></a>
+			</div>
+			<div class="lanmeiHeadInfo">
+				<ul class="">
+					<li>
+						<img src="../../images/CN/phone.png">
+						<span>+855 23881865（CAMBODIA）</span>
+					</li>
+					<li><a href="#" class="btn loginBtn">登陆</a></li>
+					<li><a href="#" class="btn REGISTEREDBtn">注册</a></li>
+				</ul>
+			</div>
+		</nav>
+
+		<!-- 菜单选择 -->
+		<div class="LMCompanyInfo">
+			<ul class="lm-nav">
+				<li class="nth-child1">
+					<a href="#PLANTOTRAVEL">计划旅行</a>
+					<!-- <i></i>  -->
+				</li>
+				<li class="nth-child2">
+					<a href="#LANMEIMEMBERVS">澜湄会员</a>
+					<!-- <i></i> -->
+				</li>
+				<li class="nth-child3">
+					<a href="#LANMEICOMMUNITY">澜湄社区</a>
+					<i></i>
+					
+				</li>
+				<li class="nth-child5">
+					<a href="#DUTYFERR">澜湄免税</a>
+					<!-- <i></i> -->
+				</li>
+				<li class="nth-child6">
+					<a href="#ABOUTUS">关于我们</a>
+				</li>
+			</ul>
+			<ul class="LMCompanyDownMenu" id="LANMEICOMMUNITY">
+				<li><a href="shopping/LMShopping.html" target="_blank">澜湄商城</a></li>
+				<li><a href="LMLive/LMLive.html" target="_blank">澜湄直播</a></li>
+			</ul>
+		</div>
+
+		<!-- 滚动信息 -->
+		<div class="sliderInfo">
+			<p><img src="../../images/CN/important-icon.png">重要信息 :</p>
+			<ul class="line">				
+				<li style="margin-top: 0px; ">
+					<a href="#">澜湄航空五月即将首航</a>
+				</li>
+				<li style="margin-top: 0px; ">
+					<a href="#">澜湄航空四月底首架飞机抵达金边</a>
+				</li>
+				
+			</ul>
+			<div class="view-all">
+				<a href="#">view all <img src="../../images/CN/viewAll.png"></a>
+			</div>
+		</div>
+	</header>
+
+	<!-- 订票步骤列表 -->
+	<div class="buyTicketList">
+		<dl class="SelectDate">
+			<dt><img src="../../images/CN/date-icon-active.png"></dt>
+			<dd>选择日期</dd>
+		</dl>
+		<dl class="circleArrow">
+			<dt><img src="../../images/CN/circleArrowGray-active.png"></dt>
+		</dl>
+		<dl class="SelectFlight">
+			<dt><img src="../../images/CN/Select-the-flight-icon.png"></dt>
+			<dd>选择航班</dd>
+		</dl>
+		<dl class="circleArrow">
+			<dt><img src="../../images/CN/circleArrowGray.png"></dt>
+		</dl>
+		<dl class="PassengerInformation">
+			<dt><img src="../../images/CN/Passenger-informatio-icon.png"></dt>
+			<dd>乘客资料</dd>
+		</dl>
+		<dl class="circleArrow">
+			<dt><img src="../../images/CN/circleArrowGray.png"></dt>
+		</dl>
+		<dl class="LanmeiPay">
+			<dt><img src="../../images/CN/pay-icon.png"></dt>
+			<dd>支付</dd>
+		</dl>
+		<dl class="circleArrow">
+			<dt><img src="../../images/CN/circleArrowGray.png"></dt>
+		</dl>
+		<dl class="Complete">
+			<dt><img src="../../images/CN/Complete-icon.png"></dt>
+			<dd>完成</dd>
+		</dl>
+	</div>
+
+	<!-- 选择机票信息 -->
+	<div class="changeSearch">
+		<div class="changeSearchTitle">
+			<h2>
+				<img src="../../images/CN/leftTitleLine.png">
+				更改搜索
+			</h2>
+			<div class="departureDate">
+				<label class="nth-child1"><i></i><b></b><span>固定旅游日期</span></label>
+				<label><i class="active"></i><b style="display: block"></b><span>无固定旅游日期 (+ / - 3)</span></label>
+			</div>
+		</div>
+		<div class="selectWay">
+			<a href="#" class="OneWay nth-child1 active" data-way="oneWay">单程</a>
+			<a href="#" class="RoundTrip" data-way="roundTrip">往返</a>
+			<a href="#" class="Stopover" data-way="multi">中转 / 多航段</a>
+		</div>
+		<div class="selectAir selectAirCommon">
+			<div class="local_timeSelect">
+				<div class="localSelectStart autoClick">
+					<p><img src="../../images/CN/originStart2.png"><span>出发地</span></p>
+					<input type="text" class="fromcityinput inputDown Autocomplete" id="fromcity" value="" placeholder="">
+					<img src="../../images/CN/downArrow.png">
+					<span class="clear">X</span>
+					<i class="img01" id="localChangeImg"></i>
+					<b class="bottomLine"></b>
+					<ul class="fromcityMenu menu-com">
+						
+					</ul>
+				</div>
+				<div class="localSelectEnd autoClick autoFocus">
+					<p><img src="../../images/CN/originEnd2.png"><span>目的地</span></p>
+					<input type="text" class="tocityinput inputDown Autocomplete" id="tocity" value="" placeholder="">
+					<img src="../../images/CN/downArrow.png">
+					<span class="clear">X</span>
+					<b class="bottomLine"></b>
+					<ul class="tocityMenu menu-com">
+						
+					</ul>
+				</div>
+				<div class="timeSelectStart">
+					<p><img src="../../images/CN/departureDate2.png"><span>去程日期</span></p>
+					<input type="text" id="timeFrom" name="from" value="" placeholder="" readonly>
+					<img src="../../images/CN/downArrow.png">
+				</div>
+				<div class="timeSelectEnd">
+					<p><img src="../../images/CN/departureDate2.png"><span>返程日期</span></p>
+					<input type="text" id="timeTo" name="to" value="" placeholder="" readonly>
+					<img src="../../images/CN/downArrow.png">
+				</div>
+			</div>
+			<div class="passenger_Select">
+				<div class="AdultSelect">
+					<p><img src="../../images/CN/adult-icon2.png"><span>成人</span></p>
+					<div>
+						<input type="text" class="cityinput" id="Adult" value="1" readonly>
+						<i class="addArrow"><img src="../../images/CN/addArrow.png"></i>
+						<i class="downArrow"><img src="../../images/CN/downArrow.png" ></i>
+					</div>
+				</div>
+				<div class="ChildSelect">
+					<p><img src="../../images/CN/child-icon2.png"><span>儿童</span></p>
+					<div>
+						<input type="text" readonly="readonly" id="Child" value="0" class=""/>
+						<i class="addArrow"><img src="../../images/CN/addArrow.png"></i>
+						<i class="downArrow"><img src="../../images/CN/downArrow.png" ></i>
+						<span class="ageTip">2-11 岁</span>
+					</div>
+				</div>
+				<div class="CabinSelect">
+					<p><img src="../../images/CN/cabin-icon2.png"><span>服务等级</span></p>
+					<input type="text" class="cityinput inputDown" id="Cabin" value="" placeholder="" readonly>
+					<img src="../../images/CN/downArrow.png">
+					<b class="bottomLine"></b>
+					<ul class="CabinMenu menu-com">
+						<li><a href="#">经济舱</a></li>
+						<!-- <li><a href="#">头等舱</a></li>
+						<li><a href="#">无限制</a></li> -->
+					</ul>
+				</div>
+				<div class="searchAir">
+					<a href="#" class="btn">搜索</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 时间表格选择 -->
+	<div class="timeTableSelectWrapper">
+		<div class="timeTableSelect">
+			<table border="1px">
+				<tbody>
+					<tr data-num="tr-nth-child1">
+						<td data-num="td-nth-child1" class="tableLogo"><img src="../../images/CN/tableLogo.png"></td>
+						<td data-num="td-nth-child2" class="saleOver tableTitle"><span>去程</span><h2>04-15</h2><span>星期六</span></td>
+						<td data-num="td-nth-child3" class="saleOver tableTitle"><span>去程</span><h2>04-16</h2><span>星期日</span></td>
+						<td data-num="td-nth-child4" class="saleOver tableTitle"><span>去程</span><h2>04-17</h2><span>星期一</span></td>
+						<td data-num="td-nth-child5" class="saleOver tableTitle"><span>去程</span><h2>04-18</h2><span>星期二</span></td>
+						<td data-num="td-nth-child6" class="saleOver tableTitle"><span>去程</span><h2>04-19</h2><span>星期三</span></td>
+						<td data-num="td-nth-child7" class="saleOver tableTitle"><span>去程</span><h2>04-20</h2><span>星期四</span></td>
+						<td data-num="td-nth-child8" class="saleOver tableTitle"><span>去程</span><h2>04-21</h2><span>星期五</span></td>
+					</tr>
+					<tr data-num="tr-nth-child2">
+						<td data-num="td-nth-child1" class="saleOver tableTitle"><span>回程</span><h2>04-15</h2><span>星期六</span></td>
+						<td data-num="td-nth-child2" islowestprice="false" departuredate="2017-04-15" returndate="2017-04-15" lowprice="190"><span>CNY￥</span><p>190</p></td>
+						<td data-num="td-nth-child3" islowestprice="false" departuredate="2017-04-16" returndate="2017-04-15" lowprice="190"><span></span><p></p></td>
+						<td data-num="td-nth-child4" data-num="td-nth-child3" islowestprice="false" departuredate="2017-04-17" returndate="2017-04-15" lowprice="190"><span></span><p></p></td>
+						<td data-num="td-nth-child5" data-num="td-nth-child3" islowestprice="false" departuredate="2017-04-18" returndate="2017-04-15" lowprice="190"><span></span><p></p></td>
+						<td data-num="td-nth-child6" data-num="td-nth-child3" islowestprice="false" departuredate="2017-04-19" returndate="2017-04-15" lowprice="190"><span></span><p></p></td>
+						<td data-num="td-nth-child7" data-num="td-nth-child3" islowestprice="false" departuredate="2017-04-20" returndate="2017-04-15" lowprice="190"><span></span><p></p></td>
+						<td data-num="td-nth-child8" data-num="td-nth-child3" islowestprice="false" departuredate="2017-04-21" returndate="2017-04-15" lowprice="190"><span></span><p></p></td>
+					</tr>
+					<tr data-num="tr-nth-child3">
+						<td data-num="td-nth-child1" class="saleOver tableTitle"><span>回程</span><h2>04-16</h2><span>星期日</span></td>
+						<td data-num="td-nth-child2" data-num="td-nth-child3" islowestprice="false" departuredate="2017-04-15" returndate="2017-04-16" lowprice="190"><span>CNY￥</span><p>190</p></td>
+						<td data-num="td-nth-child3" islowestprice="false" departuredate="2017-04-16" returndate="2017-04-16" lowprice="190"><span>CNY￥</span><p>190</p></td>
+						<td data-num="td-nth-child4" islowestprice="false" departuredate="2017-04-17" returndate="2017-04-16" lowprice="190"><span></span><p></p></td>
+						<td data-num="td-nth-child5" islowestprice="false" departuredate="2017-04-18" returndate="2017-04-16" lowprice="190"><span></span><p></p></td>
+						<td data-num="td-nth-child6" islowestprice="false" departuredate="2017-04-19" returndate="2017-04-16" lowprice="190"><span></span><p></p></td>
+						<td data-num="td-nth-child7" islowestprice="false" departuredate="2017-04-20" returndate="2017-04-16" lowprice="190"><span></span><p></p></td>
+						<td data-num="td-nth-child8" islowestprice="false" departuredate="2017-04-21" returndate="2017-04-16" lowprice="190"><span></span><p></p></td>
+					</tr>
+					<tr data-num="tr-nth-child4">
+						<td data-num="td-nth-child1" class="saleOver tableTitle"><span>回程</span><h2>04-17</h2><span>星期一</span></td>
+						<td data-num="td-nth-child2" islowestprice="false" departuredate="2017-04-15" returndate="2017-04-17" lowprice="190"><span>CNY￥</span><p>190</p></td>
+						<td data-num="td-nth-child3" islowestprice="false" departuredate="2017-04-16" returndate="2017-04-17" lowprice="190"><span>CNY￥</span><p>190</p></td>
+						<td data-num="td-nth-child4" islowestprice="false" departuredate="2017-04-17" returndate="2017-04-17" lowprice="190"><span>CNY￥</span><p>190</p></td>
+						<td data-num="td-nth-child5" islowestprice="false" departuredate="2017-04-18" returndate="2017-04-17" lowprice="190"><span></span><p></p</td>
+						<td data-num="td-nth-child6" islowestprice="false" departuredate="2017-04-19" returndate="2017-04-17" lowprice="190"><span></span><p></p></td>
+						<td data-num="td-nth-child7" islowestprice="false" departuredate="2017-04-20" returndate="2017-04-17" lowprice="190"><span></span><p></p></td>
+						<td data-num="td-nth-child8" islowestprice="false" departuredate="2017-04-21" returndate="2017-04-17" lowprice="190"><span></span><p></p></td>
+					</tr>
+					<tr data-num="tr-nth-child5">
+						<td data-num="td-nth-child1" class="saleOver tableTitle"><span>回程</span><h2>04-18</h2><span>星期二</span></td>
+						<td data-num="td-nth-child2"><span>CNY￥</span><p>190</p></td>
+						<td data-num="td-nth-child3"><span>CNY￥</span><p>190</p></td>
+						<td data-num="td-nth-child4"><span>CNY￥</span><p>190</p></td>
+						<td data-num="td-nth-child5"><span>CNY￥</span><p>190</p></td>
+						<td data-num="td-nth-child6"><span>CNY￥</span><p>190</p></td>
+						<td data-num="td-nth-child7"><span>CNY￥</span><p>190</p></td>
+						<td data-num="td-nth-child8"><span>CNY￥</span><p>190</p></td>
+					</tr>
+					<tr data-num="tr-nth-child6">
+						<td data-num="td-nth-child1" class="saleOver tableTitle"><span>回程</span><h2>04-19</h2><span>星期三</span></td>
+						<td data-num="td-nth-child2"><span>CNY￥</span><p>190</p></td>
+						<td data-num="td-nth-child3"><span>CNY￥</span><p>190</p></td>
+						<td data-num="td-nth-child4"><span>CNY￥</span><p>190</p></td>
+						<td data-num="td-nth-child5"><span>CNY￥</span><p>190</p></td>
+						<td data-num="td-nth-child6"><span>CNY￥</span><p>190</p></td>
+						<td data-num="td-nth-child7"><span>CNY￥</span><p>190</p></td>
+						<td data-num="td-nth-child8"><span>CNY￥</span><p>190</p></td>
+					</tr>
+					<tr data-num="tr-nth-child7">
+						<td data-num="td-nth-child1" class="saleOver tableTitle"><span>回程</span><h2>04-20</h2><span>星期四</span></td>
+						<td data-num="td-nth-child2"><span>CNY￥</span><p>190</p></td>
+						<td data-num="td-nth-child3"><span>CNY￥</span><p>190</p></td>
+						<td data-num="td-nth-child4"><span>CNY￥</span><p>190</p></td>
+						<td data-num="td-nth-child5"><span>CNY￥</span><p>190</p></td>
+						<td data-num="td-nth-child6"><span>CNY￥</span><p>190</p></td>
+						<td data-num="td-nth-child7"><span>CNY￥</span><p>190</p></td>
+						<td data-num="td-nth-child8"><span>CNY￥</span><p>190</p></td>
+					</tr>
+					<tr data-num="tr-nth-child8">
+						<td data-num="td-nth-child1" class="saleOver tableTitle"><span>回程</span><h2>04-21</h2><span>星期五</span></td>
+						<td data-num="td-nth-child2"><span>CNY￥</span><p>190</p></td>
+						<td data-num="td-nth-child3"><span>CNY￥</span><p>190</p></td>
+						<td data-num="td-nth-child4"><span>CNY￥</span><p>190</p></td>
+						<td data-num="td-nth-child5"><span>CNY￥</span><p>190</p></td>
+						<td data-num="td-nth-child6"><span>CNY￥</span><p>190</p></td>
+						<td data-num="td-nth-child7"><span>CNY￥</span><p>190</p></td>
+						<td data-num="td-nth-child8"><span>CNY￥</span><p>190</p></td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="colorInstructions">
+				<h2>说明</h2>
+				<p><i></i><span>选定日期</span></p>
+				<p class="nth-child2"><i></i><span>最低票价</span></p>
+				<p>CNY￥<span>人民币</span></p>
+			</div>
+			<div class="PayAttention">
+				<h2>注意：</h2>
+				<p>日历上所示的票价仅供参考。所显示票价包含任何政府、机场及航空公司收取的税款及附加费的一位成人的票价。实际票价将于选择航班后确认。</p>
+			</div>
+			<div class="nextBtn">
+				<a href="LanmeiAirlinesSelectFlight.html">下一步 <img src="../../images/CN/schedulesArrow.png"></a>
+			</div>
+		</div>
+	</div>
+
+	<!-- 没有航班信息 -->
+	<div class="no-flight-info" style="display: none;">
+		<img src="../../images/CN/no-flight-info.png" alt="">
+		<p class="no-flight-info-tips">没有航班信息，请选择其他航班。</p>
+	</div>
+
+	<!-- 页脚 -->
+	<div class="footerInfo">
+		<div class="footerBg">
+			<div class="HelpfulInformation">
+				<p>帮助信息</p>
+			</div>
+			<div class="contactUs">
+				<div class="nth-child1"><img src="../../images/CN/email.png"><span>LM-EC@lanmeiairlines.com</span></div>
+				<div class="nth-child2">
+					<span>FOLLOW</span>
+					<a href="https://www.facebook.com/lanmeiairlines/">
+						<i class="iconfont icon-facebook"></i>
+					</a>
+					<a href="#"><i class="iconfont icon-in"></i></a>
+					<a href="#"><i class="iconfont icon-inst"></i></a>
+					<a href="#"><i class="iconfont icon-youtube"></i></a>
+					<a href="#"><i class="iconfont icon-googleplus"></i></a>
+					<a href="http://weibo.com/lanmeiair"><i class="iconfont icon-wb"></i></a>
+					<a href="#"><i class="iconfont icon-tuite"></i></a>
+				</div>
+			</div>
+			<div class="location">
+				<img src="../../images/CN/location.png"><a href="http://www.google.cn/maps/place/Lanmei+Airlines/@11.5637363,104.8836365,17.75z/data=!4m5!3m4!1s0x310951a3c5cdaf97:0x77359b117b2ff068!8m2!3d11.5637363!4d104.8852876" target="_blank">柬埔寨金边市俄罗斯大道575号</a>
+			</div>
+			<div class="LanmeiAirlinesBerhad">
+				<div class="nth-child1"><a href="../../index-zh.html"><img src="../../images/CN/lanmeiFooterLogo.png"></a><span>© Copyright 2017 澜湄航空 粤<a href="http://www.miitbeian.gov.cn" target="_Blank">ICP备17005494-1</a></span></div>
+				<div class="nth-child2">
+					<span>使用条款 | 隐私策略 | Cookies</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 回到顶部 -->
+	<div class="BackToTop">
+		<img src="../../images/CN/ToTop-icon-active.png" class="img02">
+		<p>UP</p>
+	</div>
+
+	<!-- 第三方库-->
+	<script type="text/javascript" src="../../libs/jQuery/jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="../../libs/layer/layer.js"></script>
+	<script type="text/javascript" src="../../libs/mobile-libs/fastclick/fastclick.js"></script>
+	<script type="text/javascript" src="../../libs/dataRange/lanmei-calendar-zh.js"></script>
+	<script type="text/javascript" src="../../libs/lanmei-date-select.js"></script>
+	<script type="text/javascript" src="../../libs/bootstrap/js/bootstrap.min.js"></script>
+	<!-- 公共JS -->
+	<script type="text/javascript" src="../../common/CN/js/Lanmei-common.js"></script>
+	<script type="text/javascript" src="../../common/CN/js/flight-info.js"></script>
+	<!-- 业务代码 -->
+	<script type="text/javascript" src="../../js/CN/LanmeiAirlinesSelectDate.js"></script>
+</body>
+</html>

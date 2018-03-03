@@ -1,0 +1,953 @@
+
+@charset "utf-8";
+
+/* 定义变量 */
+@url:"../../images/EN/";
+@green:#8ec060;
+@purple:#1f2c5c;
+@gray:#808080;
+@red:#d0011b;
+@link:#00908c;
+@green2:#81E5FE;
+@green3:#F7FAFF;
+@blue:#1639AE;
+@blue2:#3772D5;
+@blue3:#AAC7F9;
+@linear:-webkit-linear-gradient(0deg, #81E5FE 0%, #1639AE 100%);
+
+body{
+	background: #FAFBFF;
+}
+
+.lanmeiHeader{
+	width: 100%;
+	position: absolute;
+	top: 0;
+	z-index: 9;
+	padding: 30px 90px 0;
+	.lanmeiNav{
+		line-height: 52px;
+		.lanmeiLogo{
+			float: left;
+		}
+		.lanmeiHeadInfo{
+			float: right;
+			>li{
+				position: relative;
+				float: left;
+				>a{
+					font-weight: bold;
+					color:#1a41b2;
+					>img{margin-right: 6px;}
+				}
+			}
+			.li-login{
+				.user-menu{
+					display: none;
+					position: absolute;
+					background: #fff;
+					box-shadow: 0 0 10px rgba(0,0,0,0.5);
+					padding: 10px;
+					>li{
+						line-height: 30px;
+						>a:hover{
+							color: @blue;
+						}
+					}
+				}
+				&:hover{.user-menu{display: block;}}
+			}
+			.li-register{margin-left: 26px;}
+		}
+	}
+}
+
+.lm-banner{
+	position: relative;
+	margin-bottom: 100px;
+	.lm-banner-left{
+		width: 76%;
+		>img{
+			width: 100%;
+		}
+		.img02{
+			display: none;
+		}
+		.travel-start{
+			position: absolute;
+			top: 20%;
+			left:12%;
+			>h2{
+				font-size: 48px;
+				color:#fff;
+				font-weight: bold;
+			}
+			>p{
+				font-size: 18px;
+				color: #F1FAFF;
+				margin-top: 8px;
+			}
+			>a{
+				width: 200px;
+				height: 60px;
+				line-height: 60px;
+				display: inline-block;
+				text-align: center;
+				background: #FFF;
+				border-radius: 4px;
+				margin-top: 40px;
+				transition: all .6s;
+				-webkit-transition: all .6s;
+				&:hover{
+					box-shadow: 0 0 70px 0 #1051A2;
+					transition: all .6s;
+					-webkit-transition: all .6s;
+				}
+				span{
+					font-size: 20px;
+					background: @linear;
+					-webkit-background-clip: text;
+					-webkit-text-fill-color: transparent;
+				}
+			}
+		}
+	}
+	.lm-banner-right{
+		position: absolute;
+		top: 150px;
+		right: 14%;
+		width: 32%;
+		height: 600px;
+		>div{
+			position: absolute;
+			// width: 30%;
+		}
+		.d2{
+			right:0;
+			top:0px;
+			width: 63%;
+			>img{width: 100%;}
+		}
+		.d3{
+			right:0;
+			bottom:-20%;
+			width:63%;
+			>img{width: 100%;}
+		}
+		.d4{
+			right: 0;
+			top: 42%;
+			width: 63%;
+			>img{width: 100%;}
+		}
+		.d5{
+			top: 44%;
+			left: -22%;
+			width: 76%;
+			>img{width: 100%;}
+		}
+	}
+}
+
+/* roll earth */
+.earth-d2{
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 60%; 
+	height: 300px; 
+	border-radius: 50%; 
+	overflow:hidden; 
+	box-shadow: 0px 0px 200px #fff inset;
+}
+.d2-box{
+	position: absolute; 
+	left:0px; 
+	top: 0px;
+}
+.d2-box img{
+	width:800px; 
+	height: 300px;
+}
+.d2-box .img2-1{
+	position: absolute; 
+	top: 0px; 
+	left: 0px;
+	z-index:-1;
+}
+.d2-box .img2-2{
+	position: absolute;
+	top:0px; 
+	left: 800px;
+	z-index:-1;
+}
+
+section{
+	margin-bottom: 100px;
+}
+
+.clearfloat{clear:both;}
+
+.section-1{
+	>ul{
+		width: 70%;
+		margin:0 auto;
+		overflow: hidden;
+		li{
+			float: left;
+			width: 25%;
+			text-align: center;
+			a{
+				display: inline-block;
+				width: 100%;
+				cursor: default;
+				.p1{
+					font-size: 16px;
+					font-weight: bold;
+					background: @linear;
+					-webkit-background-clip: text;
+					-webkit-text-fill-color: transparent;
+					margin-top:12px;
+				}
+				.p2{
+					font-size:14px;
+					color:#1f2c5c;
+					margin-top: 10px;
+				}
+			}
+		}
+		.nth-child1{a{color:#8ec060;}}
+		.nth-child2{a{color:#4aa374;}}
+		.nth-child3{a{color:#00908c;}}
+		.nth-child4{a{color:#006d94;}}
+		.nth-child5{a{color:#004190;}}
+		.nth-child6{a{color:#1f2c5c;}}
+	}
+}
+
+.section-3{
+	>ul{
+		width: 70%;
+		margin:0 auto;
+		>li{
+			float: left;
+			width: 30%;
+			border-radius: 10px;
+			overflow: hidden;
+			transition:all 0.6s;
+			-webkit-transition:all 0.6s;
+			&:hover{
+				box-shadow: 0 0 100px 0 rgba(185,216,255,0.50);
+				transition:all 0.6s;
+				-webkit-transition:all 0.6s;
+			}
+			>img{
+				width: 100%;
+			}
+			>p{
+				color: @blue;
+				font-size: 20px;
+				margin-top: 20px;
+				text-align: center;
+				display: -webkit-box;
+				-webkit-box-orient: vertical;
+				-webkit-line-clamp:2;
+				overflow: hidden;
+				white-space: normal !important;
+				text-overflow: ellipsis;
+				word-wrap: break-word;
+			}
+			>h2{
+				font-size: 36px;
+				font-weight: bold;
+				margin-top: 20px;
+				text-align: center;
+				background: @linear; 
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				>p{
+					display: inline-block;
+					font-size: 14px;
+					background: none; 
+					-webkit-background-clip: text;
+					-webkit-text-fill-color: @blue3;
+					>span{text-decoration: line-through;}
+				}
+			}
+			>ul{
+				margin-top: 20px;
+				.s-n1{
+					width: 100%;
+					height:40px;
+					line-height: 40px;
+					font-size: 14px;
+					padding-left: 30px;
+					color:@blue2;
+					background: @green3;
+					>div{
+						display: inline-block;
+						>img{margin-left: 10px;}
+					}
+				}
+				.s-n2{
+					margin-top: 11px;
+					padding: 0 30px;
+					overflow: hidden;
+					>span{
+						font-size: 14px;
+						color:@blue2;
+					}
+					>div{
+						height: 90px;
+						margin-top: 6px;
+						overflow: hidden;
+						>p{
+							float: left;
+							font-size: 14px;
+							color:@blue3;
+							padding:8px;
+							margin-right: 10px;
+							margin-top: 10px;
+							border-radius: 5px;
+							background: @green3;
+						}
+					}
+				}
+			}
+			>a{
+				display: block;
+				width: 180px;
+				height: 50px;
+				line-height: 50px;
+				text-align: center;
+				font-size: 20px;
+				font-weight: bold;
+				color: #fff;
+				margin:20px auto;
+				background: @linear;
+				border-radius: 4px;
+				transition: all .6s;
+				-webkit-transition: all .6s;
+				&:hover{
+					box-shadow: 0 0 50px 0 rgba(170,199,249,0.50);
+					transition: all .6s;
+					-webkit-transition: all .6s;
+				}
+			}
+		}
+		>.n2{
+			margin:0 5%;
+		}
+	}
+}
+
+.section-4{
+	width: 100%;
+	height: 565px;
+	background: url("@{url}m-s4-1.jpg") center no-repeat;
+	background-size: cover;
+	background-position: 50% -430px;
+	.s4-content{
+		position: relative;
+		height: 100%;
+		padding-top: 40px;
+		background: -webkit-linear-gradient(135deg, rgba(129,229,254,0.8) 0%, rgba(22,57,174,0.8) 100%);
+		filter: alpha(opacity=80) progid:DXImageTransform.Microsoft.gradient(startcolorstr=#81E5FE,endcolorstr=#1639AE,gradientType=1);
+		>h2{
+			font-size: 36px;
+			font-weight: bold;
+			color:#fff;
+			text-align: center;
+		}
+		.s4-wrapper{
+			width: 70%;
+			margin:0 auto;
+			margin-top: 40px;
+			overflow: hidden;
+			.s4-slide-large>div{
+				float: left;
+				// width: 1320px;
+				margin:0 auto;
+				>a>img{
+					width: 50%;
+				}
+				>div{
+					position: relative;
+					float: right;
+					width: 50%;
+					background-image:linear-gradient(-180deg, rgba(66,87,149,0.4) 0%, rgba(31,44,92,0.4) 100%);
+					>h3{
+						font-size: 26px;
+						font-weight: bold;
+						color:#fff;
+						padding-top: 50px;
+						padding-left: 30px;
+						overflow: hidden;
+						text-overflow: ellipsis;
+						white-space: nowrap;
+					}
+					>.p1{
+						font-size: 20px;
+						color:@blue3;
+						margin-top: 14px;
+						padding-left: 30px;
+						>img{
+							margin-left: 20px;
+							margin-right: 10px;
+						}
+					}
+					>.p2{
+						overflow: hidden;
+						font-size: 16px;
+						line-height: 25px;
+						color:@blue3;
+						margin-top: 30px;
+						padding-left: 30px;
+						display: -webkit-box;
+						-webkit-box-orient: vertical;
+						-webkit-line-clamp: 4;
+						overflow: hidden;
+						white-space: normal!important;
+						text-overflow: ellipsis;
+						word-wrap: break-word;
+					}
+					>.p3{
+						position: absolute;
+						bottom: 30px;
+						width: 100%;
+						padding:0 30px;
+						overflow: hidden;
+						>img{
+							float: left;
+							margin-top: 20px;
+						}
+						>span{
+							float: left;
+							font-size: 14px;
+							color:#fff;
+							margin-left: 10px;
+							margin-top: 20px;
+						}
+						>a{
+							float: right;
+							display: inline-block;
+							background:#fff;
+							border-radius:4px;
+							width:100px;
+							height:40px;
+							line-height: 40px;
+							text-align: center;
+							font-size: 20px;
+							span{
+								background-image: @linear;
+								-webkit-background-clip: text;
+								-webkit-text-fill-color: transparent;
+							}
+						}
+					}
+				}
+			}
+		}
+		>p{
+			position: absolute;
+			top: 50%;
+			width: 56px;
+			cursor: pointer;
+			span{
+				position: absolute;
+				right:0;
+				display: inline-block;
+				font-size: 14px;
+				width: 20px;
+				color:#fff;
+				text-align: center;
+			}
+			>img{
+				position: absolute;
+				top: 50%;
+				margin-top: -7px;
+			}
+		}
+		.s4-arrow-prev{
+			left: 25px;
+			height: 150px;
+			margin-top: -75px;
+			span{left:0;}
+			>img{
+				left: 24px;
+			}
+		}
+		.s4-arrow-next{
+			right: 25px;
+			height: 76px;
+			margin-top: -38px;
+			>img{
+				right: 24px;
+			}
+		}
+	}
+}
+
+.section-5{
+	.travel-diary{
+		width: 70%;
+		margin:0 auto;
+		margin-top: 30px;
+		.t-title{
+			height: 70px;
+			border:1px solid;
+			border-image: linear-gradient(to right, #81E5FE 0%, #1639AE 100%) 30 30;
+			border-top-width: 0;
+			border-left-width: 0;
+			border-right-width: 0;
+			>h2{
+				float: left;
+				font-size: 24px;
+				height: 70px;
+				line-height: 70px;
+				background: @linear;
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				margin-right: 30px;
+			}
+			.t-country{
+				float: left;
+				position: relative;
+				height: 70px;
+				line-height: 70px;
+				>span{
+					font-size: 18px;
+					color:@blue2;
+					margin-right: 10px;
+					padding:6px;
+					padding-right: 26px;
+					box-shadow: 0 0 20px #B9D8FF;
+					border-radius: 10px;
+					background: url('@{url}t-down-arrow.png') 94% no-repeat;
+					cursor: pointer;
+				}
+				.t-menu{
+					display: none;
+					position: absolute;
+					top: 50px;
+					width: 145px;
+					padding:10px;
+					background:#fff;
+					box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+					>li{
+						font-size: 14px;
+						color:@purple;
+						line-height: 30px;
+						cursor: pointer;
+						-webkit-transition:all 0.3s;
+						transition:all 0.3s;
+						&:hover{
+							color:@green;
+							-webkit-transition:all 0.3s;
+							transition:all 0.3s;
+						}
+					}
+				}
+			}
+			.hot{
+				float: right;
+				height: 70px;
+				line-height: 70px;
+				color:@blue;
+				a{font-size: 18px;}
+				.a1{
+					color: @blue;
+					margin-right: 20px;
+				}
+				.a2{
+					color:@blue3;
+					margin-left: 20px;
+				}
+			}
+		}
+		.t-content{
+			>li{
+				float: left;
+				width: 20%;
+				margin-top: 30px;
+				padding-left: 1%;
+				padding-right: 1%;
+				>div{
+					border-radius: 4px;
+					padding:10px;
+					cursor: pointer;
+					transition:all .6s;
+					-webkit-transition:all .6s;
+					>h2{
+						width: 100%;
+						height: 20px;
+						font-size: 16px;
+						font-weight: bold;
+						overflow: hidden;
+						text-overflow: ellipsis;
+						white-space: nowrap;
+						background: @linear;
+						-webkit-background-clip: text;
+						-webkit-text-fill-color: transparent;
+						margin-bottom: 10px;
+					}
+					>img{width: 100%;}
+					>p{
+						color:@blue2;
+						margin-top: 10px;
+						overflow: hidden;
+						.m-s5-local,.s1{float: left;}
+						.m-s5-see,.s2{float: right;}
+						.m-s5-local{margin-top: 3px;margin-right: 6px;}
+						.m-s5-see{margin-top: 5px;margin-left: 6px;}
+					}
+					&:hover{
+						box-shadow:0 0 30px 0 #aac7f9;
+						transition:all .6s;
+						-webkit-transition:all .6s;
+					}
+				}
+				>h3{
+					margin-top: 10px;
+					padding-left: 10px;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+					>span{
+						color:@blue;
+						margin-left: 10px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 1920px) {
+	.section-1>ul,.section-3 > ul,.section-5 .travel-diary{
+		width: 1320px;
+	}
+}
+
+@media screen and (max-width: 1600px) {
+	.lm-banner .lm-banner-left .travel-start{
+		> h2{
+			font-size: 40px;
+		}
+		>p{
+			font-size: 16px;
+		}
+		>a{
+			width: 170px;
+			height: 50px;
+			line-height: 50px;
+		}
+	}
+	.section-4 .s4-content .s4-wrapper{
+		width: 960px;
+		.s4-slide-large > div{
+			width: 960px;
+			>div{
+				>h3{
+					padding-top: 10px;
+					padding-left: 30px;
+				}
+				>.p2{
+					padding-left: 30px;
+					margin-top: 20px;
+				}
+				>.p3{
+					bottom:20px;
+					padding-left: 30px;
+				}
+			}
+		}
+	}
+	.section-4{
+		height: 480px;
+	}
+}
+
+@media screen and (max-width: 1366px) {
+	.lanmeiHeader {
+		padding-left: 50px;
+		padding-top: 20px;
+	}
+	.lm-banner .lm-banner-left .travel-start{
+		> h2{
+			font-size: 32px;
+		}
+		>p{
+			font-size: 14px;
+		}
+		>a{
+			width: 150px;
+			margin-top: 30px;
+		}
+	}
+	.section-3 > ul > li > ul .s-n1 > div > img{
+		width: 16px;
+		margin-left: 4px;
+	}
+	.section-5 .travel-diary .t-content > li{
+		width: 25%;
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	.lm-banner .lm-banner-left .travel-start{
+		left: 6%;
+		> h2{
+			font-size: 26px;
+		}
+		>a{
+			width: 150px;
+			margin-top: 30px;
+		}
+	}
+	.section-4 .s4-content .s4-wrapper .s4-slide-large > div > div > .p2{
+		-webkit-line-clamp: 3;
+	}
+}
+
+@media screen and (max-width: 992px) {
+	.lm-banner{
+		margin-bottom: 30px;
+		.lm-banner-left{
+			width: 100%;
+			.img01{display: none;}
+			.img02{display: block;}
+			.travel-start{left: 8%;}
+		}
+		.lm-banner-right{display: none;}
+	}
+	.section-1 > ul{
+		width: 100%;
+		li a .p2{display: none;}
+	}
+	section{margin-bottom: 30px;}
+	.section-3 > ul{
+		width: 100%;
+		padding:0 10px;
+		>li{width: 32%;}
+		>.n2{margin:0 2%;}
+	}
+	.section-4{
+		height: auto;
+		background: none;
+		margin-bottom: 0;
+		.s4-content{
+			padding-top: 20px;
+			background: none;
+			>h2{
+				font-size: 0.16rem;
+				margin-bottom: 0.1rem;
+				background: @linear;
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+			}
+			.s4-wrapper{
+				width: 100%;
+				margin-top: 0;
+				.s4-slide-large{
+					width: 100%;
+					> div{
+						width: 50%;
+						padding:0 10px;
+						>a>img{width: 100%;}
+						>div{
+							width: 100%;
+							float: none;
+							background: none;
+							>h3{
+								padding-top:8px;
+								padding-left:8px;
+								font-size: 20px;
+								background: @linear;
+								-webkit-background-clip: text;
+								-webkit-text-fill-color: transparent;
+							}
+							>.p1{
+								float: left;
+								font-size: 14px;
+								padding:0;
+								padding-left: 8px;
+								margin-top: 8px;
+								>img{width: 20px;}
+							}
+							>.p2{display: none;}
+							>.p3{
+								position: static;
+								float: right;
+								width: auto;
+								margin-top: 8px;
+								padding:0;
+								>span{
+									color:@blue3;
+									margin-top: 0;
+								}
+								>img{
+									margin-top: 0;
+								}
+								a{display: none;}
+							}
+						}
+					}
+					.s4-inner-3{display: none;}
+				}
+			}
+			.s4-arrow-prev,.s4-arrow-next{display: none;}
+		}
+	}
+	.section-5 .travel-diary{
+		width: 100%;
+		padding:0 10px;
+		.t-content > li{
+			margin-top: 20px;
+		}
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.lanmeiHeader {
+		padding-left: 0.3rem;
+		padding-left: 0.3rem;
+		padding-top: 0.1rem;
+		.lanmeiHeadInfo{display: none;}
+	}
+	.lanmeiLogo>img{width: 0.8rem;}
+	.lm-banner {
+		margin-bottom: 0.2rem;
+		.lm-banner-left .travel-start{
+			top:34%;
+			>h2{
+				font-size: 0.14rem;
+				width: 64%;
+			}
+			>p{display: none;}
+			>a{
+				width: 0.8rem;
+				height: 0.3rem;
+				line-height: 0.3rem;
+				margin-top: 0.16rem;
+				>span{
+					font-size: 0.12rem;
+				}
+			}
+		}
+	}
+	section{
+		margin-bottom: 0.2rem;
+	}
+	.section-1 > ul li a{
+		padding:0 0.1rem;
+		>img{width: 60%;}
+		.p1{font-size: .12rem;}
+	}
+	.section-3 > ul{
+		>.n2{margin:0; }
+		> li{
+			float: none;
+			width: 100%;
+			margin-bottom: 0.2rem !important;
+			border-radius: 0;
+			box-shadow: none;
+			>p{
+				float: left;
+				font-size: 0.12rem;
+				margin-top: 0.1rem;
+			}
+			>h2{
+				float: right;
+				font-size: 0.12rem;
+				margin-top: 0.1rem;
+			}
+			>ul,>a{display: none;}
+		}
+	}
+	.section-4 .s4-content{
+		padding-top: 0;
+		.s4-wrapper .s4-slide-large > div{
+			width: 100%;
+			padding:0 0.1rem;
+			margin-bottom: 0.2rem;
+			>div{
+				padding:0.1rem 0;
+				>h3{
+					padding-top:0;
+					font-size: 0.12rem;
+				}
+				>.p1,>.p3{
+					font-size: 0.12rem;
+					margin-top: 0.1rem;
+				}
+			}
+		}
+	}
+	.section-5{
+		.travel-diary{
+			margin-top: 0;
+			.t-title{
+				height: 0.62rem;
+				margin-bottom: 0.1rem;
+				>h2{
+					width: 100%;
+					font-size: 0.16rem;
+					height: auto;
+					line-height: normal;
+					margin-right: 0;
+					text-align: center;
+				}
+				.t-country{
+					height: 0.4rem;
+					line-height: 0.4rem;
+					> span{
+						font-size: 0.12rem;
+					}
+					.t-menu{
+						padding:0.06rem;
+						top:0.4rem;
+						> li{
+							font-size: 0.12rem;
+							line-height: 0.2rem;
+						}
+					} 
+				}
+				.hot{
+					height:0.4rem;
+					line-height: 0.4rem;
+					a{
+						font-size: 0.12rem;
+					}
+					.a1{margin-right: 10px;}
+					.a2{margin-left: 10px;}
+				}
+			}
+			.t-content > li{
+				width: 50%;
+				margin-top: 0;
+				margin-bottom: 0.2rem;
+				>div{
+					padding:0.1rem 0;
+					>h2{
+						font-size: 0.12rem;
+					}
+				}
+			}
+		}
+	} 
+}
+
+/* 其他小设置 */
+@media screen and (max-width: 1660px) {
+	.section-5 .travel-diary .t-content .t-main .t-imgs > .n5{display: none;}
+}
+@media screen and (max-width: 1366px) {
+	.section-5 .travel-diary .t-content .t-main .t-imgs > .n4{display: none;}
+}
+@media screen and (max-width: 1100px) {
+	.section-5 .travel-diary .t-content .t-main .t-imgs > .n3{display: none;}
+	.section-3 > ul > li > ul .s-n1 > div > img{
+		width: 12px;
+	}
+}

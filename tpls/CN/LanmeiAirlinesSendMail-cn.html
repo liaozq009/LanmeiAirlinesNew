@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- 让 Bootstrap 兼容 IE 兼容模型 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- 让 Bootstrap 兼容 国产浏览器的高速模型 -->
+	<meta name="renderer" content="webkit">
+	<!-- 实现响应式的设置 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>LanmeiAirlines</title>
+	<!-- 引入图标 -->
+	<link rel="icon" href="http://lanmeiairlines.com/lanmeiairlines/default/images/EN/lanmeiLogo.ico">
+	<style>
+		* {
+		  scrollbar-arrow-color: #1f2c5c;
+		  /*滚动条滑块按钮的颜色*/
+		  scrollbar-face-color: #8ec060;
+		  /*滚动条整体颜色*/
+		  scrollbar-highlight-color: #8ec060;
+		  /*滚动条阴影*/
+		  scrollbar-shadow-color: none;
+		  /*滚动条轨道颜色*/
+		  scrollbar-track-color: #fff;
+		}
+		/* reset.css */
+		body,
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		p,
+		ul,
+		li,
+		input {
+		  margin: 0;
+		  padding: 0;
+		  font-size: 12px;
+		}
+		ul,
+		li {
+		  list-style: none;
+		}
+		a {
+		  color: #666;
+		  text-decoration: none;
+		}
+		a:hover,
+		a:focus {
+		  /*color:#ff0700;*/
+		  text-decoration: none;
+		  outline: none;
+		}
+		input {
+		  border: 0;
+		  outline: none;
+		}
+		img {
+		  vertical-align: middle;
+		  border: none;
+		}
+		input::-ms-clear {
+		  display: none;
+		}
+		.ovfHiden {
+		  overflow: hidden;
+		  height: 100%;
+		}
+		/* project mcins style sheet*/
+		body {
+		  min-width: 320px;
+		  font-size: 12px;
+		  font-family: "Microsoft YaHei", sans-serif;
+		}
+		.lanmei-logo{
+			width: 980px;
+			padding-top: 15px;
+			margin: 0 auto;
+		}
+		/* 称谓 */
+		.greetings {
+		  width: 960px;
+		  margin: 0 auto;
+		  padding: 30px 10px 20px;
+		  font-weight: bold;
+		  font-size: 18px;
+		  color: #1f2c5c;
+		  border-bottom: 2px solid #1f2c5c;
+		}
+		/* 计算机码 */
+		.computerCode {
+		  position: relative;
+		  width: 960px;
+		  overflow: hidden;
+		  margin: 0 auto;
+		}
+		.computerCode .bankCode {
+		  position: relative;
+		}
+		.computerCode .bankCode img {
+		  position: absolute;
+		  left: 4px;
+		  z-index: -1;
+		}
+		.computerCode .bankCode p {
+		  margin-bottom: 8px;
+		  font-size: 14px;
+		  color: #808080;
+		}
+		.computerCode .bankCode p span {
+		  font-weight: bold;
+		  font-size: 18px;
+		  color: #1f2c5c;
+		  margin-left: 30px;
+		}
+		.computerCode .bankCode .p1 {
+		  margin-top: 22px;
+		}
+		.computerCode .thankInfo {
+		  font-size: 14px;
+		  color: #808080;
+		  line-height: 30px;
+		}
+		/* 限制条件 */
+		.limitCondition {
+		  width: 960px;
+		  margin: 0 auto;
+		  padding: 20px 0 24px;
+		}
+		.limitCondition h2 {
+		  font-weight: bold;
+		  font-size: 18px;
+		  color: #1a1a1a;
+		  line-height: 30px;
+		}
+		.limitCondition h3 {
+		  font-weight: bold;
+		  font-size: 16px;
+		  color: #1a1a1a;
+		}
+		.limitCondition p {
+		  font-size: 14px;
+		  color: #808080;
+		}
+		.limitCondition h3 {
+		  margin-top: 20px;
+		}
+		.limitCondition > p,
+		.limitCondition > div {
+		  margin-top: 10px;
+		}
+		.limitCondition > p b{
+			color: black;
+		}
+		.limitCondition > p > p,
+		.limitCondition > div > p {
+		  line-height: 22px;
+		}
+		/* 乘客信息 */
+		.passengerInfoDetail {
+		  width: 960px;
+		  margin: 0 auto;
+		}
+		.passengerInfoDetail .passengerInfoDetailTitle {
+		  font-size: 18px;
+		  color: #1a1a1a;
+		  font-weight: bold;
+		}
+		.passengerInfoDetail .passengerInfoDetailContent {
+		  overflow: hidden;
+		}
+		.passengerInfoDetail .passengerInfoDetailContent > div {
+		  margin-top: 20px;
+		}
+		.passengerInfoDetail .passengerInfoDetailContent > div h2 {
+		  display: inline-block;
+		  font-size: 20px;
+		  font-weight: bold;
+		  color: #1f2c5c;
+		  margin-right: 2px;
+		}
+		.passengerInfoDetail .passengerInfoDetailContent > div p {
+		  display: inline-block;
+		  font-size: 20px;
+		  font-weight: bold;
+		  color: #1f2c5c;
+		}
+		.verticalLine {
+		  width: 100%;
+		  border-bottom: 2px dashed #ccc;
+		  margin-top: 10px;
+		  margin-bottom: 10px;
+		}
+		.dashedLine960 {
+		  width: 960px;
+		  margin: 0px auto;
+		  text-align: center;
+		  border-bottom: 2px dashed #ccc;
+		  margin-top: 30px;
+		  margin-bottom: 30px;
+		}
+		.ticketLine {
+		  background: #808080;
+		  width: 960px;
+		  height: 1px;
+		  margin: 20px auto;
+		}
+		/* 已选择航班 */
+		.flightSelectWrapper {
+		  width: 960px;
+		  overflow: hidden;
+		  margin: 0 auto;
+		  margin-top: 20px;
+		  padding: 0;
+		}
+		.flightSelectWrapper .flightSelectCommon {
+		  margin-bottom: 16px;
+		  border: none;
+		}
+		.flightSelectWrapper .flightSelectCommon .flightSelectTitle {
+		  background: none;
+		  padding: 0;
+		}
+		.flightSelectWrapper .flightSelectCommon .flightSelectTitle > h2 {
+		  height: 22px;
+		  line-height: 22px;
+		  padding-left: 6px;
+		  font-size: 20px;
+		  font-weight: bold;
+		  color: #1a1a1a;
+		  border-left: 2px solid #8ec060;
+		}
+		.flightSelectWrapper .flightList1 ul {
+		  overflow: hidden;
+		}
+		.flightSelectWrapper .flightList1 ul li {
+		  float: left;
+		  width: 20%;
+		  text-align: center;
+		  font-size: 14px;
+		}
+		.flightSelectWrapper .flightList1 ul.flightTitle ul li {
+		  color: #808080;
+		}
+		.flightSelectWrapper .flightList1 ul.flightContentCommon {
+		  padding-bottom: 10px;
+		}
+		.flightSelectWrapper .flightList1 ul.flightContentCommon li {
+		  font-weight: bold;
+		  color: #666666;
+		}
+		.flightSelectWrapper .flightListCommon {
+		  padding: 14px 0 10px !important;
+		  height: auto !important;
+		}
+		/* 票价计算结果 */
+		.ticketFareWrapper {
+		  width: 960px;
+		  margin: 0 auto;
+		  margin-bottom: 90px;
+		}
+		.ticketFareWrapper .ticketFareTitle {
+		  height: 36px;
+		  margin-bottom: 30px;
+		}
+		.ticketFareWrapper .ticketFareTitle > h2 {
+		  float: left;
+		  padding-left: 6px;
+		  font-weight: bold;
+		  font-size: 20px;
+		  color: #121c3e;
+		  text-align: left;
+		  border-left: 2px solid #8ec060;
+		}
+		.ticketFareWrapper .ticketFareContent .priceTitle {
+		  overflow: hidden;
+		}
+		.ticketFareWrapper .ticketFareContent .priceTitle li {
+		  float: left;
+		  width: 25%;
+		  font-size: 14px;
+		  color: #808080;
+		  text-align: center;
+		}
+		.ticketFareWrapper .ticketFareContent .priceContent ul {
+		  overflow: hidden;
+		}
+		.ticketFareWrapper .ticketFareContent .priceContent ul li {
+		  float: left;
+		  width: 25%;
+		  font-weight: bold;
+		  font-size: 14px;
+		  color: #666666;
+		  text-align: center;
+		  margin-bottom: 10px;
+		}
+		.ticketFareWrapper .ticketFareContent .subtotal,
+		.ticketFareWrapper .ticketFareContent .priceTotle {
+		  overflow: hidden;
+		  padding: 0 30px;
+		  margin-bottom: 10px;
+		}
+		.ticketFareWrapper .ticketFareContent .subtotal li,
+		.ticketFareWrapper .ticketFareContent .priceTotle li {
+		  float: left;
+		  width: 50%;
+		  font-weight: bold;
+		  font-size: 18px;
+		  color: #666666;
+		}
+		.ticketFareWrapper .ticketFareContent .subtotal .nth-child2,
+		.ticketFareWrapper .ticketFareContent .priceTotle .nth-child2 {
+		  text-align: right;
+		}
+		.ticketFareWrapper .ticketFareContent .priceTotle {
+		  margin-top: 10px;
+		}
+		.ticketFareWrapper .ticketFareContent .priceTotle li {
+		  font-weight: bold;
+		  font-size: 18px;
+		  color: #8ec060;
+		}
+		.ticketFareWrapper .ticketFareContent .priceTotle .nth-child1 {
+		  height: 50px;
+		  line-height: 70px;
+		}
+		.ticketFareWrapper .ticketFareContent .priceTotle .nth-child2 {
+		  font-size: 36px;
+		}
+	</style>
+</head>
+<body>
+	<div class="lanmei-logo"><img src="http://lanmeiairlines.com/lanmeiairlines/default/images/EN/lanmeiLogo.png"></div>
+	<!-- 称谓 -->
+	<div class="greetings">XXX您好：</div>
+	
+	<!-- 完成编码 -->
+	<div class="computerCode">
+		<div class="bankCode">
+			<p class="p1">计算机代码 :<span>NH1BGS</span></p>
+			<p class="p2">预订记录 :<span>NH1BGS-6LFXO6OPM0</span></p>
+			<p class="p3">银行交易代码 :<span>20171254532565</span></p>
+		</div>
+		<div class="verticalLine"></div>
+		<div class="thankInfo">
+			感谢您选择湄航空旅行预订。您可以阅读以下您的预订信息。我们公司建议您写下您的预订号码，如果您有任何疑问，请联系我们的服务热线：+855 23881865
+		</div>
+	</div>
+
+	<!-- 限制条件 -->
+	<div class="limitCondition">
+		<h2 class="nth-child1">限制条件:</h2>
+		<h3>[ 改期规定]</h3>
+		<p>不允许。</p>
+
+		<h3>[ 退票规定]</h3>
+		<p>不允许退票</p>
+
+		<h3>[误机规定]</h3>
+		<p>不适用。</p>
+
+		<h3>[ 转签及更改行程]</h3>
+		<p>不允许。</p>
+
+		<h3>[ 运价条款]</h3>
+		<div>
+			<p>1、票价不含税及其他附加费。</p>
+			<p>2、票价和航班时刻可能变动，请留意最新发布票价及GDS系统中航班时刻。</p>
+			<p>3、改期、误机、退票、行政费和其它收费项目没有儿童/婴儿折扣。</p>
+			<p>4、去程第一段航程的始发日期决定了整个旅行日期。</p>
+			<p>5、升舱、改期必须在客票有效期内进行。</p>
+			<p>6、当规则和GDS不一致时，请以GDS为准。</p>
+		</div>
+
+		<h3>登机手续：</h3>
+		<p>- 所有乘客请于航机起飞时间最少<b>2小时</b>前至澜湄航空柜台办理登机手续，澜湄航空办理登机手续的柜台会在航机起飞前<b>40分钟</b>停止受理登机手续</p>
+		<p>- 根据北京首都机场规定，三号航站楼的报道柜台将在航班起飞前一个小时关闭。请乘客提早前往机场，以免延误航程。</p>
+	</div>
+
+	<!-- 乘客信息 -->
+	<div class="passengerInfoDetail">
+		<div class="passengerInfoDetailTitle">
+			【乘客信息】
+		</div>
+		<div class="passengerInfoDetailContent">
+			<div class="passenger1"><h2>Liao/Zhangquan</h2><p>(机票号 : <span>961-2100000325</span>)</p></div>
+			<div class="passenger2"><h2>Liao/Zhangquan</h2><p>(机票号 : <span>961-2100000326</span>)</p></div>
+		</div> 
+	</div>
+
+	<!-- 虚线分割线 -->
+	<div class="dashedLine960"></div>
+
+	<!-- 已选择的航班 -->
+	<div class="flightSelectWrapper">
+		<div class="flightSelect2 flightSelectCommon">
+			<div class="flightSelectTitle">
+				<h2>航段</h2>
+			</div>
+			<div class="flightList1 flightListCommon">
+				<ul class="flightTitle">
+					<li>航班号</li>
+					<li>日期</li>
+					<li>航段</li>
+					<li>出发时间</li>
+					<li>到达时间</li>
+				</ul>
+				<div class="verticalLine"></div>
+				<ul class="flightContent1 flightContentCommon">
+					<li>LQ807</li>
+					<li>2017-11-20</li>
+					<li>(MFM)澳门-(PNH)金边</li>
+					<li>1840</li>
+					<li>2010</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- 票价计算结果 -->
+	<div class="ticketFareWrapper">
+		<div class="ticketFareTitle">
+			<h2>票价</h2>
+		</div>
+		<div class="ticketFareContent">
+			<ul class="priceTitle">
+				<li class="nth-child1">项目</li>
+				<li class="nth-child2">单位费用</li>
+				<li class="nth-child3">数量</li>
+				<li class="nth-child4">小计</li>
+			</ul>
+			<div class="verticalLine"></div>
+			<div class="priceContent">
+				<ul class="priceContent1">
+					<li class="nth-child1">成人机票</li>
+					<li class="nth-child2">76.00</li>
+					<li class="nth-child3">2</li>
+					<li class="nth-child4">152.00</li>
+				</ul>
+				<ul class="priceContent2">
+					<li class="nth-child1">澳门机场税</li>
+					<li class="nth-child2">3.80</li>
+					<li class="nth-child3">2</li>
+					<li class="nth-child4">7.60</li>
+				</ul>
+				<ul class="priceContent3">
+					<li class="nth-child1">燃油附加费</li>
+					<li class="nth-child2">50.00</li>
+					<li class="nth-child3">2</li>
+					<li class="nth-child4">100.00</li>
+				</ul>
+				<ul class="priceContent4">
+					<li class="nth-child1">旅客服务费</li>
+					<li class="nth-child2">14.00</li>
+					<li class="nth-child3">2</li>
+					<li class="nth-child4">28.00</li>
+				</ul>
+			</div>
+			<div class="ticketLine"></div>
+			<ul class="subtotal">
+				<li class="nth-child1">小计</li>
+				<li class="nth-child2">USD   $<span>287.6</span></li>
+			</ul>
+			<div class="dashedLine960"></div>
+			<ul class="priceTotle">
+				<li class="nth-child1">付款总计</li>
+				<li class="nth-child2">USD    $<span>287.60</span></li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

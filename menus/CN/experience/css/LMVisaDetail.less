@@ -1,0 +1,139 @@
+/* 定义变量 */
+@url:"../images/CN/";
+/* 定义颜色变量 */
+@green:#8ec060;
+@purple:#1f2c5c;
+@gray:#808080;
+@red:#d0011b;
+@link:#4aa374;
+
+.lm-section{
+	width: 940px;
+	min-height: 300px;
+	margin:0 auto;
+	.title{
+		h1{
+			font-size: 50px;
+			color: @purple;
+		}
+	}
+	.content{
+		margin:30px 0;
+		>h2{
+			font-size: 20px;
+			font-weight: bold;
+			color: @purple;
+			margin-bottom: 20px;
+			line-height: 28px;
+		}
+		>p{
+			font-size: 16px;
+			margin:10px 0;
+			text-indent: 2em;
+			margin-bottom: 20px;
+			line-height: 26px;
+			a{color: #018e88;}
+		}
+		.img{
+			width: 100%;
+			img{
+				width: 100%;
+			}
+		}
+		.getPassport{
+			margin-top: 30px;
+			a{float: left;}
+		}
+	}
+	.searchFlight{
+		background: #f2f2f2;
+		height: 70px;
+		padding: 15px;
+		overflow: hidden;
+		h2{
+			float: left;
+			height: 40px;
+			line-height: 40px;
+			font-size: 32px;
+			color: @purple;
+			img{
+				margin-right: 10px;
+			}
+		}
+	}
+}
+
+/*************** 屏幕适配 ********************/
+/* pad端 */
+@media screen and (max-width: 992px){
+	.lm-section{
+		width: 100%;
+		padding:15px;
+		.title{
+			h1{
+				font-size: 0.26rem;
+				text-align: center;
+			}
+		}
+		.content{
+			margin-top: 0.15rem;
+			margin-bottom: 0;
+			>h2{
+				font-size: 0.16rem;
+				text-align: center;
+			}
+			>p{
+				font-size: 0.14rem;
+				text-indent: 2em;
+			}
+			.getPassport{
+				margin-top: 0.15rem;
+				margin-bottom: 0.15rem;
+				text-align: center;
+				a{
+					float: none;
+					width: 1.1rem;
+					height: 0.3rem;
+					line-height: 0.3rem;
+					font-size: 0.14rem;
+					font-weight: normal;
+					img{
+						width: 0.14rem;
+						left: 0.06rem;
+					}
+				}
+			}
+		}
+		.searchFlight{
+			height: 0.5rem;
+			padding:0.1rem;
+			margin-top: 0.3rem;
+			margin-bottom: 0.1rem;
+			h2{
+				height: 0.3rem;
+				line-height: 0.3rem;
+				font-size: 0.14rem;
+				img{
+					width: 0.2rem;
+				}
+			}
+			>a{
+				width: 1.1rem;
+				height: 0.3rem;
+				line-height: 0.3rem;
+				font-size: 0.14rem;
+				font-weight: normal;
+				img{
+					width: 0.14rem;
+					left: 0.06rem;
+				}
+			}
+		}
+	}
+	.footerInfo{display: none;}
+}
+
+/* 手机端 */
+@media screen and (max-width: 767px){
+	
+}

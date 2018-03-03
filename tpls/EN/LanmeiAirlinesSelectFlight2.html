@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- 让 Bootstrap 兼容 IE 兼容模型 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- 让 Bootstrap 兼容 国产浏览器的高速模型 -->
+	<meta name="renderer" content="webkit">
+	<!-- 实现响应式的设置 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>LanmeiAirlines</title>
+	<!-- 引入图标 -->
+	<link rel="icon" href="../../images/EN/lanmeiLogo.png">
+	<link rel="stylesheet" type="text/css" href="../../libs/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../../common/EN/fonts/lm-iconfont.css">
+	<link rel="stylesheet" type="text/css" href="../../common/EN/css/Lanmei-common.css">
+	<link rel="stylesheet" type="text/css" href="../../css/EN/LanmeiAirlinesSelectFlight2.css">
+	<link rel="stylesheet" type="text/css" href="../../libsEdit/css/lanmeiLibsEdit.css">
+	<!--[if lt IE 9]>
+	<script src="../../libs/bootstrap/js/html5shiv.min.js"></script>
+	<script src="../../libs/bootstrap/js/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<!-- 页面顶部 -->
+	<header class="lanmeiHeader">
+		<nav class="lanmeiNav">
+			<div class="lanmeiLogo">
+				<a class="navbar-brand" href="../../index.html"><img src="../../images/EN/lanmeiLogo.png"></a>
+			</div>
+			<div class="lanmeiHeadInfo">
+				<ul class="">
+					<li>
+						<img src="../../images/EN/phone.png">
+						<span>+855 889888888（CAMBODIA）</span>
+					</li>
+					<li><a href="#" class="btn loginBtn">LOGIN</a></li>
+					<li><a href="#" class="btn REGISTEREDBtn">REGISTERED</a></li>
+				</ul>
+			</div>
+		</nav>
+
+		<!-- 菜单选择 -->
+		<div class="LMCompanyInfo">
+			<ul class="lm-nav">
+				<li class="nth-child1">
+					<a href="#PLANTOTRAVEL">PLAN TO TRAVEL</a>
+					<i></i> 
+				</li>
+				<li class="nth-child2">
+					<a href="#LANMEIMEMBERVS">LANMEI MEMBER CENTER</a>
+				</li>
+				<li class="nth-child3">
+					<a href="#LANMEICOMMUNITY">LANMEI COMMUNITY</a>
+					<i></i>
+				</li>
+				<li class="nth-child5">
+					<a href="#DUTYFERR">LANMEI DUTY FREE</a>
+				</li>
+				<li class="nth-child6">
+					<a href="#ABOUTUS">ABOUT US</a>
+				</li>
+			</ul>
+			<ul class="LMCompanyDownMenu" id="PLANTOTRAVEL">
+				<li><a href="#">Type something1</a></li>
+				<li><a href="#">Type something2</a></li>
+				<li><a href="#">Type something3</a></li>
+				<li><a href="#">Type something4</a></li>
+				<li><a href="#">Type something5</a></li>
+				<li><a href="#">Type something6</a></li>
+			</ul>
+			<ul class="LMCompanyDownMenu" id="LANMEICOMMUNITY">
+				<li><a href="shopping/LMShopping.html" target="_blank">lm-shopping</a></li>
+				<li><a href="LMLive/LMLive.html" target="_blank">lm-live</a></li>
+			</ul>
+		</div>
+	</header>
+
+	<!-- 订票步骤列表 -->
+	<div class="buyTicketList">
+		<dl class="SelectDate">
+			<dt><img src="../../images/EN/date-icon-active.png"></dt>
+			<dd>Select a date</dd>
+		</dl>
+		<dl class="circleArrow">
+			<dt><img src="../../images/EN/circleArrowGray-active.png"></dt>
+		</dl>
+		<dl class="SelectFlight">
+			<dt><img src="../../images/EN/Select-the-flight-icon-active.png"></dt>
+			<dd>Select the flight</dd>
+		</dl>
+		<dl class="circleArrow">
+			<dt><img src="../../images/EN/circleArrowGray-active.png"></dt>
+		</dl>
+		<dl class="PassengerInformation">
+			<dt><img src="../../images/EN/Passenger-informatio-icon.png"></dt>
+			<dd>Passenger information</dd>
+		</dl>
+		<dl class="circleArrow">
+			<dt><img src="../../images/EN/circleArrowGray.png"></dt>
+		</dl>
+		<dl class="LanmeiPay">
+			<dt><img src="../../images/EN/pay-icon.png"></dt>
+			<dd>Pay</dd>
+		</dl>
+		<dl class="circleArrow">
+			<dt><img src="../../images/EN/circleArrowGray.png"></dt>
+		</dl>
+		<dl class="Complete">
+			<dt><img src="../../images/EN/Complete-icon.png"></dt>
+			<dd>Complete</dd>
+		</dl>
+	</div>
+
+	<!-- 票价详情 set out -->
+	<div class="flightSetOut flightPriceDetailWrapper">
+		<!-- 标题 -->
+		<div class="flightPriceTitle">
+			<h2>
+				<img src="../../images/EN/leftTitleLine.png">
+				<span>Set out&nbsp;&nbsp;&nbsp;&nbsp;-</span>
+				<p class="flightFrom">Beijing，China(PEK)</p>&nbsp; to &nbsp;
+				<p class="flightTo">to  Shanghai，China(PVG)</p>
+			</h2>
+		</div>
+		<!-- 内容 -->
+		<div class="flightPriceMain flightPriceMainSetOut">
+			<div class="flightSelect1 flightSelectCommon">
+				<div class="flightBg">
+					<div class="flightSelectTitle">
+						Total travel time : <span>5h50m</span>
+					</div>
+				</div>
+				<div class="flightList1 flightListCommon">
+					<div class="flightListCommonLeft">
+						<div class="nth-child1"><img src="../../images/EN/travelTimeLogo.png"> <span>Lanmei Airlines</span></div>
+						<div class="nth-child2">
+							<h2>Beijing (00:45)</h2>
+							<p class="p1">2017 April 20, GMT+8</p>
+							<p class="p2">(PEK) The capital airport - T1</p>
+						</div>
+						<div class="nth-child3">
+							<p class="p1">Flight :<span>XU-983</span></p>
+							<p class="p2">Models :<span>Boeing 777-300ER</span></p>
+						</div>
+						<div class="nth-child4">
+							<img src="../../images/EN/flightArrow.png" alt="">
+							<p>2h</p>
+						</div>
+					</div>
+					<div class="flightListCommonRight">
+						<div class="nth-child1"><span></span></div>
+						<div class="nth-child2">
+							<h2>Guangzhou (02:45)</h2>
+							<p class="p1">2017 April 20, GMT+8</p>
+							<p class="p2">(CAN) Guangzhou baiyun airport - T3</p>
+						</div>
+						<div class="nth-child3">
+							<p class="p1"><span>>9</span>: Existing reservation</p>
+							<p class="p2"><span>U: </span>: Booking Cabin</p>
+						</div>
+					</div>
+				</div>
+				<div class="flightListLine"><img src="../../images/EN/dashedLine.png"><p>Transit (3 hours)</p></div>
+				<div class="flightList2 flightListCommon">
+					<div class="flightListCommonLeft">
+						<div class="nth-child1"><img src="../../images/EN/travelTimeLogo.png"> <span>Lanmei Airlines</span></div>
+						<div class="nth-child2">
+							<h2>Beijing (00:45)</h2>
+							<p class="p1">2017 April 20, GMT+8</p>
+							<p class="p2">(PEK) The capital airport - T1</p>
+						</div>
+						<div class="nth-child3">
+							<p class="p1">Flight :<span>XU-983</span></p>
+							<p class="p2">Models :<span>Boeing 777-300ER</span></p>
+						</div>
+						<div class="nth-child4">
+							<img src="../../images/EN/flightArrow.png" alt="">
+							<p>2h</p>
+						</div>
+					</div>
+					<div class="flightListCommonRight">
+						<div class="nth-child1">U: <span>Booking Cabin</span></div>
+						<div class="nth-child2">
+							<h2>Guangzhou (02:45)</h2>
+							<p class="p1">2017 April 20, GMT+8</p>
+							<p class="p2">(CAN) Guangzhou baiyun airport - T3</p>
+						</div>
+						<div class="nth-child3">
+							<p class="p1"><span>>9</span>: Existing reservation</p>
+							<p class="p2"><span>3 hours</span>: Transit time</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="flightSelect2 flightSelectCommon">
+				<div class="flightBg">
+					<div class="flightSelectTitle">
+						Total travel time : <span>5h50m</span>
+					</div>
+				</div>
+				<div class="flightList1 flightListCommon">
+					<div class="flightListCommonLeft">
+						<div class="nth-child1"><img src="../../images/EN/travelTimeLogo.png"> <span>Lanmei Airlines</span></div>
+						<div class="nth-child2">
+							<h2>Beijing (00:45)</h2>
+							<p class="p1">2017 April 20, GMT+8</p>
+							<p class="p2">(PEK) The capital airport - T1</p>
+						</div>
+						<div class="nth-child3">
+							<p class="p1">Flight :<span>XU-983</span></p>
+							<p class="p2">Models :<span>Boeing 777-300ER</span></p>
+						</div>
+						<div class="nth-child4">
+							<img src="../../images/EN/flightArrow.png" alt="">
+							<p>2h</p>
+						</div>
+					</div>
+					<div class="flightListCommonRight">
+						<div class="nth-child1"><span></span></div>
+						<div class="nth-child2">
+							<h2>Guangzhou (02:45)</h2>
+							<p class="p1">2017 April 20, GMT+8</p>
+							<p class="p2">(CAN) Guangzhou baiyun airport - T3</p>
+						</div>
+						<div class="nth-child3">
+							<p class="p1"><span>>9</span>: Existing reservation</p>
+							<p class="p2"><span>U: </span>: Booking Cabin</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="flightSelect3 flightSelectCommon">
+				<div class="flightBg">
+					<div class="flightSelectTitle">
+						Total travel time : <span>5h50m</span>
+					</div>
+				</div>
+				<div class="flightList1 flightListCommon">
+					<div class="flightListCommonLeft">
+						<div class="nth-child1"><img src="../../images/EN/travelTimeLogo.png"> <span>Lanmei Airlines</span></div>
+						<div class="nth-child2">
+							<h2>Beijing (00:45)</h2>
+							<p class="p1">2017 April 20, GMT+8</p>
+							<p class="p2">(PEK) The capital airport - T1</p>
+						</div>
+						<div class="nth-child3">
+							<p class="p1">Flight :<span>XU-983</span></p>
+							<p class="p2">Models :<span>Boeing 777-300ER</span></p>
+						</div>
+						<div class="nth-child4">
+							<img src="../../images/EN/flightArrow.png" alt="">
+							<p>2h</p>
+						</div>
+					</div>
+					<div class="flightListCommonRight">
+						<div class="nth-child1"><span></span></div>
+						<div class="nth-child2">
+							<h2>Guangzhou (02:45)</h2>
+							<p class="p1">2017 April 20, GMT+8</p>
+							<p class="p2">(CAN) Guangzhou baiyun airport - T3</p>
+						</div>
+						<div class="nth-child3">
+							<p class="p1"><span>>9</span>: Existing reservation</p>
+							<p class="p2"><span>U: </span>: Booking Cabin</p>
+						</div>
+					</div>
+				</div>
+				<div class="flightListLine"><img src="../../images/EN/dashedLine.png"><p>Transit (3 hours)</p></div>
+				<div class="flightList2 flightListCommon">
+					<div class="flightListCommonLeft">
+						<div class="nth-child1"><img src="../../images/EN/travelTimeLogo.png"> <span>Lanmei Airlines</span></div>
+						<div class="nth-child2">
+							<h2>Beijing (00:45)</h2>
+							<p class="p1">2017 April 20, GMT+8</p>
+							<p class="p2">(PEK) The capital airport - T1</p>
+						</div>
+						<div class="nth-child3">
+							<p class="p1">Flight :<span>XU-983</span></p>
+							<p class="p2">Models :<span>Boeing 777-300ER</span></p>
+						</div>
+						<div class="nth-child4">
+							<img src="../../images/EN/flightArrow.png" alt="">
+							<p>2h</p>
+						</div>
+					</div>
+					<div class="flightListCommonRight">
+						<div class="nth-child1">U: <span>Booking Cabin</span></div>
+						<div class="nth-child2">
+							<h2>Guangzhou (02:45)</h2>
+							<p class="p1">2017 April 20, GMT+8</p>
+							<p class="p2">(CAN) Guangzhou baiyun airport - T3</p>
+						</div>
+						<div class="nth-child3">
+							<p class="p1"><span>>9</span>: Existing reservation</p>
+							<p class="p2"><span>3 hours</span>: Transit time</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="flightSelect4 flightSelectCommon">
+				<div class="flightBg">
+					<div class="flightSelectTitle">
+						Total travel time : <span>5h50m</span>
+					</div>
+				</div>
+				<div class="flightList1 flightListCommon">
+					<div class="flightListCommonLeft">
+						<div class="nth-child1"><img src="../../images/EN/travelTimeLogo.png"> <span>Lanmei Airlines</span></div>
+						<div class="nth-child2">
+							<h2>Beijing (00:45)</h2>
+							<p class="p1">2017 April 20, GMT+8</p>
+							<p class="p2">(PEK) The capital airport - T1</p>
+						</div>
+						<div class="nth-child3">
+							<p class="p1">Flight :<span>XU-983</span></p>
+							<p class="p2">Models :<span>Boeing 777-300ER</span></p>
+						</div>
+						<div class="nth-child4">
+							<img src="../../images/EN/flightArrow.png" alt="">
+							<p>2h</p>
+						</div>
+					</div>
+					<div class="flightListCommonRight">
+						<div class="nth-child1"><span></span></div>
+						<div class="nth-child2">
+							<h2>Guangzhou (02:45)</h2>
+							<p class="p1">2017 April 20, GMT+8</p>
+							<p class="p2">(CAN) Guangzhou baiyun airport - T3</p>
+						</div>
+						<div class="nth-child3">
+							<p class="p1"><span>>9</span>: Existing reservation</p>
+							<p class="p2"><span>U: </span>: Booking Cabin</p>
+						</div>
+					</div>
+				</div>
+				<div class="flightListLine"><img src="../../images/EN/dashedLine.png"><p>Transit (3 hours)</p></div>
+				<div class="flightList2 flightListCommon">
+					<div class="flightListCommonLeft">
+						<div class="nth-child1"><img src="../../images/EN/travelTimeLogo.png"> <span>Lanmei Airlines</span></div>
+						<div class="nth-child2">
+							<h2>Beijing (00:45)</h2>
+							<p class="p1">2017 April 20, GMT+8</p>
+							<p class="p2">(PEK) The capital airport - T1</p>
+						</div>
+						<div class="nth-child3">
+							<p class="p1">Flight :<span>XU-983</span></p>
+							<p class="p2">Models :<span>Boeing 777-300ER</span></p>
+						</div>
+						<div class="nth-child4">
+							<img src="../../images/EN/flightArrow.png" alt="">
+							<p>2h</p>
+						</div>
+					</div>
+					<div class="flightListCommonRight">
+						<div class="nth-child1">U: <span>Booking Cabin</span></div>
+						<div class="nth-child2">
+							<h2>Guangzhou (02:45)</h2>
+							<p class="p1">2017 April 20, GMT+8</p>
+							<p class="p2">(CAN) Guangzhou baiyun airport - T3</p>
+						</div>
+						<div class="nth-child3">
+							<p class="p1"><span>>9</span>: Existing reservation</p>
+							<p class="p2"><span>3 hours</span>: Transit time</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 加载更多 -->
+		<div class="loadFlightMore setOutLoadMore">
+			<img src="../../images/EN/loadMore.png" class="img1">
+			<img src="../../images/EN/loadMore2.png" class="img2">
+		</div>
+	</div>
+
+	<!-- 票价详情 return -->
+	<div class="flightReturn flightPriceDetailWrapper">
+		<!-- 标题 -->
+		<div class="flightPriceTitle">
+			<h2>
+				<img src="../../images/EN/leftTitleLine.png">
+				<span>Return&nbsp;&nbsp;&nbsp;&nbsp;-</span>
+				<p class="flightFrom">Shanghai，China(PVG)</p>&nbsp; to &nbsp;
+				<p class="flightTo">to  Beijing，China(PEK)</p>
+			</h2>
+		</div>
+		<!-- 内容 -->
+		<div class="flightPriceMain flightPriceMainReturn">
+			<div class="flightSelect1 flightSelectCommon">
+				<div class="flightBg">
+					<div class="flightSelectTitle">
+						Total travel time : <span>5h50m</span>
+					</div>
+				</div>
+				<div class="flightList1 flightListCommon">
+					<div class="flightListCommonLeft">
+						<div class="nth-child1"><img src="../../images/EN/travelTimeLogo.png"> <span>Lanmei Airlines</span></div>
+						<div class="nth-child2">
+							<h2>Beijing (00:45)</h2>
+							<p class="p1">2017 April 20, GMT+8</p>
+							<p class="p2">(PEK) The capital airport - T1</p>
+						</div>
+						<div class="nth-child3">
+							<p class="p1">Flight :<span>XU-983</span></p>
+							<p class="p2">Models :<span>Boeing 777-300ER</span></p>
+						</div>
+						<div class="nth-child4">
+							<img src="../../images/EN/flightArrow.png" alt="">
+							<p>2h</p>
+						</div>
+					</div>
+					<div class="flightListCommonRight">
+						<div class="nth-child1"><span></span></div>
+						<div class="nth-child2">
+							<h2>Guangzhou (02:45)</h2>
+							<p class="p1">2017 April 20, GMT+8</p>
+							<p class="p2">(CAN) Guangzhou baiyun airport - T3</p>
+						</div>
+						<div class="nth-child3">
+							<p class="p1"><span>>9</span>: Existing reservation</p>
+							<p class="p2"><span>U: </span>: Booking Cabin</p>
+						</div>
+					</div>
+				</div>
+				<div class="flightListLine"><img src="../../images/EN/dashedLine.png"><p>Transit (3 hours)</p></div>
+				<div class="flightList2 flightListCommon">
+					<div class="flightListCommonLeft">
+						<div class="nth-child1"><img src="../../images/EN/travelTimeLogo.png"> <span>Lanmei Airlines</span></div>
+						<div class="nth-child2">
+							<h2>Beijing (00:45)</h2>
+							<p class="p1">2017 April 20, GMT+8</p>
+							<p class="p2">(PEK) The capital airport - T1</p>
+						</div>
+						<div class="nth-child3">
+							<p class="p1">Flight :<span>XU-983</span></p>
+							<p class="p2">Models :<span>Boeing 777-300ER</span></p>
+						</div>
+						<div class="nth-child4">
+							<img src="../../images/EN/flightArrow.png" alt="">
+							<p>2h</p>
+						</div>
+					</div>
+					<div class="flightListCommonRight">
+						<div class="nth-child1">U: <span>Booking Cabin</span></div>
+						<div class="nth-child2">
+							<h2>Guangzhou (02:45)</h2>
+							<p class="p1">2017 April 20, GMT+8</p>
+							<p class="p2">(CAN) Guangzhou baiyun airport - T3</p>
+						</div>
+						<div class="nth-child3">
+							<p class="p1"><span>>9</span>: Existing reservation</p>
+							<p class="p2"><span>3 hours</span>: Transit time</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="flightSelect2 flightSelectCommon">
+				<div class="flightBg">
+					<div class="flightSelectTitle">
+						Total travel time : <span>5h50m</span>
+					</div>
+				</div>
+				<div class="flightList1 flightListCommon">
+					<div class="flightListCommonLeft">
+						<div class="nth-child1"><img src="../../images/EN/travelTimeLogo.png"> <span>Lanmei Airlines</span></div>
+						<div class="nth-child2">
+							<h2>Beijing (00:45)</h2>
+							<p class="p1">2017 April 20, GMT+8</p>
+							<p class="p2">(PEK) The capital airport - T1</p>
+						</div>
+						<div class="nth-child3">
+							<p class="p1">Flight :<span>XU-983</span></p>
+							<p class="p2">Models :<span>Boeing 777-300ER</span></p>
+						</div>
+						<div class="nth-child4">
+							<img src="../../images/EN/flightArrow.png" alt="">
+							<p>2h</p>
+						</div>
+					</div>
+					<div class="flightListCommonRight">
+						<div class="nth-child1"><span></span></div>
+						<div class="nth-child2">
+							<h2>Guangzhou (02:45)</h2>
+							<p class="p1">2017 April 20, GMT+8</p>
+							<p class="p2">(CAN) Guangzhou baiyun airport - T3</p>
+						</div>
+						<div class="nth-child3">
+							<p class="p1"><span>>9</span>: Existing reservation</p>
+							<p class="p2"><span>U: </span>: Booking Cabin</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="flightSelect3 flightSelectCommon">
+				<div class="flightBg">
+					<div class="flightSelectTitle">
+						Total travel time : <span>5h50m</span>
+					</div>
+				</div>
+				<div class="flightList1 flightListCommon">
+					<div class="flightListCommonLeft">
+						<div class="nth-child1"><img src="../../images/EN/travelTimeLogo.png"> <span>Lanmei Airlines</span></div>
+						<div class="nth-child2">
+							<h2>Beijing (00:45)</h2>
+							<p class="p1">2017 April 20, GMT+8</p>
+							<p class="p2">(PEK) The capital airport - T1</p>
+						</div>
+						<div class="nth-child3">
+							<p class="p1">Flight :<span>XU-983</span></p>
+							<p class="p2">Models :<span>Boeing 777-300ER</span></p>
+						</div>
+						<div class="nth-child4">
+							<img src="../../images/EN/flightArrow.png" alt="">
+							<p>2h</p>
+						</div>
+					</div>
+					<div class="flightListCommonRight">
+						<div class="nth-child1"><span></span></div>
+						<div class="nth-child2">
+							<h2>Guangzhou (02:45)</h2>
+							<p class="p1">2017 April 20, GMT+8</p>
+							<p class="p2">(CAN) Guangzhou baiyun airport - T3</p>
+						</div>
+						<div class="nth-child3">
+							<p class="p1"><span>>9</span>: Existing reservation</p>
+							<p class="p2"><span>U: </span>: Booking Cabin</p>
+						</div>
+					</div>
+				</div>
+				<div class="flightListLine"><img src="../../images/EN/dashedLine.png"><p>Transit (3 hours)</p></div>
+				<div class="flightList2 flightListCommon">
+					<div class="flightListCommonLeft">
+						<div class="nth-child1"><img src="../../images/EN/travelTimeLogo.png"> <span>Lanmei Airlines</span></div>
+						<div class="nth-child2">
+							<h2>Beijing (00:45)</h2>
+							<p class="p1">2017 April 20, GMT+8</p>
+							<p class="p2">(PEK) The capital airport - T1</p>
+						</div>
+						<div class="nth-child3">
+							<p class="p1">Flight :<span>XU-983</span></p>
+							<p class="p2">Models :<span>Boeing 777-300ER</span></p>
+						</div>
+						<div class="nth-child4">
+							<img src="../../images/EN/flightArrow.png" alt="">
+							<p>2h</p>
+						</div>
+					</div>
+					<div class="flightListCommonRight">
+						<div class="nth-child1">U: <span>Booking Cabin</span></div>
+						<div class="nth-child2">
+							<h2>Guangzhou (02:45)</h2>
+							<p class="p1">2017 April 20, GMT+8</p>
+							<p class="p2">(CAN) Guangzhou baiyun airport - T3</p>
+						</div>
+						<div class="nth-child3">
+							<p class="p1"><span>>9</span>: Existing reservation</p>
+							<p class="p2"><span>3 hours</span>: Transit time</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 加载更多 -->
+		<div class="loadFlightMore returnLoadMore"  title="加载更多">
+			<img src="../../images/EN/loadMore.png">
+		</div>
+	</div>
+
+	<!-- 票价规则详情 -->
+	<div class="flightRuleDetail">
+		<!-- NEXT -->
+		<div class="nextBtn" style="margin-top:0;margin-bottom: 70px;">
+			<a href="LanmeiAirlinesPassengerInfo.html">NEXT <img src="../../images/EN/schedulesArrow.png"></a>
+		</div>
+	</div>
+
+	<!-- 页脚 -->
+	<div class="footerInfo">
+		<div class="footerBg">
+			<div class="HelpfulInformation">
+				<p>Helpful Information</p>
+			</div>
+			<div class="contactUs">
+				<div class="nth-child1"><img src="../../images/EN/email.png"><span>lm-ec@lanmeiairlines.com</span></div>
+				<div class="nth-child2">
+					<span>FOLLOW</span>
+					<a href="https://www.facebook.com/lanmeiairlines/">
+						<i class="iconfont icon-facebook"></i>
+					</a>
+					<a href="#"><i class="iconfont icon-in"></i></a>
+					<a href="#"><i class="iconfont icon-inst"></i></a>
+					<a href="#"><i class="iconfont icon-youtube"></i></a>
+					<a href="#"><i class="iconfont icon-googleplus"></i></a>
+					<a href="http://weibo.com/lanmeiair"><i class="iconfont icon-wb"></i></a>
+					<a href="#"><i class="iconfont icon-tuite"></i></a>
+				</div>
+			</div>
+			<div class="location">
+				<img src="../../images/EN/location.png"><a href="https://www.google.com.kh/maps/place/Lanmei+Airlines/@11.5637415,104.8830989,17z/data=!3m1!4b1!4m5!3m4!1s0x310951a3c5cdaf97:0x77359b117b2ff068!8m2!3d11.5637363!4d104.8852876" target="_Blank">No.575 D&E, Russian Federation Boulevard, Phnom Penh, Cambodia</a>
+			</div>
+			<div class="LanmeiAirlinesBerhad">
+				<a href="../../index.html"><img src="../../images/EN/lanmeiFooterLogo.png"></a>
+				<div>
+					<p class="p1">Terms of Use | Privacy Policy | Cookies</p>
+					<p class="p2">© Copyright 2017 Lanmei Airlines. All Rights Reserved. ICP: Guangdong Province <a href="http://www.miitbeian.gov.cn" target="_Blank">ICP-17005494-1</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 回到顶部 -->
+	<div class="BackToTop">
+		<img src="../../images/EN/ToTop-icon-active.png" class="img02">
+		<p>UP</p>
+	</div>
+
+	<!-- 第三方库-->
+	<script type="text/javascript" src="../../libs/jQuery/jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="../../libs/layer/layer.js"></script>
+	<script type="text/javascript" src="../../libs/mobile-libs/fastclick/fastclick.js"></script>
+	<script type="text/javascript" src="../../libs/bootstrap/js/bootstrap.min.js"></script>
+	<!-- 公共JS -->
+	<script type="text/javascript" src="../../common/EN/js/Lanmei-common.js"></script>
+	<!-- 业务代码 -->
+	<script type="text/javascript" src="../../js/EN/LanmeiAirlinesSelectFlight2.js"></script>
+</body>
+</html>

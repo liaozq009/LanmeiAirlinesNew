@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- 让 Bootstrap 兼容 IE 兼容模型 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- 让 Bootstrap 兼容 国产浏览器的高速模型 -->
+	<meta name="renderer" content="webkit">
+	<!-- 实现响应式的设置 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Be Unique,lanmei Airlines offical website find great deals now&nbsp;to our worldwide destinations.Cambodia,booking flights">
+	<meta name="keywords" content="lanmei airlines,六国,柬埔寨,澜湄航空,机票预订,lanmei,LQ,Fly to Cambodia,Special Ticket,lanmei A320,booking,ticket booking,booking flights">
+	<meta name="baidu-site-verification" content="wL5we2b5k5" />
+	<title>Be Unique, Lanmei Airlines</title>
+
+	<!-- 引入图标 -->
+	<link rel="icon" href="../../images/EN/lanmeiLogo.ico">
+	<link rel="stylesheet" type="text/css" href="../../common/EN/fonts/lm-iconfont.css">
+	<link rel="stylesheet" type="text/css" href="../../libs/bootstrap/css/bootstrap.min.css">
+	<!-- 编辑器的样式 -->
+	<link rel="stylesheet" type="text/css" href="../../libs/wysiwyg/css/font-awesome.css" />
+	<link rel="stylesheet" type="text/css" href="../../libs/wysiwyg/css/wysiwyg-editor.css" />
+	<!-- 调色板样式 -->
+	<link rel="stylesheet" type="text/css" href="../../libs/spectrum/spectrum.css" />
+
+	<link rel="stylesheet" type="text/css" href="../../libs/rangeNum/jquery.range.css">
+	<link rel="stylesheet" type="text/css" href="../../libs/dataRange/dateRange.css">
+	<link rel="stylesheet" type="text/css" href="../../common/EN/css/LMTravel-common.css">
+	<link rel="stylesheet" type="text/css" href="../../css/EN/LMTravelPlanning.css">
+	<!--[if lt IE 9]>
+	<script src="../../libs/bootstrap/js/html5shiv.min.js"></script>
+	<script src="../../libs/bootstrap/js/respond.min.js"></script>
+<![endif]-->
+</head>
+<body>
+	<header class="p-header">
+		<div class="p-header-title">
+			<img src="../../images/EN/p-lanmeiLogo.png" class="p-logo">
+			<p class="p-local">Palau</p>
+			<p class="p-line"></p>
+			<p class="p-time"><span class="s1">Travel time :</span><span class="s2">2017-12-25</span></p>
+			<img src="../../images/EN/p-editor.png" class="p-edit">
+			<img src="../../images/EN/p-headPort.png" class="p-headPort">
+		</div>
+		<!-- 标题和人数等编辑框 -->
+		<div class="p-editor">
+			<div class="p-editor-title">
+				Title
+				<input type="text" name="" value="Palau">
+			</div>
+			<div class="p-editor-time">
+				Travel time
+				<input type="text" id="travel-edit-time" name="" value="2017-12-25" readonly>
+			</div>
+			<div class="p-editor-people">
+				<p class="p-editor-adult">
+					People 
+					<a href="javascript:void(0)" class="people-add">+</a>
+					<input type="text" name="" value="1" readonly>
+					<a href="javascript:void(0)" class="people-sub">-</a>
+				</p>
+				<p class="p-editor-child">
+					Child
+					<a href="javascript:void(0)" class="child-add">+</a>
+					<input type="text" name="" value="0" readonly>
+					<a href="javascript:void(0)" class="child-sub">-</a>
+				</p>
+			</div>
+			<div class="p-editor-money">
+				Money
+				<select class="min-money">
+					<option value="0">0</option>
+					<option value="1000">1000</option>
+					<option value="2000">2000</option>
+					<option value="3000">3000</option>
+				</select>
+				<div class="range-money">
+					<input class="range-slider" type="text" name="" value="0,1000" placeholder="0" number>
+				</div>
+				<select class="max-money">
+					<option value="1000">1000</option>
+				</select>
+			</div>
+			<div class="p-editor-type">
+				<div class="p-editor-group">
+					Group
+					<select name="">
+						<option value="1">parent-child</option>
+						<option value="2">parents</option>
+						<option value="3">friend</option>
+						<option value="4">one</option>
+						<option value="5">man and wife</option>
+						<option value="6">lovers</option>
+					</select>
+				</div>
+				<div class="p-editor-share">
+					Share to
+					<select name="">
+						<option value="1">everyone</option>
+						<option value="2">oneself</option>
+						<option value="3">friend</option>
+					</select>
+				</div>
+			</div>
+			<div class="p-editor-ok">
+				<button class="p-ok">OK</button>
+				<button class="p-cancel">Cancel</button>
+			</div>
+		</div>
+	</header>
+	<!-- 操作栏 -->
+	<div class="p-toolbar">
+		<ul class="p-toolbar-left">
+			<li class="n1 active" data="route"><a href="#route">Route</a></li>
+			<li class="n2" data="diary"><a href="#diary">Diary</a></li>
+			<li class="n3" data="cover"><a href="#cover">Cover</a></li>
+			<li class="bottom-line"></li>
+		</ul>
+		<!-- 分页 -->
+		<div class="t-comment-page"></div>
+		<div class="p-toolbar-right">
+			<a href="#route" class="p-preview">Preview</a>
+			<a href="#diary" class="p-save">Save</a>
+			<a href="#pdf" class="p-pdf">Generate</a>
+			<a href="#cover" class="p-next" data-id="route">Next</a>
+			<a href="#publish" class="p-publish">Publish</a>
+		</div>
+	</div>
+	<!-- 主体内容 -->
+	<section class="p-section-route">
+		<div class="p-section-left">
+			<ul>
+				<!-- <li class="complete" data-day="day1">Day 1</li> -->
+				<li class="active" data-day="day1"><span>Day 1</span><b>×</b></li>
+			</ul>
+			<p class="add-day js-add-day">+</p>
+			<p class="add-scenic js-add-scenic">Add Scenic Spots</p>
+		</div>
+		<div class="p-section-right">
+			<p class="m-section-close"></p>
+			<div class="p-search-scenic">
+				<input type="text" class="s-scenic-input" name="" value="" placeholder="Search for scenic spots">
+			</div>
+			<div class="p-scenic-route">
+				<h3>Recommended route</h3>
+				<div class="s-route-inner">
+					<div class="s-route-box">
+						<div>
+							<a href="javascript:void(0)" data-lng="113.82" data-lat="22.99" data-val="dongguan">dongguan</a>
+							<a href="javascript:void(0)" data-lng="114.05" data-lat="22.58" data-val="shenzhen">shenzhen</a>
+							<a href="javascript:void(0)" data-lng="114.18" data-lat="22.28" data-val="xiangang">xianggang</a>
+							<a href="javascript:void(0)" data-lng="113.49" data-lat="22.15" data-val="aomen">aomen</a>
+							<a href="javascript:void(0)" data-lng="113.52" data-lat="22.27" data-val="zhuhai">zhuhai</a>
+						</div>
+						<p class="s-route-add">+</p>
+					</div>
+					<div class="s-route-box">
+						<div>
+							<a href="javascript:void(0)" data-lng="116.07" data-lat="24.30" data-val="meizhou">meizhou</a>
+							<a href="javascript:void(0)" data-lng="116.66" data-lat="23.67" data-val="chaozhou">chaozhou</a>
+							<a href="javascript:void(0)" data-lng="116.32" data-lat="23.54" data-val="jieyang">jieyang</a>
+							<a href="javascript:void(0)" data-lng="115.40" data-lat="22.82" data-val="shanwei">shanwei</a>
+							<a href="javascript:void(0)" data-lng="114.71" data-lat="23.77" data-val="heyuan">heyuan</a>
+							<a href="javascript:void(0)" data-lng="113.82" data-lat="22.99" data-val="dongguan">dongguan</a>
+							<a href="javascript:void(0)" data-lng="113.16" data-lat="23.72" data-val="qianyuan">qingyuan</a>
+						</div>
+						<p class="s-route-add">+</p>
+					</div>
+				</div>
+			</div>
+			<div class="p-scenic-wrap">
+				<h3>All scenic spots</h3>
+				<div class="p-scenic-inner">
+					<div class="p-scenic-box">
+						<h2>guangzhou</h2>
+						<div class="p-stars">
+							Ratings : 
+							<p class="p-stars-num">
+								<img src="../../images/EN/diary-star.png" alt="">
+								<img src="../../images/EN/diary-star.png" alt="">
+								<img src="../../images/EN/diary-star.png" alt="">
+								<img src="../../images/EN/diary-star.png" alt="">
+							</p>
+						</div>
+						<p class="p-introduction">Introduction</p>
+						<p class="p-add p-add-1" data-lng="113.25" data-lat="23.15" data-val="guangzhou">+</p>
+					</div>
+					<div class="p-scenic-box">
+						<h2>foshan</h2>
+						<div class="p-stars">
+							Ratings : 
+							<p class="p-stars-num">
+								<img src="../../images/EN/diary-star.png" alt="">
+								<img src="../../images/EN/diary-star.png" alt="">
+								<img src="../../images/EN/diary-star.png" alt="">
+								<img src="../../images/EN/diary-star.png" alt="">
+							</p>
+						</div>
+						<p class="p-introduction">Introduction</p>
+						<p class="p-add p-add-2" data-lng="113.05" data-lat="23.03" data-val="foshan">+</p>
+					</div>
+					<div class="p-scenic-box">
+						<h2>zhongshan</h2>
+						<div class="p-stars">
+							Ratings : 
+							<p class="p-stars-num">
+								<img src="../../images/EN/diary-star.png" alt="">
+								<img src="../../images/EN/diary-star.png" alt="">
+								<img src="../../images/EN/diary-star.png" alt="">
+								<img src="../../images/EN/diary-star.png" alt="">
+								<img src="../../images/EN/diary-star.png" alt="">
+							</p>
+						</div>
+						<p class="p-introduction">Introduction</p>
+						<p class="p-add p-add-3" data-lng="113.39" data-lat="22.54" data-val="zhongshan">+</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="p-section-center">
+			<div class="p-path-wrap"></div>
+			<!-- 地图 -->
+			<div class="p-path-map" id="planningMap"></div>
+		</div>
+	</section>
+
+	<!-- 游记主体内容 -->
+	<section class="p-section-diary">
+		<!--游记书本上传按钮左边位置-->
+		<div class="p-diary-secyion-leftall" >
+			<!--背景色选择-->
+			<div class="p-diary-secyion-left left-bg" >
+				<ul class="p-bg-ul">
+					<li class="add-bg">bg</li>	
+					<li id="bgUpload" class="add-box"></li>
+				</ul>
+			</div>
+			<!--图片、音乐、视频上传-->
+			<div class="p-diary-secyion-left left-upload">
+				<ul class="p-bg-ul" style="position: relative;">
+					<li class="add-bg upload" id="picUpload">
+						<span class="glyphicon glyphicon-picture"></span>
+					</li>	
+					<li class="add-bg upload" id="playVideo">
+						<span class="glyphicon glyphicon-facetime-video"></span>
+					</li>
+					<li class="add-bg upload upload-play" id="playAudio">
+						<input type="hidden" value="1" id="radioStatus" />
+						<audio controls id="MyAudio" hidden>
+					        <source src="../../libs/lmPlayer/music/myMusic.mp3" type="audio/mpeg" id="audioSrc"> 
+					    </audio>
+						<span class="glyphicon glyphicon glyphicon-signal radioPlay" id="playAudioSpan"></span>
+					</li>
+					<div class="play-tips">
+						<span id="tipName"></span>
+						<i class="glyphicon glyphicon-open" title="重新上传" onclick="reupload()"></i>
+					</div>
+				</ul>
+			</div>
+		</div>
+		<!-- 游记书本div -->
+		<div class="p-diary-secyion-center">
+			<!-- 游记书本左半部分 -->
+			<div class="p-diary-book-left" placeholder="Write your travels here..." ><div></div></div>
+			<!--游记书本中间书页效果部分-->
+			<div class="p-diary-book-center"></div>
+			<!--游记书本右半部分-->
+			<div class="p-diary-book-right"   placeholder="Write your travels here..." ><div></div></div>
+		</div>
+		<!--游记书本右边相关按钮-->
+		<div class="p-diary-secyion-right" style="position: relative;">
+			<!-- <div class="p-diary-tag">
+				<ul class="p-tag-ul">
+					<li class="add-tag">+</li>	
+					<li class="add-content">
+						Add
+					</li>
+					<li class="tag-content">
+						tag
+					</li>
+				</ul>
+			</div> -->
+			<div class="p-diary-upload">
+				<ul class="p-tag-ul">
+					<li class="add-tag">
+						<img src="../../images/EN/arrow-up.png" />
+					</li>	
+					<li class="add-content">
+						Upload 
+					</li>
+					<li class="tag-content">
+						bg
+					</li>
+				</ul>
+			</div>
+			<div class="p-diary-remove">
+				<ul class="p-tag-ul">
+					<li class="add-tag">
+						<img src="../../images/EN/arrow-up.png" />
+					</li>	
+					<li class="add-content">
+						Remove
+					</li>
+					<li class="tag-content">
+						bg
+					</li>
+				</ul>
+			</div>
+			<div class="uploadbg-tip">
+				<input type="file" style="display: none;" id='bguploadfile_l' />
+				<input type="file" style="display: none;" id='bguploadfile_r' />
+				<button type="button" class="btn-l">bgLeft</button>
+				<button type="button" class="btn-r">bgRight</button>
+			</div>
+			<div class="removebg-tip">
+				<button id="removebgL" type="button" class="btn-l">bgLeftRemove</button>
+				<button id="removebgR" type="button" class="btn-r">bgRightRemove</button>
+			</div>
+		</div>
+		<!--书本下方按钮-->
+		<div class="p-diary-secyion-bottom">
+				<div class="p-diary-next" id="book-next">
+					<ul class="p-tag-ul">
+						<li class="add-tag">
+							<img class="diary-upLoad" src="../../images/EN/diary-upLoad.png" />
+						</li>	
+						<li class="add-content">
+							Save
+						</li>
+						<li class="tag-content">
+							Next
+						</li>
+						
+					</ul>
+				</div>
+		</div>
+	</section>
+	<!-- 文件上传 -->
+	<div class="popup" id="popup">
+		<div class="page">
+			<div class="title" id="popupTitle"></div>
+			<div class="content">
+				<div class="wysiwyg-toolbar-form" unselectable="on">
+					<div class="wysiwyg-browse">Drop file or click
+						<input id="fileChoose" type="file" name="fileTrans" onchange="showName(this)" draggable="true" style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; opacity: 0; cursor: pointer;">
+					</div>
+					<p id="fileName"></p>
+					<div class="btn-div">
+						<button type="button" id="fileUpload" class="insertBtn" onclick="fileUpload2()">File Upload</button>
+						<button type="button" id="cancelBtn" class="cancelBtn" onclick="popupClose()">Cancel</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 封面 -->
+	<section class="p-section-cover">
+		<div class="s-cover-inner">
+			<div class="s-cover-box"></div>
+			<p>Upload cover ( 630x760 )</p>
+		</div>
+	</section>
+
+	<!-- 路线预览 -->
+	<div class="modal fade previewModal" id="js-previewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	     	<div class="modal-header">
+ 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+	     	</div>
+	     	<div class="modal-body">
+	     		<div class="preview-routes-wrap">
+	     			<div class="p-title-wrap">
+	     				<img src="../../images/EN/p-lanmeiLogo.png" class="lm-logo">
+	     				<h2 class="preview-title"><span class="s-userName">LZQ</span>的<span class="s-local">广州</span>行程</h2>
+	     				<p class="preview-time">旅行时间: <span>2018-02-02至2018-02-04</span></p>
+	     				<p class="preview-days">旅行天数: <span>3</span>天</p>
+	     			</div>
+	     			<div class="p-day" data-day-index="0">
+	     				<h2>Day01</h2>
+	     				<img src="../../images/EN/preview-route-1.jpg" class="p-day-map">
+	     				<div class="p-day-inner">
+	     					<a href="javascript:void(0)"><span class="s-num">1</span><span class="s-scenic">沙面</span></a>
+	     					<a href="javascript:void(0)"><span class="s-num">2</span><span class="s-scenic">白云山</span></a>
+	     					<a href="javascript:void(0)"><span class="s-num">3</span><span class="s-scenic">上下九</span></a>
+	     				</div>
+	     			</div>
+	     			<div class="p-day" data-day-index="1">
+	     				<h2>Day02</h2>
+	     				<img src="../../images/EN/preview-route-1.jpg" class="p-day-map">
+	     				<div class="p-day-inner">
+	     					<a href="javascript:void(0)"><span class="s-num">1</span><span class="s-scenic">北京路</span></a>
+	     					<a href="javascript:void(0)"><span class="s-num">2</span><span class="s-scenic">广州塔</span></a>
+	     					<a href="javascript:void(0)"><span class="s-num">3</span><span class="s-scenic">长隆</span></a>
+	     				</div>
+	     			</div>
+	     			<div class="p-day" data-day-index="2">
+	     				<h2>Day03</h2>
+	     				<img src="../../images/EN/preview-route-1.jpg" class="p-day-map">
+	     				<div class="p-day-inner">
+	     					<a href="javascript:void(0)"><span class="s-num">1</span><span class="s-local">体育西</span></a>
+	     					<a href="javascript:void(0)"><span class="s-num">2</span><span class="s-local">陈家祠</span></a>
+	     					<a href="javascript:void(0)"><span class="s-num">3</span><span class="s-local">珠江夜游</span></a>
+	     					<a href="javascript:void(0)"><span class="s-num">4</span><span class="s-local">越秀公园</span></a>
+	     					<a href="javascript:void(0)"><span class="s-num">5</span><span class="s-local">中山纪念堂</span></a>
+	     				</div>
+	     			</div>
+	     		</div>
+	     	</div>
+	    </div>
+	  </div>
+	</div>
+
+	<!-- 第三方库-->
+	<script type="text/javascript" src="../../libs/jQuery/jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="../../libs/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../../libs/layer/layer.js"></script>
+	<script type="text/javascript" src="../../libs/rangeNum/jquery.range.js"></script>
+	<script type="text/javascript" src="../../libs/jedate/jquery.jedate.js"></script>
+	<!-- 游记编辑和调色板和分页 -->
+	<script type="text/javascript" src="../../libs/wysiwyg/js/wysiwyg.js"></script>
+	<script type="text/javascript" src="../../libs/wysiwyg/js/wysiwyg-editor.js"></script>
+	<script type="text/javascript" src="../../libs/spectrum/spectrum.js"></script>
+	<script type="text/javascript" src="../../libs/jqueryPage.js"></script>
+	<!-- 日期 -->
+	<script type="text/javascript" src="../../libs/dataRange/dateRange.js"></script>
+
+	<!-- 公共JS -->
+	<script type="text/javascript" src="../../common/EN/js/LMTravel-common.js"></script>
+	<!-- 业务代码 -->
+	<script type="text/javascript" src="../../js/EN/LMTravelPlanning.js"></script>
+	<script type="text/javascript" src="../../js/EN/LMTravelDiary.js"></script>
+
+	<!-- google -->
+	<script src="http://ditu.google.cn/maps/api/js?sensor=false&libraries=geometry"></script>
+	<script type="text/javascript" src="../../js/EN/LMGoogleJS.js"></script>
+</body>
+</html>

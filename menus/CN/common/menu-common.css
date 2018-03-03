@@ -1,0 +1,234 @@
+/* 定义颜色变量 */
+body {
+  background: #f2f2f2;
+}
+.lm-section {
+  width: 940px;
+  min-height: 473px;
+  margin: 0 auto;
+}
+.lm-section .lm-title h1 {
+  font-size: 36px;
+  color: #1f2c5c;
+}
+.lm-section .lm-content {
+  margin: 30px 0;
+}
+.lm-section .lm-content h2 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #1f2c5c;
+  margin-bottom: 10px;
+  text-indent: 2em;
+  line-height: 28px;
+}
+.lm-section .lm-content p {
+  font-size: 14px;
+  color: #808080;
+  margin-bottom: 20px;
+  text-indent: 2em;
+  line-height: 26px;
+}
+.lm-section .lm-content a {
+  color: #4aa374;
+}
+.lm-section .lm-content span {
+  color: #1f2c5c;
+  font-weight: bold;
+}
+/* 机场服务公共样式 */
+.airport-section {
+  width: 960px;
+  min-height: 473px;
+  margin: 0 auto 50px;
+}
+.airport-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #1f2c5c;
+  padding: 0 10px;
+}
+.airport-title img {
+  margin-right: 20px;
+}
+.airport-content {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  background: #fff;
+}
+.airport-content > h2 {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 20px;
+  color: #1f2c5c;
+}
+.airport-content > .nth-child1 {
+  margin-top: 20px;
+}
+.airport-content > p {
+  font-size: 14px;
+  margin-top: 10px;
+  color: #1f2c5c;
+}
+.airport-content .airport-content-title {
+  text-align: center;
+  font-size: 16px;
+  color: #1f2c5c;
+}
+.airport-content .airport-content-title img {
+  margin-right: 10px;
+}
+.airport-content .airport-content-inner {
+  width: 100%;
+  margin-top: 20px;
+}
+.airport-content .airport-content-inner th,
+.airport-content .airport-content-inner td {
+  font-size: 14px;
+  color: #1f2c5c;
+  padding: 10px 0;
+  text-align: center;
+}
+.airport-content .airport-content-inner .content-inner-title {
+  background: #8ec060;
+  border-radius: 6px;
+}
+.airport-content .airport-content-inner .content-inner-title th {
+  color: #fff;
+}
+.airport-content .airport-bashi-inner {
+  text-align: center;
+}
+.airport-content .airport-bashi-inner .p1 {
+  margin-top: 20px;
+}
+.airport-content .airport-bashi-inner > p {
+  color: #1f2c5c;
+  font-size: 14px;
+  line-height: 26px;
+}
+.airport-content .additional-charge {
+  margin-top: 30px;
+}
+.airport-content .airport-stop-inner .content-inner-title {
+  margin-top: 10px;
+}
+.airport-content .airport-stop-p1 {
+  color: #1f2c5c;
+  font-size: 14px;
+  padding-left: 10px;
+  margin-top: 20px;
+}
+.airport-content .airport-stop-tip {
+  font-size: 14px;
+  color: #d0021b;
+  margin-top: 10px;
+  padding-left: 10px;
+}
+/* 机场平面图 */
+.airport-planeGraph .airport-content img {
+  width: 100%;
+  margin-top: 10px;
+}
+/* 机场交通 */
+.airport-traffic {
+  margin-top: 40px;
+}
+/* 机场电话 */
+.airport-call {
+  margin-top: 40px;
+}
+.airport-call .airport-call-content {
+  padding: 30px;
+}
+.airport-call .airport-call-content > h2 {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #1f2c5c;
+}
+.airport-call .airport-call-content > p {
+  font-size: 14px;
+  color: #333333;
+}
+@media screen and (max-width: 992px) {
+  body .lm-section {
+    width: 100%;
+    padding: 0.15rem;
+    margin-top: 0.4rem;
+  }
+  body .lm-section > .title {
+    display: none;
+  }
+  body .lm-section > .check-steps {
+    margin-top: 0;
+  }
+  body .lm-section > .content {
+    margin-top: 0;
+  }
+  .lm-section .lm-title {
+    display: none;
+  }
+  .lm-section .lm-content {
+    margin-top: 0;
+  }
+  .airport-section {
+    width: 100%;
+    padding: 0.15rem;
+    margin-top: 0.4rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  .airport-title {
+    font-size: 0.14rem;
+  }
+  .airport-title img {
+    height: 0.2rem;
+    margin-right: 0.1rem;
+  }
+  .airport-traffic,
+  .airport-call {
+    margin-top: 0.2rem;
+  }
+  .airport-content {
+    margin-top: 0.1rem;
+    padding: 0.1rem;
+  }
+  .airport-content > h2,
+  .airport-content > p {
+    font-size: 12px;
+  }
+  .airport-content .airport-content-inner {
+    margin-top: 0.1rem;
+  }
+  .airport-content .airport-content-inner th,
+  .airport-content .airport-content-inner td {
+    font-size: 12px;
+  }
+  .airport-content .airport-bashi-inner > p {
+    text-align: left;
+    font-size: 12px;
+  }
+  .airport-content .airport-bashi-inner > .p1 {
+    margin-top: 0.1rem;
+    text-align: left;
+  }
+  .airport-content .airport-stop-p1,
+  .airport-content .airport-stop-tip {
+    font-size: 12px;
+  }
+  .airport-content .airport-content-title {
+    font-size: 0.14rem;
+  }
+  .airport-content .airport-content-title img {
+    width: 0.2rem;
+  }
+  .airport-call .airport-call-content {
+    padding: 0.1rem;
+  }
+  .airport-call .airport-call-content > h2,
+  .airport-call .airport-call-content > p {
+    font-size: 12px;
+  }
+}

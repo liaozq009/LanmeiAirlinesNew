@@ -1,0 +1,49 @@
+
+@charset "utf-8";
+
+/* 定义变量 */
+@url:"../images/CN/";
+/* 定义颜色变量 */
+@green:#8ec060;
+@purple:#1f2c5c;
+@gray:#808080;
+@red:#d0011b;
+@link:#4aa374;
+
+/* 主体代码 */
+.lm-section{
+	width: 940px;
+	overflow: hidden;
+	margin:0 auto;
+	>div{
+		img{margin-top: 10px;}
+	}
+	.shop-title{
+		text-align: center;
+		h1{
+			font-size: 45px;
+			color: #006C92;
+		}
+		.p1{
+			font-size: 40px;
+			color: red;
+			margin:10px 0;
+		}
+		.p2{
+			font-size: 16px;
+			color: red;
+		}
+	}
+}
+
+@media screen and (max-width: 992px) {
+	.lm-section{
+		width: 100%;
+		padding:15px;
+		.shop-title{
+			h1{font-size: 0.24rem;}
+			.p1{font-size: 0.24rem;}
+			.p2{font-size: 0.14rem;}
+		}
+	}
+}

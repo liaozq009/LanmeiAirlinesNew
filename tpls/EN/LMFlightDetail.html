@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- 让 Bootstrap 兼容 IE 兼容模型 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- 让 Bootstrap 兼容 国产浏览器的高速模型 -->
+	<meta name="renderer" content="webkit">
+	<!-- 实现响应式的设置 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>LanmeiAirlines</title>
+	<!-- 引入图标 -->
+	<link rel="icon" href="../../images/EN/lanmeiLogo.ico">
+	<link rel="stylesheet" type="text/css" href="../../libs/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../../libs/dataRange/lanmei-calendar.css">
+	<link rel="stylesheet" type="text/css" href="../../common/EN/fonts/lm-iconfont.css">
+	<link rel="stylesheet" type="text/css" href="../../libsEdit/css/lanmeiLibsEdit.css">
+	<link rel="stylesheet" type="text/css" href="../../common/EN/css/Lanmei-common.css">
+	<link rel="stylesheet" type="text/css" href="../../css/EN/LMFlightDetail.css">
+	<!--[if lt IE 9]>
+	<script src="../../libs/bootstrap/js/html5shiv.min.js"></script>
+	<script src="../../libs/bootstrap/js/respond.min.js"></script>
+<![endif]-->
+</head>
+<body>
+	<!-- 页面顶部 -->
+	<header class="lanmeiHeader">
+		<nav class="lanmeiNav">
+			<div class="lanmeiLogo">
+				<a class="navbar-brand" href="../../index.html""><img src="../../images/EN/lanmeiLogo.png"></a>
+			</div>
+			<div class="lanmeiHeadInfo">
+				<ul class="">
+					<li>
+						<img src="../../images/EN/phone.png">
+						<span>+855 889888888（CAMBODIA）</span>
+					</li>
+					<li><a href="#" class="btn loginBtn"><img src="../../images/EN/login.png">Login</a></li>
+					<li class="nth-child3"><a href="tpls/EN/LanmeiAirlinesRegister.html" class="btn REGISTEREDBtn"><img src="../../images/EN/registered.png">Registered</a></li>
+				</ul>
+			</div>
+		</nav>
+
+		<!-- 菜单选择 -->
+		<div class="LMCompanyInfo">
+			<ul class="lm-nav">
+				<li class="nth-child1">
+					<a href="#PLANTOTRAVEL">PLAN TO TRAVEL</a>
+					<!-- <i></i>  -->
+				</li>
+				<li class="nth-child2">
+					<a href="#LANMEIMEMBERVS">LANMEI MEMBER CENTER</a>
+				</li>
+				<li class="nth-child3">
+					<a href="#LANMEICOMMUNITY">LANMEI COMMUNITY</a>
+					<i></i>
+				</li>
+				<li class="nth-child5">
+					<a href="#DUTYFERR">LANMEI DUTY FREE</a>
+				</li>
+				<li class="nth-child6">
+					<a href="#ABOUTUS">ABOUT US</a>
+				</li>
+			</ul>
+			<ul class="LMCompanyDownMenu" id="PLANTOTRAVEL">
+				<!-- <li><a href="#">Type something1</a></li>
+				<li><a href="#">Type something2</a></li>
+				<li><a href="#">Type something3</a></li>
+				<li><a href="#">Type something4</a></li>
+				<li><a href="#">Type something5</a></li>
+				<li><a href="#">Type something6</a></li> -->
+			</ul>
+			<ul class="LMCompanyDownMenu" id="LANMEICOMMUNITY">
+				<li><a href="../../shopping/LMShopping.html" target="_blank">lm-shopping</a></li>
+				<li><a href="../../LMLive/LMLive.html" target="_blank">lm-live</a></li>
+			</ul>
+		</div>
+	</header>
+
+	<!-- 选择机票信息 -->
+	<div class="changeSearch">
+		<div class="changeSearchTitle">
+			<h2>
+				<img src="../../images/EN/leftTitleLine.png">
+				Change the search
+			</h2>
+		</div>
+		<div class="selectWay">
+			<a href="#" class="OneWay nth-child1 active" data-way="b-route">By route</a>
+			<a href="#" class="RoundTrip" data-way="f-num">By flight number</a>
+		</div>
+		<div class="selectAir selectAirCommon">
+			<div class="local_timeSelect">
+				<div class="localSelectStart autoClick">
+					<p><img src="../../images/EN/originStart2.png"><span>Origin</span></p>
+					<input type="text" class="fromcityinput inputDown Autocomplete" id="fromcity" value="" placeholder="">
+					<img src="../../images/EN/downArrow.png">
+					<span class="clear">X</span>
+					<i class="img01" id="localChangeImg"></i>
+					<b class="bottomLine"></b>
+					<ul class="fromcityMenu menu-com js-route-menu">
+						
+					</ul>
+				</div>
+				<div class="localSelectEnd autoClick autoFocus">
+					<p><img src="../../images/EN/originEnd2.png"><span>Destination</span></p>
+					<input type="text" class="tocityinput inputDown Autocomplete" id="tocity" value="" placeholder="">
+					<img src="../../images/EN/downArrow.png">
+					<span class="clear">X</span>
+					<b class="bottomLine"></b>
+					<ul class="tocityMenu menu-com">
+						
+					</ul>
+				</div>
+				<div class="flightSelectStart autoClick autoFocus">
+					<p><img src="../../images/EN/originStart2.png"><span>Flight Number</span></p>
+					<input type="text" class="fromcityinput inputDown" id="f-num-select" value="XU-738" placeholder="">
+					<img src="../../images/EN/downArrow.png">
+					<span class="clear">X</span>
+					<b class="bottomLine"></b>
+					<ul class="flightMenu menu-com js-f-menu">
+						<li><a href="javascript:void(0)">XU-738</a></li>
+						<li><a href="javascript:void(0)">XU-739</a></li>
+					</ul>
+				</div>
+				<div class="timeSelectStart">
+					<p><img src="../../images/EN/departureDate2.png"><span>Departure Date</span></p>
+					<input type="text" id="f-timeFrom" name="from" value="" placeholder="" readonly>
+					<img src="../../images/EN/downArrow.png">
+				</div>
+				<a href="#" class="f-search-btn">SEARCH</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- 航班信息 -->
+	<div class="lm-flight-wrap">
+		<div class="f-info-time">
+			<div class="f-info-bg"><img src="../../images/EN/tableLogo.png"></div>
+			<ul class="f-time-select js-time-select">
+				<li>
+					<a href="javascript:void(0)">
+						<p class="f-set-out">Set out</p>
+						<p class="f-date">04-15</p>
+						<p class="f-week">Saturday</p>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0)">
+						<p class="f-set-out">Set out</p>
+						<p class="f-date">04-16</p>
+						<p class="f-week">Sunday</p>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0)">
+						<p class="f-set-out">Set out</p>
+						<p class="f-date">04-17</p>
+						<p class="f-week">Monday</p>
+					</a>
+				</li>
+				<li class="active">
+					<a href="javascript:void(0)">
+						<p class="f-set-out">Set out</p>
+						<p class="f-date">04-18</p>
+						<p class="f-week">Tuesday</p>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0)">
+						<p class="f-set-out">Set out</p>
+						<p class="f-date">04-19</p>
+						<p class="f-week">Wednesday</p>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0)">
+						<p class="f-set-out">Set out</p>
+						<p class="f-date">04-20</p>
+						<p class="f-week">Thursday</p>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0)">
+						<p class="f-set-out">Set out</p>
+						<p class="f-date">04-20</p>
+						<p class="f-week">Friday</p>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="f-info-detail">
+			<div class="f-info-title">
+				<span class="f-from-city">Beijing，China(PEK)</span>to
+				<span class="f-to-city">Shanghai，China(PVG)</span>
+			</div>
+			<div class="f-info-content">
+				<div class="i-content-title">
+					<p class="f-no"><span>Flight NO.</span></p>
+					<div class="f-departure">
+						<h2>Departure Time</h2>
+						<div>
+							<span class="s-1">Plan</span>
+							<span class="s-2">Actual</span>
+						</div>
+						<b></b>
+					</div>
+					<div class="f-arrival">
+						<h2>Arrival Time</h2>
+						<div>
+							<span class="s-1">Plan</span>
+							<span class="s-2">Actual</span>
+						</div>
+					</div>
+					<p class="f-time"><span>Total Duration</span></p>
+					<p class="f-remarks"><span>Remarks</span></p>
+				</div>
+				<ul class="i-content-inner">
+					<li>
+						<span class="c-inner-no">LQ502</span>
+						<span class="d-inner-plan">08:05</span>
+						<span class="d-inner-arrival">- - : - -</span>
+						<span class="a-inner-plan">11:10 <b>+1天</b></span>
+						<span class="a-inner-arrival">- - : - -</span>
+						<span class="c-inner-time">3h</span>
+						<span class="c-inner-remarks">Arrived</span>
+					</li>
+					<li>
+						<span class="c-inner-no">LQ503</span>
+						<span class="d-inner-plan">08:05</span>
+						<span class="d-inner-arrival">- - : - -</span>
+						<span class="a-inner-plan">11:10<b></b></span>
+						<span class="a-inner-arrival">- - : - -</span>
+						<span class="c-inner-time">2h</span>
+						<span class="c-inner-remarks">Arrived</span>
+					</li>
+					<li>
+						<span class="c-inner-no">LQ806</span>
+						<span class="d-inner-plan">08:05</span>
+						<span class="d-inner-arrival">- - : - -</span>
+						<span class="a-inner-plan">11:10</span>
+						<span class="a-inner-arrival">- - : - -</span>
+						<span class="c-inner-time">3h</span>
+						<span class="c-inner-remarks">Departure</span>
+					</li>
+					<li>
+						<span class="c-inner-no">LQ807</span>
+						<span class="d-inner-plan">08:05</span>
+						<span class="d-inner-arrival">- - : - -</span>
+						<span class="a-inner-plan">11:10</span>
+						<span class="a-inner-arrival">- - : - -</span>
+						<span class="c-inner-time">1.5h</span>
+						<span class="c-inner-remarks">Departure</span>
+					</li>
+					<li>
+						<span class="c-inner-no">LQ806</span>
+						<span class="d-inner-plan">08:05</span>
+						<span class="d-inner-arrival">- - : - -</span>
+						<span class="a-inner-plan">11:10</span>
+						<span class="a-inner-arrival">- - : - -</span>
+						<span class="c-inner-time">3h</span>
+						<span class="c-inner-remarks">Plan</span>
+					</li>
+					<li>
+						<span class="c-inner-no">LQ806</span>
+						<span class="d-inner-plan">08:05</span>
+						<span class="d-inner-arrival">- - : - -</span>
+						<span class="a-inner-plan">11:10</span>
+						<span class="a-inner-arrival">- - : - -</span>
+						<span class="c-inner-time">2h</span>
+						<span class="c-inner-remarks">Plan</span>
+					</li>
+				</ul>
+				<div class="i-attention">
+					<h2 class="i-attention-title">Pay attention :</h2>
+					<div class="i-attention-content">
+						1. The date and time chosen and shown refer to the local date and time.<br>
+						2. Only direct flights will be shown when Departure City and Destination City are selected. For transit flights, please check by flight number.<br>
+						3. For more information, please contact Air China's Domestic and International Business Offices.Domestic and International Business Office
+					</div>
+				</div>
+				<div class="nextBtn">
+					<a href="javascript:void(0)">NEXT <img src="../../images/EN/schedulesArrow.png"></a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 没有航班信息 -->
+	<div class="no-flight-info" style="display: none;">
+		<img src="../../images/EN/no-flight-info.png" alt="">
+		<p class="no-flight-info-tips">No flight information. Please select another flight</p>
+	</div>
+
+	<!-- 页脚 -->
+	<div class="footerInfo">
+		<div class="footerBg">
+			<div class="HelpfulInformation">
+				<p>Helpful Information</p>
+			</div>
+			<div class="contactUs">
+				<div class="nth-child1"><img src="../../images/EN/email.png"><span>LM-EC@lanmeiairlines.com</span></div>
+				<div class="nth-child2">
+					<span>FOLLOW</span>
+					<a href="https://www.facebook.com/lanmeiairlines/">
+						<i class="iconfont icon-facebook"></i>
+					</a>
+					<a href="#"><i class="iconfont icon-in"></i></a>
+					<a href="#"><i class="iconfont icon-inst"></i></a>
+					<a href="#"><i class="iconfont icon-youtube"></i></a>
+					<a href="#"><i class="iconfont icon-googleplus"></i></a>
+					<a href="http://weibo.com/lanmeiair"><i class="iconfont icon-wb"></i></a>
+					<a href="#"><i class="iconfont icon-tuite"></i></a>
+				</div>
+			</div>
+			<div class="location">
+				<img src="../../images/EN/location.png"><a href="https://www.google.com.kh/maps/place/Lanmei+Airlines/@11.5637415,104.8830989,17z/data=!3m1!4b1!4m5!3m4!1s0x310951a3c5cdaf97:0x77359b117b2ff068!8m2!3d11.5637363!4d104.8852876" target="_Blank">No.575 D&E, Russian Federation Boulevard, Phnom Penh, Cambodia</a>
+			</div>
+			<div class="LanmeiAirlinesBerhad">
+				<a href="../../index.html"><img src="../../images/EN/lanmeiFooterLogo.png"></a>
+				<div>
+					<p class="p1">Terms of Use | Privacy Policy | Cookies</p>
+					<p class="p2">© Copyright 2017 Lanmei Airlines. All Rights Reserved. ICP: Guangdong Province <a href="http://www.miitbeian.gov.cn" target="_Blank">ICP-17005494-1</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 回到顶部 -->
+	<div class="BackToTop" style="bottom: 300px;">
+		<div class="QRcode">
+			<p>Official Account</p>
+			<img src="../../images/EN/QR-code-s.png" class="small-code">
+			<img src="../../images/EN/QR-code-b.png" class="big-code">
+		</div>
+		<div class="top">
+			<img src="../../images/EN/ToTop-icon-active.png" class="img02">
+			<p>UP</p>
+		</div>
+	</div>
+
+	<!-- 第三方库-->
+	<script type="text/javascript" src="../../libs/jQuery/jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="../../libs/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../../libs/layer/layer.js"></script>
+	<script type="text/javascript" src="../../libs/dataRange/lanmei-calendar.js"></script>
+	<script type="text/javascript" src="../../libs/lanmei-date-select.js"></script>
+	<script type="text/javascript" src="../../libs/mobile-libs/fastclick/fastclick.js"></script>
+	<!-- 公共JS -->
+	<script type="text/javascript" src="../../common/EN/js/Lanmei-common.js"></script>
+	<script type="text/javascript" src="../../common/EN/js/flight-info.js"></script>
+	<!-- 业务代码 -->
+	<script type="text/javascript" src="../../js/EN/LMFlightDetail.js"></script>
+</body>
+</html>

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- 让 Bootstrap 兼容 IE 兼容模型 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- 让 Bootstrap 兼容 国产浏览器的高速模型 -->
+	<meta name="renderer" content="webkit">
+	<!-- 实现响应式的设置 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>LanmeiAirlines</title>
+	<!-- 引入图标 -->
+	<link rel="icon" href="../../images/EN/lanmeiLogo.ico">
+	<link rel="stylesheet" type="text/css" href="../../libs/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../../common/EN/fonts/lm-iconfont.css">
+	<link rel="stylesheet" type="text/css" href="../../common/EN/css/Lanmei-common.css">
+	<link rel="stylesheet" type="text/css" href="../../libsEdit/css/lanmeiLibsEdit.css">
+	<!--[if lt IE 9]>
+	<script src="../../libs/bootstrap/js/html5shiv.min.js"></script>
+	<script src="../../libs/bootstrap/js/respond.min.js"></script>
+<![endif]-->
+<style type="text/css">
+.lm-section{
+	width: 960px;
+	min-height: 500px;
+	margin: 0 auto;
+}
+.lm-section-title{
+	font-size: 30px;
+	font-weight: 700;
+	color: #1f2c5c;
+	text-align: center;
+	margin-bottom: 20px;
+}
+.lm-section-title>a{
+	font-size: 12px;
+	margin-left: 10px;
+	color: #808080;
+	transition: all .6s;
+	-webkit-transition: all .6s;
+}
+.lm-section-title>a:hover{
+	color: #8ec060;
+	transition: all .6s;
+	-webkit-transition: all .6s;
+}
+.lm-section-title>a img{
+	width: 20px;
+	margin-left: 10px;
+}
+.search-wrap{
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	position: relative;
+}
+.search-wrap input{
+	width: 43%;
+	height: 40px;
+	line-height: 40px;
+	margin-right: 5%;
+	padding-left: 20px;
+	padding-right: 20px;
+	font-size: 20px;
+	color: #1f2c5c;
+	border: 1px solid #ccc;
+}
+.search-wrap .search-ticket{
+	position: absolute;
+	right: 0;
+	top: 0;
+	cursor: pointer;
+}
+.ticket-table{
+	margin-top: 30px;
+}
+.table > thead > tr > th{
+	color: #1f2c5c;
+	font-size: 14px;
+}
+.table > tbody > tr > th{
+	color: #1f2c5c;
+	font-size: 14px;
+}
+.table > tbody > tr > td{
+	font-size: 14px;
+}
+
+.ticket-tips{
+	width: 960px;
+	margin: 20px  auto;
+	text-align:center;
+	font-size: 14px;
+    color: #808080;
+}
+.ticket-tips img{
+	margin-right: 10px;
+    vertical-align: text-bottom;
+}
+
+/* 移动端 2017-12-22 */
+.m-table-wrap{
+	display: none;
+}
+.m-table-wrap .ticket-box{
+	overflow: hidden;
+	padding: 10px;
+	padding-top: 0;
+	margin-top: 20px;
+	border-radius: 6px;
+	background: #fff;
+	box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+}
+.m-table-wrap .ticket-box p{
+	margin-top: 10px;
+}
+.m-table-wrap .ticket-box p .s1{
+	color: #1f2c5c;
+	font-weight: bold;
+    font-size: 14px;
+}
+.m-table-wrap .ticket-box p .s2{
+	color: #333;
+    font-size: 14px;
+    margin-left: 6px;
+}
+
+/* 适配 */
+@media screen and (max-width: 992px){
+	.lm-section{
+		width: 100%;
+		padding:0 0.1rem;
+		margin-top: 0.5rem;
+	}
+	.ticket-tips{
+		width: 100%;
+		padding: 0.2rem;
+		margin: 0 auto;
+	}
+	.table-wrap{
+		width: 100%;
+		overflow-y: scroll;
+	}
+}
+@media screen and (max-width: 767px){
+	.lm-section-title{
+		font-size: 0.2rem;
+	}
+	.ticket-table{
+		margin-top: 0.2rem;
+	}
+	.lm-section{
+		min-height: auto;
+	}
+	.table-wrap{
+		display: none;
+	}
+	.m-table-wrap{
+		width: 100%;
+		display: block;
+	}
+}
+
+@media screen and (max-width: 560px){
+	.search-wrap{
+		height: auto;
+		line-height: normal;
+		text-align: center;
+	}
+	.search-wrap .search-ticket{
+		position: static;
+		margin-top: 0.1rem;
+	}
+	.search-wrap input{
+		width: 100%;
+		margin-top: 0.1rem;
+		margin-right: 0;
+	}
+}
+</style>
+</head>
+<body>
+	<!-- 页面顶部 -->
+	<header class="lanmeiHeader-subpage">
+		<nav class="lanmeiNav">
+			<div class="lanmeiLogo">
+				<a class="navbar-brand" href="../../index.html""><img src="../../images/EN/lanmeiLogo.png"></a>
+				<!-- <a class="navbar-brand" href="/index.html"><img src="../../images/CN/lanmeiLogo.png"></a> -->
+			</div>
+			<div class="lanmeiHeadInfo">
+				<ul class="">
+					<li class="nth-child1">
+						<img src="../../images/EN/phone.png">
+						<div>
+							<span>+855 23881890</span>/
+							<span>+855 23881893</span>/
+							<span>+855 23881865</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+	<header class="m-header">
+		<a href="../../index.html"><i class="iconfont icon-left-arrow"></i></a>
+		<h2 class="m-nav-title" data-title="f-nav-title">Ticket Verification</h2>
+	</header>
+
+	<!-- 页面主体 -->
+	<section class="lm-section">
+		<h2 class="lm-section-title">Ticket Verification<a href="http://www.travelsky.com/tsky/validate.jsp" target="_blank">Travel Sky<img src="../../images/EN/travelSky.png"></a></h2>
+		<form class="search-wrap">
+			<input type="text" name="" value="" placeholder="请输入机票号" class="search-input-1">
+			<input type="text" name="" value="" placeholder="请输入机票号" class="search-input-2">
+			<img src="../../images/EN/search-ticket.png" class="search-ticket">
+		</form>
+		<div class="table-wrap">
+			<table class="ticket-table table table-hover table-responsive">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Ticket Number</th>
+						<th>Route</th>
+						<th>Flight</th>
+						<th>TravelerName</th>
+						<th>DepatureDate</th>
+						<th>TraverDate</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row">1</th>
+						<td>Mark</td>
+						<td>Otto</td>
+						<td>@mdo</td>
+						<td>Mark</td>
+						<td>Otto</td>
+						<td>@mdo</td>
+					</tr>
+					<tr>
+						<th scope="row">2</th>
+						<td>Jacob</td>
+						<td>Thornton</td>
+						<td>@fat</td>
+						<td>Mark</td>
+						<td>Otto</td>
+						<td>@mdo</td>
+					</tr>
+					<tr>
+						<th scope="row">3</th>
+						<td>Larry</td>
+						<td>the Bird</td>
+						<td>@twitter</td>
+						<td>Mark</td>
+						<td>Otto</td>
+						<td>@mdo</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<!-- 移动端 -->
+		<div class="m-table-wrap">
+			<div class="ticket-box">
+				<p><span class="s1">Ticket Number:</span><span class="s2">961-2100025138</span></p>
+				<p><span class="s1">name:</span><span class="s2">GURUNG/UTTAM</span></p>
+				<p><span class="s1">Route:</span><span class="s2">Route1</span></p>
+				<p><span class="s1">Flight:</span><span class="s2">LQ315</span></p>
+				<p><span class="s1">Departure:</span><span class="s2">PNH</span></p>
+				<p><span class="s1">Destination:</span><span class="s2">2017-12-12 12:35</span></p>
+				<p><span class="s1">DepatureDate:</span><span class="s2">REP</span></p>
+				<p><span class="s1">TraverDate:</span><span class="s2">2018-01-12 12:35</span></p>
+				<p><span class="s1">TicketStatus:</span><span class="s2">Plan</span></p>
+			</div>
+			<div class="ticket-box">
+				<p><span class="s1">Ticket Number:</span><span class="s2">961-2100025138</span></p>
+				<p><span class="s1">name:</span><span class="s2">GURUNG/UTTAM</span></p>
+				<p><span class="s1">Route:</span><span class="s2">Route1</span></p>
+				<p><span class="s1">Flight:</span><span class="s2">LQ315</span></p>
+				<p><span class="s1">Departure:</span><span class="s2">PNH</span></p>
+				<p><span class="s1">Destination:</span><span class="s2">2017-12-12 12:35</span></p>
+				<p><span class="s1">DepatureDate:</span><span class="s2">REP</span></p>
+				<p><span class="s1">TraverDate:</span><span class="s2">2018-01-12 12:35</span></p>
+				<p><span class="s1">TicketStatus:</span><span class="s2">Plan</span></p>
+			</div>
+			<div class="ticket-box">
+				<p><span class="s1">Ticket Number:</span><span class="s2">961-2100025138</span></p>
+				<p><span class="s1">name:</span><span class="s2">GURUNG/UTTAM</span></p>
+				<p><span class="s1">Route:</span><span class="s2">Route1</span></p>
+				<p><span class="s1">Flight:</span><span class="s2">LQ315</span></p>
+				<p><span class="s1">Departure:</span><span class="s2">PNH</span></p>
+				<p><span class="s1">Destination:</span><span class="s2">2017-12-12 12:35</span></p>
+				<p><span class="s1">DepatureDate:</span><span class="s2">REP</span></p>
+				<p><span class="s1">TraverDate:</span><span class="s2">2018-01-12 12:35</span></p>
+				<p><span class="s1">TicketStatus:</span><span class="s2">Plan</span></p>
+			</div>
+		</div>
+	</section>
+	<p class="ticket-tips"><img alt="" src="../../images/EN/important-icon.png">The travel data is somewhat delayed. If no infomation was found, please check it later or jump to<a href="http://www.travelsky.com/tsky/validate.jsp" target="_blank"> <span style="color:#1f2c5c;">Travel Sky</span> </a>for query.</p>
+
+	<!-- 页脚 -->
+	<footer class="footerInfo">
+		<div class="footerBg">
+			<div class="HelpfulInformation">
+				<p>Helpful Information</p>
+			</div>
+			<div class="contactUs">
+				<div class="nth-child1"><img src="../../images/EN/email.png"><span>lm-ec@lanmeiairlines.com</span></div>
+				<div class="nth-child2">
+					<span>FOLLOW</span>
+					<a href="https://www.facebook.com/lanmeiairlines/">
+						<i class="iconfont icon-facebook"></i>
+					</a>
+					<a href="#"><i class="iconfont icon-in"></i></a>
+					<a href="#"><i class="iconfont icon-inst"></i></a>
+					<a href="#"><i class="iconfont icon-youtube"></i></a>
+					<a href="#"><i class="iconfont icon-googleplus"></i></a>
+					<a href="http://weibo.com/lanmeiair"><i class="iconfont icon-wb"></i></a>
+					<a href="#"><i class="iconfont icon-tuite"></i></a>
+				</div>
+			</div>
+			<div class="location">
+				<img src="../../images/EN/location.png"><a href="https://www.google.com.kh/maps/place/Lanmei+Airlines/@11.5637415,104.8830989,17z/data=!3m1!4b1!4m5!3m4!1s0x310951a3c5cdaf97:0x77359b117b2ff068!8m2!3d11.5637363!4d104.8852876" target="_Blank">No.575 D&E, Russian Federation Boulevard, Phnom Penh, Cambodia</a>
+			</div>
+			<div class="LanmeiAirlinesBerhad">
+				<a href="../../index.html"><img src="../../images/EN/lanmeiFooterLogo.png"></a>
+				<div>
+					<p class="p1">Terms of Use | Privacy Policy | Cookies</p>
+					<p class="p2">© Copyright 2017 Lanmei Airlines. All Rights Reserved. ICP: Guangdong Province <a href="http://www.miitbeian.gov.cn" target="_Blank">ICP-17005494-1</a></p>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<!-- 第三方库-->
+	<script type="text/javascript" src="../../libs/jQuery/jquery-1.11.3.js"></script>
+	<!-- <script type="text/javascript" src="../../libs/jQuery/jquery.cookie.js"></script> -->
+	<script type="text/javascript" src="../../libs/layer/layer.js"></script>
+	<script type="text/javascript" src="../../common/EN/js/Lanmei-common.js"></script>
+	<script type="text/javascript" src="../../libs/mobile-libs/fastclick/fastclick.js"></script>
+	<script type="text/javascript" src="../../libs/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+/* 定义变量 */
+/* 定义颜色变量 */
+.lm-section {
+  width: 940px;
+  min-height: 300px;
+  margin: 0 auto;
+}
+.lm-section .title h1 {
+  font-size: 30px;
+  font-weight: bold;
+  color: #1f2c5c;
+  text-align: center;
+}
+.lm-section .title h1 span {
+  color: #8ec060;
+}
+.lm-section .content {
+  min-height: 500px;
+  margin: 30px 0;
+  padding: 30px 20px;
+  border-left: 2px solid #1f2c5c;
+}
+.lm-section .content .timeline .t-title {
+  position: relative;
+  width: 400px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  background: -webkit-linear-gradient(left, #1f2c5c, #425795);
+  /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(left, #1f2c5c, #425795);
+  /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(left, #1f2c5c, #425795);
+  /* Firefox 3.6 - 15 */
+  background: linear-gradient(left, #1f2c5c, #425795);
+  /* 标准的语法 */
+  font-size: 24px;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+}
+.lm-section .content .timeline .t-title b {
+  position: absolute;
+  left: -20px;
+  top: 20px;
+  width: 20px;
+  height: 2px;
+  background: #1f2c5c;
+}
+.lm-section .content .timeline .t-tip {
+  font-size: 18px;
+  color: #8ec060;
+  margin-bottom: 20px;
+}
+.lm-section .content .timeline .t-menu > p {
+  font-size: 16px;
+  color: #808080;
+  line-height: 26px;
+  margin-bottom: 20px;
+  text-indent: 2em;
+}
+@media screen and (max-width: 992px) {
+  .lm-section {
+    width: 100%;
+    padding: 0.15rem;
+    margin-top: 0.4rem;
+  }
+  .lm-section .title {
+    display: none;
+  }
+  .lm-section .title h1 {
+    font-size: 0.2rem;
+  }
+  .lm-section .content {
+    margin: 0.1rem 0;
+  }
+  .lm-section .content .timeline .t-title {
+    font-size: 0.16rem;
+    width: 2.6rem;
+    height: 0.3rem;
+    line-height: 0.3rem;
+  }
+  .lm-section .content .timeline .t-title b {
+    top: 0.15rem;
+  }
+  .lm-section .content .timeline .t-tip {
+    font-size: 0.16rem;
+  }
+  .lm-section .content .timeline .t-menu > p {
+    font-size: 0.14rem;
+    line-height: 0.26rem;
+  }
+}

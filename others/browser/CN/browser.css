@@ -1,0 +1,486 @@
+@charset "UTF-8";
+/* line 1, ../sass/_home.scss */
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 8, ../sass/_home.scss */
+*::after, *::before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 13, ../sass/_home.scss */
+a {
+  text-decoration: none;
+  color: #878787;
+}
+/* line 16, ../sass/_home.scss */
+a:hover {
+  color: #2b4965;
+}
+/* line 19, ../sass/_home.scss */
+a:active {
+  color: #2b4965;
+}
+
+/* line 23, ../sass/_home.scss */
+ol, ul, li {
+  list-style: none;
+  list-style-type: none;
+}
+
+/* 解决ie8下图片有外边框问题 */
+img{border:none;}
+
+/* line 27, ../sass/_home.scss */
+body {
+  color: #2b4965;
+  background: #f0f2f5;
+  font-size: 14px;
+  font-family: microsoft yahei,tahoma,arial,\5b8b\4f53,sans-serif;
+  line-height: 1.428;
+  overflow-x: hidden;
+}
+
+/* line 36, ../sass/_home.scss */
+.clearfix {
+  *zoom: 1;
+}
+
+/* line 39, ../sass/_home.scss */
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  line-height: 0;
+  content: "";
+}
+
+/* line 45, ../sass/_home.scss */
+.clearfix:after {
+  clear: both;
+}
+
+/* line 48, ../sass/_home.scss */
+.float-right {
+  float: right;
+}
+
+/* line 51, ../sass/_home.scss */
+.float-left {
+  float: left;
+}
+
+/* line 54, ../sass/_home.scss */
+:root .ie9-input {
+  filter: none !important;
+}
+
+/* line 1, ../sass/dpl/_text.scss */
+h1 {
+  font-size: 36px;
+}
+
+/* line 4, ../sass/dpl/_text.scss */
+h2 {
+  font-size: 30px;
+}
+
+/* line 7, ../sass/dpl/_text.scss */
+h3 {
+  font-size: 24px;
+}
+
+/* line 10, ../sass/dpl/_text.scss */
+h4 {
+  font-size: 18px;
+}
+
+/* line 13, ../sass/dpl/_text.scss */
+h5 {
+  font-size: 14px;
+}
+
+/* line 16, ../sass/dpl/_text.scss */
+h6 {
+  font-size: 12px;
+}
+
+/* line 21, ../sass/dpl/_text.scss */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
+  margin-bottom: 9px;
+}
+/* line 32, ../sass/dpl/_text.scss */
+h1 small,
+h2 small,
+h3 small,
+h4 small,
+h5 small,
+h6 small {
+  font-size: 80%;
+  font-weight: 400px;
+  color: #777777;
+  line-height: 1;
+}
+
+/* line 41, ../sass/dpl/_text.scss */
+p {
+  margin: 0 0 9px;
+}
+/* line 43, ../sass/dpl/_text.scss */
+p small {
+  font-size: 80%;
+  font-weight: 400px;
+  color: #777777;
+  line-height: 1;
+}
+
+/* line 51, ../sass/dpl/_text.scss */
+strong {
+  font-weight: 700;
+}
+
+/* line 55, ../sass/dpl/_text.scss */
+.text-left {
+  text-align: left;
+}
+
+/* line 58, ../sass/dpl/_text.scss */
+.text-center {
+  text-align: center;
+}
+
+/* line 61, ../sass/dpl/_text.scss */
+.text-right {
+  text-align: right;
+}
+
+/* line 64, ../sass/dpl/_text.scss */
+.text-zh {
+  text-indent: 2em;
+}
+
+/* line 68, ../sass/dpl/_text.scss */
+abbr {
+  cursor: help;
+  border-bottom: 1px dotted #777;
+}
+
+
+/* line 12, ../sass/dpl/_width.scss */
+.container {
+  width: 1000px;
+  margin: 0 auto;
+}
+/* line 15, ../sass/dpl/_width.scss */
+.container::before, .container::after {
+  content: '';
+  display: table;
+  line-height: 0;
+}
+/* line 20, ../sass/dpl/_width.scss */
+.container::after {
+  clear: both;
+}
+/* line 24, ../sass/dpl/_width.scss */
+.container .pc-span1 {
+  width: 8.33333%;
+  float: left;
+}
+/* line 27, ../sass/dpl/_width.scss */
+.container .pc-span1::before, .container .pc-span1::after {
+  content: '';
+  display: table;
+  line-height: 0;
+}
+/* line 32, ../sass/dpl/_width.scss */
+.container .pc-span1::after {
+  clear: both;
+}
+/* line 24, ../sass/dpl/_width.scss */
+.container .pc-span2 {
+  width: 16.66667%;
+  float: left;
+}
+/* line 27, ../sass/dpl/_width.scss */
+.container .pc-span2::before, .container .pc-span2::after {
+  content: '';
+  display: table;
+  line-height: 0;
+}
+/* line 32, ../sass/dpl/_width.scss */
+.container .pc-span2::after {
+  clear: both;
+}
+/* line 24, ../sass/dpl/_width.scss */
+.container .pc-span3 {
+  width: 25.0%;
+  float: left;
+}
+/* line 27, ../sass/dpl/_width.scss */
+.container .pc-span3::before, .container .pc-span3::after {
+  content: '';
+  display: table;
+  line-height: 0;
+}
+/* line 32, ../sass/dpl/_width.scss */
+.container .pc-span3::after {
+  clear: both;
+}
+/* line 24, ../sass/dpl/_width.scss */
+.container .pc-span4 {
+  width: 33.33333%;
+  float: left;
+}
+/* line 27, ../sass/dpl/_width.scss */
+.container .pc-span4::before, .container .pc-span4::after {
+  content: '';
+  display: table;
+  line-height: 0;
+}
+/* line 32, ../sass/dpl/_width.scss */
+.container .pc-span4::after {
+  clear: both;
+}
+/* line 24, ../sass/dpl/_width.scss */
+.container .pc-span5 {
+  width: 41.66667%;
+  float: left;
+}
+/* line 27, ../sass/dpl/_width.scss */
+.container .pc-span5::before, .container .pc-span5::after {
+  content: '';
+  display: table;
+  line-height: 0;
+}
+/* line 32, ../sass/dpl/_width.scss */
+.container .pc-span5::after {
+  clear: both;
+}
+/* line 24, ../sass/dpl/_width.scss */
+.container .pc-span6 {
+  width: 50.0%;
+  float: left;
+}
+/* line 27, ../sass/dpl/_width.scss */
+.container .pc-span6::before, .container .pc-span6::after {
+  content: '';
+  display: table;
+  line-height: 0;
+}
+/* line 32, ../sass/dpl/_width.scss */
+.container .pc-span6::after {
+  clear: both;
+}
+/* line 24, ../sass/dpl/_width.scss */
+.container .pc-span7 {
+  width: 58.33333%;
+  float: left;
+}
+/* line 27, ../sass/dpl/_width.scss */
+.container .pc-span7::before, .container .pc-span7::after {
+  content: '';
+  display: table;
+  line-height: 0;
+}
+/* line 32, ../sass/dpl/_width.scss */
+.container .pc-span7::after {
+  clear: both;
+}
+/* line 24, ../sass/dpl/_width.scss */
+.container .pc-span8 {
+  width: 66.66667%;
+  float: left;
+}
+/* line 27, ../sass/dpl/_width.scss */
+.container .pc-span8::before, .container .pc-span8::after {
+  content: '';
+  display: table;
+  line-height: 0;
+}
+/* line 32, ../sass/dpl/_width.scss */
+.container .pc-span8::after {
+  clear: both;
+}
+/* line 24, ../sass/dpl/_width.scss */
+.container .pc-span9 {
+  width: 75.0%;
+  float: left;
+}
+/* line 27, ../sass/dpl/_width.scss */
+.container .pc-span9::before, .container .pc-span9::after {
+  content: '';
+  display: table;
+  line-height: 0;
+}
+/* line 32, ../sass/dpl/_width.scss */
+.container .pc-span9::after {
+  clear: both;
+}
+/* line 24, ../sass/dpl/_width.scss */
+.container .pc-span10 {
+  width: 83.33333%;
+  float: left;
+}
+/* line 27, ../sass/dpl/_width.scss */
+.container .pc-span10::before, .container .pc-span10::after {
+  content: '';
+  display: table;
+  line-height: 0;
+}
+/* line 32, ../sass/dpl/_width.scss */
+.container .pc-span10::after {
+  clear: both;
+}
+/* line 24, ../sass/dpl/_width.scss */
+.container .pc-span11 {
+  width: 91.66667%;
+  float: left;
+}
+/* line 27, ../sass/dpl/_width.scss */
+.container .pc-span11::before, .container .pc-span11::after {
+  content: '';
+  display: table;
+  line-height: 0;
+}
+/* line 32, ../sass/dpl/_width.scss */
+.container .pc-span11::after {
+  clear: both;
+}
+/* line 24, ../sass/dpl/_width.scss */
+.container .pc-span12 {
+  width: 100.0%;
+  float: left;
+}
+/* line 27, ../sass/dpl/_width.scss */
+.container .pc-span12::before, .container .pc-span12::after {
+  content: '';
+  display: table;
+  line-height: 0;
+}
+/* line 32, ../sass/dpl/_width.scss */
+.container .pc-span12::after {
+  clear: both;
+}
+/* line 38, ../sass/dpl/_width.scss */
+.container .pc-span-offset1 {
+  margin-left: 8.33333%;
+  float: left;
+}
+/* line 38, ../sass/dpl/_width.scss */
+.container .pc-span-offset2 {
+  margin-left: 16.66667%;
+  float: left;
+}
+/* line 38, ../sass/dpl/_width.scss */
+.container .pc-span-offset3 {
+  margin-left: 25.0%;
+  float: left;
+}
+/* line 38, ../sass/dpl/_width.scss */
+.container .pc-span-offset4 {
+  margin-left: 33.33333%;
+  float: left;
+}
+/* line 38, ../sass/dpl/_width.scss */
+.container .pc-span-offset5 {
+  margin-left: 41.66667%;
+  float: left;
+}
+/* line 38, ../sass/dpl/_width.scss */
+.container .pc-span-offset6 {
+  margin-left: 50.0%;
+  float: left;
+}
+/* line 38, ../sass/dpl/_width.scss */
+.container .pc-span-offset7 {
+  margin-left: 58.33333%;
+  float: left;
+}
+/* line 38, ../sass/dpl/_width.scss */
+.container .pc-span-offset8 {
+  margin-left: 66.66667%;
+  float: left;
+}
+/* line 38, ../sass/dpl/_width.scss */
+.container .pc-span-offset9 {
+  margin-left: 75.0%;
+  float: left;
+}
+/* line 38, ../sass/dpl/_width.scss */
+.container .pc-span-offset10 {
+  margin-left: 83.33333%;
+  float: left;
+}
+/* line 38, ../sass/dpl/_width.scss */
+.container .pc-span-offset11 {
+  margin-left: 91.66667%;
+  float: left;
+}
+/* line 38, ../sass/dpl/_width.scss */
+.container .pc-span-offset12 {
+  margin-left: 100.0%;
+  float: left;
+}
+
+/* line 1, ../sass/phenix/_browser.scss */
+.browser {
+  padding: 110px 0 116px;
+}
+/* line 3, ../sass/phenix/_browser.scss */
+.browser .browser-logo {
+  margin-bottom: 67px;
+}
+/* line 6, ../sass/phenix/_browser.scss */
+.browser p {
+  color: #1f2c5c;
+  font-size: 18px;
+  margin-bottom: 60px;
+}
+/* line 11, ../sass/phenix/_browser.scss */
+.browser .browser-air {
+  margin-bottom: 70px;
+}
+/* line 14, ../sass/phenix/_browser.scss */
+.browser .Layer {
+  margin-bottom: 40px;
+}
+/* line 16, ../sass/phenix/_browser.scss */
+.browser .Layer span {
+  margin: 0 3px;
+  display: inline-block;
+}
+/* line 21, ../sass/phenix/_browser.scss */
+.browser .browser-group {
+  padding-left: 125px;
+}
+/* line 23, ../sass/phenix/_browser.scss */
+.browser .browser-group a {
+  margin-left: 102px;
+  cursor: pointer;
+}
+/* line 26, ../sass/phenix/_browser.scss */
+.browser .browser-group a p {
+  font-size: 14px;
+  margin-bottom: 0;
+}
+/* line 29, ../sass/phenix/_browser.scss */
+.browser .browser-group a p:hover {
+  color: #4B9AE9;
+}
+
+

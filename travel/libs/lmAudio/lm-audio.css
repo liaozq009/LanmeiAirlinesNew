@@ -1,0 +1,68 @@
+
+.audiojs .play-pause,.audiojs p{
+	height: 28px;
+}
+.audiojs{
+	position: relative;
+	background-image:none;
+	box-shadow: none;
+	background: none;
+	height: 44px;
+	width: 100%;
+}
+.audiojs .scrubber{
+	border-top:none;
+	background: #ccc;
+	height: 2px;
+	border-radius: 20px;
+	width: 680px;
+}
+.audiojs .progress{
+	background: #8ec060;
+	height: 2px;
+}
+.audiojs .loaded{
+	background: #ccc;
+	height: 2px;
+	border-radius: 20px;
+}
+.audiojs .play-pause{
+	// background: #8ec060;
+	border-right:none;
+	// border-radius: 50%;
+	width: 44px;
+	height: 44px;
+	padding:0;
+	background: url("./audio-bg.png") center no-repeat;
+}
+.audiojs .time{
+	border-left:none;
+	position: absolute;
+	top: 20px;
+	left: 54px;
+	height: 20px;
+	line-height: 20px;
+	margin:0;
+	padding:0;
+	text-shadow:none;
+	color:#ccc;
+}
+.audiojs .time em{
+	color: #ccc;
+}
+.audiojs .play{
+	background:url("./audio-play.png") center no-repeat;
+}
+.audiojs .pause{
+	background:url("./audio-pause.png") center no-repeat;
+}
+.audiojs .loading{
+	background:url("./audio-load.gif") center no-repeat;
+}
+.audiojs .play-pause p{
+	margin-top: 8px;
+	margin-left: 9px;
+}
+.audiojs .play-pause .play{
+	margin-left: 11px;
+}

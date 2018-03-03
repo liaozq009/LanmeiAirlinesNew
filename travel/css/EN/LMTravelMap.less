@@ -1,0 +1,663 @@
+
+@charset "utf-8";
+
+/* 定义变量 */
+@url:"../../images/EN/";
+@green:#8ec060;
+@purple:#1f2c5c;
+@gray:#808080;
+@red:#d0011b;
+@link:#00908c;
+@green2:#81E5FE;
+@green3:#F7FAFF;
+@blue:#1639AE;
+@blue2:#3772D5;
+@blue3:#AAC7F9;
+@linear:-webkit-linear-gradient(0deg, #81E5FE 0%, #1639AE 100%);
+body{
+	overflow: hidden;
+	background: #1291ff;
+}
+
+/* 拖拽 */
+.img-com{
+	position: absolute;
+	width: 210px;
+	height: 153px;
+	padding: 37px 30px;
+	cursor: pointer;
+	h2{
+		position: relative;
+		padding: 10px;
+		padding-bottom: 0;
+		margin-bottom: 10px;
+		font-size:14px;
+		background: @linear;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		img{
+			float: left;
+			margin-right: 10px;
+		}
+		&:after{
+			content: ""; 
+			display: block;
+			position: absolute;  
+			bottom:-10px;
+			width: 130px;
+			height: 2px;
+			background: #aac7f9;
+		}
+		>span{
+			display: -webkit-box;
+			-webkit-box-orient: vertical;
+			-webkit-line-clamp: 2;
+			overflow: hidden;
+			white-space: normal!important;
+			text-overflow: ellipsis;
+			word-wrap: break-word;
+		}
+	}
+	p{
+		padding: 10px;
+		font-size:12px;
+		color:#3772d5;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		img{
+			float: left;
+			margin-right: 10px;
+			margin-top: 4px;
+		}
+	}
+}
+.img-bg-topRight{
+	background: url('@{url}travel-map-topRight.png') no-repeat;
+}
+.img-bg-topLeft{
+	background: url('@{url}travel-map-topLeft.png') no-repeat;
+}
+.img-bg-bottomLeft{
+	padding: 30px;
+	background: url('@{url}travel-map-bottomLeft.png') no-repeat;
+}
+.img-bg-bottomRight{
+	padding: 30px;
+	background: url('@{url}travel-map-bottomRight.png') no-repeat;
+}
+
+.img-seoul{
+	top: 18px;
+	left: 960px;
+}
+.img-macao{
+	top: 420px;
+	left: 660px;
+}
+.img-sihanoukville{
+	top: 690px;
+	left: 450px;
+}
+.img-HoChiMinh{
+	top: 695px;
+	left: 655px;
+}
+.img-HongKong{
+	top: 326px;
+	left: 824px;
+}
+.img-Palau{
+	top: 670px;
+	left: 1275px;
+}
+.img-PhnomPenh{
+	top: 580px;
+	left: 626px;
+}
+.img-Hanoi{
+	top: 340px;
+	left: 490px;
+}
+.img-SiemReap{
+	top: 534px;
+	left: 460px;
+}
+
+.dragWrap{
+	z-index: 10;
+	left: 0px; 
+	width: 0px; 
+	position: absolute; 
+	top: 0px; 
+	height: 0px;
+	.m-hotCity-title{display: none;}
+	.travel-map{
+		cursor: move;
+	}
+}
+
+.travel-nav{
+	position: fixed;
+	top:40px;
+	left: 0;
+	z-index: 11;
+	width: 100%;
+	height: 50px;
+	padding:0 80px;
+	>p{
+		height:50px;
+		line-height: 50px;
+		background:#fff;
+		box-shadow:0 0 50px 0 rgba(170,199,249,0.50);
+		border-radius:4px;
+		text-align: center;
+		cursor: pointer;
+		img{
+			height: 20px;
+			margin-top: -6px;
+			margin-right: 7px;
+		}
+		span{
+			font-size: 20px;
+			background: @linear;
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+		}
+	}
+	.t-return{
+		float: left;
+		width:200px;
+	}
+	.t-share,.t-plan{
+		padding:0 20px;
+		float: right;
+	}
+	.t-share{
+		margin-right: 40px;
+	}
+}
+
+/* 模态框 */
+.modal-com{
+	.modal-dialog{
+		width: 80%;
+	}
+}
+.modal-backdrop{
+	background: #fff;
+}
+.modal-header{
+	position: relative;
+	padding: 40px 70px 0;
+	border-bottom:none;
+}
+.modal-body{
+	padding:0 70px 0;
+}
+.modal-content{
+	width: 100%;
+	height: 760px;
+	background: rgba(241, 250, 255, 0.8);
+	box-shadow: 0 0 50px 0 rgba(111, 162, 246, 0.5);
+	border-radius: 10px;
+	border:none;
+}
+.modal-hot{
+	position: relative;
+	width:100px;
+	height:30px;
+	background:#fff;
+	box-shadow:0 0 30px 0 rgba(170,199,249,0.50);
+	border-radius:4px;
+	>span{
+		display: block;
+		height: 30px;
+		line-height: 30px;
+		padding-left: 30px;
+		font-size: 12px;
+		background: url('../../images/EN/t-down-arrow.png') 90% no-repeat;
+		cursor: pointer;
+		color: #3772D5;
+	}
+	.modal-hot-menu{
+		display: none;
+		position: absolute;
+		top: 30px;
+		z-index: 9;
+		width: 100px;
+		background: #fff;
+		box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+		>li{
+			font-size: 12px;
+			cursor: pointer;
+			padding: 6px;
+			padding-left: 30px;
+			color: @blue2;
+			-webkit-transition: all 0.3s;
+			transition: all 0.3s;
+			&:hover{
+				color:@blue;
+				-webkit-transition: all 0.3s;
+				transition: all 0.3s;
+			}
+		}
+	}
+}
+.modal-header .close {
+	position: absolute;
+	top: 40px;
+	right: 70px;
+	background:url('../../images/EN/mobal-close.png') center no-repeat #fff;
+	box-shadow:0 0 30px 0 rgba(170,199,249,0.50);
+	width:30px;
+	height:30px;
+	border-radius:100%;
+	opacity: 1;
+}
+.t-content{
+	overflow-y: auto;
+	height: 680px;
+	>li{
+		float: left;
+		width: 20%;
+		margin-top: 20px;
+		padding-left: 1%;
+		padding-right: 1%;
+		>div{
+			border-radius: 4px;
+			padding:10px;
+			cursor: pointer;
+			background: #fff;
+			transition:all .6s;
+			-webkit-transition:all .6s;
+			>h2{
+				width: 100%;
+				height: 20px;
+				font-size: 16px;
+				font-weight: bold;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				background: @linear;
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				margin-bottom: 10px;
+			}
+			>img{width: 100%;}
+			>p{
+				color:@blue2;
+				margin-top: 10px;
+				overflow: hidden;
+				.m-s5-local,.s1{float: left;}
+				.m-s5-see,.s2{float: right;}
+				.m-s5-local{margin-top: 3px;margin-right: 6px;}
+				.m-s5-see{margin-top: 5px;margin-left: 6px;}
+				.s1{
+					display: inline-block;
+					width: 50%;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+				}
+			}
+			// &:hover{
+			// 	box-shadow:0 0 30px 0 #aac7f9;
+			// 	transition:all .6s;
+			// 	-webkit-transition:all .6s;
+			// }
+		}
+		>h3{
+			margin-top: 10px;
+			padding-left: 10px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			>span{
+				color:@blue;
+				margin-left: 10px;
+				display: inline-block;
+				width: 70%;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+		}
+	}
+}
+
+/* 分享游记和旅行计划 */
+.shareModal{
+	.modal-dialog{
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		.modal-content{
+			height: 100%;
+			border-radius: 0;
+			background:rgba(255,255,255,0.95);
+		}
+		.modal-body{
+			margin-top: 300px;
+		}
+		.search-box{
+			position: relative;
+			width: 960px;
+			margin:0 auto;
+			input{
+				width: 100%;
+				font-size: 24px;
+				color:#aac7f9;
+				padding: 20px 30px;
+				border-bottom: 2px solid #aac7f9;
+			}
+			::-webkit-input-placeholder { /* WebKit browsers */ 
+				font-size:36px;
+				color:#aac7f9; 
+			} 
+			:-moz-placeholder { /* Mozilla Firefox 4 to 18 */ 
+				font-size:36px;
+				color:#aac7f9;
+			} 
+			::-moz-placeholder { /* Mozilla Firefox 19+ */ 
+				font-size:36px;
+				color:#aac7f9;
+			} 
+			:-ms-input-placeholder { /* Internet Explorer 10+ */ 
+				font-size:36px;
+				color:#aac7f9; 
+			} 
+			.search-clear{
+				display: none;
+				position: absolute;
+				top: 20px;
+				right: 40px;
+				background: url(../../images/EN/mobal-close.png) center no-repeat #fff;
+				box-shadow: 0 0 30px 0 rgba(170, 199, 249, 0.5);
+				width: 30px;
+				height: 30px;
+				border-radius: 100%;
+			}
+			.search-hot{
+				margin-top: 30px;
+				a{
+					float: left;
+					display: inline-block;
+					height:58px;
+					line-height: 58px;
+					padding:0 10px;
+					text-align: center;
+					font-size:18px;
+					color:#aac7f9;
+					margin-left: 30px;
+					margin-top: 10px;
+					background:#fff;
+					border-radius:8px;
+					transition:all 0.6s;
+					-webkit-transition:all 0.6s;
+					&:hover{
+						box-shadow:0 0 50px 0 rgba(170,199,249,0.50);
+						transition:all 0.6s;
+						-webkit-transition:all 0.6s;
+					}
+				}
+			}
+			.search-title{
+				display: none;
+				font-size:36px;
+				font-weight: bold;
+				color:#1639ae;
+				margin-top: 40px;
+			}
+			.search-menu{
+				display: none;
+				clear: both;
+				margin-top: 30px;
+				padding:0 10px;
+				>li{
+					background:#fff;
+					padding:0 30px;
+					margin-bottom: 10px;
+					border-radius:4px;
+					width:100%;
+					height:50px;
+					line-height: 50px;
+					transition:all 0.6s;
+					-webkit-transition:all 0.6s;
+					>a{
+						display: block;
+						font-size:16px;
+						text-align: right;
+						.s1{
+							float: left;
+							color:#3772d5;
+						}
+						.s2{
+							color:#aac7f9;
+						}
+					}
+					&:hover{
+						box-shadow:0 0 30px 0 rgba(170,199,249,0.50);
+						transition:all 0.6s;
+						-webkit-transition:all 0.6s;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1600px) {
+	.t-content > li{
+		width: 25%;
+	}
+}
+
+@media screen and (max-width: 1366px) {
+	.t-content > li{
+		width: 33.33%;
+	}
+}
+
+@media screen and (max-width: 992px) {
+	.travel-nav{
+		top: 10px;
+		padding:0 40px;
+		.t-plan,.t-share{
+			margin-right: 0;
+		}
+		.t-plan{
+			margin-left: 10px;
+			margin-right: 10px;
+		}
+	}
+	.modal-header{
+		padding: 20px 30px 0;
+		.close{
+			top:20px;
+			right: 30px;
+		}
+	}
+	.modal-body{
+		padding: 0 30px 0;
+	}
+	.modal-com .modal-dialog{
+		width: 90%;
+	}
+	.shareModal{
+		.modal-dialog{
+			.search-box{
+				width: 100%;
+				input{
+					font-size: 0.16rem;
+				}
+				::-webkit-input-placeholder { /* WebKit browsers */ 
+					font-size:0.16rem;
+				} 
+				:-moz-placeholder { /* Mozilla Firefox 4 to 18 */ 
+					font-size:0.16rem;
+				} 
+				::-moz-placeholder { /* Mozilla Firefox 19+ */ 
+					font-size:0.16rem;
+				} 
+				:-ms-input-placeholder { /* Internet Explorer 10+ */ 
+					font-size:0.16rem;
+				} 
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 767px) {
+	body{
+		background: #f1faff;
+		overflow: inherit;
+	}
+	.travel-nav{
+		top: 0;
+		width: 100%;
+		padding:0;
+		margin-top: 0;
+		.t-return,.t-plan,.t-share{
+			width: 33.33%;
+			margin:0;
+			text-align: center;
+			box-shadow: none;
+		}
+		>p{
+			span{display: none;}
+		}
+	}
+	.dragWrap{
+		position: static;
+		overflow:hidden;
+		width: 100%;
+		height: auto;
+		margin-top: 70px;
+		margin-bottom: 0.2rem;
+		padding:0 15px;
+		.m-hotCity-title{
+			display: block;
+			font-size: 0.2rem;
+			margin-bottom: 0;
+			text-align: center;
+			background: @linear;
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+		}
+		.travel-map{
+			display: none;
+		}
+	}
+	.img-com{
+		width: 100%;
+		padding:0.1rem;
+		margin-top: 0.1rem;
+		margin-right: 0;
+		float: left;
+		position: static;
+		background: #fff;
+		height: auto;
+		>h2{
+			overflow:hidden;
+			padding:0 0 0.1rem;
+			margin-bottom: 0;
+			border-bottom:2px solid @blue3;
+			&:after{
+				height: 0;
+			}
+		}
+		p{padding:0.1rem 0 0;}
+	}
+	.modal-header{
+		padding:0.1rem 0.1rem 0;
+		.close{
+			top: 0.1rem;
+			right: 0.1rem;
+		}
+	}
+	.modal-body{
+		padding:0 0.1rem 0;
+	}
+	.modal-open .modal{
+		padding-left: 0 !important;
+	}
+	.modal-content,.t-content{
+		height: auto;
+	}
+	.modal-com{
+		.modal-dialog{
+			width: 100%;
+			margin:0;
+		}
+	}
+	.t-content{
+		>li{
+			width: 50%;
+			margin-top: 0.1rem;
+			padding:0;
+		}
+	}
+	.shareModal{
+		.modal-dialog{
+			.modal-body{
+				margin-top: 0.6rem;
+			}
+			.search-box{
+				width: 100%;
+				input{
+					width: 100%;
+					font-size: 0.14rem;
+					color:#aac7f9;
+					padding: 0.1rem;
+					border-bottom: 2px solid #aac7f9;
+				}
+				::-webkit-input-placeholder { /* WebKit browsers */ 
+					font-size:0.14rem;
+				} 
+				:-moz-placeholder { /* Mozilla Firefox 4 to 18 */ 
+					font-size:0.14rem;
+				} 
+				::-moz-placeholder { /* Mozilla Firefox 19+ */ 
+					font-size:0.14rem;
+				} 
+				:-ms-input-placeholder { /* Internet Explorer 10+ */ 
+					font-size:0.14rem;
+				} 
+				.search-hot{
+					margin-top:0.06rem;
+					a{
+						font-size: 0.12rem;
+						height: 0.2rem;
+						line-height: 0.2rem;
+						margin-left: 0.1rem;
+					}
+				}
+				.search-menu{
+					margin-top:0.1rem;
+					padding:0 0.1rem;
+					li{
+						padding:0;
+						height: 0.3rem;
+						line-height: 0.3rem;
+						>a{
+							font-size: 0.12rem;
+							.s1{
+								width: 100%;
+								text-align: left;
+								overflow: hidden;
+								text-overflow: ellipsis;
+								white-space: nowrap;
+							}
+							.s2{display: none;}
+						}
+					}
+				}
+				.search-clear{
+					top: 0.06rem;
+					right: 0.1rem;
+				}
+			}
+		}
+	}
+}

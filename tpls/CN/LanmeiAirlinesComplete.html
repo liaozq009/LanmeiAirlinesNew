@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- 让 Bootstrap 兼容 IE 兼容模型 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- 让 Bootstrap 兼容 国产浏览器的高速模型 -->
+	<meta name="renderer" content="webkit">
+	<!-- 实现响应式的设置 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>LanmeiAirlines</title>
+	<!-- 引入图标 -->
+	<link rel="icon" href="../../images/CN/lanmeiLogo.png">
+	<link rel="stylesheet" type="text/css" href="../../libs/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../../common/EN/fonts/lm-iconfont.css">
+	<link rel="stylesheet" type="text/css" href="../../common/CN/css/Lanmei-common.css">
+	<link rel="stylesheet" type="text/css" href="../../css/CN/LanmeiAirlinesComplete.css">
+	<link rel="stylesheet" type="text/css" href="../../libsEdit/css/lanmeiLibsEdit.css">
+	<!--[if lt IE 9]>
+	<script src="../../libs/bootstrap/js/html5shiv.min.js"></script>
+	<script src="../../libs/bootstrap/js/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<!-- 页面顶部 -->
+	<header class="lanmeiHeader">
+		<img src="../../images/CN/navbarBg.png" class="headImg">
+		<nav class="lanmeiNav">
+			<div class="lanmeiLogo">
+				<a class="navbar-brand" href="../../index-zh.html"><img src="../../images/CN/lanmeiLogo.png"></a>
+			</div>
+			<div class="lanmeiHeadInfo">
+				<ul class="">
+					<li>
+						<img src="../../images/CN/phone.png">
+						<span>+855 23881865（柬埔寨）</span>
+					</li>
+					<li><a href="#" class="btn loginBtn">登陆</a></li>
+					<li><a href="#" class="btn REGISTEREDBtn">注册</a></li>
+				</ul>
+			</div>
+		</nav>
+
+		<!-- 菜单选择 -->
+		<div class="LMCompanyInfo">
+			<ul class="lm-nav">
+				<li class="nth-child1">
+					<a href="#PLANTOTRAVEL">计划旅行</a>
+					<!-- <i></i>  -->
+				</li>
+				<li class="nth-child2">
+					<a href="#LANMEIMEMBERVS">澜湄会员</a>
+					<!-- <i></i> -->
+				</li>
+				<li class="nth-child3">
+					<a href="#LANMEICOMMUNITY">澜湄社区</a>
+					<i></i>
+					
+				</li>
+				<li class="nth-child5">
+					<a href="#DUTYFERR">澜湄免税</a>
+					<!-- <i></i> -->
+				</li>
+				<li class="nth-child6">
+					<a href="#ABOUTUS">关于我们</a>
+				</li>
+			</ul>
+			<ul class="LMCompanyDownMenu" id="LANMEICOMMUNITY">
+				<li><a href="shopping/LMShopping.html" target="_blank">澜湄商城</a></li>
+				<li><a href="LMLive/LMLive.html" target="_blank">澜湄直播</a></li>
+			</ul>
+		</div>
+	</header>
+
+	<!-- 订票步骤列表 -->
+	<div class="buyTicketList">
+		<dl class="SelectDate">
+			<dt><img src="../../images/CN/date-icon-active.png"></dt>
+			<dd>选择日期</dd>
+		</dl>
+		<dl class="circleArrow">
+			<dt><img src="../../images/CN/circleArrowGray-active.png"></dt>
+		</dl>
+		<dl class="SelectFlight">
+			<dt><img src="../../images/CN/Select-the-flight-icon-active.png"></dt>
+			<dd>选择航班</dd>
+		</dl>
+		<dl class="circleArrow">
+			<dt><img src="../../images/CN/circleArrowGray-active.png"></dt>
+		</dl>
+		<dl class="PassengerInformation">
+			<dt><img src="../../images/CN/Passenger-informatio-icon-active.png"></dt>
+			<dd>乘客资料</dd>
+		</dl>
+		<dl class="circleArrow">
+			<dt><img src="../../images/CN/circleArrowGray-active.png"></dt>
+		</dl>
+		<dl class="LanmeiPay">
+			<dt><img src="../../images/CN/pay-icon-active.png"></dt>
+			<dd>支付</dd>
+		</dl>
+		<dl class="circleArrow">
+			<dt><img src="../../images/CN/circleArrowGray-active.png"></dt>
+		</dl>
+		<dl class="Complete">
+			<dt><img src="../../images/CN/Complete-icon-active.png"></dt>
+			<dd>完成</dd>
+		</dl>
+	</div>
+
+	<!-- 完成提示信息 -->
+	<div class="completeInfo">
+		<div><img src="../../images/CN/completeLogo.png"></div>
+		<p>您的订单已经被澜湄航空接受，并且已经设置完整的付款，详细信息将发送到您的电子邮件，或者可以在<a href="#">此处</a>。如果您有 问题请联系<span> Lanmeiairlines当地办事处。</ span> </ p>
+	</div>
+
+	<!-- 完成编码 -->
+	<div class="computerCode">
+		<div class="bankCode">
+			<img src="../../images/CN/computeCode.png">
+			<p class="p1">电脑编码 :<span>NH1BGS</span></p>
+			<p class="p2">预订编码 :<span>NH1BGS-6LFXO6OPM0</span></p>
+			<p class="p3">银行交易代码 :<span>20171254532565</span></p>
+		</div>
+		<div class="verticalLine"></div>
+		<div class="thankInfo">
+			感谢您选择澜湄航空预订。 您可以阅读以下预订信息。 我们公司建议您，请保留您的预订号码。客户如果您有任何问题，请联系我们的服务热线：000 8888 8888
+		</div>
+	</div>
+
+	<!-- 航班信息 -->
+	<div class="passengerInfoDetail">
+		<div class="passengerInfoDetailTitle">
+			请使用在互联网上预先检查的电子票代码
+		</div>
+		<div class="passengerInfoDetailContent">
+			<div class="passenger1"><div class="passengerBg"><h2>Mr Cheung Yeoman</h2><p>Ticket Number : <span>675-4404591971</span></p></div></div>
+			<div class="passenger2"><div class="passengerBg"><h2>Mr Cheung Yeoman</h2><p>Ticket Number : <span>675-4404591971</span></p></div></div>
+			<div class="passenger3"><div class="passengerBg"><h2>Mr Cheung Yeoman</h2><p>Ticket Number : <span>675-4404591971</span></p></div></div>
+			<div class="passenger4"><div class="passengerBg"><h2>Mr Cheung Yeoman</h2><p>Ticket Number : <span>675-4404591971</span></p></div></div>
+			<div class="passenger5"><div class="passengerBg"><h2>Mr Cheung Yeoman</h2><p>Ticket Number : <span>675-4404591971</span></p></div></div>
+		</div> 
+		<div class="contactInformation">
+			<h2>联系信息</h2>
+			<p>邮箱:<span>123454321@qq.com</span></p>
+			<p>联系方式:</p>
+			<p>手机号码:<span>13688888888</span></p>
+		</div>
+	</div>
+
+	<!-- 已选择的航班 -->
+	<div class="flightSelectWrapper">
+		<div class="flightSelect1 flightSelectCommon">
+			<div class="flightSelectTitle">
+				<h2>行程 1</h2>
+				<div>
+					<span>Beijing，China(PEK)</span> to <span>Shanghai，China(PVG)</span>
+				</div>
+				<p>2017-04-21</p>
+			</div>
+			<div class="flightList1 flightListCommon">
+				<div class="flightListCommonLeft">
+					<div class="nth-child1"><img src="../../images/CN/travelTimeLogo.png"> <span>Lanmei Airlines </span></div>
+					<div class="nth-child2">
+						<h2>Beijing (00:45)</h2>
+						<p class="p1">2017 April 20, GMT+8</p>
+						<p class="p2">(PEK) The capital airport - T1</p>
+					</div>
+					<div class="nth-child3">
+						<p class="p1">航班号 :<span>LQ888</span></p>
+						<p class="p2">机型 :<span>空客 A320</span></p>
+					</div>
+					<div class="nth-child4">
+						<img src="../../images/CN/flightArrow.png" alt="">
+						<p>2h</p>
+					</div>
+				</div>
+				<div class="flightListCommonRight">
+					<div class="nth-child1"></div>
+					<div class="nth-child2">
+						<h2>Guangzhou (02:45)</h2>
+						<p class="p1">2017 April 20, GMT+8</p>
+						<p class="p2">(CAN) Guangzhou baiyun airport - T3</p>
+					</div>
+					<div class="nth-child3">
+					   <p class="p1"><span>0 KG</span>: 免费行李</p>
+						<p class="p2"><span>U</span>: 预订舱位</p>
+						
+					</div>
+				</div>
+			</div>
+		    <div class="flightListLine"><img src="../../images/EN/dashedLine.png"><p>中转 <span>(<b>3</b> hours)</span></p ></div>
+			<div class="flightList2 flightListCommon">
+				<div class="flightListCommonLeft">
+					<div class="nth-child1"><img src="../../images/CN/travelTimeLogo.png"> <span>Lanmei Airlines</span></div>
+					<div class="nth-child2">
+						<h2>Beijing (00:45)</h2>
+						<p class="p1">2017 April 20, GMT+8</p>
+						<p class="p2">(PEK) The capital airport - T1</p>
+					</div>
+					<div class="nth-child3">
+						<p class="p1">航班号 :<span>LQ888</span></p>
+						<p class="p2">机型 :<span>空客 A320</span></p>
+					</div>
+					<div class="nth-child4">
+						<img src="../../images/CN/flightArrow.png" alt="">
+						<p>2h</p>
+					</div>
+				</div>
+				<div class="flightListCommonRight">
+					<div class="nth-child1"></div>
+					<div class="nth-child2">
+						<h2>Guangzhou (02:45)</h2>
+						<p class="p1">2017 April 20, GMT+8</p>
+						<p class="p2">(CAN) Guangzhou baiyun airport - T3</p>
+					</div>
+					<div class="nth-child3">
+						<p class="p1"><span>0 KG</span>: 免费行李</p>
+						<p class="p2"><span>U</span>: 预订舱位</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="flightSelect2 flightSelectCommon">
+			<div class="flightSelectTitle">
+				<h2>行程 2</h2>
+				<div>
+					<span>Beijing，China(PEK)</span> to <span>Shanghai，China(PVG)</span>
+				</div>
+				<p>2017-04-21</p>
+			</div>
+			<div class="flightList1 flightListCommon">
+				<div class="flightListCommonLeft">
+					<div class="nth-child1"><img src="../../images/CN/travelTimeLogo.png"> <span>Lanmei Airlines</span></div>
+					<div class="nth-child2">
+						<h2>Beijing (00:45)</h2>
+						<p class="p1">2017 April 20, GMT+8</p>
+						<p class="p2">(PEK) The capital airport - T1</p>
+					</div>
+					<div class="nth-child3">
+						<p class="p1">航班号 :<span>LQ888</span></p>
+						<p class="p2">机型 :<span>空客 A320</span></p>
+					</div>
+					<div class="nth-child4">
+						<img src="../../images/CN/flightArrow.png" alt="">
+						<p>2h</p>
+					</div>
+				</div>
+				<div class="flightListCommonRight">
+					<div class="nth-child1"></div>
+					<div class="nth-child2">
+						<h2>Guangzhou (02:45)</h2>
+						<p class="p1">2017 April 20, GMT+8</p>
+						<p class="p2">(CAN) Guangzhou baiyun airport - T3</p>
+					</div>
+					<div class="nth-child3">
+						 <p class="p1"><span>0 KG</span>: 免费行李</p>
+						<p class="p2"><span>U</span>: 预订舱位</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 虚线分割线 -->
+	<div class="dashedLine"></div>
+
+	<!-- 票价规则详情 -->
+	<div class="flightRuleDetail">
+		<h2>运价规则 : <a href="#">[退改签]一览表</a></h2>
+		<div class="ruleContent">
+			<div class="ruleContent1">
+				<h3>[ Rebook(Date&Flight Change) ]</h3>
+				<p>Change of date/flight permit within ticket validity, difference in fare and change fee may be charged; Change fee not refundable at any time; All changes must be made before ticket validity</p>
+				<h3>[ Cancel&Refund ]</h3>
+				<p>Refund Fee Apply(L Class Non-refundable)</p>
+				<h3>[ No Show ]</h3>
+			</div>
+			<div class="ruleContent2">
+				<h3>[ Rerouteabel&Transferrable ]</h3>
+				<p>Change of journey permit within ticket validity, difference in fare and change fee may be charged; Change fee not refundable at any time; All changes must be made before ticket validity/Non-Endorsable</p>
+				<h3>[ Flight Clause ]</h3>
+				<p>Min/Max Stay:B CLS:0Day/1Year <br/> M/U CLS:0Day/6Months<br/>H/Q CLS:0Day/3Months<br/>V/W/T/L CLS:0Day/1Month</p>
+				<h3>[ FARE BASIS: LXOWAST/LHXOWAST/LLXOWAST ] : <span>non-refundable.</span></h3>
+			</div>
+		</div>
+	</div>
+
+	<!-- 分割线 -->
+	<div class="ticketLine"></div>
+
+	<!-- 票价计算结果 -->
+	<div class="ticketFareWrapper">
+		<div class="ticketFareContent">
+			<div class="ticketFare">
+				<ul class="priceTitle priceTitleComment">
+					<li class="nth-child1">票面价 :</li>
+					<li class="nth-child2">USD 2,111</li>
+					<li class="nth-child3">燃油费和附加费 :</li>
+					<li class="nth-child4">- USD 0.0</li>
+				</ul>
+				<div class="priceContent priceContentComment">
+					<ul class="priceContent1">
+						<li class="nth-child1">总价 :</li>
+						<li class="nth-child2">USD 2,111</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 页脚 -->
+	<div class="footerInfo">
+		<div class="footerBg">
+			<div class="HelpfulInformation">
+				<p>帮助信息</p>
+			</div>
+			<div class="contactUs">
+				<div class="nth-child1"><img src="../../images/CN/email.png"><span>LM-EC@lanmeiairlines.com</span></div>
+				<div class="nth-child2">
+					<span>FOLLOW</span>
+					<a href="https://www.facebook.com/lanmeiairlines/">
+						<i class="iconfont icon-facebook"></i>
+					</a>
+					<a href="#"><i class="iconfont icon-in"></i></a>
+					<a href="#"><i class="iconfont icon-inst"></i></a>
+					<a href="#"><i class="iconfont icon-youtube"></i></a>
+					<a href="#"><i class="iconfont icon-googleplus"></i></a>
+					<a href="http://weibo.com/lanmeiair"><i class="iconfont icon-wb"></i></a>
+					<a href="#"><i class="iconfont icon-tuite"></i></a>
+				</div>
+			</div>
+			<div class="location">
+				<img src="../../images/CN/location.png"><a href="http://www.google.cn/maps/place/Lanmei+Airlines/@11.5637363,104.8836365,17.75z/data=!4m5!3m4!1s0x310951a3c5cdaf97:0x77359b117b2ff068!8m2!3d11.5637363!4d104.8852876" target="_blank">柬埔寨金边市俄罗斯大道575号</a>
+			</div>
+			<div class="LanmeiAirlinesBerhad">
+				<div class="nth-child1"><a href="../../index-zh.html"><img src="../../images/CN/lanmeiFooterLogo.png"></a><span>© Copyright 2017 澜湄航空 粤<a href="http://www.miitbeian.gov.cn" target="_Blank">ICP备17005494-1</a></span></div>
+				<div class="nth-child2">
+					<span>使用条款 | 隐私策略 | Cookies</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 回到顶部 -->
+	<div class="BackToTop">
+		<img src="../../images/CN/ToTop-icon-active.png" class="img02">
+		<p>UP</p>
+	</div>
+
+	<!-- 第三方库-->
+	<script type="text/javascript" src="../../libs/jQuery/jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="../../libs/layer/layer.js"></script>
+	<script type="text/javascript" src="../../libs/mobile-libs/fastclick/fastclick.js"></script>
+	<script type="text/javascript" src="../../libs/bootstrap/js/bootstrap.min.js"></script>
+	<!-- 公共JS -->
+	<script type="text/javascript" src="../../common/CN/js/Lanmei-common.js"></script>
+	<!-- 业务代码 -->
+	<script type="text/javascript" src="../../js/CN/LanmeiAirlinesComplete.js"></script>
+</body>
+</html>
