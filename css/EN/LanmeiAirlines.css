@@ -6,6 +6,9 @@ input {
   -webkit-appearance: none;
   /* 解决IOS输入框内部阴影问题 */
 }
+.clear-both {
+  clear: both;
+}
 body {
   background: #FAFBFF;
 }
@@ -87,6 +90,7 @@ body {
   z-index: 1;
   width: 110px;
   height: 400px;
+  border-radius: 2px;
   background: #fff;
 }
 .lm-aside-flight > ul li {
@@ -131,6 +135,7 @@ body {
   left: 60px;
   width: 80px;
   height: 80px;
+  border-radius: 2px;
 }
 .lm-aside-flight .flight-up-arrow {
   background: url('../../images/EN/f-arrow-up.png') center no-repeat #1f2c5c;
@@ -152,7 +157,7 @@ body {
   filter: blur(4px);
 }
 .lm-aside-code {
-  position: fixed;
+  position: absolute;
   right: 0;
   top: 300px;
   width: 74px;
@@ -205,5 +210,122 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+.flight-com {
+  position: absolute;
+  top: 360px;
+  left: 16%;
+}
+.flight-com .select-way > a {
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-right: 10px;
+  color: rgba(31, 44, 92, 0.5);
+  background: #fff;
+  box-shadow: 0 0 50px 0 rgba(31, 44, 92, 0.1);
+  border-radius: 2px;
+}
+.flight-com .select-way .active {
+  background: #8ec060;
+  color: #fff;
+}
+.select-air-com {
+  margin-top: 30px;
+}
+.select-air-com > div {
+  position: relative;
+  float: left;
+  width: 310px;
+  height: 60px;
+  line-height: 60px;
+  margin-right: 40px;
+  margin-bottom: 30px;
+  border-radius: 2px;
+}
+.select-air-com > div > input {
+  width: 100%;
+  height: 100%;
+  padding-left: 70px;
+  padding-right: 10px;
+  font-size: 20px;
+  color: #1f2c5c;
+  border: 2px solid transparent;
+  border-radius: 2px;
+}
+.select-air-com > div :-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #1f2c5c;
+  opacity: .3;
+  font-size: 20px;
+}
+.select-air-com > div ::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #1f2c5c;
+  opacity: .3;
+  font-size: 20px;
+}
+.select-air-com > div input:-ms-input-placeholder {
+  color: #1f2c5c;
+  opacity: .3;
+  font-size: 20px;
+}
+.select-air-com > div input::-webkit-input-placeholder {
+  color: #1f2c5c;
+  opacity: .3;
+  font-size: 20px;
+}
+.select-air-com > div .t-from-input {
+  background: url('../../images/EN/city-from.png') 20px no-repeat #fff;
+}
+.select-air-com > div .t-to-input {
+  background: url('../../images/EN/city-to.png') 20px no-repeat #fff;
+}
+.select-air-com .local-change {
+  position: absolute;
+  right: -30px;
+  top: 20px;
+  display: block;
+  width: 20px;
+  height: 18px;
+  background: url('../../images/EN/ticket-change.png') center no-repeat;
+  cursor: pointer;
+}
+.select-air-com .t-date-result {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding-left: 70px;
+  font-size: 20px;
+  color: #1f2c5c;
+  background: url('../../images/EN/date.png') 20px no-repeat #fff;
+}
+.select-air-com .ticket-people .t-people-result {
+  width: 100%;
+  height: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  background: #fff;
+}
+.select-air-com .ticket-people .t-people-result > p {
+  float: left;
+  width: 80px;
+  padding-left: 40px;
+  font-size: 20px;
+  color: #1f2c5c;
+  text-align: right;
+}
+.select-air-com .ticket-people .t-people-result .p-adult {
+  background: url('../../images/EN/adult.png') 0 center no-repeat;
+}
+.select-air-com .ticket-people .t-people-result .p-child {
+  margin-left: 15px;
+  margin-right: 15px;
+  background: url('../../images/EN/child.png') 0 center no-repeat;
+}
+.select-air-com .ticket-people .t-people-result .p-infant {
+  background: url('../../images/EN/infant.png') 0 center no-repeat;
 }
 /* 手机端 */

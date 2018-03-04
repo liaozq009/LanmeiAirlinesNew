@@ -21,15 +21,15 @@
 
 	<!-- 引入图标 -->
 	<link rel="icon" href="images/EN/lanmeiLogo.ico">
-	<link rel="stylesheet" type="text/css" href="libs/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="common/EN/css/animate.css">
-	<link rel="stylesheet" type="text/css" href="common/EN/css/common.css">
-	<link rel="stylesheet" type="text/css" href="css/EN/LanmeiAirlines.css">
+	<link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="common/EN/css/animate.css">
+	<link rel="stylesheet" href="common/EN/css/common.css">
+	<link rel="stylesheet" href="css/EN/LanmeiAirlines.css">
 
 	<!--[if lt IE 9]>
 	<script src="libs/bootstrap/js/html5shiv.min.js"></script>
 	<script src="libs/bootstrap/js/respond.min.js"></script>
-	<![endif]-->
+<![endif]-->
 
 </head>
 <body>
@@ -63,7 +63,7 @@
 	</header>
 
 	<!-- 首屏 -->
-	<section class="lm-section-main">
+	<section class="lm-section-main js-section-main">
 		<!-- 炫酷白云 -->
 		<div class="lm-cloud">
 
@@ -88,6 +88,51 @@
 			<a href="javascript:void(0)" class="flight-down-arrow"></a>
 		</aside>
 
+		<!-- 航班选择 -->
+		<div class="ticket-content flight-com">
+			<form id="air-ticket-form" action="" method="POST" target="_blank">
+				<input type="hidden" name="orgcity" id="orgcity" value="PNH">
+				<input type="hidden" name="dstcity" id="dstcity" value="REP">
+				<input type="hidden" name="language" value="US">
+				<input type="hidden" name="CURRENCY" value="USD">
+
+				<div class="select-way">
+					<a href="javascript:;" class="round-trip active" data-way="round">Round trip</a>
+					<a href="javascript:;" class="one-way" data-way="one">One-way</a>
+					<a href="javascript:;" class="multi" data-way="multi">Stopover/Multi-city</a>
+				</div>
+				<div class="select-air-time select-air-com">
+					<div class="ticket-from">
+						<input type="text" class="t-from-input" placeholder="From">
+						<div class="t-from-menu t-memu-com">
+							
+						</div>
+						<i class="local-change"></i>
+					</div>
+					<div class="ticket-to">
+						<input type="text" class="t-to-input" placeholder="To">
+						<div class="t-to-menu t-memu-com">
+							
+						</div>
+					</div>
+					<div class="ticket-date">
+						<span class="t-date-result">12 Feb - 13 Feb</span>
+					</div>
+					<div class="ticket-people">
+						<div class="t-people-result">
+							<p class="p-adult">x <span>1</span></p>
+							<p class="p-child">x <span>1</span></p>
+							<p class="p-infant">x <span>1</span></p>
+						</div>
+						<div class="t-people-menu">
+							
+						</div>
+					</div>
+				</div>
+				<div class="clear-both"></div>
+			</form>
+		</div>
+
 		<!-- 左侧blur内容 -->
 		<aside class="lm-aside-blur">
 			<img src="images/EN/travel-01.jpg" alt="blur" class="blur-img">
@@ -103,16 +148,17 @@
 			<h3><p><img src="images/EN/important.png" alt="important"></p>Important</h3>
 			<p>Important information about round-trip tickets that passengers must have for entry to Palau</p>
 		</div>
+
 	</section>
 
 	<!-- 第三方库-->
-	<script type="text/javascript" src="libs/jQuery/jquery-1.11.3.js"></script>
-	<script type="text/javascript" src="libs/bootstrap/js/bootstrap.min.js"></script>
+	<script src="libs/jQuery/jquery-1.11.3.js"></script>
+	<script src="libs/bootstrap/js/bootstrap.min.js"></script>
 
 	<!-- 公共JS -->
-	<script type="text/javascript" src="common/EN/js/common.js"></script>
+	<script src="common/EN/js/common.js"></script>
 
 	<!-- 业务代码 -->
-	<script type="text/javascript" src="js/EN/LanmeiAirlines.js"></script>
+	<script src="js/EN/LanmeiAirlines.js"></script>
 </body>
 </html>

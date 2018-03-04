@@ -9,7 +9,7 @@ var LanmeiAirlines = {
 	otherEvent:function(){
 		// 首屏自适应高度
 		var winHeight = $(window).height();
-		$('.lm-section-main').height(winHeight);
+		$('.js-section-main').height(winHeight);
 	},
 };
 
