@@ -1,11 +1,23 @@
 @charset "utf-8";
+
+/* 引入字体 */
+@font-face {
+    font-family: CamptonBook;
+    // src: url(sansation_light.woff);
+}
+@font-face {
+    font-family: CamptonBookBold;
+    // src: url(sansation_bold.woff);
+    font-weight:bold;
+}
+
 /* 定义变量 */
 @url:"../../images/EN/";
 /* 定义颜色变量 */
 @green:#8ec060;
 @purple:#1f2c5c;
 @linear:-webkit-linear-gradient(0deg, #42958a 0%, #1f2c5c 100%);
-@FBold:Campton-Bold;
+@FBold:CamptonBookBold;
 
 .greenRgb(@opacity){
 	color: rgba(142,192,96,@opacity);
@@ -71,10 +83,18 @@ body{
 	box-shadow:0 0 100px 0 rgba(31,44,92,0.50);
 	background: url('@{url}cloud-bg.jpg') center no-repeat;
 }
+.lm-cloud-container{
+	position: absolute;
+	top:60px;
+	right: 0;
+	width: 94%;
+	height: 220px;
+	background-image:-webkit-linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.1) 100%);
+}
 .lm-cloud-content{
 	position: absolute;
-	top:120px;
-	left: 16%;
+	top:60px;
+	left: 11%;
 	width: 678px;
 	>h1{
 		opacity:0.9;
@@ -82,11 +102,6 @@ body{
 		font-size:64px;
 		line-height:70px;
 		span{color: @green;}
-	}
-	>p{
-		opacity:0.5;
-		font-size:24px;
-		margin-top: 20px;
 	}
 }
 .lm-aside-flight{
@@ -233,9 +248,14 @@ body{
 }
 .flight-com{
 	position: absolute;
-	top: 360px;
+	top: 280px;
 	left: 16%;
+	.ticket-tip{
+		opacity:0.5;
+		font-size:24px;
+	}
 	.select-way{
+		margin-top: 40px;
 		>a{
 			display: inline-block;
 			height:30px;
@@ -256,6 +276,7 @@ body{
 }
 .select-air-com{
 	margin-top: 30px;
+	overflow: hidden;
 	>div{
 		position: relative;
 		float: left;
@@ -263,7 +284,7 @@ body{
 		height: 60px;
 		line-height: 60px;
 		margin-right: 40px;
-		margin-bottom: 30px;
+		margin-bottom: 20px;
 		border-radius: 2px;
 		>input{
 			width: 100%;
@@ -296,6 +317,9 @@ body{
 		.t-to-input {
 			background: url('@{url}city-to.png') 20px no-repeat #fff;
 		}
+	}
+	.ticket-people{
+		margin-right: 0;
 	}
 	.local-change {
 		position: absolute;
@@ -341,7 +365,92 @@ body{
 		}
 	}
 }
-
+.search-flight-wrap{
+	margin-top: 20px;
+	padding-left: 350px;
+	a{
+		float: left;
+		display: inline-block;
+		width:310px;
+		height:60px;
+		line-height: 60px;
+		text-align: center;
+		font-size: 20px;
+		color: #fff;
+		border:none;
+		outline: none;
+		border-radius:2px;
+	}
+	.flight-cancel{
+		margin-right: 40px;
+		background:#ff8989;
+	}
+	.flight-search{
+		background: @linear;
+	}
+}
+.popup-content{
+	position: absolute;
+	top: 218px;
+	left: 700px;
+	min-width: 310px;
+	min-height: 200px;
+	font-size: 16px;
+	.purpleRgb(.5);
+	background:#fff;
+	border-radius: 2px;
+	box-shadow:0 0 30px 0 #1f2c5c;
+	&::before{
+		position: absolute;
+		top: -14px;
+		left: 150px;
+		content: "";
+		display: block;
+		width: 0;
+		height: 0;
+		border-left: 14px solid transparent;
+		border-right: 14px solid transparent;
+		border-bottom: 14px solid #fff;
+	}
+	.popup-airport{
+		width: 628px;
+		padding:20px 20px 10px;
+		>h2{
+			font-family: @FBold;
+			font-size: 20px;
+			.purpleRgb(.8);
+			margin-bottom: 20px;
+		}
+		.flight-list-wrap{
+			overflow: hidden;
+			>li{
+				float: left;
+				width: 50%;
+				padding-left: 30px;
+				margin-bottom: 10px;
+				background: url('@{url}city-icon.png') left center no-repeat;
+				cursor: pointer;
+			}
+			.active{
+				color: @green;
+				background: url('@{url}city-icon-active.png') left center no-repeat;
+			}
+		}
+	}
+	.popup-date{
+		
+	}
+}
+.lm-scroll-down{
+	position: absolute;
+	left: 50%;
+	bottom: 50px;
+	width: 26px;
+	height: 50px;
+	margin-left: -13px;
+	margin-top: -25px;
+	background: url('@{url}scroll-down.png') center no-repeat;
+}
 
 /* 手机端 */
 @media screen and (max-width: 767px) {

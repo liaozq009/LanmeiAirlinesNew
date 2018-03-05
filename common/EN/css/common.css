@@ -81,6 +81,14 @@ input::-ms-clear {
   overflow: hidden;
   height: 100%;
 }
+/* 引入字体 */
+@font-face {
+  font-family: CamptonBook;
+}
+@font-face {
+  font-family: CamptonBookBold;
+  font-weight: bold;
+}
 /* project mcins style sheet*/
 body {
   min-width: 320px;

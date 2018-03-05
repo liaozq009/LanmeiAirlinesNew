@@ -22,6 +22,7 @@
 	<!-- 引入图标 -->
 	<link rel="icon" href="images/EN/lanmeiLogo.ico">
 	<link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="libs/daterange/daterangepicker.css">
 	<link rel="stylesheet" href="common/EN/css/animate.css">
 	<link rel="stylesheet" href="common/EN/css/common.css">
 	<link rel="stylesheet" href="css/EN/LanmeiAirlines.css">
@@ -70,9 +71,10 @@
 		</div>
 
 		<!-- 白云上面的内容 -->
-		<div class="lm-cloud-content">
-			<h1>A brand new aviation era <span>struck !!</span></h1>
-			<p>What are you waiting for?</p>
+		<div class="lm-cloud-container">
+			<div class="lm-cloud-content">
+				<h1>A brand new aviation era <span>struck !!</span></h1>
+			</div>
 		</div>
 
 		<!-- 左侧航班选择 -->
@@ -95,7 +97,8 @@
 				<input type="hidden" name="dstcity" id="dstcity" value="REP">
 				<input type="hidden" name="language" value="US">
 				<input type="hidden" name="CURRENCY" value="USD">
-
+				
+				<p class="ticket-tip">What are you waiting for?</p>
 				<div class="select-way">
 					<a href="javascript:;" class="round-trip active" data-way="round">Round trip</a>
 					<a href="javascript:;" class="one-way" data-way="one">One-way</a>
@@ -116,7 +119,7 @@
 						</div>
 					</div>
 					<div class="ticket-date">
-						<span class="t-date-result">12 Feb - 13 Feb</span>
+						<span class="t-date-result js-date-result"></span>
 					</div>
 					<div class="ticket-people">
 						<div class="t-people-result">
@@ -129,8 +132,30 @@
 						</div>
 					</div>
 				</div>
-				<div class="clear-both"></div>
+				<div class="search-flight-wrap">
+					<a href="javascript:;" class="flight-cancel">Cancel</a>
+					<a href="javascript:;" class="flight-search">Search</a>
+				</div>
 			</form>
+			<!-- 下拉选择菜单 -->
+			<div class="popup-container">
+				<div class="popup-content">
+					<div class="popup-airport-from popup-airport" style="display: none;">
+						<h2>Airports :</h2>
+						<ul class="flight-list-wrap">
+							<li>Sihanoukville/KOS/ Cambodia</li>
+							<li>Ho Chi Minh/SGN/Vietnam</li>
+							<li class="active">Macao/MFM/Macao,China</li>
+							<li>Hanoi/HAN/Vietnam</li>
+							<li>Phnom Penh/PNH/Cambodia</li>
+							<li>HongKong/HKG/HongKong,China</li>
+							<li>Siem Reap/REP/Cambodia</li>
+							<li>SEOUL/ICN/Korea</li>
+						</ul>
+					</div>
+					<div class="popup-date"></div>
+				</div>
+			</div>
 		</div>
 
 		<!-- 左侧blur内容 -->
@@ -148,12 +173,16 @@
 			<h3><p><img src="images/EN/important.png" alt="important"></p>Important</h3>
 			<p>Important information about round-trip tickets that passengers must have for entry to Palau</p>
 		</div>
-
+		
+		<!-- 提示往下滚动 -->
+		<div class="lm-scroll-down"></div>
 	</section>
 
 	<!-- 第三方库-->
 	<script src="libs/jQuery/jquery-1.11.3.js"></script>
 	<script src="libs/bootstrap/js/bootstrap.min.js"></script>
+	<script src="libs/daterange/moment.js"></script>
+	<script src="libs/daterange/daterangepicker.js"></script>
 
 	<!-- 公共JS -->
 	<script src="common/EN/js/common.js"></script>
