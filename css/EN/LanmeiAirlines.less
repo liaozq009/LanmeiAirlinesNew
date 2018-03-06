@@ -3,11 +3,15 @@
 /* 引入字体 */
 @font-face {
     font-family: CamptonBook;
-    // src: url(sansation_light.woff);
+    src: url(../../common/EN/fonts/Campton/Rene.Bieder_Campton.Book.otf);
+}
+@font-face {
+    font-family: CamptonBookLight;
+    src: url(../../common/EN/fonts/Campton/Rene.Bieder_Campton.Light.otf);
 }
 @font-face {
     font-family: CamptonBookBold;
-    // src: url(sansation_bold.woff);
+    src: url(../../common/EN/fonts/Campton/Rene.Bieder_Campton.Bold.otf);
     font-weight:bold;
 }
 
@@ -18,12 +22,16 @@
 @purple:#1f2c5c;
 @linear:-webkit-linear-gradient(0deg, #42958a 0%, #1f2c5c 100%);
 @FBold:CamptonBookBold;
+@FLight:CamptonBookLight;
 
 .greenRgb(@opacity){
 	color: rgba(142,192,96,@opacity);
 }
 .purpleRgb(@opacity){
 	color: rgba(31,44,92,@opacity);
+}
+.purpleBgRgb(@opacity){
+	background: rgba(31,44,92,@opacity);
 }
 
 /* 公共样式 */
@@ -392,9 +400,8 @@ body{
 .popup-content{
 	position: absolute;
 	top: 218px;
-	left: 700px;
-	min-width: 310px;
-	min-height: 200px;
+	left: 950px;
+	z-index: 1;
 	font-size: 16px;
 	.purpleRgb(.5);
 	background:#fff;
@@ -438,7 +445,136 @@ body{
 		}
 	}
 	.popup-date{
-		
+		.date-title {
+			padding-left: 20px;
+			padding-top: 20px;
+			font-size: 20px;
+			font-family: @FBold;
+			.purpleRgb(.8); 
+		}
+	}
+	.popup-people{
+		width: 410px;
+		height: 290px;
+		padding: 20px 30px 30px;
+		.people-title{
+			font-size: 20px;
+			font-family: @FBold;
+			.purpleRgb(.8); 
+		}
+		.s-people-com{
+			height: 50px;
+			margin-top: 20px;
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+		.people-prompt{
+			float: left;
+			.p1{
+				color: rgba(0,0,0,.7);
+				>img{margin-left: 10px;}
+			}
+			.p2{
+				margin-top: 5px;
+				font-family: @FLight;
+				font-size: 14px;
+				color: rgba(0,0,0,.3);
+				>img{
+					margin-right: 10px;
+					vertical-align: top;
+				}
+			}
+		}
+		.people-number{
+			float: right;
+			width:200px;
+			height:50px;
+			line-height: 46px;
+			padding: 4px;
+			text-align: center;
+			color: #fff;
+			background: @linear;
+			border-radius:2px;
+			>a{
+				display: inline-block;
+				width:42px;
+				height:42px;
+				color: #fff;
+				border-radius:2px;
+				transition: all .3s;
+				-webkit-transition: all .3s;
+			}
+			.add-people{
+				float: right;
+				background: url('@{url}add-people.png') center no-repeat rgba(255,255,255,.3);
+				&:hover{
+					background: url('@{url}add-people.png') center no-repeat rgba(255,255,255,.7);
+					transition: all .3s;
+					-webkit-transition: all .3s;
+				}
+			}
+			.sub-people{
+				float: left;
+				background: url('@{url}sub-people.png') center no-repeat rgba(255,255,255,.3);
+				&:hover{
+					background: url('@{url}sub-people.png') center no-repeat rgba(255,255,255,.7);
+					transition: all .3s;
+					-webkit-transition: all .3s;
+				}
+			}
+			.off-sub-operation{
+				background: url('@{url}sub-people.png') center no-repeat rgba(255,255,255,.1);
+				cursor: not-allowed;
+				&:hover{
+					background: url('@{url}sub-people.png') center no-repeat rgba(255,255,255,.1);
+				}
+			}
+			.off-add-operation{
+				background: url('@{url}add-people.png') center no-repeat rgba(255,255,255,.1);
+				cursor: not-allowed;
+				&:hover{
+					background: url('@{url}add-people.png') center no-repeat rgba(255,255,255,.1);
+				}
+			}
+			>span{
+				font-family: @FBold;
+				font-size: 24px;
+			}
+		}
+		.disable{
+			color: @purple;
+			background: url('@{url}add-people.png') center no-repeat rgba(31,44,92,.04);
+			.add-people{
+				background: url('@{url}add-people.png') center no-repeat rgba(31,44,92,.3);
+				&:hover{
+					background: url('@{url}add-people.png') center no-repeat rgba(31,44,92,.7);
+					transition: all .3s;
+					-webkit-transition: all .3s;
+				}
+			}
+			.sub-people{
+				background: url('@{url}sub-people.png') center no-repeat rgba(31,44,92,.3);
+				&:hover{
+					background: url('@{url}sub-people.png') center no-repeat rgba(31,44,92,.7);
+					transition: all .3s;
+					-webkit-transition: all .3s;
+				}
+			}
+			.off-sub-operation{
+				background: url('@{url}sub-people.png') center no-repeat rgba(31,44,92,.1);
+				cursor: not-allowed;
+				&:hover{
+					background: url('@{url}sub-people.png') center no-repeat rgba(31,44,92,.1);
+				}
+			}
+			.off-add-operation{
+				background: url('@{url}add-people.png') center no-repeat rgba(31,44,92,.1);
+				cursor: not-allowed;
+				&:hover{
+					background: url('@{url}add-people.png') center no-repeat rgba(31,44,92,.1);
+				}
+			}
+		}
 	}
 }
 .lm-scroll-down{
@@ -452,7 +588,50 @@ body{
 	background: url('@{url}scroll-down.png') center no-repeat;
 }
 
-/* 手机端 */
-@media screen and (max-width: 767px) {
-	
+/* 屏幕缩放 */
+@media screen and (max-width: 1800px) {
+	.lm-cloud-content{
+		left: 5%;
+	}
+	.flight-com{
+		left: 11%;
+	}
+}
+@media screen and (max-width: 1660px) {
+	.lm-cloud-content{
+		left: 8%;
+	}
+	.flight-com{
+		left: 14%;
+	}
+	.select-air-com > div{
+		width: 240px;
+	}
+}
+@media screen and (max-width: 1366px) {
+	.lm-cloud-content{
+		left: 7%;
+	}
+	.flight-com{
+		left: 13%;
+	}
+	.lm-cloud-content > h1{
+		font-size: 46px;
+		line-height: 56px;
+	}
+	.lm-cloud-content{
+		top: 20px;
+	}
+	.flight-com{
+		top: 200px;
+	}
+	.flight-com .select-way{
+		margin-top: 20px;
+	}
+	.popup-content{
+		top: 200px;
+	}
+	.popup-content::before{
+		left: 120px;
+	}
 }

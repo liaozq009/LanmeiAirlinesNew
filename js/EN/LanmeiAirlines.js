@@ -2,6 +2,7 @@
 var LanmeiAirlines = {
 	init:function(){
 		this.ticketSelect();
+		this.selectPeople();
 		this.otherEvent();
 	},
 
@@ -59,6 +60,29 @@ var LanmeiAirlines = {
 				}
 		  } 
 		);
+	},
+
+	/* 人数选择 */
+	selectPeople:function(){
+		// 增加人数
+		var adultNum = 1;
+		var childNum = 0;
+		var adult = function(){
+			$('.js-adult-add').click(function(){
+				adultNum++;
+				$(this).siblings('span').html(adultNum);
+				adultNum==2 && $(this).siblings('.sub-people').removeClass('off-sub-operation');
+			});
+			$('.js-adult-sub').click(function(){
+				adultNum--;
+				if(adultNum<2){
+					adultNum=1;
+					$(this).addClass('off-sub-operation');
+				}
+				$(this).siblings('span').html(adultNum);
+			});
+		}
+		adult();
 	},
 
 	/* 后期优化新增 */

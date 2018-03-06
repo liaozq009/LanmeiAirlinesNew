@@ -140,6 +140,7 @@
 			<!-- 下拉选择菜单 -->
 			<div class="popup-container">
 				<div class="popup-content">
+					<!-- 出发地目的地选择 -->
 					<div class="popup-airport-from popup-airport" style="display: none;">
 						<h2>Airports :</h2>
 						<ul class="flight-list-wrap">
@@ -153,7 +154,49 @@
 							<li>SEOUL/ICN/Korea</li>
 						</ul>
 					</div>
-					<div class="popup-date"></div>
+					<!-- 日期选择 -->
+					<div class="popup-date" style="display: none;">
+						<p class="date-title">Choose your departure date :</p>
+					</div>
+					<!-- 人数选择 -->
+					<div class="popup-people">
+						<p class="people-title">Number of passengers :</p>
+						<div class="select-people-container">
+							<div class="s-adult s-people-com">
+								<div class="people-prompt">
+									<p class="p1">Adult<img src="images/EN/adult-icon.png"></p>
+									<p class="p2"><img src="images/EN/prompt-icon.png">( 12+ )</p>
+								</div>
+								<div class="people-number">
+									<a href="javascript:;" class="sub-people off-sub-operation js-adult-sub"></a>
+									<span class="adult-num">1</span>
+									<a href="javascript:;" class="add-people js-adult-add"></a>
+								</div>
+							</div>
+							<div class="s-child s-people-com">
+								<div class="people-prompt">
+									<p class="p1">Child<img src="images/EN/child-icon.png"></p>
+									<p class="p2"><img src="images/EN/prompt-icon.png">( 2 - 11 )</p>
+								</div>
+								<div class="people-number">
+									<a href="javascript:;" class="sub-people js-child-sub"></a>
+									<span class="adult-num">1</span>
+									<a href="javascript:;" class="add-people js-child-add"></a>
+								</div>
+							</div>
+							<div class="s-infant s-people-com">
+								<div class="people-prompt">
+									<p class="p1">Infant<img src="images/EN/infant-icon.png"></p>
+									<p class="p2"><img src="images/EN/prompt-icon.png">( Under 2 )</p>
+								</div>
+								<div class="people-number disable">
+									<a href="javascript:;" class="sub-people off-sub-operation js-infant-sub"></a>
+									<span class="adult-num">0</span>
+									<a href="javascript:;" class="add-people js-infant-add"></a>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

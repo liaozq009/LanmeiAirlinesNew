@@ -2,9 +2,15 @@
 /* 引入字体 */
 @font-face {
   font-family: CamptonBook;
+  src: url(../../common/EN/fonts/Campton/Rene.Bieder_Campton.Book.otf);
+}
+@font-face {
+  font-family: CamptonBookLight;
+  src: url(../../common/EN/fonts/Campton/Rene.Bieder_Campton.Light.otf);
 }
 @font-face {
   font-family: CamptonBookBold;
+  src: url(../../common/EN/fonts/Campton/Rene.Bieder_Campton.Bold.otf);
   font-weight: bold;
 }
 /* 定义变量 */
@@ -377,9 +383,8 @@ body {
 .popup-content {
   position: absolute;
   top: 218px;
-  left: 700px;
-  min-width: 310px;
-  min-height: 200px;
+  left: 950px;
+  z-index: 1;
   font-size: 16px;
   color: rgba(31, 44, 92, 0.5);
   background: #fff;
@@ -423,6 +428,138 @@ body {
   color: #8ec060;
   background: url('../../images/EN/city-icon-active.png') left center no-repeat;
 }
+.popup-content .popup-date .date-title {
+  padding-left: 20px;
+  padding-top: 20px;
+  font-size: 20px;
+  font-family: CamptonBookBold;
+  color: rgba(31, 44, 92, 0.8);
+}
+.popup-content .popup-people {
+  width: 410px;
+  height: 290px;
+  padding: 20px 30px 30px;
+}
+.popup-content .popup-people .people-title {
+  font-size: 20px;
+  font-family: CamptonBookBold;
+  color: rgba(31, 44, 92, 0.8);
+}
+.popup-content .popup-people .s-people-com {
+  height: 50px;
+  margin-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.popup-content .popup-people .people-prompt {
+  float: left;
+}
+.popup-content .popup-people .people-prompt .p1 {
+  color: rgba(0, 0, 0, 0.7);
+}
+.popup-content .popup-people .people-prompt .p1 > img {
+  margin-left: 10px;
+}
+.popup-content .popup-people .people-prompt .p2 {
+  margin-top: 5px;
+  font-family: CamptonBookLight;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.3);
+}
+.popup-content .popup-people .people-prompt .p2 > img {
+  margin-right: 10px;
+  vertical-align: top;
+}
+.popup-content .popup-people .people-number {
+  float: right;
+  width: 200px;
+  height: 50px;
+  line-height: 46px;
+  padding: 4px;
+  text-align: center;
+  color: #fff;
+  background: -webkit-linear-gradient(0deg, #42958a 0%, #1f2c5c 100%);
+  border-radius: 2px;
+}
+.popup-content .popup-people .people-number > a {
+  display: inline-block;
+  width: 42px;
+  height: 42px;
+  color: #fff;
+  border-radius: 2px;
+  transition: all .3s;
+  -webkit-transition: all .3s;
+}
+.popup-content .popup-people .people-number .add-people {
+  float: right;
+  background: url('../../images/EN/add-people.png') center no-repeat rgba(255, 255, 255, 0.3);
+}
+.popup-content .popup-people .people-number .add-people:hover {
+  background: url('../../images/EN/add-people.png') center no-repeat rgba(255, 255, 255, 0.7);
+  transition: all .3s;
+  -webkit-transition: all .3s;
+}
+.popup-content .popup-people .people-number .sub-people {
+  float: left;
+  background: url('../../images/EN/sub-people.png') center no-repeat rgba(255, 255, 255, 0.3);
+}
+.popup-content .popup-people .people-number .sub-people:hover {
+  background: url('../../images/EN/sub-people.png') center no-repeat rgba(255, 255, 255, 0.7);
+  transition: all .3s;
+  -webkit-transition: all .3s;
+}
+.popup-content .popup-people .people-number .off-sub-operation {
+  background: url('../../images/EN/sub-people.png') center no-repeat rgba(255, 255, 255, 0.1);
+  cursor: not-allowed;
+}
+.popup-content .popup-people .people-number .off-sub-operation:hover {
+  background: url('../../images/EN/sub-people.png') center no-repeat rgba(255, 255, 255, 0.1);
+}
+.popup-content .popup-people .people-number .off-add-operation {
+  background: url('../../images/EN/add-people.png') center no-repeat rgba(255, 255, 255, 0.1);
+  cursor: not-allowed;
+}
+.popup-content .popup-people .people-number .off-add-operation:hover {
+  background: url('../../images/EN/add-people.png') center no-repeat rgba(255, 255, 255, 0.1);
+}
+.popup-content .popup-people .people-number > span {
+  font-family: CamptonBookBold;
+  font-size: 24px;
+}
+.popup-content .popup-people .disable {
+  color: #1f2c5c;
+  background: url('../../images/EN/add-people.png') center no-repeat rgba(31, 44, 92, 0.04);
+}
+.popup-content .popup-people .disable .add-people {
+  background: url('../../images/EN/add-people.png') center no-repeat rgba(31, 44, 92, 0.3);
+}
+.popup-content .popup-people .disable .add-people:hover {
+  background: url('../../images/EN/add-people.png') center no-repeat rgba(31, 44, 92, 0.7);
+  transition: all .3s;
+  -webkit-transition: all .3s;
+}
+.popup-content .popup-people .disable .sub-people {
+  background: url('../../images/EN/sub-people.png') center no-repeat rgba(31, 44, 92, 0.3);
+}
+.popup-content .popup-people .disable .sub-people:hover {
+  background: url('../../images/EN/sub-people.png') center no-repeat rgba(31, 44, 92, 0.7);
+  transition: all .3s;
+  -webkit-transition: all .3s;
+}
+.popup-content .popup-people .disable .off-sub-operation {
+  background: url('../../images/EN/sub-people.png') center no-repeat rgba(31, 44, 92, 0.1);
+  cursor: not-allowed;
+}
+.popup-content .popup-people .disable .off-sub-operation:hover {
+  background: url('../../images/EN/sub-people.png') center no-repeat rgba(31, 44, 92, 0.1);
+}
+.popup-content .popup-people .disable .off-add-operation {
+  background: url('../../images/EN/add-people.png') center no-repeat rgba(31, 44, 92, 0.1);
+  cursor: not-allowed;
+}
+.popup-content .popup-people .disable .off-add-operation:hover {
+  background: url('../../images/EN/add-people.png') center no-repeat rgba(31, 44, 92, 0.1);
+}
 .lm-scroll-down {
   position: absolute;
   left: 50%;
@@ -433,4 +570,50 @@ body {
   margin-top: -25px;
   background: url('../../images/EN/scroll-down.png') center no-repeat;
 }
-/* 手机端 */
+/* 屏幕缩放 */
+@media screen and (max-width: 1800px) {
+  .lm-cloud-content {
+    left: 5%;
+  }
+  .flight-com {
+    left: 11%;
+  }
+}
+@media screen and (max-width: 1660px) {
+  .lm-cloud-content {
+    left: 8%;
+  }
+  .flight-com {
+    left: 14%;
+  }
+  .select-air-com > div {
+    width: 240px;
+  }
+}
+@media screen and (max-width: 1366px) {
+  .lm-cloud-content {
+    left: 7%;
+  }
+  .flight-com {
+    left: 13%;
+  }
+  .lm-cloud-content > h1 {
+    font-size: 46px;
+    line-height: 56px;
+  }
+  .lm-cloud-content {
+    top: 20px;
+  }
+  .flight-com {
+    top: 200px;
+  }
+  .flight-com .select-way {
+    margin-top: 20px;
+  }
+  .popup-content {
+    top: 200px;
+  }
+  .popup-content::before {
+    left: 120px;
+  }
+}

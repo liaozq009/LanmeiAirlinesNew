@@ -5,6 +5,7 @@
   border-radius: 2px;
   width: 278px;
   padding: 7px;
+  padding-top: 0;
   margin-top: 1px;
   top: 100px;
   left: 20px;
@@ -79,8 +80,13 @@
       min-width: 36px; 
       color: rgba(0,0,0,.6);
     }
-    .daterangepicker .calendar thead tr:first-child th{
+    .daterangepicker .calendar thead tr:first-child th:nth-child(2){
       padding-bottom: 15px;
+      font-weight: 100;
+    }
+    .daterangepicker .calendar thead tr:nth-child(2) th:first-child,
+    .daterangepicker .calendar thead tr:nth-child(2) th:last-child{
+      color:#8ec060;
     }
   .daterangepicker .calendar-table {
     border: 1px solid #fff;
@@ -97,11 +103,18 @@
     border-radius: 0;
     border: 1px solid transparent;
     white-space: nowrap;
-    cursor: pointer; }
+    }
+    .daterangepicker td{
+       cursor: pointer;
+    }
     .daterangepicker td.available:hover, .daterangepicker th.available:hover {
       background-color: #1f2c5c;
       border-color: transparent;
       color: #fff; }
+    .daterangepicker th.available.next:hover,.daterangepicker th.available.prev:hover {
+      background: #fff;
+      cursor: pointer;
+    }
     .daterangepicker td.week, .daterangepicker th.week {
       font-size: 80%;
       color: #ccc; }
@@ -130,7 +143,7 @@
     font-size: 20px;
   }
   .daterangepicker td.disabled, .daterangepicker option.disabled {
-    color: #999;
+    color: rgba(0,0,0,.1);
     cursor: not-allowed;
     text-decoration: line-through; }
   .daterangepicker select.monthselect, .daterangepicker select.yearselect {
@@ -284,3 +297,15 @@
 
 /* 修改框架代码 */
 .dropdown-menu{border:none;} 
+.glyphicon-date-next{
+  display: inline-block;
+  width: 8px;
+  height: 14px;
+  background: url('imgs/date-next.png') center no-repeat;
+}
+.glyphicon-date-prev{
+  display: inline-block;
+  width: 8px;
+  height: 14px;
+  background: url('imgs/date-prev.png') center no-repeat;
+}
