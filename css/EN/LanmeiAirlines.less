@@ -287,6 +287,7 @@ body{
 	margin-top: 30px;
 	overflow: hidden;
 	>div{
+		visibility: hidden;
 		position: relative;
 		float: left;
 		width: 310px;
@@ -327,6 +328,7 @@ body{
 			background: url('@{url}city-to.png') 20px no-repeat #fff;
 		}
 	}
+	.ticket-from{visibility: visible;}
 	.ticket-people{
 		margin-right: 0;
 	}
@@ -339,6 +341,7 @@ body{
 		height: 18px;
 		background: url('@{url}ticket-change.png') center no-repeat;
 		cursor: pointer;
+		opacity: 0;
 	}
 	.t-date-result {
 		display: block;
@@ -375,6 +378,7 @@ body{
 	}
 }
 .search-flight-wrap{
+	visibility: hidden;
 	margin-top: 20px;
 	padding-left: 350px;
 	a{
@@ -408,7 +412,7 @@ body{
 	-webkit-transition: left .5s ease-out;
 	&::before{
 		position: absolute;
-		top: -28px;
+		top: -7px;
 		left: 150px;
 		z-index: 9;
 		opacity: 0;
@@ -430,7 +434,7 @@ body{
 }
 .popup-content{
 	position: absolute;
-	top: -14px;
+	top: 6px;
 	left: 0px;
 	z-index: 1;
 	font-size: 16px;
@@ -667,6 +671,9 @@ body{
 		transform: scale(.8); 
 		-webkit-transform-origin: top;
 		transform-origin: top;
+	}
+	.flight-com{
+		left: 7%;
 	}
 }
 @media screen and (max-width: 1366px) {

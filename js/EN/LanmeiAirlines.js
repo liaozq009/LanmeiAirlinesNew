@@ -12,8 +12,12 @@ var LanmeiAirlines = {
 		var $mask = $('.js-flight-mask'); //遮罩层
 		var $box = $('.js-popup-box'); //c3动画最外层
 		var $content = $('.js-popup-content'); //c3动画内容
+
 		var $fromInput = $('.js-from-input'); //出发地
 		var $toInput = $('.js-to-input'); //目的地
+		var $date = $('.js-date-result'); //日期
+		var $people = $('.js-ticket-people'); //人数
+
 		var $fromMenuSub = $('.js-from-menu>li'); //出发地下拉菜单
 		var $toMenuSub = $('.js-to-menu>li'); //目的地下拉菜单
 
@@ -22,28 +26,52 @@ var LanmeiAirlines = {
 		var $dateBox = $('.js-popup-date'); //日期外层
 		var $peopleBox = $('.js-popup-people'); //人数选择外层
 
+		var $zoom = $('.js-ticket-to,.js-ticket-date,.js-ticket-people,.js-search-flight');
+
 		// c3动画
 		var popupShow = function(){
+			$mask.fadeIn(); //显示遮罩层
+			$box.addClass('popup-box-before');
 			$content.removeClass('popup-inactive').addClass('popup-active'); 
-		}
+		};
 		var popupHide = function(){
 			$content.removeClass('popup-active').addClass('popup-inactive'); 
-		}
+		};
 
 		// 点击出发地
 		$fromInput.click(function(){
-			$mask.fadeIn(); //显示遮罩层
+			$fromBox.parents('.js-popup-box').css('left',0);
 			popupShow(); //增加c3动画
-			$box.addClass('popup-box-before');
-			$box.css('left',0);
+			$fromBox.show();
+			$toBox.hide(); $dateBox.hide(); $peopleBox.hide();
+			$zoom.addClass('animated zoomIn').css('visibility','visible');
+			setTimeout(function(){
+	      $zoom.removeClass('animated zoomIn');
+	    }, 1000);
 		});
 
 		// 点击目的地
 		$toInput.click(function(e){
-			$mask.fadeIn(); //显示遮罩层
+			$toBox.parents('.js-popup-box').css('left',350);
 			popupShow(); //增加c3动画
-			$box.addClass('popup-box-before');
-			$box.css('left',350);
+			$toBox.show();
+			$fromBox.hide(); $dateBox.hide(); $peopleBox.hide();
+		});
+
+		// 点击日期
+		$date.click(function(event) {
+			$dateBox.parents('.js-popup-box').css('left',700);
+			popupShow(); //增加c3动画
+			$dateBox.show();
+			$fromBox.hide(); $toBox.hide(); $peopleBox.hide();
+		});
+
+		// 点击人数
+		$people.click(function(event) {
+			$peopleBox.parents('.js-popup-box').css('left',950);
+			popupShow(); //增加c3动画
+			$peopleBox.show();
+			$fromBox.hide(); $toBox.hide(); $dateBox.hide();
 		});
 
 		// 点击遮罩层
@@ -52,6 +80,16 @@ var LanmeiAirlines = {
 			popupHide(); //增加c3动画
 			$box.removeClass('popup-box-before'); //隐藏小箭头
 			$box.css('left',0);
+		});
+
+		// 点击取消
+		$('.js-flight-cancel').click(function(){
+			$zoom.addClass('animated zoomOut');
+			// $zoom.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',$zoom.css('visibility','hidden'));
+			setTimeout(function(){
+	      $zoom.removeClass('animated zoomOut');
+	      $zoom.css('visibility','hidden');
+	    }, 1500);
 		});
 
 		// 出发地选择

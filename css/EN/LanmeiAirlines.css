@@ -262,6 +262,7 @@ body {
   overflow: hidden;
 }
 .select-air-com > div {
+  visibility: hidden;
   position: relative;
   float: left;
   width: 310px;
@@ -309,6 +310,9 @@ body {
 .select-air-com > div .t-to-input {
   background: url('../../images/EN/city-to.png') 20px no-repeat #fff;
 }
+.select-air-com .ticket-from {
+  visibility: visible;
+}
 .select-air-com .ticket-people {
   margin-right: 0;
 }
@@ -321,6 +325,7 @@ body {
   height: 18px;
   background: url('../../images/EN/ticket-change.png') center no-repeat;
   cursor: pointer;
+  opacity: 0;
 }
 .select-air-com .t-date-result {
   display: block;
@@ -358,6 +363,7 @@ body {
   background: url('../../images/EN/infant.png') 0 center no-repeat;
 }
 .search-flight-wrap {
+  visibility: hidden;
   margin-top: 20px;
   padding-left: 350px;
 }
@@ -389,7 +395,7 @@ body {
 }
 .popup-box::before {
   position: absolute;
-  top: -28px;
+  top: -7px;
   left: 150px;
   z-index: 9;
   opacity: 0;
@@ -410,7 +416,7 @@ body {
 }
 .popup-content {
   position: absolute;
-  top: -14px;
+  top: 6px;
   left: 0px;
   z-index: 1;
   font-size: 16px;
@@ -650,6 +656,9 @@ body {
     transform: scale(0.8);
     -webkit-transform-origin: top;
     transform-origin: top;
+  }
+  .flight-com {
+    left: 7%;
   }
 }
 @media screen and (max-width: 1366px) {
