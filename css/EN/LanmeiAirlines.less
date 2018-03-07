@@ -2,17 +2,17 @@
 
 /* 引入字体 */
 @font-face {
-    font-family: CamptonBook;
-    src: url(../../common/EN/fonts/Campton/Rene.Bieder_Campton.Book.otf);
+	font-family: CamptonBook;
+	src: url(../../common/EN/fonts/Campton/Rene.Bieder_Campton.Book.otf);
 }
 @font-face {
-    font-family: CamptonBookLight;
-    src: url(../../common/EN/fonts/Campton/Rene.Bieder_Campton.Light.otf);
+	font-family: CamptonBookLight;
+	src: url(../../common/EN/fonts/Campton/Rene.Bieder_Campton.Light.otf);
 }
 @font-face {
-    font-family: CamptonBookBold;
-    src: url(../../common/EN/fonts/Campton/Rene.Bieder_Campton.Bold.otf);
-    font-weight:bold;
+	font-family: CamptonBookBold;
+	src: url(../../common/EN/fonts/Campton/Rene.Bieder_Campton.Bold.otf);
+	font-weight:bold;
 }
 
 /* 定义变量 */
@@ -202,7 +202,7 @@ body{
 .lm-aside-code{
 	position: absolute;
 	right: 0;
-	top: 300px;
+	top: 100px;
 	width:74px;
 	height:332px;
 	background: url('@{url}QR-code-icon.png') center no-repeat,url('@{url}QR-code-bg.png') center no-repeat;
@@ -258,6 +258,7 @@ body{
 	position: absolute;
 	top: 280px;
 	left: 16%;
+	z-index: 99;
 	.ticket-tip{
 		opacity:0.5;
 		font-size:24px;
@@ -397,20 +398,20 @@ body{
 		background: @linear;
 	}
 }
-.popup-content{
+.popup-container{
+	
+}
+.popup-box{
 	position: absolute;
-	top: 218px;
-	left: 950px;
-	z-index: 1;
-	font-size: 16px;
-	.purpleRgb(.5);
-	background:#fff;
-	border-radius: 2px;
-	box-shadow:0 0 30px 0 #1f2c5c;
+	left: 0;
+	transition: left .5s ease-out;
+	-webkit-transition: left .5s ease-out;
 	&::before{
 		position: absolute;
-		top: -14px;
+		top: -28px;
 		left: 150px;
+		z-index: 9;
+		opacity: 0;
 		content: "";
 		display: block;
 		width: 0;
@@ -418,7 +419,28 @@ body{
 		border-left: 14px solid transparent;
 		border-right: 14px solid transparent;
 		border-bottom: 14px solid #fff;
+		transition: opacity .2s ease-out;
+		-webkit-transition: opacity .2s ease-out;
 	}
+}
+.popup-box-before::before{
+	opacity: 1;
+	transition: opacity .3s ease-out;
+	-webkit-transition: opacity .3s ease-out;
+}
+.popup-content{
+	position: absolute;
+	top: -14px;
+	left: 0px;
+	z-index: 1;
+	font-size: 16px;
+	.purpleRgb(.5);
+	background:#fff;
+	border-radius: 2px;
+	box-shadow:0 0 30px 0 #1f2c5c;
+	transition: opacity .2s ease-out,-webkit-transform .2s ease-out;
+	transition: transform .2s ease-out,opacity .2s ease-out;
+	transition: transform .2s ease-out,opacity .2s ease-out,-webkit-transform .2s ease-out;
 	.popup-airport{
 		width: 628px;
 		padding:20px 20px 10px;
@@ -437,6 +459,14 @@ body{
 				margin-bottom: 10px;
 				background: url('@{url}city-icon.png') left center no-repeat;
 				cursor: pointer;
+				transition: all .3s;
+				-webkit-transition: all .3s;
+				&:hover{
+					color: @green;
+					background: url('@{url}city-icon-active.png') left center no-repeat;
+					transition: all .3s;
+					-webkit-transition: all .3s;
+				}
 			}
 			.active{
 				color: @green;
@@ -444,7 +474,10 @@ body{
 			}
 		}
 	}
+	.popup-airport-to{display: none;}
 	.popup-date{
+		display: none;
+		width: 598px;
 		.date-title {
 			padding-left: 20px;
 			padding-top: 20px;
@@ -454,6 +487,7 @@ body{
 		}
 	}
 	.popup-people{
+		display: none;
 		width: 410px;
 		height: 290px;
 		padding: 20px 30px 30px;
@@ -472,14 +506,19 @@ body{
 			float: left;
 			.p1{
 				color: rgba(0,0,0,.7);
-				>img{margin-left: 10px;}
+				>img{
+					margin-right: 10px;
+					vertical-align: text-bottom;
+				}
 			}
 			.p2{
 				margin-top: 5px;
 				font-family: @FLight;
 				font-size: 14px;
 				color: rgba(0,0,0,.3);
+				cursor: pointer;
 				>img{
+					margin-left: 10px;
 					margin-right: 10px;
 					vertical-align: top;
 				}
@@ -577,6 +616,20 @@ body{
 		}
 	}
 }
+.popup-inactive{
+	opacity: 0;
+	transform: perspective(600px) rotateX(-10deg);
+	-webkit-transform: perspective(600px) rotateX(-10deg);
+	-ms-transform: perspective(600px) rotateX(-10deg);
+	-o-transform: perspective(600px) rotateX(-10deg);
+}
+.popup-active{
+	opacity: 1;
+	transform: perspective(600px) rotateX(0);
+	-webkit-transform: perspective(600px) rotateX(0);
+	-ms-transform: perspective(600px) rotateX(0);
+	-o-transform: perspective(600px) rotateX(0);
+}
 .lm-scroll-down{
 	position: absolute;
 	left: 50%;
@@ -586,6 +639,17 @@ body{
 	margin-left: -13px;
 	margin-top: -25px;
 	background: url('@{url}scroll-down.png') center no-repeat;
+}
+.lm-flight-mask{
+	display: none;
+	position: fixed;
+	top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9;
+	opacity:0.5;
+	background:#000;
 }
 
 /* 屏幕缩放 */
@@ -598,40 +662,37 @@ body{
 	}
 }
 @media screen and (max-width: 1660px) {
-	.lm-cloud-content{
-		left: 8%;
-	}
-	.flight-com{
-		left: 14%;
-	}
-	.select-air-com > div{
-		width: 240px;
+	.flight-com,.lm-cloud-content,.lm-aside-flight{
+		-webkit-transform: scale(.8); 
+		transform: scale(.8); 
+		-webkit-transform-origin: top;
+		transform-origin: top;
 	}
 }
 @media screen and (max-width: 1366px) {
-	.lm-cloud-content{
-		left: 7%;
-	}
-	.flight-com{
-		left: 13%;
-	}
-	.lm-cloud-content > h1{
-		font-size: 46px;
-		line-height: 56px;
-	}
-	.lm-cloud-content{
-		top: 20px;
-	}
-	.flight-com{
-		top: 200px;
-	}
-	.flight-com .select-way{
-		margin-top: 20px;
-	}
-	.popup-content{
-		top: 200px;
-	}
-	.popup-content::before{
-		left: 120px;
-	}
+	// .lm-cloud-content{
+	// 	left: 7%;
+	// }
+	// .flight-com{
+	// 	left: 13%;
+	// }
+	// .lm-cloud-content > h1{
+	// 	font-size: 46px;
+	// 	line-height: 56px;
+	// }
+	// .lm-cloud-content{
+	// 	top: 20px;
+	// }
+	// .flight-com{
+	// 	top: 200px;
+	// }
+	// .flight-com .select-way{
+	// 	margin-top: 20px;
+	// }
+	// .popup-content{
+	// 	top: 200px;
+	// }
+	// .popup-content::before{
+	// 	left: 120px;
+	// }
 }

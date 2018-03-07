@@ -106,14 +106,14 @@
 				</div>
 				<div class="select-air-time select-air-com">
 					<div class="ticket-from">
-						<input type="text" class="t-from-input" placeholder="From">
+						<input type="text" class="t-from-input js-from-input" placeholder="From">
 						<div class="t-from-menu t-memu-com">
 							
 						</div>
 						<i class="local-change"></i>
 					</div>
 					<div class="ticket-to">
-						<input type="text" class="t-to-input" placeholder="To">
+						<input type="text" class="t-to-input js-to-input" placeholder="To">
 						<div class="t-to-menu t-memu-com">
 							
 						</div>
@@ -139,60 +139,75 @@
 			</form>
 			<!-- 下拉选择菜单 -->
 			<div class="popup-container">
-				<div class="popup-content">
-					<!-- 出发地目的地选择 -->
-					<div class="popup-airport-from popup-airport" style="display: none;">
-						<h2>Airports :</h2>
-						<ul class="flight-list-wrap">
-							<li>Sihanoukville/KOS/ Cambodia</li>
-							<li>Ho Chi Minh/SGN/Vietnam</li>
-							<li class="active">Macao/MFM/Macao,China</li>
-							<li>Hanoi/HAN/Vietnam</li>
-							<li>Phnom Penh/PNH/Cambodia</li>
-							<li>HongKong/HKG/HongKong,China</li>
-							<li>Siem Reap/REP/Cambodia</li>
-							<li>SEOUL/ICN/Korea</li>
-						</ul>
-					</div>
-					<!-- 日期选择 -->
-					<div class="popup-date" style="display: none;">
-						<p class="date-title">Choose your departure date :</p>
-					</div>
-					<!-- 人数选择 -->
-					<div class="popup-people">
-						<p class="people-title">Number of passengers :</p>
-						<div class="select-people-container">
-							<div class="s-adult s-people-com">
-								<div class="people-prompt">
-									<p class="p1">Adult<img src="images/EN/adult-icon.png"></p>
-									<p class="p2"><img src="images/EN/prompt-icon.png">( 12+ )</p>
+				<div class="popup-box js-popup-box">
+					<div class="popup-content popup-inactive js-popup-content">
+						<!-- 出发地目的地选择 -->
+						<div class="popup-airport-from popup-airport js-airport-from">
+							<h2>Airports :</h2>
+							<ul class="flight-list-wrap js-from-menu">
+								<li>Sihanoukville/KOS/ Cambodia</li>
+								<li>Ho Chi Minh/SGN/Vietnam</li>
+								<li>Macao/MFM/Macao,China</li>
+								<li>Hanoi/HAN/Vietnam</li>
+								<li>Phnom Penh/PNH/Cambodia</li>
+								<li>HongKong/HKG/HongKong,China</li>
+								<li>Siem Reap/REP/Cambodia</li>
+								<li>SEOUL/ICN/Korea</li>
+							</ul>
+						</div>
+						<div class="popup-airport-to popup-airport js-airport-to">
+							<h2>Airports :</h2>
+							<ul class="flight-list-wrap js-to-menu">
+								<li>Sihanoukville/KOS/ Cambodia</li>
+								<li>Ho Chi Minh/SGN/Vietnam</li>
+								<li>Macao/MFM/Macao,China</li>
+								<li>Hanoi/HAN/Vietnam</li>
+								<li>Phnom Penh/PNH/Cambodia</li>
+								<li>HongKong/HKG/HongKong,China</li>
+								<li>Siem Reap/REP/Cambodia</li>
+								<li>SEOUL/ICN/Korea</li>
+							</ul>
+						</div>
+						<!-- 日期选择 -->
+						<div class="popup-date js-popup-date">
+							<p class="date-title">Choose your departure date :</p>
+						</div>
+						<!-- 人数选择 -->
+						<div class="popup-people js-popup-people">
+							<p class="people-title">Number of passengers :</p>
+							<div class="select-people-container">
+								<div class="s-adult s-people-com">
+									<div class="people-prompt">
+										<p class="p1"><img src="images/EN/adult-icon.png">Adult</p>
+										<p class="p2 adult-tip"><img src="images/EN/prompt-icon.png">( 12+ )</p>
+									</div>
+									<div class="people-number">
+										<a href="javascript:;" class="sub-people off-sub-operation js-adult-sub"></a>
+										<span class="adult-num">1</span>
+										<a href="javascript:;" class="add-people js-adult-add"></a>
+									</div>
 								</div>
-								<div class="people-number">
-									<a href="javascript:;" class="sub-people off-sub-operation js-adult-sub"></a>
-									<span class="adult-num">1</span>
-									<a href="javascript:;" class="add-people js-adult-add"></a>
+								<div class="s-child s-people-com">
+									<div class="people-prompt">
+										<p class="p1"><img src="images/EN/child-icon.png">Child</p>
+										<p class="p2 child-tip"><img src="images/EN/prompt-icon.png">( 2 - 11 )</p>
+									</div>
+									<div class="people-number disable">
+										<a href="javascript:;" class="sub-people off-sub-operation js-child-sub"></a>
+										<span class="adult-num">0</span>
+										<a href="javascript:;" class="add-people js-child-add"></a>
+									</div>
 								</div>
-							</div>
-							<div class="s-child s-people-com">
-								<div class="people-prompt">
-									<p class="p1">Child<img src="images/EN/child-icon.png"></p>
-									<p class="p2"><img src="images/EN/prompt-icon.png">( 2 - 11 )</p>
-								</div>
-								<div class="people-number">
-									<a href="javascript:;" class="sub-people js-child-sub"></a>
-									<span class="adult-num">1</span>
-									<a href="javascript:;" class="add-people js-child-add"></a>
-								</div>
-							</div>
-							<div class="s-infant s-people-com">
-								<div class="people-prompt">
-									<p class="p1">Infant<img src="images/EN/infant-icon.png"></p>
-									<p class="p2"><img src="images/EN/prompt-icon.png">( Under 2 )</p>
-								</div>
-								<div class="people-number disable">
-									<a href="javascript:;" class="sub-people off-sub-operation js-infant-sub"></a>
-									<span class="adult-num">0</span>
-									<a href="javascript:;" class="add-people js-infant-add"></a>
+								<div class="s-infant s-people-com">
+									<div class="people-prompt">
+										<p class="p1"><img src="images/EN/infant-icon.png">Infant</p>
+										<p class="p2 infant-tip"><img src="images/EN/prompt-icon.png">( Under 2 )</p>
+									</div>
+									<div class="people-number disable">
+										<a href="javascript:;" class="sub-people off-sub-operation js-infant-sub"></a>
+										<span class="adult-num">0</span>
+										<a href="javascript:;" class="add-people js-infant-add"></a>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -221,9 +236,13 @@
 		<div class="lm-scroll-down"></div>
 	</section>
 
+	<!-- 选择航班遮罩层 -->
+	<div class="lm-flight-mask js-flight-mask"></div>
+
 	<!-- 第三方库-->
 	<script src="libs/jQuery/jquery-1.11.3.js"></script>
 	<script src="libs/bootstrap/js/bootstrap.min.js"></script>
+	<script src="libs/layer/layer.js"></script>
 	<script src="libs/daterange/moment.js"></script>
 	<script src="libs/daterange/daterangepicker.js"></script>
 

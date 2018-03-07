@@ -176,7 +176,7 @@ body {
 .lm-aside-code {
   position: absolute;
   right: 0;
-  top: 300px;
+  top: 100px;
   width: 74px;
   height: 332px;
   background: url('../../images/EN/QR-code-icon.png') center no-repeat, url('../../images/EN/QR-code-bg.png') center no-repeat;
@@ -232,6 +232,7 @@ body {
   position: absolute;
   top: 280px;
   left: 16%;
+  z-index: 99;
 }
 .flight-com .ticket-tip {
   opacity: 0.5;
@@ -380,21 +381,18 @@ body {
 .search-flight-wrap .flight-search {
   background: -webkit-linear-gradient(0deg, #42958a 0%, #1f2c5c 100%);
 }
-.popup-content {
+.popup-box {
   position: absolute;
-  top: 218px;
-  left: 950px;
-  z-index: 1;
-  font-size: 16px;
-  color: rgba(31, 44, 92, 0.5);
-  background: #fff;
-  border-radius: 2px;
-  box-shadow: 0 0 30px 0 #1f2c5c;
+  left: 0;
+  transition: left 0.5s ease-out;
+  -webkit-transition: left 0.5s ease-out;
 }
-.popup-content::before {
+.popup-box::before {
   position: absolute;
-  top: -14px;
+  top: -28px;
   left: 150px;
+  z-index: 9;
+  opacity: 0;
   content: "";
   display: block;
   width: 0;
@@ -402,6 +400,27 @@ body {
   border-left: 14px solid transparent;
   border-right: 14px solid transparent;
   border-bottom: 14px solid #fff;
+  transition: opacity 0.2s ease-out;
+  -webkit-transition: opacity 0.2s ease-out;
+}
+.popup-box-before::before {
+  opacity: 1;
+  transition: opacity 0.3s ease-out;
+  -webkit-transition: opacity 0.3s ease-out;
+}
+.popup-content {
+  position: absolute;
+  top: -14px;
+  left: 0px;
+  z-index: 1;
+  font-size: 16px;
+  color: rgba(31, 44, 92, 0.5);
+  background: #fff;
+  border-radius: 2px;
+  box-shadow: 0 0 30px 0 #1f2c5c;
+  transition: opacity 0.2s ease-out, -webkit-transform 0.2s ease-out;
+  transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+  transition: transform 0.2s ease-out, opacity 0.2s ease-out, -webkit-transform 0.2s ease-out;
 }
 .popup-content .popup-airport {
   width: 628px;
@@ -423,10 +442,25 @@ body {
   margin-bottom: 10px;
   background: url('../../images/EN/city-icon.png') left center no-repeat;
   cursor: pointer;
+  transition: all .3s;
+  -webkit-transition: all .3s;
+}
+.popup-content .popup-airport .flight-list-wrap > li:hover {
+  color: #8ec060;
+  background: url('../../images/EN/city-icon-active.png') left center no-repeat;
+  transition: all .3s;
+  -webkit-transition: all .3s;
 }
 .popup-content .popup-airport .flight-list-wrap .active {
   color: #8ec060;
   background: url('../../images/EN/city-icon-active.png') left center no-repeat;
+}
+.popup-content .popup-airport-to {
+  display: none;
+}
+.popup-content .popup-date {
+  display: none;
+  width: 598px;
 }
 .popup-content .popup-date .date-title {
   padding-left: 20px;
@@ -436,6 +470,7 @@ body {
   color: rgba(31, 44, 92, 0.8);
 }
 .popup-content .popup-people {
+  display: none;
   width: 410px;
   height: 290px;
   padding: 20px 30px 30px;
@@ -458,15 +493,18 @@ body {
   color: rgba(0, 0, 0, 0.7);
 }
 .popup-content .popup-people .people-prompt .p1 > img {
-  margin-left: 10px;
+  margin-right: 10px;
+  vertical-align: text-bottom;
 }
 .popup-content .popup-people .people-prompt .p2 {
   margin-top: 5px;
   font-family: CamptonBookLight;
   font-size: 14px;
   color: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
 }
 .popup-content .popup-people .people-prompt .p2 > img {
+  margin-left: 10px;
   margin-right: 10px;
   vertical-align: top;
 }
@@ -560,6 +598,20 @@ body {
 .popup-content .popup-people .disable .off-add-operation:hover {
   background: url('../../images/EN/add-people.png') center no-repeat rgba(31, 44, 92, 0.1);
 }
+.popup-inactive {
+  opacity: 0;
+  transform: perspective(600px) rotateX(-10deg);
+  -webkit-transform: perspective(600px) rotateX(-10deg);
+  -ms-transform: perspective(600px) rotateX(-10deg);
+  -o-transform: perspective(600px) rotateX(-10deg);
+}
+.popup-active {
+  opacity: 1;
+  transform: perspective(600px) rotateX(0);
+  -webkit-transform: perspective(600px) rotateX(0);
+  -ms-transform: perspective(600px) rotateX(0);
+  -o-transform: perspective(600px) rotateX(0);
+}
 .lm-scroll-down {
   position: absolute;
   left: 50%;
@@ -569,6 +621,17 @@ body {
   margin-left: -13px;
   margin-top: -25px;
   background: url('../../images/EN/scroll-down.png') center no-repeat;
+}
+.lm-flight-mask {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9;
+  opacity: 0.5;
+  background: #000;
 }
 /* 屏幕缩放 */
 @media screen and (max-width: 1800px) {
@@ -580,40 +643,14 @@ body {
   }
 }
 @media screen and (max-width: 1660px) {
-  .lm-cloud-content {
-    left: 8%;
-  }
-  .flight-com {
-    left: 14%;
-  }
-  .select-air-com > div {
-    width: 240px;
+  .flight-com,
+  .lm-cloud-content,
+  .lm-aside-flight {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+    -webkit-transform-origin: top;
+    transform-origin: top;
   }
 }
 @media screen and (max-width: 1366px) {
-  .lm-cloud-content {
-    left: 7%;
-  }
-  .flight-com {
-    left: 13%;
-  }
-  .lm-cloud-content > h1 {
-    font-size: 46px;
-    line-height: 56px;
-  }
-  .lm-cloud-content {
-    top: 20px;
-  }
-  .flight-com {
-    top: 200px;
-  }
-  .flight-com .select-way {
-    margin-top: 20px;
-  }
-  .popup-content {
-    top: 200px;
-  }
-  .popup-content::before {
-    left: 120px;
-  }
 }
