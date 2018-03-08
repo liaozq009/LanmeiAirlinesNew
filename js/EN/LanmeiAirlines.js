@@ -119,10 +119,17 @@ var LanmeiAirlines = {
 			}
 		});
 
+		// 获取屏幕尺寸
+		var winWidth = $(window).width();
+
 		// 点击出发地
 		var zoomShow = true;
 		$fromInput.click(function(){
-			$fromBox.parents('.js-popup-box').css('left',0);
+			if(winWidth>1350){
+				$box.css('left',0);
+			}else if(winWidth<=1350){
+				$box.css('top',-90);
+			}
 			popupShow(); //增加c3动画
 
 			$fromBox.show();
@@ -143,7 +150,11 @@ var LanmeiAirlines = {
 
 		// 点击目的地
 		$toInput.click(function(e){
-			$toBox.parents('.js-popup-box').css('left',350);
+			if(winWidth>1350){
+				$box.css('left',350);
+			}else if(winWidth<=1350){
+				$box.css('left',350);
+			}
 			popupShow(); //增加c3动画
 			$popupContent.css('z-index','1'); //覆盖cancel按钮
 			$toBox.show();
@@ -152,7 +163,11 @@ var LanmeiAirlines = {
 
 		// 点击日期
 		$date.click(function(event) {
-			$dateBox.parents('.js-popup-box').css('left',700);
+			if(winWidth>1350){
+				$box.css('left',700);
+			}else if(winWidth<=1350){
+				$box.css('top',-10);
+			}
 			popupShow(); //增加c3动画
 			$popupContent.css('z-index','1'); //覆盖cancel按钮
 			$dateBox.show();
@@ -161,7 +176,11 @@ var LanmeiAirlines = {
 
 		// 点击人数
 		$people.click(function(event) {
-			$peopleBox.parents('.js-popup-box').css('left',950);
+			if(winWidth>1350){
+				$box.css('left',950);
+			}else if(winWidth<=1350){
+				$box.css({'top':-10,'left':350});
+			}
 			popupShow(); //增加c3动画
 			$popupContent.css('z-index','1'); //覆盖cancel按钮
 			$peopleBox.show();
@@ -185,7 +204,7 @@ var LanmeiAirlines = {
 			$mask.fadeOut(); //隐藏遮罩层
 			popupHide(); //隐藏弹出内容层
 			zoomShow = true; //重新点击出发地时再次显示目的地、日期、人数的动画
-			$fromBox.parents('.js-popup-box').css('left',0); //下拉框归零
+			$box.css('left',0); //下拉框归零
 			setTimeout(function(){
 	      $zoom.removeClass('animated fadeOutDown');
 	      $selectWay.removeClass('animated fadeOutDown');
