@@ -67,13 +67,13 @@
 	<section class="lm-section-main js-section-main">
 		<!-- 炫酷白云 -->
 		<div class="lm-cloud">
-
+			
 		</div>
 
 		<!-- 白云上面的内容 -->
 		<div class="lm-cloud-container">
 			<div class="lm-cloud-content">
-				<h1 class="animated fadeInLeft">A brand new aviation era <span>struck !!</span></h1>
+				<h1 class="animated fadeInUp">A brand new aviation era <span>struck !!</span></h1>
 			</div>
 		</div>
 
@@ -93,19 +93,25 @@
 		<!-- 航班选择 -->
 		<div class="ticket-content flight-com">
 			<form id="air-ticket-form" action="" method="POST" target="_blank">
+				<input type="hidden" name="tripType" id="tripType" value="OW">
 				<input type="hidden" name="orgcity" id="orgcity" value="PNH">
 				<input type="hidden" name="dstcity" id="dstcity" value="REP">
+				<input type="hidden" name="takeoffDate" id="takeoffDate" value="">
+				<input type="hidden" name="returnDate" id="returnDate" value="">
+				<input type="hidden" name="adultCount" id="adultCount" value="">
+				<input type="hidden" name="childCount" id="childCount" value="">
+				<input type="hidden" name="infantCount" id="infantCount" value="">
 				<input type="hidden" name="language" value="US">
 				<input type="hidden" name="CURRENCY" value="USD">
 				
-				<p class="ticket-tip animated fadeInLeft">What are you waiting for?</p>
-				<div class="select-way animated fadeInLeft">
+				<p class="ticket-tip animated fadeInUp">What are you waiting for?</p>
+				<div class="select-way js-select-way">
 					<a href="javascript:;" class="round-trip active" data-way="round">Round trip</a>
 					<a href="javascript:;" class="one-way" data-way="one">One-way</a>
 					<a href="javascript:;" class="multi" data-way="multi">Stopover/Multi-city</a>
 				</div>
-				<div class="select-air-time select-air-com animated fadeInLeft">
-					<div class="ticket-from js-ticket-from">
+				<div class="select-air-time select-air-com">
+					<div class="ticket-from js-ticket-from animated fadeInUp">
 						<input type="text" class="t-from-input js-from-input" placeholder="From">
 						<div class="t-from-menu t-memu-com">
 							
@@ -123,9 +129,9 @@
 					</div>
 					<div class="ticket-people js-ticket-people">
 						<div class="t-people-result">
-							<p class="p-adult">x <span>1</span></p>
-							<p class="p-child">x <span>1</span></p>
-							<p class="p-infant">x <span>1</span></p>
+							<p class="p-adult js-p-adult">x <span>1</span></p>
+							<p class="p-child js-p-child">x <span>0</span></p>
+							<p class="p-infant js-p-infant">x <span>0</span></p>
 						</div>
 					</div>
 				</div>
@@ -238,6 +244,7 @@
 
 	<!-- 第三方库-->
 	<script src="libs/jQuery/jquery-1.11.3.js"></script>
+	<script src="libs/jQuery/jquery.easing.1.3.js"></script>
 	<script src="libs/bootstrap/js/bootstrap.min.js"></script>
 	<script src="libs/layer/layer.js"></script>
 	<script src="libs/daterange/moment.js"></script>

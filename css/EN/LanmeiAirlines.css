@@ -65,6 +65,7 @@ body {
   position: relative;
   top: -60px;
   width: 100%;
+  height: 768px;
   min-height: 300px;
 }
 .lm-cloud {
@@ -237,9 +238,16 @@ body {
 .flight-com .ticket-tip {
   opacity: 0.5;
   font-size: 24px;
+  animation-delay: .3s;
+  -webkit-animation-delay: .3s;
+  /* Safari 和 Chrome */
 }
 .flight-com .select-way {
-  margin-top: 40px;
+  height: 0;
+  margin-top: 0;
+  overflow: hidden;
+  transition: all .6s;
+  -webkit-transition: all .6s;
 }
 .flight-com .select-way > a {
   display: inline-block;
@@ -312,9 +320,14 @@ body {
 }
 .select-air-com .ticket-from {
   visibility: visible;
+  animation-delay: .6s;
+  -webkit-animation-delay: .6s;
+  /* Safari 和 Chrome */
 }
-.select-air-com .ticket-people {
-  margin-right: 0;
+.select-air-com .ticket-date {
+  animation-delay: .3s;
+  -webkit-animation-delay: .3s;
+  /* Safari 和 Chrome */
 }
 .select-air-com .local-change {
   position: absolute;
@@ -336,6 +349,12 @@ body {
   color: #1f2c5c;
   background: url('../../images/EN/date.png') 20px no-repeat #fff;
 }
+.select-air-com .ticket-people {
+  margin-right: 0;
+  animation-delay: .6s;
+  -webkit-animation-delay: .6s;
+  /* Safari 和 Chrome */
+}
 .select-air-com .ticket-people .t-people-result {
   width: 100%;
   height: 100%;
@@ -346,7 +365,7 @@ body {
 .select-air-com .ticket-people .t-people-result > p {
   float: left;
   width: 80px;
-  padding-left: 40px;
+  padding-left: 36px;
   font-size: 20px;
   color: #1f2c5c;
   text-align: right;
@@ -383,9 +402,18 @@ body {
 .search-flight-wrap .flight-cancel {
   margin-right: 40px;
   background: #ff8989;
+  animation-delay: .9s;
+  -webkit-animation-delay: .9s;
+  /* Safari 和 Chrome */
 }
 .search-flight-wrap .flight-search {
   background: -webkit-linear-gradient(0deg, #42958a 0%, #1f2c5c 100%);
+  animation-delay: 1.2s;
+  -webkit-animation-delay: 1.2s;
+  /* Safari 和 Chrome */
+}
+.popup-container {
+  position: relative;
 }
 .popup-box {
   position: absolute;
@@ -395,7 +423,7 @@ body {
 }
 .popup-box::before {
   position: absolute;
-  top: -7px;
+  top: -24px;
   left: 150px;
   z-index: 9;
   opacity: 0;
@@ -416,7 +444,7 @@ body {
 }
 .popup-content {
   position: absolute;
-  top: 6px;
+  top: -10px;
   left: 0px;
   z-index: 1;
   font-size: 16px;
@@ -651,15 +679,45 @@ body {
 @media screen and (max-width: 1660px) {
   .flight-com,
   .lm-cloud-content,
-  .lm-aside-flight {
+  .lm-aside-flight,
+  .lm-important {
     -webkit-transform: scale(0.8);
     transform: scale(0.8);
     -webkit-transform-origin: top;
     transform-origin: top;
   }
+  .lm-important {
+    right: -50px;
+  }
   .flight-com {
     left: 7%;
   }
 }
-@media screen and (max-width: 1366px) {
+@media screen and (max-width: 1480px) {
+  .flight-com,
+  .lm-cloud-content,
+  .lm-aside-flight,
+  .lm-important {
+    -webkit-transform: scale(0.7);
+    transform: scale(0.7);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+  }
+  .lm-cloud-container {
+    height: 160px;
+  }
+  .flight-com {
+    top: 220px;
+  }
+  .lm-important {
+    right: -75px;
+    bottom: 70px;
+  }
+  .lm-cloud-content {
+    left: 0%;
+    top: 40px;
+  }
+  .flight-com {
+    left: -2%;
+  }
 }
