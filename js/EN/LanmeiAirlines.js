@@ -280,12 +280,12 @@ var LanmeiAirlines = {
 		// 模糊匹配
 		var fromcityData = ['Sihanoukville/KOS/ Cambodia','Macao/MFM/Macao,China','Phnom Penh/PNH/Cambodia','Siem Reap/REP/Cambodia','Palau/ROR/The Republic of Palau'];
 		var tocityData =   ['Sihanoukville/KOS/ Cambodia','Macao/MFM/Macao,China','Phnom Penh/PNH/Cambodia','Siem Reap/REP/Cambodia','Palau/ROR/The Republic of Palau'];
-		$fromInput.on('input',function(event) {
-			var inputVal = $(this).val();
+		$('.js-from-input,.js-to-input').on('input',function(event) {
+			var searchText = $(this).val();
 			var cityData;
 			var data = $(this).attr('data');
 			data=='js-from-menu' ? cityData=fromcityData : cityData=tocityData;
-			var currentVal = inputVal.toLowerCase();
+			var currentVal = searchText.toLowerCase();
 			var srdata = [];
 			for (var i = 0; i < cityData.length; i++) {
 				if (currentVal.trim().length > 0 && cityData[i].toLowerCase().indexOf(currentVal) > -1) {
@@ -294,14 +294,19 @@ var LanmeiAirlines = {
 			}
 
 			$('.'+data).empty();
+			var escapedSearchText,zregex,startpos,text,searchVal;
 			$.each(srdata,function(i,val){
-				var valReplace = val.replace(inputVal,'<span>'+inputVal+'</span>');
-				console.log(valReplace,inputVal);
-				$('.'+data).append('<li title="'+val+'">'+valReplace+'</li>');
+				escapedSearchText = searchText.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+				zregex = new RegExp(escapedSearchText, 'i');
+				startpos = val.search(zregex);
+				text = val.substr(0, startpos + searchText.length) + '</span>' + val.substr(startpos + searchText.length);
+				searchVal = text.substr(0, startpos) + '<span>' + text.substr(startpos);
+
+				$('.'+data).append('<li title="'+val+'">'+searchVal+'</li>');
 			});
 			if(currentVal===''){
 				$.each(cityData,function(i,val){
-					$('.'+data).append('<li title="'+val+'">'+valReplace+'</li>');
+					$('.'+data).append('<li title="'+val+'">'+val+'</li>');
 				});
 			}
 		});
