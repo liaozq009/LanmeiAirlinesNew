@@ -79,11 +79,11 @@
 
 		<!-- 左侧航班选择 -->
 		<aside class="lm-aside-flight">
-			<ul>
-				<li class="li-child1"><a href="ticket-content" class="nth-child1 active"><span>Ticket</span></a></li>
-				<!-- <li class="li-child2"><a href="hotel-content" class="nth-child2"><span>Hotel</span></a></li>
-				<li class="li-child3"><a href="car-content" class="nth-child3"><span>Car</span></a></li>
-				<li class="li-child4"><a href="flight-content" class="nth-child4"><span>Flight Status</span></a></li> -->
+			<ul class="js-aside-flight">
+				<li class="li-child1"><a href="javascript:;" data-href="ticket-content" class="nth-child1 active"><span>Ticket</span></a></li>
+				<li class="li-child2"><a href="javascript:;" data-href="hotel-content" class="nth-child2"><span>Hotel</span></a></li>
+				<li class="li-child3"><a href="javascript:;" data-href="car-content" class="nth-child3"><span>Car</span></a></li>
+				<li class="li-child4"><a href="javascript:;" data-href="flight-content" class="nth-child4"><span>Flight Status</span></a></li>
 				<li class="li-slide"></li>
 			</ul>
 			<a href="javascript:void(0)" class="flight-up-arrow"></a>
@@ -112,14 +112,14 @@
 				</div>
 				<div class="select-air-time select-air-com">
 					<div class="ticket-from js-ticket-from animated fadeInUp">
-						<input type="text" class="t-from-input js-from-input" placeholder="From">
+						<input type="text" class="t-from-input js-from-input" data="js-from-menu" placeholder="From">
 						<div class="t-from-menu t-memu-com">
 							
 						</div>
 						<i class="local-change"></i>
 					</div>
 					<div class="ticket-to js-ticket-to">
-						<input type="text" class="t-to-input js-to-input" placeholder="To">
+						<input type="text" class="t-to-input js-to-input" data="js-to-menu" placeholder="To">
 						<div class="t-to-menu t-memu-com">
 							
 						</div>
@@ -220,8 +220,11 @@
 		</div>
 
 		<!-- 左侧blur内容 -->
-		<aside class="lm-aside-blur">
-			<img src="images/EN/travel-01.jpg" alt="blur" class="blur-img">
+		<aside class="lm-aside-blur js-aside-blur">
+			<img src="images/EN/travel-01.jpg" alt="blur" class="blur-img-ticket blur-img">
+			<img src="images/EN/travel-02.jpg" alt="blur" class="blur-img-hotel blur-img">
+			<img src="images/EN/travel-03.jpg" alt="blur" class="blur-img-car blur-img">
+			<img src="images/EN/travel-02.jpg" alt="blur" class="blur-img-flight blur-img">
 		</aside>
 
 		<!-- 右侧二维码 -->

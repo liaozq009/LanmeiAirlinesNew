@@ -132,19 +132,19 @@ body{
 				height: 100px;
 				border-left: 6px solid transparent;
 				border-right: 6px solid transparent !important;
-				color: #fff;
+				color:#e9ecfa;
 				text-align: center;
 				background-size: 50px 50px !important;
 				span{
 					position: relative;
 					top:70px;
-					color:@purple;
 					text-align:left;
 					line-height: 10px;
 				}
 			}
 			.active{
 				// border-left-color: #8EC060;
+				color: @purple;
 			}
 		}
 		.li-slide{
@@ -154,23 +154,25 @@ body{
 			width: 6px;
 			height: 40px;
 			background: #8EC060;
+			animation-timing-function:ease-out;
+			-webkit-animation-timing-function:ease-out; /* Safari and Chrome */
 		}
 		.li-child1{
-			a{background: url('@{url}ticket.png') center 30% no-repeat;}
-			.active{background: url('@{url}ticket.png') center 30% no-repeat;}
+			a{background: url('@{url}ticket-icon.png') center 30% no-repeat;}
+			.active{background: url('@{url}ticket-icon-active.png') center 30% no-repeat;}
 		}
-		// .li-child2{
-		// 	a{background: url('@{url}hotel-icon.png') center 30% no-repeat;}
-		// 	.active{background: url('@{url}hotel-icon-active.png') center 30% no-repeat;}
-		// }
-		// .li-child3{
-		// 	a{background: url('@{url}car-icon.png') center 30% no-repeat;}
-		// 	.active{background: url('@{url}car-icon-active.png') center 30% no-repeat;}
-		// }
-		// .li-child4{
-		// 	a{background: url('@{url}flight-icon.png') center 30% no-repeat;}
-		// 	.active{background: url('@{url}flight-icon-active.png') center 30% no-repeat;}
-		// }
+		.li-child2{
+			a{background: url('@{url}hotel-icon.png') center 30% no-repeat;}
+			.active{background: url('@{url}hotel-icon-active.png') center 30% no-repeat;}
+		}
+		.li-child3{
+			a{background: url('@{url}car-icon.png') center 30% no-repeat;}
+			.active{background: url('@{url}car-icon-active.png') center 30% no-repeat;}
+		}
+		.li-child4{
+			a{background: url('@{url}flight-icon.png') center 30% no-repeat;}
+			.active{background: url('@{url}flight-icon-active.png') center 30% no-repeat;}
+		}
 	}
 	>a{
 		display: block;
@@ -490,12 +492,18 @@ body{
 					transition: all .3s;
 					-webkit-transition: all .3s;
 				}
+				>span{
+					.purpleRgb(1);
+				}
 			}
 			.active{
 				color: @green;
 				background: url('@{url}city-icon-active.png') left center no-repeat;
 			}
 		}
+	}
+	.popup-search-width{
+
 	}
 	.popup-airport-to{display: none;}
 	.popup-date{
@@ -641,6 +649,7 @@ body{
 }
 .popup-inactive{
 	opacity: 0;
+	visibility: hidden;
 	transform: perspective(600px) rotateX(-10deg);
 	-webkit-transform: perspective(600px) rotateX(-10deg);
 	-ms-transform: perspective(600px) rotateX(-10deg);
@@ -648,6 +657,7 @@ body{
 }
 .popup-active{
 	opacity: 1;
+	visibility: visible;
 	transform: perspective(600px) rotateX(0);
 	-webkit-transform: perspective(600px) rotateX(0);
 	-ms-transform: perspective(600px) rotateX(0);

@@ -119,7 +119,6 @@
       font-size: 80%;
       color: #ccc; }
   .daterangepicker td.off, .daterangepicker td.off.in-range, .daterangepicker td.off.start-date, .daterangepicker td.off.end-date {
-    background-color: #fff;
     border-color: transparent;
     color: rgba(0,0,0,.1); }
   .daterangepicker td.in-range {
@@ -308,4 +307,7 @@
   width: 8px;
   height: 14px;
   background: url('imgs/date-prev.png') center no-repeat;
+}
+.daterangepicker .calendar-table tbody tr:nth-of-type(even),.daterangepicker .calendar-table thead tr:nth-of-type(even){
+  background-color: rgba(31,44,92,0.04);
 }
