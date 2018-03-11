@@ -684,7 +684,8 @@ body {
   margin-top: -25px;
   background: url('../../images/EN/scroll-down.png') center no-repeat;
 }
-.lm-flight-mask {
+.lm-flight-mask,
+.lm-flight-mask2 {
   display: none;
   position: fixed;
   top: 0;
@@ -694,6 +695,9 @@ body {
   z-index: 9;
   opacity: 0.5;
   background: #000;
+}
+.lm-flight-mask2 {
+  z-index: 10;
 }
 /* 屏幕缩放 */
 @media screen and (max-width: 1800px) {
