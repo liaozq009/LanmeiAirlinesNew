@@ -57,27 +57,38 @@ var LanmeiAirlines = {
 		var $mask = $('.js-flight-mask'); //遮罩层
 		var $mask2 = $('.js-flight-mask2'); //遮罩层2
 		var $box = $('.js-popup-box'); //c3动画最外层
+		var $hotelBox = $('.js-hotelPopup-box'); //酒店c3动画最外层
 		var $content = $('.js-popup-content'); //c3动画内容
+		var $hotelContent = $('.js-hotelPopup-content'); //酒店c3动画内容
 
+		// 输入框
 		var $fromInput = $('.js-from-input'); //机票出发地
 		var $hotelFromInput = $('.js-hotelFrom-input'); //酒店出发地
 		var $toInput = $('.js-to-input'); //机票目的地
 		var $date = $('.js-date-result'); //机票日期
+		var $hotelDate = $('.js-hotelDate-result'); //酒店日期
 		var $people = $('.js-ticket-people'); //机票人数
+		var $hotelPeople = $('.js-hotel-people'); //酒店人数
 
 		var $fromMenuSub = $('.js-from-menu'); //出发地下拉菜单
 		var $toMenuSub = $('.js-to-menu'); //目的地下拉菜单
 
+		// 下拉菜单外层
 		var $fromBox = $('.js-airport-from'); //出发地外层
+		var $hotelFromBox = $('.js-hotelPopup-from'); //酒店出发地外层
 		var $toBox = $('.js-airport-to'); //目的地外层
 		var $dateBox = $('.js-popup-date'); //日期外层
+		var $hotelDateBox = $('.js-hotelPopup-date'); //酒店日期外层
 		var $peopleBox = $('.js-popup-people'); //人数选择外层
+		var $hotelPeopleBox = $('.js-hotelPopup-people'); //酒店人数选择外层
 
 		var $selectWay = $('.js-select-way'); //选择单程往返
 		var $ticketFrom = $('.js-ticket-from'); //出发地div
+		var $hotelFrom = $('.js-hotel-from'); //酒店出发地div
 		var $popupContent = $('.popup-content'); 
 
 		var $zoom = $('.js-ticket-to,.js-ticket-date,.js-ticket-people,.js-ticket-cancel,.js-ticket-search');
+		var $hotelZoom = $('.js-hotel-date,.js-hotel-people,.js-hotel-cancel,.js-hotel-search');
 
 		// c3动画
 		var popupShow = function(){
@@ -89,6 +100,16 @@ var LanmeiAirlines = {
 		var popupHide = function(){
 			$content.removeClass('popup-active').addClass('popup-inactive'); 
 			$box.removeClass('popup-box-before'); //隐藏小箭头
+		};
+		var hotelPopupShow = function(){
+			$mask.fadeIn(); //显示遮罩层
+			$mask2.fadeIn(); //显示遮罩层
+			$hotelBox.addClass('popup-box-before'); //展示小箭头
+			$hotelContent.removeClass('popup-inactive').addClass('popup-active'); 
+		};
+		var hotelPopupHide = function(){
+			$hotelContent.removeClass('popup-active').addClass('popup-inactive'); 
+			$hotelBox.removeClass('popup-box-before'); //隐藏小箭头
 		};
 
 		// 日期选择
@@ -113,7 +134,7 @@ var LanmeiAirlines = {
 				case 12: monthEn = 'Dec';break;
 			}
 			return monthEn;
-		}
+		};
 
 		var today  = new Date();
 		var todayTime = formatDate(today.getDate())+' '+formatMonth((today.getMonth()+1));
@@ -123,9 +144,9 @@ var LanmeiAirlines = {
 		var endTime = formatDate(endTimeStr.getDate())+' '+formatMonth((endTimeStr.getMonth()+1));  
 		var maxTime = formatDate(today.getDate())+' '+formatMonth((today.getMonth()+1));
 		
-		var singleDate = function(single){
-			$('.js-date-result').daterangepicker({
-				parentEl:'.popup-date',
+		var singleDate = function(single,id,container,box,dateBox,peopleBox){
+			$(id).daterangepicker({
+				parentEl:container,
 				format: 'D MMM',
 				startDate: startTime,
 				endDate: endTime,
@@ -138,24 +159,25 @@ var LanmeiAirlines = {
 				language :'en',
 			},function(start, end, label) {//格式化日期显示框  
 					if(this.singleDatePicker){
-						$('.js-date-result').html(start.format('D MMM'));
+						$(id).html(start.format('D MMM'));
 					}else{
-						$('.js-date-result').html(start.format('D MMM') + ' - ' + end.format('D MMM'));
+						$(id).html(start.format('D MMM') + ' - ' + end.format('D MMM'));
 					}
 
 					// 操作外层box移动
 					if(winWidth>1350){
-						$box.css('left',950);
+						box.css('left',950);
 					}else if(winWidth<=1350){
-						$box.css({'top':-10,'left':350});
+						box.css({'top':-10,'left':350});
 					}
-					$dateBox.slideUp(function(){ //出发地隐藏
-						$peopleBox.slideDown(); //目的地显示
+					dateBox.slideUp(function(){ //出发地隐藏
+						peopleBox.slideDown(); //目的地显示
 					}); 
 			  } 
 			);
 		};
-		singleDate(false);
+		singleDate(false,'.js-date-result','.js-popup-date',$box,$dateBox,$peopleBox);
+		singleDate(false,'.js-hotelDate-result','.js-hotelPopup-date',$hotelBox,$hotelDateBox,$hotelPeopleBox);
 
 		// 单程往返切换
 		$('.js-select-way>a').click(function(event) {
@@ -163,10 +185,10 @@ var LanmeiAirlines = {
 			var data = $(this).attr('data-way');
 			switch (data) {
 				case 'round':
-					singleDate(false);
+					singleDate(false,'.js-date-result','.popup-date',$box,$dateBox,$peopleBox);
 					break;
 				case 'one':
-					singleDate(true);
+					singleDate(true,'.js-date-result','.popup-date',$box,$dateBox,$peopleBox);
 					break;
 			}
 		});
@@ -204,28 +226,27 @@ var LanmeiAirlines = {
 		});
 
 		// 点击酒店出发地
+		var hotelZoomShow = true;
 		var hotelOneClick = true;
 		$hotelFromInput.click(function(){
 			if(hotelOneClick){ //防止点击取消后，快速点击出发地产生的bug
 				if(winWidth>1350){
-					$box.css('left',0);
+					$hotelBox.css('left',0);
 				}else if(winWidth<=1350){
-					$box.css({'top':-90,'left':0});
+					$hotelBox.css({'top':-90,'left':0});
 				}
-				popupShow(); //增加c3动画
+				hotelPopupShow(); //增加c3动画
 
-				$fromBox.show();
-				$toBox.hide(); $dateBox.hide(); $peopleBox.hide();
+				$hotelFromBox.show();
+				$hotelDateBox.hide(); $hotelPeopleBox.hide();
 
-				$popupContent.css('z-index','1'); //覆盖cancel按钮
-				if(zoomShow){
-					$selectWay.css({'height':'auto','margin-top':'40px'}).addClass('animated fadeInUp'); //展示单程往返
-					$zoom.addClass('animated fadeInUp').css('visibility','visible');
-					zoomShow = false; //重新点击出发地时再次显示目的地、日期、人数的动画
+				$hotelContent.css('z-index','1'); //覆盖cancel按钮
+				if(hotelZoomShow){
+					$hotelZoom.addClass('animated fadeInUp').css('visibility','visible');
+					hotelZoomShow = false; //重新点击出发地时再次显示目的地、日期、人数的动画
 					setTimeout(function(){
-			      $zoom.removeClass('animated fadeInUp');
-			      $ticketFrom.removeClass('animated fadeInUp');
-			      $selectWay.removeClass('animated fadeInUp');
+			      $hotelZoom.removeClass('animated fadeInUp');
+			      $hotelFrom.removeClass('animated fadeInUp');
 			    }, 2200);
 				}
 			}
@@ -257,6 +278,19 @@ var LanmeiAirlines = {
 			$fromBox.hide(); $toBox.hide(); $peopleBox.hide();
 		});
 
+		// 点击酒店日期
+		$hotelDate.click(function(event) {
+			if(winWidth>1350){
+				$hotelBox.css('left',700);
+			}else if(winWidth<=1350){
+				$hotelBox.css({'top':-10,'left':0});
+			}
+			hotelPopupShow(); //增加c3动画
+			$hotelContent.css('z-index','1'); //覆盖cancel按钮
+			$hotelDateBox.show();
+			$hotelFromBox.hide(); $hotelPeopleBox.hide();
+		});
+
 		// 点击机票人数
 		$people.click(function(event) {
 			if(winWidth>1350){
@@ -285,7 +319,7 @@ var LanmeiAirlines = {
 	      $zoom.css('visibility','hidden');
 	      oneClick = true; //可以继续点击出发地
 	    }, 2200);
-		}
+		};
 		// 点击遮罩层
 		$mask.click(function(){
 			cancel();
