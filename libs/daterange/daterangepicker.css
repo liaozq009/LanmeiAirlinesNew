@@ -249,7 +249,6 @@
           border-bottom-right-radius: 0; }
       .daterangepicker.ltr .calendar.right {
         margin-left: 0;
-        margin-right: 16px;
          }
         .daterangepicker.ltr .calendar.right .calendar-table {
           border-left: none;

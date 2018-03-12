@@ -1191,7 +1191,6 @@
         },
 
         outsideClick: function(e) {
-            console.log(222);
             var target = $(e.target);
             // if the page is clicked anywhere except within the daterangerpicker/button
             // itself then call this.hide()

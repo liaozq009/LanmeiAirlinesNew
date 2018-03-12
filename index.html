@@ -65,15 +65,265 @@
 
 	<!-- 首屏 -->
 	<section class="lm-section-main js-section-main">
-		<!-- 炫酷白云 -->
-		<div class="lm-cloud">
-			
+		<!-- 机票选择 -->
+		<div class="ticket-content-wrap" style="display: none;">
+			<!-- 炫酷白云 -->
+			<div class="ticket-bg bg-com"></div>
+			<!-- 白云上面的内容 -->
+			<div class="content-com-wrap">
+				<div class="content-com-inner">
+					<h1 class="animated fadeInUp">A brand new aviation era <span>struck !!</span></h1>
+				</div>
+			</div>
+			<!-- 航班选择 -->
+			<div class="ticket-content flight-com">
+				<form id="air-ticket-form" action="" method="POST" target="_blank">
+					<input type="hidden" name="tripType" id="tripType" value="OW">
+					<input type="hidden" name="orgcity" id="orgcity" value="PNH">
+					<input type="hidden" name="dstcity" id="dstcity" value="REP">
+					<input type="hidden" name="takeoffDate" id="takeoffDate" value="">
+					<input type="hidden" name="returnDate" id="returnDate" value="">
+					<input type="hidden" name="adultCount" id="adultCount" value="">
+					<input type="hidden" name="childCount" id="childCount" value="">
+					<input type="hidden" name="infantCount" id="infantCount" value="">
+					<input type="hidden" name="language" value="US">
+					<input type="hidden" name="CURRENCY" value="USD">
+					
+					<p class="ticket-tip animated fadeInUp">What are you waiting for?</p>
+					<div class="select-way js-select-way">
+						<a href="javascript:;" class="round-trip active" data-way="round">Round trip</a>
+						<a href="javascript:;" class="one-way" data-way="one">One-way</a>
+						<a href="javascript:;" class="multi" data-way="multi">Stopover/Multi-city</a>
+					</div>
+					<div class="select-air-time select-air-com">
+						<div class="from-com js-ticket-from animated fadeInUp">
+							<input type="text" class="t-from-input js-from-input" data="js-from-menu" placeholder="From">
+							<div class="t-from-menu t-memu-com">
+								
+							</div>
+							<i class="local-change"></i>
+						</div>
+						<div class="to-com js-ticket-to">
+							<input type="text" class="t-to-input js-to-input" data="js-to-menu" placeholder="To">
+							<div class="t-to-menu t-memu-com">
+								
+							</div>
+						</div>
+						<div class="date-com js-ticket-date">
+							<span class="date-result js-date-result"></span>
+						</div>
+						<div class="people-com js-ticket-people">
+							<div class="t-people-result">
+								<p class="p-adult js-p-adult">x <span>1</span></p>
+								<p class="p-child js-p-child">x <span>0</span></p>
+								<p class="p-infant js-p-infant">x <span>0</span></p>
+							</div>
+						</div>
+					</div>
+					<div class="search-flight-wrap js-search-ticket">
+						<a href="javascript:;" class="flight-cancel js-ticket-cancel">Cancel</a>
+						<a href="javascript:;" class="flight-search js-ticket-search">Search</a>
+					</div>
+				</form>
+				<!-- 下拉选择菜单 -->
+				<div class="popup-container">
+					<div class="popup-box js-popup-box">
+						<div class="popup-content popup-inactive js-popup-content">
+							<!-- 出发地目的地选择 -->
+							<div class="popup-airport-from popup-airport js-airport-from">
+								<h2>Airports :</h2>
+								<ul class="flight-list-wrap js-from-menu">
+									<li title="Sihanoukville/KOS/Cambodia">Sihanoukville/KOS/Cambodia</li>
+									<li title="Ho Chi Minh/SGN/Vietnam">Ho Chi Minh/SGN/Vietnam</li>
+									<li title="Macao/MFM/Macao,China">Macao/MFM/Macao,China</li>
+									<li title="Hanoi/HAN/Vietnam">Hanoi/HAN/Vietnam</li>
+									<li title="Phnom Penh/PNH/Cambodia">Phnom Penh/PNH/Cambodia</li>
+									<li title="HongKong/HKG/HongKong,China">HongKong/HKG/HongKong,China</li>
+									<li title="Siem Reap/REP/Cambodia">Siem Reap/REP/Cambodia</li>
+									<li title="SEOUL/ICN/Korea">SEOUL/ICN/Korea</li>
+								</ul>
+							</div>
+							<div class="popup-airport-to popup-airport js-airport-to">
+								<h2>Airports :</h2>
+								<ul class="flight-list-wrap js-to-menu">
+									<li title="Sihanoukville/KOS/Cambodia">Sihanoukville/KOS/Cambodia</li>
+									<li title="Ho Chi Minh/SGN/Vietnam">Ho Chi Minh/SGN/Vietnam</li>
+									<li title="Macao/MFM/Macao,China">Macao/MFM/Macao,China</li>
+									<li title="Hanoi/HAN/Vietnam">Hanoi/HAN/Vietnam</li>
+									<li title="Phnom Penh/PNH/Cambodia">Phnom Penh/PNH/Cambodia</li>
+									<li title="HongKong/HKG/HongKong,China">HongKong/HKG/HongKong,China</li>
+									<li title="Siem Reap/REP/Cambodia">Siem Reap/REP/Cambodia</li>
+									<li title="SEOUL/ICN/Korea">SEOUL/ICN/Korea</li>
+								</ul>
+							</div>
+							<!-- 日期选择 -->
+							<div class="popup-date js-popup-date">
+								<p class="date-title">Choose your departure date :</p>
+							</div>
+							<!-- 人数选择 -->
+							<div class="popup-people js-popup-people">
+								<p class="people-title">Number of passengers :</p>
+								<div class="select-people-container">
+									<div class="s-adult s-people-com">
+										<div class="people-prompt">
+											<p class="p1"><img src="images/EN/adult-icon.png">Adult</p>
+											<p class="p2 adult-tip"><img src="images/EN/prompt-icon.png">( 12+ )</p>
+										</div>
+										<div class="people-number">
+											<a href="javascript:;" class="sub-people off-sub-operation js-adult-sub"></a>
+											<span class="adult-num">1</span>
+											<a href="javascript:;" class="add-people js-adult-add"></a>
+										</div>
+									</div>
+									<div class="s-child s-people-com">
+										<div class="people-prompt">
+											<p class="p1"><img src="images/EN/child-icon.png">Child</p>
+											<p class="p2 child-tip"><img src="images/EN/prompt-icon.png">( 2 - 11 )</p>
+										</div>
+										<div class="people-number disable">
+											<a href="javascript:;" class="sub-people off-sub-operation js-child-sub"></a>
+											<span class="adult-num">0</span>
+											<a href="javascript:;" class="add-people js-child-add"></a>
+										</div>
+									</div>
+									<div class="s-infant s-people-com">
+										<div class="people-prompt">
+											<p class="p1"><img src="images/EN/infant-icon.png">Infant</p>
+											<p class="p2 infant-tip"><img src="images/EN/prompt-icon.png">( Under 2 )</p>
+										</div>
+										<div class="people-number disable">
+											<a href="javascript:;" class="sub-people off-sub-operation js-infant-sub"></a>
+											<span class="adult-num">0</span>
+											<a href="javascript:;" class="add-people js-infant-add"></a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 
-		<!-- 白云上面的内容 -->
-		<div class="lm-cloud-container">
-			<div class="lm-cloud-content">
-				<h1 class="animated fadeInUp">A brand new aviation era <span>struck !!</span></h1>
+		<!-- 酒店选择 -->
+		<div class="hotel-content-wrap">
+			<!-- 背景 -->
+			<div class="hotel-bg bg-com"></div>
+			<!-- 背景上的内容 -->
+			<div class="content-com-wrap">
+				<div class="content-com-inner">
+					<h1 class="animated fadeInUp">Lanmei Hotel Reservation Service</h1>
+				</div>
+			</div>
+			<!-- 酒店选择 -->
+			<div class="hotel-content flight-com">
+				<form id="air-hotel-form" action="" method="POST" target="_blank">
+					<input type="hidden" name="txtHotelID" id="txtHotelID" value="">
+					<input type="hidden" name="datefrom" id="datefrom" value="">
+					<input type="hidden" name="dateto" id="dateto" value="">
+					<input type="hidden" name="data-cate" id="data-cate" value="">
+					<input type="hidden" name="data-id" id="data-id" value="">
+					<input type="hidden" id="tempName" value="">
+
+					<p class="tips-com animated fadeInUp">The ideal choice for your journey</p>
+					<div class="select-hotel-time select-air-com">
+						<div class="from-com hotel-from js-hotel-from animated fadeInUp">
+							<input type="text" class="h-from-input js-hotelFrom-input" data="js-from-menu" placeholder="Where are you going ?">
+						</div>
+						<div class="date-com js-hotel-date">
+							<span class="date-result h-date-result js-hotelDate-result"></span>
+							<p class="hotel-day">3</p>
+						</div>
+						<div class="people-com js-hotel-people">
+							<div class="t-people-result">
+								<p class="p-hotelRooms js-p-hotelRooms">x <span>1</span></p>
+								<p class="p-hotelAdult js-p-hotelAdult">x <span>1</span></p>
+								<p class="p-hotelChild js-p-hotelChild">x <span>0</span></p>
+							</div>
+						</div>
+					</div>
+					<div class="search-flight-wrap js-search-hotel">
+						<a href="javascript:;" class="flight-cancel js-hotel-cancel">Cancel</a>
+						<a href="javascript:;" class="flight-search js-hotel-search">Search</a>
+					</div>
+				</form>
+				<!-- 下拉选择菜单 -->
+				<div class="popup-container">
+					<div class="popup-box js-popup-box">
+						<div class="popup-content popup-inactive js-popup-content">
+							<!-- 出发地目的地选择 -->
+							<div class="popup-airport-from popup-airport js-airport-from">
+								<h2>Airports :</h2>
+								<ul class="flight-list-wrap js-from-menu">
+									<li title="Sihanoukville/KOS/Cambodia">Sihanoukville/KOS/Cambodia</li>
+									<li title="Ho Chi Minh/SGN/Vietnam">Ho Chi Minh/SGN/Vietnam</li>
+									<li title="Macao/MFM/Macao,China">Macao/MFM/Macao,China</li>
+									<li title="Hanoi/HAN/Vietnam">Hanoi/HAN/Vietnam</li>
+									<li title="Phnom Penh/PNH/Cambodia">Phnom Penh/PNH/Cambodia</li>
+									<li title="HongKong/HKG/HongKong,China">HongKong/HKG/HongKong,China</li>
+									<li title="Siem Reap/REP/Cambodia">Siem Reap/REP/Cambodia</li>
+									<li title="SEOUL/ICN/Korea">SEOUL/ICN/Korea</li>
+								</ul>
+							</div>
+							<div class="popup-airport-to popup-airport js-airport-to">
+								<h2>Airports :</h2>
+								<ul class="flight-list-wrap js-to-menu">
+									<li title="Sihanoukville/KOS/Cambodia">Sihanoukville/KOS/Cambodia</li>
+									<li title="Ho Chi Minh/SGN/Vietnam">Ho Chi Minh/SGN/Vietnam</li>
+									<li title="Macao/MFM/Macao,China">Macao/MFM/Macao,China</li>
+									<li title="Hanoi/HAN/Vietnam">Hanoi/HAN/Vietnam</li>
+									<li title="Phnom Penh/PNH/Cambodia">Phnom Penh/PNH/Cambodia</li>
+									<li title="HongKong/HKG/HongKong,China">HongKong/HKG/HongKong,China</li>
+									<li title="Siem Reap/REP/Cambodia">Siem Reap/REP/Cambodia</li>
+									<li title="SEOUL/ICN/Korea">SEOUL/ICN/Korea</li>
+								</ul>
+							</div>
+							<!-- 日期选择 -->
+							<div class="popup-date js-popup-date">
+								<p class="date-title">Choose your departure date :</p>
+							</div>
+							<!-- 人数选择 -->
+							<div class="popup-people js-popup-people">
+								<p class="people-title">Number of passengers :</p>
+								<div class="select-people-container">
+									<div class="s-adult s-people-com">
+										<div class="people-prompt">
+											<p class="p1"><img src="images/EN/adult-icon.png">Adult</p>
+											<p class="p2 adult-tip"><img src="images/EN/prompt-icon.png">( 12+ )</p>
+										</div>
+										<div class="people-number">
+											<a href="javascript:;" class="sub-people off-sub-operation js-adult-sub"></a>
+											<span class="adult-num">1</span>
+											<a href="javascript:;" class="add-people js-adult-add"></a>
+										</div>
+									</div>
+									<div class="s-child s-people-com">
+										<div class="people-prompt">
+											<p class="p1"><img src="images/EN/child-icon.png">Child</p>
+											<p class="p2 child-tip"><img src="images/EN/prompt-icon.png">( 2 - 11 )</p>
+										</div>
+										<div class="people-number disable">
+											<a href="javascript:;" class="sub-people off-sub-operation js-child-sub"></a>
+											<span class="adult-num">0</span>
+											<a href="javascript:;" class="add-people js-child-add"></a>
+										</div>
+									</div>
+									<div class="s-infant s-people-com">
+										<div class="people-prompt">
+											<p class="p1"><img src="images/EN/infant-icon.png">Infant</p>
+											<p class="p2 infant-tip"><img src="images/EN/prompt-icon.png">( Under 2 )</p>
+										</div>
+										<div class="people-number disable">
+											<a href="javascript:;" class="sub-people off-sub-operation js-infant-sub"></a>
+											<span class="adult-num">0</span>
+											<a href="javascript:;" class="add-people js-infant-add"></a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 
@@ -90,135 +340,6 @@
 			<a href="javascript:void(0)" class="flight-down-arrow"></a>
 		</aside>
 
-		<!-- 航班选择 -->
-		<div class="ticket-content flight-com">
-			<form id="air-ticket-form" action="" method="POST" target="_blank">
-				<input type="hidden" name="tripType" id="tripType" value="OW">
-				<input type="hidden" name="orgcity" id="orgcity" value="PNH">
-				<input type="hidden" name="dstcity" id="dstcity" value="REP">
-				<input type="hidden" name="takeoffDate" id="takeoffDate" value="">
-				<input type="hidden" name="returnDate" id="returnDate" value="">
-				<input type="hidden" name="adultCount" id="adultCount" value="">
-				<input type="hidden" name="childCount" id="childCount" value="">
-				<input type="hidden" name="infantCount" id="infantCount" value="">
-				<input type="hidden" name="language" value="US">
-				<input type="hidden" name="CURRENCY" value="USD">
-				
-				<p class="ticket-tip animated fadeInUp">What are you waiting for?</p>
-				<div class="select-way js-select-way">
-					<a href="javascript:;" class="round-trip active" data-way="round">Round trip</a>
-					<a href="javascript:;" class="one-way" data-way="one">One-way</a>
-					<a href="javascript:;" class="multi" data-way="multi">Stopover/Multi-city</a>
-				</div>
-				<div class="select-air-time select-air-com">
-					<div class="ticket-from js-ticket-from animated fadeInUp">
-						<input type="text" class="t-from-input js-from-input" data="js-from-menu" placeholder="From">
-						<div class="t-from-menu t-memu-com">
-							
-						</div>
-						<i class="local-change"></i>
-					</div>
-					<div class="ticket-to js-ticket-to">
-						<input type="text" class="t-to-input js-to-input" data="js-to-menu" placeholder="To">
-						<div class="t-to-menu t-memu-com">
-							
-						</div>
-					</div>
-					<div class="ticket-date js-ticket-date">
-						<span class="t-date-result js-date-result"></span>
-					</div>
-					<div class="ticket-people js-ticket-people">
-						<div class="t-people-result">
-							<p class="p-adult js-p-adult">x <span>1</span></p>
-							<p class="p-child js-p-child">x <span>0</span></p>
-							<p class="p-infant js-p-infant">x <span>0</span></p>
-						</div>
-					</div>
-				</div>
-				<div class="search-flight-wrap js-search-flight">
-					<a href="javascript:;" class="flight-cancel js-flight-cancel">Cancel</a>
-					<a href="javascript:;" class="flight-search js-flight-search">Search</a>
-				</div>
-			</form>
-			<!-- 下拉选择菜单 -->
-			<div class="popup-container">
-				<div class="popup-box js-popup-box">
-					<div class="popup-content popup-inactive js-popup-content">
-						<!-- 出发地目的地选择 -->
-						<div class="popup-airport-from popup-airport js-airport-from">
-							<h2>Airports :</h2>
-							<ul class="flight-list-wrap js-from-menu">
-								<li title="Sihanoukville/KOS/Cambodia">Sihanoukville/KOS/Cambodia</li>
-								<li title="Ho Chi Minh/SGN/Vietnam">Ho Chi Minh/SGN/Vietnam</li>
-								<li title="Macao/MFM/Macao,China">Macao/MFM/Macao,China</li>
-								<li title="Hanoi/HAN/Vietnam">Hanoi/HAN/Vietnam</li>
-								<li title="Phnom Penh/PNH/Cambodia">Phnom Penh/PNH/Cambodia</li>
-								<li title="HongKong/HKG/HongKong,China">HongKong/HKG/HongKong,China</li>
-								<li title="Siem Reap/REP/Cambodia">Siem Reap/REP/Cambodia</li>
-								<li title="SEOUL/ICN/Korea">SEOUL/ICN/Korea</li>
-							</ul>
-						</div>
-						<div class="popup-airport-to popup-airport js-airport-to">
-							<h2>Airports :</h2>
-							<ul class="flight-list-wrap js-to-menu">
-								<li title="Sihanoukville/KOS/Cambodia">Sihanoukville/KOS/Cambodia</li>
-								<li title="Ho Chi Minh/SGN/Vietnam">Ho Chi Minh/SGN/Vietnam</li>
-								<li title="Macao/MFM/Macao,China">Macao/MFM/Macao,China</li>
-								<li title="Hanoi/HAN/Vietnam">Hanoi/HAN/Vietnam</li>
-								<li title="Phnom Penh/PNH/Cambodia">Phnom Penh/PNH/Cambodia</li>
-								<li title="HongKong/HKG/HongKong,China">HongKong/HKG/HongKong,China</li>
-								<li title="Siem Reap/REP/Cambodia">Siem Reap/REP/Cambodia</li>
-								<li title="SEOUL/ICN/Korea">SEOUL/ICN/Korea</li>
-							</ul>
-						</div>
-						<!-- 日期选择 -->
-						<div class="popup-date js-popup-date">
-							<p class="date-title">Choose your departure date :</p>
-						</div>
-						<!-- 人数选择 -->
-						<div class="popup-people js-popup-people">
-							<p class="people-title">Number of passengers :</p>
-							<div class="select-people-container">
-								<div class="s-adult s-people-com">
-									<div class="people-prompt">
-										<p class="p1"><img src="images/EN/adult-icon.png">Adult</p>
-										<p class="p2 adult-tip"><img src="images/EN/prompt-icon.png">( 12+ )</p>
-									</div>
-									<div class="people-number">
-										<a href="javascript:;" class="sub-people off-sub-operation js-adult-sub"></a>
-										<span class="adult-num">1</span>
-										<a href="javascript:;" class="add-people js-adult-add"></a>
-									</div>
-								</div>
-								<div class="s-child s-people-com">
-									<div class="people-prompt">
-										<p class="p1"><img src="images/EN/child-icon.png">Child</p>
-										<p class="p2 child-tip"><img src="images/EN/prompt-icon.png">( 2 - 11 )</p>
-									</div>
-									<div class="people-number disable">
-										<a href="javascript:;" class="sub-people off-sub-operation js-child-sub"></a>
-										<span class="adult-num">0</span>
-										<a href="javascript:;" class="add-people js-child-add"></a>
-									</div>
-								</div>
-								<div class="s-infant s-people-com">
-									<div class="people-prompt">
-										<p class="p1"><img src="images/EN/infant-icon.png">Infant</p>
-										<p class="p2 infant-tip"><img src="images/EN/prompt-icon.png">( Under 2 )</p>
-									</div>
-									<div class="people-number disable">
-										<a href="javascript:;" class="sub-people off-sub-operation js-infant-sub"></a>
-										<span class="adult-num">0</span>
-										<a href="javascript:;" class="add-people js-infant-add"></a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
 		<!-- 左侧blur内容 -->
 		<aside class="lm-aside-blur js-aside-blur">
 			<img src="images/EN/travel-01.jpg" alt="blur" class="blur-img-ticket blur-img">
@@ -228,9 +349,7 @@
 		</aside>
 
 		<!-- 右侧二维码 -->
-		<aside class="lm-aside-code">
-			
-		</aside>
+		<aside class="lm-aside-code"></aside>
 
 		<!-- 重要提醒 -->
 		<div class="lm-important">
@@ -244,7 +363,7 @@
 
 	<!-- 选择航班遮罩层 -->
 	<div class="lm-flight-mask js-flight-mask"></div>
-	<!-- <div class="lm-flight-mask2 js-flight-mask2"></div> -->
+	<div class="lm-flight-mask2 js-flight-mask2"></div>
 
 	<!-- 第三方库-->
 	<script src="libs/jQuery/jquery-1.11.3.js"></script>
