@@ -5,6 +5,7 @@ var LanmeiAirlines = {
 		this.ticketSelect();
 		this.hotelSelect();
 		this.selectPeople();
+		this.hotelSelectPeople();
 		this.otherEvent();
 	},
 
@@ -168,7 +169,7 @@ var LanmeiAirlines = {
 					// 操作外层box移动
 					if(showTotleDay){
 						if(winWidth>1350){
-							box.css('left',0);
+							box.css('left',610);
 						}else if(winWidth<=1350){
 							box.css({'top':-10,'left':350});
 						}
@@ -519,6 +520,86 @@ var LanmeiAirlines = {
 		tipFn('.adult-tip','Adult',showAdultTip);
 		tipFn('.child-tip','Passengers who have not reached their 12th birthday by the date of the last flight are considered child passengers Children 7 years old and older can travel alone with the consent of their parents.',showChildTip);
 		tipFn('.infant-tip','Passengers 7 days old up to those who have not reached their 2nd birthday travel with infant status.',showInfantTip);
+	},
+
+	/* 酒店人数选择 */
+	hotelSelectPeople:function(){
+		var adultNum = 1;
+		var childNum = 0;
+
+		var $adultResult = $('.js-p-hotelAdult>span');
+		var $childResult = $('.js-p-hotelChild>span');
+		var $roomsResult = $('.js-p-hotelRooms>span');
+
+		// 成人
+		var adult = function(){
+			$('.js-hotelPopup-people').on('click','.js-hotelAdult-add',function(e){
+				adultNum++;
+				$(this).siblings('span').html(adultNum);
+				$adultResult.html(adultNum); //动态赋值
+				adultNum==2 && $(this).siblings('.sub-people').removeClass('off-sub-operation');
+			});
+			$('.js-hotelPopup-people').on('click','.js-hotelAdult-sub',function(e){
+				adultNum--;
+				if(adultNum<2){
+					adultNum=1;
+					$(this).addClass('off-sub-operation');
+				}
+				$(this).siblings('span').html(adultNum);
+				$adultResult.html(adultNum); //动态赋值
+			});
+		};
+
+		// 小孩
+		var child = function(){
+			var $hotelContent = $('.js-hotelPopup-content');
+			var $hotelPeople = $('.js-hotelPopup-people');
+			var $age1 = $('.js-age-1');
+			var $age2 = $('.js-age-2');
+			var $age3 = $('.js-age-3');
+
+			$('.js-hotelPopup-people').on('click','.js-hotelChild-add',function(e){
+				childNum++;
+				$(this).siblings('span').html(childNum);
+				$childResult.html(childNum); //动态赋值
+				if(childNum==0){
+					$age1.show();$age2.show();$age3.hide();
+					$hotelContent.css('left',0);
+					$hotelPeople.width(710);
+					$age1.hide();$age2.show();$age3.hide();
+				}
+				if(childNum==1){
+					$(this).siblings('.sub-people').removeClass('off-sub-operation');
+					$(this).parent().removeClass('disable');
+					$age1.show();$age2.hide();$age3.hide();
+					$hotelContent.css('left',-200);
+					$hotelPeople.width(910);
+				}
+				if(childNum==2){
+					$age1.show();$age2.show();$age3.hide();
+					$hotelContent.css('left',-400);
+					$hotelPeople.width(1110);
+				}
+				if(childNum==3){
+					$age1.show();$age2.show();$age3.show();
+					$hotelContent.css('left',-610);
+					$hotelPeople.width(1320);
+				}
+			});
+			$('.js-hotelPopup-people').on('click','.js-hotelChild-sub',function(e){
+				childNum--;
+				if(childNum<1){
+					childNum=0;
+					$(this).addClass('off-sub-operation');
+					$(this).parent().addClass('disable');
+				}
+				$(this).siblings('span').html(childNum);
+				$childResult.html(childNum); //动态赋值
+			});
+		};
+
+		adult();
+		child();
 	},
 
 	/* 其他事件 */

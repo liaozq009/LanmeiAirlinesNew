@@ -711,8 +711,10 @@ body {
   background: url('../../images/EN/add-people.png') center no-repeat rgba(31, 44, 92, 0.1);
 }
 .popup-content .hotel-popus-people {
-  width: 960px;
+  width: 750px;
   padding: 20px;
+  transition: width 0.2s ease-out;
+  -webkit-transition: width 0.2s ease-out;
 }
 .popup-content .hotel-popus-people .s-room-com {
   padding: 0;
@@ -741,6 +743,9 @@ body {
 .popup-content .hotel-popus-people .rooms-content-com .hotel-people-number {
   float: left;
   width: 166px;
+}
+.popup-content .hotel-popus-people .age-rooms-com {
+  display: none;
 }
 .popup-content .hotel-popus-people .hotel-age-wrap {
   position: relative;
