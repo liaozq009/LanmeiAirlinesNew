@@ -50,6 +50,12 @@
         this.alwaysShowCalendars = false;
         this.ranges = {};
 
+        // 全局定义酒店入住了多少晚
+        var showTotleDay = $.extend({showTotleDay:false}, {showTotleDay:options.showTotleDay});
+        var startNight = 1;
+        var endNight = 1;
+        var totleNight = 0;
+
         this.opens = 'right';
         if (this.element.hasClass('pull-right'))
             this.opens = 'left';
@@ -133,6 +139,7 @@
                     '</div>' +
                     '<div class="calendar-table"></div>' +
                 '</div>' +
+                '<div class="range-change-date">From <span class="start-change-date">Wed, 14 Nov 2018</span> to <span class="end-change-date">Wed, 14 Nov 2018</span>(<span class="totle-num-date">3</span> nights)</div>'
                 '<div class="ranges">' +
                     '<div class="range_inputs">' +
                         '<button class="applyBtn" disabled="disabled" type="button"></button> ' +
@@ -471,6 +478,20 @@
         }else if (!this.element.is('input') && this.autoUpdateInput) { //单程日期,不是input
             this.element.html(this.startDate.format(this.locale.format));
             this.element.trigger('change');
+        }
+
+        // 初始化酒店入住天数
+        if(showTotleDay.showTotleDay){
+            this.container.find('.range-change-date').show();
+            var initStartDate = this.startDate.format('ddd, MMMM D, YYYY');
+            var initEndDate = this.endDate.format('ddd, MMMM D, YYYY');
+            this.container.find('.start-change-date').html(initStartDate);
+            this.container.find('.end-change-date').html(initEndDate);
+            totleNight = parseInt((this.endDate.toDate().getTime()-this.startDate.toDate().getTime())/86400000+1);
+            this.container.find('.totle-num-date').html(totleNight);
+             $('.hotel-day').html(totleNight);
+        }else{
+            this.container.find('.range-change-date').hide();
         }
 
     };
@@ -1296,9 +1317,16 @@
             var date = cal.hasClass('left') ? this.leftCalendar.calendar[row][col] : this.rightCalendar.calendar[row][col];
 
             if (this.endDate && !this.container.find('input[name=daterangepicker_start]').is(":focus")) {
-                this.container.find('input[name=daterangepicker_start]').val(date.format(this.locale.format));
+                // this.container.find('input[name=daterangepicker_start]').val(date.format(this.locale.format));
+                this.container.find('.start-change-date').html(date.format('ddd, MMMM D, YYYY'));
+                startNight = date.toDate().getTime();
             } else if (!this.endDate && !this.container.find('input[name=daterangepicker_end]').is(":focus")) {
-                this.container.find('input[name=daterangepicker_end]').val(date.format(this.locale.format));
+                // this.container.find('input[name=daterangepicker_end]').val(date.format(this.locale.format));
+                this.container.find('.end-change-date').html(date.format('ddd, MMMM D, YYYY'));
+                endNight = date.toDate().getTime();
+                totleNight = (endNight-startNight)/86400000+1;
+                this.container.find('.totle-num-date').html(totleNight);
+                $('.hotel-day').html(totleNight);
             }
 
             //highlight the dates between the start date and the date being hovered as a potential end date

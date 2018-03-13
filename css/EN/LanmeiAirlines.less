@@ -21,6 +21,7 @@
 @green:#8ec060;
 @purple:#1f2c5c;
 @linear:-webkit-linear-gradient(0deg, #42958a 0%, #1f2c5c 100%);
+@FBook:CamptonBook;
 @FBold:CamptonBookBold;
 @FLight:CamptonBookLight;
 
@@ -538,9 +539,17 @@ body{
 				background: url('@{url}city-icon-active.png') left center no-repeat;
 			}
 		}
+		.hotel-list-wrap{
+			>li{
+				background: url('@{url}hotel-small-icon.png') left center no-repeat;
+				&:hover{
+					background: url('@{url}hotel-small-icon-active.png') left center no-repeat;
+				}
+			}
+		}
 	}
-	.popup-search-width{
-
+	.popup-hotel-from{
+		width: 660px;
 	}
 	.popup-airport-to{display: none;}
 	.popup-date{
@@ -683,6 +692,137 @@ body{
 			}
 		}
 	}
+	.hotel-popus-people{
+		width: 960px;
+		padding:20px;
+		.s-room-com{padding:0;}
+		.rooms-title{
+			float: left;
+			height: 50px;
+			line-height: 50px;
+	    color: rgba(0,0,0,.7);
+	    font-size: 20px;
+	    padding-left: 30px;
+	    background: url('@{url}rooms-icon.png') left center no-repeat;
+		}
+		.rooms-content-com{
+			float: left;
+			margin-left: 20px;
+			.hotel-people-prompt{
+				.p1{
+					height: 50px;
+					line-height: 50px;
+					padding-left: 10px;
+					padding-right: 20px;
+					.purpleBgRgb(.04);
+					border-radius: 2px;
+				}
+			}
+			.hotel-people-number{
+				float: left;
+				width: 166px;
+			}
+		}
+		.hotel-age-wrap{
+			position: relative;
+			width: auto;
+			float: left;
+			padding: 8px 10px 8px 0;
+			.purpleBgRgb(.04);
+			.age-result{
+				float: left;
+				display: inline-block;
+				width:78px;
+				height:34px;
+				line-height: 38px;
+				font-size: 18px;
+				font-family: @FBook;
+				text-align: left;
+				padding-left: 20px;
+				padding-right: 20px;
+				margin-left: 20px;
+				border-radius:2px;
+				background: url('@{url}menu-down-arrow.png') 90% center no-repeat rgba(31, 44, 92, 0.3);
+				cursor: pointer;
+			}
+			.age-menu-box{
+				display: none;
+				position: absolute;
+				top: 40px;
+		    left: 20px;
+		    width: 78px;
+		    height: 182px;
+		    overflow: hidden;
+		    background: #fff;
+		    box-shadow: 0 0 20px 0 rgba(31,44,92,0.10);
+			}
+			.hotel-age-menu{
+				position: absolute;
+		    top: 0;
+		    left: 0;
+		    width: 86px;
+		    height: 182px;
+		    overflow-y: scroll;
+		    >li{
+		    	height: 40px;
+		    	color: rgba(0, 0, 0, 0.7);
+		    	cursor: pointer;
+		    	overflow: hidden;
+    	    text-overflow: ellipsis;
+    	    white-space: nowrap;
+    	    &:hover{
+    	    	color: #fff;
+    	    	.purpleBgRgb(.7);
+    	    }
+		    }
+			}
+		}
+		.adult-rooms-content{
+			margin-left: 30px;
+		}
+		.add-rooms-wrap{
+			height: 50px;
+			margin-top: 30px;
+			.add-rooms-content{
+				float: left;
+			}
+			p{
+				position: relative;
+				float: left;
+				width:142px;
+				height:50px;
+				line-height: 50px;
+				margin-right: 20px;
+				padding-left: 50px;
+				font-size: 20px;
+				color: rgba(0,0,0,.7);
+				box-shadow:0 0 20px 0 rgba(31,44,92,0.10);
+				border-radius:2px;
+				background: url('@{url}rooms-icon.png') 20px center no-repeat #fff;
+				b{
+					display: none;
+			    position: absolute;
+			    top: 0;
+			    right: 0;
+			    width: 16px;
+			    height: 16px;
+			    line-height: 18px;
+			    text-align: center;
+			    color: #fff;
+			    font-weight: 100;
+			    background: #ff8989;
+			    border-radius: 2px;
+			    cursor: pointer;
+				}
+				&:hover b{display: block;}
+			}
+			.add-rooms-btn{
+				.purpleRgb(.3);
+				background: url('@{url}add-rooms.png') 20px center no-repeat #fff;
+				cursor: pointer;
+			}
+		}
+	}
 }
 .popup-inactive{
 	opacity: 0;
@@ -727,6 +867,14 @@ body{
 }
 
 /* 酒店预订 */
+.range-change-date{
+	font-family: @FBold;
+  text-align: center;
+  clear: both;
+  padding-top: 7px;
+  padding-bottom: 12px;
+  color: rgba(0,0,0,.8)
+}
 
 
 /* 屏幕缩放 */

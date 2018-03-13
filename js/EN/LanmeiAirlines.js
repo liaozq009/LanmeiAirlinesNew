@@ -144,7 +144,7 @@ var LanmeiAirlines = {
 		var endTime = formatDate(endTimeStr.getDate())+' '+formatMonth((endTimeStr.getMonth()+1));  
 		var maxTime = formatDate(today.getDate())+' '+formatMonth((today.getMonth()+1));
 		
-		var singleDate = function(single,id,container,box,dateBox,peopleBox){
+		var singleDate = function(single,id,container,showTotleDay,box,dateBox,peopleBox){
 			$(id).daterangepicker({
 				parentEl:container,
 				format: 'D MMM',
@@ -153,6 +153,7 @@ var LanmeiAirlines = {
 				minDate: todayTime,
 				// maxDate:'2018-06-02',
 	      singleDatePicker: single, //单日期
+	      showTotleDay: showTotleDay, //是否显示已经选择的天数
 	      showDropdowns: false, //下拉选择月份和年份
 	      showWeekNumbers: false, //显示周
 	      autoApply: true, //自动关闭日期
@@ -165,19 +166,28 @@ var LanmeiAirlines = {
 					}
 
 					// 操作外层box移动
-					if(winWidth>1350){
-						box.css('left',950);
-					}else if(winWidth<=1350){
-						box.css({'top':-10,'left':350});
+					if(showTotleDay){
+						if(winWidth>1350){
+							box.css('left',0);
+						}else if(winWidth<=1350){
+							box.css({'top':-10,'left':350});
+						}
+					}else{
+						if(winWidth>1350){
+							box.css('left',950);
+						}else if(winWidth<=1350){
+							box.css({'top':-10,'left':350});
+						}
 					}
+					
 					dateBox.slideUp(function(){ //出发地隐藏
 						peopleBox.slideDown(); //目的地显示
 					}); 
 			  } 
 			);
 		};
-		singleDate(false,'.js-date-result','.js-popup-date',$box,$dateBox,$peopleBox);
-		singleDate(false,'.js-hotelDate-result','.js-hotelPopup-date',$hotelBox,$hotelDateBox,$hotelPeopleBox);
+		singleDate(false,'.js-date-result','.js-popup-date',false,$box,$dateBox,$peopleBox);
+		singleDate(false,'.js-hotelDate-result','.js-hotelPopup-date',true,$hotelBox,$hotelDateBox,$hotelPeopleBox);
 
 		// 单程往返切换
 		$('.js-select-way>a').click(function(event) {
@@ -185,10 +195,10 @@ var LanmeiAirlines = {
 			var data = $(this).attr('data-way');
 			switch (data) {
 				case 'round':
-					singleDate(false,'.js-date-result','.popup-date',$box,$dateBox,$peopleBox);
+					singleDate(false,'.js-date-result','.js-popup-date',false,$box,$dateBox,$peopleBox);
 					break;
 				case 'one':
-					singleDate(true,'.js-date-result','.popup-date',$box,$dateBox,$peopleBox);
+					singleDate(true,'.js-date-result','.js-popup-date',false,$box,$dateBox,$peopleBox);
 					break;
 			}
 		});
@@ -400,7 +410,18 @@ var LanmeiAirlines = {
 
 	/* 酒店选择 */
 	hotelSelect:function(){
-
+		// 年龄选择
+		$('.js-hotelPopup-people').on('click','.js-age-result',function(e){
+			e.stopPropagation();
+			$(this).siblings('.js-age-box').slideDown();
+		});
+		$('.js-hotelPopup-people').on('click','.js-age-menu>li',function(){
+			var text = $(this).html();
+			$('.js-age-result').html(text);
+		});
+		$('html').click(function(event) {
+			$('.js-age-box').slideUp();
+		});
 	},
 
 	/* 人数选择 */

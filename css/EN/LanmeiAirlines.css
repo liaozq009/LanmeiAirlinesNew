@@ -558,6 +558,15 @@ body {
   color: #8ec060;
   background: url('../../images/EN/city-icon-active.png') left center no-repeat;
 }
+.popup-content .popup-airport .hotel-list-wrap > li {
+  background: url('../../images/EN/hotel-small-icon.png') left center no-repeat;
+}
+.popup-content .popup-airport .hotel-list-wrap > li:hover {
+  background: url('../../images/EN/hotel-small-icon-active.png') left center no-repeat;
+}
+.popup-content .popup-hotel-from {
+  width: 660px;
+}
 .popup-content .popup-airport-to {
   display: none;
 }
@@ -701,6 +710,139 @@ body {
 .popup-content .popup-people .disable .off-add-operation:hover {
   background: url('../../images/EN/add-people.png') center no-repeat rgba(31, 44, 92, 0.1);
 }
+.popup-content .hotel-popus-people {
+  width: 960px;
+  padding: 20px;
+}
+.popup-content .hotel-popus-people .s-room-com {
+  padding: 0;
+}
+.popup-content .hotel-popus-people .rooms-title {
+  float: left;
+  height: 50px;
+  line-height: 50px;
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 20px;
+  padding-left: 30px;
+  background: url('../../images/EN/rooms-icon.png') left center no-repeat;
+}
+.popup-content .hotel-popus-people .rooms-content-com {
+  float: left;
+  margin-left: 20px;
+}
+.popup-content .hotel-popus-people .rooms-content-com .hotel-people-prompt .p1 {
+  height: 50px;
+  line-height: 50px;
+  padding-left: 10px;
+  padding-right: 20px;
+  background: rgba(31, 44, 92, 0.04);
+  border-radius: 2px;
+}
+.popup-content .hotel-popus-people .rooms-content-com .hotel-people-number {
+  float: left;
+  width: 166px;
+}
+.popup-content .hotel-popus-people .hotel-age-wrap {
+  position: relative;
+  width: auto;
+  float: left;
+  padding: 8px 10px 8px 0;
+  background: rgba(31, 44, 92, 0.04);
+}
+.popup-content .hotel-popus-people .hotel-age-wrap .age-result {
+  float: left;
+  display: inline-block;
+  width: 78px;
+  height: 34px;
+  line-height: 38px;
+  font-size: 18px;
+  font-family: CamptonBook;
+  text-align: left;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: 20px;
+  border-radius: 2px;
+  background: url('../../images/EN/menu-down-arrow.png') 90% center no-repeat rgba(31, 44, 92, 0.3);
+  cursor: pointer;
+}
+.popup-content .hotel-popus-people .hotel-age-wrap .age-menu-box {
+  display: none;
+  position: absolute;
+  top: 40px;
+  left: 20px;
+  width: 78px;
+  height: 182px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 0 20px 0 rgba(31, 44, 92, 0.1);
+}
+.popup-content .hotel-popus-people .hotel-age-wrap .hotel-age-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 86px;
+  height: 182px;
+  overflow-y: scroll;
+}
+.popup-content .hotel-popus-people .hotel-age-wrap .hotel-age-menu > li {
+  height: 40px;
+  color: rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.popup-content .hotel-popus-people .hotel-age-wrap .hotel-age-menu > li:hover {
+  color: #fff;
+  background: rgba(31, 44, 92, 0.7);
+}
+.popup-content .hotel-popus-people .adult-rooms-content {
+  margin-left: 30px;
+}
+.popup-content .hotel-popus-people .add-rooms-wrap {
+  height: 50px;
+  margin-top: 30px;
+}
+.popup-content .hotel-popus-people .add-rooms-wrap .add-rooms-content {
+  float: left;
+}
+.popup-content .hotel-popus-people .add-rooms-wrap p {
+  position: relative;
+  float: left;
+  width: 142px;
+  height: 50px;
+  line-height: 50px;
+  margin-right: 20px;
+  padding-left: 50px;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 0 20px 0 rgba(31, 44, 92, 0.1);
+  border-radius: 2px;
+  background: url('../../images/EN/rooms-icon.png') 20px center no-repeat #fff;
+}
+.popup-content .hotel-popus-people .add-rooms-wrap p b {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 16px;
+  height: 16px;
+  line-height: 18px;
+  text-align: center;
+  color: #fff;
+  font-weight: 100;
+  background: #ff8989;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.popup-content .hotel-popus-people .add-rooms-wrap p:hover b {
+  display: block;
+}
+.popup-content .hotel-popus-people .add-rooms-wrap .add-rooms-btn {
+  color: rgba(31, 44, 92, 0.3);
+  background: url('../../images/EN/add-rooms.png') 20px center no-repeat #fff;
+  cursor: pointer;
+}
 .popup-inactive {
   opacity: 0;
   visibility: hidden;
@@ -744,6 +886,14 @@ body {
   z-index: 10;
 }
 /* 酒店预订 */
+.range-change-date {
+  font-family: CamptonBookBold;
+  text-align: center;
+  clear: both;
+  padding-top: 7px;
+  padding-bottom: 12px;
+  color: rgba(0, 0, 0, 0.8);
+}
 /* 屏幕缩放 */
 @media screen and (max-width: 1800px) {
   .content-com-inner {
