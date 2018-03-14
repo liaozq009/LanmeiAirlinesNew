@@ -503,6 +503,11 @@ body {
   transition: opacity 0.2s ease-out;
   -webkit-transition: opacity 0.2s ease-out;
 }
+.hotelPeople-popup-box::before {
+  left: 580px;
+  transition: left 0.5s ease-out;
+  -webkit-transition: left 0.5s ease-out;
+}
 .popup-box-before::before {
   opacity: 1;
   transition: opacity 0.3s ease-out;
@@ -588,13 +593,14 @@ body {
   padding: 20px 30px 30px;
 }
 .popup-content .popup-people .people-title {
+  padding-bottom: 10px;
   font-size: 20px;
   font-family: CamptonBookBold;
   color: rgba(31, 44, 92, 0.8);
 }
 .popup-content .popup-people .s-people-com {
   height: 50px;
-  margin-top: 20px;
+  margin-top: 10px;
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -712,9 +718,12 @@ body {
 }
 .popup-content .hotel-popus-people {
   width: 750px;
+  height: auto;
   padding: 20px;
   transition: width 0.2s ease-out;
   -webkit-transition: width 0.2s ease-out;
+  animation-delay: .3s;
+  -webkit-animation-delay: .3s;
 }
 .popup-content .hotel-popus-people .s-room-com {
   padding: 0;
@@ -847,6 +856,10 @@ body {
   color: rgba(31, 44, 92, 0.3);
   background: url('../../images/EN/add-rooms.png') 20px center no-repeat #fff;
   cursor: pointer;
+}
+.hotel-popup-content {
+  transition: left 0.2s ease-out;
+  -webkit-transition: left 0.2s ease-out;
 }
 .popup-inactive {
   opacity: 0;

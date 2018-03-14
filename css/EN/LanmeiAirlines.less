@@ -486,6 +486,13 @@ body{
 		-webkit-transition: opacity .2s ease-out;
 	}
 }
+.hotelPeople-popup-box{
+	&::before{
+		left: 580px;
+		transition: left .5s ease-out;
+		-webkit-transition: left .5s ease-out;
+	}
+}
 .popup-box-before::before{
 	opacity: 1;
 	transition: opacity .3s ease-out;
@@ -569,13 +576,14 @@ body{
 		height: 290px;
 		padding: 20px 30px 30px;
 		.people-title{
+			padding-bottom: 10px;
 			font-size: 20px;
 			font-family: @FBold;
 			.purpleRgb(.8); 
 		}
 		.s-people-com{
 			height: 50px;
-			margin-top: 20px;
+			margin-top: 10px;
 			padding-left: 10px;
 			padding-right: 10px;
 		}
@@ -694,9 +702,12 @@ body{
 	}
 	.hotel-popus-people{
 		width: 750px;
+		height: auto;
 		padding:20px;
 		transition: width .2s ease-out;
 		-webkit-transition: width .2s ease-out;
+		animation-delay: .3s;
+		-webkit-animation-delay: .3s;
 		.s-room-com{padding:0;}
 		.rooms-title{
 			float: left;
@@ -828,6 +839,10 @@ body{
 			}
 		}
 	}
+}
+.hotel-popup-content{
+	transition: left .2s ease-out;
+	-webkit-transition: left .2s ease-out;
 }
 .popup-inactive{
 	opacity: 0;
