@@ -904,6 +904,9 @@ body {
   z-index: 10;
 }
 /* 酒店预订 */
+.hotel-content-wrap {
+  display: none;
+}
 .range-change-date {
   font-family: CamptonBookBold;
   text-align: center;
