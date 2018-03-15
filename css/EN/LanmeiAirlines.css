@@ -87,6 +87,10 @@ body {
   background: url('../../images/EN/hotel-bg.jpg') center no-repeat;
   background-size: cover;
 }
+.fStatus-bg {
+  background: url('../../images/EN/flightStatus-bg.jpg') center no-repeat;
+  background-size: cover;
+}
 .content-com-wrap {
   position: absolute;
   top: 60px;
@@ -109,6 +113,9 @@ body {
 }
 .content-com-inner > h1 span {
   color: #8ec060;
+}
+.fStatus-content-inner {
+  width: 908px;
 }
 .lm-aside-flight {
   position: absolute;
@@ -354,13 +361,38 @@ body {
 .select-air-com > div .h-from-input {
   background: url('../../images/EN/hotel-from.png') 20px no-repeat #fff;
 }
+.select-air-com > div .f-from-input {
+  background: url('../../images/EN/flight-number.png') 20px no-repeat #fff;
+}
 .select-air-com .hotel-from {
+  width: 660px;
+}
+.select-air-com .flight-number-box,
+.select-air-com .fStatus-date {
   width: 660px;
 }
 .select-air-com .from-com {
   visibility: visible;
   animation-delay: .6s;
   -webkit-animation-delay: .6s;
+  /* Safari 和 Chrome */
+}
+.select-air-com .route-from-box {
+  visibility: visible;
+  animation-delay: .3s;
+  -webkit-animation-delay: .3s;
+  /* Safari 和 Chrome */
+}
+.select-air-com .route-to-box {
+  visibility: visible;
+  animation-delay: .6s;
+  -webkit-animation-delay: .6s;
+  /* Safari 和 Chrome */
+}
+.select-air-com .route-date-box {
+  visibility: visible;
+  animation-delay: .9s;
+  -webkit-animation-delay: .9s;
   /* Safari 和 Chrome */
 }
 .select-air-com .date-com {
@@ -377,7 +409,7 @@ body {
   height: 18px;
   background: url('../../images/EN/ticket-change.png') center no-repeat;
   cursor: pointer;
-  opacity: 0;
+  display: none;
 }
 .select-air-com .date-result {
   display: block;
@@ -505,8 +537,6 @@ body {
 }
 .hotelPeople-popup-box::before {
   left: 580px;
-  transition: left 0.5s ease-out;
-  -webkit-transition: left 0.5s ease-out;
 }
 .popup-box-before::before {
   opacity: 1;
@@ -523,9 +553,7 @@ body {
   background: #fff;
   border-radius: 2px;
   box-shadow: 0 0 30px 0 #1f2c5c;
-  transition: opacity 0.2s ease-out, -webkit-transform 0.2s ease-out;
-  transition: transform 0.2s ease-out, opacity 0.2s ease-out;
-  transition: transform 0.2s ease-out, opacity 0.2s ease-out, -webkit-transform 0.2s ease-out;
+  transition: all 0.2s ease-out;
 }
 .popup-content .popup-airport {
   width: 628px;
@@ -728,6 +756,14 @@ body {
 .popup-content .hotel-popus-people .s-room-com {
   padding: 0;
 }
+.popup-content .hotel-popus-people .s-room-1 {
+  position: relative;
+  z-index: 3;
+}
+.popup-content .hotel-popus-people .s-room-2 {
+  position: relative;
+  z-index: 2;
+}
 .popup-content .hotel-popus-people .rooms-title {
   float: left;
   height: 50px;
@@ -856,10 +892,6 @@ body {
   color: rgba(31, 44, 92, 0.3);
   background: url('../../images/EN/add-rooms.png') 20px center no-repeat #fff;
   cursor: pointer;
-}
-.hotel-popup-content {
-  transition: left 0.2s ease-out;
-  -webkit-transition: left 0.2s ease-out;
 }
 .popup-inactive {
   opacity: 0;

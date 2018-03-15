@@ -66,7 +66,7 @@
 	<!-- 首屏 -->
 	<section class="lm-section-main js-section-main">
 		<!-- 机票选择 -->
-		<div class="ticket-content-wrap js-ticket-wrap">
+		<div class="ticket-content-wrap js-ticket-wrap" style="display: none;">
 			<!-- 炫酷白云 -->
 			<div class="ticket-bg bg-com"></div>
 			<!-- 白云上面的内容 -->
@@ -89,7 +89,7 @@
 					<input type="hidden" name="language" value="US">
 					<input type="hidden" name="CURRENCY" value="USD">
 					
-					<p class="tips-com animated fadeInUp">What are you waiting for?</p>
+					<p class="tips-com animated fadeInUp js-tips-com">What are you waiting for?</p>
 					<div class="select-way js-select-way">
 						<a href="javascript:;" class="round-trip active" data-way="round">Round trip</a>
 						<a href="javascript:;" class="one-way" data-way="one">One-way</a>
@@ -97,17 +97,11 @@
 					</div>
 					<div class="select-air-time select-air-com">
 						<div class="from-com js-ticket-from animated fadeInUp">
-							<input type="text" class="t-from-input js-from-input" data="js-from-menu" placeholder="From">
-							<div class="t-from-menu t-memu-com">
-								
-							</div>
-							<i class="local-change"></i>
+							<input type="text" class="t-from-input js-from-input" data="js-from-menu" placeholder="From" autocomplete="off">
+							<i class="local-change js-ticket-change animated fadeInUp"></i>
 						</div>
 						<div class="to-com js-ticket-to">
-							<input type="text" class="t-to-input js-to-input" data="js-to-menu" placeholder="To">
-							<div class="t-to-menu t-memu-com">
-								
-							</div>
+							<input type="text" class="t-to-input js-to-input" data="js-to-menu" placeholder="To" autocomplete="off">
 						</div>
 						<div class="date-com js-ticket-date">
 							<span class="date-result js-date-result"></span>
@@ -206,7 +200,7 @@
 		</div>
 
 		<!-- 酒店选择 -->
-		<div class="hotel-content-wrap js-hotel-wrap">
+		<div class="hotel-content-wrap js-hotel-wrap" style="display: none;">
 			<!-- 背景 -->
 			<div class="hotel-bg bg-com"></div>
 			<!-- 背景上的内容 -->
@@ -225,10 +219,10 @@
 					<input type="hidden" name="data-id" id="data-id" value="">
 					<input type="hidden" id="tempName" value="">
 
-					<p class="tips-com animated fadeInUp">The ideal choice for your journey</p>
+					<p class="tips-com animated fadeInUp js-tips-com">The ideal choice for your journey</p>
 					<div class="select-hotel-time select-air-com">
 						<div class="from-com hotel-from js-hotel-from animated fadeInUp">
-							<input type="text" class="h-from-input js-hotelFrom-input" data="js-from-menu" placeholder="Where are you going ?">
+							<input type="text" class="h-from-input js-hotelFrom-input" data="js-from-menu" placeholder="Where are you going ?" autocomplete="off">
 						</div>
 						<div class="date-com js-hotel-date">
 							<span class="date-result h-date-result js-hotelDate-result"></span>
@@ -269,7 +263,7 @@
 							<div class="hotel-popus-people popup-people js-hotelPopup-people">
 								<p class="people-title js-rooms-title">Room and number of choices :</p>
 								<div class="select-people-container js-rooms-container">
-									<div class="s-room-com s-people-com animated fadeInUp" id="js-room1-inner">
+									<div class="s-room-1 s-room-com s-people-com animated fadeInUp" id="js-room1-inner">
 										<p class="rooms-title">Room 1</p>
 										<div class="adult-rooms-content rooms-content-com">
 											<div class="hotel-people-prompt people-prompt">
@@ -371,6 +365,111 @@
 									</div>
 									<p class="add-rooms-btn js-add-rooms">Add</p>
 								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- 航班动态选择 -->
+		<div class="ticket-content-wrap js-fStatus-wrap">
+			<!-- 背景 -->
+			<div class="fStatus-bg bg-com"></div>
+			<!-- 背景内容 -->
+			<div class="content-com-wrap">
+				<div class="fStatus-content-inner content-com-inner">
+					<h1 class="animated fadeInUp">Do not worry about forgetting flight information</h1>
+				</div>
+			</div>
+			<!-- 航班选择 -->
+			<div class="ticket-content flight-com js-fStatus-content">
+				<form id="air-fStatus-form" action="" method="POST" target="_blank">
+					<input type="hidden" name="routeType" id="routeType" value="0">
+					<input type="hidden"  name="timeFrom" id="fStatus-timeFrom" value="0">
+					
+					<p class="tips-com animated fadeInUp js-tips-com">Check it out at a glance</p>
+					<div class="select-way js-flight-way">
+						<a href="javascript:;" class="by-flight-number active" data-way="js-by-number">By flight number</a>
+						<a href="javascript:;" class="by-route" data-way="js-by-route">By route</a>
+					</div>
+					<!-- 航班号查询 -->
+					<div class="select-fStatus-time select-air-com js-status-com js-by-number">
+						<div class="flight-number-box from-com js-flight-number animated fadeInUp">
+							<input type="text" class="f-from-input js-fNumber-input" name="flightNum" value="" data="js-fNumber-menu" placeholder="What is your flight number ?" autocomplete="off">
+						</div>
+						<div class="fStatus-date date-com js-fStatus-date">
+							<span class="date-result js-numDate-result"></span>
+						</div>
+					</div>
+					<!-- 路线查询 -->
+					<div class="select-fStatus-time select-air-com js-status-com js-by-route" style="display: none;">
+						<div class="route-from-box from-com js-route-from animated fadeInUp">
+							<input type="text" class="t-from-input js-routeFrom-input" name="fromCity" value="" data="js-routeFrom-menu" placeholder="Origin" autocomplete="off">
+								<i class="local-change js-route-change animated fadeInUp"></i>
+						</div>
+						<div class="route-to-box to-com js-route-to animated fadeInUp">
+							<input type="text" class="t-to-input js-routeTo-input" name="toCity" value="" data="js-routeTo-menu" placeholder="Destination" autocomplete="off">
+						</div>
+						<div class="route-date-box fStatus-date js-route-date animated fadeInUp">
+							<span class="date-result js-routeDate-result"></span>
+						</div>
+					</div>
+					<div class="search-flight-wrap js-search-route">
+						<a href="javascript:;" class="flight-cancel js-route-cancel">Cancel</a>
+						<a href="javascript:;" class="flight-search js-route-search">Search</a>
+					</div>
+				</form>
+				<!-- 下拉选择菜单 -->
+				<div class="popup-container">
+					<div class="popup-box js-fStatusPopup-box">
+						<div class="popup-content popup-inactive js-fStatusPopup-content">
+							<!-- 出发地目的地选择 -->
+							<div class="popup-route-from popup-airport js-routeBox-from">
+								<h2>Airports :</h2>
+								<ul class="flight-list-wrap js-routeFrom-menu">
+									<li title="Sihanoukville/KOS/Cambodia">Sihanoukville/KOS/Cambodia</li>
+									<li title="Ho Chi Minh/SGN/Vietnam">Ho Chi Minh/SGN/Vietnam</li>
+									<li title="Macao/MFM/Macao,China">Macao/MFM/Macao,China</li>
+									<li title="Hanoi/HAN/Vietnam">Hanoi/HAN/Vietnam</li>
+									<li title="Phnom Penh/PNH/Cambodia">Phnom Penh/PNH/Cambodia</li>
+									<li title="HongKong/HKG/HongKong,China">HongKong/HKG/HongKong,China</li>
+									<li title="Siem Reap/REP/Cambodia">Siem Reap/REP/Cambodia</li>
+									<li title="SEOUL/ICN/Korea">SEOUL/ICN/Korea</li>
+								</ul>
+							</div>
+							<div class="popup-route-to popup-airport js-routeBox-to">
+								<h2>Airports :</h2>
+								<ul class="flight-list-wrap js-routeTo-menu">
+									<li title="Sihanoukville/KOS/Cambodia">Sihanoukville/KOS/Cambodia</li>
+									<li title="Ho Chi Minh/SGN/Vietnam">Ho Chi Minh/SGN/Vietnam</li>
+									<li title="Macao/MFM/Macao,China">Macao/MFM/Macao,China</li>
+									<li title="Hanoi/HAN/Vietnam">Hanoi/HAN/Vietnam</li>
+									<li title="Phnom Penh/PNH/Cambodia">Phnom Penh/PNH/Cambodia</li>
+									<li title="HongKong/HKG/HongKong,China">HongKong/HKG/HongKong,China</li>
+									<li title="Siem Reap/REP/Cambodia">Siem Reap/REP/Cambodia</li>
+									<li title="SEOUL/ICN/Korea">SEOUL/ICN/Korea</li>
+								</ul>
+							</div>
+							<!-- 航班号日期选择 -->
+							<div class="popup-date js-numPopup-date">
+								<p class="date-title">Flight flight date :</p>
+							</div>
+							<!-- 航班号选择 -->
+							<div class="popup-fNum-from popup-airport js-fNumBox-from">
+								<h2>Flight :</h2>
+								<ul class="flight-list-wrap js-fNumber-menu">
+									<li title="LQ9503">LQ9503</li>
+									<li title="LQ503">LQ503</li>
+									<li title="LQ9502">LQ9502</li>
+									<li title="LQ502">LQ502</li>
+									<li title="LQ806">LQ806</li>
+									<li title="LQ807">LQ807</li>
+								</ul>
+							</div>
+							<!-- 路线日期选择 -->
+							<div class="popup-date js-routePopup-date">
+								<p class="date-title">Flight flight date :</p>
 							</div>
 						</div>
 					</div>
