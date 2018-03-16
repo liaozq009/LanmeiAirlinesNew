@@ -36,7 +36,7 @@
 <body>
 	<!-- 页面顶部 -->
 	<header class="lm-header">
-		<div class="h-menu">
+		<div class="h-menu js-h-menu">
 			<img src="images/EN/menu.png" alt="menu-icon">
 			<span>Menu</span>
 		</div>
@@ -63,10 +63,146 @@
 		</div>
 	</header>
 
+	<!-- 导航栏 -->
+	<section class="lm-nav-wrap">
+		<div class="nav-container js-nav-container">
+			<div class="nav-menu-close js-menu-close">Close</div>
+			<ul class="m-nav-1 m-nav-list">
+				<li class="active"><i></i><a href="#f-list-1">PLAN TRAVEL</a></li>
+				<li><i></i><a href="#f-list-2">EXPERIENCE</a></li>
+				<li><i></i><a href="#f-list-3">COMMUNITY</a></li>
+				<li><i></i><a href="#f-list-4">TRAVEL</a></li>
+				<li><i></i><a href="#f-list-5">SHOPPING</a></li>
+				<li><i></i><a href="#f-list-6">ABOUT US</a></li>
+			</ul>
+			<div class="m-nav-2">
+				<ul class="m-nav-list" id="f-list-1" style="display: block;">
+					<li class="active"><i></i><a href="#one-s-list-1">Special Offers</a></li>
+					<li><i></i><a href="#one-s-list-2">Destinations</a></li>
+					<li><i></i><a href="#one-s-list-3">Flight Subscription</a></li>
+					<li><i></i><a href="#one-s-list-4">Hotel Booking</a></li>
+				</ul>
+				<ul class="m-nav-list" id="f-list-2">
+					<li><a href="#two-s-list-1">Travel Preparation</a></li>
+					<li><a href="#two-s-list-2">Flight Status</a></li>
+					<li><a href="#two-s-list-3">Airport Services</a></li>
+					<li><a href="#two-s-list-4">Check In</a></li>
+					<li><a href="#two-s-list-5">Your Baggage</a></li>
+					<li><a href="#two-s-list-6">Invoice Tracking</a></li>
+					<li><a href="#two-s-list-7">Enjoy Services</a></li>
+				</ul>
+				<ul class="m-nav-list" id="f-list-3">
+					<li><a href="#three-s-list-1">Lanmei Member</a></li>
+					<li><a href="#three-s-list-2">Lanmei Forum</a></li>
+					<li><a href="#three-s-list-3">Lanmei Live</a></li>
+				</ul>
+				<ul class="m-nav-list" id="f-list-4">
+					<li><a href="#four-s-list-1">Phnom Penh</a></li>
+					<li><a href="travel/LMTravel.html">Sihanoukville</a></li>
+					<li><a href="#four-s-list-3">Siem Reap</a></li>
+					<li><a href="#four-s-list-3">Macau</a></li>
+					<li><a href="#four-s-list-4">Palau</a></li>
+				</ul>
+				<ul class="m-nav-list" id="f-list-5">
+					<!-- <li><a href="menus/EN/shopping/LMDFC20170907.html" data-href="true">吴哥免税店</a></li> -->
+				</ul>
+				<ul class="m-nav-list" id="f-list-6">
+					<li><a href="menus/EN/aboutUs/LMSiteMap.html" data-href="true">Sitemap</a></li>
+					<li><a href="menus/EN/aboutUs/LMHistory.html" data-href="true">Lanmei History</a></li>
+					<li><a href="menus/EN/aboutUs/LMContact.html" data-href="true">Contact Us</a></li>
+					<li><a href="menus/EN/aboutUs/LMHire.html" data-href="true">Join Us</a></li>
+					<li><a href="#six-s-list-4">Social Responsibility</a></li>
+					<li><a href="#six-s-list-5">E-magazine</a></li>
+					<li><a href="#six-s-list-6">Cooperative Partners</a></li>
+					<li><a href="#six-s-list-7">Copyright</a></li>
+					<li><a href="#six-s-list-8">FQA</a></li>
+					<li><a href="menus/EN/aboutUs/LMPrivacy.html">Privacy Policy</a></li>
+					<li><a href="#six-s-list-10">Legal Statement</a></li>
+				</ul>
+			</div>
+			<div class="m-nav-3">
+				<!-- 计划旅行 -->
+				<ul class="m-nav-list" id="one-s-list-1" style="display: block;">
+					<li><a href="javascript:void(0)">Special tickets</a></li>
+					<li><a href="javascript:void(0)">Special hotels</a></li>
+					<li><a href="javascript:void(0)">Special rental cars</a></li>
+					<li><a href="javascript:void(0)">Special sales</a></li>
+					<li><a href="javascript:void(0)">Special travel</a></li>
+				</ul>
+				<ul class="m-nav-list" id="one-s-list-2">
+					<li><a href="javascript:void(0)">Phnom Penh</a></li>
+					<li><a href="javascript:void(0)">Siem Reap</a></li>
+					<li><a href="travel/LMTravel.html">Sihanoukville</a></li>
+					<li><a href="javascript:void(0)">Macau</a></li>
+					<li><a href="javascript:void(0)">Palau</a></li>
+				</ul>
+				<ul class="m-nav-list" id="one-s-list-3">
+					<li><a href="javascript:void(0)" class="a-search-flight">Flight search</a></li>
+					<li><a href="javascript:void(0)">Check in</a></li>
+					<li><a href="javascript:void(0)">My trip</a></li>
+					<li><a href="javascript:void(0)">Change or cancel flights</a></li>
+				</ul>
+				<ul class="m-nav-list" id="one-s-list-4">
+					<li><a href="javascript:void(0)">Hotel search</a></li>
+					<li><a href="javascript:void(0)">My hotel</a></li>
+					<li><a href="javascript:void(0)">Car rental</a></li>
+				</ul>
+				<!-- 体验澜湄 -->
+				<ul class="m-nav-list" id="two-s-list-1">
+					<li><a href="menus/EN/experience/LMVisa.html">Passport and visa</a></li>
+					<li><a href="menus/EN/experience/LMTransport.html">General conditions of carriage</a></li>
+					<li><a href="javascript:void(0)">Special services</a></li>
+					<li><a href="javascript:void(0)">Notice to passengers</a></li>
+					<li><a href="javascript:void(0)">Commitment to customer service</a></li>
+				</ul>
+				<ul class="m-nav-list" id="two-s-list-2">
+					<li><a href="javascript:void(0)">Dynamic information</a></li>
+					<li><a href="javascript:void(0)">Flight Subscription</a></li>
+					<li><a href="javascript:void(0)">Real-time notification for Flight Info</a></li>
+				</ul>
+				<ul class="m-nav-list" id="two-s-list-3">
+					<li><a href="menus/EN/experience/LMPNHAirportService.html" title="Phnom Penh International Airport ">Phnom Penh International Airport </a></li>
+					<li><a href="menus/EN/experience/LMREPAirportService.html" title="Siem Reap International Airport">Siem Reap International Airport</a></li>
+					<li><a href="menus/EN/experience/LMMFMAirportService.html" title="Macau International Airport">Macau International Airport</a></li>
+				</ul>
+				<ul class="m-nav-list" id="two-s-list-4">
+					<li><a href="menus/EN/experience/LMCheckOnline.html">Check in online</a></li>
+					<li><a href="menus/EN/experience/LMCheckAirport.html">Check in at airport</a></li>
+					<li><a href="menus/EN/experience/LMCheckTime.html">Check-in and baggage drop-off times</a></li>
+				</ul>
+				<ul class="m-nav-list" id="two-s-list-5">
+					<li><a href="menus/EN/experience/LMBaggage.html">About baggage</a></li>
+					<li><a href="menus/EN/experience/LMMisBaggage.html">Mishandled baggage</a></li>
+					<li><a href="javascript:void(0)">Dangerous goods</a></li>
+				</ul>
+				<ul class="m-nav-list" id="two-s-list-6">
+					<li><a href="javascript:void(0)">Invoice Inquiry</a></li>
+				</ul>
+				<ul class="m-nav-list" id="two-s-list-7">
+					<li><a href="menus/EN/experience/LMCate.html">Catering service</a></li>
+					<li><a href="javascript:void(0)">Excess baggage service</a></li>
+					<li><a href="javascript:void(0)">Extended seats service</a></li>
+					<li><a href="javascript:void(0)">Seat selection in advance</a></li>
+					<li><a href="javascript:void(0)">Special service application</a></li>
+				</ul>
+				<!-- 澜湄社区 -->
+				<ul class="m-nav-list" id="three-s-list-1">
+					<li><a href="javascript:void(0)">Member registration</a></li>
+					<li><a href="javascript:void(0)">Lanmei travel companion</a></li>
+					<li><a href="javascript:void(0)">Lanmei members FAQ</a></li>
+					<li><a href="javascript:void(0)">Member information</a></li>
+					<li><a href="javascript:void(0)">Flight chart</a></li>
+					<li><a href="javascript:void(0)">Coupon</a></li>
+					<li><a href="javascript:void(0)">Order</a></li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
 	<!-- 首屏 -->
 	<section class="lm-section-main js-section-main">
 		<!-- 机票选择 -->
-		<div class="ticket-content-wrap js-ticket-wrap" style="display: none;">
+		<div class="ticket-content-wrap js-flight-com js-ticket-wrap">
 			<!-- 炫酷白云 -->
 			<div class="ticket-bg bg-com"></div>
 			<!-- 白云上面的内容 -->
@@ -200,7 +336,7 @@
 		</div>
 
 		<!-- 酒店选择 -->
-		<div class="hotel-content-wrap js-hotel-wrap" style="display: none;">
+		<div class="hotel-content-wrap js-flight-com js-hotel-wrap">
 			<!-- 背景 -->
 			<div class="hotel-bg bg-com"></div>
 			<!-- 背景上的内容 -->
@@ -372,8 +508,20 @@
 			</div>
 		</div>
 
+		<!-- 租车选择 -->
+		<div class="car-content-wrap js-flight-com js-car-wrap">
+			<!-- 背景 -->
+			<div class="hotel-bg bg-com"></div>
+			<!-- 背景上的内容 -->
+			<div class="content-com-wrap">
+				<div class="car-content-inner content-com-inner">
+					<h1 class="animated fadeInUp">Please look forward to...</h1>
+				</div>
+			</div>
+		</div>
+
 		<!-- 航班动态选择 -->
-		<div class="ticket-content-wrap js-fStatus-wrap">
+		<div class="fStatus-content-wrap js-flight-com js-fStatus-wrap">
 			<!-- 背景 -->
 			<div class="fStatus-bg bg-com"></div>
 			<!-- 背景内容 -->
@@ -499,12 +647,23 @@
 		</aside>
 
 		<!-- 右侧二维码 -->
-		<aside class="lm-aside-code"></aside>
+		<aside class="lm-aside-code js-aside-code">
+			<div class="small-code"></div>
+			<h3>Follow us :</h3>
+			<div class="facebook-icon">
+				<a href="javascript:;"><img src="images/EN/facebook-icon.png" class="img-1" alt="facebook-icon"></a>
+				<a href="javascript:;"><img src="images/EN/Sinaweibo.png" class="img-2" alt="Sinaweibo-icon"></a>
+			</div>
+		</aside>
+		<div class="aside-code-mask"></div>
 
 		<!-- 重要提醒 -->
 		<div class="lm-important">
 			<h3><p><img src="images/EN/important.png" alt="important"></p>Important</h3>
-			<p>Important information about round-trip tickets that passengers must have for entry to Palau</p>
+			<ul class="line js-important-line">
+				<li><a href="javascript:;" title="Important information about round-trip tickets that passengers must have for entry to Palau">Important information about round-trip tickets that passengers must have for entry to Palau</a></li>
+				<li><a href="javascript:;" title="The website is under constructioning,please look forward to...">The website is under constructioning,please look forward to...</a></li>
+			</ul>
 		</div>
 		
 		<!-- 提示往下滚动 -->

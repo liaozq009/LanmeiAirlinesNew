@@ -28,6 +28,8 @@ body {
 }
 /* 内容样式 */
 .lm-header {
+  position: relative;
+  z-index: 9;
   width: 100%;
   height: 60px;
   line-height: 60px;
@@ -39,6 +41,7 @@ body {
   float: left;
   font-family: CamptonBookBold;
   font-size: 18px;
+  cursor: pointer;
 }
 .lm-header .h-menu > img {
   margin-right: 20px;
@@ -60,6 +63,144 @@ body {
 .lm-header .h-right .h-login > img,
 .lm-header .h-right .h-registered > img {
   margin-right: 6px;
+}
+.nav-container {
+  position: fixed;
+  top: 0;
+  left: -870px;
+  z-index: 99;
+  height: 100%;
+  overflow: hidden;
+  transition: left 0.3s ease-out;
+  -webkit-transition: left 0.3s ease-out;
+}
+.nav-container .nav-menu-close {
+  position: absolute;
+  right: 20px;
+  top: 16px;
+  width: 108px;
+  height: 28px;
+  padding-left: 58px;
+  font-size: 18px;
+  color: #fff;
+  font-family: CamptonBookBold;
+  background: url('../../images/EN/close-menu.png') left center no-repeat;
+  cursor: pointer;
+}
+.nav-container .m-nav-1 {
+  float: left;
+  width: 270px;
+  height: 100%;
+  padding-top: 130px;
+  padding-left: 56px;
+  background: rgba(0, 0, 0, 0.8);
+}
+.nav-container .m-nav-1 > li {
+  margin-bottom: 60px;
+}
+.nav-container .m-nav-1 > li > i {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background: #fff;
+  margin-right: 10px;
+  border-radius: 50%;
+  visibility: hidden;
+  transition: visibility .1s;
+  -webkit-transition: visibility .1s;
+}
+.nav-container .m-nav-1 > li > a {
+  font-size: 20px;
+  color: #fff;
+  opacity: .7;
+  transition: opacity .3s;
+  -webkit-transition: opacity .3s;
+}
+.nav-container .m-nav-1 > li:hover > i {
+  visibility: visible;
+}
+.nav-container .m-nav-1 > li:hover > a {
+  opacity: 1;
+  font-family: CamptonBookBold;
+}
+.nav-container .m-nav-1 .active > i {
+  visibility: visible;
+}
+.nav-container .m-nav-1 .active > a {
+  opacity: 1;
+  font-family: CamptonBookBold;
+}
+.nav-container .m-nav-2 {
+  float: left;
+  width: 300px;
+  height: 100%;
+  padding-top: 130px;
+  padding-left: 56px;
+  background: rgba(0, 0, 0, 0.7);
+}
+.nav-container .m-nav-2 > ul {
+  display: none;
+}
+.nav-container .m-nav-2 li {
+  margin-bottom: 20px;
+}
+.nav-container .m-nav-2 li > i {
+  position: relative;
+  top: -5px;
+  display: inline-block;
+  width: 14px;
+  height: 2px;
+  background: #fff;
+  margin-right: 10px;
+  visibility: hidden;
+  transition: visibility .1s;
+  -webkit-transition: visibility .1s;
+}
+.nav-container .m-nav-2 li > a {
+  font-size: 20px;
+  color: #fff;
+  opacity: .7;
+  transition: opacity .3s;
+  -webkit-transition: opacity .3s;
+}
+.nav-container .m-nav-2 li:hover > i {
+  visibility: visible;
+}
+.nav-container .m-nav-2 li:hover > a {
+  opacity: 1;
+  font-family: CamptonBookBold;
+}
+.nav-container .m-nav-2 .active > i {
+  visibility: visible;
+}
+.nav-container .m-nav-2 .active > a {
+  opacity: 1;
+  font-family: CamptonBookBold;
+}
+.nav-container .m-nav-3 {
+  float: left;
+  width: 300px;
+  height: 100%;
+  padding-top: 130px;
+  padding-left: 56px;
+  background: rgba(0, 0, 0, 0.6);
+}
+.nav-container .m-nav-3 > ul {
+  display: none;
+}
+.nav-container .m-nav-3 li {
+  margin-bottom: 20px;
+}
+.nav-container .m-nav-3 li > a {
+  font-size: 20px;
+  color: #fff;
+  opacity: .7;
+  transition: opacity .3s;
+  -webkit-transition: opacity .3s;
+}
+.nav-container .m-nav-3 li:hover > a {
+  opacity: 1;
+  font-family: CamptonBookBold;
 }
 .lm-section-main {
   position: relative;
@@ -116,6 +257,9 @@ body {
 }
 .fStatus-content-inner {
   width: 908px;
+}
+.car-content-inner {
+  width: 756px;
 }
 .lm-aside-flight {
   position: absolute;
@@ -213,13 +357,59 @@ body {
   -webkit-filter: blur(4px);
   filter: blur(4px);
 }
-.lm-aside-code {
-  position: absolute;
+.aside-code-mask {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
   right: 0;
+  bottom: 0;
+  z-index: 99;
+  opacity: 0.5;
+  background: #000;
+}
+.lm-aside-code {
+  position: fixed;
+  right: -200px;
+  top: 60px;
+  z-index: 100;
+  width: 200px;
+  height: 850px;
+  background: url('../../images/EN/QR-bigCode-icon.png') center no-repeat #fff;
+  transition: right 0.3s ease-out;
+  -webkit-transition: right 0.3s ease-out;
+}
+.lm-aside-code .small-code {
+  position: absolute;
+  left: -74px;
   top: 100px;
   width: 74px;
   height: 332px;
   background: url('../../images/EN/QR-code-icon.png') center no-repeat, url('../../images/EN/QR-code-bg.png') center no-repeat;
+}
+.lm-aside-code .facebook-icon {
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+.lm-aside-code .facebook-icon .img-2 {
+  margin-left: 50px;
+}
+.lm-aside-code > h3 {
+  font-size: 18px;
+  font-family: CamptonBookBold;
+  color: #000;
+  opacity: .5;
+  margin-top: 50px;
+  margin-left: 20px;
+}
+.lm-aside-code:hover {
+  right: 0;
+}
+.lm-aside-code:hover + .aside-code-mask {
+  display: block;
 }
 .lm-important {
   position: absolute;
@@ -258,15 +448,23 @@ body {
   box-shadow: 0 0 10px 0 rgba(31, 44, 92, 0.2);
   border-radius: 100%;
 }
-.lm-important > p {
+.lm-important > ul {
+  height: 60px;
   float: left;
+  overflow: hidden;
+}
+.lm-important > ul > li {
   width: 350px;
-  margin-left: 10px;
   opacity: 0.7;
   color: #000;
+  margin-left: 10px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+.lm-important > ul > li > a {
+  opacity: 0.7;
+  color: #000;
 }
 .flight-com {
   position: absolute;
@@ -936,7 +1134,9 @@ body {
   z-index: 10;
 }
 /* 酒店预订 */
-.hotel-content-wrap {
+.hotel-content-wrap,
+.car-content-wrap,
+.fStatus-content-wrap {
   display: none;
 }
 .range-change-date {
