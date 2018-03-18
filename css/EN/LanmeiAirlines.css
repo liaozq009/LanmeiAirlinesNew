@@ -804,6 +804,7 @@ body {
 .popup-content .popup-date {
   display: none;
   width: 588px;
+  min-height: 100px;
 }
 .popup-content .popup-date .date-title {
   padding-left: 20px;
