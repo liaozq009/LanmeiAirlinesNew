@@ -60,6 +60,7 @@
       border-bottom: initial;
       border-top: 6px solid #fff; }
   .daterangepicker.dropdown-menu {
+    display: block !important;
     max-width: none;
     z-index: 3001; 
     border:1px solid transparent;

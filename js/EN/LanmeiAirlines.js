@@ -232,9 +232,11 @@ var LanmeiAirlines = {
 			switch (data) {
 				case 'round':
 					that.dateSelect(false,'.js-date-result','.js-popup-date',false,$box,$dateBox,$peopleBox);
+					$('.js-date-result').click(); //日期展示
 					break;
 				case 'one':
 					that.dateSelect(true,'.js-date-result','.js-popup-date',false,$box,$dateBox,$peopleBox);
+					$('.js-date-result').click(); //日期展示
 					break;
 			}
 		});
@@ -249,6 +251,86 @@ var LanmeiAirlines = {
 
 		/* 获取屏幕尺寸 */
 		var winWidth = $(window).width();
+
+		/* 定义出发地和目的地的值 */
+		var fromcityData = ['Sihanoukville/KOS/Cambodia','Macao/MFM/Macao,China','Phnom Penh/PNH/Cambodia','Siem Reap/REP/Cambodia','Ho Chi Minh/SGN/Vietnam','Hanoi/HAN/Vietnam','HongKong/HKG/HongKong,China','SEOUL/ICN/Korea','Bangkok/BKK/Thailand','Shijiazhuang/SJW/China','Singapore/SIN/Singapore'];
+		var tocityData = ['Sihanoukville/KOS/Cambodia','Macao/MFM/Macao,China','Phnom Penh/PNH/Cambodia','Siem Reap/REP/Cambodia','Ho Chi Minh/SGN/Vietnam','Hanoi/HAN/Vietnam','HongKong/HKG/HongKong,China','SEOUL/ICN/Korea','Bangkok/BKK/Thailand','Shijiazhuang/SJW/China','Singapore/SIN/Singapore'];
+
+		/* 设置出发地的值 */
+		var fromCityVal = function(text1,text2){
+			$fromInput.val(text2[0]+'/'+text2[1]);
+			$box.css('left',350);
+			var tocityArr = tocityData;
+			tocityArr.remove(text1);
+
+			$toMenuSub.empty();
+			$.each(tocityArr,function(i,val){
+				$toMenuSub.append('<li title="'+val+'">'+val+'</li>');
+			});
+			$toInput.focus();
+			$('.js-to-menu>li:first').addClass('active');
+			keyDown('.js-to-input','.js-to-menu',indexLiTo); //绑定键盘事件
+
+			$fromBox.slideUp(function(){ //出发地隐藏
+				$toBox.slideDown(); //目的地显示
+			}); 
+		};
+
+		/* 设置目的地的值 */
+		var toCityVal = function(text1,text2){
+			$toInput.val(text2[0]+'/'+text2[1]);
+			$box.css('left',700);
+
+			$toBox.slideUp(function(){ //出发地隐藏
+				$('.js-date-result').click(); //日期展示
+				$dateBox.slideDown(); //目的地显示
+			}); 
+		};
+
+		/* 键盘上下选择城市 */
+		var indexLiFrom = 0; //定义键盘移动index 
+		var indexLiTo = 0; //定义键盘移动index 
+		var keyDown = function(input,ul,indexLi){
+			var $input = $(input);
+
+			// 定义UL下拉菜单
+			var $fUl = $(ul);
+
+			function keychang(up){
+				if(up == "up"){ //向上
+					if(indexLi == 0){
+						indexLi = $fUl.children().length-1;
+					}else{
+						indexLi--;
+					}
+				}else{//向下
+					if(indexLi ==  $fUl.children().length-1){
+						indexLi = 0;
+					}else{
+						indexLi++;
+					}
+				}
+				$fUl.children('li').eq(indexLi).addClass("active").siblings('li').removeClass('active');		
+			}
+
+			//按键盘的上下移动LI的背景色
+			$input.keydown(function(event){
+				if(event.which == 38){//向上
+					event.preventDefault();
+					keychang("up");
+				}else if(event.which == 40){//向下
+					keychang();
+				}else if(event.which == 13){ //回车
+					var text1 = $fUl.children().eq(indexLi).attr('title');
+					var text2 = text1.split('/');
+					if(input=='.js-from-input'){
+						fromCityVal(text1,text2);
+					}else if(input=='.js-to-input'){
+						toCityVal(text1,text2);
+					}
+				}
+			});	
+		};
 
 		/* 点击机票出发地 */
 		var zoomShow = true;
@@ -275,10 +357,30 @@ var LanmeiAirlines = {
 			    }, 2200);
 				}
 			}
+		}).one('click',function(){
+			$.each(fromcityData,function(i,val){
+				$fromMenuSub.append('<li title="'+val+'">'+val+'</li>');
+			});
+			$('.js-from-menu>li:first').addClass('active');
+			keyDown('.js-from-input','.js-from-menu',indexLiFrom); //绑定键盘事件
 		});
 
 		/* 点击机票目的地 */
 		$toInput.click(function(e){
+			var fromVal = $fromInput.val();
+			$toMenuSub.empty();
+			if(fromVal==''){
+				$toMenuSub.append('<li title="No results found">No results found</li>');
+			}else{
+				var tocityArr = tocityData;
+				tocityArr.remove(fromVal);
+
+				$toMenuSub.empty();
+				$.each(tocityArr,function(i,val){
+					$toMenuSub.append('<li title="'+val+'">'+val+'</li>');
+				});
+				$('.js-to-menu>li:first').addClass('active');
+			}
 			if(winWidth>1350){
 				$box.css('left',350);
 			}else if(winWidth<=1350){
@@ -357,19 +459,28 @@ var LanmeiAirlines = {
 			$mask2.fadeOut();
 		});
 
-		// 点击取消
+		/* 点击取消 */
 		$('.js-ticket-cancel').click(function(){
 			cancel();
 		});
 
+		/* 删除数组中某个元素 */
+		Array.prototype.indexOf = function (val) {
+      for(var i = 0; i < this.length; i++){
+          if(this[i] == val){return i;}
+      }
+      return -1;
+    }
+    Array.prototype.remove = function (val) {
+      var index = this.indexOf(val);
+      if(index > -1){this.splice(index,1);}
+    }
+
 		/* 机票出发地选择 */
 		$fromMenuSub.on('click','>li',function(){
-			var text = $(this).attr('title').split('/');
-			$fromInput.val(text[0]+'/'+text[1]);
-			$box.css('left',350);
-			$fromBox.slideUp(function(){ //出发地隐藏
-				$toBox.slideDown(); //目的地显示
-			}); 
+			var text1 = $(this).attr('title');
+			var text2 = text1.split('/');
+			fromCityVal(text1,text2);
 		});
 
 		/* 机票目的地选择 */
@@ -388,8 +499,6 @@ var LanmeiAirlines = {
 		});
 
 		/* 机票模糊匹配 */
-		var fromcityData = ['Sihanoukville/KOS/Cambodia','Ho Chi Minh/SGN/Vietnam','Macao/MFM/Macao,China','Hanoi/HAN/Vietnam','Phnom Penh/PNH/Cambodia','HongKong/HKG/HongKong,China','Siem Reap/REP/Cambodia','SEOUL/ICN/Korea'];
-		var tocityData =   ['Sihanoukville/KOS/Cambodia','Ho Chi Minh/SGN/Vietnam','Macao/MFM/Macao,China','Hanoi/HAN/Vietnam','Phnom Penh/PNH/Cambodia','HongKong/HKG/HongKong,China','Siem Reap/REP/Cambodia','SEOUL/ICN/Korea'];
 		$('.js-from-input,.js-to-input').on('input',function(event) {
 			var searchText = $(this).val();
 			var cityData;
