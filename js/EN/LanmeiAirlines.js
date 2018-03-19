@@ -55,6 +55,7 @@ var LanmeiAirlines = {
 	leftAside:function(){
 		var $slide = $('.js-aside-flight>li>a');
 		var $blurImg = $('.js-aside-blur>img');
+		var $loader = $('.js-flight-loading');
 		// 滑动动画
 		function animate(top){
 			$('.li-slide').animate({top:top}, 300);
@@ -62,6 +63,7 @@ var LanmeiAirlines = {
 
 		var that = this;
 		$slide.click(function(){
+			$loader.fadeIn();
 			$(this).addClass('active').parent().siblings().children('a').removeClass('active');
 
 			var href = $(this).attr('data-href');
@@ -71,6 +73,7 @@ var LanmeiAirlines = {
 				$('.js-ticket-wrap').show();
 				animate(30);
 				$blurImg.fadeOut();
+				$loader.fadeOut();
 				$('.blur-img-ticket').fadeIn();
 				break;
 				case "hotel-content":
@@ -79,6 +82,7 @@ var LanmeiAirlines = {
 				animate(130);
 				$blurImg.fadeOut();
 				$('.blur-img-hotel').fadeIn();
+				$loader.fadeOut();
 				break;
 				case "car-content":
 				$('.js-flight-com').hide();
@@ -86,6 +90,7 @@ var LanmeiAirlines = {
 				animate(230);
 				$blurImg.fadeOut();
 				$('.blur-img-car').fadeIn();
+				$loader.fadeOut();
 				break;
 				case "flight-content":
 				$('.js-flight-com').hide();
@@ -93,6 +98,7 @@ var LanmeiAirlines = {
 				animate(330);
 				$blurImg.fadeOut();
 				$('.blur-img-flight').fadeIn();
+				$loader.fadeOut();
 				break;
 			}
 		}).one('click',function(){

@@ -225,6 +225,16 @@ body {
   height: 768px;
   min-height: 300px;
 }
+.flight-loading {
+  display: none;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  background: url('../../images/EN/flight-loader.gif') center no-repeat rgba(255, 255, 255, 0.3);
+}
 /* 机票预订 */
 .bg-com {
   position: absolute;
