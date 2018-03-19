@@ -1,11 +1,54 @@
 
 var LanmeiAirlines = {
 	init:function(){
+		this.asideMenu();
 		this.leftAside();
-		this.openMenu();
 		this.ticketSelect();
 		this.selectPeople();
+		this.banner();
 		this.otherEvent();
+	},
+
+	/* 导航栏 */
+	asideMenu:function(){
+		var $container = $('.js-nav-container');
+		var $firstMenu = $('.js-nav-first');
+		var $secondMenu = $('.js-nav-second');
+		var $threeMenu = $('.js-nav-three');
+
+		// 打开导航栏
+		$('.js-h-menu').click(function(){
+			$container.css('left',0);
+		});
+		$('.js-menu-close').click(function(event) {
+			$container.width(270);
+			$secondMenu.css('left',-300);
+			$threeMenu.css('left',-300);
+			$container.css('left',-270);
+		});
+		$('html').click(function(event) {
+			// $('.js-nav-container').css('left',-870);
+		});
+
+		// 点击一级菜单
+		$('.js-nav-first a').click(function(event) {
+			$container.width(570);
+			$secondMenu.css('left',270);
+
+			$(this).parent('li').addClass('active').siblings('li').removeClass('active');
+			var id = $(this).attr('href');
+			$(id).show().siblings('ul').hide();
+		});
+
+		// 点击二级菜单
+		$('.js-nav-second a').click(function(event) {
+			$container.width(870);
+			$threeMenu.css('left',570);
+
+			$(this).parent('li').addClass('active').siblings('li').removeClass('active');
+			var id = $(this).attr('href');
+			$(id).show().siblings('ul').hide();
+		});
 	},
 
 	/* 左侧边栏切换 */
@@ -68,19 +111,6 @@ var LanmeiAirlines = {
 					that.fStatusSelect();
 				break;
 			}
-		});
-	},
-
-	/* 打开菜单导航栏 */
-	openMenu:function(){
-		$('.js-h-menu').click(function(){
-			$('.js-nav-container').css('left',0);
-		});
-		$('.js-menu-close').click(function(event) {
-			$('.js-nav-container').css('left',-870);
-		});
-		$('html').click(function(event) {
-			// $('.js-nav-container').css('left',-870);
 		});
 	},
 
@@ -1378,12 +1408,58 @@ var LanmeiAirlines = {
 		tipFn('.infant-tip','Passengers 7 days old up to those who have not reached their 2nd birthday travel with infant status.',showInfantTip);
 	},
 
+	/* banner */
+	banner:function(){
+		var t11=new TouchSlider('banner-container',{
+			duration:800, 
+			interval:3000, 
+			direction:0, 
+			autoplay:false, 
+			align:'left', 
+			mousewheel:false, 
+			mouse:true, 
+			fullsize:false
+		});
+	},
+
 	/* 其他事件 */
 	otherEvent:function(){
-		// 首屏自适应高度
+		/* 首屏自适应高度 */
 		var winHeight = $(window).height();
 		$('.js-section-main').height(winHeight);
 		$('.js-aside-code').height(winHeight-60);
+
+		/* 右侧二维码 */
+		var enterTime;
+		var outTime;
+		var tickIn = null;
+		$('.js-aside-code').mouseenter(function(event) {
+			var that = $(this);
+			enterTime = new Date().getTime();
+			if(tickIn){
+				clearTimeout(tickIn);
+			}
+			tickIn = setTimeout(function(){
+				that.css('right',0);
+				$('.js-code-mask').show();
+			},200);
+		});
+		var tickOut = null;
+		$('.js-aside-code').mouseleave(function(event) {
+			var that = $(this);
+			outTime = new Date().getTime();
+			var diffTime = outTime-enterTime;
+			if(diffTime<200){ //鼠标快速移开的时候就清除定时器
+				clearTimeout(tickIn);
+			}
+			if(tickOut){
+				clearTimeout(tickOut);
+			}
+			tickOut = setTimeout(function(){
+				that.css('right',-200);
+				$('.js-code-mask').hide();
+			},200);
+		});
 
 		/* 文字滚动 */
 		var slideUp = function(){

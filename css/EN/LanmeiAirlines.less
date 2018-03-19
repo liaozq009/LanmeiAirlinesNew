@@ -82,16 +82,18 @@ body{
 .nav-container{
 	position: fixed;
 	top: 0;
-	left: -870px;
+	left: -270px;
 	z-index: 99;
 	height: 100%;
+	width: 270px;
 	overflow:hidden;
-	transition:left .3s  ease-out;
-	-webkit-transition:left .3s  ease-out;
+	transition:all .3s  ease-out;
+	-webkit-transition:all .3s  ease-out;
 	.nav-menu-close{
 		position: absolute;
 		right: 20px;
 		top: 16px;
+		z-index: 13;
 		width: 108px;
 		height: 28px;
 		padding-left: 58px;
@@ -102,12 +104,16 @@ body{
 		cursor: pointer;
 	}
 	.m-nav-1{
-		float: left;
+		position: absolute;
+		left: 0;
+		z-index: 11;
 		width: 270px;
 		height: 100%;
 		padding-top: 130px;
 		padding-left: 56px;
 		background: rgba(0,0,0,.8);
+		transition:all .3s  ease-out;
+		-webkit-transition:all .3s  ease-out;
 		>li{
 			margin-bottom: 60px;
 			>i{
@@ -145,12 +151,17 @@ body{
 		}
 	}
 	.m-nav-2{
-		float: left;
+		position: absolute;
+		left: -300px;
+		z-index: 10;
 		width: 300px;
 		height: 100%;
 		padding-top: 130px;
-		padding-left: 56px;
+		padding-left: 40px;
+		padding-right: 10px;
 		background: rgba(0,0,0,.7);
+		transition:all .3s  ease-out;
+		-webkit-transition:all .3s  ease-out;
 		>ul{display: none;}
 		li{
 			margin-bottom: 20px;
@@ -190,12 +201,17 @@ body{
 		}
 	}
 	.m-nav-3{
-		float: left;
+		position: absolute;
+		left: -300px;
+		z-index: 9;
 		width: 300px;
 		height: 100%;
 		padding-top: 130px;
-		padding-left: 56px;
+		padding-left: 40px;
+		padding-right: 10px;
 		background: rgba(0,0,0,.6);
+		transition:all .3s  ease-out;
+		-webkit-transition:all .3s  ease-out;
 		>ul{display: none;}
 		li{
 			margin-bottom: 20px;
@@ -215,6 +231,7 @@ body{
 		}
 	}
 }
+
 .lm-section-main{
 	position: relative;
 	top: -60px;
@@ -239,6 +256,10 @@ body{
 }
 .hotel-bg{
 	background: url('@{url}hotel-bg.jpg') center no-repeat;
+	background-size:cover;
+}
+.car-bg{
+	background: url('@{url}car-bg.jpg') center no-repeat;
 	background-size:cover;
 }
 .fStatus-bg{
@@ -407,12 +428,6 @@ body{
 		opacity: .5;
 		margin-top: 50px;
 		margin-left: 20px;
-	}
-	&:hover{
-		right: 0;
-	}
-	&:hover+.aside-code-mask{
-		display: block;
 	}
 }
 .lm-important{
@@ -1121,6 +1136,13 @@ body{
   padding-top: 7px;
   padding-bottom: 12px;
   color: rgba(0,0,0,.8)
+}
+
+.lm-section-banner{
+	width: 100%;
+	margin-top: -60px;
+	margin-bottom: 100px;
+	overflow: hidden;
 }
 
 
