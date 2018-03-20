@@ -23,6 +23,7 @@
 	<link rel="icon" href="images/EN/lanmeiLogo.ico">
 	<link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="libs/daterange/daterangepicker.css">
+	<link rel="stylesheet" href="libs/lmslick/slick.css">
 	<link rel="stylesheet" href="common/EN/css/animate.css">
 	<link rel="stylesheet" href="common/EN/css/Lanmei-common.css">
 	<link rel="stylesheet" href="css/EN/LanmeiAirlines.css">
@@ -661,17 +662,186 @@
 
 	<!-- banner -->
 	<section class="lm-section-banner">
-		<ul id='banner-container'>
-		  <li>
-		  	<img src="images/EN/banner01.jpg">
-		  </li>
-		  <li>
-		  	<img src="images/EN/banner02.jpg">
-		  </li>
-		  <li>
-		  	<img src="images/EN/banner03.jpg">
-		  </li>
-		</ul>
+		<div class="slick-banner js-slick-banner">
+			<div class="slick-item">
+				<img src="images/EN/banner01.jpg">
+				<div class="slick-content">
+					<!-- <h2>Palau dream trip</h2> -->
+					<div class="slick-detail">
+						<p>One Way:35 USD+(taxes excluded)</p>
+						<p>Round Trip:50 USD+(taxes excluded)</p>
+						<p>Sales Period:8 March 2018--27 April 2018</p>
+					</div>
+					<a href="javascript:;"></a>
+				</div>
+			</div>
+			<div class="slick-item">
+				<img src="images/EN/banner02.jpg">
+				<div class="slick-content">
+					<!-- <h2>Iceland ticket sales</h2> -->
+					<div class="slick-detail">
+						<p>One Way:35 USD+(taxes excluded)</p>
+						<p>Round Trip:50 USD+(taxes excluded)</p>
+						<p>Sales Period:8 March 2018--27 April 2018</p>
+					</div>
+					<a href="javascript:;"></a>
+				</div>
+			</div>
+			<div class="slick-item">
+				<img src="images/EN/banner03.jpg">
+				<div class="slick-content">
+					<!-- <h2>Palau dream trip</h2> -->
+					<div class="slick-detail">
+						<p>One Way:35 USD+(taxes excluded)</p>
+						<p>Round Trip:50 USD+(taxes excluded)</p>
+						<p>Sales Period:8 March 2018--27 April 2018</p>
+					</div>
+					<a href="javascript:;"></a>
+				</div>
+			</div>
+			<div class="slick-item">
+				<img src="images/EN/banner02.jpg">
+				<div class="slick-content">
+					<!-- <h2>Palau dream trip</h2> -->
+					<div class="slick-detail">
+						<p>One Way:35 USD+(taxes excluded)</p>
+						<p>Round Trip:50 USD+(taxes excluded)</p>
+						<p>Sales Period:8 March 2018--27 April 2018</p>
+					</div>
+					<a href="javascript:;"></a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- 优惠券 -->
+	<section class="lm-section-coupons">
+		<div class="coupons-title">COUPONS<h2>Discount coupons</h2></div>
+		<div class="coupons-anchor js-coupons-anchor">
+			<a href="#js-ticket-coupons">Ticket coupons</a><a href="#js-shopping-coupons" class="anchor-center active">Shopping coupons</a><a href="#js-hotel-coupons">Hotel coupons</a>
+		</div>
+		<div class="coupons-content">
+			<div class="ticket-coupons" id="js-ticket-coupons">
+				<div class="slick-item slick-item-1">
+					<img src="images/EN/ticket-coupons.png">
+					<div class="slick-content">
+						<h2><span class="s1">$</span><span class="s2">200</span></h2>
+						<p class="p1">Air Ticket Coupon</p>
+						<p class="p2">Receive Immediately</p>
+					</div>
+					<a href="javascript:;"></a>
+				</div>
+				<div class="slick-item slick-item-2">
+					<img src="images/EN/ticket-coupons.png">
+					<div class="slick-content">
+						<h2><span class="s1">$</span><span class="s2">200</span></h2>
+						<p class="p1">Air Ticket Coupon</p>
+						<p class="p2">Receive Immediately</p>
+					</div>
+					<a href="javascript:;"></a>
+				</div>
+				<div class="slick-item slick-item-3">
+					<img src="images/EN/ticket-coupons.png">
+					<div class="slick-content">
+						<h2><span class="s1">$</span><span class="s2">200</span></h2>
+						<p class="p1">Air Ticket Coupon</p>
+						<p class="p2">Receive Immediately</p>
+					</div>
+					<a href="javascript:;"></a>
+				</div>
+				<div class="slick-item slick-item-4">
+					<img src="images/EN/ticket-coupons.png">
+					<div class="slick-content">
+						<h2><span class="s1">$</span><span class="s2">200</span></h2>
+						<p class="p1">Air Ticket Coupon</p>
+						<p class="p2">Receive Immediately</p>
+					</div>
+					<a href="javascript:;"></a>
+				</div>
+				<!-- !!!下面的div不要删除，主要作用是清除浮动 -->
+				<div style="display: none;"></div>
+			</div>
+			<div class="shopping-coupons" id="js-shopping-coupons">
+				<div class="slick-item slick-item-1">
+					<img src="images/EN/shopping-coupons.png">
+					<div class="slick-content">
+						<h2><span class="s1">$</span><span class="s2">200</span></h2>
+						<p class="p1">Air Ticket Coupon</p>
+						<p class="p2">Receive Immediately</p>
+					</div>
+					<a href="javascript:;"></a>
+				</div>
+				<div class="slick-item slick-item-2">
+					<img src="images/EN/shopping-coupons.png">
+					<div class="slick-content">
+						<h2><span class="s1">$</span><span class="s2">200</span></h2>
+						<p class="p1">Air Ticket Coupon</p>
+						<p class="p2">Receive Immediately</p>
+					</div>
+					<a href="javascript:;"></a>
+				</div>
+				<div class="slick-item slick-item-3">
+					<img src="images/EN/shopping-coupons.png">
+					<div class="slick-content">
+						<h2><span class="s1">$</span><span class="s2">200</span></h2>
+						<p class="p1">Air Ticket Coupon</p>
+						<p class="p2">Receive Immediately</p>
+					</div>
+					<a href="javascript:;"></a>
+				</div>
+				<div class="slick-item slick-item-4">
+					<img src="images/EN/shopping-coupons.png">
+					<div class="slick-content">
+						<h2><span class="s1">$</span><span class="s2">200</span></h2>
+						<p class="p1">Air Ticket Coupon</p>
+						<p class="p2">Receive Immediately</p>
+					</div>
+					<a href="javascript:;"></a>
+				</div>
+				<!-- !!!下面的div不要删除，主要作用是清除浮动 -->
+				<div style="display: none;"></div>
+			</div>
+			<div class="hotel-coupons" id="js-hotel-coupons">
+				<div class="slick-item slick-item-1">
+					<img src="images/EN/hotel-coupons.png">
+					<div class="slick-content">
+						<h2><span class="s1">$</span><span class="s2">200</span></h2>
+						<p class="p1">Air Ticket Coupon</p>
+						<p class="p2">Receive Immediately</p>
+					</div>
+					<a href="javascript:;"></a>
+				</div>
+				<div class="slick-item slick-item-2">
+					<img src="images/EN/hotel-coupons.png">
+					<div class="slick-content">
+						<h2><span class="s1">$</span><span class="s2">200</span></h2>
+						<p class="p1">Air Ticket Coupon</p>
+						<p class="p2">Receive Immediately</p>
+					</div>
+					<a href="javascript:;"></a>
+				</div>
+				<div class="slick-item slick-item-3">
+					<img src="images/EN/hotel-coupons.png">
+					<div class="slick-content">
+						<h2><span class="s1">$</span><span class="s2">200</span></h2>
+						<p class="p1">Air Ticket Coupon</p>
+						<p class="p2">Receive Immediately</p>
+					</div>
+					<a href="javascript:;"></a>
+				</div>
+				<div class="slick-item slick-item-4">
+					<img src="images/EN/hotel-coupons.png">
+					<div class="slick-content">
+						<h2><span class="s1">$</span><span class="s2">200</span></h2>
+						<p class="p1">Air Ticket Coupon</p>
+						<p class="p2">Receive Immediately</p>
+					</div>
+					<a href="javascript:;"></a>
+				</div>
+				<!-- !!!下面的div不要删除，主要作用是清除浮动 -->
+				<div style="display: none;"></div>
+			</div>
+		</div>
 	</section>
 
 	<!-- 选择航班遮罩层 -->
@@ -687,7 +857,7 @@
 	<script src="libs/jQuery/jquery.easing.1.3.js"></script>
 	<script src="libs/bootstrap/js/bootstrap.min.js"></script>
 	<script src="libs/layer/layer.js"></script>
-	<script src="libs/touchslider/touchslider.js"></script>
+	<script src="libs/lmslick/slick.min.js"></script>
 	<script src="libs/daterange/moment.js"></script>
 	<script src="libs/daterange/daterangepicker.js"></script>
 

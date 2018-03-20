@@ -6,6 +6,7 @@ var LanmeiAirlines = {
 		this.ticketSelect();
 		this.selectPeople();
 		this.banner();
+		this.selectCoupons();
 		this.otherEvent();
 	},
 
@@ -1416,15 +1417,69 @@ var LanmeiAirlines = {
 
 	/* banner */
 	banner:function(){
-		var t11=new TouchSlider('banner-container',{
-			duration:800, 
-			interval:3000, 
-			direction:0, 
-			autoplay:false, 
-			align:'left', 
-			mousewheel:false, 
-			mouse:true, 
-			fullsize:false
+		$('.js-slick-banner').slick({
+			dots: false,
+			slidesToShow: 3,
+			slidesToScroll: 1,
+			// autoplay: true,
+			autoplaySpeed: 2000,
+			responsive: [
+			{
+				breakpoint: 1024,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 1
+				}
+			}
+			],
+		});
+	},
+
+	/* 优惠券 */
+	selectCoupons:function(){
+		var slick = function(id){
+			$(id).slick({
+				dots: false,
+				slidesToShow: 3.5,
+				slidesToScroll: 1,
+				infinite: false,
+				touchMove: false,
+				responsive: [
+				{
+					breakpoint: 600,
+					settings: {
+						slidesToShow: 2,
+						slidesToScroll: 1,
+						infinite: false,
+						touchMove: true,
+					}
+				}
+				],
+			});
+		};
+		// slick('#js-ticket-coupons');
+		slick('#js-shopping-coupons');
+		// slick('#js-hotel-coupons');
+
+		// 切换优惠券
+		$('.js-coupons-anchor>a').click(function(e) {
+			e.preventDefault();e.stopPropagation();
+			$(this).addClass('active').siblings('a').removeClass('active');
+			var id = $(this).attr('href');
+			$(id).show().siblings('div').hide();
+		}).one('click',function(){
+			var id = $(this).attr('href');
+			switch (id) {
+				case '#js-ticket-coupons':
+					slick('#js-ticket-coupons');
+					break;
+				case '#js-shopping-coupons':
+					slick('#js-shopping-coupons');
+					break;
+				case '#js-hotel-coupons':
+					slick('#js-hotel-coupons');
+					break;
+			}
 		});
 	},
 
