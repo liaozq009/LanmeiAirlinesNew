@@ -7,6 +7,8 @@ var LanmeiAirlines = {
 		this.selectPeople();
 		this.banner();
 		this.selectCoupons();
+		this.lowestFares();
+		this.recommendTravel();
 		this.otherEvent();
 	},
 
@@ -1437,6 +1439,129 @@ var LanmeiAirlines = {
 
 	/* 优惠券 */
 	selectCoupons:function(){
+		var ticketStr = '<div class="ticket-coupons" id="js-ticket-coupons">'+
+				'<div class="slick-item slick-item-1">'+
+					'<img src="images/EN/ticket-coupons.png">'+
+					'<div class="slick-content">'+
+						'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
+						'<p class="p1">Air Ticket Coupon</p>'+
+						'<p class="p2">Receive Immediately</p>'+
+					'</div>'+
+					'<a href="javascript:;"></a>'+
+				'</div>'+
+				'<div class="slick-item slick-item-2">'+
+					'<img src="images/EN/ticket-coupons.png">'+
+					'<div class="slick-content">'+
+						'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
+						'<p class="p1">Air Ticket Coupon</p>'+
+						'<p class="p2">Receive Immediately</p>'+
+					'</div>'+
+					'<a href="javascript:;"></a>'+
+				'</div>'+
+				'<div class="slick-item slick-item-3">'+
+					'<img src="images/EN/ticket-coupons.png">'+
+					'<div class="slick-content">'+
+						'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
+						'<p class="p1">Air Ticket Coupon</p>'+
+						'<p class="p2">Receive Immediately</p>'+
+					'</div>'+
+					'<a href="javascript:;"></a>'+
+				'</div>'+
+				'<div class="slick-item slick-item-4">'+
+					'<img src="images/EN/ticket-coupons.png">'+
+					'<div class="slick-content">'+
+						'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
+						'<p class="p1">Air Ticket Coupon</p>'+
+						'<p class="p2">Receive Immediately</p>'+
+					'</div>'+
+					'<a href="javascript:;"></a>'+
+				'</div>'+
+				'<!-- !!!下面的div不要删除，主要作用是清除浮动 -->'+
+				'<div style="display: none;"></div>'+
+			'</div>';
+
+		var shoppingStr = '<div class="shopping-coupons" id="js-shopping-coupons">'+
+				'<div class="slick-item slick-item-1">'+
+					'<img src="images/EN/shopping-coupons.png">'+
+					'<div class="slick-content">'+
+						'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
+						'<p class="p1">Air Ticket Coupon</p>'+
+						'<p class="p2">Receive Immediately</p>'+
+					'</div>'+
+					'<a href="javascript:;"></a>'+
+				'</div>'+
+				'<div class="slick-item slick-item-2">'+
+					'<img src="images/EN/shopping-coupons.png">'+
+					'<div class="slick-content">'+
+						'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
+						'<p class="p1">Air Ticket Coupon</p>'+
+						'<p class="p2">Receive Immediately</p>'+
+					'</div>'+
+					'<a href="javascript:;"></a>'+
+				'</div>'+
+				'<div class="slick-item slick-item-3">'+
+					'<img src="images/EN/shopping-coupons.png">'+
+					'<div class="slick-content">'+
+						'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
+						'<p class="p1">Air Ticket Coupon</p>'+
+						'<p class="p2">Receive Immediately</p>'+
+					'</div>'+
+					'<a href="javascript:;"></a>'+
+				'</div>'+
+				'<div class="slick-item slick-item-4">'+
+					'<img src="images/EN/shopping-coupons.png">'+
+					'<div class="slick-content">'+
+						'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
+						'<p class="p1">Air Ticket Coupon</p>'+
+						'<p class="p2">Receive Immediately</p>'+
+					'</div>'+
+					'<a href="javascript:;"></a>'+
+				'</div>'+
+				'<!-- !!!下面的div不要删除，主要作用是清除浮动 -->'+
+				'<div style="display: none;"></div>'+
+			'</div>';
+
+			var hotelStr = '<div class="hotel-coupons" id="js-hotel-coupons">'+
+					'<div class="slick-item slick-item-1">'+
+						'<img src="images/EN/hotel-coupons.png">'+
+						'<div class="slick-content">'+
+							'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
+							'<p class="p1">Air Ticket Coupon</p>'+
+							'<p class="p2">Receive Immediately</p>'+
+						'</div>'+
+						'<a href="javascript:;"></a>'+
+					'</div>'+
+					'<div class="slick-item slick-item-2">'+
+						'<img src="images/EN/hotel-coupons.png">'+
+						'<div class="slick-content">'+
+							'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
+							'<p class="p1">Air Ticket Coupon</p>'+
+							'<p class="p2">Receive Immediately</p>'+
+						'</div>'+
+						'<a href="javascript:;"></a>'+
+					'</div>'+
+					'<div class="slick-item slick-item-3">'+
+						'<img src="images/EN/hotel-coupons.png">'+
+						'<div class="slick-content">'+
+							'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
+							'<p class="p1">Air Ticket Coupon</p>'+
+							'<p class="p2">Receive Immediately</p>'+
+						'</div>'+
+						'<a href="javascript:;"></a>'+
+					'</div>'+
+					'<div class="slick-item slick-item-4">'+
+						'<img src="images/EN/hotel-coupons.png">'+
+						'<div class="slick-content">'+
+							'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
+							'<p class="p1">Air Ticket Coupon</p>'+
+							'<p class="p2">Receive Immediately</p>'+
+						'</div>'+
+						'<a href="javascript:;"></a>'+
+					'</div>'+
+					'<!-- !!!下面的div不要删除，主要作用是清除浮动 -->'+
+					'<div style="display: none;"></div>'+
+				'</div>';
+
 		var slick = function(id){
 			$(id).slick({
 				dots: false,
@@ -1457,29 +1582,74 @@ var LanmeiAirlines = {
 				],
 			});
 		};
-		// slick('#js-ticket-coupons');
+		
+		$('.js-coupons-content').html(shoppingStr);
 		slick('#js-shopping-coupons');
-		// slick('#js-hotel-coupons');
 
 		// 切换优惠券
 		$('.js-coupons-anchor>a').click(function(e) {
 			e.preventDefault();e.stopPropagation();
 			$(this).addClass('active').siblings('a').removeClass('active');
 			var id = $(this).attr('href');
-			$(id).show().siblings('div').hide();
-		}).one('click',function(){
-			var id = $(this).attr('href');
+
 			switch (id) {
 				case '#js-ticket-coupons':
+					$('.js-coupons-content').html(ticketStr);
 					slick('#js-ticket-coupons');
 					break;
 				case '#js-shopping-coupons':
+					$('.js-coupons-content').html(shoppingStr);
 					slick('#js-shopping-coupons');
 					break;
 				case '#js-hotel-coupons':
+					$('.js-coupons-content').html(hotelStr);
 					slick('#js-hotel-coupons');
 					break;
 			}
+		});
+	},
+
+	/* 特价机票 */
+	lowestFares:function(){
+		$('.js-fares-content').slick({
+			dots: false,
+			slidesToShow: 3,
+			slidesToScroll: 1,
+			infinite: false,
+			touchMove: false,
+			responsive: [
+			{
+				breakpoint: 600,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 1,
+					infinite: false,
+					touchMove: true,
+				}
+			}
+			],
+		});
+	},
+
+	/* 推荐旅游 */
+	recommendTravel:function(){
+		$('.js-travel-content').slick({
+			dots: false,
+			slidesToShow: 5,
+			slidesToScroll: 1,
+			infinite: false,
+			touchMove: false,
+			responsive: [
+			{
+				breakpoint: 600,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 1,
+					infinite: false,
+					touchMove: true,
+				}
+			}
+			],
 		});
 	},
 
@@ -1550,6 +1720,25 @@ var LanmeiAirlines = {
 			});
 		};
 		slideUp();
+
+		/* 澜湄服务背景特效 */
+		$(window).scroll(function(){
+			var sTop = $(window).scrollTop();
+			var offsetTop = $('.js-section-service').offset().top; //总高度
+			var scrollTop = $(document).scrollTop(); //隐藏高度
+			var windowHeight = $(window).height();//可见窗口
+
+			var totleH = scrollTop+windowHeight;
+
+			if(totleH>=offsetTop && totleH<=offsetTop+windowHeight+300){
+				var y = totleH-offsetTop;
+				$('.js-section-service').css('backgroundPosition','center '+(parseInt(y/3)-430)+'px');
+			}else{
+				// console.log(222);
+				// $('.section-4').css('backgroundPosition','center 0');
+			}
+		});
+
 	},
 };
 

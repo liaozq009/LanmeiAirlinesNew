@@ -31,6 +31,18 @@
 .purpleRgb(@opacity){
 	color: rgba(31,44,92,@opacity);
 }
+.blackRgb(@opacity){
+	color: rgba(0,0,0,@opacity);
+}
+.blackBgRgb(@opacity){
+	background: rgba(0,0,0,@opacity);
+}
+.whiteRgb(@opacity){
+	color: rgba(255,255,255,@opacity);
+}
+.whiteBgRgb(@opacity){
+	background: rgba(255,255,255,@opacity);
+}
 .purpleBgRgb(@opacity){
 	background: rgba(31,44,92,@opacity);
 }
@@ -111,7 +123,7 @@ body{
 		height: 100%;
 		padding-top: 130px;
 		padding-left: 56px;
-		background: rgba(0,0,0,.8);
+		.blackBgRgb(.8);
 		transition:all .3s  ease-out;
 		-webkit-transition:all .3s  ease-out;
 		>li{
@@ -159,7 +171,7 @@ body{
 		padding-top: 130px;
 		padding-left: 40px;
 		padding-right: 10px;
-		background: rgba(0,0,0,.7);
+		.blackBgRgb(.7);
 		transition:all .3s  ease-out;
 		-webkit-transition:all .3s  ease-out;
 		>ul{display: none;}
@@ -209,7 +221,7 @@ body{
 		padding-top: 130px;
 		padding-left: 40px;
 		padding-right: 10px;
-		background: rgba(0,0,0,.6);
+		.blackRgb(.6);
 		transition:all .3s  ease-out;
 		-webkit-transition:all .3s  ease-out;
 		>ul{display: none;}
@@ -836,7 +848,7 @@ body{
 		.people-prompt{
 			float: left;
 			.p1{
-				color: rgba(0,0,0,.7);
+				.blackRgb(.7);
 				>img{
 					margin-right: 10px;
 					vertical-align: text-bottom;
@@ -846,7 +858,7 @@ body{
 				margin-top: 5px;
 				font-family: @FLight;
 				font-size: 14px;
-				color: rgba(0,0,0,.3);
+				.blackRgb(.3);
 				cursor: pointer;
 				>img{
 					margin-left: 10px;
@@ -967,7 +979,7 @@ body{
 			float: left;
 			height: 50px;
 			line-height: 50px;
-			color: rgba(0,0,0,.7);
+			.blackRgb(.7);
 			font-size: 20px;
 			padding-left: 30px;
 			background: url('@{url}rooms-icon.png') left center no-repeat;
@@ -1065,7 +1077,7 @@ body{
 				margin-right: 20px;
 				padding-left: 50px;
 				font-size: 20px;
-				color: rgba(0,0,0,.7);
+				.blackRgb(.7);
 				box-shadow:0 0 20px 0 rgba(31,44,92,0.10);
 				border-radius:2px;
 				background: url('@{url}rooms-icon.png') 20px center no-repeat #fff;
@@ -1146,7 +1158,7 @@ body{
 	clear: both;
 	padding-top: 7px;
 	padding-bottom: 12px;
-	color: rgba(0,0,0,.8)
+	.blackRgb(.8);
 }
 
 .lm-section-banner{
@@ -1173,7 +1185,7 @@ body{
 			padding-top: 60px;
 			-webkit-backface-visibility: hidden;
 			backface-visibility: hidden;
-			background: rgba(0,0,0,0);
+			.blackBgRgb(0);
 			transition:all .35s;
 			-webkit-transition:all .35s;
 			>h2{
@@ -1194,7 +1206,7 @@ body{
 				.purpleRgb(.9);
 				padding:5px 10px;
 				margin-top: 5px;
-				background: rgba(255,255,255,.8);
+				.whiteBgRgb(.8);
 				border-radius: 2px;
 				-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
 				transition: opacity 0.35s, transform 0.35s;
@@ -1216,7 +1228,7 @@ body{
 		}
 		&:hover{
 			.slick-content{
-				background: rgba(0,0,0,.6);
+				.blackRgb(.6);
 				transition:all .35s;
 				-webkit-transition:all .35s;
 			}
@@ -1250,28 +1262,29 @@ body{
 	}
 }
 
-.lm-section-coupons{
-	margin-bottom: 100px;
-	.coupons-title{
-		position: relative;
-		height: 130px;
-		line-height: 140px;
-		font-size: 90px;
-		font-family: @FBold;
-		.purpleRgb(.1);
-		text-align: center;
-		>h2{
-			position: absolute;
-			top: 50%;
-			width: 100%;
-			margin-top: -16px;
-			font-size: 24px;
-			color: @purple;
-		}
+.section-content-title{
+	position: relative;
+	height: 130px;
+	line-height: 140px;
+	margin-bottom: 30px;
+	font-size: 90px;
+	font-family: @FBold;
+	.purpleRgb(.1);
+	text-align: center;
+	>h2{
+		position: absolute;
+		top: 50%;
+		width: 100%;
+		margin-top: -16px;
+		font-size: 24px;
+		color: @purple;
 	}
+}
+.lm-section-coupons{
+	margin-bottom: 60px;
 	.coupons-anchor{
 		width: 660px;
-		margin: 30px auto 30px;
+		margin: 0 auto 30px;
 		>a{
 			display: inline-block;
 			width:200px;
@@ -1293,7 +1306,6 @@ body{
 		}
 	}
 	.coupons-content{
-		.ticket-coupons,.hotel-coupons{display: none;}
 		.slick-item{
 			position: relative;
 			>img{width: 100%;}
@@ -1340,11 +1352,219 @@ body{
 			}
 		}
 		.slick-item-1{
-			padding-left: 100px;
+			padding-left: 75px;
 			.slick-content{
 				margin-left: -95px;
 			}
 		}
+	}
+}
+.lm-section-fares{
+	margin-bottom: 70px;
+	.fares-item{
+		margin-left: 50px;
+		.fares-trip{
+			float: left;
+			width: 70%;
+			height: 190px;
+			padding: 30px;
+			margin-top: 10px;
+			border-radius:2px 0 0 2px;
+			background: #fff;
+			box-shadow: 0 10px 40px rgba(31,44,92,.16);
+			.p1{
+				position: relative;
+				text-align: center;
+				img{margin:0 auto;}
+				span{
+					position: absolute;
+					left: 0;
+					top: 10px;
+					width: 100%;
+					.purpleRgb(.7);
+				}
+			}
+			>h2{
+				margin-top: 30px;
+				font-size: 20px;
+				font-family: @FBold;
+				.purpleRgb(.9);
+				overflow: hidden;
+				.s1{float: left;}
+				.s2{float: right;}
+			}
+			.p2{
+				margin-top: 30px;
+				text-align: center;
+				.blackRgb(.4);
+			}
+		}
+		.fares-price{
+			float: left;
+			width: 30%;
+			height: 210px;
+			padding-top: 40px;
+			text-align: center;
+			border-radius:0 2px 2px 0;
+			background: -webkit-linear-gradient(-45deg, #42958a 0%, #1f2c5c 100%);
+			box-shadow: 0 10px 40px rgba(0,65,144,.3);
+			>h2{
+				font-size:48px;
+				font-family: @FBold;
+			}
+			>a{
+				display: inline-block;
+				width:142px;
+				height:46px;
+				line-height: 46px;
+				color: #fff;
+				font-size: 18px;
+				margin-top: 40px;
+				background-image:-webkit-linear-gradient(180deg, #00928d 0%, #b4ec80 100%);
+				border-radius:2px;
+			}
+		}
+	}
+	.fares-item-1{
+		padding-left: 50px;
+	}
+	.slick-list{
+		padding-bottom: 30px; /* 为了完全显示阴影 */
+	}
+}
+.lm-section-service{
+	width: 100%;
+	height: 300px;
+	margin-bottom: 100px;
+	background: url('@{url}lanmeiService-bg.jpg') center no-repeat;
+	background-size: cover;
+	background-position: 50% -430px;
+	.service-bg{
+		height: 100%;
+		padding-top: 80px;
+		background: -webkit-linear-gradient(45deg, rgba(66,149,138, 0.6) 0%, rgba(31,44,92, 0.6) 100%);
+		filter: alpha(opacity=60) progid:DXImageTransform.Microsoft.gradient(startcolorstr=#42958a, endcolorstr=#1f2c5c, gradientType=1);
+	}
+	ul{
+		width: 680px;
+		height: 140px;
+		margin:0 auto;
+		>li{
+			float: left;
+			width: 140px;
+			height: 140px;
+			margin-left: 40px;
+			border-radius: 2px;
+			text-align: center;
+			a{
+				display: block;
+				width: 100%;
+				height: 100%;
+				color:#fff;
+				img{
+					margin-top: 20px;
+				}
+				p{margin-top: 16px;}
+				&:hover{
+					.purpleBgRgb(0.4);
+				}
+			}
+		}
+		.nth-child1{
+			margin-left: 0;
+		}
+	}
+}
+.lm-section-travel{
+	margin-bottom: 100px;
+	.travel-item{
+		width:400px;
+		border-radius:2px;
+		margin-left: 30px;
+		transition:all .3s;
+		-webkit-transition:all .3s;
+		>img{width: 100%;}
+		.travel-inner{
+			padding: 20px 30px 30px;
+			>h2{
+				width: 100%;
+				font-family: @FBold;
+				font-size: 24px;
+				color: @purple;
+				overflow: hidden;
+				text-overflow:ellipsis;
+				white-space: nowrap;
+			}
+			.price-wrap{
+				margin-top: 20px;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+			.price{
+				font-size: 20px;
+				font-family: @FBold;
+				background-image: -webkit-linear-gradient(180deg, #00928d 0%, #b4ec80 100%);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+			}
+			.nights{
+				.blackRgb(.4);
+			}
+			.locale-wrap{
+				margin-top: 20px;
+				overflow: hidden;
+				.locale{
+					float: left;
+					width: 60%;
+					font-size: 18px;
+					.blackRgb(.7);
+					overflow: hidden;
+					text-overflow:ellipsis;
+					white-space: nowrap;
+					img{
+						display: inline-block;
+						margin-right: 10px;
+					}
+				}
+				.see{
+					float: right;
+					.blackRgb(.2);
+					img{
+						display: inline-block;
+						margin-left: 10px;
+					}
+				}
+			}
+			.view{
+				display: block;
+				width:100%;
+				height:50px;
+				line-height: 50px;
+				text-align: center;
+				margin-top: 30px;
+				font-size: 20px;
+				.blackRgb(.6);
+				border-radius:4px;
+				.purpleBgRgb(.1);
+				transition:all .6s;
+				-webkit-transition:all .6s;
+				&:hover{
+					background: @linear;
+					.whiteRgb(.6);
+					transition:all .6s;
+					-webkit-transition:all .6s;
+				}
+			}
+		}
+		&:hover{
+			box-shadow:0 0 100px 0 rgba(31,44,92,.1);
+			transition:all .3s;
+			-webkit-transition:all .3s;
+		}
+	}
+	.travel-item-1{
+		padding-left: 70px;
 	}
 }
 
