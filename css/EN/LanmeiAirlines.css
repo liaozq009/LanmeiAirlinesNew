@@ -1844,6 +1844,9 @@ body {
 .lm-section-news .news-detail .news-info > p {
   margin-top: 10px;
   color: #1f2c5c;
+  animation-delay: .3s;
+  -webkit-animation-delay: .3s;
+  /* Safari 和 Chrome */
 }
 .lm-section-news .news-detail .news-info .news-info-detail {
   margin-top: 40px;
@@ -1851,6 +1854,9 @@ body {
 .lm-section-news .news-detail .news-info .news-info-detail p {
   color: rgba(0, 0, 0, 0.4);
   line-height: 30px;
+  animation-delay: .6s;
+  -webkit-animation-delay: .6s;
+  /* Safari 和 Chrome */
 }
 .lm-section-news .news-content {
   float: left;

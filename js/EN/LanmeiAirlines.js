@@ -1682,7 +1682,7 @@ var LanmeiAirlines = {
 			dots: false,
 			slidesToShow: 2,
 			slidesToScroll: 1,
-			infinite: false,
+			infinite: true,
 			touchMove: false,
 			variableWidth: true,
 			arrows:false,
@@ -1699,11 +1699,60 @@ var LanmeiAirlines = {
 			],
 		});
 
+		var newsStr1 = '<h2 class="animated fadeInUp">Lanmei Airlines launches flights in Cambodia, sets up "sky highway" for Mekong countries</h2>'+
+			'<p class="animated fadeInUp">2017-11-03 01:34:00</p>'+
+			'<div class="news-info-detail">'+
+				'<p class="animated fadeInUp">On Oct.9th, 2017, Lanmei Airlines (Cambodia) Co., Ltd. (referred as “Lanmei Airlines”) held a grand ceremony of Lanmei Six Nations Flights Launching and the “One-hundred Riel” Thanksgiving Foundation at Phnom Penh.</p>'+
+			'</div>';
+		var newsStr2 = '<h2 class="animated fadeInUp">Maiden flight of Lanmei Airlines has successfully completed and its commercial operation commenced.</h2>'+
+			'<p class="animated fadeInUp">2017-11-03 01:34:00</p>'+
+			'<div class="news-info-detail">'+
+				'<p class="animated fadeInUp">On 29 September 2017, flight LQ9509 safely landed at Palau Koror International Airport, which indicates the maiden flight of Lanmei Airlines (Cambodia) Co.,Ltd (“Lanmei Airlines”) has successfully completed and its commercial operation commenced.</p>'+
+			'</div>';
+		var newsStr3 = '<h2 class="animated fadeInUp">Lanmei Airlines’s Stewardess Won the World’s Top 10 Stewardess Award in 2017</h2>'+
+			'<p class="animated fadeInUp">2017-11-02 15:34:46</p>'+
+			'<div class="news-info-detail">'+
+				'<p class="animated fadeInUp">On September 15, “Press Conference of the 8th World Airline Ranking and the 7th World’s Stewardess’ Day Awarding Ceremony” was held in Hong Kong. The ceremony, sponsored by World Air Stewardess Association and Aviation Professional Committee of World Urban Cooperative Organization, totally published 15 ranking lists in terms of advantage study and assessment</p>'+
+			'</div>';
+
+		var $newsInfo = $('.js-news-info');
+		var $newsContent = $('.js-news-content');
+		var page = 1;
+		var totalPage = $('.js-news-pages>.s2').text();
+
+		var changeInfo = function(){
+			switch (page) {
+				case 1:
+					$newsInfo.html(newsStr1);
+					break;
+				case 2:
+					$newsInfo.html(newsStr2);
+					break;
+				case 3:
+					$newsInfo.html(newsStr3);
+					break;
+			}
+		};
+
 		$('.js-news-left').click(function(event) {
-			$('.js-news-content').slick('slickPrev');
+			$newsContent.slick('slickPrev');
+			if(page<=1){
+				page=(Number(totalPage)+1);
+			}
+			page--;
+			$('.js-news-pages>.s1').text(page);
+
+			changeInfo();
 		});
 		$('.js-news-right').click(function(event) {
-			$('.js-news-content').slick('slickNext');
+			$newsContent.slick('slickNext');
+			if(page>=totalPage){
+				page=0;
+			}
+			page++;
+			$('.js-news-pages>.s1').text(page);
+
+			changeInfo();
 		});
 	},
 
