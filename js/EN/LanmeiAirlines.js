@@ -9,6 +9,8 @@ var LanmeiAirlines = {
 		this.selectCoupons();
 		this.lowestFares();
 		this.recommendTravel();
+		this.recommendHotel();
+		this.lmNews();
 		this.otherEvent();
 	},
 
@@ -1476,8 +1478,6 @@ var LanmeiAirlines = {
 					'</div>'+
 					'<a href="javascript:;"></a>'+
 				'</div>'+
-				'<!-- !!!下面的div不要删除，主要作用是清除浮动 -->'+
-				'<div style="display: none;"></div>'+
 			'</div>';
 
 		var shoppingStr = '<div class="shopping-coupons" id="js-shopping-coupons">'+
@@ -1517,8 +1517,6 @@ var LanmeiAirlines = {
 					'</div>'+
 					'<a href="javascript:;"></a>'+
 				'</div>'+
-				'<!-- !!!下面的div不要删除，主要作用是清除浮动 -->'+
-				'<div style="display: none;"></div>'+
 			'</div>';
 
 			var hotelStr = '<div class="hotel-coupons" id="js-hotel-coupons">'+
@@ -1558,17 +1556,16 @@ var LanmeiAirlines = {
 						'</div>'+
 						'<a href="javascript:;"></a>'+
 					'</div>'+
-					'<!-- !!!下面的div不要删除，主要作用是清除浮动 -->'+
-					'<div style="display: none;"></div>'+
 				'</div>';
 
 		var slick = function(id){
 			$(id).slick({
 				dots: false,
-				slidesToShow: 3.5,
+				slidesToShow: 3,
 				slidesToScroll: 1,
 				infinite: false,
 				touchMove: false,
+				variableWidth: true,
 				responsive: [
 				{
 					breakpoint: 600,
@@ -1577,6 +1574,7 @@ var LanmeiAirlines = {
 						slidesToScroll: 1,
 						infinite: false,
 						touchMove: true,
+						variableWidth: false,
 					}
 				}
 				],
@@ -1617,6 +1615,7 @@ var LanmeiAirlines = {
 			slidesToScroll: 1,
 			infinite: false,
 			touchMove: false,
+			variableWidth: true,
 			responsive: [
 			{
 				breakpoint: 600,
@@ -1635,10 +1634,11 @@ var LanmeiAirlines = {
 	recommendTravel:function(){
 		$('.js-travel-content').slick({
 			dots: false,
-			slidesToShow: 5,
+			slidesToShow: 3,
 			slidesToScroll: 1,
 			infinite: false,
 			touchMove: false,
+			variableWidth: true,
 			responsive: [
 			{
 				breakpoint: 600,
@@ -1650,6 +1650,60 @@ var LanmeiAirlines = {
 				}
 			}
 			],
+		});
+	},
+
+	/* 推荐酒店 */
+	recommendHotel:function(){
+		$('.js-comfortHotel-content').slick({
+			dots: false,
+			slidesToShow: 2,
+			slidesToScroll: 1,
+			infinite: false,
+			touchMove: false,
+			variableWidth: true,
+			responsive: [
+			{
+				breakpoint: 600,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 1,
+					infinite: false,
+					touchMove: true,
+				}
+			}
+			],
+		});
+	},
+
+	/* 澜湄新闻 */
+	lmNews:function(){
+		$('.js-news-content').slick({
+			dots: false,
+			slidesToShow: 2,
+			slidesToScroll: 1,
+			infinite: false,
+			touchMove: false,
+			variableWidth: true,
+			arrows:false,
+			responsive: [
+			{
+				breakpoint: 600,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 1,
+					infinite: false,
+					touchMove: true,
+				}
+			}
+			],
+		});
+
+		$('.js-news-left').click(function(event) {
+			$('.js-news-content').slick('slickPrev');
+		});
+		$('.js-news-right').click(function(event) {
+			$('.js-news-content').slick('slickNext');
 		});
 	},
 
@@ -1745,4 +1799,3 @@ var LanmeiAirlines = {
 $(function() {
 	LanmeiAirlines.init();
 });
-

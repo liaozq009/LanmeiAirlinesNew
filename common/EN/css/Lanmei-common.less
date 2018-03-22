@@ -80,13 +80,13 @@ input::-ms-clear{display : none; }
 
 /* 引入字体 */
 @font-face {
-    font-family: CamptonBook;
-    src: url(../fonts/Campton/Rene.Bieder_Campton.Book.otf);
+	font-family: CamptonBook;
+	src: url(../fonts/Campton/Rene.Bieder_Campton.Book.otf);
 }
 @font-face {
-    font-family: CamptonBookBold;
-    src: url(../fonts/Campton/Rene.Bieder_Campton.Bold.otf);
-    font-weight:bold;
+	font-family: CamptonBookBold;
+	src: url(../fonts/Campton/Rene.Bieder_Campton.Bold.otf);
+	font-weight:bold;
 }
 
 /* project mcins style sheet*/
@@ -153,7 +153,7 @@ body {
 	}
 }
 
-/* 页脚样式 */
+/* 子页面页脚样式 */
 .footerInfo{
 	width: 100%;
 	height: 270px;
@@ -356,6 +356,43 @@ body {
 		transition-duration: 1s;
 		background: #8ec060;
 		border-color:transparent;
+	}
+}
+
+.lm-footer{
+	width: 100%;
+	height: 310px;
+	padding-top: 30px;
+	text-align: center;
+	background: @purple;
+	.facebook{
+		margin-top: 20px;
+		>.a1{margin-right: 40px;}
+		a{
+			-webkit-transition-duration: .5s;
+			transition-duration: .5s;
+			&:hover{
+				color: #8ec060;
+				-webkit-transition-duration: .5s;
+				transition-duration: .5s;
+			}
+		}
+	}
+	.f-email{
+		margin-top: 30px;
+		img{margin-right: 20px;}
+	}
+	.f-locate{
+		margin-top: 26px;
+		img{margin-right: 20px;}
+		a{
+			color: #fff;
+		}
+	}
+	.copyright{
+		margin-top: 30px;
+		color:rgba(255,255,255,.4);
+		a{color:rgba(255,255,255,.4);}
 	}
 }
 

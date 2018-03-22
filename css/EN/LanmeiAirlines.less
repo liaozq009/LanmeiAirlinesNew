@@ -1352,7 +1352,7 @@ body{
 			}
 		}
 		.slick-item-1{
-			padding-left: 75px;
+			padding-left: 95px;
 			.slick-content{
 				margin-left: -95px;
 			}
@@ -1365,7 +1365,7 @@ body{
 		margin-left: 50px;
 		.fares-trip{
 			float: left;
-			width: 70%;
+			width: 400px;
 			height: 190px;
 			padding: 30px;
 			margin-top: 10px;
@@ -1401,7 +1401,7 @@ body{
 		}
 		.fares-price{
 			float: left;
-			width: 30%;
+			width: 170px;
 			height: 210px;
 			padding-top: 40px;
 			text-align: center;
@@ -1426,7 +1426,7 @@ body{
 		}
 	}
 	.fares-item-1{
-		padding-left: 50px;
+		padding-left: 120px;
 	}
 	.slick-list{
 		padding-bottom: 30px; /* 为了完全显示阴影 */
@@ -1477,6 +1477,9 @@ body{
 }
 .lm-section-travel{
 	margin-bottom: 100px;
+	.travel-content{
+		padding-left: 120px;
+	}
 	.travel-item{
 		width:400px;
 		border-radius:2px;
@@ -1563,8 +1566,301 @@ body{
 			-webkit-transition:all .3s;
 		}
 	}
-	.travel-item-1{
-		padding-left: 70px;
+}
+.lm-section-hotel{
+	margin-bottom: 100px;
+	.hotel-com{
+		width: 960px;
+		overflow: hidden;
+		.hotel-img{
+			position: relative;
+			width: 480px;
+			height: 300px;
+			float: left;
+			>img{
+				width: 100%;
+				height: 100%;
+			}
+			.book-hotel{
+				display: none;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				z-index: 9;
+				width:160px;
+				height:60px;
+				line-height: 60px;
+				margin-left: -80px;
+				margin-top: -30px;
+				text-align: center;
+				border-radius:2px;
+				font-size:18px;
+				color: #fff;
+				background: @linear;
+				transition:all .3s;
+				-webkit-transition:all .3s;
+			}
+			>b{
+				position: absolute;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				display: block;
+				display: none;
+				.purpleBgRgb(.5);
+				transition:all .3s;
+				-webkit-transition:all .3s;
+			}
+			.save-percent{
+				position: absolute;
+				right: 0;
+				top: 40px;
+				height: 30px;
+				line-height: 32px;
+				padding:0 10px;
+				.blackBgRgb(.6);
+			}
+		}
+		.hotel-detail{
+			position: relative;
+			float: left;
+			width: 480px;
+			height: 300px;
+			padding:40px 60px;
+			background: #fff;
+			transition:all .3s;
+			-webkit-transition:all .3s;
+			>h2{
+				width: 100%;
+				font-size: 24px;
+				font-family: @FBold;
+				color: @purple;
+				overflow: hidden;
+				text-overflow:ellipsis;
+				white-space: nowrap;
+				transition:all .3s;
+				-webkit-transition:all .3s;
+			}
+			.stars{
+				margin-top: 10px;
+				img{
+					display: inline-block;
+					margin-right: 16px;
+				}
+			}
+			.country{
+				width: 100%;
+				margin-top: 30px;
+				font-size: 18px;
+				.blackRgb(.7);
+				overflow: hidden;
+				text-overflow:ellipsis;
+				white-space: nowrap;
+				transition:all .3s;
+				-webkit-transition:all .3s;
+			}
+			.area{
+				width: 100%;
+				margin-top: 10px;
+				.blackRgb(.4);
+				overflow: hidden;
+				text-overflow:ellipsis;
+				white-space: nowrap;
+				transition:all .3s;
+				-webkit-transition:all .3s;
+			}
+			.price-wrap{
+				margin-top: 27px;
+				.price{
+					font-size: 36px;
+					font-family: @FBold;
+					background-image: -webkit-linear-gradient(180deg, #00928d 0%, #b4ec80 100%);
+					-webkit-background-clip: text;
+					-webkit-text-fill-color: transparent;
+				}
+				.night{
+					font-size: 18px;
+					.blackRgb(.4);
+					transition:all .3s;
+					-webkit-transition:all .3s;
+				}
+			}
+		}
+		&:hover{
+			.hotel-img{
+				.book-hotel{
+					display: block;
+					transition:all .3s;
+					-webkit-transition:all .3s;
+				}
+				>b{
+					display: block;
+					transition:all .3s;
+					-webkit-transition:all .3s;
+				}
+			}
+			.hotel-detail{
+				background: @purple;
+				transition:all .3s;
+				-webkit-transition:all .3s;
+				>h2{
+					color: #fff;
+					transition:all .3s;
+					-webkit-transition:all .3s;
+				}
+				.country{
+					.whiteRgb(.7);
+					transition:all .3s;
+					-webkit-transition:all .3s;
+				}
+				.area{
+					.whiteRgb(.4);
+					transition:all .3s;
+					-webkit-transition:all .3s;
+				}
+				.night{
+					.whiteRgb(.4);
+					transition:all .3s;
+					-webkit-transition:all .3s;
+				}
+			}
+		}
+	}
+	.hotel-one{
+		.hotel-detail{
+			&:before{
+				content: "";
+				position: absolute;
+				left: -28px;
+				top: 50%;
+				z-index: 9;
+				margin-top: -14px;
+				display: block;
+				width: 0;
+				height: 0;
+				border-bottom: 14px solid transparent;
+				border-top: 14px solid transparent;
+				border-left: 14px solid transparent;
+				border-right: 14px solid #fff;
+				transition:all .3s;
+				-webkit-transition:all .3s;
+			}
+		}
+		&:hover{
+			.hotel-detail{
+				&:before{
+					border-right-color: @purple;
+					transition:all .3s;
+					-webkit-transition:all .3s;
+				}
+			}
+		}
+	}
+	.hotel-two{
+		.hotel-detail{
+			&:before{
+				content: "";
+				position: absolute;
+				right: -28px;
+				top: 50%;
+				z-index: 9;
+				margin-top: -14px;
+				display: block;
+				width: 0;
+				height: 0;
+				border-bottom: 14px solid transparent;
+				border-top: 14px solid transparent;
+				border-right: 14px solid transparent;
+				border-left: 14px solid #fff;
+				transition:all .3s;
+				-webkit-transition:all .3s;
+			}
+		}
+		&:hover{
+			.hotel-detail{
+				&:before{
+					border-left-color: @purple;
+					transition:all .3s;
+					-webkit-transition:all .3s;
+				}
+			}
+		}
+	}
+}
+.lm-section-news{
+	margin-bottom: 200px;
+	.news-wrap{
+		overflow: hidden;
+	}
+	.news-detail{
+		float: left;
+		width: 32%;
+		height: 400px;
+		margin-left: 6%;
+		.news-arrow{
+			width: 100%;
+			height: 50px;
+			line-height: 50px;
+			padding-left: 30px;
+			padding-right: 30px;
+			.news-arrow-com{
+				width: 20px;
+				text-align: center;
+				float: left;
+				display: block;
+			}
+			>p{
+				float: left;
+				margin-left: 20px;
+				margin-right: 20px;
+				font-family: @FBold;
+				.blackRgb(.2);
+				.s1{
+					.blackRgb(.7);
+				}
+			}
+			.news-more{
+				float: right;
+				font-family: @FBold;
+				.blackRgb(.2);
+			}
+		}
+		.news-info{
+			width: 100%;
+			height: 400px;
+			padding:40px 30px;
+			background: #fff;
+			>h2{
+				font-size: 24px;
+				font-family: @FBold;
+				color: @purple;
+				display: -webkit-box;
+				-webkit-box-orient: vertical;
+				-webkit-line-clamp: 2;
+				overflow: hidden;
+				white-space: normal !important;
+				text-overflow: ellipsis;
+				word-wrap: break-word;
+			}
+			>p{
+				margin-top: 10px;
+				color: @purple;
+			}
+			.news-info-detail{
+				margin-top: 40px;
+				p{
+					.blackRgb(.4);
+					line-height: 30px;
+				}
+			}
+		}
+	}
+	.news-content{
+		float: left;
+		width: 62%;
+		.news-item{
+			margin-right: 30px;
+		}
 	}
 }
 

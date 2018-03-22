@@ -155,7 +155,7 @@ body {
 .lanmeiHeader-subpage .lanmeiNav .lanmeiHeadInfo > ul .nth-child1 > div > span {
   margin-right: 10px;
 }
-/* 页脚样式 */
+/* 子页面页脚样式 */
 .footerInfo {
   width: 100%;
   height: 270px;
@@ -357,6 +357,50 @@ body {
   transition-duration: 1s;
   background: #8ec060;
   border-color: transparent;
+}
+.lm-footer {
+  width: 100%;
+  height: 310px;
+  padding-top: 30px;
+  text-align: center;
+  background: #1f2c5c;
+}
+.lm-footer .facebook {
+  margin-top: 20px;
+}
+.lm-footer .facebook > .a1 {
+  margin-right: 40px;
+}
+.lm-footer .facebook a {
+  -webkit-transition-duration: .5s;
+  transition-duration: .5s;
+}
+.lm-footer .facebook a:hover {
+  color: #8ec060;
+  -webkit-transition-duration: .5s;
+  transition-duration: .5s;
+}
+.lm-footer .f-email {
+  margin-top: 30px;
+}
+.lm-footer .f-email img {
+  margin-right: 20px;
+}
+.lm-footer .f-locate {
+  margin-top: 26px;
+}
+.lm-footer .f-locate img {
+  margin-right: 20px;
+}
+.lm-footer .f-locate a {
+  color: #fff;
+}
+.lm-footer .copyright {
+  margin-top: 30px;
+  color: rgba(255, 255, 255, 0.4);
+}
+.lm-footer .copyright a {
+  color: rgba(255, 255, 255, 0.4);
 }
 /* 移动端新增代码 */
 .m-header {
