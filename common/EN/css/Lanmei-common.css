@@ -372,6 +372,7 @@ body {
   margin-right: 40px;
 }
 .lm-footer .facebook a {
+  color: #07133e;
   -webkit-transition-duration: .5s;
   transition-duration: .5s;
 }
@@ -401,6 +402,13 @@ body {
 }
 .lm-footer .copyright a {
   color: rgba(255, 255, 255, 0.4);
+  transition: all .3s;
+  -webkit-transition: all .3s;
+}
+.lm-footer .copyright a:hover {
+  color: #8ec060;
+  transition: all .3s;
+  -webkit-transition: all .3s;
 }
 /* 移动端新增代码 */
 .m-header {

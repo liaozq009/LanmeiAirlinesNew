@@ -221,7 +221,7 @@ body{
 		padding-top: 130px;
 		padding-left: 40px;
 		padding-right: 10px;
-		.blackRgb(.6);
+		.blackBgRgb(.6);
 		transition:all .3s  ease-out;
 		-webkit-transition:all .3s  ease-out;
 		>ul{display: none;}
@@ -260,7 +260,7 @@ body{
 	width: 100%;
 	height: 100%;
 	z-index: 999;
-	background: url('@{url}flight-loader.gif') center no-repeat rgba(255,255,255,.3);
+	background: url('@{url}flight-loader.gif') center no-repeat rgba(255,255,255,.8);
 }
 /* 机票预订 */
 .bg-com{
@@ -651,6 +651,7 @@ body{
 		width: 30px;
 		height: 30px;
 		line-height: 40px;
+		font-size: 12px;
 		text-align: right;
 		padding-right: 6px;
 		background: url('@{url}hotel-day.png') center no-repeat;
@@ -671,7 +672,6 @@ body{
 				padding-left: 36px;
 				font-size: 20px;
 				color: @purple;
-				text-align: right;
 			}
 			.p-adult{background: url('@{url}adult.png') 0 center no-repeat;}
 			.p-child{
@@ -714,13 +714,13 @@ body{
 	.flight-cancel{
 		margin-right: 40px;
 		background:#ff8989;
-		animation-delay: .9s;
-		-webkit-animation-delay: .9s; /* Safari 和 Chrome */
+		animation-delay: .1s;
+		-webkit-animation-delay: .1s; /* Safari 和 Chrome */
 	}
 	.flight-search{
 		background: @linear;
-		animation-delay: 1.2s;
-		-webkit-animation-delay: 1.2s; /* Safari 和 Chrome */
+		animation-delay: .4s;
+		-webkit-animation-delay: .4s; /* Safari 和 Chrome */
 	}
 }
 .popup-container{position: relative;}
@@ -819,7 +819,6 @@ body{
 	.popup-date{
 		display: none;
 		width: 588px;
-		min-height: 100px;
 		.date-title {
 			padding-left: 20px;
 			padding-top: 20px;
@@ -1281,6 +1280,7 @@ body{
 	}
 }
 .lm-section-coupons{
+	position: relative;
 	margin-bottom: 60px;
 	.coupons-anchor{
 		width: 660px;
@@ -1306,6 +1306,7 @@ body{
 		}
 	}
 	.coupons-content{
+		height: 220px;
 		.slick-item{
 			position: relative;
 			>img{width: 100%;}
@@ -1358,11 +1359,22 @@ body{
 			}
 		}
 	}
+	.coupons-loading{
+		display: none;
+		position: absolute;
+		left: 0px;
+		top: 230px;
+		width: 100%;
+		height: 200px;
+		z-index: 999;
+		background: url('@{url}flight-loader.gif') center no-repeat rgba(255,255,255,.6);
+	}
 }
 .lm-section-fares{
 	margin-bottom: 70px;
 	.fares-item{
 		margin-left: 50px;
+		outline: none;
 		.fares-trip{
 			float: left;
 			width: 400px;
@@ -1390,6 +1402,11 @@ body{
 				font-family: @FBold;
 				.purpleRgb(.9);
 				overflow: hidden;
+				>span{
+					display: block;
+					width: 50%;
+					text-align: center;
+				}
 				.s1{float: left;}
 				.s2{float: right;}
 			}
@@ -1438,7 +1455,7 @@ body{
 	margin-bottom: 100px;
 	background: url('@{url}lanmeiService-bg.jpg') center no-repeat;
 	background-size: cover;
-	background-position: 50% -430px;
+	background-position: 50% -660px;
 	.service-bg{
 		height: 100%;
 		padding-top: 80px;
@@ -1476,14 +1493,16 @@ body{
 	}
 }
 .lm-section-travel{
-	margin-bottom: 100px;
-	.travel-content{
+	margin-bottom: 50px;
+	.travel-content .slick-list{
 		padding-left: 120px;
+		padding-bottom: 50px;
 	}
 	.travel-item{
 		width:400px;
 		border-radius:2px;
 		margin-left: 30px;
+		outline: none;
 		transition:all .3s;
 		-webkit-transition:all .3s;
 		>img{width: 100%;}
@@ -1550,13 +1569,9 @@ body{
 				.blackRgb(.6);
 				border-radius:4px;
 				.purpleBgRgb(.1);
-				transition:all .6s;
-				-webkit-transition:all .6s;
 				&:hover{
 					background: @linear;
-					.whiteRgb(.6);
-					transition:all .6s;
-					-webkit-transition:all .6s;
+					.whiteRgb(1);
 				}
 			}
 		}
@@ -1569,12 +1584,15 @@ body{
 }
 .lm-section-hotel{
 	margin-bottom: 100px;
-	.hotel-com{
+	.comfortHotel-item{
 		width: 960px;
+	}
+	.hotel-com{
+		width: 100%;
 		overflow: hidden;
 		.hotel-img{
 			position: relative;
-			width: 480px;
+			width: 50%;
 			height: 300px;
 			float: left;
 			>img{
@@ -1624,7 +1642,7 @@ body{
 		.hotel-detail{
 			position: relative;
 			float: left;
-			width: 480px;
+			width: 50%;
 			height: 300px;
 			padding:40px 60px;
 			background: #fff;
@@ -1790,13 +1808,14 @@ body{
 .lm-section-news{
 	margin-bottom: 200px;
 	.news-wrap{
+		position: relative;
 		overflow: hidden;
 	}
 	.news-detail{
 		float: left;
-		width: 32%;
+		width: 600px;
 		height: 400px;
-		margin-left: 6%;
+		margin-left: 120px;
 		.news-arrow{
 			width: 100%;
 			height: 50px;
@@ -1860,11 +1879,18 @@ body{
 		}
 	}
 	.news-content{
-		float: left;
-		width: 62%;
+		margin-left: 720px;
 		.news-item{
 			margin-right: 30px;
 		}
+	}
+	.news-mask{
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 502px;
+		height: 100%;
+		.blackBgRgb(.5);
 	}
 }
 
@@ -1925,5 +1951,165 @@ body{
 	}
 	.search-flight-wrap{
 		padding-left: 0;
+	}
+}
+
+/* 适配1366 */
+@media screen and (max-width: 1400px) {
+	.lm-section-banner,.lm-section-hotel{
+		margin-bottom: 60px;
+	}
+	.lm-section-coupons{
+		margin-bottom: 40px;
+	}
+	.lm-section-fares{
+		margin-bottom: 30px;
+	}
+	.lm-section-news{
+		margin-bottom: 160px;
+	}
+	.section-content-title,.lm-section-coupons .coupons-anchor{
+		transform: scale(.8); 
+		-webkit-transform: scale(.8); 
+		transform-origin: top;
+		-webkit-transform-origin: top;
+	}
+	.lm-section-service ul{
+		transform: scale(.8); 
+		-webkit-transform: scale(.8); 
+		transform-origin: top;
+		-webkit-transform-origin: top;
+	}
+	.section-content-title{
+		margin-bottom: 0;
+	}
+	.lm-section-coupons .coupons-anchor{
+		margin-bottom: 10px;
+	}
+	.lm-section-coupons {
+		.coupons-content{
+			height: 156px;
+			.slick-item{
+				> img{width: 360px;}
+				.slick-content{
+					top: 26px;
+					width: 230px;
+					margin-left: -115px;
+					.s1{font-size: 20px;}
+					.s2{font-size: 46px;}
+					.p1{font-size: 16px;}
+					.p2{
+						height: 24px;
+						line-height: 24px;
+					}
+				}
+			}
+			.slick-item-1{
+				.slick-content{
+					margin-left: -68px;
+				}
+			}
+		}
+	}
+	.lm-section-fares .fares-item {
+		.fares-trip{
+			width: 320px;
+			height: 130px;
+			padding: 15px;
+			>h2{
+				margin-top: 20px;
+				font-size: 18px;
+			}
+			.p2{
+				margin-top: 16px;
+				font-size: 12px;
+			}
+		}
+		.fares-price{
+			width: 120px;
+			height: 150px;
+			padding-top: 24px;
+			>h2{
+				font-size: 30px;
+			}
+			>a{
+				width: 100px;
+				height: 40px;
+				line-height: 40px;
+				margin-top: 30px;
+				font-size: 16px;
+			}
+		}
+	}
+	.lm-section-service{
+		height: 240px;
+		margin-bottom: 60px;
+		.service-bg{
+			margin-top: 64px;
+		}
+	}
+	.lm-section-travel .travel-item{
+		width: 320px;
+		.travel-inner{
+			padding:16px 18px 18px;
+			>h2{
+				font-size: 20px;
+			}
+			.price{
+				font-size: 18px;
+			}
+			.price-wrap,.locale-wrap{
+				margin-top: 16px;
+				.locale{font-size: 14px;}
+				.see{font-size: 12px;}
+			}
+			.view{
+				font-size: 16px;
+				margin-top: 24px;
+				height: 40px;
+				line-height: 40px;
+			}
+		}
+	}
+	.lm-section-hotel .hotel-com {
+		.hotel-detail{
+			height: 240px;
+			padding:32px 48px;
+			>h2{font-size: 20px;}
+			.country{
+				margin-top: 24px;
+				font-size: 16px;
+			}
+			.price-wrap {
+				margin-top: 18px;
+				.price{
+					font-size: 28px;
+				}
+			}
+		}
+		.hotel-img{
+			height: 240px;
+		}
+	}
+	.lm-section-news {
+		.news-detail{
+			width: 480px;
+			height: 320px;
+			.news-info{
+				height: 320px;
+				padding: 32px 24px;
+				>h2{
+					font-size: 20px;
+				}
+				.news-info-detail{margin-top: 32px;}
+			}
+		}
+		.news-content{
+			margin-left: 600px;
+			.news-item>img{
+				width: 528px;
+				height: 400px;
+			}
+		}
 	}
 }

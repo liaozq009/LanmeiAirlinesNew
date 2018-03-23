@@ -369,6 +369,7 @@ body {
 		margin-top: 20px;
 		>.a1{margin-right: 40px;}
 		a{
+			color: #07133e;
 			-webkit-transition-duration: .5s;
 			transition-duration: .5s;
 			&:hover{
@@ -392,7 +393,16 @@ body {
 	.copyright{
 		margin-top: 30px;
 		color:rgba(255,255,255,.4);
-		a{color:rgba(255,255,255,.4);}
+		a{
+			color:rgba(255,255,255,.4);
+			transition:all .3s;
+			-webkit-transition:all .3s;
+			&:hover{
+				color: @green;
+				transition:all .3s;
+				-webkit-transition:all .3s;
+			}
+		}
 	}
 }
 

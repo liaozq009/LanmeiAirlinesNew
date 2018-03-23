@@ -21,38 +21,54 @@ var LanmeiAirlines = {
 		var $secondMenu = $('.js-nav-second');
 		var $threeMenu = $('.js-nav-three');
 
-		// 打开导航栏
-		$('.js-h-menu').click(function(){
-			$container.css('left',0);
-		});
-		$('.js-menu-close').click(function(event) {
+		// 关闭侧边栏方法
+		var closeAside = function(){
 			$container.width(270);
 			$secondMenu.css('left',-300);
 			$threeMenu.css('left',-300);
 			$container.css('left',-270);
+			$('.js-nav-first li,.js-nav-second li').removeClass('active');
+		};
+
+		// 打开导航栏
+		$('.js-h-menu').click(function(e){
+			e.stopPropagation();
+			$container.css('left',0);
+		});
+		$('.js-menu-close').click(function(event) {
+			closeAside();
+		});
+
+		// 阻止冒泡
+		$container.click(function(e) {
+			e.stopPropagation();
 		});
 		$('html').click(function(event) {
-			// $('.js-nav-container').css('left',-870);
+			closeAside();
 		});
 
 		// 点击一级菜单
 		$('.js-nav-first a').click(function(event) {
 			$container.width(570);
 			$secondMenu.css('left',270);
+			$threeMenu.css('left',-300);
 
 			$(this).parent('li').addClass('active').siblings('li').removeClass('active');
 			var id = $(this).attr('href');
 			$(id).show().siblings('ul').hide();
+			$('.js-nav-second li').removeClass('active');
 		});
 
 		// 点击二级菜单
 		$('.js-nav-second a').click(function(event) {
-			$container.width(870);
-			$threeMenu.css('left',570);
+			if(!$(this).attr('data-href')){
+				$container.width(870);
+				$threeMenu.css('left',570);
 
-			$(this).parent('li').addClass('active').siblings('li').removeClass('active');
-			var id = $(this).attr('href');
-			$(id).show().siblings('ul').hide();
+				$(this).parent('li').addClass('active').siblings('li').removeClass('active');
+				var id = $(this).attr('href');
+				$(id).show().siblings('ul').hide();
+			}
 		});
 	},
 
@@ -1443,7 +1459,7 @@ var LanmeiAirlines = {
 	selectCoupons:function(){
 		var ticketStr = '<div class="ticket-coupons" id="js-ticket-coupons">'+
 				'<div class="slick-item slick-item-1">'+
-					'<img src="images/EN/ticket-coupons.png">'+
+					'<img src="images/EN/ticket-coupons.png" class="coupons-img">'+
 					'<div class="slick-content">'+
 						'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
 						'<p class="p1">Air Ticket Coupon</p>'+
@@ -1452,7 +1468,7 @@ var LanmeiAirlines = {
 					'<a href="javascript:;"></a>'+
 				'</div>'+
 				'<div class="slick-item slick-item-2">'+
-					'<img src="images/EN/ticket-coupons.png">'+
+					'<img src="images/EN/ticket-coupons.png" class="coupons-img">'+
 					'<div class="slick-content">'+
 						'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
 						'<p class="p1">Air Ticket Coupon</p>'+
@@ -1461,7 +1477,7 @@ var LanmeiAirlines = {
 					'<a href="javascript:;"></a>'+
 				'</div>'+
 				'<div class="slick-item slick-item-3">'+
-					'<img src="images/EN/ticket-coupons.png">'+
+					'<img src="images/EN/ticket-coupons.png" class="coupons-img">'+
 					'<div class="slick-content">'+
 						'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
 						'<p class="p1">Air Ticket Coupon</p>'+
@@ -1470,7 +1486,7 @@ var LanmeiAirlines = {
 					'<a href="javascript:;"></a>'+
 				'</div>'+
 				'<div class="slick-item slick-item-4">'+
-					'<img src="images/EN/ticket-coupons.png">'+
+					'<img src="images/EN/ticket-coupons.png" class="coupons-img">'+
 					'<div class="slick-content">'+
 						'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
 						'<p class="p1">Air Ticket Coupon</p>'+
@@ -1482,7 +1498,7 @@ var LanmeiAirlines = {
 
 		var shoppingStr = '<div class="shopping-coupons" id="js-shopping-coupons">'+
 				'<div class="slick-item slick-item-1">'+
-					'<img src="images/EN/shopping-coupons.png">'+
+					'<img src="images/EN/shopping-coupons.png" class="coupons-img">'+
 					'<div class="slick-content">'+
 						'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
 						'<p class="p1">Air Ticket Coupon</p>'+
@@ -1491,7 +1507,7 @@ var LanmeiAirlines = {
 					'<a href="javascript:;"></a>'+
 				'</div>'+
 				'<div class="slick-item slick-item-2">'+
-					'<img src="images/EN/shopping-coupons.png">'+
+					'<img src="images/EN/shopping-coupons.png" class="coupons-img">'+
 					'<div class="slick-content">'+
 						'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
 						'<p class="p1">Air Ticket Coupon</p>'+
@@ -1500,7 +1516,7 @@ var LanmeiAirlines = {
 					'<a href="javascript:;"></a>'+
 				'</div>'+
 				'<div class="slick-item slick-item-3">'+
-					'<img src="images/EN/shopping-coupons.png">'+
+					'<img src="images/EN/shopping-coupons.png" class="coupons-img">'+
 					'<div class="slick-content">'+
 						'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
 						'<p class="p1">Air Ticket Coupon</p>'+
@@ -1509,7 +1525,7 @@ var LanmeiAirlines = {
 					'<a href="javascript:;"></a>'+
 				'</div>'+
 				'<div class="slick-item slick-item-4">'+
-					'<img src="images/EN/shopping-coupons.png">'+
+					'<img src="images/EN/shopping-coupons.png" class="coupons-img">'+
 					'<div class="slick-content">'+
 						'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
 						'<p class="p1">Air Ticket Coupon</p>'+
@@ -1521,7 +1537,7 @@ var LanmeiAirlines = {
 
 			var hotelStr = '<div class="hotel-coupons" id="js-hotel-coupons">'+
 					'<div class="slick-item slick-item-1">'+
-						'<img src="images/EN/hotel-coupons.png">'+
+						'<img src="images/EN/hotel-coupons.png" class="coupons-img">'+
 						'<div class="slick-content">'+
 							'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
 							'<p class="p1">Air Ticket Coupon</p>'+
@@ -1530,7 +1546,7 @@ var LanmeiAirlines = {
 						'<a href="javascript:;"></a>'+
 					'</div>'+
 					'<div class="slick-item slick-item-2">'+
-						'<img src="images/EN/hotel-coupons.png">'+
+						'<img src="images/EN/hotel-coupons.png" class="coupons-img">'+
 						'<div class="slick-content">'+
 							'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
 							'<p class="p1">Air Ticket Coupon</p>'+
@@ -1539,7 +1555,7 @@ var LanmeiAirlines = {
 						'<a href="javascript:;"></a>'+
 					'</div>'+
 					'<div class="slick-item slick-item-3">'+
-						'<img src="images/EN/hotel-coupons.png">'+
+						'<img src="images/EN/hotel-coupons.png" class="coupons-img">'+
 						'<div class="slick-content">'+
 							'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
 							'<p class="p1">Air Ticket Coupon</p>'+
@@ -1548,7 +1564,7 @@ var LanmeiAirlines = {
 						'<a href="javascript:;"></a>'+
 					'</div>'+
 					'<div class="slick-item slick-item-4">'+
-						'<img src="images/EN/hotel-coupons.png">'+
+						'<img src="images/EN/hotel-coupons.png" class="coupons-img">'+
 						'<div class="slick-content">'+
 							'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
 							'<p class="p1">Air Ticket Coupon</p>'+
@@ -1568,40 +1584,47 @@ var LanmeiAirlines = {
 				variableWidth: true,
 				responsive: [
 				{
-					breakpoint: 600,
+					breakpoint: 1400,
 					settings: {
-						slidesToShow: 2,
-						slidesToScroll: 1,
-						infinite: false,
-						touchMove: true,
-						variableWidth: false,
+						// variableWidth: false,
 					}
 				}
 				],
 			});
 		};
 		
-		$('.js-coupons-content').html(shoppingStr);
+		var $content = $('.js-coupons-content');
+		$content.html(shoppingStr);
 		slick('#js-shopping-coupons');
 
 		// 切换优惠券
+		var $loading = $('.js-coupons-loading');
 		$('.js-coupons-anchor>a').click(function(e) {
 			e.preventDefault();e.stopPropagation();
+			// $loading.show();
 			$(this).addClass('active').siblings('a').removeClass('active');
 			var id = $(this).attr('href');
 
+			var hideLoading = function(){
+				setTimeout(function(){
+					$loading.hide();
+				},600);
+			};
 			switch (id) {
 				case '#js-ticket-coupons':
-					$('.js-coupons-content').html(ticketStr);
+					$content.html(ticketStr);
 					slick('#js-ticket-coupons');
+					// hideLoading();
 					break;
 				case '#js-shopping-coupons':
-					$('.js-coupons-content').html(shoppingStr);
+					$content.html(shoppingStr);
 					slick('#js-shopping-coupons');
+					// hideLoading();
 					break;
 				case '#js-hotel-coupons':
-					$('.js-coupons-content').html(hotelStr);
+					$content.html(hotelStr);
 					slick('#js-hotel-coupons');
+					// hideLoading();
 					break;
 			}
 		});
@@ -1618,12 +1641,11 @@ var LanmeiAirlines = {
 			variableWidth: true,
 			responsive: [
 			{
-				breakpoint: 600,
+				breakpoint: 1800,
 				settings: {
 					slidesToShow: 2,
 					slidesToScroll: 1,
 					infinite: false,
-					touchMove: true,
 				}
 			}
 			],
@@ -1634,19 +1656,16 @@ var LanmeiAirlines = {
 	recommendTravel:function(){
 		$('.js-travel-content').slick({
 			dots: false,
-			slidesToShow: 3,
+			slidesToShow: 4,
 			slidesToScroll: 1,
 			infinite: false,
 			touchMove: false,
 			variableWidth: true,
 			responsive: [
 			{
-				breakpoint: 600,
+				breakpoint: 1800,
 				settings: {
-					slidesToShow: 2,
-					slidesToScroll: 1,
-					infinite: false,
-					touchMove: true,
+					slidesToShow: 3,
 				}
 			}
 			],
@@ -1661,7 +1680,7 @@ var LanmeiAirlines = {
 			slidesToScroll: 1,
 			infinite: false,
 			touchMove: false,
-			variableWidth: true,
+			// variableWidth: true,
 			responsive: [
 			{
 				breakpoint: 600,
@@ -1678,7 +1697,10 @@ var LanmeiAirlines = {
 
 	/* 澜湄新闻 */
 	lmNews:function(){
-		$('.js-news-content').slick({
+		var $newsInfo = $('.js-news-info');
+		var $newsContent = $('.js-news-content');
+
+		$newsContent.slick({
 			dots: false,
 			slidesToShow: 2,
 			slidesToScroll: 1,
@@ -1693,7 +1715,7 @@ var LanmeiAirlines = {
 					slidesToShow: 2,
 					slidesToScroll: 1,
 					infinite: false,
-					touchMove: true,
+					touchMove: false,
 				}
 			}
 			],
@@ -1715,8 +1737,6 @@ var LanmeiAirlines = {
 				'<p class="animated fadeInUp">On September 15, “Press Conference of the 8th World Airline Ranking and the 7th World’s Stewardess’ Day Awarding Ceremony” was held in Hong Kong. The ceremony, sponsored by World Air Stewardess Association and Aviation Professional Committee of World Urban Cooperative Organization, totally published 15 ranking lists in terms of advantage study and assessment</p>'+
 			'</div>';
 
-		var $newsInfo = $('.js-news-info');
-		var $newsContent = $('.js-news-content');
 		var page = 1;
 		var totalPage = $('.js-news-pages>.s2').text();
 
@@ -1753,6 +1773,25 @@ var LanmeiAirlines = {
 			$('.js-news-pages>.s1').text(page);
 
 			changeInfo();
+		});
+
+		// 动态改变mask的阴影
+		var winResize = function(){
+			var conWidth = $newsContent.width();
+			var winWidth = $(window).width();
+			if(winWidth<=1400){
+				$('.js-news-mask').width(conWidth-558);
+			}else{
+				$('.js-news-mask').width(conWidth-690);
+			}
+		};
+		winResize();
+		var _tick = null;
+		$(window).resize(function(){
+			if (_tick) clearTimeout(_tick);
+			_tick = setTimeout(function() {
+				winResize();
+			}, 1000);
 		});
 	},
 
@@ -1835,7 +1874,7 @@ var LanmeiAirlines = {
 
 			if(totleH>=offsetTop && totleH<=offsetTop+windowHeight+300){
 				var y = totleH-offsetTop;
-				$('.js-section-service').css('backgroundPosition','center '+(parseInt(y/3)-430)+'px');
+				$('.js-section-service').css('backgroundPosition','center '+(parseInt(y/3)-660)+'px');
 			}else{
 				// console.log(222);
 				// $('.section-4').css('backgroundPosition','center 0');
