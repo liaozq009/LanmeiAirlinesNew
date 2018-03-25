@@ -30,9 +30,36 @@
 	<link rel="stylesheet" href="css/EN/LanmeiAirlines.css">
 
 	<!--[if lt IE 9]>
-	<script src="libs/bootstrap/js/html5shiv.min.js"></script>
-	<script src="libs/bootstrap/js/respond.min.js"></script>
-<![endif]-->
+		<script src="libs/bootstrap/js/html5shiv.min.js"></script>
+		<script src="libs/bootstrap/js/respond.min.js"></script>
+	<![endif]-->
+
+	<!--[if IE 8]>
+		<style>
+	    .leftAside .listSelectBox,.leftAside .listSelect{ 
+			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#C81f2c5c',endColorstr='#C81f2c5c');
+	    }
+		</style>
+	<![endif]-->
+
+	<!--[if !IE]><!-->
+	    <script>
+	        // 针对IE10
+	        if (/*@cc_on!@*/false) {
+	            document.documentElement.className += ' ie' + document.documentMode;
+	        }
+	        // 针对IE11及非IE浏览器，
+	        if (/*@cc_on!@*/true) {
+	            document.documentElement.className += ' ie' + document.documentMode;
+	        }
+	    </script>
+	<!--<![endif]-->
+
+	<style>
+		.ie11 .rooms-content-com{
+			margin-left: 18px !important;
+		}
+	</style>
 
 </head>
 <body>

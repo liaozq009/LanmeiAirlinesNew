@@ -207,7 +207,10 @@ var LanmeiAirlines = {
 							box.addClass('hotelPeople-popup-box'); //移动before小箭头
 						},600);
 					}else if(winWidth<=1350){
-						box.css({'top':-10,'left':350});
+						box.css({'top':-10,'left':-90});
+						setTimeout(function(){
+							box.addClass('hotelPeople-popup-box'); //移动before小箭头
+						},600);
 					}
 				}else{
 					if(peopleBox!=='0'){
@@ -397,7 +400,7 @@ var LanmeiAirlines = {
 				if(winWidth>1350){
 					$box.css('left',0);
 				}else if(winWidth<=1350){
-					$box.css({'top':-90,'left':0});
+					$box.css({'top':-88,'left':0});
 				}
 				popupShow(); //增加c3动画
 
@@ -441,7 +444,7 @@ var LanmeiAirlines = {
 			if(winWidth>1350){
 				$box.css('left',350);
 			}else if(winWidth<=1350){
-				$box.css({'top':-90,'left':350});
+				$box.css({'top':-88,'left':350});
 			}
 			popupShow(); //增加c3动画
 			$popupContent.css('z-index','1'); //覆盖cancel按钮
@@ -684,7 +687,7 @@ var LanmeiAirlines = {
 			if(winWidth>1350){
 				$hotelBox.css('left',610);
 			}else if(winWidth<=1350){
-				$hotelBox.css({'top':-10,'left':350});
+				$hotelBox.css({'top':-10,'left':-90});
 			}
 			$that.changeWidth();
 			hotelPopupShow(); //增加c3动画
@@ -1169,7 +1172,7 @@ var LanmeiAirlines = {
 			if(winWidth>1350){
 				$fStatusBox.css('left',350);
 			}else if(winWidth<=1350){
-				$fStatusBox.css({'top':-90,'left':0});
+				$fStatusBox.css({'top':-90,'left':350});
 			}
 			fStatusPopupShow(); //增加c3动画
 
@@ -1280,7 +1283,7 @@ var LanmeiAirlines = {
 			if(winWidth>1350){
 				$fStatusBox.css('left',350);
 			}else if(winWidth<=1350){
-				$fStatusBox.css({'top':-10,'left':0});
+				$fStatusBox.css({'top':-90,'left':350});
 			}
 			$routeFromBox.slideUp(function(){ //酒店出发地隐藏
 				$routeToBox.slideDown(); //酒店日期显示

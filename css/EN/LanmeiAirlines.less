@@ -20,7 +20,11 @@
 /* 定义颜色变量 */
 @green:#8ec060;
 @purple:#1f2c5c;
-@linear:-webkit-linear-gradient(0deg, #42958a 0%, #1f2c5c 100%);
+@webkit-linear:-webkit-linear-gradient(left, #42958a 0%, #1f2c5c 100%);
+@o-linear:-o-linear-gradient(right, #42958a 0%, #1f2c5c 100%);
+@moz-linear:-moz-linear-gradient(right, #42958a 0%, #1f2c5c 100%);
+@linear:linear-gradient(to right, #42958a 0%, #1f2c5c 100%);
+@filter:alpha progid:DXImageTransform.Microsoft.gradient(startcolorstr=#42958a, endcolorstr=#1f2c5c, gradientType=1); /*ie8*/
 @FBook:CamptonBook;
 @FBold:CamptonBookBold;
 @FLight:CamptonBookLight;
@@ -67,7 +71,12 @@ body{
 	line-height: 60px;
 	padding: 0 20px;
 	text-align: center;
+	background: @webkit-linear;
+	background: @o-linear;
+	background: @moz-linear;
 	background: @linear;
+	filter: @filter; /*ie8*/
+	:root .gradient{filter:none;} ; /*ie9*/
 	.h-menu{
 		float: left;
 		font-family:@FBold;
@@ -143,6 +152,7 @@ body{
 				font-size: 20px;
 				color: #fff;
 				opacity: .7;
+				filter:alpha(opacity=70);
 				transition:opacity .3s;
 				-webkit-transition:opacity .3s;
 			}
@@ -150,6 +160,7 @@ body{
 				>i{visibility: visible;}
 				>a{
 					opacity: 1;
+					filter:alpha(opacity=100);
 					font-family: @FBold;
 				}
 			}
@@ -158,6 +169,7 @@ body{
 			>i{visibility: visible;}
 			>a{
 				opacity: 1;
+				filter:alpha(opacity=100);
 				font-family: @FBold;
 			}
 		}
@@ -193,6 +205,7 @@ body{
 				font-size: 20px;
 				color: #fff;
 				opacity: .7;
+				filter:alpha(opacity=70);
 				transition:opacity .3s;
 				-webkit-transition:opacity .3s;
 			}
@@ -200,6 +213,7 @@ body{
 				>i{visibility: visible;}
 				>a{
 					opacity: 1;
+					filter:alpha(opacity=100);
 					font-family: @FBold;
 				}
 			}
@@ -208,6 +222,7 @@ body{
 			>i{visibility: visible;}
 			>a{
 				opacity: 1;
+				filter:alpha(opacity=100);
 				font-family: @FBold;
 			}
 		}
@@ -231,12 +246,14 @@ body{
 				font-size: 20px;
 				color: #fff;
 				opacity: .7;
+				filter:alpha(opacity=70);
 				transition:opacity .3s;
 				-webkit-transition:opacity .3s;
 			}
 			&:hover{
 				>a{
 					opacity: 1;
+					filter:alpha(opacity=100);
 					font-family: @FBold;
 				}
 			}
@@ -304,6 +321,7 @@ body{
 	width: 678px;
 	>h1{
 		opacity:0.9;
+		filter:alpha(opacity=90);
 		font-family:@FBold;
 		font-size:64px;
 		line-height:70px;
@@ -414,6 +432,7 @@ body{
 	bottom: 0;
 	z-index: 99;
 	opacity:0.5;
+	filter:alpha(opacity=50);
 	background:#000;
 }
 .lm-aside-code{
@@ -449,6 +468,7 @@ body{
 		font-family: @FBold;
 		color:#000;
 		opacity: .5;
+		filter:alpha(opacity=50);
 		margin-top: 50px;
 		margin-left: 20px;
 	}
@@ -473,7 +493,12 @@ body{
 		margin-top: 15px;
 		padding-left: 30px;
 		font-size: 14px;
-		background-image:@linear;
+		background: @webkit-linear;
+		background: @o-linear;
+		background: @moz-linear;
+		background: @linear;
+		filter: @filter; /*ie8*/
+		:root .gradient{filter:none;} ; /*ie9*/
 		border-radius:0 20px 20px 0;
 		>p{
 			display: inline-block;
@@ -496,6 +521,7 @@ body{
 		>li{
 			width: 350px;
 			opacity:0.7;
+			filter:alpha(opacity=70);
 			color:#000;
 			margin-left: 10px;
 			overflow: hidden;
@@ -503,6 +529,7 @@ body{
 			white-space: nowrap;
 			>a{
 				opacity:0.7;
+				filter:alpha(opacity=70);
 				color:#000;
 			}
 		}
@@ -515,6 +542,7 @@ body{
 	z-index: 11;
 	.tips-com{
 		opacity:0.5;
+		filter:alpha(opacity=50);
 		font-size:24px;
 		animation-delay:.3s;
 		-webkit-animation-delay:.3s; /* Safari 和 Chrome */
@@ -533,6 +561,7 @@ body{
 			padding-right: 16px;
 			margin-right: 10px;
 			.purpleRgb(0.5);
+			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F1F2C5C,endColorstr=#7F1F2C5C);
 			background:#fff;
 			box-shadow:0 0 50px 0 rgba(31,44,92,0.10);
 			border-radius:2px;
@@ -568,19 +597,23 @@ body{
 			border-radius: 2px;
 		}
 		:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-			color: @purple; opacity:.3;font-size: 20px; 
+			.purpleRgb(.3);font-size: 20px; 
+			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C1F2C5C,endColorstr=#4C1F2C5C);
 		}
 
 		::-moz-placeholder { /* Mozilla Firefox 19+ */
-			color: @purple;opacity:.3;font-size: 20px;
+			.purpleRgb(.3);font-size: 20px;
+			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C1F2C5C,endColorstr=#4C1F2C5C);
 		}
 
 		input:-ms-input-placeholder{
-			color: @purple;opacity:.3;font-size: 20px;
+			.purpleRgb(.3);font-size: 20px;
+			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C1F2C5C,endColorstr=#4C1F2C5C);
 		}
 
 		input::-webkit-input-placeholder{
-			color: @purple;opacity:.3;font-size: 20px;
+			.purpleRgb(.3);font-size: 20px;
+			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C1F2C5C,endColorstr=#4C1F2C5C);
 		}
 		.t-from-input {
 			background: url('@{url}city-from.png') 20px no-repeat #fff;
@@ -597,6 +630,7 @@ body{
 	}
 	.hotel-from{width: 660px;}
 	.flight-number-box,.fStatus-date{width: 660px;}
+	.fStatus-date{margin-right: 0;}
 	.from-com{
 		visibility: visible;
 		animation-delay: .6s;
@@ -718,7 +752,12 @@ body{
 		-webkit-animation-delay: .1s; /* Safari 和 Chrome */
 	}
 	.flight-search{
+		background: @webkit-linear;
+		background: @o-linear;
+		background: @moz-linear;
 		background: @linear;
+		filter: @filter; /*ie8*/
+		:root .gradient{filter:none;} ; /*ie9*/
 		animation-delay: .4s;
 		-webkit-animation-delay: .4s; /* Safari 和 Chrome */
 	}
@@ -735,6 +774,7 @@ body{
 		left: 150px;
 		z-index: 9;
 		opacity: 0;
+		filter:alpha(opacity=0);
 		content: "";
 		display: block;
 		width: 0;
@@ -753,6 +793,7 @@ body{
 }
 .popup-box-before::before{
 	opacity: 1;
+	filter:alpha(opacity=100);
 	transition: opacity .3s ease-out;
 	-webkit-transition: opacity .3s ease-out;
 }
@@ -763,6 +804,7 @@ body{
 	z-index: 1;
 	font-size: 16px;
 	.purpleRgb(.5);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F1F2C5C,endColorstr=#7F1F2C5C);
 	background:#fff;
 	border-radius: 2px;
 	box-shadow:0 0 30px 0 #1f2c5c;
@@ -775,6 +817,7 @@ body{
 			font-family: @FBold;
 			font-size: 20px;
 			.purpleRgb(.8);
+			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#C81F2C5C,endColorstr=#C81F2C5C);
 			margin-bottom: 20px;
 		}
 		.flight-list-wrap{
@@ -825,6 +868,7 @@ body{
 			font-size: 20px;
 			font-family: @FBold;
 			.purpleRgb(.8); 
+			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#C81F2C5C,endColorstr=#C81F2C5C);
 		}
 	}
 	.popup-people{
@@ -837,6 +881,7 @@ body{
 			font-size: 20px;
 			font-family: @FBold;
 			.purpleRgb(.8); 
+			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#C81F2C5C,endColorstr=#C81F2C5C);
 		}
 		.s-people-com{
 			height: 50px;
@@ -848,6 +893,7 @@ body{
 			float: left;
 			.p1{
 				.blackRgb(.7);
+				filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2000000,endColorstr=#B2000000);
 				>img{
 					margin-right: 10px;
 					vertical-align: text-bottom;
@@ -858,6 +904,7 @@ body{
 				font-family: @FLight;
 				font-size: 14px;
 				.blackRgb(.3);
+				filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endColorstr=#4C000000);
 				cursor: pointer;
 				>img{
 					margin-left: 10px;
@@ -874,7 +921,12 @@ body{
 			padding: 4px;
 			text-align: center;
 			color: #fff;
+			background: @webkit-linear;
+			background: @o-linear;
+			background: @moz-linear;
 			background: @linear;
+			filter: @filter; /*ie8*/
+			:root .gradient{filter:none;} ; /*ie9*/
 			border-radius:2px;
 			>a{
 				display: inline-block;
@@ -979,6 +1031,7 @@ body{
 			height: 50px;
 			line-height: 50px;
 			.blackRgb(.7);
+			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2000000,endColorstr=#B2000000);
 			font-size: 20px;
 			padding-left: 30px;
 			background: url('@{url}rooms-icon.png') left center no-repeat;
@@ -986,6 +1039,7 @@ body{
 		.rooms-content-com{
 			float: left;
 			margin-left: 20px;
+			margin-left: 18px\9;
 			.hotel-people-prompt{
 				.p1{
 					height: 50px;
@@ -1077,6 +1131,7 @@ body{
 				padding-left: 50px;
 				font-size: 20px;
 				.blackRgb(.7);
+				filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2000000,endColorstr=#B2000000);
 				box-shadow:0 0 20px 0 rgba(31,44,92,0.10);
 				border-radius:2px;
 				background: url('@{url}rooms-icon.png') 20px center no-repeat #fff;
@@ -1099,6 +1154,7 @@ body{
 			}
 			.add-rooms-btn{
 				.purpleRgb(.3);
+				filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C1F2C5C,endColorstr=#4C1F2C5C);
 				background: url('@{url}add-rooms.png') 20px center no-repeat #fff;
 				cursor: pointer;
 			}
@@ -1107,6 +1163,7 @@ body{
 }
 .popup-inactive{
 	opacity: 0;
+	filter:alpha(opacity=0);
 	visibility: hidden;
 	transform: perspective(600px) rotateX(-10deg);
 	-webkit-transform: perspective(600px) rotateX(-10deg);
@@ -1115,6 +1172,7 @@ body{
 }
 .popup-active{
 	opacity: 1;
+	filter:alpha(opacity=100);
 	visibility: visible;
 	transform: perspective(600px) rotateX(0);
 	-webkit-transform: perspective(600px) rotateX(0);
@@ -1140,10 +1198,12 @@ body{
 	bottom: 0;
 	z-index: 9;
 	opacity:0.5;
+	filter:alpha(opacity=50);
 	background:#000;
 }
 .lm-flight-mask2{
 	opacity:.1;
+	filter:alpha(opacity=100);
 	z-index: 10;
 }
 
@@ -1158,6 +1218,7 @@ body{
 	padding-top: 7px;
 	padding-bottom: 12px;
 	.blackRgb(.8);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#C8000000,endColorstr=#C8000000);
 }
 
 .lm-section-banner{
@@ -1203,6 +1264,7 @@ body{
 				float: left;
 				font-size: 18px;
 				.purpleRgb(.9);
+				filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#E51F2C5C,endColorstr=#E51F2C5C);
 				padding:5px 10px;
 				margin-top: 5px;
 				.whiteBgRgb(.8);
@@ -1228,17 +1290,20 @@ body{
 		&:hover{
 			.slick-content{
 				.blackRgb(.6);
+				filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000,endColorstr=#99000000);
 				transition:all .35s;
 				-webkit-transition:all .35s;
 			}
 			>img{
 				opacity: 0.4;
+				filter:alpha(opacity=40);
 				-webkit-transform: scale3d(1.1,1.1,1);
 				transform: scale3d(1.1,1.1,1);
 			}
 			.slick-detail {
 				p{
 					opacity: 1;
+					filter:alpha(opacity=100);
 					-webkit-transform: translate3d(0,0,0);
 					transform: translate3d(0,0,0);
 					-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
@@ -1269,6 +1334,7 @@ body{
 	font-size: 90px;
 	font-family: @FBold;
 	.purpleRgb(.1);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#191F2C5C,endColorstr=#191F2C5C);
 	text-align: center;
 	>h2{
 		position: absolute;
@@ -1292,6 +1358,7 @@ body{
 			line-height: 50px;
 			font-size: 18px;
 			.purpleRgb(.3);
+			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C1F2C5C,endColorstr=#4C1F2C5C);
 			text-align: center;
 			background:#e9ecfa;
 			border-radius:2px;
@@ -1339,6 +1406,7 @@ body{
 					width: 100%;
 					height: 30px;
 					line-height: 30px;
+					margin-top: 10px;
 					border-radius: 100px;
 					color: #333;
 					background: #fff;
@@ -1394,6 +1462,7 @@ body{
 					top: 10px;
 					width: 100%;
 					.purpleRgb(.7);
+					filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#B21F2C5C,endColorstr=#B21F2C5C);
 				}
 			}
 			>h2{
@@ -1401,6 +1470,7 @@ body{
 				font-size: 20px;
 				font-family: @FBold;
 				.purpleRgb(.9);
+				filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#E51F2C5C,endColorstr=#E51F2C5C);
 				overflow: hidden;
 				>span{
 					display: block;
@@ -1414,6 +1484,7 @@ body{
 				margin-top: 30px;
 				text-align: center;
 				.blackRgb(.4);
+				filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#66000000,endColorstr=#66000000);
 			}
 		}
 		.fares-price{
@@ -1423,7 +1494,12 @@ body{
 			padding-top: 40px;
 			text-align: center;
 			border-radius:0 2px 2px 0;
-			background: -webkit-linear-gradient(-45deg, #42958a 0%, #1f2c5c 100%);
+			background: -webkit-linear-gradient(left top, #42958a 0%, #1f2c5c 100%);
+			background: -webkit-linear-gradient(bottom right, #42958a 0%, #1f2c5c 100%);
+			background: -webkit-linear-gradient(bottom right, #42958a 0%, #1f2c5c 100%);
+			background: linear-gradient(to bottom right, #42958a 0%, #1f2c5c 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#42958a', endColorstr='#1f2c5c',GradientType=0 ); 
+			:root .gradient{filter:none;} 
 			box-shadow: 0 10px 40px rgba(0,65,144,.3);
 			>h2{
 				font-size:48px;
@@ -1437,7 +1513,12 @@ body{
 				color: #fff;
 				font-size: 18px;
 				margin-top: 40px;
-				background-image:-webkit-linear-gradient(180deg, #00928d 0%, #b4ec80 100%);
+				background-image:-webkit-linear-gradient(right, #00928d 0%, #b4ec80 100%);
+				background-image:-o-linear-gradient(left, #00928d 0%, #b4ec80 100%);
+				background-image:-moz-linear-gradient(left, #00928d 0%, #b4ec80 100%);
+				background-image:linear-gradient(to left, #00928d 0%, #b4ec80 100%);
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ec80', endColorstr='#00928d',GradientType=1 ); 
+				:root .gradient{filter:none;} 
 				border-radius:2px;
 			}
 		}
@@ -1459,8 +1540,12 @@ body{
 	.service-bg{
 		height: 100%;
 		padding-top: 80px;
-		background: -webkit-linear-gradient(45deg, rgba(66,149,138, 0.6) 0%, rgba(31,44,92, 0.6) 100%);
-		filter: alpha(opacity=60) progid:DXImageTransform.Microsoft.gradient(startcolorstr=#42958a, endcolorstr=#1f2c5c, gradientType=1);
+		background: -webkit-linear-gradient(left, rgba(66,149,138, 0.6), rgba(31,44,92, 0.6));
+		background: -o-linear-gradient(right, rgba(66,149,138, 0.6), rgba(31,44,92, 0.6));
+		background: -moz-linear-gradient(right, rgba(66,149,138, 0.6), rgba(31,44,92, 0.6));
+		background: linear-gradient(to right, rgba(66,149,138, 0.6), rgba(31,44,92, 0.6));
+		filter: alpha(opacity=60) progid:DXImageTransform.Microsoft.gradient(startcolorstr=#42958a, endcolorstr=#1f2c5c, gradientType=1); /*ie8*/
+		:root .gradient{filter:none;} ; /*ie9*/
 	}
 	ul{
 		width: 680px;
@@ -1526,12 +1611,17 @@ body{
 			.price{
 				font-size: 20px;
 				font-family: @FBold;
-				background-image: -webkit-linear-gradient(180deg, #00928d 0%, #b4ec80 100%);
+				background: -webkit-linear-gradient(left,  #b4ec80, #00928d);
+				background: -o-linear-gradient(right,  #b4ec80, #00928d);
+				background: -moz-linear-gradient(right,  #b4ec80, #00928d);
+				background: linear-gradient(to right,  #b4ec80, #00928d);
 				-webkit-background-clip: text;
 				-webkit-text-fill-color: transparent;
+				color: #00928d\9;
 			}
 			.nights{
 				.blackRgb(.4);
+				filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#66000000,endColorstr=#66000000);
 			}
 			.locale-wrap{
 				margin-top: 20px;
@@ -1541,6 +1631,7 @@ body{
 					width: 60%;
 					font-size: 18px;
 					.blackRgb(.7);
+					filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2000000,endColorstr=#B2000000);
 					overflow: hidden;
 					text-overflow:ellipsis;
 					white-space: nowrap;
@@ -1552,6 +1643,7 @@ body{
 				.see{
 					float: right;
 					.blackRgb(.2);
+					filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#33000000,endColorstr=#33000000);
 					img{
 						display: inline-block;
 						margin-left: 10px;
@@ -1567,10 +1659,16 @@ body{
 				margin-top: 30px;
 				font-size: 20px;
 				.blackRgb(.6);
+				filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000,endColorstr=#99000000);
 				border-radius:4px;
 				.purpleBgRgb(.1);
 				&:hover{
+					background: @webkit-linear;
+					background: @o-linear;
+					background: @moz-linear;
 					background: @linear;
+					filter: @filter; /*ie8*/
+					:root .gradient{filter:none;} ; /*ie9*/
 					.whiteRgb(1);
 				}
 			}
@@ -1614,7 +1712,12 @@ body{
 				border-radius:2px;
 				font-size:18px;
 				color: #fff;
+				background: @webkit-linear;
+				background: @o-linear;
+				background: @moz-linear;
 				background: @linear;
+				filter: @filter; /*ie8*/
+				:root .gradient{filter:none;} ; /*ie9*/
 				transition:all .3s;
 				-webkit-transition:all .3s;
 			}
@@ -1671,6 +1774,7 @@ body{
 				margin-top: 30px;
 				font-size: 18px;
 				.blackRgb(.7);
+				filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2000000,endColorstr=#B2000000);
 				overflow: hidden;
 				text-overflow:ellipsis;
 				white-space: nowrap;
@@ -1681,6 +1785,7 @@ body{
 				width: 100%;
 				margin-top: 10px;
 				.blackRgb(.4);
+				filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#66000000,endColorstr=#66000000);
 				overflow: hidden;
 				text-overflow:ellipsis;
 				white-space: nowrap;
@@ -1692,13 +1797,18 @@ body{
 				.price{
 					font-size: 36px;
 					font-family: @FBold;
-					background-image: -webkit-linear-gradient(180deg, #00928d 0%, #b4ec80 100%);
+					background: -webkit-linear-gradient(left,  #b4ec80, #00928d);
+					background: -o-linear-gradient(right,  #b4ec80, #00928d);
+					background: -moz-linear-gradient(right,  #b4ec80, #00928d);
+					background: linear-gradient(to right,  #b4ec80, #00928d);
 					-webkit-background-clip: text;
 					-webkit-text-fill-color: transparent;
+					color: #00928d\9;
 				}
 				.night{
 					font-size: 18px;
 					.blackRgb(.4);
+					filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#66000000,endColorstr=#66000000);
 					transition:all .3s;
 					-webkit-transition:all .3s;
 				}
@@ -1728,16 +1838,19 @@ body{
 				}
 				.country{
 					.whiteRgb(.7);
+					filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2ffffff,endColorstr=#B2ffffff);
 					transition:all .3s;
 					-webkit-transition:all .3s;
 				}
 				.area{
 					.whiteRgb(.4);
+					filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#66ffffff,endColorstr=#66ffffff);
 					transition:all .3s;
 					-webkit-transition:all .3s;
 				}
 				.night{
 					.whiteRgb(.4);
+					filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#66ffffff,endColorstr=#66ffffff);
 					transition:all .3s;
 					-webkit-transition:all .3s;
 				}
@@ -1834,14 +1947,17 @@ body{
 				margin-right: 20px;
 				font-family: @FBold;
 				.blackRgb(.2);
+				filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#33000000,endColorstr=#33000000);
 				.s1{
 					.blackRgb(.7);
+					filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2000000,endColorstr=#B2000000);
 				}
 			}
 			.news-more{
 				float: right;
 				font-family: @FBold;
 				.blackRgb(.2);
+				filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#33000000,endColorstr=#33000000);
 			}
 		}
 		.news-info{
@@ -1871,6 +1987,7 @@ body{
 				margin-top: 40px;
 				p{
 					.blackRgb(.4);
+					filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#66000000,endColorstr=#66000000);
 					line-height: 30px;
 					animation-delay:.6s;
 					-webkit-animation-delay:.6s; /* Safari 和 Chrome */
@@ -1954,98 +2071,134 @@ body{
 	}
 }
 
+/* 调整滑动组件左右箭头居中 */
+@media screen and (min-width: 1400px){
+	.lm-section-coupons,.lm-section-fares,.lm-section-hotel{
+		.slick-prev{margin-top: -75px;}
+		.slick-next{margin-top: -75px;}
+	}
+}
 /* 适配1366 */
 @media screen and (max-width: 1400px) {
-	.lm-section-banner,.lm-section-hotel{
-		margin-bottom: 60px;
+	.lm-section-banner,.lm-section-service,.lm-section-hotel{
+		margin-bottom: 80px;
 	}
 	.lm-section-coupons{
-		margin-bottom: 40px;
+		margin-bottom: 50px;
 	}
 	.lm-section-fares{
-		margin-bottom: 30px;
+		margin-bottom: 50px;
 	}
 	.lm-section-news{
 		margin-bottom: 160px;
 	}
-	.section-content-title,.lm-section-coupons .coupons-anchor{
-		transform: scale(.8); 
-		-webkit-transform: scale(.8); 
-		transform-origin: top;
-		-webkit-transform-origin: top;
-	}
-	.lm-section-service ul{
-		transform: scale(.8); 
-		-webkit-transform: scale(.8); 
-		transform-origin: top;
-		-webkit-transform-origin: top;
-	}
 	.section-content-title{
-		margin-bottom: 0;
+		font-size: 72px;
+		height: 104px;
+		line-height: 106px;
+		>h2{font-size: 20px;}
 	}
 	.lm-section-coupons .coupons-anchor{
-		margin-bottom: 10px;
+		width: 528px;
+		margin-bottom: 14px;
+		>a{
+			width: 160px;
+			height: 40px;
+			line-height: 40px;
+			font-size: 14px;
+		}
+		.anchor-center{
+			margin-left: 24px;
+			margin-right: 24px;
+		}
 	}
 	.lm-section-coupons {
 		.coupons-content{
-			height: 156px;
+			height: 176px;
 			.slick-item{
-				> img{width: 360px;}
+				> img{width: 404px;}
 				.slick-content{
 					top: 26px;
 					width: 230px;
 					margin-left: -115px;
-					.s1{font-size: 20px;}
-					.s2{font-size: 46px;}
+					.s1{font-size: 24px;}
+					.s2{font-size: 58px;}
 					.p1{font-size: 16px;}
 					.p2{
 						height: 24px;
 						line-height: 24px;
+						margin-top: 6px;
 					}
 				}
 			}
 			.slick-item-1{
+				padding-left: 76px;
 				.slick-content{
 					margin-left: -68px;
 				}
 			}
 		}
 	}
-	.lm-section-fares .fares-item {
-		.fares-trip{
-			width: 320px;
-			height: 130px;
-			padding: 15px;
-			>h2{
-				margin-top: 20px;
-				font-size: 18px;
+	.slick-prev, .slick-next{
+		width: 48px;
+		height: 96px;
+	}
+	.lm-section-fares {
+		.fares-item {
+			margin-left: 40px;
+			.fares-trip{
+				width: 320px;
+				height: 152px;
+				padding: 24px;
+				>h2{
+					margin-top: 24px;
+					font-size: 16px;
+				}
+				.p2{
+					margin-top: 24px;
+					font-size: 12px;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+				}
 			}
-			.p2{
-				margin-top: 16px;
-				font-size: 12px;
+			.fares-price{
+				width: 136px;
+				height: 168px;
+				padding-top: 32px;
+				>h2{
+					font-size: 38px;
+				}
+				>a{
+					width: 112px;
+					height: 36px;
+					line-height: 36px;
+					margin-top: 32px;
+					font-size: 14px;
+				}
 			}
 		}
-		.fares-price{
-			width: 120px;
-			height: 150px;
-			padding-top: 24px;
-			>h2{
-				font-size: 30px;
-			}
-			>a{
-				width: 100px;
-				height: 40px;
-				line-height: 40px;
-				margin-top: 30px;
-				font-size: 16px;
-			}
+		.fares-item-1{
+			padding-left: 96px;
 		}
 	}
 	.lm-section-service{
 		height: 240px;
-		margin-bottom: 60px;
-		.service-bg{
-			margin-top: 64px;
+		.service-bg{padding-top: 64px;}
+		ul{
+			width: 544px;
+			height: 112px;
+			>li{
+				width: 112px;
+				height: 112px;
+				margin-left: 32px;
+				a{
+					img{
+						margin-top: 12px;
+					}
+					p{margin-top: 10px;font-size: 12px;}
+				}
+			}
 		}
 	}
 	.lm-section-travel .travel-item{
@@ -2095,6 +2248,7 @@ body{
 		.news-detail{
 			width: 480px;
 			height: 320px;
+			margin-left: 96px;
 			.news-info{
 				height: 320px;
 				padding: 32px 24px;
@@ -2105,7 +2259,7 @@ body{
 			}
 		}
 		.news-content{
-			margin-left: 600px;
+			margin-left: 576px;
 			.news-item>img{
 				width: 528px;
 				height: 400px;

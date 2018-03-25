@@ -167,3 +167,10 @@
 .slick-slider:hover .slick-next{
     display: block !important;
 }
+
+.slick-disabled.slick-prev{
+    background: url('./imgs/slick-prev.png') center no-repeat rgba(0,0,0,.2);
+}
+.slick-disabled.slick-next{
+    background: url('./imgs/slick-next.png') center no-repeat rgba(0,0,0,.2);
+}
