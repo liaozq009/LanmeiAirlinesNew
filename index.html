@@ -26,6 +26,7 @@
 	<link rel="stylesheet" href="libs/daterange/daterangepicker.css">
 	<link rel="stylesheet" href="libs/lmslick/slick.css">
 	<link rel="stylesheet" href="common/EN/css/animate.css">
+	<link rel="stylesheet" href="libsEdit/css/lanmeiLibsEdit.css">
 	<link rel="stylesheet" href="common/EN/css/Lanmei-common.css">
 	<link rel="stylesheet" href="css/EN/LanmeiAirlines.css">
 
@@ -73,24 +74,191 @@
 		<div class="h-right">
 			<div class="h-phone">
 				<img src="images/EN/phone.png">
+				<div class="phone-menu">
+					<h2>24 online:</h2>
+					<p class="p1">+855 15331852</p>
+					<p>+855 15331857</p>
+					<p>+855 23881865</p>
+				</div>
 			</div>
 			<div class="v-line"><img src="images/EN/v-line.png" alt="line"></div>
 			<div class="h-login">
-				<img src="images/EN/login.png" alt="login">
-				<span>Login</span>
+				<a href="javascript:;" class="loginBtn">
+					<img src="images/EN/login.png" alt="login">
+					<span>Login</span>
+				</a>
 			</div>
 			<div class="dot-login"><img src="images/EN/dot-login.png" alt="dot-login"></div>
 			<div class="h-registered">
-				<img src="images/EN/registered.png" alt="registered">
-				<span>Registered</span>
+				<a href="javascript:;" class="REGISTEREDBtn">
+					<img src="images/EN/registered.png" alt="registered">
+					<span>Registered</span>
+				</a>
 			</div>
-			<div class="v-line"><img src="images/EN/v-line.png" alt="line"></div>
-			<div class="h-lan">
-				<img src="images/EN/lan-en.png" alt="language-en">
-				<div class="lan-menu"></div>
+			<div class="v-line v-line-2"><img src="images/EN/v-line.png" alt="line"></div>
+			<div class="h-lang js-h-lang">
+				<img src="images/EN/lang-en.png" class="js-choose-lang" alt="language-en">
+				<div class="lang-menu js-lang-menu">
+					<h2>Choose a language:</h2>
+					<a href="javascript:;" class="lang-en" data="en">English</a>
+					<a href="javascript:;" class="lang-zh" data="zh">Chinese</a>
+				</div>
 			</div>
 		</div>
 	</header>
+
+	<!-- 登录模态框 -->
+	<div class="modal fade" id="logonModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">Close<span aria-hidden="true">&times;</span></button>
+				</div>
+				<div class="modal-body">
+					<h2 class="loginTitle">Login</h2>
+					<span class="verifyInfo">Account or password error !</span>
+					<form id="loginForm" method="POST" action="">
+						<div class="form-group">
+							<input type="text" class="form-control" id="LanmeiUserName" placeholder="Email">
+							<ul class="login_on_changes on_changes">
+								<li email="@gmail.com"></li>
+								<li email="@qq.com"></li>
+								<li email="@sina.com"></li>
+								<li email="@163.com"></li>
+								<li email="@hotmail.com"></li>
+								<li email="@126.com"></li>
+								<li email="@yahoo.com"></li>
+							</ul>
+						</div>
+						<div class="form-group">
+							<input type="password" class="form-control" id="LanmeiPassword" placeholder="Password">
+						</div>
+						<div class="agree form-group">
+							<span class=""></span>
+							<p>Remember me next 30 days</p>
+							<a href="#" class="forgetBtn">Forget ?</a>
+						</div>
+						<div class="form-group">
+							<button type="button" class="btn userLoginBtn">Login</button>
+						</div>
+						<!-- <div class="loginOther">
+							<p>Login With</p>
+							<button  type="button" class="btn Facebook">Facebook</button>
+							<button class="btn Wechat">Wechat</button>
+						</div> -->
+					</form>
+				</div>
+				<div class="modal-footer">
+					Still no account ? Immediately <a href="javascript:void(0)" class="regBtn">registered</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 注册模态框 -->
+	<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">Close<span aria-hidden="true">&times;</span></button>
+				</div>
+				<div class="modal-body">
+					<!-- <h2 class="loginTitle">Registered</h2>
+						<span class="verifyInfo">Account or password error !</span> -->
+						<form class="registerWrapper" method="POST" action="">
+							<h2>Registered</h2>
+							<!-- <p>There have been accounts ? <a href="#" data-toggle="modal" data-target="#logonModal">Login</a></p> -->
+							<img src="images/EN/verticalTitleLine.png">
+							<div class="registerContent">
+								<div class="registerInfo">
+									<input type="text" name="" value="" id="registerUserName" placeholder="Please enter email address">
+									<img src="images/EN/register-email.png">
+									<p>This email is already in use !</p>
+									<ul class="register_on_changes on_changes">
+										<li email="@gmail.com"></li>
+										<li email="@qq.com"></li>
+										<li email="@sina.com"></li>
+										<li email="@163.com"></li>
+										<li email="@hotmail.com"></li>
+										<li email="@126.com"></li>
+										<li email="@yahoo.com"></li>
+									</ul>
+								</div>
+								<div class="registerPassword">
+									<input type="password" name="" value="" id="registerPassword" placeholder="Password with 8-16 characters">
+									<img src="images/EN/register-password.png">
+									<p>Password strength : <span><i class="i1"></i><i class="i2"></i><i class="i3"></i><i class="i4"></i><i class="i5"></i><i class="i6"></i></span></p>
+								</div>
+								<div class="repeatPassword">
+									<input type="password" name="" value="" id="repeatPassword" placeholder="Please repeat password">
+									<img src="images/EN/register-password.png">
+									<p>Passwords don’t match !</p>
+									<span>
+										Password must be with 3 or 4 combination with 
+										number (0-9), lowercase letter (a-z), uppercase 
+										letter (A-Z) or special characters.
+									</span>
+								</div>
+								<div class="agree">
+									<span></span>
+									<p>I hereby agree to    <a href="#">Lanmeiairlines’ terms and conditions</a></p>
+								</div>
+								<div class="registerBtn">
+									<button id="registerBtn">Register</button>
+								</div>
+							</div>
+						</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+		<!-- 忘记密码模态框 -->
+	<div class="modal fade" id="forgetModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">Close<span aria-hidden="true">&times;</span></button>
+				</div>
+				<div class="modal-body">
+					<h2 class="loginTitle">Forget Password</h2>
+					<span class="verifyInfo">Account or password error !</span>
+					<form id="f-loginForm" method="POST" action="">
+						<div class="form-group">
+							<input type="text" class="form-control" id="f-LanmeiUserName" placeholder="Email">
+							<ul class="forget_on_changes on_changes">
+								<li email="@gmail.com"></li>
+								<li email="@qq.com"></li>
+								<li email="@sina.com"></li>
+								<li email="@163.com"></li>
+								<li email="@hotmail.com"></li>
+								<li email="@126.com"></li>
+								<li email="@yahoo.com"></li>
+							</ul>
+						</div>
+						<div class="form-group">
+							<input type="password" class="form-control" id="f-LanmeiPassword" placeholder="Password">
+							<button type="button" id="f-getPasswordBtn">Get Password</button>
+						</div>
+						<div class="agree form-group">
+							<p>Please pay attention to the E-mail information</p>
+						</div>
+						<div class="form-group">
+							<button type="button" class="btn f-userLoginBtn">Login</button>
+						</div>
+					<!-- <div class="loginOther">
+						<p>Login With</p>
+						<button  type="button" class="btn Facebook">Facebook</button>
+						<button class="btn Wechat">Wechat</button>
+					</div> -->
+					</form>
+				</div>
+				<div class="modal-footer">
+					<a href="#" class="a_login">Login</a><a href="tpls/EN/LanmeiAirlinesRegister.html" class="a_registered">Registered</a>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<!-- 导航栏 -->
 	<section class="lm-nav-wrap">
@@ -658,10 +826,10 @@
 
 		<!-- 左侧blur内容 -->
 		<aside class="lm-aside-blur js-aside-blur">
-			<img src="images/EN/travel-01.jpg" alt="blur" class="blur-img-ticket blur-img">
-			<img src="images/EN/travel-02.jpg" alt="blur" class="blur-img-hotel blur-img">
-			<img src="images/EN/travel-03.jpg" alt="blur" class="blur-img-car blur-img">
-			<img src="images/EN/travel-02.jpg" alt="blur" class="blur-img-flight blur-img">
+			<img src="imgage_demo/travel-01.jpg" alt="blur" class="blur-img-ticket blur-img">
+			<img src="imgage_demo/travel-02.jpg" alt="blur" class="blur-img-hotel blur-img">
+			<img src="imgage_demo/travel-03.jpg" alt="blur" class="blur-img-car blur-img">
+			<img src="imgage_demo/travel-02.jpg" alt="blur" class="blur-img-flight blur-img">
 		</aside>
 
 		<!-- 右侧二维码 -->
@@ -692,7 +860,7 @@
 	<section class="lm-section-banner">
 		<div class="slick-banner js-slick-banner">
 			<div class="slick-item">
-				<img src="images/EN/banner01.jpg">
+				<img src="imgage_demo/banner01.jpg">
 				<div class="slick-content">
 					<!-- <h2>Palau dream trip</h2> -->
 					<div class="slick-detail">
@@ -704,7 +872,7 @@
 				</div>
 			</div>
 			<div class="slick-item">
-				<img src="images/EN/banner02.jpg">
+				<img src="imgage_demo/banner02.jpg">
 				<div class="slick-content">
 					<!-- <h2>Iceland ticket sales</h2> -->
 					<div class="slick-detail">
@@ -716,7 +884,7 @@
 				</div>
 			</div>
 			<div class="slick-item">
-				<img src="images/EN/banner03.jpg">
+				<img src="imgage_demo/banner03.jpg">
 				<div class="slick-content">
 					<!-- <h2>Palau dream trip</h2> -->
 					<div class="slick-detail">
@@ -728,7 +896,7 @@
 				</div>
 			</div>
 			<div class="slick-item">
-				<img src="images/EN/banner02.jpg">
+				<img src="imgage_demo/banner02.jpg">
 				<div class="slick-content">
 					<!-- <h2>Palau dream trip</h2> -->
 					<div class="slick-detail">
@@ -843,7 +1011,7 @@
 		<div class="section-content-title">POPULAR TOURS<h2>Before going out to travel look at the Raiders</h2></div>
 		<div class="travel-content js-travel-content">
 			<div class="travel-item travel-item-1">
-				<img src="images/EN/travel-img-01.jpg">
+				<img src="imgage_demo/travel-img-01.jpg">
 				<div class="travel-inner">
 					<h2>Over the life of the mountain</h2>
 					<p class="price-wrap"><span class="price">$420.00+</span><span class="nights">/ 4 days 3 nights</span></p>
@@ -855,7 +1023,7 @@
 				</div>
 			</div>
 			<div class="travel-item travel-item-2">
-				<img src="images/EN/travel-img-02.jpg">
+				<img src="imgage_demo/travel-img-02.jpg">
 				<div class="travel-inner">
 					<h2>Start your trip to Europe</h2>
 					<p class="price-wrap"><span class="price">$ 842.00+</span><span class="nights">/ 5 days 4 nights</span></p>
@@ -867,7 +1035,7 @@
 				</div>
 			</div>
 			<div class="travel-item travel-item-3">
-				<img src="images/EN/travel-img-03.jpg">
+				<img src="imgage_demo/travel-img-03.jpg">
 				<div class="travel-inner">
 					<h2>The other side of the moun</h2>
 					<p class="price-wrap"><span class="price">$ 532.00+</span><span class="nights">/ 7 days 6 nights</span></p>
@@ -879,7 +1047,7 @@
 				</div>
 			</div>
 			<div class="travel-item travel-item-4">
-				<img src="images/EN/travel-img-04.jpg">
+				<img src="imgage_demo/travel-img-04.jpg">
 				<div class="travel-inner">
 					<h2>Over the life of the mountain</h2>
 					<p class="price-wrap"><span class="price">$ 1420.00+</span><span class="nights">/ 9 days 8 nights</span></p>
@@ -891,7 +1059,7 @@
 				</div>
 			</div>
 			<div class="travel-item travel-item-5">
-				<img src="images/EN/travel-img-01.jpg">
+				<img src="imgage_demo/travel-img-01.jpg">
 				<div class="travel-inner">
 					<h2>Over the life of the mountain</h2>
 					<p class="price-wrap"><span class="price">$ 420.00+</span><span class="nights">/ 4 days 3 nights</span></p>
@@ -912,7 +1080,7 @@
 			<div class="comfortHotel-item comfortHotel-item-1">
 				<div class="hotel-one hotel-com">
 					<div class="hotel-img">
-						<img src="images/EN/comfortHotel-1.jpg" alt="">
+						<img src="imgage_demo/comfortHotel-1.jpg" alt="">
 						<a href="javascript:;" class="book-hotel">Book now</a>
 						<b></b>
 						<p class="save-percent">Save 40%</p>
@@ -942,7 +1110,7 @@
 						<p class="price-wrap"><span class="price">$ 33.28+</span><span class="night">/ night</span></p>
 					</div>
 					<div class="hotel-img">
-						<img src="images/EN/comfortHotel-2.jpg" alt="">
+						<img src="imgage_demo/comfortHotel-2.jpg" alt="">
 						<a href="javascript:;" class="book-hotel">Book now</a>
 						<b></b>
 						<p class="save-percent">Save 30%</p>
@@ -952,7 +1120,7 @@
 			<div class="comfortHotel-item comfortHotel-item-2">
 				<div class="hotel-one hotel-com">
 					<div class="hotel-img">
-						<img src="images/EN/comfortHotel-3.jpg" alt="">
+						<img src="imgage_demo/comfortHotel-3.jpg" alt="">
 						<a href="javascript:;" class="book-hotel">Book now</a>
 						<b></b>
 						<p class="save-percent">Save 20%</p>
@@ -982,7 +1150,7 @@
 						<p class="price-wrap"><span class="price">$ 41.10+</span><span class="night">/ night</span></p>
 					</div>
 					<div class="hotel-img">
-						<img src="images/EN/comfortHotel-2.jpg" alt="">
+						<img src="imgage_demo/comfortHotel-2.jpg" alt="">
 						<a href="javascript:;" class="book-hotel">Book now</a>
 						<b></b>
 						<p class="save-percent">Save 10%</p>
@@ -1013,13 +1181,13 @@
 			</div>
 			<div class="news-content js-news-content">
 				<div class="news-item news-item-1">
-					<img src="images/EN/news-01.jpg">
+					<img src="imgage_demo/news-01.jpg">
 				</div>
 				<div class="news-item news-item-2">
-					<img src="images/EN/news-02.jpg">
+					<img src="imgage_demo/news-02.jpg">
 				</div>
 				<div class="news-item news-item-3">
-					<img src="images/EN/news-03.jpg">
+					<img src="imgage_demo/news-03.jpg">
 				</div>
 			</div>
 			<div class="news-mask js-news-mask"></div>
@@ -1054,6 +1222,8 @@
 	<script src="libs/jQuery/jquery.easing.1.3.js"></script>
 	<script src="libs/bootstrap/js/bootstrap.min.js"></script>
 	<script src="libs/layer/layer.js"></script>
+	<script src="libs/lm-nicescroll.min.js"></script>
+	<script src="libs/auto-complete-mail.js"></script>
 	<script src="libs/lmslick/slick.min.js"></script>
 	<script src="libs/daterange/moment.js"></script>
 	<script src="libs/daterange/daterangepicker.js"></script>

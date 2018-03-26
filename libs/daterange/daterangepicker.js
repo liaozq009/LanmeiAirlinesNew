@@ -452,7 +452,7 @@
             .on('mouseenter.daterangepicker', 'li', $.proxy(this.hoverRange, this))
             .on('mouseleave.daterangepicker', 'li', $.proxy(this.updateFormInputs, this));
 
-        if (this.element.is('input') || this.element.is('button')) {
+        if (this.element.is('input') || this.element.is('button') || this.element.is('span')) { //防止重复点击出发地而隐藏日期控件
             this.element.on({
                 'click.daterangepicker': $.proxy(this.show, this),
                 'focus.daterangepicker': $.proxy(this.show, this),

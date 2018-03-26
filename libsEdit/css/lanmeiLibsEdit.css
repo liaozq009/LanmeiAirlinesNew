@@ -126,9 +126,6 @@ label {
   border: none;
   border-radius: 2px;
 }
-.modal .modal-dialog .modal-content .modal-body form input:focus {
-  border: 1px solid #8ec060;
-}
 .modal .modal-dialog .modal-content .modal-body form .on_changes {
   width: 340px;
   position: absolute;

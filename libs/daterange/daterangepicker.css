@@ -72,7 +72,9 @@
   .daterangepicker .calendar {
     display: none;
     max-width: 270px;
-    margin: 4px; }
+    margin: 4px; 
+    margin-top: -5px;
+  }
     .daterangepicker .calendar.single .calendar-table {
       border: none; }
     .daterangepicker .calendar th, .daterangepicker .calendar td {
@@ -82,7 +84,7 @@
       color: rgba(0,0,0,.6);
     }
     .daterangepicker .calendar thead tr:first-child th:nth-child(2){
-      padding-bottom: 15px;
+      padding-bottom: 10px;
       font-weight: 100;
     }
     .daterangepicker .calendar thead tr:nth-child(2) th:first-child,

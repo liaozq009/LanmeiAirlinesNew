@@ -12,6 +12,47 @@ var LanmeiAirlines = {
 		this.recommendHotel();
 		this.lmNews();
 		this.otherEvent();
+		this.isPc();
+	},
+
+	/* 判断是PC端还是移动端 */
+	isPc:function(){
+		// 判断手机端或者PC端
+		function IsPC() {
+			var userAgentInfo = navigator.userAgent;
+			var Agents = ["Android", "iPhone","SymbianOS", "Windows Phone","iPad", "iPod"];
+			var flag = true;
+			for (var v = 0; v < Agents.length; v++) {
+				if (userAgentInfo.indexOf(Agents[v]) > 0) {
+					flag = false;
+					break;
+				}
+			}
+			return flag;
+		}
+
+		var flag = IsPC(); //true为PC端，false为手机端
+
+		if(flag){
+			this.pcEvent();
+		}else{
+			
+		}
+	},
+
+	/* PC端事件 */
+	pcEvent:function(){
+		// 定义滚动条
+		var nice = $("html").niceScroll({
+			cursorborderradius: 0,
+			cursorwidth: "8px",
+			cursorfixedheight: 150,
+			cursorcolor: "#8ec060",
+			zindex: 9999,
+			cursorborder: 0,
+			scrollspeed: 26,
+			mousescrollstep: 36,
+		});
 	},
 
 	/* 导航栏 */
@@ -418,10 +459,11 @@ var LanmeiAirlines = {
 				}
 			}
 		}).one('click',function(){
+			$fromMenuSub.empty();
 			$.each(fromcityData,function(i,val){
 				$fromMenuSub.append('<li title="'+val+'">'+val+'</li>');
 			});
-			$('.js-from-menu>li:first').addClass('active');
+			// $('.js-from-menu>li:first').addClass('active');
 			keyDown('.js-from-input','.js-from-menu',indexLiFrom); //绑定键盘事件
 		});
 
@@ -439,7 +481,7 @@ var LanmeiAirlines = {
 				$.each(tocityArr,function(i,val){
 					$toMenuSub.append('<li title="'+val+'">'+val+'</li>');
 				});
-				$('.js-to-menu>li:first').addClass('active');
+				// $('.js-to-menu>li:first').addClass('active');
 			}
 			if(winWidth>1350){
 				$box.css('left',350);
@@ -1785,7 +1827,7 @@ var LanmeiAirlines = {
 			if(winWidth<=1400){
 				$('.js-news-mask').width(conWidth-558);
 			}else{
-				$('.js-news-mask').width(conWidth-690);
+				$('.js-news-mask').width(conWidth-684);
 			}
 		};
 		winResize();
@@ -1806,36 +1848,36 @@ var LanmeiAirlines = {
 		$('.js-aside-code').height(winHeight-60);
 
 		/* 右侧二维码 */
-		var enterTime;
-		var outTime;
-		var tickIn = null;
-		$('.js-aside-code').mouseenter(function(event) {
-			var that = $(this);
-			enterTime = new Date().getTime();
-			if(tickIn){
-				clearTimeout(tickIn);
-			}
-			tickIn = setTimeout(function(){
-				that.css('right',0);
-				$('.js-code-mask').show();
-			},200);
-		});
-		var tickOut = null;
-		$('.js-aside-code').mouseleave(function(event) {
-			var that = $(this);
-			outTime = new Date().getTime();
-			var diffTime = outTime-enterTime;
-			if(diffTime<200){ //鼠标快速移开的时候就清除定时器
-				clearTimeout(tickIn);
-			}
-			if(tickOut){
-				clearTimeout(tickOut);
-			}
-			tickOut = setTimeout(function(){
-				that.css('right',-200);
-				$('.js-code-mask').hide();
-			},200);
-		});
+		// var enterTime;
+		// var outTime;
+		// var tickIn = null;
+		// $('.js-aside-code').mouseenter(function(event) {
+		// 	var that = $(this);
+		// 	enterTime = new Date().getTime();
+		// 	if(tickIn){
+		// 		clearTimeout(tickIn);
+		// 	}
+		// 	tickIn = setTimeout(function(){
+		// 		that.css('right',0);
+		// 		$('.js-code-mask').show();
+		// 	},10);
+		// });
+		// var tickOut = null;
+		// $('.js-aside-code').mouseleave(function(event) {
+		// 	var that = $(this);
+		// 	outTime = new Date().getTime();
+		// 	var diffTime = outTime-enterTime;
+		// 	if(diffTime<10){ //鼠标快速移开的时候就清除定时器
+		// 		clearTimeout(tickIn);
+		// 	}
+		// 	if(tickOut){
+		// 		clearTimeout(tickOut);
+		// 	}
+		// 	tickOut = setTimeout(function(){
+		// 		that.css('right',-200);
+		// 		$('.js-code-mask').hide();
+		// 	},10);
+		// });
 
 		/* 文字滚动 */
 		var slideUp = function(){
@@ -1881,6 +1923,27 @@ var LanmeiAirlines = {
 			}else{
 				// console.log(222);
 				// $('.section-4').css('backgroundPosition','center 0');
+			}
+		});
+
+		/* 语言选择 */
+		var $langMenu = $('.js-lang-menu');
+		$('.js-h-lang').mouseenter(function(event) {
+			$langMenu.show();
+		}).mouseleave(function(event) {
+			$langMenu.hide();
+		});;
+		$('.js-lang-menu>a').click(function(event) {
+			var data = $(this).attr('data');
+			switch (data) {
+				case 'en':
+					$('.js-choose-lang').attr('src','images/EN/lang-en.png')
+					$langMenu.hide();
+					break;
+				case 'zh':
+					$('.js-choose-lang').attr('src','images/EN/lang-zh.png');
+					$langMenu.hide();
+					break;
 			}
 		});
 

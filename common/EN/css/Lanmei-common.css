@@ -360,13 +360,13 @@ body {
 }
 .lm-footer {
   width: 100%;
-  height: 310px;
+  height: 270px;
   padding-top: 30px;
   text-align: center;
   background: #1f2c5c;
 }
 .lm-footer .facebook {
-  margin-top: 20px;
+  margin-top: 16px;
 }
 .lm-footer .facebook > .a1 {
   margin-right: 40px;
@@ -382,13 +382,13 @@ body {
   transition-duration: .5s;
 }
 .lm-footer .f-email {
-  margin-top: 30px;
+  margin-top: 18px;
 }
 .lm-footer .f-email img {
   margin-right: 20px;
 }
 .lm-footer .f-locate {
-  margin-top: 26px;
+  margin-top: 14px;
 }
 .lm-footer .f-locate img {
   margin-right: 20px;
@@ -397,7 +397,7 @@ body {
   color: #fff;
 }
 .lm-footer .copyright {
-  margin-top: 30px;
+  margin-top: 14px;
   color: rgba(255, 255, 255, 0.4);
 }
 .lm-footer .copyright a {
