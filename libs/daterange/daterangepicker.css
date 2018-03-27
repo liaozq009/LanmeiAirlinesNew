@@ -123,6 +123,7 @@
       color: #ccc; }
   .daterangepicker td.off, .daterangepicker td.off.in-range, .daterangepicker td.off.start-date, .daterangepicker td.off.end-date {
     border-color: transparent;
+    background-color: #fff;
     color: rgba(0,0,0,.1); }
   .daterangepicker td.in-range {
     background:rgba(142,192,96,.3);

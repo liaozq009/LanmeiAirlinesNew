@@ -76,8 +76,6 @@ body{
 	background: @o-linear;
 	background: @moz-linear;
 	background: @linear;
-	filter: @filter; /*ie8*/
-	:root .gradient{filter:none;} ; /*ie9*/
 	.h-menu{
 		position: absolute;
 		font-family:@FBold;
@@ -689,7 +687,6 @@ body{
 			padding-right: 16px;
 			margin-right: 10px;
 			.purpleRgb(0.5);
-			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F1F2C5C,endColorstr=#7F1F2C5C);
 			background:#fff;
 			box-shadow:0 0 50px 0 rgba(31,44,92,0.10);
 			border-radius:2px;
@@ -726,22 +723,18 @@ body{
 		}
 		:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
 			.purpleRgb(.3);font-size: 20px; 
-			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C1F2C5C,endColorstr=#4C1F2C5C);
 		}
 
 		::-moz-placeholder { /* Mozilla Firefox 19+ */
 			.purpleRgb(.3);font-size: 20px;
-			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C1F2C5C,endColorstr=#4C1F2C5C);
 		}
 
 		input:-ms-input-placeholder{
 			.purpleRgb(.3);font-size: 20px;
-			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C1F2C5C,endColorstr=#4C1F2C5C);
 		}
 
 		input::-webkit-input-placeholder{
 			.purpleRgb(.3);font-size: 20px;
-			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C1F2C5C,endColorstr=#4C1F2C5C);
 		}
 		.t-from-input {
 			background: url('@{url}city-from.png') 20px no-repeat #fff;
@@ -932,7 +925,6 @@ body{
 	z-index: 1;
 	font-size: 16px;
 	.purpleRgb(.5);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F1F2C5C,endColorstr=#7F1F2C5C);
 	background:#fff;
 	border-radius: 2px;
 	box-shadow:0 0 100px 0 #34406c;
@@ -945,7 +937,6 @@ body{
 			font-family: @FBold;
 			font-size: 20px;
 			.purpleRgb(.8);
-			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#C81F2C5C,endColorstr=#C81F2C5C);
 			margin-bottom: 20px;
 		}
 		.flight-list-wrap{
@@ -991,12 +982,11 @@ body{
 		display: none;
 		width: 588px;
 		.date-title {
-			padding-left: 20px;
+			padding-left: 10px;
 			padding-top: 20px;
 			font-size: 20px;
 			font-family: @FBold;
 			.purpleRgb(.8); 
-			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#C81F2C5C,endColorstr=#C81F2C5C);
 		}
 	}
 	.popup-people{
@@ -1009,7 +999,6 @@ body{
 			font-size: 20px;
 			font-family: @FBold;
 			.purpleRgb(.8); 
-			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#C81F2C5C,endColorstr=#C81F2C5C);
 		}
 		.s-people-com{
 			height: 50px;
@@ -1021,7 +1010,6 @@ body{
 			float: left;
 			.p1{
 				.blackRgb(.7);
-				filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2000000,endColorstr=#B2000000);
 				>img{
 					margin-right: 10px;
 					vertical-align: text-bottom;
@@ -1032,7 +1020,6 @@ body{
 				font-family: @FLight;
 				font-size: 14px;
 				.blackRgb(.3);
-				filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endColorstr=#4C000000);
 				cursor: pointer;
 				>img{
 					margin-left: 10px;
@@ -1053,8 +1040,6 @@ body{
 			background: @o-linear;
 			background: @moz-linear;
 			background: @linear;
-			filter: @filter; /*ie8*/
-			:root .gradient{filter:none;} ; /*ie9*/
 			border-radius:2px;
 			>a{
 				display: inline-block;
@@ -1160,7 +1145,6 @@ body{
 			height: 50px;
 			line-height: 50px;
 			.blackRgb(.7);
-			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2000000,endColorstr=#B2000000);
 			font-size: 20px;
 			padding-left: 30px;
 			background: url('@{url}rooms-icon.png') left center no-repeat;
@@ -1212,7 +1196,7 @@ body{
 			.age-menu-box{
 				display: none;
 				position: absolute;
-				top: 40px;
+				top: 42px;
 				left: 20px;
 				width: 78px;
 				height: 182px;
@@ -1260,7 +1244,6 @@ body{
 				padding-left: 50px;
 				font-size: 20px;
 				.blackRgb(.7);
-				filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2000000,endColorstr=#B2000000);
 				box-shadow:0 0 20px 0 rgba(31,44,92,0.10);
 				border-radius:2px;
 				background: url('@{url}rooms-icon.png') 20px center no-repeat #fff;
@@ -1283,7 +1266,6 @@ body{
 			}
 			.add-rooms-btn{
 				.purpleRgb(.3);
-				filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C1F2C5C,endColorstr=#4C1F2C5C);
 				background: url('@{url}add-rooms.png') 20px center no-repeat #fff;
 				cursor: pointer;
 			}
@@ -1292,13 +1274,11 @@ body{
 }
 .popup-inactive{
 	opacity: 0;
-	filter:alpha(opacity=0);
 	visibility: hidden;
 	-webkit-transform: perspective(600px) rotateX(-10deg);
 }
 .popup-active{
 	opacity: 1;
-	filter:alpha(opacity=100);
 	visibility: visible;
 	-webkit-transform: perspective(600px) rotateX(0);
 }
@@ -1326,7 +1306,7 @@ body{
 }
 .lm-flight-mask2{
 	opacity:.1;
-	filter:alpha(opacity=100);
+	filter:alpha(opacity=10);
 	z-index: 10;
 }
 
@@ -1341,7 +1321,6 @@ body{
 	padding-top: 7px;
 	padding-bottom: 12px;
 	.blackRgb(.8);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#C8000000,endColorstr=#C8000000);
 }
 
 .lm-section-banner{
@@ -1389,7 +1368,6 @@ body{
 				float: left;
 				font-size: 18px;
 				.purpleRgb(.9);
-				filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#E51F2C5C,endColorstr=#E51F2C5C);
 				padding:5px 10px;
 				margin-top: 5px;
 				.whiteBgRgb(.8);
@@ -1415,7 +1393,6 @@ body{
 		&:hover{
 			.slick-content{
 				.blackRgb(.6);
-				filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000,endColorstr=#99000000);
 				transition:all .35s;
 				-webkit-transition:all .35s;
 			}
@@ -1459,7 +1436,6 @@ body{
 	font-size: 90px;
 	font-family: @FBold;
 	.purpleRgb(.1);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#191F2C5C,endColorstr=#191F2C5C);
 	text-align: center;
 	>h2{
 		position: absolute;
@@ -1483,7 +1459,6 @@ body{
 			line-height: 50px;
 			font-size: 18px;
 			.purpleRgb(.3);
-			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C1F2C5C,endColorstr=#4C1F2C5C);
 			text-align: center;
 			background:#e9ecfa;
 			border-radius:2px;
@@ -1587,7 +1562,6 @@ body{
 					top: 10px;
 					width: 100%;
 					.purpleRgb(.7);
-					filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#B21F2C5C,endColorstr=#B21F2C5C);
 				}
 			}
 			>h2{
@@ -1595,7 +1569,6 @@ body{
 				font-size: 20px;
 				font-family: @FBold;
 				.purpleRgb(.9);
-				filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#E51F2C5C,endColorstr=#E51F2C5C);
 				overflow: hidden;
 				>span{
 					display: block;
@@ -1609,7 +1582,6 @@ body{
 				margin-top: 30px;
 				text-align: center;
 				.blackRgb(.4);
-				filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#66000000,endColorstr=#66000000);
 			}
 		}
 		.fares-price{
@@ -1746,7 +1718,6 @@ body{
 			}
 			.nights{
 				.blackRgb(.4);
-				filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#66000000,endColorstr=#66000000);
 			}
 			.locale-wrap{
 				margin-top: 20px;
@@ -1756,7 +1727,6 @@ body{
 					width: 60%;
 					font-size: 18px;
 					.blackRgb(.7);
-					filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2000000,endColorstr=#B2000000);
 					overflow: hidden;
 					text-overflow:ellipsis;
 					white-space: nowrap;
@@ -1768,7 +1738,6 @@ body{
 				.see{
 					float: right;
 					.blackRgb(.2);
-					filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#33000000,endColorstr=#33000000);
 					img{
 						display: inline-block;
 						margin-left: 10px;
@@ -1784,7 +1753,6 @@ body{
 				margin-top: 30px;
 				font-size: 20px;
 				.blackRgb(.6);
-				filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000,endColorstr=#99000000);
 				border-radius:4px;
 				.purpleBgRgb(.1);
 				&:hover{
@@ -1899,7 +1867,6 @@ body{
 				margin-top: 30px;
 				font-size: 18px;
 				.blackRgb(.7);
-				filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2000000,endColorstr=#B2000000);
 				overflow: hidden;
 				text-overflow:ellipsis;
 				white-space: nowrap;
@@ -1910,7 +1877,6 @@ body{
 				width: 100%;
 				margin-top: 10px;
 				.blackRgb(.4);
-				filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#66000000,endColorstr=#66000000);
 				overflow: hidden;
 				text-overflow:ellipsis;
 				white-space: nowrap;
@@ -1933,7 +1899,6 @@ body{
 				.night{
 					font-size: 18px;
 					.blackRgb(.4);
-					filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#66000000,endColorstr=#66000000);
 					transition:all .3s;
 					-webkit-transition:all .3s;
 				}
@@ -1963,19 +1928,16 @@ body{
 				}
 				.country{
 					.whiteRgb(.7);
-					filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2ffffff,endColorstr=#B2ffffff);
 					transition:all .3s;
 					-webkit-transition:all .3s;
 				}
 				.area{
 					.whiteRgb(.4);
-					filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#66ffffff,endColorstr=#66ffffff);
 					transition:all .3s;
 					-webkit-transition:all .3s;
 				}
 				.night{
 					.whiteRgb(.4);
-					filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#66ffffff,endColorstr=#66ffffff);
 					transition:all .3s;
 					-webkit-transition:all .3s;
 				}
@@ -2072,17 +2034,14 @@ body{
 				margin-right: 20px;
 				font-family: @FBold;
 				.blackRgb(.2);
-				filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#33000000,endColorstr=#33000000);
 				.s1{
 					.blackRgb(.7);
-					filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2000000,endColorstr=#B2000000);
 				}
 			}
 			.news-more{
 				float: right;
 				font-family: @FBold;
 				.blackRgb(.2);
-				filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#33000000,endColorstr=#33000000);
 			}
 		}
 		.news-info{
@@ -2112,7 +2071,6 @@ body{
 				margin-top: 40px;
 				p{
 					.blackRgb(.4);
-					filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#66000000,endColorstr=#66000000);
 					line-height: 30px;
 					animation-delay:.6s;
 					-webkit-animation-delay:.6s; /* Safari 和 Chrome */
@@ -2133,6 +2091,25 @@ body{
 		width: 502px;
 		height: 100%;
 		.blackBgRgb(.5);
+	}
+}
+
+/* ie兼容 */
+.lte_ie10{
+	.lm-header{
+		background: #42958a;
+	}
+	.popup-content .popup-people .people-number{
+		background: #42958a;
+	}
+	.popup-content .popup-people .disable{
+		background: url('@{url}add-people.png') center no-repeat #F6F7F9;
+	}
+	.popup-content .hotel-popus-people .hotel-age-wrap{
+		background: #F6F7F9;
+	}
+	.popup-content{
+		color: #8F95AD;
 	}
 }
 

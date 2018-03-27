@@ -56,6 +56,11 @@
         var endNight = 1;
         var totleNight = 0;
 
+        // 全局定义日期标题
+        this.showDateTitle = $.extend({showDateTitle:true}, {showDateTitle:options.showDateTitle}).showDateTitle;
+        this.showDateTitle1 = $.extend({showDateTitle1:'Choose your departure date :'}, {showDateTitle1:options.showDateTitle1}).showDateTitle1;
+        this.showDateTitle2 = $.extend({showDateTitle2:'Choose your return date :'}, {showDateTitle2:options.showDateTitle2}).showDateTitle2;
+
         this.opens = 'right';
         if (this.element.hasClass('pull-right'))
             this.opens = 'left';
@@ -117,6 +122,7 @@
         //html template for the picker UI
         if (typeof options.template !== 'string' && !(options.template instanceof $))
             options.template = '<div class="daterangepicker dropdown-menu">' +
+                '<p class="date-title js-date-title">Choose your departure date :</p>'+
                 '<div class="calendar left">' +
                     '<div class="daterangepicker_input">' +
                       '<input class="input-mini form-control" type="text" name="daterangepicker_start" value="" />' +
@@ -150,6 +156,11 @@
 
         this.parentEl = (options.parentEl && $(options.parentEl).length) ? $(options.parentEl) : $(this.parentEl);
         this.container = $(options.template).appendTo(this.parentEl);
+
+        $('.js-date-title').html(this.showDateTitle1); //初始化日期标题
+        if(!this.showDateTitle){
+            $('.js-date-title').hide();
+        }
 
         //
         // handle all the possible options overriding defaults
@@ -501,6 +512,11 @@
         constructor: DateRangePicker,
 
         setStartDate: function(startDate) {
+            // 设置返程标题
+            if(!this.singleDatePicker){
+                $('.js-date-title').html(this.showDateTitle2);
+            }
+
             if (typeof startDate === 'string')
                 this.startDate = moment(startDate, this.locale.format);
 
@@ -532,6 +548,10 @@
         },
 
         setEndDate: function(endDate) {
+            if(!this.singleDatePicker){
+                $('.js-date-title').html(this.showDateTitle1);
+            }
+
             if (typeof endDate === 'string')
                 this.endDate = moment(endDate, this.locale.format);
 

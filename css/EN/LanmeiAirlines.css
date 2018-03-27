@@ -40,12 +40,6 @@ body {
   background: -o-linear-gradient(right, #42958a 0%, #1f2c5c 100%);
   background: -moz-linear-gradient(right, #42958a 0%, #1f2c5c 100%);
   background: linear-gradient(to right, #42958a 0%, #1f2c5c 100%);
-  filter: alpha progid:DXImageTransform.Microsoft.gradient(startcolorstr=#42958a, endcolorstr=#1f2c5c, gradientType=1);
-  /*ie8*/
-  /*ie9*/
-}
-.lm-header :root .gradient {
-  filter: none;
 }
 .lm-header .h-menu {
   position: absolute;
@@ -685,7 +679,6 @@ body {
   padding-right: 16px;
   margin-right: 10px;
   color: rgba(31, 44, 92, 0.5);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F1F2C5C, 5C, endColorstr=#7F1F2C5C, 5C);
   background: #fff;
   box-shadow: 0 0 50px 0 rgba(31, 44, 92, 0.1);
   border-radius: 2px;
@@ -724,23 +717,19 @@ body {
   /* Mozilla Firefox 4 to 18 */
   color: rgba(31, 44, 92, 0.3);
   font-size: 20px;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C1F2C5C, 5C, endColorstr=#4C1F2C5C, 5C);
 }
 .select-air-com > div ::-moz-placeholder {
   /* Mozilla Firefox 19+ */
   color: rgba(31, 44, 92, 0.3);
   font-size: 20px;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C1F2C5C, 5C, endColorstr=#4C1F2C5C, 5C);
 }
 .select-air-com > div input:-ms-input-placeholder {
   color: rgba(31, 44, 92, 0.3);
   font-size: 20px;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C1F2C5C, 5C, endColorstr=#4C1F2C5C, 5C);
 }
 .select-air-com > div input::-webkit-input-placeholder {
   color: rgba(31, 44, 92, 0.3);
   font-size: 20px;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C1F2C5C, 5C, endColorstr=#4C1F2C5C, 5C);
 }
 .select-air-com > div .t-from-input {
   background: url('../../images/EN/city-from.png') 20px no-repeat #fff;
@@ -954,7 +943,6 @@ body {
   z-index: 1;
   font-size: 16px;
   color: rgba(31, 44, 92, 0.5);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F1F2C5C, 5C, endColorstr=#7F1F2C5C, 5C);
   background: #fff;
   border-radius: 2px;
   box-shadow: 0 0 100px 0 #34406c;
@@ -968,7 +956,6 @@ body {
   font-family: CamptonBookBold;
   font-size: 20px;
   color: rgba(31, 44, 92, 0.8);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#C81F2C5C, 5C, endColorstr=#C81F2C5C, 5C);
   margin-bottom: 20px;
 }
 .popup-content .popup-airport .flight-list-wrap {
@@ -1014,12 +1001,11 @@ body {
   width: 588px;
 }
 .popup-content .popup-date .date-title {
-  padding-left: 20px;
+  padding-left: 10px;
   padding-top: 20px;
   font-size: 20px;
   font-family: CamptonBookBold;
   color: rgba(31, 44, 92, 0.8);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#C81F2C5C, 5C, endColorstr=#C81F2C5C, 5C);
 }
 .popup-content .popup-people {
   display: none;
@@ -1032,7 +1018,6 @@ body {
   font-size: 20px;
   font-family: CamptonBookBold;
   color: rgba(31, 44, 92, 0.8);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#C81F2C5C, 5C, endColorstr=#C81F2C5C, 5C);
 }
 .popup-content .popup-people .s-people-com {
   height: 50px;
@@ -1045,7 +1030,6 @@ body {
 }
 .popup-content .popup-people .people-prompt .p1 {
   color: rgba(0, 0, 0, 0.7);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2000000, 0, endColorstr=#B2000000, 0);
 }
 .popup-content .popup-people .people-prompt .p1 > img {
   margin-right: 10px;
@@ -1056,7 +1040,6 @@ body {
   font-family: CamptonBookLight;
   font-size: 14px;
   color: rgba(0, 0, 0, 0.3);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000, 0, endColorstr=#4C000000, 0);
   cursor: pointer;
 }
 .popup-content .popup-people .people-prompt .p2 > img {
@@ -1075,13 +1058,7 @@ body {
   background: -o-linear-gradient(right, #42958a 0%, #1f2c5c 100%);
   background: -moz-linear-gradient(right, #42958a 0%, #1f2c5c 100%);
   background: linear-gradient(to right, #42958a 0%, #1f2c5c 100%);
-  filter: alpha progid:DXImageTransform.Microsoft.gradient(startcolorstr=#42958a, endcolorstr=#1f2c5c, gradientType=1);
-  /*ie8*/
-  /*ie9*/
   border-radius: 2px;
-}
-.popup-content .popup-people .people-number :root .gradient {
-  filter: none;
 }
 .popup-content .popup-people .people-number > a {
   display: inline-block;
@@ -1190,7 +1167,6 @@ body {
   height: 50px;
   line-height: 50px;
   color: rgba(0, 0, 0, 0.7);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2000000, 0, endColorstr=#B2000000, 0);
   font-size: 20px;
   padding-left: 30px;
   background: url('../../images/EN/rooms-icon.png') left center no-repeat;
@@ -1241,7 +1217,7 @@ body {
 .popup-content .hotel-popus-people .hotel-age-wrap .age-menu-box {
   display: none;
   position: absolute;
-  top: 40px;
+  top: 42px;
   left: 20px;
   width: 78px;
   height: 182px;
@@ -1289,7 +1265,6 @@ body {
   padding-left: 50px;
   font-size: 20px;
   color: rgba(0, 0, 0, 0.7);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2000000, 0, endColorstr=#B2000000, 0);
   box-shadow: 0 0 20px 0 rgba(31, 44, 92, 0.1);
   border-radius: 2px;
   background: url('../../images/EN/rooms-icon.png') 20px center no-repeat #fff;
@@ -1314,19 +1289,16 @@ body {
 }
 .popup-content .hotel-popus-people .add-rooms-wrap .add-rooms-btn {
   color: rgba(31, 44, 92, 0.3);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C1F2C5C, 5C, endColorstr=#4C1F2C5C, 5C);
   background: url('../../images/EN/add-rooms.png') 20px center no-repeat #fff;
   cursor: pointer;
 }
 .popup-inactive {
   opacity: 0;
-  filter: alpha(opacity=0);
   visibility: hidden;
   -webkit-transform: perspective(600px) rotateX(-10deg);
 }
 .popup-active {
   opacity: 1;
-  filter: alpha(opacity=100);
   visibility: visible;
   -webkit-transform: perspective(600px) rotateX(0);
 }
@@ -1355,7 +1327,7 @@ body {
 }
 .lm-flight-mask2 {
   opacity: .1;
-  filter: alpha(opacity=100);
+  filter: alpha(opacity=10);
   z-index: 10;
 }
 /* 酒店预订 */
@@ -1371,7 +1343,6 @@ body {
   padding-top: 7px;
   padding-bottom: 12px;
   color: rgba(0, 0, 0, 0.8);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#C8000000, 0, endColorstr=#C8000000, 0);
 }
 .lm-section-banner {
   width: 100%;
@@ -1419,7 +1390,6 @@ body {
   float: left;
   font-size: 18px;
   color: rgba(31, 44, 92, 0.9);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#E51F2C5C, 5C, endColorstr=#E51F2C5C, 5C);
   padding: 5px 10px;
   margin-top: 5px;
   background: rgba(255, 255, 255, 0.8);
@@ -1443,7 +1413,6 @@ body {
 }
 .lm-section-banner .slick-item:hover .slick-content {
   color: rgba(0, 0, 0, 0.6);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, 0, endColorstr=#99000000, 0);
   transition: all .35s;
   -webkit-transition: all .35s;
 }
@@ -1481,7 +1450,6 @@ body {
   font-size: 90px;
   font-family: CamptonBookBold;
   color: rgba(31, 44, 92, 0.1);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#191F2C5C, 5C, endColorstr=#191F2C5C, 5C);
   text-align: center;
 }
 .section-content-title > h2 {
@@ -1507,7 +1475,6 @@ body {
   line-height: 50px;
   font-size: 18px;
   color: rgba(31, 44, 92, 0.3);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C1F2C5C, 5C, endColorstr=#4C1F2C5C, 5C);
   text-align: center;
   background: #e9ecfa;
   border-radius: 2px;
@@ -1617,14 +1584,12 @@ body {
   top: 10px;
   width: 100%;
   color: rgba(31, 44, 92, 0.7);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#B21F2C5C, 5C, endColorstr=#B21F2C5C, 5C);
 }
 .lm-section-fares .fares-item .fares-trip > h2 {
   margin-top: 30px;
   font-size: 20px;
   font-family: CamptonBookBold;
   color: rgba(31, 44, 92, 0.9);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#E51F2C5C, 5C, endColorstr=#E51F2C5C, 5C);
   overflow: hidden;
 }
 .lm-section-fares .fares-item .fares-trip > h2 > span {
@@ -1642,7 +1607,6 @@ body {
   margin-top: 30px;
   text-align: center;
   color: rgba(0, 0, 0, 0.4);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#66000000, 0, endColorstr=#66000000, 0);
 }
 .lm-section-fares .fares-item .fares-price {
   float: left;
@@ -1791,7 +1755,6 @@ body {
 }
 .lm-section-travel .travel-item .travel-inner .nights {
   color: rgba(0, 0, 0, 0.4);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#66000000, 0, endColorstr=#66000000, 0);
 }
 .lm-section-travel .travel-item .travel-inner .locale-wrap {
   margin-top: 20px;
@@ -1802,7 +1765,6 @@ body {
   width: 60%;
   font-size: 18px;
   color: rgba(0, 0, 0, 0.7);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2000000, 0, endColorstr=#B2000000, 0);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -1814,7 +1776,6 @@ body {
 .lm-section-travel .travel-item .travel-inner .locale-wrap .see {
   float: right;
   color: rgba(0, 0, 0, 0.2);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#33000000, 0, endColorstr=#33000000, 0);
 }
 .lm-section-travel .travel-item .travel-inner .locale-wrap .see img {
   display: inline-block;
@@ -1829,7 +1790,6 @@ body {
   margin-top: 30px;
   font-size: 20px;
   color: rgba(0, 0, 0, 0.6);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, 0, endColorstr=#99000000, 0);
   border-radius: 4px;
   background: rgba(31, 44, 92, 0.1);
 }
@@ -1952,7 +1912,6 @@ body {
   margin-top: 30px;
   font-size: 18px;
   color: rgba(0, 0, 0, 0.7);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2000000, 0, endColorstr=#B2000000, 0);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -1963,7 +1922,6 @@ body {
   width: 100%;
   margin-top: 10px;
   color: rgba(0, 0, 0, 0.4);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#66000000, 0, endColorstr=#66000000, 0);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -1987,7 +1945,6 @@ body {
 .lm-section-hotel .hotel-com .hotel-detail .price-wrap .night {
   font-size: 18px;
   color: rgba(0, 0, 0, 0.4);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#66000000, 0, endColorstr=#66000000, 0);
   transition: all .3s;
   -webkit-transition: all .3s;
 }
@@ -2013,19 +1970,16 @@ body {
 }
 .lm-section-hotel .hotel-com:hover .hotel-detail .country {
   color: rgba(255, 255, 255, 0.7);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2ffffff, ff, endColorstr=#B2ffffff, ff);
   transition: all .3s;
   -webkit-transition: all .3s;
 }
 .lm-section-hotel .hotel-com:hover .hotel-detail .area {
   color: rgba(255, 255, 255, 0.4);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#66ffffff, ff, endColorstr=#66ffffff, ff);
   transition: all .3s;
   -webkit-transition: all .3s;
 }
 .lm-section-hotel .hotel-com:hover .hotel-detail .night {
   color: rgba(255, 255, 255, 0.4);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#66ffffff, ff, endColorstr=#66ffffff, ff);
   transition: all .3s;
   -webkit-transition: all .3s;
 }
@@ -2105,17 +2059,14 @@ body {
   margin-right: 20px;
   font-family: CamptonBookBold;
   color: rgba(0, 0, 0, 0.2);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#33000000, 0, endColorstr=#33000000, 0);
 }
 .lm-section-news .news-detail .news-arrow > p .s1 {
   color: rgba(0, 0, 0, 0.7);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2000000, 0, endColorstr=#B2000000, 0);
 }
 .lm-section-news .news-detail .news-arrow .news-more {
   float: right;
   font-family: CamptonBookBold;
   color: rgba(0, 0, 0, 0.2);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#33000000, 0, endColorstr=#33000000, 0);
 }
 .lm-section-news .news-detail .news-info {
   width: 100%;
@@ -2147,7 +2098,6 @@ body {
 }
 .lm-section-news .news-detail .news-info .news-info-detail p {
   color: rgba(0, 0, 0, 0.4);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#66000000, 0, endColorstr=#66000000, 0);
   line-height: 30px;
   animation-delay: .6s;
   -webkit-animation-delay: .6s;
@@ -2166,6 +2116,22 @@ body {
   width: 502px;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
+}
+/* ie兼容 */
+.lte_ie10 .lm-header {
+  background: #42958a;
+}
+.lte_ie10 .popup-content .popup-people .people-number {
+  background: #42958a;
+}
+.lte_ie10 .popup-content .popup-people .disable {
+  background: url('../../images/EN/add-people.png') center no-repeat #F6F7F9;
+}
+.lte_ie10 .popup-content .hotel-popus-people .hotel-age-wrap {
+  background: #F6F7F9;
+}
+.lte_ie10 .popup-content {
+  color: #8F95AD;
 }
 /* 屏幕缩放 */
 @media screen and (max-width: 1800px) {

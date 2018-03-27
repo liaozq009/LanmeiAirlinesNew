@@ -30,9 +30,11 @@
 	<link rel="stylesheet" href="common/EN/css/Lanmei-common.css">
 	<link rel="stylesheet" href="css/EN/LanmeiAirlines.css">
 
-	<!--[if lt IE 9]>
+	<!-- ie8和ie9 -->
+	<!--[if lt IE 10]>
 		<script src="libs/bootstrap/js/html5shiv.min.js"></script>
 		<script src="libs/bootstrap/js/respond.min.js"></script>
+		<html class="lte_ie10" lang="en">
 	<![endif]-->
 
 	<!--[if IE 8]>
@@ -43,6 +45,7 @@
 		</style>
 	<![endif]-->
 
+	<!-- ie11 -->
 	<!--[if !IE]><!-->
 	    <script>
 	        // 针对IE10
@@ -72,9 +75,9 @@
 		</div>
 		<img src="images/EN/logo.png" class="h-logo">
 		<div class="h-right">
-			<div class="h-phone">
+			<div class="h-phone js-h-phone">
 				<img src="images/EN/phone.png">
-				<div class="phone-menu">
+				<div class="phone-menu js-phone-menu">
 					<h2>24 online:</h2>
 					<p class="p1">+855 15331852</p>
 					<p>+855 15331857</p>
@@ -471,7 +474,7 @@
 							</div>
 							<!-- 日期选择 -->
 							<div class="popup-date js-popup-date">
-								<p class="date-title">Choose your departure date :</p>
+
 							</div>
 							<!-- 人数选择 -->
 							<div class="popup-people js-popup-people">
@@ -576,7 +579,7 @@
 							</div>
 							<!-- 日期选择 -->
 							<div class="popup-date js-hotelPopup-date">
-								<p class="date-title">Choose your check in time with check out :</p>
+
 							</div>
 							<!-- 人数选择 -->
 							<div class="hotel-popus-people popup-people js-hotelPopup-people">
@@ -784,7 +787,7 @@
 							</div>
 							<!-- 航班号日期选择 -->
 							<div class="popup-date js-numPopup-date">
-								<p class="date-title">Flight flight date :</p>
+								
 							</div>
 							<!-- 航班号选择 -->
 							<div class="popup-fNum-from popup-airport js-fNumBox-from">
@@ -800,7 +803,7 @@
 							</div>
 							<!-- 路线日期选择 -->
 							<div class="popup-date js-routePopup-date">
-								<p class="date-title">Flight flight date :</p>
+								
 							</div>
 						</div>
 					</div>

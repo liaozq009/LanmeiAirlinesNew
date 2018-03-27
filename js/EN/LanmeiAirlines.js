@@ -13,6 +13,7 @@ var LanmeiAirlines = {
 		this.lmNews();
 		this.otherEvent();
 		this.isPc();
+		this.isIE();
 	},
 
 	/* 判断是PC端还是移动端 */
@@ -36,6 +37,16 @@ var LanmeiAirlines = {
 		if(flag){
 			this.pcEvent();
 		}else{
+			
+		}
+	},
+
+	/* 判断ie版本 */
+	isIE:function(){
+		// ie兼容性判断
+		if(document.all && document.addEventListener && !window.atob){ // IE9
+			
+		}else if (document.all && document.querySelector && !document.addEventListener) { //IE8
 			
 		}
 	},
@@ -183,7 +194,7 @@ var LanmeiAirlines = {
 	},
 
 	/* 日期选择 */
-	dateSelect:function(single,id,container,showTotleDay,box,dateBox,peopleBox){
+	dateSelect:function(single,id,container,showTotleDay,box,dateBox,peopleBox,showDateTitle1,showDateTitle2){
 		// 日期选择
 		var formatDate = function(num) { //日期格式化
 			return num < 10 ? (num = '0' + num) : num;
@@ -210,13 +221,23 @@ var LanmeiAirlines = {
 
 		var winWidth = $(window).width();
 
-		var today  = new Date();
-		var todayTime = formatDate(today.getDate())+' '+formatMonth((today.getMonth()+1));
-		var startTimeStr = new Date(today.getTime()+86400000*1); 
-		var startTime = formatDate(startTimeStr.getDate())+' '+formatMonth((startTimeStr.getMonth()+1));  
-		var endTimeStr = new Date(today.getTime()+86400000*2); 
-		var endTime = formatDate(endTimeStr.getDate())+' '+formatMonth((endTimeStr.getMonth()+1));  
-		var maxTime = formatDate(today.getDate())+' '+formatMonth((today.getMonth()+1));
+		var today = new Date();
+		var todayTime = formatDate(today.getDate()) + ' ' + formatMonth((today.getMonth() + 1));
+		var startTimeStr = new Date(today.getTime() + 86400000 * 1);
+		var startTimeInit =  startTimeStr.getFullYear()+ '-' +(startTimeStr.getMonth() + 1)+ '-' + formatDate(startTimeStr.getDate());
+		var startTime = formatDate(startTimeStr.getDate()) + ' ' + formatMonth((startTimeStr.getMonth() + 1));
+		var endTimeStr = new Date(today.getTime() + 86400000 * 2);
+		var endTimeInit =  endTimeStr.getFullYear()+ '-' +(endTimeStr.getMonth() + 1)+ '-' + formatDate(endTimeStr.getDate());
+		var endTime = formatDate(endTimeStr.getDate()) + ' ' + formatMonth((endTimeStr.getMonth() + 1));
+		var maxTime = formatDate(today.getDate()) + ' ' + formatMonth((today.getMonth() + 1));
+
+		// 初始化日期的值
+		if (single) {
+		    $(id).attr('data-start',startTimeInit);
+		} else {
+		    $(id).attr('data-start',startTimeInit);
+		    $(id).attr('data-end',endTimeInit);
+		}
 		
 		var that = this;
 		$(id).daterangepicker({
@@ -228,15 +249,20 @@ var LanmeiAirlines = {
 			// maxDate:'2018-06-02',
       singleDatePicker: single, //单日期
       showTotleDay: showTotleDay, //是否显示已经选择的天数
+      showDateTitle: true,
+      showDateTitle1:showDateTitle1,
+      showDateTitle2:showDateTitle2,
       showDropdowns: false, //下拉选择月份和年份
       showWeekNumbers: false, //显示周
       autoApply: true, //自动关闭日期
 			language :'en',
 		},function(start, end, label) {//格式化日期显示框  
-				if(this.singleDatePicker){
-					$(id).html(start.format('D MMM'));
-				}else{
-					$(id).html(start.format('D MMM') + ' - ' + end.format('D MMM'));
+				if (this.singleDatePicker) {
+				    $(id).html(start.format('D MMM'));
+				    $(id).attr('data-start',start.format('YYYY-MM-DD'));
+				} else {
+				    $(id).html(start.format('D MMM') + ' - ' + end.format('D MMM'));
+				    $(id).attr('data-start',start.format('YYYY-MM-DD')).attr('data-end',end.format('YYYY-MM-DD'));
 				}
 
 				// 操作外层box移动
@@ -323,7 +349,7 @@ var LanmeiAirlines = {
 		
 		/* 日期选择 */
 		var that = this;
-		this.dateSelect(false,'.js-date-result','.js-popup-date',false,$box,$dateBox,$peopleBox);
+		this.dateSelect(false,'.js-date-result','.js-popup-date',false,$box,$dateBox,$peopleBox,'Choose your departure date :','Choose your return date :');
 		
 		/* 单程往返切换 */
 		$('.js-select-way>a').click(function(event) {
@@ -332,11 +358,11 @@ var LanmeiAirlines = {
 			var data = $(this).attr('data-way');
 			switch (data) {
 				case 'round':
-					that.dateSelect(false,'.js-date-result','.js-popup-date',false,$box,$dateBox,$peopleBox);
+					that.dateSelect(false,'.js-date-result','.js-popup-date',false,$box,$dateBox,$peopleBox,'Choose your departure date :','Choose your return date :');
 					$('.js-date-result').click(); //日期展示
 					break;
 				case 'one':
-					that.dateSelect(true,'.js-date-result','.js-popup-date',false,$box,$dateBox,$peopleBox);
+					that.dateSelect(true,'.js-date-result','.js-popup-date',false,$box,$dateBox,$peopleBox,'Choose your departure date :','Choose your return date :');
 					$('.js-date-result').click(); //日期展示
 					break;
 			}
@@ -675,7 +701,7 @@ var LanmeiAirlines = {
 		};
 
 		/* 日期选择 */
-		this.dateSelect(false,'.js-hotelDate-result','.js-hotelPopup-date',true,$hotelBox,$hotelDateBox,$hotelPeopleBox);
+		this.dateSelect(false,'.js-hotelDate-result','.js-hotelPopup-date',true,$hotelBox,$hotelDateBox,$hotelPeopleBox,'Choose your check in time :','Choose your check out time:');
 
 		/* 获取屏幕尺寸 */
 		var winWidth = $(window).width();
@@ -1141,8 +1167,8 @@ var LanmeiAirlines = {
 		};
 
 		/* 日期选择 */
-		this.dateSelect(true,'.js-numDate-result','.js-numPopup-date',false,$fStatusBox,$numDateBox,'0');
-		this.dateSelect(true,'.js-routeDate-result','.js-routePopup-date',false,$fStatusBox,$routeDateBox,'0');
+		this.dateSelect(true,'.js-numDate-result','.js-numPopup-date',false,$fStatusBox,$numDateBox,'0','Flight flight date :','');
+		this.dateSelect(true,'.js-routeDate-result','.js-routePopup-date',false,$fStatusBox,$routeDateBox,'0','Flight flight date :','');
 
 		// 航班号和地点查询切换
 		$('.js-flight-way>a').click(function(event) {
