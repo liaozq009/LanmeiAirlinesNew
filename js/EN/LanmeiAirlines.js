@@ -1519,14 +1519,14 @@ var LanmeiAirlines = {
 			dots: false,
 			slidesToShow: 3,
 			slidesToScroll: 1,
-			// autoplay: true,
+			autoplay: true,
 			autoplaySpeed: 2000,
 			responsive: [
 			{
-				breakpoint: 1024,
+				breakpoint: 992,
 				settings: {
 					slidesToShow: 2,
-					slidesToScroll: 1
+					slidesToScroll: 1,
 				}
 			}
 			],
@@ -1662,9 +1662,12 @@ var LanmeiAirlines = {
 				variableWidth: true,
 				responsive: [
 				{
-					breakpoint: 1400,
+					breakpoint: 992,
 					settings: {
-						// variableWidth: false,
+						slidesToShow: 4,
+						slidesToScroll: 1,
+						touchMove:true,
+						variableWidth: false,
 					}
 				}
 				],
@@ -1799,21 +1802,21 @@ var LanmeiAirlines = {
 			],
 		});
 
-		var newsStr1 = '<h2 class="animated fadeInUp">Lanmei Airlines launches flights in Cambodia, sets up "sky highway" for Mekong countries</h2>'+
+		var newsStr1 = '<div class="js-news-1 js-news-com"><h2 class="animated fadeInUp"><a href="javascript:;">Lanmei Airlines launches flights in Cambodia, sets up "sky highway" for Mekong countries</a></h2>'+
 			'<p class="animated fadeInUp">2017-11-03 01:34:00</p>'+
 			'<div class="news-info-detail">'+
 				'<p class="animated fadeInUp">On Oct.9th, 2017, Lanmei Airlines (Cambodia) Co., Ltd. (referred as “Lanmei Airlines”) held a grand ceremony of Lanmei Six Nations Flights Launching and the “One-hundred Riel” Thanksgiving Foundation at Phnom Penh.</p>'+
-			'</div>';
-		var newsStr2 = '<h2 class="animated fadeInUp">Maiden flight of Lanmei Airlines has successfully completed and its commercial operation commenced.</h2>'+
+			'</div></div>';
+		var newsStr2 = '<div class="js-news-2 js-news-com"><h2 class="animated fadeInUp"><a href="javascript:;">Maiden flight of Lanmei Airlines has successfully completed and its commercial operation commenced.</a></h2>'+
 			'<p class="animated fadeInUp">2017-11-03 01:34:00</p>'+
 			'<div class="news-info-detail">'+
 				'<p class="animated fadeInUp">On 29 September 2017, flight LQ9509 safely landed at Palau Koror International Airport, which indicates the maiden flight of Lanmei Airlines (Cambodia) Co.,Ltd (“Lanmei Airlines”) has successfully completed and its commercial operation commenced.</p>'+
-			'</div>';
-		var newsStr3 = '<h2 class="animated fadeInUp">Lanmei Airlines’s Stewardess Won the World’s Top 10 Stewardess Award in 2017</h2>'+
+			'</div></div>';
+		var newsStr3 = '<div class="js-news-3 js-news-com"><h2 class="animated fadeInUp"><a href="javascript:;">Lanmei Airlines’s Stewardess Won the World’s Top 10 Stewardess Award in 2017</a></h2>'+
 			'<p class="animated fadeInUp">2017-11-02 15:34:46</p>'+
 			'<div class="news-info-detail">'+
 				'<p class="animated fadeInUp">On September 15, “Press Conference of the 8th World Airline Ranking and the 7th World’s Stewardess’ Day Awarding Ceremony” was held in Hong Kong. The ceremony, sponsored by World Air Stewardess Association and Aviation Professional Committee of World Urban Cooperative Organization, totally published 15 ranking lists in terms of advantage study and assessment</p>'+
-			'</div>';
+			'</div></div>';
 
 		var page = 1;
 		var totalPage = $('.js-news-pages>.s2').text();

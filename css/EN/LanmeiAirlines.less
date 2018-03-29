@@ -83,6 +83,7 @@ body{
 		cursor: pointer;
 		>img{margin-right: 20px;}
 	}
+	.mobile-logo{display: none;}
 	.h-right{
 		position: absolute;
 		right: 20px;
@@ -712,7 +713,6 @@ body{
 		float: left;
 		width: 310px;
 		height: 60px;
-		line-height: 60px;
 		margin-right: 40px;
 		margin-bottom: 20px;
 		border-radius: 2px;
@@ -720,11 +720,9 @@ body{
 		>input{
 			width: 100%;
 			height: 100%;
-			padding-left: 70px;
-			padding-right: 10px;
+			padding: 15px 20px 15px 70px;
 			font-size: 20px;
 			color: @purple;
-			border: 2px solid transparent;
 			border-radius: 2px;
 		}
 		:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
@@ -797,6 +795,7 @@ body{
 		display: block;
 		width: 100%;
 		height: 100%;
+		line-height: 60px;
 		padding-left: 70px;
 		font-size: 20px;
 		color: @purple;
@@ -824,6 +823,7 @@ body{
 		.t-people-result{
 			width: 100%;
 			height: 100%;
+			line-height: 60px;
 			padding-left: 20px;
 			padding-right: 20px;
 			background: #fff;
@@ -1717,7 +1717,6 @@ body{
 				background: -webkit-linear-gradient(left,  #b4ec80, #00928d);
 				background: -o-linear-gradient(right,  #b4ec80, #00928d);
 				background: -moz-linear-gradient(right,  #b4ec80, #00928d);
-				background: linear-gradient(to right,  #b4ec80, #00928d);
 				-webkit-background-clip: text;
 				-webkit-text-fill-color: transparent;
 				color: #00928d\9;
@@ -1897,7 +1896,6 @@ body{
 					background: -webkit-linear-gradient(left,  #b4ec80, #00928d);
 					background: -o-linear-gradient(right,  #b4ec80, #00928d);
 					background: -moz-linear-gradient(right,  #b4ec80, #00928d);
-					background: linear-gradient(to right,  #b4ec80, #00928d);
 					-webkit-background-clip: text;
 					-webkit-text-fill-color: transparent;
 					color: #00928d\9;
@@ -2103,6 +2101,16 @@ body{
 }
 
 /* ie兼容 */
+.ie11 {
+	.rooms-content-com{
+		margin-left: 18px !important;
+	}
+	.lm-section-travel .travel-item .travel-inner .price,
+	.lm-section-hotel .hotel-com .hotel-detail .price-wrap .price{
+		color: #00928d;
+	}
+}
+
 .lte_ie9{
 	.lm-header{
 		background: #42958a;
@@ -2187,7 +2195,7 @@ body{
 		float: left;
 	}
 	.daterangepicker .calendar th, .daterangepicker .calendar td {
-	  color: #626364;
+		color: #626364;
 	}
 	.daterangepicker td.active, .daterangepicker td.active:hover,.daterangepicker td.available:hover, .daterangepicker th.available:hover{
 		color: #fff;
@@ -2510,4 +2518,102 @@ body{
 			}
 		}
 	}
+}
+
+/* pad端 */
+@media (max-width: 992px) {
+	.lm-header{
+		.h-logo{display: none;}
+		.mobile-logo{
+			display: inline-block;
+			height: 40px;
+		}
+		.h-right{
+			.v-line{margin-left: 10px;margin-right: 10px;}
+			.v-line-2{margin-right: 40px;}
+		}
+		.h-login,.h-registered {
+			span{display: none;}
+		}
+	}
+	.lm-aside-blur,.lm-aside-flight > a,.lm-aside-code,.lm-scroll-down{display: none;}
+	.bg-com,.content-com-wrap{width: 100%;}
+	.lm-aside-flight{
+		left: -11px;
+		-webkit-transform: scale(.8);
+		transform: scale(.8);
+		-webkit-transform-origin: top;
+		transform-origin: top;
+	}
+	.content-com-inner {
+		width: 80%;
+		left: 16%;
+		 > h1{
+		 	width: 100%;
+			font-size: 42px;
+		}
+	}
+	.flight-com{
+		left: 8%;
+		-webkit-transform: scale(.8);
+		transform: scale(.8);
+		-webkit-transform-origin: top;
+		transform-origin: top;
+	}
+	.popup-content {
+		.popup-airport-from,.popup-airport-to,.popup-route-from,.popup-route-to{
+			width: 310px;
+			.flight-list-wrap > li{width: 100%;}
+		}
+		.popup-fNum-from{
+			width: 660px;
+		}
+		.hotel-popus-people{
+			width: 750px !important;
+		}
+	}
+	.hotel-popup-content,.hotel-content .popup-box{
+		left: 0 !important;
+	}
+	.hotelPeople-popup-box::before{
+		left: 480px;
+	}
+	.popup-content .hotel-popus-people .age-rooms-com{
+		margin-top: 10px;
+		margin-bottom: 20px;
+	}
+	.popup-content .hotel-popus-people .add-rooms-wrap{
+		clear: both;
+		position: relative;
+		z-index: 1;
+	}
+	.popup-content .hotel-popus-people {
+		.s-room-2,.s-room-3{
+			clear: both;
+		}
+	}
+	.popup-content .hotel-popus-people .add-rooms-wrap p b{display: block;}
+	.lm-section-banner, .lm-section-service, .lm-section-hotel{
+		margin-bottom: 50px;
+	}
+	.lm-section-coupons{
+		margin-bottom: 20px;
+	}
+	.lm-section-travel{
+		margin-bottom: 0;
+	}
+	.lm-section-coupons .coupons-content .slick-item-1{
+		padding-left: 16px;
+	}
+	.lm-section-fares .fares-item-1{
+		padding-left: 36px;
+	}
+	.lm-section-travel .travel-content .slick-list{
+		padding-left: 60px;
+	}
+}
+
+/* 手机端 */
+@media (max-width: 767px) {
+
 }
