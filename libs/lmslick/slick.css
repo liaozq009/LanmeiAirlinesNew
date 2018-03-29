@@ -145,6 +145,9 @@
     transition:all .3s;
     -webkit-transition:all .3s;
 }
+.ie8 .slick-prev{
+    background: url('./imgs/slick-prev.png') center no-repeat #929296;
+}
 .slick-next{
     right: 0px; 
     display: none !important;
@@ -154,11 +157,20 @@
     transition:all .3s;
     -webkit-transition:all .3s;
 }
+.ie8 .slick-next{
+    background: url('./imgs/slick-next.png') center no-repeat #929296;
+}
 .slick-prev:hover{
     background: url('./imgs/slick-prev.png') center no-repeat rgba(0,0,0,.6);
 }
+.ie8 .slick-prev:hover{
+    background: url('./imgs/slick-prev.png') center no-repeat #212121;
+}
 .slick-next:hover{
     background: url('./imgs/slick-next.png') center no-repeat rgba(0,0,0,.6);
+}
+.ie8 .slick-next:hover{
+    background: url('./imgs/slick-next.png') center no-repeat #212121;
 }
 
 .slick-slider:hover .slick-prev{
@@ -171,6 +183,12 @@
 .slick-disabled.slick-prev{
     background: url('./imgs/slick-prev.png') center no-repeat rgba(0,0,0,.2);
 }
+.ie8 .slick-disabled.slick-prev{
+    background: url('./imgs/slick-prev.png') center no-repeat #C8C9CC;
+}
 .slick-disabled.slick-next{
     background: url('./imgs/slick-next.png') center no-repeat rgba(0,0,0,.2);
+}
+.ie8 .slick-disabled.slick-next{
+    background: url('./imgs/slick-next.png') center no-repeat #C8C9CC;
 }

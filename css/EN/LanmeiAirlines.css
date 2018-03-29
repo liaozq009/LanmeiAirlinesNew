@@ -96,6 +96,7 @@ body {
   background: #fff;
   padding: 20px;
   text-align: left;
+  box-shadow: 0 0 50px 0 rgba(31, 44, 92, 0.2);
 }
 .lm-header .h-phone .phone-menu > h2 {
   color: rgba(31, 44, 92, 0.8);
@@ -149,6 +150,7 @@ body {
   background: #fff;
   padding: 20px;
   text-align: left;
+  box-shadow: 0 0 50px 0 rgba(31, 44, 92, 0.2);
 }
 .lm-header .h-lang .lang-menu > h2 {
   color: rgba(31, 44, 92, 0.8);
@@ -558,7 +560,11 @@ body {
   top: 100px;
   width: 74px;
   height: 332px;
-  background: url('../../images/EN/QR-code-icon.png') center no-repeat, url('../../images/EN/QR-code-bg.png') center no-repeat;
+  background: url('../../images/EN/QR-code-icon.png') center no-repeat;
+}
+.lm-aside-code .small-code > img {
+  position: absolute;
+  z-index: -1;
 }
 .lm-aside-code .facebook-icon {
   position: absolute;
@@ -596,7 +602,10 @@ body {
   box-shadow: 0 0 50px 0 rgba(31, 44, 92, 0.2);
   border-radius: 30px 0 0 30px;
 }
-.lm-important > h3 {
+.lm-important > a {
+  color: #fff;
+}
+.lm-important > a h3 {
   position: relative;
   float: left;
   width: 110px;
@@ -614,10 +623,10 @@ body {
   /*ie9*/
   border-radius: 0 20px 20px 0;
 }
-.lm-important > h3 :root .gradient {
+.lm-important > a h3 :root .gradient {
   filter: none;
 }
-.lm-important > h3 > p {
+.lm-important > a h3 > p {
   display: inline-block;
   position: absolute;
   left: -20px;
@@ -2074,7 +2083,7 @@ body {
   padding: 40px 30px;
   background: #fff;
 }
-.lm-section-news .news-detail .news-info > h2 {
+.lm-section-news .news-detail .news-info > div > h2 > a {
   font-size: 24px;
   font-family: CamptonBookBold;
   color: #1f2c5c;
@@ -2086,17 +2095,17 @@ body {
   text-overflow: ellipsis;
   word-wrap: break-word;
 }
-.lm-section-news .news-detail .news-info > p {
+.lm-section-news .news-detail .news-info > div > p {
   margin-top: 10px;
   color: #1f2c5c;
   animation-delay: .3s;
   -webkit-animation-delay: .3s;
   /* Safari 和 Chrome */
 }
-.lm-section-news .news-detail .news-info .news-info-detail {
+.lm-section-news .news-detail .news-info > div .news-info-detail {
   margin-top: 40px;
 }
-.lm-section-news .news-detail .news-info .news-info-detail p {
+.lm-section-news .news-detail .news-info > div .news-info-detail p {
   color: rgba(0, 0, 0, 0.4);
   line-height: 30px;
   animation-delay: .6s;
@@ -2118,20 +2127,152 @@ body {
   background: rgba(0, 0, 0, 0.5);
 }
 /* ie兼容 */
-.lte_ie10 .lm-header {
+.lte_ie9 .lm-header {
   background: #42958a;
 }
-.lte_ie10 .popup-content .popup-people .people-number {
+.lte_ie9 .popup-content .popup-people .people-number {
   background: #42958a;
 }
-.lte_ie10 .popup-content .popup-people .disable {
+.lte_ie9 .popup-content .popup-people .disable {
   background: url('../../images/EN/add-people.png') center no-repeat #F6F7F9;
 }
-.lte_ie10 .popup-content .hotel-popus-people .hotel-age-wrap {
+.lte_ie9 .popup-content .hotel-popus-people .hotel-age-wrap {
   background: #F6F7F9;
 }
-.lte_ie10 .popup-content {
+.lte_ie9 .popup-content {
   color: #8F95AD;
+}
+.ie8 .section-content-title {
+  color: #E4E5EE;
+}
+.ie8 .lm-section-fares .fares-item .fares-trip .p1 span {
+  color: #626B8D;
+}
+.ie8 .lm-section-fares .fares-item .fares-trip > h2 {
+  color: #35416C;
+}
+.ie8 .lm-section-fares .fares-item .fares-trip .p2 {
+  color: #999999;
+}
+.ie8 .lm-section-service ul > li a:hover {
+  background: #2B516C;
+}
+.ie8 .lm-section-travel .travel-item .travel-inner .nights {
+  color: #969799;
+}
+.ie8 .lm-section-travel .travel-item .travel-inner .locale-wrap .locale {
+  color: #4B4B4C;
+}
+.ie8 .lm-section-travel .travel-item .travel-inner .locale-wrap .see {
+  color: #C8C9CC;
+}
+.ie8 .lm-section-travel .travel-item .travel-inner .view {
+  color: #5B5D60;
+  background: #E4E5EE;
+}
+.ie8 .lm-section-travel .travel-item .travel-inner .view:hover {
+  color: #fff;
+}
+.ie8 .lm-section-hotel .hotel-com .hotel-detail .country {
+  color: #4B4B4C;
+}
+.ie8 .lm-section-hotel .hotel-com:hover .hotel-detail .country {
+  color: #BCC0CE;
+}
+.ie8 .lm-section-hotel .hotel-com .hotel-detail .area,
+.ie8 .lm-section-hotel .hotel-com .hotel-detail .price-wrap .night {
+  color: #999;
+}
+.ie8 .lm-section-hotel .hotel-com:hover .hotel-detail .area {
+  color: #767E9C;
+}
+.ie8 .lm-section-hotel .hotel-com:hover .hotel-img > b {
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F1f2c5c, 5c, endColorstr=#7F1f2c5c, 5c);
+}
+.ie8 .lm-section-news .news-detail .news-arrow > p {
+  color: #C8C9CC;
+}
+.ie8 .lm-section-news .news-detail .news-arrow > p .s1 {
+  color: #4B4B4C;
+}
+.ie8 .lm-section-news .news-detail .news-info .news-info-detail p {
+  color: #999;
+}
+.ie8 .lm-section-news .news-mask {
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F000000, 0, endColorstr=#7F000000, 0);
+}
+.ie8 .daterangepicker {
+  width: 588px;
+}
+.ie8 .calendar.left,
+.ie8 .calendar.right {
+  float: left;
+}
+.ie8 .daterangepicker .calendar th,
+.ie8 .daterangepicker .calendar td {
+  color: #626364;
+}
+.ie8 .daterangepicker td.active,
+.ie8 .daterangepicker td.active:hover,
+.ie8 .daterangepicker td.available:hover,
+.ie8 .daterangepicker th.available:hover {
+  color: #fff;
+}
+.ie8 .daterangepicker td.off,
+.ie8 .daterangepicker td.off.in-range,
+.ie8 .daterangepicker td.off.start-date,
+.ie8 .daterangepicker td.off.end-date {
+  color: #E5E5E5;
+}
+.ie8 .popup-content .popup-people .people-number .off-sub-operation,
+.ie8 .popup-content .popup-people .people-number .sub-people {
+  background: url('../../images/EN/sub-people.png') center no-repeat #E0E2E9;
+}
+.ie8 .popup-content .popup-people .people-number .add-people {
+  background: url('../../images/EN/add-people.png') center no-repeat #B5B9CA;
+}
+.ie8 .popup-content .hotel-popus-people .hotel-age-wrap .age-result {
+  background: url('../../images/EN/menu-down-arrow.png') 90% center no-repeat #B5B9CA;
+}
+.ie8 .popup-content .hotel-popus-people .hotel-age-wrap .hotel-age-menu > li:hover {
+  background: #646D8D;
+}
+.ie8 .nav-container .m-nav-1 {
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#C8000000, 0, endColorstr=#C8000000, 0);
+}
+.ie8 .nav-container .m-nav-2 {
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2000000, 0, endColorstr=#B2000000, 0);
+}
+.ie8 .nav-container .m-nav-3 {
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, 0, endColorstr=#99000000, 0);
+}
+.ie8 .lm-header .h-phone .phone-menu > h2,
+.ie8 .lm-header .h-lang .lang-menu > h2 {
+  color: #4C567D;
+}
+.ie8 .lm-header .h-phone .phone-menu > p,
+.ie8 .lm-header .h-lang .lang-menu a {
+  color: #4C4C4C;
+}
+.ie8 .lm-header .h-phone .phone-menu > p:hover,
+.ie8 .lm-header .h-lang .lang-menu a:hover {
+  color: #8ec060;
+}
+.ie8 .modal-dialog {
+  margin: 30px auto;
+}
+.ie8 .popup-box {
+  left: 0 !important;
+  top: 0 !important;
+}
+.ie8 .search-flight-wrap {
+  padding-left: 0;
+}
+.ie8 .lm-section-main {
+  height: 768px !important;
+}
+.ie8 .flight-com {
+  left: 30%;
 }
 /* 屏幕缩放 */
 @media screen and (max-width: 1800px) {
@@ -2187,9 +2328,20 @@ body {
     left: -2%;
   }
 }
-@media screen and (max-width: 1350px) {
+@media screen and (max-width: 1300px) {
+  .flight-com,
+  .content-com-inner,
+  .lm-aside-flight,
+  .lm-important {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+  }
   .flight-com {
-    left: 22%;
+    width: 700px;
+    left: 26%;
+    top: 260px;
   }
   .content-com-inner {
     left: 21%;

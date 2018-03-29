@@ -30,22 +30,16 @@
 	<link rel="stylesheet" href="common/EN/css/Lanmei-common.css">
 	<link rel="stylesheet" href="css/EN/LanmeiAirlines.css">
 
-	<!-- ie8和ie9 -->
-	<!--[if lt IE 10]>
+	<!--[if IE 8]>
+		<html class="ie8 lte_ie9" lang="en">
+	<![endif]-->
+
+	<!--[if lte IE 9]>
 		<script src="libs/bootstrap/js/html5shiv.min.js"></script>
 		<script src="libs/bootstrap/js/respond.min.js"></script>
-		<html class="lte_ie10" lang="en">
+		<html class="lte_ie9" lang="en">
 	<![endif]-->
 
-	<!--[if IE 8]>
-		<style>
-	    .leftAside .listSelectBox,.leftAside .listSelect{ 
-			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#C81f2c5c',endColorstr='#C81f2c5c');
-	    }
-		</style>
-	<![endif]-->
-
-	<!-- ie11 -->
 	<!--[if !IE]><!-->
 	    <script>
 	        // 针对IE10
@@ -64,6 +58,16 @@
 			margin-left: 18px !important;
 		}
 	</style>
+
+	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "https://hm.baidu.com/hm.js?ab7fede74c0b7d053e582bc301a6af31";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
 
 </head>
 <body>
@@ -837,7 +841,7 @@
 
 		<!-- 右侧二维码 -->
 		<aside class="lm-aside-code js-aside-code">
-			<div class="small-code"></div>
+			<div class="small-code"><img src="images/EN/QR-code-bg.png"></div>
 			<h3>Follow us :</h3>
 			<div class="facebook-icon">
 				<a href="javascript:;"><img src="images/EN/facebook-icon.png" class="img-1" alt="facebook-icon"></a>
@@ -848,7 +852,7 @@
 
 		<!-- 重要提醒 -->
 		<div class="lm-important">
-			<h3><p><img src="images/EN/important.png" alt="important"></p>Important</h3>
+			<a href="javascript:;"><h3><p><img src="images/EN/important.png" alt="important"></p>Important</h3></a>
 			<ul class="line js-important-line">
 				<li><a href="javascript:;" title="Important information about round-trip tickets that passengers must have for entry to Palau">Important information about round-trip tickets that passengers must have for entry to Palau</a></li>
 				<li><a href="javascript:;" title="The website is under constructioning,please look forward to...">The website is under constructioning,please look forward to...</a></li>
@@ -1175,10 +1179,12 @@
 					<!-- <a href="javascript:;" class="news-more">More</a> -->
 				</div>
 				<div class="news-info js-news-info">
-					<h2 class="animated fadeInUp">Lanmei Airlines launches flights in Cambodia, sets up "sky highway" for Mekong countries</h2>
-					<p class="animated fadeInUp">2017-11-03 01:34:04</p>
-					<div class="news-info-detail">
-						<p class="animated fadeInUp">On Oct.9th, 2017, Lanmei Airlines (Cambodia) Co., Ltd. (referred as “Lanmei Airlines”) held a grand ceremony of Lanmei Six Nations Flights Launching and the “One-hundred Riel” Thanksgiving Foundation at Phnom Penh.</p>
+					<div class="js-news-1 js-news-com">
+						<h2 class="animated fadeInUp"><a href="javascript:;">Lanmei Airlines launches flights in Cambodia, sets up "sky highway" for Mekong countries</a></h2>
+						<p class="animated fadeInUp">2017-11-03 01:34:04</p>
+						<div class="news-info-detail">
+							<p class="animated fadeInUp">On Oct.9th, 2017, Lanmei Airlines (Cambodia) Co., Ltd. (referred as “Lanmei Airlines”) held a grand ceremony of Lanmei Six Nations Flights Launching and the “One-hundred Riel” Thanksgiving Foundation at Phnom Penh.</p>
+						</div>
 					</div>
 				</div>
 			</div>

@@ -123,6 +123,7 @@ body{
 			background: #fff;
 			padding: 20px;
 			text-align: left;
+			box-shadow: 0 0 50px 0 rgba(31, 44, 92, 0.2);
 			>h2{
 				.purpleRgb(.8);
 				font-size: 20px;
@@ -174,6 +175,7 @@ body{
 			background: #fff;
 			padding: 20px;
 			text-align: left;
+			box-shadow: 0 0 50px 0 rgba(31, 44, 92, 0.2);
 			>h2{
 				.purpleRgb(.8);
 				font-size: 20px;
@@ -572,7 +574,8 @@ body{
 		top: 100px;
 		width:74px;
 		height:332px;
-		background: url('@{url}QR-code-icon.png') center no-repeat,url('@{url}QR-code-bg.png') center no-repeat;
+		background: url('@{url}QR-code-icon.png') center no-repeat;
+		>img{position: absolute;z-index: -1;}
 	}
 	.facebook-icon{
 		position: absolute;
@@ -610,34 +613,37 @@ body{
 	background:#fff;
 	box-shadow:0 0 50px 0 rgba(31,44,92,0.20);
 	border-radius:30px 0 0 30px;
-	>h3{
-		position: relative;
-		float: left;
-		width:110px;
-		height:30px;
-		line-height: 30px;
-		margin-top: 15px;
-		padding-left: 30px;
-		font-size: 14px;
-		background: @webkit-linear;
-		background: @o-linear;
-		background: @moz-linear;
-		background: @linear;
-		filter: @filter; /*ie8*/
-		:root .gradient{filter:none;} ; /*ie9*/
-		border-radius:0 20px 20px 0;
-		>p{
-			display: inline-block;
-			position: absolute;
-			left: -20px;
-			top: -5px;
-			width:40px;
-			height:40px;
-			line-height: 40px;
-			text-align: center;
-			background:#fff;
-			box-shadow:0 0 10px 0 rgba(31,44,92,0.20);
-			border-radius:100%;
+	>a{
+		color: #fff;
+		h3{
+			position: relative;
+			float: left;
+			width:110px;
+			height:30px;
+			line-height: 30px;
+			margin-top: 15px;
+			padding-left: 30px;
+			font-size: 14px;
+			background: @webkit-linear;
+			background: @o-linear;
+			background: @moz-linear;
+			background: @linear;
+			filter: @filter; /*ie8*/
+			:root .gradient{filter:none;} ; /*ie9*/
+			border-radius:0 20px 20px 0;
+			>p{
+				display: inline-block;
+				position: absolute;
+				left: -20px;
+				top: -5px;
+				width:40px;
+				height:40px;
+				line-height: 40px;
+				text-align: center;
+				background:#fff;
+				box-shadow:0 0 10px 0 rgba(31,44,92,0.20);
+				border-radius:100%;
+			}
 		}
 	}
 	>ul{
@@ -2049,31 +2055,33 @@ body{
 			height: 400px;
 			padding:40px 30px;
 			background: #fff;
-			>h2{
-				font-size: 24px;
-				font-family: @FBold;
-				color: @purple;
-				display: -webkit-box;
-				-webkit-box-orient: vertical;
-				-webkit-line-clamp: 2;
-				overflow: hidden;
-				white-space: normal !important;
-				text-overflow: ellipsis;
-				word-wrap: break-word;
-			}
-			>p{
-				margin-top: 10px;
-				color: @purple;
-				animation-delay:.3s;
-				-webkit-animation-delay:.3s; /* Safari 和 Chrome */
-			}
-			.news-info-detail{
-				margin-top: 40px;
-				p{
-					.blackRgb(.4);
-					line-height: 30px;
-					animation-delay:.6s;
-					-webkit-animation-delay:.6s; /* Safari 和 Chrome */
+			>div{
+				>h2>a{
+					font-size: 24px;
+					font-family: @FBold;
+					color: @purple;
+					display: -webkit-box;
+					-webkit-box-orient: vertical;
+					-webkit-line-clamp: 2;
+					overflow: hidden;
+					white-space: normal !important;
+					text-overflow: ellipsis;
+					word-wrap: break-word;
+				}
+				>p{
+					margin-top: 10px;
+					color: @purple;
+					animation-delay:.3s;
+					-webkit-animation-delay:.3s; /* Safari 和 Chrome */
+				}
+				.news-info-detail{
+					margin-top: 40px;
+					p{
+						.blackRgb(.4);
+						line-height: 30px;
+						animation-delay:.6s;
+						-webkit-animation-delay:.6s; /* Safari 和 Chrome */
+					}
 				}
 			}
 		}
@@ -2095,7 +2103,7 @@ body{
 }
 
 /* ie兼容 */
-.lte_ie10{
+.lte_ie9{
 	.lm-header{
 		background: #42958a;
 	}
@@ -2110,6 +2118,132 @@ body{
 	}
 	.popup-content{
 		color: #8F95AD;
+	}
+}
+.ie8{
+	.section-content-title{
+		color: #E4E5EE;
+	}
+	.lm-section-fares .fares-item .fares-trip .p1 span{
+		color: #626B8D;
+	}
+	.lm-section-fares .fares-item .fares-trip > h2{
+		color: #35416C;
+	}
+	.lm-section-fares .fares-item .fares-trip .p2{
+		color: #999999;
+	}
+	.lm-section-service ul > li a:hover{
+		background: #2B516C;
+	}
+	.lm-section-travel .travel-item .travel-inner .nights{
+		color: #969799;
+	}
+	.lm-section-travel .travel-item .travel-inner .locale-wrap .locale{
+		color: #4B4B4C;
+	}
+	.lm-section-travel .travel-item .travel-inner .locale-wrap .see{
+		color: #C8C9CC;
+	}
+	.lm-section-travel .travel-item .travel-inner .view{
+		color: #5B5D60;
+		background: #E4E5EE;
+	}
+	.lm-section-travel .travel-item .travel-inner .view:hover{
+		color:#fff;
+	}
+	.lm-section-hotel .hotel-com .hotel-detail .country{
+		color: #4B4B4C;
+	}
+	.lm-section-hotel .hotel-com:hover .hotel-detail .country{
+		color: #BCC0CE;
+	}
+	.lm-section-hotel .hotel-com .hotel-detail .area,
+	.lm-section-hotel .hotel-com .hotel-detail .price-wrap .night{
+		color: #999;
+	}
+	.lm-section-hotel .hotel-com:hover .hotel-detail .area{
+		color: #767E9C;
+	}
+	.lm-section-hotel .hotel-com:hover .hotel-img > b{
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F1f2c5c,endColorstr=#7F1f2c5c);
+	}
+	.lm-section-news .news-detail .news-arrow > p{
+		color: #C8C9CC;
+	}
+	.lm-section-news .news-detail .news-arrow > p .s1{
+		color: #4B4B4C;
+	}
+	.lm-section-news .news-detail .news-info .news-info-detail p{
+		color: #999;
+	}
+	.lm-section-news .news-mask{
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F000000,endColorstr=#7F000000);
+	}
+	.daterangepicker{
+		width: 588px;
+	}
+	.calendar.left,.calendar.right{
+		float: left;
+	}
+	.daterangepicker .calendar th, .daterangepicker .calendar td {
+	  color: #626364;
+	}
+	.daterangepicker td.active, .daterangepicker td.active:hover,.daterangepicker td.available:hover, .daterangepicker th.available:hover{
+		color: #fff;
+	}
+	.daterangepicker td.off, .daterangepicker td.off.in-range, .daterangepicker td.off.start-date, .daterangepicker td.off.end-date{
+		color: #E5E5E5;
+	}
+	.popup-content .popup-people .people-number .off-sub-operation,
+	.popup-content .popup-people .people-number .sub-people{
+		background: url('@{url}sub-people.png') center no-repeat #E0E2E9;
+	}
+	.popup-content .popup-people .people-number .add-people{
+		background: url('@{url}add-people.png') center no-repeat #B5B9CA;
+	}
+	.popup-content .hotel-popus-people .hotel-age-wrap .age-result{
+		background: url('@{url}menu-down-arrow.png') 90% center no-repeat #B5B9CA;
+	}
+	.popup-content .hotel-popus-people .hotel-age-wrap .hotel-age-menu > li:hover{
+		background: #646D8D;
+	}
+	.nav-container .m-nav-1{
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#C8000000,endColorstr=#C8000000);
+	}
+	.nav-container .m-nav-2{
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2000000,endColorstr=#B2000000);
+	}
+	.nav-container .m-nav-3{
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000,endColorstr=#99000000);
+	}
+	.lm-header .h-phone .phone-menu > h2,
+	.lm-header .h-lang .lang-menu > h2{
+		color: #4C567D;
+	}
+	.lm-header .h-phone .phone-menu > p,
+	.lm-header .h-lang .lang-menu a{
+		color: #4C4C4C;
+	}
+	.lm-header .h-phone .phone-menu > p:hover,
+	.lm-header .h-lang .lang-menu a:hover{
+		color: #8ec060;
+	}
+	.modal-dialog{
+		margin:30px auto;
+	}
+	.popup-box{
+		left: 0 !important;
+		top: 0 !important;
+	}
+	.search-flight-wrap{
+		padding-left: 0;
+	}
+	.lm-section-main{
+		height: 768px !important;
+	}
+	.flight-com{
+		left: 30%;
 	}
 }
 
@@ -2161,9 +2295,17 @@ body{
 		left: -2%;
 	}
 }
-@media screen and (max-width: 1350px) {
+@media screen and (max-width: 1300px) {
+	.flight-com,.content-com-inner,.lm-aside-flight,.lm-important{
+		-webkit-transform: scale(1); 
+		transform: scale(1); 
+		-webkit-transform-origin: top;
+		transform-origin: top;
+	}
 	.flight-com{
-		left: 22%;
+		width: 700px;
+		left: 26%;
+		top: 260px;
 	}
 	.content-com-inner{
 		left: 21%;
