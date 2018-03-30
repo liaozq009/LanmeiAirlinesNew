@@ -802,6 +802,9 @@ body {
   cursor: pointer;
   display: none;
 }
+.select-air-com .local-change:hover {
+  background: url('../../images/EN/ticket-change-active.png') center no-repeat;
+}
 .select-air-com .date-result {
   display: block;
   width: 100%;
@@ -912,407 +915,6 @@ body {
 .search-flight-wrap .flight-search :root .gradient {
   filter: none;
 }
-.popup-container {
-  position: relative;
-}
-.popup-box {
-  position: absolute;
-  left: 0;
-  transition: left 0.5s ease-out;
-  -webkit-transition: left 0.5s ease-out;
-}
-.popup-box::before {
-  position: absolute;
-  top: -23px;
-  left: 150px;
-  z-index: 9;
-  opacity: 0;
-  filter: alpha(opacity=0);
-  content: "";
-  display: block;
-  width: 0;
-  height: 0;
-  border-left: 14px solid transparent;
-  border-right: 14px solid transparent;
-  border-bottom: 14px solid #fff;
-  transition: opacity 0.2s ease-out;
-  -webkit-transition: opacity 0.2s ease-out;
-}
-.hotelPeople-popup-box::before {
-  left: 580px;
-}
-.popup-box-before::before {
-  opacity: 1;
-  filter: alpha(opacity=100);
-  transition: opacity 0.3s ease-out;
-  -webkit-transition: opacity 0.3s ease-out;
-}
-.popup-content {
-  position: absolute;
-  top: -10px;
-  left: 0px;
-  z-index: 1;
-  font-size: 16px;
-  color: rgba(31, 44, 92, 0.5);
-  background: #fff;
-  border-radius: 2px;
-  box-shadow: 0 0 100px 0 #34406c;
-  transition: all 0.2s ease-out;
-}
-.popup-content .popup-airport {
-  width: 628px;
-  padding: 20px 20px 10px;
-}
-.popup-content .popup-airport > h2 {
-  font-family: CamptonBookBold;
-  font-size: 20px;
-  color: rgba(31, 44, 92, 0.8);
-  margin-bottom: 20px;
-}
-.popup-content .popup-airport .flight-list-wrap {
-  overflow: hidden;
-}
-.popup-content .popup-airport .flight-list-wrap > li {
-  float: left;
-  width: 50%;
-  padding-left: 30px;
-  margin-bottom: 10px;
-  background: url('../../images/EN/city-icon.png') left center no-repeat;
-  cursor: pointer;
-  transition: all .3s;
-  -webkit-transition: all .3s;
-}
-.popup-content .popup-airport .flight-list-wrap > li:hover {
-  color: #8ec060;
-  background: url('../../images/EN/city-icon-active.png') left center no-repeat;
-  transition: all .3s;
-  -webkit-transition: all .3s;
-}
-.popup-content .popup-airport .flight-list-wrap > li > span {
-  color: #1f2c5c;
-}
-.popup-content .popup-airport .flight-list-wrap .active {
-  color: #8ec060;
-  background: url('../../images/EN/city-icon-active.png') left center no-repeat;
-}
-.popup-content .popup-airport .hotel-list-wrap > li {
-  background: url('../../images/EN/hotel-small-icon.png') left center no-repeat;
-}
-.popup-content .popup-airport .hotel-list-wrap > li:hover {
-  background: url('../../images/EN/hotel-small-icon-active.png') left center no-repeat;
-}
-.popup-content .popup-hotel-from {
-  width: 660px;
-}
-.popup-content .popup-airport-to {
-  display: none;
-}
-.popup-content .popup-date {
-  display: none;
-  width: 588px;
-}
-.popup-content .popup-date .date-title {
-  padding-left: 10px;
-  padding-top: 20px;
-  font-size: 20px;
-  font-family: CamptonBookBold;
-  color: rgba(31, 44, 92, 0.8);
-}
-.popup-content .popup-people {
-  display: none;
-  width: 410px;
-  height: 264px;
-  padding: 20px 20px 30px;
-}
-.popup-content .popup-people .people-title {
-  padding-bottom: 10px;
-  font-size: 20px;
-  font-family: CamptonBookBold;
-  color: rgba(31, 44, 92, 0.8);
-}
-.popup-content .popup-people .s-people-com {
-  height: 50px;
-  margin-top: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-.popup-content .popup-people .people-prompt {
-  float: left;
-}
-.popup-content .popup-people .people-prompt .p1 {
-  color: rgba(0, 0, 0, 0.7);
-}
-.popup-content .popup-people .people-prompt .p1 > img {
-  margin-right: 10px;
-  vertical-align: text-bottom;
-}
-.popup-content .popup-people .people-prompt .p2 {
-  margin-top: 5px;
-  font-family: CamptonBookLight;
-  font-size: 14px;
-  color: rgba(0, 0, 0, 0.3);
-  cursor: pointer;
-}
-.popup-content .popup-people .people-prompt .p2 > img {
-  margin-left: 10px;
-  margin-right: 10px;
-  vertical-align: top;
-}
-.popup-content .popup-people .people-number {
-  float: right;
-  width: 200px;
-  height: 50px;
-  line-height: 46px;
-  padding: 4px;
-  text-align: center;
-  background: -webkit-linear-gradient(left, #42958a 0%, #1f2c5c 100%);
-  background: -o-linear-gradient(right, #42958a 0%, #1f2c5c 100%);
-  background: -moz-linear-gradient(right, #42958a 0%, #1f2c5c 100%);
-  background: linear-gradient(to right, #42958a 0%, #1f2c5c 100%);
-  border-radius: 2px;
-}
-.popup-content .popup-people .people-number > a {
-  display: inline-block;
-  width: 42px;
-  height: 42px;
-  color: #fff;
-  border-radius: 2px;
-  transition: all .3s;
-  -webkit-transition: all .3s;
-}
-.popup-content .popup-people .people-number .add-people {
-  float: right;
-  background: url('../../images/EN/add-people.png') center no-repeat rgba(255, 255, 255, 0.3);
-}
-.popup-content .popup-people .people-number .add-people:hover {
-  background: url('../../images/EN/add-people.png') center no-repeat rgba(255, 255, 255, 0.7);
-  transition: all .3s;
-  -webkit-transition: all .3s;
-}
-.popup-content .popup-people .people-number .sub-people {
-  float: left;
-  background: url('../../images/EN/sub-people.png') center no-repeat rgba(255, 255, 255, 0.3);
-}
-.popup-content .popup-people .people-number .sub-people:hover {
-  background: url('../../images/EN/sub-people.png') center no-repeat rgba(255, 255, 255, 0.7);
-  transition: all .3s;
-  -webkit-transition: all .3s;
-}
-.popup-content .popup-people .people-number .off-sub-operation {
-  background: url('../../images/EN/sub-people.png') center no-repeat rgba(255, 255, 255, 0.1);
-  cursor: not-allowed;
-}
-.popup-content .popup-people .people-number .off-sub-operation:hover {
-  background: url('../../images/EN/sub-people.png') center no-repeat rgba(255, 255, 255, 0.1);
-}
-.popup-content .popup-people .people-number .off-add-operation {
-  background: url('../../images/EN/add-people.png') center no-repeat rgba(255, 255, 255, 0.1);
-  cursor: not-allowed;
-}
-.popup-content .popup-people .people-number .off-add-operation:hover {
-  background: url('../../images/EN/add-people.png') center no-repeat rgba(255, 255, 255, 0.1);
-}
-.popup-content .popup-people .people-number > span {
-  font-family: CamptonBookBold;
-  font-size: 24px;
-  color: #fff;
-}
-.popup-content .popup-people .disable {
-  background: url('../../images/EN/add-people.png') center no-repeat rgba(31, 44, 92, 0.04);
-}
-.popup-content .popup-people .disable > span {
-  color: #1f2c5c;
-}
-.popup-content .popup-people .disable .add-people {
-  background: url('../../images/EN/add-people.png') center no-repeat rgba(31, 44, 92, 0.3);
-}
-.popup-content .popup-people .disable .add-people:hover {
-  background: url('../../images/EN/add-people.png') center no-repeat rgba(31, 44, 92, 0.7);
-  transition: all .3s;
-  -webkit-transition: all .3s;
-}
-.popup-content .popup-people .disable .sub-people {
-  background: url('../../images/EN/sub-people.png') center no-repeat rgba(31, 44, 92, 0.3);
-}
-.popup-content .popup-people .disable .sub-people:hover {
-  background: url('../../images/EN/sub-people.png') center no-repeat rgba(31, 44, 92, 0.7);
-  transition: all .3s;
-  -webkit-transition: all .3s;
-}
-.popup-content .popup-people .disable .off-sub-operation {
-  background: url('../../images/EN/sub-people.png') center no-repeat rgba(31, 44, 92, 0.1);
-  cursor: not-allowed;
-}
-.popup-content .popup-people .disable .off-sub-operation:hover {
-  background: url('../../images/EN/sub-people.png') center no-repeat rgba(31, 44, 92, 0.1);
-}
-.popup-content .popup-people .disable .off-add-operation {
-  background: url('../../images/EN/add-people.png') center no-repeat rgba(31, 44, 92, 0.1);
-  cursor: not-allowed;
-}
-.popup-content .popup-people .disable .off-add-operation:hover {
-  background: url('../../images/EN/add-people.png') center no-repeat rgba(31, 44, 92, 0.1);
-}
-.popup-content .hotel-popus-people {
-  width: 750px;
-  height: auto;
-  padding: 20px;
-  transition: width 0.2s ease-out;
-  -webkit-transition: width 0.2s ease-out;
-  animation-delay: .3s;
-  -webkit-animation-delay: .3s;
-}
-.popup-content .hotel-popus-people .s-room-com {
-  padding: 0;
-}
-.popup-content .hotel-popus-people .s-room-1 {
-  position: relative;
-  z-index: 3;
-}
-.popup-content .hotel-popus-people .s-room-2 {
-  position: relative;
-  z-index: 2;
-}
-.popup-content .hotel-popus-people .rooms-title {
-  float: left;
-  height: 50px;
-  line-height: 50px;
-  color: rgba(0, 0, 0, 0.7);
-  font-size: 20px;
-  padding-left: 30px;
-  background: url('../../images/EN/rooms-icon.png') left center no-repeat;
-}
-.popup-content .hotel-popus-people .rooms-content-com {
-  float: left;
-  margin-left: 20px;
-  margin-left: 18px\9;
-}
-.popup-content .hotel-popus-people .rooms-content-com .hotel-people-prompt .p1 {
-  height: 50px;
-  line-height: 50px;
-  padding-left: 10px;
-  padding-right: 20px;
-  background: rgba(31, 44, 92, 0.04);
-  border-radius: 2px;
-}
-.popup-content .hotel-popus-people .rooms-content-com .hotel-people-number {
-  float: left;
-  width: 166px;
-}
-.popup-content .hotel-popus-people .age-rooms-com {
-  display: none;
-}
-.popup-content .hotel-popus-people .hotel-age-wrap {
-  position: relative;
-  width: auto;
-  float: left;
-  padding: 8px 10px 8px 0;
-  background: rgba(31, 44, 92, 0.04);
-}
-.popup-content .hotel-popus-people .hotel-age-wrap .age-result {
-  float: left;
-  display: inline-block;
-  width: 78px;
-  height: 34px;
-  line-height: 38px;
-  font-size: 18px;
-  font-family: CamptonBook;
-  text-align: left;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-left: 20px;
-  border-radius: 2px;
-  background: url('../../images/EN/menu-down-arrow.png') 90% center no-repeat rgba(31, 44, 92, 0.3);
-  cursor: pointer;
-}
-.popup-content .hotel-popus-people .hotel-age-wrap .age-menu-box {
-  display: none;
-  position: absolute;
-  top: 42px;
-  left: 20px;
-  width: 78px;
-  height: 182px;
-  overflow: hidden;
-  background: #fff;
-  box-shadow: 0 0 20px 0 rgba(31, 44, 92, 0.1);
-}
-.popup-content .hotel-popus-people .hotel-age-wrap .hotel-age-menu {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 86px;
-  height: 182px;
-  overflow-y: scroll;
-}
-.popup-content .hotel-popus-people .hotel-age-wrap .hotel-age-menu > li {
-  height: 40px;
-  color: #4E4E4E;
-  cursor: pointer;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-.popup-content .hotel-popus-people .hotel-age-wrap .hotel-age-menu > li:hover {
-  color: #fff;
-  background: rgba(31, 44, 92, 0.7);
-}
-.popup-content .hotel-popus-people .adult-rooms-content {
-  margin-left: 30px;
-}
-.popup-content .hotel-popus-people .add-rooms-wrap {
-  height: 50px;
-  margin-top: 30px;
-}
-.popup-content .hotel-popus-people .add-rooms-wrap .add-rooms-content {
-  float: left;
-}
-.popup-content .hotel-popus-people .add-rooms-wrap p {
-  position: relative;
-  float: left;
-  width: 142px;
-  height: 50px;
-  line-height: 50px;
-  margin-right: 20px;
-  padding-left: 50px;
-  font-size: 20px;
-  color: rgba(0, 0, 0, 0.7);
-  box-shadow: 0 0 20px 0 rgba(31, 44, 92, 0.1);
-  border-radius: 2px;
-  background: url('../../images/EN/rooms-icon.png') 20px center no-repeat #fff;
-}
-.popup-content .hotel-popus-people .add-rooms-wrap p b {
-  display: none;
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 16px;
-  height: 16px;
-  line-height: 18px;
-  text-align: center;
-  color: #fff;
-  font-weight: 100;
-  background: #ff8989;
-  border-radius: 2px;
-  cursor: pointer;
-}
-.popup-content .hotel-popus-people .add-rooms-wrap p:hover b {
-  display: block;
-}
-.popup-content .hotel-popus-people .add-rooms-wrap .add-rooms-btn {
-  color: rgba(31, 44, 92, 0.3);
-  background: url('../../images/EN/add-rooms.png') 20px center no-repeat #fff;
-  cursor: pointer;
-}
-.popup-inactive {
-  opacity: 0;
-  visibility: hidden;
-  -webkit-transform: perspective(600px) rotateX(-10deg);
-}
-.popup-active {
-  opacity: 1;
-  visibility: visible;
-  -webkit-transform: perspective(600px) rotateX(0);
-}
 .lm-scroll-down {
   position: absolute;
   left: 50%;
@@ -1421,37 +1023,6 @@ body {
 .lm-section-banner .slick-item .slick-detail p:nth-of-type(3) {
   -webkit-transition-delay: 0.05s;
   transition-delay: 0.05s;
-}
-.lm-section-banner .slick-item:hover .slick-content {
-  color: rgba(0, 0, 0, 0.6);
-  transition: all .35s;
-  -webkit-transition: all .35s;
-}
-.lm-section-banner .slick-item:hover > img {
-  opacity: 0.4;
-  filter: alpha(opacity=40);
-  -webkit-transform: scale(1.1, 1.1);
-  transform: scale(1.1, 1.1);
-}
-.lm-section-banner .slick-item:hover .slick-detail p {
-  opacity: 1;
-  filter: alpha(opacity=100);
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-  transition: opacity 0.35s, transform 0.35s;
-}
-.lm-section-banner .slick-item:hover .slick-detail p:first-child {
-  -webkit-transition-delay: 0s;
-  transition-delay: 0s;
-}
-.lm-section-banner .slick-item:hover .slick-detail p:nth-of-type(2) {
-  -webkit-transition-delay: 0.05s;
-  transition-delay: 0.05s;
-}
-.lm-section-banner .slick-item:hover .slick-detail p:nth-of-type(3) {
-  -webkit-transition-delay: 0.1s;
-  transition-delay: 0.1s;
 }
 .section-content-title {
   position: relative;
@@ -2576,6 +2147,40 @@ body {
     height: 400px;
   }
 }
+/* hover效果 */
+@media (min-width: 992px) {
+  .lm-section-banner .slick-item:hover .slick-content {
+    color: rgba(0, 0, 0, 0.6);
+    transition: all .35s;
+    -webkit-transition: all .35s;
+  }
+  .lm-section-banner .slick-item:hover > img {
+    opacity: 0.4;
+    filter: alpha(opacity=40);
+    -webkit-transform: scale(1.1, 1.1);
+    transform: scale(1.1, 1.1);
+  }
+  .lm-section-banner .slick-item:hover .slick-detail p {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+  }
+  .lm-section-banner .slick-item:hover .slick-detail p:first-child {
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+  }
+  .lm-section-banner .slick-item:hover .slick-detail p:nth-of-type(2) {
+    -webkit-transition-delay: 0.05s;
+    transition-delay: 0.05s;
+  }
+  .lm-section-banner .slick-item:hover .slick-detail p:nth-of-type(3) {
+    -webkit-transition-delay: 0.1s;
+    transition-delay: 0.1s;
+  }
+}
 /* pad端 */
 @media (max-width: 992px) {
   .lm-header .h-logo {
@@ -2683,11 +2288,674 @@ body {
   .lm-section-coupons .coupons-content .slick-item-1 {
     padding-left: 16px;
   }
+  .lm-section-coupons .coupons-content .slick-item-1 .slick-content {
+    margin-left: -102px;
+  }
   .lm-section-fares .fares-item-1 {
     padding-left: 36px;
   }
   .lm-section-travel .travel-content .slick-list {
     padding-left: 60px;
   }
+  .lm-section-news .news-detail {
+    width: 400px;
+    height: 278px;
+    margin-left: 0px;
+  }
+  .lm-section-news .news-content {
+    margin-left: 400px;
+  }
+  .lm-section-news .news-content .news-item > img {
+    width: 368px;
+    height: 278px;
+    height: auto;
+  }
+  .lm-section-news .news-detail .news-info > div .news-info-detail {
+    margin-top: 20px;
+  }
+  .lm-section-news .news-detail .news-info > div > h2 > a {
+    height: 50px;
+  }
+  .lm-section-news {
+    margin-bottom: 100px;
+  }
+  .nav-container .m-nav-1 {
+    width: 240px;
+    padding-top: 100px;
+    padding-left: 30px;
+  }
+  .nav-container .m-nav-2,
+  .nav-container .m-nav-3 {
+    width: 260px;
+    padding-top: 100px;
+    padding-left: 20px;
+  }
+  .lm-section-service {
+    background-position: 50% -110px;
+  }
+}
+/* 手机端以外 */
+@media (min-width: 767px) {
+  .popup-container {
+    position: relative;
+  }
+  .popup-close {
+    display: none;
+  }
+  .popup-box {
+    position: absolute;
+    left: 0;
+    transition: left 0.5s ease-out;
+    -webkit-transition: left 0.5s ease-out;
+  }
+  .popup-box::before {
+    position: absolute;
+    top: -23px;
+    left: 150px;
+    z-index: 9;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 14px solid transparent;
+    border-right: 14px solid transparent;
+    border-bottom: 14px solid #fff;
+    transition: opacity 0.2s ease-out;
+    -webkit-transition: opacity 0.2s ease-out;
+  }
+  .hotelPeople-popup-box::before {
+    left: 580px;
+  }
+  .popup-box-before::before {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    transition: opacity 0.3s ease-out;
+    -webkit-transition: opacity 0.3s ease-out;
+  }
+  .popup-content {
+    position: absolute;
+    top: -10px;
+    left: 0px;
+    z-index: 1;
+    font-size: 16px;
+    color: rgba(31, 44, 92, 0.5);
+    background: #fff;
+    border-radius: 2px;
+    box-shadow: 0 0 100px 0 #34406c;
+    transition: all 0.2s ease-out;
+  }
+  .popup-content .popup-airport {
+    width: 628px;
+    padding: 20px 20px 10px;
+  }
+  .popup-content .popup-airport > h2 {
+    font-family: CamptonBookBold;
+    font-size: 20px;
+    color: rgba(31, 44, 92, 0.8);
+    margin-bottom: 20px;
+  }
+  .popup-content .popup-airport .flight-list-wrap {
+    overflow: hidden;
+  }
+  .popup-content .popup-airport .flight-list-wrap > li {
+    float: left;
+    width: 50%;
+    padding-left: 30px;
+    margin-bottom: 10px;
+    background: url('../../images/EN/city-icon.png') left center no-repeat;
+    cursor: pointer;
+    transition: all .3s;
+    -webkit-transition: all .3s;
+  }
+  .popup-content .popup-airport .flight-list-wrap > li:hover {
+    color: #8ec060;
+    background: url('../../images/EN/city-icon-active.png') left center no-repeat;
+    transition: all .3s;
+    -webkit-transition: all .3s;
+  }
+  .popup-content .popup-airport .flight-list-wrap > li > span {
+    color: #1f2c5c;
+  }
+  .popup-content .popup-airport .flight-list-wrap .active {
+    color: #8ec060;
+    background: url('../../images/EN/city-icon-active.png') left center no-repeat;
+  }
+  .popup-content .popup-airport .hotel-list-wrap > li {
+    background: url('../../images/EN/hotel-small-icon.png') left center no-repeat;
+  }
+  .popup-content .popup-airport .hotel-list-wrap > li:hover {
+    background: url('../../images/EN/hotel-small-icon-active.png') left center no-repeat;
+  }
+  .popup-content .popup-hotel-from {
+    width: 660px;
+  }
+  .popup-content .popup-airport-to {
+    display: none;
+  }
+  .popup-content .popup-date {
+    display: none;
+    width: 588px;
+  }
+  .popup-content .popup-date .date-title {
+    padding-left: 10px;
+    padding-top: 20px;
+    font-size: 20px;
+    font-family: CamptonBookBold;
+    color: rgba(31, 44, 92, 0.8);
+  }
+  .popup-content .popup-people {
+    display: none;
+    width: 410px;
+    height: 264px;
+    padding: 20px 20px 30px;
+  }
+  .popup-content .popup-people .people-title {
+    padding-bottom: 10px;
+    font-size: 20px;
+    font-family: CamptonBookBold;
+    color: rgba(31, 44, 92, 0.8);
+  }
+  .popup-content .popup-people .s-people-com {
+    height: 50px;
+    margin-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .popup-content .popup-people .people-prompt {
+    float: left;
+  }
+  .popup-content .popup-people .people-prompt .p1 {
+    color: rgba(0, 0, 0, 0.7);
+  }
+  .popup-content .popup-people .people-prompt .p1 > img {
+    margin-right: 10px;
+    vertical-align: text-bottom;
+  }
+  .popup-content .popup-people .people-prompt .p2 {
+    margin-top: 5px;
+    font-family: CamptonBookLight;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+  }
+  .popup-content .popup-people .people-prompt .p2 > img {
+    margin-left: 10px;
+    margin-right: 10px;
+    vertical-align: top;
+  }
+  .popup-content .popup-people .people-number {
+    float: right;
+    width: 200px;
+    height: 50px;
+    line-height: 46px;
+    padding: 4px;
+    text-align: center;
+    background: -webkit-linear-gradient(left, #42958a 0%, #1f2c5c 100%);
+    background: -o-linear-gradient(right, #42958a 0%, #1f2c5c 100%);
+    background: -moz-linear-gradient(right, #42958a 0%, #1f2c5c 100%);
+    background: linear-gradient(to right, #42958a 0%, #1f2c5c 100%);
+    border-radius: 2px;
+  }
+  .popup-content .popup-people .people-number > a {
+    display: inline-block;
+    width: 42px;
+    height: 42px;
+    color: #fff;
+    border-radius: 2px;
+    transition: all .3s;
+    -webkit-transition: all .3s;
+  }
+  .popup-content .popup-people .people-number .add-people {
+    float: right;
+    background: url('../../images/EN/add-people.png') center no-repeat rgba(255, 255, 255, 0.3);
+  }
+  .popup-content .popup-people .people-number .add-people:hover {
+    background: url('../../images/EN/add-people.png') center no-repeat rgba(255, 255, 255, 0.7);
+    transition: all .3s;
+    -webkit-transition: all .3s;
+  }
+  .popup-content .popup-people .people-number .sub-people {
+    float: left;
+    background: url('../../images/EN/sub-people.png') center no-repeat rgba(255, 255, 255, 0.3);
+  }
+  .popup-content .popup-people .people-number .sub-people:hover {
+    background: url('../../images/EN/sub-people.png') center no-repeat rgba(255, 255, 255, 0.7);
+    transition: all .3s;
+    -webkit-transition: all .3s;
+  }
+  .popup-content .popup-people .people-number .off-sub-operation {
+    background: url('../../images/EN/sub-people.png') center no-repeat rgba(255, 255, 255, 0.1);
+    cursor: not-allowed;
+  }
+  .popup-content .popup-people .people-number .off-sub-operation:hover {
+    background: url('../../images/EN/sub-people.png') center no-repeat rgba(255, 255, 255, 0.1);
+  }
+  .popup-content .popup-people .people-number .off-add-operation {
+    background: url('../../images/EN/add-people.png') center no-repeat rgba(255, 255, 255, 0.1);
+    cursor: not-allowed;
+  }
+  .popup-content .popup-people .people-number .off-add-operation:hover {
+    background: url('../../images/EN/add-people.png') center no-repeat rgba(255, 255, 255, 0.1);
+  }
+  .popup-content .popup-people .people-number > span {
+    font-family: CamptonBookBold;
+    font-size: 24px;
+    color: #fff;
+  }
+  .popup-content .popup-people .disable {
+    background: url('../../images/EN/add-people.png') center no-repeat rgba(31, 44, 92, 0.04);
+  }
+  .popup-content .popup-people .disable > span {
+    color: #1f2c5c;
+  }
+  .popup-content .popup-people .disable .add-people {
+    background: url('../../images/EN/add-people.png') center no-repeat rgba(31, 44, 92, 0.3);
+  }
+  .popup-content .popup-people .disable .add-people:hover {
+    background: url('../../images/EN/add-people.png') center no-repeat rgba(31, 44, 92, 0.7);
+    transition: all .3s;
+    -webkit-transition: all .3s;
+  }
+  .popup-content .popup-people .disable .sub-people {
+    background: url('../../images/EN/sub-people.png') center no-repeat rgba(31, 44, 92, 0.3);
+  }
+  .popup-content .popup-people .disable .sub-people:hover {
+    background: url('../../images/EN/sub-people.png') center no-repeat rgba(31, 44, 92, 0.7);
+    transition: all .3s;
+    -webkit-transition: all .3s;
+  }
+  .popup-content .popup-people .disable .off-sub-operation {
+    background: url('../../images/EN/sub-people.png') center no-repeat rgba(31, 44, 92, 0.1);
+    cursor: not-allowed;
+  }
+  .popup-content .popup-people .disable .off-sub-operation:hover {
+    background: url('../../images/EN/sub-people.png') center no-repeat rgba(31, 44, 92, 0.1);
+  }
+  .popup-content .popup-people .disable .off-add-operation {
+    background: url('../../images/EN/add-people.png') center no-repeat rgba(31, 44, 92, 0.1);
+    cursor: not-allowed;
+  }
+  .popup-content .popup-people .disable .off-add-operation:hover {
+    background: url('../../images/EN/add-people.png') center no-repeat rgba(31, 44, 92, 0.1);
+  }
+  .popup-content .hotel-popus-people {
+    width: 750px;
+    height: auto;
+    padding: 20px;
+    transition: width 0.2s ease-out;
+    -webkit-transition: width 0.2s ease-out;
+    animation-delay: .3s;
+    -webkit-animation-delay: .3s;
+  }
+  .popup-content .hotel-popus-people .s-room-com {
+    padding: 0;
+  }
+  .popup-content .hotel-popus-people .s-room-1 {
+    position: relative;
+    z-index: 3;
+  }
+  .popup-content .hotel-popus-people .s-room-2 {
+    position: relative;
+    z-index: 2;
+  }
+  .popup-content .hotel-popus-people .rooms-title {
+    float: left;
+    height: 50px;
+    line-height: 50px;
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 20px;
+    padding-left: 30px;
+    background: url('../../images/EN/rooms-icon.png') left center no-repeat;
+  }
+  .popup-content .hotel-popus-people .rooms-content-com {
+    float: left;
+    margin-left: 20px;
+    margin-left: 18px\9;
+  }
+  .popup-content .hotel-popus-people .rooms-content-com .hotel-people-prompt .p1 {
+    height: 50px;
+    line-height: 50px;
+    padding-left: 10px;
+    padding-right: 20px;
+    background: rgba(31, 44, 92, 0.04);
+    border-radius: 2px;
+  }
+  .popup-content .hotel-popus-people .rooms-content-com .hotel-people-number {
+    float: left;
+    width: 166px;
+  }
+  .popup-content .hotel-popus-people .age-rooms-com {
+    display: none;
+  }
+  .popup-content .hotel-popus-people .hotel-age-wrap {
+    position: relative;
+    width: auto;
+    float: left;
+    padding: 8px 10px 8px 0;
+    background: rgba(31, 44, 92, 0.04);
+  }
+  .popup-content .hotel-popus-people .hotel-age-wrap .age-result {
+    float: left;
+    display: inline-block;
+    width: 78px;
+    height: 34px;
+    line-height: 38px;
+    font-size: 18px;
+    font-family: CamptonBook;
+    text-align: left;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: 20px;
+    border-radius: 2px;
+    background: url('../../images/EN/menu-down-arrow.png') 90% center no-repeat rgba(31, 44, 92, 0.3);
+    cursor: pointer;
+  }
+  .popup-content .hotel-popus-people .hotel-age-wrap .age-menu-box {
+    display: none;
+    position: absolute;
+    top: 42px;
+    left: 20px;
+    width: 78px;
+    height: 182px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 0 20px 0 rgba(31, 44, 92, 0.1);
+  }
+  .popup-content .hotel-popus-people .hotel-age-wrap .hotel-age-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 86px;
+    height: 182px;
+    overflow-y: scroll;
+  }
+  .popup-content .hotel-popus-people .hotel-age-wrap .hotel-age-menu > li {
+    height: 40px;
+    color: #4E4E4E;
+    cursor: pointer;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .popup-content .hotel-popus-people .hotel-age-wrap .hotel-age-menu > li:hover {
+    color: #fff;
+    background: rgba(31, 44, 92, 0.7);
+  }
+  .popup-content .hotel-popus-people .adult-rooms-content {
+    margin-left: 30px;
+  }
+  .popup-content .hotel-popus-people .add-rooms-wrap {
+    height: 50px;
+    margin-top: 30px;
+  }
+  .popup-content .hotel-popus-people .add-rooms-wrap .add-rooms-content {
+    float: left;
+  }
+  .popup-content .hotel-popus-people .add-rooms-wrap p {
+    position: relative;
+    float: left;
+    width: 142px;
+    height: 50px;
+    line-height: 50px;
+    margin-right: 20px;
+    padding-left: 50px;
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 20px 0 rgba(31, 44, 92, 0.1);
+    border-radius: 2px;
+    background: url('../../images/EN/rooms-icon.png') 20px center no-repeat #fff;
+  }
+  .popup-content .hotel-popus-people .add-rooms-wrap p b {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 16px;
+    height: 16px;
+    line-height: 18px;
+    text-align: center;
+    color: #fff;
+    font-weight: 100;
+    background: #ff8989;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+  .popup-content .hotel-popus-people .add-rooms-wrap p:hover b {
+    display: block;
+  }
+  .popup-content .hotel-popus-people .add-rooms-wrap .add-rooms-btn {
+    color: rgba(31, 44, 92, 0.3);
+    background: url('../../images/EN/add-rooms.png') 20px center no-repeat #fff;
+    cursor: pointer;
+  }
+  .popup-inactive {
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transform: perspective(600px) rotateX(-10deg);
+  }
+  .popup-active {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: perspective(600px) rotateX(0);
+  }
 }
 /* 手机端 */
+@media (max-width: 767px) {
+  .lm-header {
+    position: absolute;
+    z-index: 9;
+    padding: 0 15px;
+  }
+  .lm-header .h-menu span {
+    display: none;
+  }
+  .lm-header .h-right > div {
+    display: none;
+  }
+  .lm-header .h-right .h-login {
+    display: block;
+  }
+  .lm-aside-flight,
+  .lm-important {
+    display: none;
+  }
+  .content-com-inner {
+    width: 100%;
+    left: 0;
+    top: 0;
+    padding: 15px;
+  }
+  .content-com-inner > h1 {
+    height: 50px;
+    font-size: 26px;
+    line-height: 26px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    white-space: normal!important;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+  }
+  .content-com-wrap {
+    height: auto;
+  }
+  .flight-com {
+    width: 100%;
+    left: 0;
+    top: 0;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+  }
+  .flight-com > form {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 140px;
+  }
+  .flight-com .tips-com {
+    font-size: 18px;
+    display: none;
+  }
+  .flight-com .select-way {
+    visibility: hidden;
+    height: auto;
+  }
+  .flight-com .select-way > a {
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    padding-left: 6px;
+    padding-right: 6px;
+    margin-right: 0;
+  }
+  .flight-com .select-way .one-way {
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+  .select-air-com {
+    margin-top: 20px;
+  }
+  .select-air-com .from-com,
+  .select-air-com .to-com {
+    width: 50%;
+  }
+  .select-air-com .from-com input,
+  .select-air-com .to-com input {
+    border-radius: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    background: #fff;
+  }
+  .select-air-com .from-com {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .select-air-com .to-com {
+    z-index: -1;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .select-air-com > div {
+    visibility: visible;
+    width: 100%;
+    height: 50px;
+    margin-right: 0;
+    box-shadow: none;
+  }
+  .select-air-com .local-change {
+    display: block;
+    right: -20px;
+    top: 16px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background: url('../../images/EN/ticket-change-active.png') center no-repeat;
+  }
+  .select-air-com .date-result {
+    padding-left: 60px;
+    background: #fff;
+  }
+  .select-air-com .people-com .t-people-result {
+    line-height: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .search-flight-wrap {
+    visibility: visible;
+    margin-top: 0;
+  }
+  .search-flight-wrap .flight-cancel {
+    display: none;
+  }
+  .search-flight-wrap .flight-search {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+  }
+  .lm-aside-flight {
+    display: block;
+    width: 100%;
+    height: 60px;
+    top: auto;
+    left: 0;
+    bottom: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background: none;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+  }
+  .lm-aside-flight > ul {
+    overflow: hidden;
+    background: #fff;
+  }
+  .lm-aside-flight > ul > li {
+    width: 25%;
+    height: 60px;
+    float: left;
+  }
+  .lm-aside-flight > ul > li > a {
+    width: 100%;
+    height: 100%;
+  }
+  .lm-aside-flight > ul > li > a span {
+    top: 40px;
+  }
+  .lm-aside-flight > ul .li-child1 a,
+  .lm-aside-flight > ul .li-child2 a,
+  .lm-aside-flight > ul .li-child3 a,
+  .lm-aside-flight > ul .li-child4 a {
+    background-size: 30px 30px !important;
+  }
+  .lm-aside-flight > ul .li-slide {
+    display: none;
+  }
+  .popup-close {
+    display: block;
+    color: #1f2c5c;
+    text-align: right;
+    font-size: 20px;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.8);
+  }
+  .popup-close .city-search {
+    display: block;
+    height: 40px;
+    width: 100%;
+    padding-left: 40px;
+    padding-right: 10px;
+    margin-top: 10px;
+    background: url('../../images/EN/city-search.png') 10px center no-repeat #fff;
+  }
+  .popup-container {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  .popup-container .popup-box {
+    height: 508px;
+    background: #fff;
+  }
+  .popup-content > .popup-airport {
+    width: 100%;
+    padding: 20px;
+  }
+  .popup-content > .popup-airport > h2 {
+    display: none;
+  }
+  .popup-content > .popup-airport .flight-list-wrap > li {
+    width: 100%;
+    padding-left: 30px;
+    margin-bottom: 10px;
+    color: rgba(31, 44, 92, 0.5);
+    background: url('../../images/EN/city-icon.png') left center no-repeat;
+  }
+}

@@ -3,7 +3,6 @@ var LanmeiAirlines = {
 	init:function(){
 		this.asideMenu();
 		this.leftAside();
-		this.ticketSelect();
 		this.selectPeople();
 		this.banner();
 		this.selectCoupons();
@@ -36,8 +35,10 @@ var LanmeiAirlines = {
 
 		if(flag){
 			this.pcEvent();
+			this.ticketSelect();
 		}else{
-			
+			this.mobileEvent();
+			this.mobileTicketSelect();
 		}
 	},
 
@@ -69,6 +70,43 @@ var LanmeiAirlines = {
 			scrollspeed: 26,
 			mousescrollstep: 36,
 		});
+
+		/* 澜湄服务背景特效 */
+		$(window).scroll(function(){
+			var sTop = $(window).scrollTop();
+			var offsetTop = $('.js-section-service').offset().top; //总高度
+			var scrollTop = $(document).scrollTop(); //隐藏高度
+			var windowHeight = $(window).height();//可见窗口
+
+			var totleH = scrollTop+windowHeight;
+
+			if(totleH>=offsetTop && totleH<=offsetTop+windowHeight+300){
+				var y = totleH-offsetTop;
+				$('.js-section-service').css('backgroundPosition','center '+(parseInt(y/3)-660)+'px');
+			}else{
+				// console.log(222);
+				// $('.section-4').css('backgroundPosition','center 0');
+			}
+		});
+	},
+
+	/* 移动端事件 */
+	mobileEvent:function(){
+		$('.js-h-lang>img').click(function(e) {
+			e.stopPropagation();
+			$(this).siblings('.js-lang-menu').show();
+		});
+		$('.js-h-phone>img').click(function(e) {
+			e.stopPropagation();
+			$(this).siblings('.js-phone-menu').show();
+		});
+		$('html').click(function(event) {
+			$('.js-phone-menu,.js-lang-menu').hide();
+		});
+
+		$('.js-from-input,.js-to-input').attr('readonly','readonly');
+		$('.js-select-way').css('visibility','visible');
+		$('.js-select-way').addClass('animated fadeInUp');
 	},
 
 	/* 导航栏 */
@@ -77,13 +115,21 @@ var LanmeiAirlines = {
 		var $firstMenu = $('.js-nav-first');
 		var $secondMenu = $('.js-nav-second');
 		var $threeMenu = $('.js-nav-three');
+		var winWidth = $(window).width();
 
 		// 关闭侧边栏方法
 		var closeAside = function(){
-			$container.width(270);
-			$secondMenu.css('left',-300);
-			$threeMenu.css('left',-300);
-			$container.css('left',-270);
+			if(winWidth>992){
+				$container.width(270);
+				$secondMenu.css('left',-300);
+				$threeMenu.css('left',-300);
+				$container.css('left',-270);
+			}else{
+				$container.width(240);
+				$secondMenu.css('left',-260);
+				$threeMenu.css('left',-260);
+				$container.css('left',-240);
+			}
 			$('.js-nav-first li,.js-nav-second li').removeClass('active');
 		};
 
@@ -106,9 +152,15 @@ var LanmeiAirlines = {
 
 		// 点击一级菜单
 		$('.js-nav-first a').click(function(event) {
-			$container.width(570);
-			$secondMenu.css('left',270);
-			$threeMenu.css('left',-300);
+			if(winWidth>992){
+				$container.width(570);
+				$secondMenu.css('left',270);
+				$threeMenu.css('left',-300);
+			}else{
+				$container.width(500);
+				$secondMenu.css('left',240);
+				$threeMenu.css('left',-260);
+			}
 
 			$(this).parent('li').addClass('active').siblings('li').removeClass('active');
 			var id = $(this).attr('href');
@@ -119,8 +171,13 @@ var LanmeiAirlines = {
 		// 点击二级菜单
 		$('.js-nav-second a').click(function(event) {
 			if(!$(this).attr('data-href')){
-				$container.width(870);
-				$threeMenu.css('left',570);
+				if(winWidth>992){
+					$container.width(870);
+					$threeMenu.css('left',570);
+				}else{
+					$container.width(760);
+					$threeMenu.css('left',500);
+				}
 
 				$(this).parent('li').addClass('active').siblings('li').removeClass('active');
 				var id = $(this).attr('href');
@@ -669,6 +726,27 @@ var LanmeiAirlines = {
 			}
 		});
 
+	},
+
+	/* 移动端机票选择 */
+	mobileTicketSelect:function(){
+		/* 定义出发地和目的地的值 */
+		var fromcityData = ['Sihanoukville/KOS/Cambodia','Macao/MFM/Macao,China','Phnom Penh/PNH/Cambodia','Siem Reap/REP/Cambodia','Ho Chi Minh/SGN/Vietnam','Hanoi/HAN/Vietnam','HongKong/HKG/HongKong,China','SEOUL/ICN/Korea','Bangkok/BKK/Thailand','Shijiazhuang/SJW/China','Singapore/SIN/Singapore'];
+		var tocityData = ['Sihanoukville/KOS/Cambodia','Macao/MFM/Macao,China','Phnom Penh/PNH/Cambodia','Siem Reap/REP/Cambodia','Ho Chi Minh/SGN/Vietnam','Hanoi/HAN/Vietnam','HongKong/HKG/HongKong,China','SEOUL/ICN/Korea','Bangkok/BKK/Thailand','Shijiazhuang/SJW/China','Singapore/SIN/Singapore'];
+
+		$('.js-popup-content>div').hide();
+
+		$.each(fromcityData,function(i,val){
+			$('.js-from-menu').append('<li title="'+val+'">'+val+'</li>');
+		});
+		$('.js-airport-from').show();
+		$('.js-from-input').click(function(event) {
+			$('.js-airport-from').show();
+			$('.js-popup-content').empty();
+			$.each(fromcityData,function(i,val){
+				$fromMenuSub.append('<li title="'+val+'">'+val+'</li>');
+			});
+		});
 	},
 
 	/* 酒店选择 */
@@ -1520,13 +1598,14 @@ var LanmeiAirlines = {
 			slidesToShow: 3,
 			slidesToScroll: 1,
 			autoplay: true,
-			autoplaySpeed: 2000,
+			autoplaySpeed: 3000,
 			responsive: [
 			{
 				breakpoint: 992,
 				settings: {
 					slidesToShow: 2,
 					slidesToScroll: 1,
+					autoplay: false,
 				}
 			}
 			],
@@ -1664,10 +1743,9 @@ var LanmeiAirlines = {
 				{
 					breakpoint: 992,
 					settings: {
-						slidesToShow: 4,
+						slidesToShow: 2,
 						slidesToScroll: 1,
-						touchMove:true,
-						variableWidth: false,
+						// touchMove:true,
 					}
 				}
 				],
@@ -1722,11 +1800,11 @@ var LanmeiAirlines = {
 			variableWidth: true,
 			responsive: [
 			{
-				breakpoint: 1800,
+				breakpoint: 992,
 				settings: {
-					slidesToShow: 2,
+					slidesToShow: 1,
 					slidesToScroll: 1,
-					infinite: false,
+					// touchMove:true,
 				}
 			}
 			],
@@ -1744,9 +1822,10 @@ var LanmeiAirlines = {
 			variableWidth: true,
 			responsive: [
 			{
-				breakpoint: 1800,
+				breakpoint: 992,
 				settings: {
-					slidesToShow: 3,
+					slidesToShow: 2,
+					// touchMove:true,
 				}
 			}
 			],
@@ -1764,12 +1843,12 @@ var LanmeiAirlines = {
 			// variableWidth: true,
 			responsive: [
 			{
-				breakpoint: 600,
+				breakpoint: 992,
 				settings: {
-					slidesToShow: 2,
+					slidesToShow: 1,
 					slidesToScroll: 1,
 					infinite: false,
-					touchMove: true,
+					// touchMove: true,
 				}
 			}
 			],
@@ -1796,7 +1875,6 @@ var LanmeiAirlines = {
 					slidesToShow: 2,
 					slidesToScroll: 1,
 					infinite: false,
-					touchMove: false,
 				}
 			}
 			],
@@ -1943,24 +2021,6 @@ var LanmeiAirlines = {
 			});
 		};
 		slideUp();
-
-		/* 澜湄服务背景特效 */
-		$(window).scroll(function(){
-			var sTop = $(window).scrollTop();
-			var offsetTop = $('.js-section-service').offset().top; //总高度
-			var scrollTop = $(document).scrollTop(); //隐藏高度
-			var windowHeight = $(window).height();//可见窗口
-
-			var totleH = scrollTop+windowHeight;
-
-			if(totleH>=offsetTop && totleH<=offsetTop+windowHeight+300){
-				var y = totleH-offsetTop;
-				$('.js-section-service').css('backgroundPosition','center '+(parseInt(y/3)-660)+'px');
-			}else{
-				// console.log(222);
-				// $('.section-4').css('backgroundPosition','center 0');
-			}
-		});
 
 		/* 语言选择 */
 		var $langMenu = $('.js-lang-menu');

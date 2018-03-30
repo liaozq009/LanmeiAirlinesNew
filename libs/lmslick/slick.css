@@ -173,13 +173,6 @@
     background: url('./imgs/slick-next.png') center no-repeat #212121;
 }
 
-.slick-slider:hover .slick-prev{
-    display: block !important;
-}
-.slick-slider:hover .slick-next{
-    display: block !important;
-}
-
 .slick-disabled.slick-prev{
     background: url('./imgs/slick-prev.png') center no-repeat rgba(0,0,0,.2);
 }
@@ -191,4 +184,22 @@
 }
 .ie8 .slick-disabled.slick-next{
     background: url('./imgs/slick-next.png') center no-repeat #C8C9CC;
+}
+
+/* hover效果 */
+@media (min-width: 992px) {
+    .slick-slider:hover .slick-prev{
+        display: block !important;
+    }
+    .slick-slider:hover .slick-next{
+        display: block !important;
+    }
+}
+@media (max-width: 992px) {
+    .slick-slider .slick-prev{
+        display: block !important;
+    }
+    .slick-slider .slick-next{
+        display: block !important;
+    }
 }
