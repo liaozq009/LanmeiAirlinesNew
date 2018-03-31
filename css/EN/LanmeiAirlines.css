@@ -2740,6 +2740,13 @@ body {
     visibility: visible;
     -webkit-transform: perspective(600px) rotateX(0);
   }
+  .popup-title-wrap {
+    display: none;
+  }
+  .m-city-from,
+  .m-city-to {
+    display: none;
+  }
 }
 /* 手机端 */
 @media (max-width: 767px) {
@@ -2821,6 +2828,7 @@ body {
   }
   .select-air-com .from-com,
   .select-air-com .to-com {
+    position: relative;
     width: 50%;
   }
   .select-air-com .from-com input,
@@ -2832,13 +2840,36 @@ body {
     background: #fff;
   }
   .select-air-com .from-com {
+    z-index: 1;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
   }
   .select-air-com .to-com {
-    z-index: -1;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
+  }
+  .select-air-com .m-city-from,
+  .select-air-com .m-city-to {
+    display: block;
+    position: absolute;
+    bottom: 4px;
+    font-size: 12px;
+    color: rgba(31, 44, 92, 0.8);
+    width: 100%;
+    padding: 0 10px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: none;
+  }
+  .select-air-com .m-city-result > input {
+    padding-top: 10px;
+    padding-bottom: 22px;
+  }
+  .select-air-com .m-city-result .m-city-from,
+  .select-air-com .m-city-result .m-city-to {
+    display: block;
   }
   .select-air-com > div {
     visibility: visible;
@@ -2916,7 +2947,8 @@ body {
   .lm-aside-flight > ul .li-slide {
     display: none;
   }
-  .popup-close {
+  .popup-title-wrap {
+    position: relative;
     display: block;
     color: #1f2c5c;
     text-align: right;
@@ -2924,24 +2956,46 @@ body {
     padding: 15px;
     background: rgba(0, 0, 0, 0.8);
   }
-  .popup-close .city-search {
+  .popup-title-wrap .popup-title {
+    width: 100%;
+    height: 28px;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+  }
+  .popup-title-wrap .popup-close {
+    position: absolute;
+    right: 15px;
+    top: 8px;
+  }
+  .popup-title-wrap .city-search {
     display: block;
     height: 40px;
     width: 100%;
     padding-left: 40px;
     padding-right: 10px;
     margin-top: 10px;
+    font-size: 14px;
+    padding-top: 13px;
+    padding-bottom: 13px;
     background: url('../../images/EN/city-search.png') 10px center no-repeat #fff;
   }
   .popup-container {
     width: 100%;
     position: absolute;
     top: 0;
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
+    z-index: 2;
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+    visibility: hidden;
+    transition: visibility 0s 0.3s, -webkit-transform 0.3s;
+    transition: transform .3s,visibility 0s .3s;
+    transition: transform 0.3s, visibility 0s 0.3s, -webkit-transform 0.3s;
+    -webkit-overflow-scrolling: touch;
   }
   .popup-container .popup-box {
-    height: 508px;
+    min-height: 1px;
+    overflow-y: scroll;
     background: #fff;
   }
   .popup-content > .popup-airport {
@@ -2953,9 +3007,23 @@ body {
   }
   .popup-content > .popup-airport .flight-list-wrap > li {
     width: 100%;
+    height: 30px;
+    line-height: 30px;
     padding-left: 30px;
     margin-bottom: 10px;
+    font-size: 16px;
     color: rgba(31, 44, 92, 0.5);
     background: url('../../images/EN/city-icon.png') left center no-repeat;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+  }
+  .popup-container.is-show {
+    visibility: visible;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    transition: -webkit-transform 0.3s;
+    transition: transform .3s;
+    transition: transform 0.3s, -webkit-transform 0.3s;
   }
 }

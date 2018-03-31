@@ -433,10 +433,12 @@
 					<div class="select-air-time select-air-com">
 						<div class="from-com js-ticket-from animated fadeInUp">
 							<input type="text" class="t-from-input js-from-input" data="js-from-menu" placeholder="From" autocomplete="off">
+							<span class="m-city-from js-m-Fcity">Phnom Penh/PNH</span>
 							<i class="local-change js-ticket-change animated fadeInUp"></i>
 						</div>
 						<div class="to-com js-ticket-to">
 							<input type="text" class="t-to-input js-to-input" data="js-to-menu" placeholder="To" autocomplete="off">
+							<span class="m-city-to js-m-Tcity">Phnom Penh/PNH</span>
 						</div>
 						<div class="date-com js-ticket-date">
 							<span class="date-result js-date-result"></span>
@@ -455,9 +457,10 @@
 					</div>
 				</form>
 				<!-- 下拉选择菜单 -->
-				<div class="popup-container">
-					<div class="popup-close js-popup-close">
-						<img src="images/EN/close-menu.png" alt="">
+				<div class="popup-container js-popup-container">
+					<div class="popup-title-wrap">
+						<p class="popup-title js-popup-title">Select destination</p>
+						<img src="images/EN/close-menu.png" class="popup-close js-popup-close" alt="">
 						<input type="text" name="" class="city-search js-city-search" value="" placeholder="Search">
 					</div>
 					<div class="popup-box js-popup-box">
@@ -567,7 +570,7 @@
 					</div>
 				</form>
 				<!-- 下拉选择菜单 -->
-				<div class="popup-container">
+				<div class="popup-container js-popup-container">
 					<div class="popup-box js-hotelPopup-box">
 						<div class="popup-content hotel-popup-content popup-inactive js-hotelPopup-content">
 							<!-- 出发地目的地选择 -->
@@ -758,34 +761,20 @@
 					</div>
 				</form>
 				<!-- 下拉选择菜单 -->
-				<div class="popup-container">
+				<div class="popup-container js-popup-container">
 					<div class="popup-box js-fStatusPopup-box">
 						<div class="popup-content popup-inactive js-fStatusPopup-content">
 							<!-- 出发地目的地选择 -->
 							<div class="popup-route-from popup-airport js-routeBox-from">
-								<h2>Airports :</h2>
+								<h2>Origin Airport :</h2>
 								<ul class="flight-list-wrap js-routeFrom-menu">
-									<li title="Sihanoukville/KOS/Cambodia">Sihanoukville/KOS/Cambodia</li>
-									<li title="Ho Chi Minh/SGN/Vietnam">Ho Chi Minh/SGN/Vietnam</li>
-									<li title="Macao/MFM/Macao,China">Macao/MFM/Macao,China</li>
-									<li title="Hanoi/HAN/Vietnam">Hanoi/HAN/Vietnam</li>
-									<li title="Phnom Penh/PNH/Cambodia">Phnom Penh/PNH/Cambodia</li>
-									<li title="HongKong/HKG/HongKong,China">HongKong/HKG/HongKong,China</li>
-									<li title="Siem Reap/REP/Cambodia">Siem Reap/REP/Cambodia</li>
-									<li title="SEOUL/ICN/Korea">SEOUL/ICN/Korea</li>
+									
 								</ul>
 							</div>
 							<div class="popup-route-to popup-airport js-routeBox-to">
-								<h2>Airports :</h2>
+								<h2>Destination Airport :</h2>
 								<ul class="flight-list-wrap js-routeTo-menu">
-									<li title="Sihanoukville/KOS/Cambodia">Sihanoukville/KOS/Cambodia</li>
-									<li title="Ho Chi Minh/SGN/Vietnam">Ho Chi Minh/SGN/Vietnam</li>
-									<li title="Macao/MFM/Macao,China">Macao/MFM/Macao,China</li>
-									<li title="Hanoi/HAN/Vietnam">Hanoi/HAN/Vietnam</li>
-									<li title="Phnom Penh/PNH/Cambodia">Phnom Penh/PNH/Cambodia</li>
-									<li title="HongKong/HKG/HongKong,China">HongKong/HKG/HongKong,China</li>
-									<li title="Siem Reap/REP/Cambodia">Siem Reap/REP/Cambodia</li>
-									<li title="SEOUL/ICN/Korea">SEOUL/ICN/Korea</li>
+									
 								</ul>
 							</div>
 							<!-- 航班号日期选择 -->

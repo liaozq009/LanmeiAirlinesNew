@@ -2666,6 +2666,8 @@ body{
 		visibility: visible;
 		-webkit-transform: perspective(600px) rotateX(0);
 	}
+	.popup-title-wrap{display: none;}
+	.m-city-from,.m-city-to{display: none;}
 }
 
 /* 手机端 */
@@ -2732,6 +2734,7 @@ body{
 	.select-air-com {
 		margin-top: 20px;
 		.from-com,.to-com{
+			position: relative;
 			width: 50%;
 			input{
 				border-radius: 0;
@@ -2742,13 +2745,34 @@ body{
 			}
 		}
 		.from-com{
+			z-index: 1;
 			border-top-right-radius: 0;
 			border-bottom-right-radius: 0;
 		}
 		.to-com{
-			z-index: -1;
 			border-top-left-radius: 0;
 			border-bottom-left-radius: 0;
+		}
+		.m-city-from,.m-city-to{
+			display: block;
+			position: absolute;
+			bottom: 4px;
+			font-size: 12px;
+			color: rgba(31,44,92,.8);
+			width: 100%;
+			padding: 0 10px;
+			text-align: center;
+			overflow:hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			display: none;
+		}
+		.m-city-result{
+			>input{
+				padding-top: 10px;
+				padding-bottom: 22px;
+			}
+			.m-city-from,.m-city-to{display: block;}
 		}
 		> div{
 			visibility: visible;
@@ -2818,13 +2842,26 @@ body{
 			.li-slide{display: none;}
 		}
 	}
-	.popup-close{
+	.popup-title-wrap{
+		position: relative;
 		display: block;
 		color: @purple;
 		text-align: right;
 		font-size: 20px;
 		padding: 15px;
 		.blackBgRgb(.8);
+		.popup-title{
+			width: 100%;
+			height: 28px;
+			font-size: 16px;
+			color: #fff;
+			text-align: center;
+		}
+		.popup-close{
+			position: absolute;
+			right: 15px;
+			top: 8px;
+		}
 		.city-search{
 			display: block;
 			height: 40px;
@@ -2832,6 +2869,9 @@ body{
 			padding-left: 40px;
 			padding-right: 10px;
 			margin-top: 10px;
+			font-size: 14px;
+			padding-top: 13px;
+			padding-bottom: 13px;
 			background: url('@{url}city-search.png') 10px center no-repeat #fff;
 		}
 	}
@@ -2839,15 +2879,17 @@ body{
 		width: 100%;
 		position: absolute;
 		top: 0;
-		-webkit-transform: translateY(0);
-		transform: translateY(0);
-		// visibility: hidden;
-		// transition: visibility 0s .3s,-webkit-transform .3s;
-		// transition: transform .3s,visibility 0s .3s;
-		// transition: transform .3s,visibility 0s .3s,-webkit-transform .3s;
-		// -webkit-overflow-scrolling: touch;
+		z-index: 2;
+		-webkit-transform: translateY(100%);
+		transform: translateY(100%);
+		visibility: hidden;
+		transition: visibility 0s .3s,-webkit-transform .3s;
+		transition: transform .3s,visibility 0s .3s;
+		transition: transform .3s,visibility 0s .3s,-webkit-transform .3s;
+		-webkit-overflow-scrolling: touch;
 		.popup-box{
-			height: 508px;
+			min-height: 1px;
+			overflow-y: scroll;
 			background:#fff;
 		}
 	}
@@ -2859,20 +2901,26 @@ body{
 			.flight-list-wrap{
 				>li{
 					width: 100%;
+					height: 30px;
+					line-height: 30px;
 					padding-left: 30px;
 					margin-bottom: 10px;
+					font-size: 16px;
 					.purpleRgb(.5);
 					background: url('@{url}city-icon.png') left center no-repeat;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: normal;
 				}
 			}
 		}
 	}
 	.popup-container.is-show{
-		// visibility: visible;
-		// -webkit-transform: translateY(0);
-		// transform: translateY(0);
-		// transition: -webkit-transform .3s;
-		// transition: transform .3s;
-		// transition: transform .3s,-webkit-transform .3s;
+		visibility: visible;
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+		transition: -webkit-transform .3s;
+		transition: transform .3s;
+		transition: transform .3s,-webkit-transform .3s;
 	}
 }

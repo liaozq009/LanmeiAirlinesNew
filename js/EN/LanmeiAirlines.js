@@ -1,5 +1,9 @@
 
 var LanmeiAirlines = {
+	fromcityData: ['Sihanoukville/KOS/Cambodia','Macao/MFM/Macao,China','Phnom Penh/PNH/Cambodia','Siem Reap/REP/Cambodia','Ho Chi Minh/SGN/Vietnam','Hanoi/HAN/Vietnam','HongKong/HKG/HongKong,China','SEOUL/ICN/Korea','Bangkok/BKK/Thailand','Shijiazhuang/SJW/China','Singapore/SIN/Singapore'],
+	tocityData: ['Sihanoukville/KOS/Cambodia','Macao/MFM/Macao,China','Phnom Penh/PNH/Cambodia','Siem Reap/REP/Cambodia','Ho Chi Minh/SGN/Vietnam','Hanoi/HAN/Vietnam','HongKong/HKG/HongKong,China','SEOUL/ICN/Korea','Bangkok/BKK/Thailand','Shijiazhuang/SJW/China','Singapore/SIN/Singapore'],
+	indexLiFrom: 0, //定义键盘移动index 
+	indexLiTo: 0,
 	init:function(){
 		this.asideMenu();
 		this.leftAside();
@@ -240,16 +244,16 @@ var LanmeiAirlines = {
 			var href = $(this).attr('data-href');
 			switch (href) {
 				case "ticket-content":
-					
+
 				break;
 				case "hotel-content":
-					that.hotelSelect();
+				that.hotelSelect();
 				break;
 				case "car-content":
-					
+
 				break;
 				case "flight-content":
-					that.fStatusSelect();
+				that.fStatusSelect();
 				break;
 			}
 		});
@@ -295,10 +299,10 @@ var LanmeiAirlines = {
 
 		// 初始化日期的值
 		if (single) {
-		    $(id).attr('data-start',startTimeInit);
+			$(id).attr('data-start',startTimeInit);
 		} else {
-		    $(id).attr('data-start',startTimeInit);
-		    $(id).attr('data-end',endTimeInit);
+			$(id).attr('data-start',startTimeInit);
+			$(id).attr('data-end',endTimeInit);
 		}
 		
 		var that = this;
@@ -317,15 +321,15 @@ var LanmeiAirlines = {
       showDropdowns: false, //下拉选择月份和年份
       showWeekNumbers: false, //显示周
       autoApply: true, //自动关闭日期
-			language :'en',
+      language :'en',
 		},function(start, end, label) {//格式化日期显示框  
-				if (this.singleDatePicker) {
-				    $(id).html(start.format('D MMM'));
-				    $(id).attr('data-start',start.format('YYYY-MM-DD'));
-				} else {
-				    $(id).html(start.format('D MMM') + ' - ' + end.format('D MMM'));
-				    $(id).attr('data-start',start.format('YYYY-MM-DD')).attr('data-end',end.format('YYYY-MM-DD'));
-				}
+			if (this.singleDatePicker) {
+				$(id).html(start.format('D MMM'));
+				$(id).attr('data-start',start.format('YYYY-MM-DD'));
+			} else {
+				$(id).html(start.format('D MMM') + ' - ' + end.format('D MMM'));
+				$(id).attr('data-start',start.format('YYYY-MM-DD')).attr('data-end',end.format('YYYY-MM-DD'));
+			}
 
 				// 操作外层box移动
 				if(showTotleDay){ //酒店
@@ -350,7 +354,7 @@ var LanmeiAirlines = {
 						}
 					}
 				} 
-			  if(peopleBox!=='0'){
+				if(peopleBox!=='0'){
 					dateBox.slideUp(function(){ //日期地隐藏
 						peopleBox.slideDown(); //人数显示
 					}); 
@@ -358,8 +362,144 @@ var LanmeiAirlines = {
 					$('.js-fStatusPopup-content').removeClass('popup-active').addClass('popup-inactive'); 
 					$('.js-fStatusPopup-box').removeClass('popup-box-before'); //隐藏小箭头
 				}
-		  } 
-		);
+			} 
+			);
+	},
+
+	/* 模糊匹配 */
+	autoComplete:function(id){
+		var that = this;
+		/* 机票模糊匹配 */
+		$(id).on('input',function(event) {
+			var searchText = $(this).val();
+			var currenData;
+			var data = $(this).attr('data');
+
+			switch (data) {
+				case 'js-from-menu':
+					currenData=that.fromcityData
+					break;
+				case 'js-to-menu':
+					currenData=that.tocityData
+					break;
+			}
+
+			var currentVal = searchText.toLowerCase();
+			var srdata = [];
+			for (var i = 0; i < currenData.length; i++) {
+				if (currentVal.trim().length > 0 && currenData[i].toLowerCase().indexOf(currentVal) > -1) {
+					srdata.push(currenData[i]);
+				}
+			}
+
+			$('.'+data).empty();
+			var escapedSearchText,zregex,startpos,text,searchVal;
+			$.each(srdata,function(i,val){
+				escapedSearchText = searchText.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+				zregex = new RegExp(escapedSearchText, 'i');
+				startpos = val.search(zregex);
+				text = val.substr(0, startpos + searchText.length) + '</span>' + val.substr(startpos + searchText.length);
+				searchVal = text.substr(0, startpos) + '<span>' + text.substr(startpos);
+
+				$('.'+data).append('<li title="'+val+'">'+searchVal+'</li>');
+			});
+			if(srdata.length==0){ 
+				$('.'+data).append('<li>No results match "'+searchText+'"</li>');
+			}
+			if(currentVal===''){
+				$('.'+data).empty();
+				$.each(currenData,function(i,val){
+					$('.'+data).append('<li title="'+val+'">'+val+'</li>');
+				});
+			}
+		});
+	},
+
+	/* 键盘事件 */
+	keyEvent:function(input,ul,indexLi){
+		var that = this;
+		var $box = $('.js-popup-box'); //c3动画最外层
+		var $fromBox = $('.js-airport-from'); //出发地外层
+		var $dateBox = $('.js-popup-date'); //日期外层
+		var $toBox = $('.js-airport-to'); //目的地外层
+		var $fromInput = $('.js-from-input'); //机票出发地
+		var $toInput = $('.js-to-input'); //机票目的地
+		var $toMenuSub = $('.js-to-menu'); //目的地下拉菜单
+
+		/* 设置出发地的值 */
+		var fromCityVal = function(text1,text2){ 
+			$fromInput.val(text2[0]+'/'+text2[1]);
+			$box.css('left',350);
+			var tocityArr = that.tocityData;
+			tocityArr.remove(text1);
+
+			$toMenuSub.empty();
+			$.each(tocityArr,function(i,val){
+				$toMenuSub.append('<li title="'+val+'">'+val+'</li>');
+			});
+			$toInput.focus();
+			$('.js-to-menu>li:first').addClass('active');
+			keyDown('.js-to-input','.js-to-menu',that.indexLiTo); //绑定键盘事件
+
+			$fromBox.slideUp(function(){ //出发地隐藏
+				$toBox.slideDown(); //目的地显示
+			}); 
+		};
+
+		/* 设置目的地的值 */
+		var toCityVal = function(text1,text2){
+			$toInput.val(text2[0]+'/'+text2[1]);
+			$box.css('left',700);
+
+			$toBox.slideUp(function(){ //出发地隐藏
+				$('.js-date-result').click(); //日期展示
+				$dateBox.slideDown(); //目的地显示
+			}); 
+		};
+
+		/* 键盘上下选择城市 */
+		var keyDown = function(input,ul,indexLi){
+			var $input = $(input);
+
+			// 定义UL下拉菜单
+			var $fUl = $(ul);
+
+			function keychang(up){
+				if(up == "up"){ //向上
+					if(indexLi == 0){
+						indexLi = $fUl.children().length-1;
+					}else{
+						indexLi--;
+					}
+				}else{//向下
+					if(indexLi ==  $fUl.children().length-1){
+						indexLi = 0;
+					}else{
+						indexLi++;
+					}
+				}
+				$fUl.children('li').eq(indexLi).addClass("active").siblings('li').removeClass('active');		
+			}
+
+			//按键盘的上下移动LI的背景色
+			$input.keydown(function(event){
+				if(event.which == 38){//向上
+					event.preventDefault();
+					keychang("up");
+				}else if(event.which == 40){//向下
+					keychang();
+				}else if(event.which == 13){ //回车
+					var text1 = $fUl.children().eq(indexLi).attr('title');
+					var text2 = text1.split('/');
+					if(input=='.js-from-input'){
+						fromCityVal(text1,text2);
+					}else if(input=='.js-to-input'){
+						toCityVal(text1,text2);
+					}
+				}
+			});	
+		};
+		keyDown(input,ul,indexLi);
 	},
 
 	/* 机票选择 */
@@ -420,15 +560,15 @@ var LanmeiAirlines = {
 			var data = $(this).attr('data-way');
 			switch (data) {
 				case 'round':
-					that.dateSelect(false,'.js-date-result','.js-popup-date',false,$box,$dateBox,$peopleBox,'Choose your departure date :','Choose your return date :');
+				that.dateSelect(false,'.js-date-result','.js-popup-date',false,$box,$dateBox,$peopleBox,'Choose your departure date :','Choose your return date :');
 					$('.js-date-result').click(); //日期展示
 					break;
-				case 'one':
+					case 'one':
 					that.dateSelect(true,'.js-date-result','.js-popup-date',false,$box,$dateBox,$peopleBox,'Choose your departure date :','Choose your return date :');
 					$('.js-date-result').click(); //日期展示
 					break;
-			}
-		});
+				}
+			});
 
 		/* 出发地和目的地切换 */
 		$ticketChange.click(function(event) {
@@ -444,82 +584,6 @@ var LanmeiAirlines = {
 		/* 定义出发地和目的地的值 */
 		var fromcityData = ['Sihanoukville/KOS/Cambodia','Macao/MFM/Macao,China','Phnom Penh/PNH/Cambodia','Siem Reap/REP/Cambodia','Ho Chi Minh/SGN/Vietnam','Hanoi/HAN/Vietnam','HongKong/HKG/HongKong,China','SEOUL/ICN/Korea','Bangkok/BKK/Thailand','Shijiazhuang/SJW/China','Singapore/SIN/Singapore'];
 		var tocityData = ['Sihanoukville/KOS/Cambodia','Macao/MFM/Macao,China','Phnom Penh/PNH/Cambodia','Siem Reap/REP/Cambodia','Ho Chi Minh/SGN/Vietnam','Hanoi/HAN/Vietnam','HongKong/HKG/HongKong,China','SEOUL/ICN/Korea','Bangkok/BKK/Thailand','Shijiazhuang/SJW/China','Singapore/SIN/Singapore'];
-
-		/* 设置出发地的值 */
-		var fromCityVal = function(text1,text2){
-			$fromInput.val(text2[0]+'/'+text2[1]);
-			$box.css('left',350);
-			var tocityArr = tocityData;
-			tocityArr.remove(text1);
-
-			$toMenuSub.empty();
-			$.each(tocityArr,function(i,val){
-				$toMenuSub.append('<li title="'+val+'">'+val+'</li>');
-			});
-			$toInput.focus();
-			$('.js-to-menu>li:first').addClass('active');
-			keyDown('.js-to-input','.js-to-menu',indexLiTo); //绑定键盘事件
-
-			$fromBox.slideUp(function(){ //出发地隐藏
-				$toBox.slideDown(); //目的地显示
-			}); 
-		};
-
-		/* 设置目的地的值 */
-		var toCityVal = function(text1,text2){
-			$toInput.val(text2[0]+'/'+text2[1]);
-			$box.css('left',700);
-
-			$toBox.slideUp(function(){ //出发地隐藏
-				$('.js-date-result').click(); //日期展示
-				$dateBox.slideDown(); //目的地显示
-			}); 
-		};
-
-		/* 键盘上下选择城市 */
-		var indexLiFrom = 0; //定义键盘移动index 
-		var indexLiTo = 0; //定义键盘移动index 
-		var keyDown = function(input,ul,indexLi){
-			var $input = $(input);
-
-			// 定义UL下拉菜单
-			var $fUl = $(ul);
-
-			function keychang(up){
-				if(up == "up"){ //向上
-					if(indexLi == 0){
-						indexLi = $fUl.children().length-1;
-					}else{
-						indexLi--;
-					}
-				}else{//向下
-					if(indexLi ==  $fUl.children().length-1){
-						indexLi = 0;
-					}else{
-						indexLi++;
-					}
-				}
-				$fUl.children('li').eq(indexLi).addClass("active").siblings('li').removeClass('active');		
-			}
-
-			//按键盘的上下移动LI的背景色
-			$input.keydown(function(event){
-				if(event.which == 38){//向上
-					event.preventDefault();
-					keychang("up");
-				}else if(event.which == 40){//向下
-					keychang();
-				}else if(event.which == 13){ //回车
-					var text1 = $fUl.children().eq(indexLi).attr('title');
-					var text2 = text1.split('/');
-					if(input=='.js-from-input'){
-						fromCityVal(text1,text2);
-					}else if(input=='.js-to-input'){
-						toCityVal(text1,text2);
-					}
-				}
-			});	
-		};
 
 		/* 点击机票出发地 */
 		var zoomShow = true;
@@ -544,8 +608,8 @@ var LanmeiAirlines = {
 					$zoom.addClass('animated fadeInUp').css('visibility','visible');
 					zoomShow = false; //重新点击出发地时再次显示目的地、日期、人数的动画
 					setTimeout(function(){
-			      $zoom.removeClass('animated fadeInUp');
-			    }, 2200);
+						$zoom.removeClass('animated fadeInUp');
+					}, 2200);
 				}
 			}
 		}).one('click',function(){
@@ -554,7 +618,7 @@ var LanmeiAirlines = {
 				$fromMenuSub.append('<li title="'+val+'">'+val+'</li>');
 			});
 			// $('.js-from-menu>li:first').addClass('active');
-			keyDown('.js-from-input','.js-from-menu',indexLiFrom); //绑定键盘事件
+			that.keyEvent('.js-from-input','.js-from-menu',that.indexLiFrom); //绑定键盘事件
 		});
 
 		/* 点击机票目的地 */
@@ -628,11 +692,11 @@ var LanmeiAirlines = {
 
 			$box.css('left',0); //下拉框归零
 			setTimeout(function(){
-	      $zoom.removeClass('animated fadeOutDown');
+				$zoom.removeClass('animated fadeOutDown');
 
-	      $selectWay.removeClass('animated fadeOutDown');
+				$selectWay.removeClass('animated fadeOutDown');
 
-	      $zoom.css('visibility','hidden');
+				$zoom.css('visibility','hidden');
 
 	      oneClick = true; //可以继续点击出发地
 	    }, 2200);
@@ -658,15 +722,15 @@ var LanmeiAirlines = {
 
 		/* 删除数组中某个元素 */
 		Array.prototype.indexOf = function (val) {
-      for(var i = 0; i < this.length; i++){
-          if(this[i] == val){return i;}
-      }
-      return -1;
-    }
-    Array.prototype.remove = function (val) {
-      var index = this.indexOf(val);
-      if(index > -1){this.splice(index,1);}
-    }
+			for(var i = 0; i < this.length; i++){
+				if(this[i] == val){return i;}
+			}
+			return -1;
+		};
+		Array.prototype.remove = function (val) {
+			var index = this.indexOf(val);
+			if(index > -1){this.splice(index,1);}
+		};
 
 		/* 机票出发地选择 */
 		$fromMenuSub.on('click','>li',function(){
@@ -690,63 +754,98 @@ var LanmeiAirlines = {
 			}); 
 		});
 
-		/* 机票模糊匹配 */
-		$('.js-from-input,.js-to-input').on('input',function(event) {
-			var searchText = $(this).val();
-			var cityData;
-			var data = $(this).attr('data');
-			data=='js-from-menu' ? cityData=fromcityData : cityData=tocityData;
-			var currentVal = searchText.toLowerCase();
-			var srdata = [];
-			for (var i = 0; i < cityData.length; i++) {
-				if (currentVal.trim().length > 0 && cityData[i].toLowerCase().indexOf(currentVal) > -1) {
-					srdata.push(cityData[i]);
-				}
-			}
-
-			$('.'+data).empty();
-			var escapedSearchText,zregex,startpos,text,searchVal;
-			$.each(srdata,function(i,val){
-				escapedSearchText = searchText.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
-				zregex = new RegExp(escapedSearchText, 'i');
-				startpos = val.search(zregex);
-				text = val.substr(0, startpos + searchText.length) + '</span>' + val.substr(startpos + searchText.length);
-				searchVal = text.substr(0, startpos) + '<span>' + text.substr(startpos);
-
-				$('.'+data).append('<li title="'+val+'">'+searchVal+'</li>');
-			});
-			if(srdata.length==0){ 
-				$('.'+data).append('<li>No results match "'+searchText+'"</li>');
-			}
-			if(currentVal===''){
-				$('.'+data).empty();
-				$.each(cityData,function(i,val){
-					$('.'+data).append('<li title="'+val+'">'+val+'</li>');
-				});
-			}
-		});
+		// 模糊匹配
+		this.autoComplete('.js-from-input');
+		this.autoComplete('.js-to-input');
 
 	},
 
 	/* 移动端机票选择 */
 	mobileTicketSelect:function(){
-		/* 定义出发地和目的地的值 */
-		var fromcityData = ['Sihanoukville/KOS/Cambodia','Macao/MFM/Macao,China','Phnom Penh/PNH/Cambodia','Siem Reap/REP/Cambodia','Ho Chi Minh/SGN/Vietnam','Hanoi/HAN/Vietnam','HongKong/HKG/HongKong,China','SEOUL/ICN/Korea','Bangkok/BKK/Thailand','Shijiazhuang/SJW/China','Singapore/SIN/Singapore'];
-		var tocityData = ['Sihanoukville/KOS/Cambodia','Macao/MFM/Macao,China','Phnom Penh/PNH/Cambodia','Siem Reap/REP/Cambodia','Ho Chi Minh/SGN/Vietnam','Hanoi/HAN/Vietnam','HongKong/HKG/HongKong,China','SEOUL/ICN/Korea','Bangkok/BKK/Thailand','Shijiazhuang/SJW/China','Singapore/SIN/Singapore'];
+		var that = this;
 
-		$('.js-popup-content>div').hide();
+		// 最外层容器
+		var $container = $('.popup-container');
+		var $box = $('.js-popup-box');
 
-		$.each(fromcityData,function(i,val){
-			$('.js-from-menu').append('<li title="'+val+'">'+val+'</li>');
+		// 关闭容器按钮
+		var $close = $('.js-popup-close');
+
+		// 出发地和目的地外层
+		var $cityFrom = $('.js-ticket-from');
+		var $cityTo = $('.js-ticket-to');
+
+		// 输入框
+		var $fromInput = $('.js-from-input'); //机票出发地
+		var $toInput = $('.js-to-input'); //机票目的地
+		var $date = $('.js-date-result'); //机票日期
+		var $people = $('.js-ticket-people'); //机票人数
+
+		// 下拉菜单
+		var $fromMenuSub = $('.js-from-menu'); //机票出发地下拉菜单
+		var $toMenuSub = $('.js-to-menu'); //目的地下拉菜单
+		var $ticketChange = $('.js-ticket-change'); //切换机票出发地和目的地
+
+		$('.js-popup-content>div').hide(); //初始化隐藏出发地、目的地、日期、人数
+
+		var winHeight = $(window).height();
+
+		var hideContainer = function(){
+			$container.removeClass('is-show');
+		};
+
+		// 关闭弹出框
+		$close.click(function(event) {
+			hideContainer();
 		});
-		$('.js-airport-from').show();
-		$('.js-from-input').click(function(event) {
+
+		// 点击出发地
+		$cityFrom.click(function(event) {
+			$fromMenuSub.empty();
 			$('.js-airport-from').show();
-			$('.js-popup-content').empty();
-			$.each(fromcityData,function(i,val){
+			$.each(that.fromcityData,function(i,val){
 				$fromMenuSub.append('<li title="'+val+'">'+val+'</li>');
 			});
+
+			$('html,body').addClass('ovfHiden'); //使网页不可滚动
+			$box.height(winHeight-108);
+
+			$container.addClass('is-show');
 		});
+
+		// 机票出发地选择 
+		$fromMenuSub.on('click','>li',function(){
+			var text1 = $(this).attr('title');
+			var text2 = text1.split('/');
+			$fromInput.val(text2[1]).parent().addClass('m-city-result');
+			$('.js-m-Fcity').text(text2[0]+'/'+text2[2]);
+			hideContainer();
+		});
+
+		// 点击目的地
+		$cityTo.click(function(event) {
+			console.log(333);
+			$toMenuSub.empty();
+			$('.js-airport-to').show();
+			$.each(that.tocityData,function(i,val){
+				$toMenuSub.append('<li title="'+val+'">'+val+'</li>');
+			});
+
+			$('html,body').addClass('ovfHiden'); //使网页不可滚动
+			$box.height(winHeight-108);
+
+			$container.addClass('is-show');
+		});
+
+		// 机票出发地选择 
+		$toMenuSub.on('click','>li',function(){
+			var text1 = $(this).attr('title');
+			var text2 = text1.split('/');
+			$toInput.val(text2[1]).parent().addClass('m-city-result');
+			$('.js-m-Tcity').text(text2[0]+'/'+text2[2]);
+			hideContainer();
+		});
+		
 	},
 
 	/* 酒店选择 */
@@ -813,8 +912,8 @@ var LanmeiAirlines = {
 					$hotelZoom.addClass('animated fadeInUp').css('visibility','visible');
 					hotelZoomShow = false; //重新点击出发地时再次显示目的地、日期、人数的动画
 					setTimeout(function(){
-			      $hotelZoom.removeClass('animated fadeInUp');
-			    }, 2200);
+						$hotelZoom.removeClass('animated fadeInUp');
+					}, 2200);
 				}
 			}
 		});
@@ -865,8 +964,8 @@ var LanmeiAirlines = {
 
 			$hotelBox.css('left',0); //下拉框归零
 			setTimeout(function(){
-	      $hotelZoom.removeClass('animated fadeOutDown');
-	      $hotelZoom.css('visibility','hidden');
+				$hotelZoom.removeClass('animated fadeOutDown');
+				$hotelZoom.css('visibility','hidden');
 	      hotelOneClick = true; //可以继续点击出发地
 	    }, 2200);
 		};
@@ -930,99 +1029,99 @@ var LanmeiAirlines = {
 			if(roomsNum<=2){
 				roomsNum++;
 				var $roomStr = '<div class="s-room-'+roomsNum+' s-room-com s-people-com animated fadeInUp" id="js-room'+roomsNum+'-inner">'+
-					'<p class="rooms-title js-rooms-title">Room '+roomsNum+'</p>'+
-					'<div class="adult-rooms-content rooms-content-com">'+
-						'<div class="hotel-people-prompt people-prompt">'+
-							'<p class="p1"><img src="images/EN/adult-icon.png">Adult</p>'+
-						'</div>'+
-						'<div class="hotel-people-number people-number">'+
-							'<a href="javascript:;" class="sub-people off-sub-operation js-hotelAdult-sub"></a>'+
-							'<span class="adult-num js-hotelAdult-num">1</span>'+
-							'<a href="javascript:;" class="add-people js-hotelAdult-add"></a>'+
-						'</div>'+
-					'</div>'+
-					'<div class="child-rooms-content rooms-content-com js-childRooms-content">'+
-						'<div class="hotel-people-prompt people-prompt">'+
-							'<p class="p1"><img src="images/EN/Child-icon.png">Child</p>'+
-						'</div>'+
-						'<div class="hotel-people-number people-number disable">'+
-							'<a href="javascript:;" class="sub-people off-sub-operation js-hotelChild-sub"></a>'+
-							'<span class="adult-num js-hotelChild-num">0</span>'+
-							'<a href="javascript:;" class="add-people js-hotelChild-add"></a>'+
-						'</div>'+
-					'</div>'+
-					'<div class="age-rooms-com rooms-content-com animated fadeInUp js-age-1">'+
-						'<div class="hotel-people-prompt people-prompt">'+
-							'<p class="p1">Age/1</p>'+
-						'</div>'+
-						'<div class="hotel-age-wrap people-number">'+
-							'<span class="age-result js-age-result">1</span>'+
-							'<div class="age-menu-box js-age-box">'+
-								'<ul class="hotel-age-menu js-age-menu">'+
-									'<li title="Age < 1 year old">&lt; 1</li>'+
-									'<li>2</li>'+
-									'<li>3</li>'+
-									'<li>4</li>'+
-									'<li>5</li>'+
-									'<li>6</li>'+
-									'<li>7</li>'+
-									'<li>8</li>'+
-									'<li>9</li>'+
-									'<li>10</li>'+
-									'<li>11</li>'+
-									'<li>12</li>'+
-								'</ul>'+
-							'</div>'+
-						'</div>'+
-					'</div>'+
-					'<div class="age-rooms-com rooms-content-com animated fadeInUp js-age-2">'+
-						'<div class="hotel-people-prompt people-prompt">'+
-							'<p class="p1">Age/2</p>'+
-						'</div>'+
-						'<div class="hotel-age-wrap people-number">'+
-							'<span class="age-result js-age-result">1</span>'+
-							'<div class="age-menu-box js-age-box">'+
-								'<ul class="hotel-age-menu js-age-menu">'+
-									'<li title="Age < 1 year old">&lt; 1</li>'+
-									'<li>2</li>'+
-									'<li>3</li>'+
-									'<li>4</li>'+
-									'<li>5</li>'+
-									'<li>6</li>'+
-									'<li>7</li>'+
-									'<li>8</li>'+
-									'<li>9</li>'+
-									'<li>10</li>'+
-									'<li>11</li>'+
-									'<li>12</li>'+
-								'</ul>'+
-							'</div>'+
-						'</div>'+
-					'</div>'+
-					'<div class="age-rooms-com rooms-content-com animated fadeInUp js-age-3">'+
-						'<div class="hotel-people-prompt people-prompt">'+
-							'<p class="p1">Age/3</p>'+
-						'</div>'+
-						'<div class="hotel-age-wrap people-number">'+
-							'<span class="age-result js-age-result">1</span>'+
-							'<div class="age-menu-box js-age-box">'+
-								'<ul class="hotel-age-menu js-age-menu">'+
-									'<li title="Age < 1 year old">&lt; 1</li>'+
-									'<li>2</li>'+
-									'<li>3</li>'+
-									'<li>4</li>'+
-									'<li>5</li>'+
-									'<li>6</li>'+
-									'<li>7</li>'+
-									'<li>8</li>'+
-									'<li>9</li>'+
-									'<li>10</li>'+
-									'<li>11</li>'+
-									'<li>12</li>'+
-								'</ul>'+
-							'</div>'+
-						'</div>'+
-					'</div>'+
+				'<p class="rooms-title js-rooms-title">Room '+roomsNum+'</p>'+
+				'<div class="adult-rooms-content rooms-content-com">'+
+				'<div class="hotel-people-prompt people-prompt">'+
+				'<p class="p1"><img src="images/EN/adult-icon.png">Adult</p>'+
+				'</div>'+
+				'<div class="hotel-people-number people-number">'+
+				'<a href="javascript:;" class="sub-people off-sub-operation js-hotelAdult-sub"></a>'+
+				'<span class="adult-num js-hotelAdult-num">1</span>'+
+				'<a href="javascript:;" class="add-people js-hotelAdult-add"></a>'+
+				'</div>'+
+				'</div>'+
+				'<div class="child-rooms-content rooms-content-com js-childRooms-content">'+
+				'<div class="hotel-people-prompt people-prompt">'+
+				'<p class="p1"><img src="images/EN/Child-icon.png">Child</p>'+
+				'</div>'+
+				'<div class="hotel-people-number people-number disable">'+
+				'<a href="javascript:;" class="sub-people off-sub-operation js-hotelChild-sub"></a>'+
+				'<span class="adult-num js-hotelChild-num">0</span>'+
+				'<a href="javascript:;" class="add-people js-hotelChild-add"></a>'+
+				'</div>'+
+				'</div>'+
+				'<div class="age-rooms-com rooms-content-com animated fadeInUp js-age-1">'+
+				'<div class="hotel-people-prompt people-prompt">'+
+				'<p class="p1">Age/1</p>'+
+				'</div>'+
+				'<div class="hotel-age-wrap people-number">'+
+				'<span class="age-result js-age-result">1</span>'+
+				'<div class="age-menu-box js-age-box">'+
+				'<ul class="hotel-age-menu js-age-menu">'+
+				'<li title="Age < 1 year old">&lt; 1</li>'+
+				'<li>2</li>'+
+				'<li>3</li>'+
+				'<li>4</li>'+
+				'<li>5</li>'+
+				'<li>6</li>'+
+				'<li>7</li>'+
+				'<li>8</li>'+
+				'<li>9</li>'+
+				'<li>10</li>'+
+				'<li>11</li>'+
+				'<li>12</li>'+
+				'</ul>'+
+				'</div>'+
+				'</div>'+
+				'</div>'+
+				'<div class="age-rooms-com rooms-content-com animated fadeInUp js-age-2">'+
+				'<div class="hotel-people-prompt people-prompt">'+
+				'<p class="p1">Age/2</p>'+
+				'</div>'+
+				'<div class="hotel-age-wrap people-number">'+
+				'<span class="age-result js-age-result">1</span>'+
+				'<div class="age-menu-box js-age-box">'+
+				'<ul class="hotel-age-menu js-age-menu">'+
+				'<li title="Age < 1 year old">&lt; 1</li>'+
+				'<li>2</li>'+
+				'<li>3</li>'+
+				'<li>4</li>'+
+				'<li>5</li>'+
+				'<li>6</li>'+
+				'<li>7</li>'+
+				'<li>8</li>'+
+				'<li>9</li>'+
+				'<li>10</li>'+
+				'<li>11</li>'+
+				'<li>12</li>'+
+				'</ul>'+
+				'</div>'+
+				'</div>'+
+				'</div>'+
+				'<div class="age-rooms-com rooms-content-com animated fadeInUp js-age-3">'+
+				'<div class="hotel-people-prompt people-prompt">'+
+				'<p class="p1">Age/3</p>'+
+				'</div>'+
+				'<div class="hotel-age-wrap people-number">'+
+				'<span class="age-result js-age-result">1</span>'+
+				'<div class="age-menu-box js-age-box">'+
+				'<ul class="hotel-age-menu js-age-menu">'+
+				'<li title="Age < 1 year old">&lt; 1</li>'+
+				'<li>2</li>'+
+				'<li>3</li>'+
+				'<li>4</li>'+
+				'<li>5</li>'+
+				'<li>6</li>'+
+				'<li>7</li>'+
+				'<li>8</li>'+
+				'<li>9</li>'+
+				'<li>10</li>'+
+				'<li>11</li>'+
+				'<li>12</li>'+
+				'</ul>'+
+				'</div>'+
+				'</div>'+
+				'</div>'+
 				'</div>';
 
 				var $roomTab = '<p class="animated bounceIn" data-room="js-room'+roomsNum+'-inner"><span>Room '+roomsNum+'</span><b>×</b></p>';
@@ -1264,15 +1363,15 @@ var LanmeiAirlines = {
 			$('.'+data).show();
 			switch (data) {
 				case 'js-by-number':
-					fStatusPopupHide();
-					$('.js-fStatus-date').addClass('animated fadeInUp');
-					setTimeout(function(){
-			     $('.js-fStatus-date').removeClass('animated fadeInUp');
-			    }, 2200);
-					break;
+				fStatusPopupHide();
+				$('.js-fStatus-date').addClass('animated fadeInUp');
+				setTimeout(function(){
+					$('.js-fStatus-date').removeClass('animated fadeInUp');
+				}, 2200);
+				break;
 				case 'js-by-route':
-					fStatusPopupHide();
-					break;
+				fStatusPopupHide();
+				break;
 			}
 		});
 
@@ -1301,8 +1400,8 @@ var LanmeiAirlines = {
 					$numZoom.addClass('animated fadeInUp').css('visibility','visible');
 					numZoomShow = false; //重新点击出发地时再次显示目的地、日期、人数的动画
 					setTimeout(function(){
-			      $numZoom.removeClass('animated fadeInUp');
-			    }, 2200);
+						$numZoom.removeClass('animated fadeInUp');
+					}, 2200);
 				}
 			}
 		});
@@ -1382,12 +1481,12 @@ var LanmeiAirlines = {
 				$('.js-flight-way>a:first').addClass('active');
 				$('.js-flight-way>a:last').removeClass('active');
 				
-	      $numZoom.removeClass('animated fadeOutDown');
-	      $routeZoom.removeClass('animated fadeOutDown');
+				$numZoom.removeClass('animated fadeOutDown');
+				$routeZoom.removeClass('animated fadeOutDown');
 
-	      $selectFlightWay.removeClass('animated fadeOutDown');
+				$selectFlightWay.removeClass('animated fadeOutDown');
 
-	      $numZoom.css('visibility','hidden');
+				$numZoom.css('visibility','hidden');
 	      // $routeZoom.css('visibility','hidden');
 	      $('.js-by-route').hide();
 
@@ -1578,12 +1677,12 @@ var LanmeiAirlines = {
 		var showInfantTip = 0;
 		var tipFn = function(className,content,showTip){
 			$(className).mouseenter(function(event) {
-					showTip = layer.tips(content, className,{
-						tips: [2, '#8ec060'],
-						time: 0
-					});
+				showTip = layer.tips(content, className,{
+					tips: [2, '#8ec060'],
+					time: 0
+				});
 			}).mouseleave(function(event) {
-					layer.close(showTip);
+				layer.close(showTip);
 			});
 		};
 		tipFn('.adult-tip','Adult',showAdultTip);
@@ -1615,121 +1714,121 @@ var LanmeiAirlines = {
 	/* 优惠券 */
 	selectCoupons:function(){
 		var ticketStr = '<div class="ticket-coupons" id="js-ticket-coupons">'+
-				'<div class="slick-item slick-item-1">'+
-					'<img src="images/EN/ticket-coupons.png" class="coupons-img">'+
-					'<div class="slick-content">'+
-						'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
-						'<p class="p1">Air Ticket Coupon</p>'+
-						'<p class="p2">Receive Immediately</p>'+
-					'</div>'+
-					'<a href="javascript:;"></a>'+
-				'</div>'+
-				'<div class="slick-item slick-item-2">'+
-					'<img src="images/EN/ticket-coupons.png" class="coupons-img">'+
-					'<div class="slick-content">'+
-						'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
-						'<p class="p1">Air Ticket Coupon</p>'+
-						'<p class="p2">Receive Immediately</p>'+
-					'</div>'+
-					'<a href="javascript:;"></a>'+
-				'</div>'+
-				'<div class="slick-item slick-item-3">'+
-					'<img src="images/EN/ticket-coupons.png" class="coupons-img">'+
-					'<div class="slick-content">'+
-						'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
-						'<p class="p1">Air Ticket Coupon</p>'+
-						'<p class="p2">Receive Immediately</p>'+
-					'</div>'+
-					'<a href="javascript:;"></a>'+
-				'</div>'+
-				'<div class="slick-item slick-item-4">'+
-					'<img src="images/EN/ticket-coupons.png" class="coupons-img">'+
-					'<div class="slick-content">'+
-						'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
-						'<p class="p1">Air Ticket Coupon</p>'+
-						'<p class="p2">Receive Immediately</p>'+
-					'</div>'+
-					'<a href="javascript:;"></a>'+
-				'</div>'+
-			'</div>';
+		'<div class="slick-item slick-item-1">'+
+		'<img src="images/EN/ticket-coupons.png" class="coupons-img">'+
+		'<div class="slick-content">'+
+		'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
+		'<p class="p1">Air Ticket Coupon</p>'+
+		'<p class="p2">Receive Immediately</p>'+
+		'</div>'+
+		'<a href="javascript:;"></a>'+
+		'</div>'+
+		'<div class="slick-item slick-item-2">'+
+		'<img src="images/EN/ticket-coupons.png" class="coupons-img">'+
+		'<div class="slick-content">'+
+		'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
+		'<p class="p1">Air Ticket Coupon</p>'+
+		'<p class="p2">Receive Immediately</p>'+
+		'</div>'+
+		'<a href="javascript:;"></a>'+
+		'</div>'+
+		'<div class="slick-item slick-item-3">'+
+		'<img src="images/EN/ticket-coupons.png" class="coupons-img">'+
+		'<div class="slick-content">'+
+		'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
+		'<p class="p1">Air Ticket Coupon</p>'+
+		'<p class="p2">Receive Immediately</p>'+
+		'</div>'+
+		'<a href="javascript:;"></a>'+
+		'</div>'+
+		'<div class="slick-item slick-item-4">'+
+		'<img src="images/EN/ticket-coupons.png" class="coupons-img">'+
+		'<div class="slick-content">'+
+		'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
+		'<p class="p1">Air Ticket Coupon</p>'+
+		'<p class="p2">Receive Immediately</p>'+
+		'</div>'+
+		'<a href="javascript:;"></a>'+
+		'</div>'+
+		'</div>';
 
 		var shoppingStr = '<div class="shopping-coupons" id="js-shopping-coupons">'+
-				'<div class="slick-item slick-item-1">'+
-					'<img src="images/EN/shopping-coupons.png" class="coupons-img">'+
-					'<div class="slick-content">'+
-						'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
-						'<p class="p1">Air Ticket Coupon</p>'+
-						'<p class="p2">Receive Immediately</p>'+
-					'</div>'+
-					'<a href="javascript:;"></a>'+
-				'</div>'+
-				'<div class="slick-item slick-item-2">'+
-					'<img src="images/EN/shopping-coupons.png" class="coupons-img">'+
-					'<div class="slick-content">'+
-						'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
-						'<p class="p1">Air Ticket Coupon</p>'+
-						'<p class="p2">Receive Immediately</p>'+
-					'</div>'+
-					'<a href="javascript:;"></a>'+
-				'</div>'+
-				'<div class="slick-item slick-item-3">'+
-					'<img src="images/EN/shopping-coupons.png" class="coupons-img">'+
-					'<div class="slick-content">'+
-						'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
-						'<p class="p1">Air Ticket Coupon</p>'+
-						'<p class="p2">Receive Immediately</p>'+
-					'</div>'+
-					'<a href="javascript:;"></a>'+
-				'</div>'+
-				'<div class="slick-item slick-item-4">'+
-					'<img src="images/EN/shopping-coupons.png" class="coupons-img">'+
-					'<div class="slick-content">'+
-						'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
-						'<p class="p1">Air Ticket Coupon</p>'+
-						'<p class="p2">Receive Immediately</p>'+
-					'</div>'+
-					'<a href="javascript:;"></a>'+
-				'</div>'+
-			'</div>';
+		'<div class="slick-item slick-item-1">'+
+		'<img src="images/EN/shopping-coupons.png" class="coupons-img">'+
+		'<div class="slick-content">'+
+		'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
+		'<p class="p1">Air Ticket Coupon</p>'+
+		'<p class="p2">Receive Immediately</p>'+
+		'</div>'+
+		'<a href="javascript:;"></a>'+
+		'</div>'+
+		'<div class="slick-item slick-item-2">'+
+		'<img src="images/EN/shopping-coupons.png" class="coupons-img">'+
+		'<div class="slick-content">'+
+		'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
+		'<p class="p1">Air Ticket Coupon</p>'+
+		'<p class="p2">Receive Immediately</p>'+
+		'</div>'+
+		'<a href="javascript:;"></a>'+
+		'</div>'+
+		'<div class="slick-item slick-item-3">'+
+		'<img src="images/EN/shopping-coupons.png" class="coupons-img">'+
+		'<div class="slick-content">'+
+		'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
+		'<p class="p1">Air Ticket Coupon</p>'+
+		'<p class="p2">Receive Immediately</p>'+
+		'</div>'+
+		'<a href="javascript:;"></a>'+
+		'</div>'+
+		'<div class="slick-item slick-item-4">'+
+		'<img src="images/EN/shopping-coupons.png" class="coupons-img">'+
+		'<div class="slick-content">'+
+		'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
+		'<p class="p1">Air Ticket Coupon</p>'+
+		'<p class="p2">Receive Immediately</p>'+
+		'</div>'+
+		'<a href="javascript:;"></a>'+
+		'</div>'+
+		'</div>';
 
-			var hotelStr = '<div class="hotel-coupons" id="js-hotel-coupons">'+
-					'<div class="slick-item slick-item-1">'+
-						'<img src="images/EN/hotel-coupons.png" class="coupons-img">'+
-						'<div class="slick-content">'+
-							'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
-							'<p class="p1">Air Ticket Coupon</p>'+
-							'<p class="p2">Receive Immediately</p>'+
-						'</div>'+
-						'<a href="javascript:;"></a>'+
-					'</div>'+
-					'<div class="slick-item slick-item-2">'+
-						'<img src="images/EN/hotel-coupons.png" class="coupons-img">'+
-						'<div class="slick-content">'+
-							'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
-							'<p class="p1">Air Ticket Coupon</p>'+
-							'<p class="p2">Receive Immediately</p>'+
-						'</div>'+
-						'<a href="javascript:;"></a>'+
-					'</div>'+
-					'<div class="slick-item slick-item-3">'+
-						'<img src="images/EN/hotel-coupons.png" class="coupons-img">'+
-						'<div class="slick-content">'+
-							'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
-							'<p class="p1">Air Ticket Coupon</p>'+
-							'<p class="p2">Receive Immediately</p>'+
-						'</div>'+
-						'<a href="javascript:;"></a>'+
-					'</div>'+
-					'<div class="slick-item slick-item-4">'+
-						'<img src="images/EN/hotel-coupons.png" class="coupons-img">'+
-						'<div class="slick-content">'+
-							'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
-							'<p class="p1">Air Ticket Coupon</p>'+
-							'<p class="p2">Receive Immediately</p>'+
-						'</div>'+
-						'<a href="javascript:;"></a>'+
-					'</div>'+
-				'</div>';
+		var hotelStr = '<div class="hotel-coupons" id="js-hotel-coupons">'+
+		'<div class="slick-item slick-item-1">'+
+		'<img src="images/EN/hotel-coupons.png" class="coupons-img">'+
+		'<div class="slick-content">'+
+		'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
+		'<p class="p1">Air Ticket Coupon</p>'+
+		'<p class="p2">Receive Immediately</p>'+
+		'</div>'+
+		'<a href="javascript:;"></a>'+
+		'</div>'+
+		'<div class="slick-item slick-item-2">'+
+		'<img src="images/EN/hotel-coupons.png" class="coupons-img">'+
+		'<div class="slick-content">'+
+		'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
+		'<p class="p1">Air Ticket Coupon</p>'+
+		'<p class="p2">Receive Immediately</p>'+
+		'</div>'+
+		'<a href="javascript:;"></a>'+
+		'</div>'+
+		'<div class="slick-item slick-item-3">'+
+		'<img src="images/EN/hotel-coupons.png" class="coupons-img">'+
+		'<div class="slick-content">'+
+		'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
+		'<p class="p1">Air Ticket Coupon</p>'+
+		'<p class="p2">Receive Immediately</p>'+
+		'</div>'+
+		'<a href="javascript:;"></a>'+
+		'</div>'+
+		'<div class="slick-item slick-item-4">'+
+		'<img src="images/EN/hotel-coupons.png" class="coupons-img">'+
+		'<div class="slick-content">'+
+		'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
+		'<p class="p1">Air Ticket Coupon</p>'+
+		'<p class="p2">Receive Immediately</p>'+
+		'</div>'+
+		'<a href="javascript:;"></a>'+
+		'</div>'+
+		'</div>';
 
 		var slick = function(id){
 			$(id).slick({
@@ -1771,22 +1870,22 @@ var LanmeiAirlines = {
 			};
 			switch (id) {
 				case '#js-ticket-coupons':
-					$content.html(ticketStr);
-					slick('#js-ticket-coupons');
+				$content.html(ticketStr);
+				slick('#js-ticket-coupons');
 					// hideLoading();
 					break;
-				case '#js-shopping-coupons':
+					case '#js-shopping-coupons':
 					$content.html(shoppingStr);
 					slick('#js-shopping-coupons');
 					// hideLoading();
 					break;
-				case '#js-hotel-coupons':
+					case '#js-hotel-coupons':
 					$content.html(hotelStr);
 					slick('#js-hotel-coupons');
 					// hideLoading();
 					break;
-			}
-		});
+				}
+			});
 	},
 
 	/* 特价机票 */
@@ -1881,20 +1980,20 @@ var LanmeiAirlines = {
 		});
 
 		var newsStr1 = '<div class="js-news-1 js-news-com"><h2 class="animated fadeInUp"><a href="javascript:;">Lanmei Airlines launches flights in Cambodia, sets up "sky highway" for Mekong countries</a></h2>'+
-			'<p class="animated fadeInUp">2017-11-03 01:34:00</p>'+
-			'<div class="news-info-detail">'+
-				'<p class="animated fadeInUp">On Oct.9th, 2017, Lanmei Airlines (Cambodia) Co., Ltd. (referred as “Lanmei Airlines”) held a grand ceremony of Lanmei Six Nations Flights Launching and the “One-hundred Riel” Thanksgiving Foundation at Phnom Penh.</p>'+
-			'</div></div>';
+		'<p class="animated fadeInUp">2017-11-03 01:34:00</p>'+
+		'<div class="news-info-detail">'+
+		'<p class="animated fadeInUp">On Oct.9th, 2017, Lanmei Airlines (Cambodia) Co., Ltd. (referred as “Lanmei Airlines”) held a grand ceremony of Lanmei Six Nations Flights Launching and the “One-hundred Riel” Thanksgiving Foundation at Phnom Penh.</p>'+
+		'</div></div>';
 		var newsStr2 = '<div class="js-news-2 js-news-com"><h2 class="animated fadeInUp"><a href="javascript:;">Maiden flight of Lanmei Airlines has successfully completed and its commercial operation commenced.</a></h2>'+
-			'<p class="animated fadeInUp">2017-11-03 01:34:00</p>'+
-			'<div class="news-info-detail">'+
-				'<p class="animated fadeInUp">On 29 September 2017, flight LQ9509 safely landed at Palau Koror International Airport, which indicates the maiden flight of Lanmei Airlines (Cambodia) Co.,Ltd (“Lanmei Airlines”) has successfully completed and its commercial operation commenced.</p>'+
-			'</div></div>';
+		'<p class="animated fadeInUp">2017-11-03 01:34:00</p>'+
+		'<div class="news-info-detail">'+
+		'<p class="animated fadeInUp">On 29 September 2017, flight LQ9509 safely landed at Palau Koror International Airport, which indicates the maiden flight of Lanmei Airlines (Cambodia) Co.,Ltd (“Lanmei Airlines”) has successfully completed and its commercial operation commenced.</p>'+
+		'</div></div>';
 		var newsStr3 = '<div class="js-news-3 js-news-com"><h2 class="animated fadeInUp"><a href="javascript:;">Lanmei Airlines’s Stewardess Won the World’s Top 10 Stewardess Award in 2017</a></h2>'+
-			'<p class="animated fadeInUp">2017-11-02 15:34:46</p>'+
-			'<div class="news-info-detail">'+
-				'<p class="animated fadeInUp">On September 15, “Press Conference of the 8th World Airline Ranking and the 7th World’s Stewardess’ Day Awarding Ceremony” was held in Hong Kong. The ceremony, sponsored by World Air Stewardess Association and Aviation Professional Committee of World Urban Cooperative Organization, totally published 15 ranking lists in terms of advantage study and assessment</p>'+
-			'</div></div>';
+		'<p class="animated fadeInUp">2017-11-02 15:34:46</p>'+
+		'<div class="news-info-detail">'+
+		'<p class="animated fadeInUp">On September 15, “Press Conference of the 8th World Airline Ranking and the 7th World’s Stewardess’ Day Awarding Ceremony” was held in Hong Kong. The ceremony, sponsored by World Air Stewardess Association and Aviation Professional Committee of World Urban Cooperative Organization, totally published 15 ranking lists in terms of advantage study and assessment</p>'+
+		'</div></div>';
 
 		var page = 1;
 		var totalPage = $('.js-news-pages>.s2').text();
@@ -1902,14 +2001,14 @@ var LanmeiAirlines = {
 		var changeInfo = function(){
 			switch (page) {
 				case 1:
-					$newsInfo.html(newsStr1);
-					break;
+				$newsInfo.html(newsStr1);
+				break;
 				case 2:
-					$newsInfo.html(newsStr2);
-					break;
+				$newsInfo.html(newsStr2);
+				break;
 				case 3:
-					$newsInfo.html(newsStr3);
-					break;
+				$newsInfo.html(newsStr3);
+				break;
 			}
 		};
 
@@ -2033,13 +2132,13 @@ var LanmeiAirlines = {
 			var data = $(this).attr('data');
 			switch (data) {
 				case 'en':
-					$('.js-choose-lang').attr('src','images/EN/lang-en.png')
-					$langMenu.hide();
-					break;
+				$('.js-choose-lang').attr('src','images/EN/lang-en.png')
+				$langMenu.hide();
+				break;
 				case 'zh':
-					$('.js-choose-lang').attr('src','images/EN/lang-zh.png');
-					$langMenu.hide();
-					break;
+				$('.js-choose-lang').attr('src','images/EN/lang-zh.png');
+				$langMenu.hide();
+				break;
 			}
 		});
 
