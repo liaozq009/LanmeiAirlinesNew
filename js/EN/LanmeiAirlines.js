@@ -1,13 +1,15 @@
 
 var LanmeiAirlines = {
-	fromcityData: ['Sihanoukville/KOS/Cambodia','Macao/MFM/Macao,China','Phnom Penh/PNH/Cambodia','Siem Reap/REP/Cambodia','Ho Chi Minh/SGN/Vietnam','Hanoi/HAN/Vietnam','HongKong/HKG/HongKong,China','SEOUL/ICN/Korea','Bangkok/BKK/Thailand','Shijiazhuang/SJW/China','Singapore/SIN/Singapore'],
-	tocityData: ['Sihanoukville/KOS/Cambodia','Macao/MFM/Macao,China','Phnom Penh/PNH/Cambodia','Siem Reap/REP/Cambodia','Ho Chi Minh/SGN/Vietnam','Hanoi/HAN/Vietnam','HongKong/HKG/HongKong,China','SEOUL/ICN/Korea','Bangkok/BKK/Thailand','Shijiazhuang/SJW/China','Singapore/SIN/Singapore'],
+	fromCityData: ['Sihanoukville/KOS/Cambodia','Macao/MFM/Macao,China','Phnom Penh/PNH/Cambodia','Siem Reap/REP/Cambodia','Ho Chi Minh/SGN/Vietnam','Hanoi/HAN/Vietnam','HongKong/HKG/HongKong,China','SEOUL/ICN/Korea','Bangkok/BKK/Thailand','Shijiazhuang/SJW/China','Singapore/SIN/Singapore'],
+	toCityData: ['Sihanoukville/KOS/Cambodia','Macao/MFM/Macao,China','Phnom Penh/PNH/Cambodia','Siem Reap/REP/Cambodia','Ho Chi Minh/SGN/Vietnam','Hanoi/HAN/Vietnam','HongKong/HKG/HongKong,China','SEOUL/ICN/Korea','Bangkok/BKK/Thailand','Shijiazhuang/SJW/China','Singapore/SIN/Singapore'],
+	hotelCityData: ['Hong Phann Guest House','Phkar Chhouk Tep Monireth Hotel','Tt Guest House','Phkar Chhouk Tep 2 Hotel'],
+	fNumberData: ['LQ9503','LQ503','LQ9502','LQ502','LQ806','LQ807'],
 	indexLiFrom: 0, //定义键盘移动index 
 	indexLiTo: 0,
 	init:function(){
 		this.asideMenu();
-		this.leftAside();
 		this.selectPeople();
+		this.selectHotelRooms();
 		this.banner();
 		this.selectCoupons();
 		this.lowestFares();
@@ -24,7 +26,7 @@ var LanmeiAirlines = {
 		// 判断手机端或者PC端
 		function IsPC() {
 			var userAgentInfo = navigator.userAgent;
-			var Agents = ["Android", "iPhone","SymbianOS", "Windows Phone","iPad", "iPod"];
+			var Agents = ["Android", "iPhone","SymbianOS", "Windows Phone"];
 			var flag = true;
 			for (var v = 0; v < Agents.length; v++) {
 				if (userAgentInfo.indexOf(Agents[v]) > 0) {
@@ -39,10 +41,12 @@ var LanmeiAirlines = {
 
 		if(flag){
 			this.pcEvent();
+			this.leftAside();
 			this.ticketSelect();
 		}else{
 			this.mobileEvent();
-			this.mobileTicketSelect();
+			this.mLeftAside();
+			this.mTicketSelect();
 		}
 	},
 
@@ -108,7 +112,7 @@ var LanmeiAirlines = {
 			$('.js-phone-menu,.js-lang-menu').hide();
 		});
 
-		$('.js-from-input,.js-to-input').attr('readonly','readonly');
+		$('.js-from-input,.js-to-input,.js-hotel-from').attr('readonly','readonly');
 		$('.js-select-way').css('visibility','visible');
 		$('.js-select-way').addClass('animated fadeInUp');
 	},
@@ -259,6 +263,58 @@ var LanmeiAirlines = {
 		});
 	},
 
+	/* 移动端左侧边栏切换 */
+	mLeftAside:function(){
+		var that = this;
+		var $slide = $('.js-aside-flight>li>a');
+		var $loader = $('.js-flight-loading');
+		// 滑动动画
+		$slide.click(function(){
+			$loader.fadeIn();
+			$(this).addClass('active').parent().siblings().children('a').removeClass('active');
+
+			var href = $(this).attr('data-href');
+			switch (href) {
+				case "ticket-content":
+				$('.js-flight-com').hide();
+				$('.js-ticket-wrap').show();
+				$loader.fadeOut();
+				break;
+				case "hotel-content":
+				$('.js-flight-com').hide();
+				$('.js-hotel-wrap').show();
+				$loader.fadeOut();
+				break;
+				case "car-content":
+				$('.js-flight-com').hide();
+				$('.js-car-wrap').show();
+				$loader.fadeOut();
+				break;
+				case "flight-content":
+				$('.js-flight-com').hide();
+				$('.js-fStatus-wrap').show();
+				$loader.fadeOut();
+				break;
+			}
+		}).one('click',function(){
+			var href = $(this).attr('data-href');
+			switch (href) {
+				case "ticket-content":
+
+				break;
+				case "hotel-content":
+				that.mHotelSelect();
+				break;
+				case "car-content":
+
+				break;
+				case "flight-content":
+				that.mfStatusSelect();
+				break;
+			}
+		});
+	},
+
 	/* 日期选择 */
 	dateSelect:function(single,id,container,showTotleDay,box,dateBox,peopleBox,showDateTitle1,showDateTitle2){
 		// 日期选择
@@ -366,6 +422,80 @@ var LanmeiAirlines = {
 			);
 	},
 
+	/* 移动端日期选择 */
+	mDateSelect:function(single,id,container,showTotleDay){
+		// 日期选择
+		var formatDate = function(num) { //日期格式化
+			return num < 10 ? (num = '0' + num) : num;
+		};
+
+		var formatMonth = function(month){
+			var monthEn;
+			switch (month) {
+				case 1: monthEn = 'Jan';break;
+				case 2: monthEn = 'Feb';break;
+				case 3: monthEn = 'Mar';break;
+				case 4: monthEn = 'Apr';break;
+				case 5: monthEn = 'May';break;
+				case 6: monthEn = 'Jun';break;
+				case 7: monthEn = 'Jul';break;
+				case 8: monthEn = 'Aug';break;
+				case 9: monthEn = 'Sep';break;
+				case 10: monthEn = 'Oct';break;
+				case 11: monthEn = 'Nov';break;
+				case 12: monthEn = 'Dec';break;
+			}
+			return monthEn;
+		};
+
+		var winWidth = $(window).width();
+
+		var today = new Date();
+		var todayTime = formatDate(today.getDate()) + ' ' + formatMonth((today.getMonth() + 1));
+		var startTimeStr = new Date(today.getTime() + 86400000 * 1);
+		var startTimeInit =  startTimeStr.getFullYear()+ '-' +(startTimeStr.getMonth() + 1)+ '-' + formatDate(startTimeStr.getDate());
+		var startTime = formatDate(startTimeStr.getDate()) + ' ' + formatMonth((startTimeStr.getMonth() + 1));
+		var endTimeStr = new Date(today.getTime() + 86400000 * 2);
+		var endTimeInit =  endTimeStr.getFullYear()+ '-' +(endTimeStr.getMonth() + 1)+ '-' + formatDate(endTimeStr.getDate());
+		var endTime = formatDate(endTimeStr.getDate()) + ' ' + formatMonth((endTimeStr.getMonth() + 1));
+		var maxTime = formatDate(today.getDate()) + ' ' + formatMonth((today.getMonth() + 1));
+
+		// 初始化日期的值
+		if (single) {
+			$(id).attr('data-start',startTimeInit);
+		} else {
+			$(id).attr('data-start',startTimeInit);
+			$(id).attr('data-end',endTimeInit);
+		}
+		
+		var that = this;
+		$(id).daterangepicker({
+			parentEl:container,
+			format: 'D MMM',
+			startDate: startTime,
+			endDate: endTime,
+			minDate: todayTime,
+			// maxDate:'2018-06-02',
+      singleDatePicker: single, //单日期
+      showTotleDay: showTotleDay, //是否显示已经选择的天数
+      showDateTitle: true,
+      showDropdowns: false, //下拉选择月份和年份
+      showWeekNumbers: false, //显示周
+      autoApply: true, //自动关闭日期
+      language :'en',
+		},function(start, end, label) {//格式化日期显示框  
+			if (this.singleDatePicker) {
+				$(id).html(start.format('D MMM'));
+				$(id).attr('data-start',start.format('YYYY-MM-DD'));
+			} else {
+				$(id).html(start.format('D MMM') + ' - ' + end.format('D MMM'));
+				$(id).attr('data-start',start.format('YYYY-MM-DD')).attr('data-end',end.format('YYYY-MM-DD'));
+			}
+			$('.popup-container').removeClass('is-show');
+			$('html,body').removeClass('ovfHiden'); //使网页可滚动
+		});
+	},
+
 	/* 模糊匹配 */
 	autoComplete:function(id){
 		var that = this;
@@ -377,10 +507,19 @@ var LanmeiAirlines = {
 
 			switch (data) {
 				case 'js-from-menu':
-					currenData=that.fromcityData
+					currenData=that.fromCityData
+					break;
+				case 'js-routeFrom-menu':
+					currenData=that.fromCityData
 					break;
 				case 'js-to-menu':
-					currenData=that.tocityData
+					currenData=that.toCityData
+					break;
+				case 'js-routeTo-menu':
+					currenData=that.toCityData
+					break;
+				case 'js-fNumber-menu':
+					currenData=that.fNumberData
 					break;
 			}
 
@@ -430,7 +569,7 @@ var LanmeiAirlines = {
 		var fromCityVal = function(text1,text2){ 
 			$fromInput.val(text2[0]+'/'+text2[1]);
 			$box.css('left',350);
-			var tocityArr = that.tocityData;
+			var tocityArr = that.toCityData;
 			tocityArr.remove(text1);
 
 			$toMenuSub.empty();
@@ -582,8 +721,38 @@ var LanmeiAirlines = {
 		var winWidth = $(window).width();
 
 		/* 定义出发地和目的地的值 */
-		var fromcityData = ['Sihanoukville/KOS/Cambodia','Macao/MFM/Macao,China','Phnom Penh/PNH/Cambodia','Siem Reap/REP/Cambodia','Ho Chi Minh/SGN/Vietnam','Hanoi/HAN/Vietnam','HongKong/HKG/HongKong,China','SEOUL/ICN/Korea','Bangkok/BKK/Thailand','Shijiazhuang/SJW/China','Singapore/SIN/Singapore'];
-		var tocityData = ['Sihanoukville/KOS/Cambodia','Macao/MFM/Macao,China','Phnom Penh/PNH/Cambodia','Siem Reap/REP/Cambodia','Ho Chi Minh/SGN/Vietnam','Hanoi/HAN/Vietnam','HongKong/HKG/HongKong,China','SEOUL/ICN/Korea','Bangkok/BKK/Thailand','Shijiazhuang/SJW/China','Singapore/SIN/Singapore'];
+		var fromCityData = ['Sihanoukville/KOS/Cambodia','Macao/MFM/Macao,China','Phnom Penh/PNH/Cambodia','Siem Reap/REP/Cambodia','Ho Chi Minh/SGN/Vietnam','Hanoi/HAN/Vietnam','HongKong/HKG/HongKong,China','SEOUL/ICN/Korea','Bangkok/BKK/Thailand','Shijiazhuang/SJW/China','Singapore/SIN/Singapore'];
+		var toCityData = ['Sihanoukville/KOS/Cambodia','Macao/MFM/Macao,China','Phnom Penh/PNH/Cambodia','Siem Reap/REP/Cambodia','Ho Chi Minh/SGN/Vietnam','Hanoi/HAN/Vietnam','HongKong/HKG/HongKong,China','SEOUL/ICN/Korea','Bangkok/BKK/Thailand','Shijiazhuang/SJW/China','Singapore/SIN/Singapore'];
+
+		/* 设置出发地的值 */
+		var fromCityVal = function(text1,text2){ 
+			$fromInput.val(text2[0]+'/'+text2[1]);
+			$box.css('left',350);
+			var tocityArr = that.toCityData;
+			tocityArr.remove(text1);
+
+			$toMenuSub.empty();
+			$.each(tocityArr,function(i,val){
+				$toMenuSub.append('<li title="'+val+'">'+val+'</li>');
+			});
+			$toInput.focus();
+			$('.js-to-menu>li:first').addClass('active');
+
+			$fromBox.slideUp(function(){ //出发地隐藏
+				$toBox.slideDown(); //目的地显示
+			}); 
+		};
+
+		/* 设置目的地的值 */
+		var toCityVal = function(text1,text2){
+			$toInput.val(text2[0]+'/'+text2[1]);
+			$box.css('left',700);
+
+			$toBox.slideUp(function(){ //出发地隐藏
+				$('.js-date-result').click(); //日期展示
+				$dateBox.slideDown(); //目的地显示
+			}); 
+		};
 
 		/* 点击机票出发地 */
 		var zoomShow = true;
@@ -614,7 +783,7 @@ var LanmeiAirlines = {
 			}
 		}).one('click',function(){
 			$fromMenuSub.empty();
-			$.each(fromcityData,function(i,val){
+			$.each(fromCityData,function(i,val){
 				$fromMenuSub.append('<li title="'+val+'">'+val+'</li>');
 			});
 			// $('.js-from-menu>li:first').addClass('active');
@@ -628,7 +797,7 @@ var LanmeiAirlines = {
 			if(fromVal==''){
 				$toMenuSub.append('<li title="No results found">No results found</li>');
 			}else{
-				var tocityArr = tocityData;
+				var tocityArr = toCityData;
 				tocityArr.remove(fromVal);
 
 				$toMenuSub.empty();
@@ -761,11 +930,11 @@ var LanmeiAirlines = {
 	},
 
 	/* 移动端机票选择 */
-	mobileTicketSelect:function(){
+	mTicketSelect:function(){
 		var that = this;
 
 		// 最外层容器
-		var $container = $('.popup-container');
+		var $container = $('.js-popup-container');
 		var $box = $('.js-popup-box');
 
 		// 关闭容器按钮
@@ -777,21 +946,28 @@ var LanmeiAirlines = {
 
 		// 输入框
 		var $fromInput = $('.js-from-input'); //机票出发地
+		var $fromSpan = $('.js-m-Fcity');
 		var $toInput = $('.js-to-input'); //机票目的地
+		var $toSpan = $('.js-m-Tcity');
 		var $date = $('.js-date-result'); //机票日期
 		var $people = $('.js-ticket-people'); //机票人数
+
+		var $searchInput = $('.js-city-search'); //模糊搜索框
+		var $searchTitle = $('.js-popup-title'); //标题
 
 		// 下拉菜单
 		var $fromMenuSub = $('.js-from-menu'); //机票出发地下拉菜单
 		var $toMenuSub = $('.js-to-menu'); //目的地下拉菜单
 		var $ticketChange = $('.js-ticket-change'); //切换机票出发地和目的地
 
-		$('.js-popup-content>div').hide(); //初始化隐藏出发地、目的地、日期、人数
-
 		var winHeight = $(window).height();
 
 		var hideContainer = function(){
 			$container.removeClass('is-show');
+			$('html,body').removeClass('ovfHiden'); //使网页可滚动
+		};
+		var ovfHiden = function(){
+			$('html,body').addClass('ovfHiden'); //使网页不可滚动
 		};
 
 		// 关闭弹出框
@@ -802,13 +978,18 @@ var LanmeiAirlines = {
 		// 点击出发地
 		$cityFrom.click(function(event) {
 			$fromMenuSub.empty();
+			$('.js-popup-content>div').hide(); //初始化隐藏出发地、目的地、日期、人数
 			$('.js-airport-from').show();
-			$.each(that.fromcityData,function(i,val){
+			var toVal = $toInput.attr('data-city'); //获取目的地的值进行过滤
+			$.each(that.fromCityData,function(i,val){
 				$fromMenuSub.append('<li title="'+val+'">'+val+'</li>');
 			});
+			$fromMenuSub.children('li:contains('+toVal+')').remove(); //过滤
 
-			$('html,body').addClass('ovfHiden'); //使网页不可滚动
+			ovfHiden(); //使网页不可滚动
 			$box.height(winHeight-108);
+			$searchInput.attr('data','js-from-menu').val('');
+			$searchTitle.html('Select origin');
 
 			$container.addClass('is-show');
 		});
@@ -817,35 +998,97 @@ var LanmeiAirlines = {
 		$fromMenuSub.on('click','>li',function(){
 			var text1 = $(this).attr('title');
 			var text2 = text1.split('/');
-			$fromInput.val(text2[1]).parent().addClass('m-city-result');
-			$('.js-m-Fcity').text(text2[0]+'/'+text2[2]);
+			$fromInput.val(text2[1]).attr('data-city',text1).parent().addClass('m-city-result');
+			$fromSpan.text(text2[0]+'/'+text2[2]);
 			hideContainer();
 		});
 
 		// 点击目的地
 		$cityTo.click(function(event) {
-			console.log(333);
 			$toMenuSub.empty();
+			$('.js-popup-content>div').hide(); //初始化隐藏出发地、目的地、日期、人数
 			$('.js-airport-to').show();
-			$.each(that.tocityData,function(i,val){
+			var fromVal = $fromInput.attr('data-city'); //获取出发地的值进行过滤
+			$.each(that.toCityData,function(i,val){
 				$toMenuSub.append('<li title="'+val+'">'+val+'</li>');
 			});
 
-			$('html,body').addClass('ovfHiden'); //使网页不可滚动
+			$toMenuSub.children('li:contains('+fromVal+')').remove(); //过滤
+
+			ovfHiden(); //使网页不可滚动
 			$box.height(winHeight-108);
+			$searchInput.attr('data','js-to-menu').val('');
+			$searchTitle.html('Select destination');
 
 			$container.addClass('is-show');
 		});
 
-		// 机票出发地选择 
+		// 机票目的地选择 
 		$toMenuSub.on('click','>li',function(){
 			var text1 = $(this).attr('title');
 			var text2 = text1.split('/');
-			$toInput.val(text2[1]).parent().addClass('m-city-result');
-			$('.js-m-Tcity').text(text2[0]+'/'+text2[2]);
+			$toInput.val(text2[1]).attr('data-city',text1).parent().addClass('m-city-result');
+			$toSpan.text(text2[0]+'/'+text2[2]);
 			hideContainer();
 		});
-		
+
+		// 出发地和目的地切换
+		$('.js-mTicket-change').click(function(event) {
+			var fVal = $fromInput.val();
+			var fSpan = $fromSpan.text();
+			var tVal = $toInput.val();
+			var tSpan = $toSpan.text();
+			$fromInput.val(tVal); $fromSpan.text(tSpan);
+			$toInput.val(fVal); $toSpan.text(fSpan);
+		});
+
+		// 模糊匹配
+		this.autoComplete('.js-city-search');
+
+		// 日期选择
+		this.mDateSelect(false,'.js-date-result','.js-popup-date',false);
+		$date.click(function(event) {
+			$('.js-popup-content>div').hide(); //初始化隐藏出发地、目的地、日期、人数
+			$('.js-popup-date').show();
+
+			ovfHiden(); //使网页不可滚动
+
+			$searchInput.hide();
+			$searchTitle.text('Select dates');
+			$box.height(winHeight-58);
+
+			$container.addClass('is-show');
+		});
+
+		// 单程往返切换 
+		$('.js-select-way>a').click(function(event) {
+			event.stopPropagation();
+			$(this).addClass('active').siblings('a').removeClass('active');
+			var data = $(this).attr('data-way');
+			switch (data) {
+				case 'round':
+					that.mDateSelect(false,'.js-date-result','.js-popup-date',false);
+					break;
+					case 'one':
+					that.mDateSelect(true,'.js-date-result','.js-popup-date',false);
+					break;
+				}
+			});
+
+		// 人数选择
+		$people.click(function(event) {
+			$('.js-popup-content>div').hide(); //初始化隐藏出发地、目的地、日期、人数
+			$('.js-popup-people').show();
+			ovfHiden(); //使网页不可滚动
+			$searchInput.hide();
+			$searchTitle.text('Select people');
+			$box.height(winHeight-58);
+			$container.addClass('is-show');
+		});
+		// 确认人数选择
+		$('.js-mSelect-people').click(function(event) {
+			hideContainer();
+		});
 	},
 
 	/* 酒店选择 */
@@ -1004,6 +1247,680 @@ var LanmeiAirlines = {
 			}); 
 		});
 
+	},
+
+	/* 移动端酒店选择 */
+	mHotelSelect:function(){
+		var that = this;
+		var $container = $('.js-popup-container');
+		var $hotelBox = $('.js-hotelPopup-box'); //酒店c3动画最外层
+		var $hotelFromInput = $('.js-hotelFrom-input'); //酒店出发地
+		var $hotelDate = $('.js-hotelDate-result'); //酒店日期
+		var $hotelFromMenuSub = $('.js-hotelFrom-menu'); //酒店出发地下拉菜单
+		var $hotelPeople = $('.js-hotel-people'); //酒店人数
+
+		var $close = $('.js-hotelPopup-close');
+		var $searchInput = $('.js-hotelCity-search'); //模糊搜索框
+		var $searchTitle = $('.js-hotelPopup-title'); //标题
+
+		var winHeight = $(window).height();
+
+		var hideContainer = function(){
+			$container.removeClass('is-show');
+			$('html,body').removeClass('ovfHiden'); //使网页可滚动
+		};
+		var ovfHiden = function(){
+			$('html,body').addClass('ovfHiden'); //使网页不可滚动
+		};
+
+		// 关闭弹出框
+		$close.click(function(event) {
+			hideContainer();
+		});
+
+		// 点击酒店
+		$hotelFromInput.click(function(event) {
+			$('.hotel-popup-content>div').hide(); //初始化隐藏出发地、目的地、日期、人数
+			$('.js-hotelPopup-from').show();
+
+			$hotelFromMenuSub.empty();
+			$.each(that.hotelCityData,function(i,val){
+				$hotelFromMenuSub.append('<li title="'+val+'">'+val+'</li>');
+			});
+
+			ovfHiden(); //使网页不可滚动
+			$hotelBox.height(winHeight-108);
+			$searchInput.val('');
+			$searchTitle.html('Select destination');
+
+			$container.addClass('is-show');
+		});
+
+		// 酒店选择 
+		$hotelFromMenuSub.on('click','>li',function(){
+			var text1 = $(this).attr('title');
+			$hotelFromInput.val(text1);
+			hideContainer();
+		});
+
+		// 日期选择
+		this.mDateSelect(false,'.js-hotelDate-result','.js-hotelPopup-date',false);
+		$hotelDate.click(function(event) {
+			$('.js-hotelPopup-content>div').hide(); //初始化隐藏出发地、目的地、日期、人数
+			$('.js-hotelPopup-date').show();
+
+			ovfHiden(); //使网页不可滚动
+
+			$searchInput.hide();
+			$searchTitle.text('Select dates');
+			$hotelBox.height(winHeight-58);
+
+			$container.addClass('is-show');
+		});
+
+		// 房间选择
+		$hotelPeople.click(function(event) {
+			$('.js-hotelPopup-content>div').hide(); //初始化隐藏出发地、目的地、日期、人数
+			$('.js-hotelPopup-people').show();
+
+			ovfHiden(); //使网页不可滚动
+
+			$searchInput.hide();
+			$searchTitle.text('Select rooms');
+			$hotelBox.height(winHeight-58);
+
+			$container.addClass('is-show');
+		});
+		//房间保存
+		$('.js-mSelect-rooms').click(function(event) {
+			hideContainer();
+		});
+
+	},
+
+	/* 航班动态选择 */
+	fStatusSelect:function(){
+		var $mask = $('.js-fStatus-mask'); //遮罩层
+		var $mask2 = $('.js-fStatus-mask2'); //遮罩层2
+		var $fStatusBox = $('.js-fStatusPopup-box'); //航班动态c3动画最外层
+		var $fStatusContent = $('.js-fStatusPopup-content'); //航班动态c3动画内容
+
+		/* 输入框 */
+		var $fNumberFromInput = $('.js-fNumber-input'); //航班动态出发地
+		var $routeFromInput = $('.js-routeFrom-input'); //航班动态出发地
+		var $routeToInput = $('.js-routeTo-input'); //航班动态查询目的地
+		var $numDate = $('.js-numDate-result'); //航班动态日期
+		var $routeDate = $('.js-routeDate-result'); //航班动态日期
+
+		/* 下拉菜单 */
+		var $fNumberFromMenuSub = $('.js-fNumber-menu'); //航班号下拉菜单 --- 航班动态
+		var $routeFromMenuSub = $('.js-routeFrom-menu'); //航班号下拉菜单 --- 航班动态
+		var $routeToMenuSub = $('.js-routeTo-menu'); //航班号下拉菜单 --- 航班动态
+
+		/* 下拉菜单外层 */
+		var $routeFromBox = $('.js-routeBox-from'); //航班动态出发地外层
+		var $routeToBox = $('.js-routeBox-to'); //航班动态目的地外层
+		var $routeDateBox = $('.js-routePopup-date'); //航班动态日期外层
+		var $fNumFromBox = $('.js-fNumBox-from'); //航班动态出发地外层
+		var $numDateBox = $('.js-numPopup-date'); //航班动态日期外层
+
+		/* 切换状态 */
+		var $selectFlightWay = $('.js-flight-way'); //选择航班号或路线
+
+		/* 点击第一个div，然后显示其他div  */
+		var $numZoom = $('.js-fStatus-date,.js-route-cancel,.js-route-search');
+		var $routeZoom = $('.js-route-from,.js-route-to,.js-route-date,.js-route-cancel,.js-route-search');
+
+		/* css3动画 */
+		var fStatusPopupShow = function(){
+			$mask.fadeIn(); //显示遮罩层
+			$mask2.fadeIn(); //显示遮罩层
+			$fStatusBox.addClass('popup-box-before'); //展示小箭头
+			$fStatusContent.removeClass('popup-inactive').addClass('popup-active'); 
+		};
+		var fStatusPopupHide = function(){
+			$fStatusContent.removeClass('popup-active').addClass('popup-inactive'); 
+			$fStatusBox.removeClass('popup-box-before'); //隐藏小箭头
+		};
+
+		/* 日期选择 */
+		this.dateSelect(true,'.js-numDate-result','.js-numPopup-date',false,$fStatusBox,$numDateBox,'0','Flight flight date :','');
+		this.dateSelect(true,'.js-routeDate-result','.js-routePopup-date',false,$fStatusBox,$routeDateBox,'0','Flight flight date :','');
+
+		// 航班号和地点查询切换
+		$('.js-flight-way>a').click(function(event) {
+			event.stopPropagation();
+			$(this).addClass('active').siblings('a').removeClass('active');
+			var data = $(this).attr('data-way');
+			$('.js-status-com').hide();
+			$('.'+data).show();
+			switch (data) {
+				case 'js-by-number':
+				fStatusPopupHide();
+				$('.js-fStatus-date').addClass('animated fadeInUp');
+				setTimeout(function(){
+					$('.js-fStatus-date').removeClass('animated fadeInUp');
+				}, 2200);
+				break;
+				case 'js-by-route':
+				fStatusPopupHide();
+				break;
+			}
+		});
+
+		/* 获取屏幕尺寸 */
+		var winWidth = $(window).width();
+
+		/* 点击航班动态 按航班号查询 出发地 */
+		var numZoomShow = true;
+		var numOneClick = true;
+		$fNumberFromInput.click(function(){
+			if(numOneClick){ //防止点击取消后，快速点击出发地产生的bug
+				if(winWidth>1300){
+					$fStatusBox.css('left',0);
+				}else if(winWidth<=1300){
+					$fStatusBox.css({'top':-90,'left':0});
+				}
+				fStatusPopupShow(); //增加c3动画
+
+				$('.js-fStatusPopup-content>div').hide();
+				$fNumFromBox.show();
+				// $routeFromBox.hide(); $routeToBox.hide();$numDateBox.hide();$numDateBox.hide();
+
+				$fStatusContent.css('z-index','1'); //覆盖cancel按钮
+				if(numZoomShow){
+					$selectFlightWay.css({'height':'auto','margin-top':'40px'}).addClass('animated fadeInUp'); //展示单程往返
+					$numZoom.addClass('animated fadeInUp').css('visibility','visible');
+					numZoomShow = false; //重新点击出发地时再次显示目的地、日期、人数的动画
+					setTimeout(function(){
+						$numZoom.removeClass('animated fadeInUp');
+					}, 2200);
+				}
+			}
+		});
+
+		/* 点击航班动态 按地址查询 出发地 */
+		$routeFromInput.click(function(){
+			if(winWidth>1300){
+				$fStatusBox.css('left',0);
+			}else if(winWidth<=1300){
+				$fStatusBox.css({'top':-90,'left':0});
+			}
+			fStatusPopupShow(); //增加c3动画
+
+			$('.js-fStatusPopup-content>div').hide();
+			$routeFromBox.show();
+		});
+
+		/* 点击航班动态 按地址查询 目的地 */
+		$routeToInput.click(function(){
+			if(winWidth>1300){
+				$fStatusBox.css('left',350);
+			}else if(winWidth<=1300){
+				$fStatusBox.css({'top':-90,'left':350});
+			}
+			fStatusPopupShow(); //增加c3动画
+
+			$('.js-fStatusPopup-content>div').hide();
+			$routeToBox.show();
+		});
+
+		/* 点击航班号日期 --- 航班动态查询 */
+		$numDate.click(function(event) {
+			if(winWidth>1300){
+				$fStatusBox.css('left',700);
+			}else if(winWidth<=1300){
+				$fStatusBox.css({'top':-10,'left':0});
+			}
+			fStatusPopupShow(); //增加c3动画
+			$fStatusContent.css('z-index','1'); //覆盖cancel按钮
+			$('.js-fStatusPopup-content>div').hide();
+			$numDateBox.show();
+		});
+
+		/* 点击航班号日期 --- 目的地查询 */
+		$routeDate.click(function(event) {
+			if(winWidth>1300){
+				$fStatusBox.css('left',700);
+			}else if(winWidth<=1300){
+				$fStatusBox.css({'top':-10,'left':0});
+			}
+			fStatusPopupShow(); //增加c3动画
+			$fStatusContent.css('z-index','1'); //覆盖cancel按钮
+			$('.js-fStatusPopup-content>div').hide();
+			$routeDateBox.show();
+		});
+
+		/* 取消 */
+		var cancel = function(){
+			numOneClick = false; //防止快速点击出发地
+
+			$numZoom.addClass('animated fadeOutDown');
+			$routeZoom.addClass('animated fadeOutDown');
+
+			$selectFlightWay.css({'height':'0','margin-top':'0'}).addClass('animated fadeOutDown'); //隐藏单程往返
+
+			$mask.fadeOut(); //隐藏遮罩层
+			$mask2.fadeOut(); //隐藏遮罩层
+
+			fStatusPopupHide(); //隐藏弹出内容层
+			// $ticketChange.hide(); //隐藏出发地和目的地切换
+
+			numZoomShow = true; //重新点击出发地时再次显示目的地、日期、人数的动画
+
+			$fStatusBox.css('left',0); //下拉框归零
+			setTimeout(function(){
+				$('.js-by-number').show();
+				$('.js-flight-way>a:first').addClass('active');
+				$('.js-flight-way>a:last').removeClass('active');
+				
+				$numZoom.removeClass('animated fadeOutDown');
+				$routeZoom.removeClass('animated fadeOutDown');
+
+				$selectFlightWay.removeClass('animated fadeOutDown');
+
+				$numZoom.css('visibility','hidden');
+	      // $routeZoom.css('visibility','hidden');
+	      $('.js-by-route').hide();
+
+	      numOneClick = true; //可以继续点击出发地
+	    }, 2200);
+		};
+
+		/* 点击遮罩层 */
+		$mask.click(function(){
+			cancel();
+		});
+		$mask2.click(function(){
+			fStatusPopupHide(); //隐藏弹出内容层
+			$(this).fadeOut();
+		});
+
+		$('.js-flight-way').click(function(event) {
+			fStatusPopupHide(); //隐藏弹出内容层
+			$mask2.fadeOut();
+		});
+
+		/* 点击取消 */
+		$('.js-route-cancel').click(function(){
+			cancel();
+		});
+
+		/* 航班号选择 --- 航班动态查询 */
+		$fNumberFromMenuSub.on('click','>li',function(){
+			var text = $(this).attr('title');
+			$fNumberFromInput.val(text);
+			if(winWidth>1300){
+				$fStatusBox.css('left',700);
+			}else if(winWidth<=1300){
+				$fStatusBox.css({'top':-10,'left':0});
+			}
+			$fNumFromBox.slideUp(function(){ //酒店出发地隐藏
+				$('.js-numDate-result').click(); //日期展示
+				$numDateBox.slideDown(); //酒店日期显示
+			}); 
+		});
+
+		/* 航班号选择 --- 出发地查询 */
+		$routeFromMenuSub.on('click','>li',function(){
+			var text = $(this).attr('title');
+			$routeFromInput.val(text);
+			if(winWidth>1300){
+				$fStatusBox.css('left',350);
+			}else if(winWidth<=1300){
+				$fStatusBox.css({'top':-90,'left':350});
+			}
+			$routeFromBox.slideUp(function(){ //酒店出发地隐藏
+				$routeToBox.slideDown(); //酒店日期显示
+			}); 
+		});
+
+		/* 航班号选择 --- 目的地查询 */
+		$routeToMenuSub.on('click','>li',function(){
+			var text = $(this).attr('title');
+			$routeToInput.val(text);
+			if(winWidth>1300){
+				$fStatusBox.css('left',700);
+			}else if(winWidth<=1300){
+				$fStatusBox.css({'top':-10,'left':0});
+			}
+			$routeToBox.slideUp(function(){ //航班动态目的地隐藏
+				$('.js-routeDate-result').click(); //日期展示
+				$routeDateBox.slideDown(); //酒店日期显示
+			}); 
+		});
+	},
+
+	/* 移动端航班动态选择 */
+	mfStatusSelect:function(){
+		var that = this;
+
+		var $container = $('.js-popup-container');
+		var $fStatusBox = $('.js-fStatusPopup-box'); //航班动态c3动画最外层
+
+		/* 输入框 */
+		var $fNumberFromInput = $('.js-fNumber-input'); //航班动态出发地
+		var $fromSpan = $('.js-m-fRouteCity');
+		var $routeFromInput = $('.js-routeFrom-input'); //航班动态出发地
+		var $toSpan = $('.js-m-tRouteCity');
+		var $routeToInput = $('.js-routeTo-input'); //航班动态查询目的地
+		var $numDate = $('.js-numDate-result'); //航班动态日期
+		var $routeDate = $('.js-routeDate-result'); //航班动态日期
+
+		/* 下拉菜单 */
+		var $fNumberFromMenuSub = $('.js-fNumber-menu'); //航班号下拉菜单 --- 航班动态
+		var $routeFromMenuSub = $('.js-routeFrom-menu'); //航班号下拉菜单 --- 航班动态
+		var $routeToMenuSub = $('.js-routeTo-menu'); //航班号下拉菜单 --- 航班动态
+
+		/* 下拉菜单外层 */
+		var $routeFromBox = $('.js-routeBox-from'); //航班动态出发地外层
+		var $routeToBox = $('.js-routeBox-to'); //航班动态目的地外层
+		var $routeDateBox = $('.js-routePopup-date'); //航班动态日期外层
+		var $fNumFromBox = $('.js-fNumBox-from'); //航班动态出发地外层
+		var $numDateBox = $('.js-numPopup-date'); //航班动态日期外层
+
+		var $close = $('.js-fStatusPopup-close');
+		var $searchInput = $('.js-fStatusCity-search'); //模糊搜索框
+		var $searchTitle = $('.js-fStatusPopup-title'); //标题
+
+		var winHeight = $(window).height();
+
+		var hideContainer = function(){
+			$container.removeClass('is-show');
+			$('html,body').removeClass('ovfHiden'); //使网页可滚动
+		};
+		var ovfHiden = function(){
+			$('html,body').addClass('ovfHiden'); //使网页不可滚动
+		};
+
+		// 关闭弹出框
+		$close.click(function(event) {
+			hideContainer();
+		});
+
+		// 航班号和地点查询切换
+		$('.js-flight-way>a').click(function(event) {
+			event.stopPropagation();
+			$(this).addClass('active').siblings('a').removeClass('active');
+			var data = $(this).attr('data-way');
+			$('.js-status-com').hide();
+			$('.'+data).show();
+			switch (data) {
+				case 'js-by-number':
+				$('.js-by-number').show();
+				break;
+				case 'js-by-route':
+				$('.js-by-route').show();
+				break;
+			}
+		});
+
+		// 点击航班号
+		$fNumberFromInput.click(function(event) {
+			$('.js-fStatusPopup-content>div').hide(); 
+			$('.js-fNumBox-from').show();
+
+			$fNumberFromMenuSub.empty();
+			$.each(that.fNumberData,function(i,val){
+				$fNumberFromMenuSub.append('<li title="'+val+'">'+val+'</li>');
+			});
+
+			ovfHiden(); //使网页不可滚动
+			$searchInput.show();
+			$fStatusBox.height(winHeight-108);
+			$searchInput.attr('data','js-fNumber-menu').val('');
+			$searchTitle.html('Select destination');
+
+			$container.addClass('is-show');
+
+			// 模糊查询
+			that.autoComplete('.js-fStatusCity-search');
+		});
+
+		// 航班号选择 
+		$fNumberFromMenuSub.on('click','>li',function(){
+			var text1 = $(this).attr('title');
+			$fNumberFromInput.val(text1);
+			hideContainer();
+		});
+
+		// 日期选择
+		this.mDateSelect(false,'.js-numDate-result','.js-numPopup-date',false);
+		$numDate.click(function(event) {
+			$('.js-fStatusPopup-content>div').hide(); 
+			$('.js-numPopup-date').show();
+
+			ovfHiden(); //使网页不可滚动
+
+			$searchInput.hide();
+			$searchTitle.text('Select date');
+			$fStatusBox.height(winHeight-58);
+
+			$container.addClass('is-show');
+		});
+
+		// 点击出发地
+		$routeFromInput.click(function(event) {
+			$routeFromMenuSub.empty();
+			$('.js-fStatusPopup-content>div').hide(); 
+			$('.js-routeBox-from').show();
+			var toVal = $routeToInput.attr('data-city'); //获取目的地的值进行过滤
+			$.each(that.fromCityData,function(i,val){
+				$routeFromMenuSub.append('<li title="'+val+'">'+val+'</li>');
+			});
+			$routeFromMenuSub.children('li:contains('+toVal+')').remove(); //过滤
+
+			ovfHiden(); //使网页不可滚动
+			$searchInput.show();
+			$fStatusBox.height(winHeight-108);
+			$searchInput.attr('data','js-routeFrom-menu').val('');
+			$searchTitle.html('Select origin');
+
+			$container.addClass('is-show');
+		});
+
+		// 机票出发地选择 
+		$routeFromMenuSub.on('click','>li',function(){
+			var text1 = $(this).attr('title');
+			var text2 = text1.split('/');
+			$routeFromInput.val(text2[1]).attr('data-city',text1).parent().addClass('m-city-result');
+			$fromSpan.text(text2[0]+'/'+text2[2]);
+			hideContainer();
+		});
+
+		// 点击目的地
+		$routeToInput.click(function(event) {
+			$routeToMenuSub.empty();
+			$('.js-fStatusPopup-content>div').hide(); 
+			$('.js-routeBox-to').show();
+			var fromVal = $routeFromInput.attr('data-city'); //获取出发地的值进行过滤
+			$.each(that.toCityData,function(i,val){
+				$routeToMenuSub.append('<li title="'+val+'">'+val+'</li>');
+			});
+
+			$routeToMenuSub.children('li:contains('+fromVal+')').remove(); //过滤
+
+			ovfHiden(); //使网页不可滚动
+			$searchInput.show();
+			$fStatusBox.height(winHeight-108);
+			$searchInput.attr('data','js-routeTo-menu').val('');
+			$searchTitle.html('Select destination');
+
+			$container.addClass('is-show');
+		});
+
+		// 机票目的地选择 
+		$routeToMenuSub.on('click','>li',function(){
+			var text1 = $(this).attr('title');
+			var text2 = text1.split('/');
+			$routeToInput.val(text2[1]).attr('data-city',text1).parent().addClass('m-city-result');
+			$toSpan.text(text2[0]+'/'+text2[2]);
+			hideContainer();
+		});
+
+		// 出发地和目的地切换
+		$('.js-mfStatus-change').click(function(event) {
+			var fVal = $routeFromInput.val();
+			var fSpan = $fromSpan.text();
+			var tVal = $routeToInput.val();
+			var tSpan = $toSpan.text();
+			$routeFromInput.val(tVal); $fromSpan.text(tSpan);
+			$routeToInput.val(fVal); $toSpan.text(fSpan);
+		});
+
+		// 模糊匹配
+		this.autoComplete('.js-fStatusCity-search');
+
+		// 日期选择
+		this.mDateSelect(false,'.js-routeDate-result','.js-routePopup-date',false);
+		$routeDate.click(function(event) {
+			$('.js-fStatusPopup-content>div').hide(); 
+			$('.js-routePopup-date').show();
+
+			ovfHiden(); //使网页不可滚动
+
+			$searchInput.hide();
+			$searchTitle.text('Select date');
+			$fStatusBox.height(winHeight-58);
+
+			$container.addClass('is-show');
+		});
+
+	},
+
+	/* 改变酒店选择人数 */
+	changeWidth:function(){
+		// 动态改变酒店房间外层div的宽度和left
+		var $hotelContent = $('.js-hotelPopup-content');
+		var $hotelPeople = $('.js-hotelPopup-people');
+		var changeWidth = function(){
+			var changeArray = [];
+			var childArray = $('.js-hotelChild-num');
+			$.each(childArray,function(idx,val){
+				changeArray.push($(val).html());
+			});
+			var changeNum = Math.max.apply(Math,changeArray);
+
+			// 外层移动
+			if(changeNum==0){
+				$hotelContent.css('left',0);
+				$hotelPeople.width(710);
+			}
+			if(changeNum==1){
+				$hotelContent.css('left',-200);
+				$hotelPeople.width(910);
+			}
+			if(changeNum==2){
+				$hotelContent.css('left',-400);
+				$hotelPeople.width(1112);
+			}
+			if(changeNum==3){
+				$hotelContent.css('left',-610);
+				$hotelPeople.width(1320);
+			}
+		};
+		changeWidth();
+	},
+
+	/* 机票人数选择 */
+	selectPeople:function(){
+		var adultNum = 1;
+		var childNum = 0;
+		var infantNum = 0;
+
+		var $adultResult = $('.js-p-adult>span');
+		var $childResult = $('.js-p-child>span');
+		var $infantResult = $('.js-p-infant>span');
+
+		// 成人
+		var adult = function(){
+			$('.js-adult-add').click(function(){
+				adultNum++;
+				$(this).siblings('span').html(adultNum);
+				$adultResult.html(adultNum); //动态赋值
+				adultNum==2 && $(this).siblings('.sub-people').removeClass('off-sub-operation');
+			});
+			$('.js-adult-sub').click(function(){
+				adultNum--;
+				if(adultNum<2){
+					adultNum=1;
+					$(this).addClass('off-sub-operation');
+				}
+				$(this).siblings('span').html(adultNum);
+				$adultResult.html(adultNum); //动态赋值
+			});
+		};
+
+		// 小孩
+		var child = function(){
+			$('.js-child-add').click(function(){
+				childNum++;
+				$(this).siblings('span').html(childNum);
+				$childResult.html(childNum); //动态赋值
+				if(childNum==1){
+					$(this).siblings('.sub-people').removeClass('off-sub-operation');
+					$(this).parent().removeClass('disable');
+				}
+			});
+			$('.js-child-sub').click(function(){
+				childNum--;
+				if(childNum<1){
+					childNum=0;
+					$(this).addClass('off-sub-operation');
+					$(this).parent().addClass('disable');
+				}
+				$(this).siblings('span').html(childNum);
+				$childResult.html(childNum); //动态赋值
+			});
+		};
+
+		// 婴儿
+		var infant = function(){
+			$('.js-infant-add').click(function(){
+				infantNum++;
+				$(this).siblings('span').html(infantNum);
+				$infantResult.html(infantNum); //动态赋值
+				if(infantNum==1){
+					$(this).siblings('.sub-people').removeClass('off-sub-operation');
+					$(this).parent().removeClass('disable');
+				}
+			});
+			$('.js-infant-sub').click(function(){
+				infantNum--;
+				if(infantNum<1){
+					infantNum=0;
+					$(this).addClass('off-sub-operation');
+					$(this).parent().addClass('disable');
+				}
+				$(this).siblings('span').html(infantNum);
+				$infantResult.html(infantNum); //动态赋值
+			});
+		};
+		adult();
+		child();
+		infant();
+
+		/* 人数提示 */
+		var showAdultTip = 0;
+		var showChildTip = 0;
+		var showInfantTip = 0;
+		var tipFn = function(className,content,showTip){
+			$(className).mouseenter(function(event) {
+				showTip = layer.tips(content, className,{
+					tips: [2, '#8ec060'],
+					time: 0
+				});
+			}).mouseleave(function(event) {
+				layer.close(showTip);
+			});
+		};
+		tipFn('.adult-tip','Adult',showAdultTip);
+		tipFn('.child-tip','Passengers who have not reached their 12th birthday by the date of the last flight are considered child passengers Children 7 years old and older can travel alone with the consent of their parents.',showChildTip);
+		tipFn('.infant-tip','Passengers 7 days old up to those who have not reached their 2nd birthday travel with infant status.',showInfantTip);
+	},
+
+	/* 酒店房间和人数选择 */
+	selectHotelRooms:function(){
 		/* 年龄选择 */
 		var $that = this;
 		$('.js-hotelPopup-people').on('click','.js-age-result',function(e){
@@ -1302,392 +2219,6 @@ var LanmeiAirlines = {
 
 		adult();
 		child();
-
-	},
-
-	/* 航班动态选择 */
-	fStatusSelect:function(){
-		var $mask = $('.js-fStatus-mask'); //遮罩层
-		var $mask2 = $('.js-fStatus-mask2'); //遮罩层2
-		var $fStatusBox = $('.js-fStatusPopup-box'); //航班动态c3动画最外层
-		var $fStatusContent = $('.js-fStatusPopup-content'); //航班动态c3动画内容
-
-		/* 输入框 */
-		var $fNumberFromInput = $('.js-fNumber-input'); //航班动态出发地
-		var $routeFromInput = $('.js-routeFrom-input'); //航班动态出发地
-		var $routeToInput = $('.js-routeTo-input'); //航班动态查询目的地
-		var $numDate = $('.js-numDate-result'); //航班动态日期
-		var $routeDate = $('.js-routeDate-result'); //航班动态日期
-
-		/* 下拉菜单 */
-		var $fNumberFromMenuSub = $('.js-fNumber-menu'); //航班号下拉菜单 --- 航班动态
-		var $routeFromMenuSub = $('.js-routeFrom-menu'); //航班号下拉菜单 --- 航班动态
-		var $routeToMenuSub = $('.js-routeTo-menu'); //航班号下拉菜单 --- 航班动态
-
-		/* 下拉菜单外层 */
-		var $routeFromBox = $('.js-routeBox-from'); //航班动态出发地外层
-		var $routeToBox = $('.js-routeBox-to'); //航班动态目的地外层
-		var $routeDateBox = $('.js-routePopup-date'); //航班动态日期外层
-		var $fNumFromBox = $('.js-fNumBox-from'); //航班动态出发地外层
-		var $numDateBox = $('.js-numPopup-date'); //航班动态日期外层
-
-		/* 切换状态 */
-		var $selectFlightWay = $('.js-flight-way'); //选择航班号或路线
-
-		/* 点击第一个div，然后显示其他div  */
-		var $numZoom = $('.js-fStatus-date,.js-route-cancel,.js-route-search');
-		var $routeZoom = $('.js-route-from,.js-route-to,.js-route-date,.js-route-cancel,.js-route-search');
-
-		/* css3动画 */
-		var fStatusPopupShow = function(){
-			$mask.fadeIn(); //显示遮罩层
-			$mask2.fadeIn(); //显示遮罩层
-			$fStatusBox.addClass('popup-box-before'); //展示小箭头
-			$fStatusContent.removeClass('popup-inactive').addClass('popup-active'); 
-		};
-		var fStatusPopupHide = function(){
-			$fStatusContent.removeClass('popup-active').addClass('popup-inactive'); 
-			$fStatusBox.removeClass('popup-box-before'); //隐藏小箭头
-		};
-
-		/* 日期选择 */
-		this.dateSelect(true,'.js-numDate-result','.js-numPopup-date',false,$fStatusBox,$numDateBox,'0','Flight flight date :','');
-		this.dateSelect(true,'.js-routeDate-result','.js-routePopup-date',false,$fStatusBox,$routeDateBox,'0','Flight flight date :','');
-
-		// 航班号和地点查询切换
-		$('.js-flight-way>a').click(function(event) {
-			event.stopPropagation();
-			$(this).addClass('active').siblings('a').removeClass('active');
-			var data = $(this).attr('data-way');
-			$('.js-status-com').hide();
-			$('.'+data).show();
-			switch (data) {
-				case 'js-by-number':
-				fStatusPopupHide();
-				$('.js-fStatus-date').addClass('animated fadeInUp');
-				setTimeout(function(){
-					$('.js-fStatus-date').removeClass('animated fadeInUp');
-				}, 2200);
-				break;
-				case 'js-by-route':
-				fStatusPopupHide();
-				break;
-			}
-		});
-
-		/* 获取屏幕尺寸 */
-		var winWidth = $(window).width();
-
-		/* 点击航班动态 按航班号查询 出发地 */
-		var numZoomShow = true;
-		var numOneClick = true;
-		$fNumberFromInput.click(function(){
-			if(numOneClick){ //防止点击取消后，快速点击出发地产生的bug
-				if(winWidth>1300){
-					$fStatusBox.css('left',0);
-				}else if(winWidth<=1300){
-					$fStatusBox.css({'top':-90,'left':0});
-				}
-				fStatusPopupShow(); //增加c3动画
-
-				$('.js-fStatusPopup-content>div').hide();
-				$fNumFromBox.show();
-				// $routeFromBox.hide(); $routeToBox.hide();$numDateBox.hide();$numDateBox.hide();
-
-				$fStatusContent.css('z-index','1'); //覆盖cancel按钮
-				if(numZoomShow){
-					$selectFlightWay.css({'height':'auto','margin-top':'40px'}).addClass('animated fadeInUp'); //展示单程往返
-					$numZoom.addClass('animated fadeInUp').css('visibility','visible');
-					numZoomShow = false; //重新点击出发地时再次显示目的地、日期、人数的动画
-					setTimeout(function(){
-						$numZoom.removeClass('animated fadeInUp');
-					}, 2200);
-				}
-			}
-		});
-
-		/* 点击航班动态 按地址查询 出发地 */
-		$routeFromInput.click(function(){
-			if(winWidth>1300){
-				$fStatusBox.css('left',0);
-			}else if(winWidth<=1300){
-				$fStatusBox.css({'top':-90,'left':0});
-			}
-			fStatusPopupShow(); //增加c3动画
-
-			$('.js-fStatusPopup-content>div').hide();
-			$routeFromBox.show();
-		});
-
-		/* 点击航班动态 按地址查询 目的地 */
-		$routeToInput.click(function(){
-			if(winWidth>1300){
-				$fStatusBox.css('left',350);
-			}else if(winWidth<=1300){
-				$fStatusBox.css({'top':-90,'left':350});
-			}
-			fStatusPopupShow(); //增加c3动画
-
-			$('.js-fStatusPopup-content>div').hide();
-			$routeToBox.show();
-		});
-
-		/* 点击航班号日期 --- 航班动态查询 */
-		$numDate.click(function(event) {
-			if(winWidth>1300){
-				$fStatusBox.css('left',700);
-			}else if(winWidth<=1300){
-				$fStatusBox.css({'top':-10,'left':0});
-			}
-			fStatusPopupShow(); //增加c3动画
-			$fStatusContent.css('z-index','1'); //覆盖cancel按钮
-			$('.js-fStatusPopup-content>div').hide();
-			$numDateBox.show();
-		});
-
-		/* 点击航班号日期 --- 目的地查询 */
-		$routeDate.click(function(event) {
-			if(winWidth>1300){
-				$fStatusBox.css('left',700);
-			}else if(winWidth<=1300){
-				$fStatusBox.css({'top':-10,'left':0});
-			}
-			fStatusPopupShow(); //增加c3动画
-			$fStatusContent.css('z-index','1'); //覆盖cancel按钮
-			$('.js-fStatusPopup-content>div').hide();
-			$routeDateBox.show();
-		});
-
-		/* 取消 */
-		var cancel = function(){
-			numOneClick = false; //防止快速点击出发地
-
-			$numZoom.addClass('animated fadeOutDown');
-			$routeZoom.addClass('animated fadeOutDown');
-
-			$selectFlightWay.css({'height':'0','margin-top':'0'}).addClass('animated fadeOutDown'); //隐藏单程往返
-
-			$mask.fadeOut(); //隐藏遮罩层
-			$mask2.fadeOut(); //隐藏遮罩层
-
-			fStatusPopupHide(); //隐藏弹出内容层
-			// $ticketChange.hide(); //隐藏出发地和目的地切换
-
-			numZoomShow = true; //重新点击出发地时再次显示目的地、日期、人数的动画
-
-			$fStatusBox.css('left',0); //下拉框归零
-			setTimeout(function(){
-				$('.js-by-number').show();
-				$('.js-flight-way>a:first').addClass('active');
-				$('.js-flight-way>a:last').removeClass('active');
-				
-				$numZoom.removeClass('animated fadeOutDown');
-				$routeZoom.removeClass('animated fadeOutDown');
-
-				$selectFlightWay.removeClass('animated fadeOutDown');
-
-				$numZoom.css('visibility','hidden');
-	      // $routeZoom.css('visibility','hidden');
-	      $('.js-by-route').hide();
-
-	      numOneClick = true; //可以继续点击出发地
-	    }, 2200);
-		};
-
-		/* 点击遮罩层 */
-		$mask.click(function(){
-			cancel();
-		});
-		$mask2.click(function(){
-			fStatusPopupHide(); //隐藏弹出内容层
-			$(this).fadeOut();
-		});
-
-		$('.js-flight-way').click(function(event) {
-			fStatusPopupHide(); //隐藏弹出内容层
-			$mask2.fadeOut();
-		});
-
-		/* 点击取消 */
-		$('.js-route-cancel').click(function(){
-			cancel();
-		});
-
-		/* 航班号选择 --- 航班动态查询 */
-		$fNumberFromMenuSub.on('click','>li',function(){
-			var text = $(this).attr('title');
-			$fNumberFromInput.val(text);
-			if(winWidth>1300){
-				$fStatusBox.css('left',700);
-			}else if(winWidth<=1300){
-				$fStatusBox.css({'top':-10,'left':0});
-			}
-			$fNumFromBox.slideUp(function(){ //酒店出发地隐藏
-				$('.js-numDate-result').click(); //日期展示
-				$numDateBox.slideDown(); //酒店日期显示
-			}); 
-		});
-
-		/* 航班号选择 --- 出发地查询 */
-		$routeFromMenuSub.on('click','>li',function(){
-			var text = $(this).attr('title');
-			$routeFromInput.val(text);
-			if(winWidth>1300){
-				$fStatusBox.css('left',350);
-			}else if(winWidth<=1300){
-				$fStatusBox.css({'top':-90,'left':350});
-			}
-			$routeFromBox.slideUp(function(){ //酒店出发地隐藏
-				$routeToBox.slideDown(); //酒店日期显示
-			}); 
-		});
-
-		/* 航班号选择 --- 目的地查询 */
-		$routeToMenuSub.on('click','>li',function(){
-			var text = $(this).attr('title');
-			$routeToInput.val(text);
-			if(winWidth>1300){
-				$fStatusBox.css('left',700);
-			}else if(winWidth<=1300){
-				$fStatusBox.css({'top':-10,'left':0});
-			}
-			$routeToBox.slideUp(function(){ //航班动态目的地隐藏
-				$('.js-routeDate-result').click(); //日期展示
-				$routeDateBox.slideDown(); //酒店日期显示
-			}); 
-		});
-
-	},
-
-	/* 改变酒店选择人数 */
-	changeWidth:function(){
-		// 动态改变酒店房间外层div的宽度和left
-		var $hotelContent = $('.js-hotelPopup-content');
-		var $hotelPeople = $('.js-hotelPopup-people');
-		var changeWidth = function(){
-			var changeArray = [];
-			var childArray = $('.js-hotelChild-num');
-			$.each(childArray,function(idx,val){
-				changeArray.push($(val).html());
-			});
-			var changeNum = Math.max.apply(Math,changeArray);
-
-			// 外层移动
-			if(changeNum==0){
-				$hotelContent.css('left',0);
-				$hotelPeople.width(710);
-			}
-			if(changeNum==1){
-				$hotelContent.css('left',-200);
-				$hotelPeople.width(910);
-			}
-			if(changeNum==2){
-				$hotelContent.css('left',-400);
-				$hotelPeople.width(1112);
-			}
-			if(changeNum==3){
-				$hotelContent.css('left',-610);
-				$hotelPeople.width(1320);
-			}
-		};
-		changeWidth();
-	},
-
-	/* 机票人数选择 */
-	selectPeople:function(){
-		var adultNum = 1;
-		var childNum = 0;
-		var infantNum = 0;
-
-		var $adultResult = $('.js-p-adult>span');
-		var $childResult = $('.js-p-child>span');
-		var $infantResult = $('.js-p-infant>span');
-
-		// 成人
-		var adult = function(){
-			$('.js-adult-add').click(function(){
-				adultNum++;
-				$(this).siblings('span').html(adultNum);
-				$adultResult.html(adultNum); //动态赋值
-				adultNum==2 && $(this).siblings('.sub-people').removeClass('off-sub-operation');
-			});
-			$('.js-adult-sub').click(function(){
-				adultNum--;
-				if(adultNum<2){
-					adultNum=1;
-					$(this).addClass('off-sub-operation');
-				}
-				$(this).siblings('span').html(adultNum);
-				$adultResult.html(adultNum); //动态赋值
-			});
-		};
-
-		// 小孩
-		var child = function(){
-			$('.js-child-add').click(function(){
-				childNum++;
-				$(this).siblings('span').html(childNum);
-				$childResult.html(childNum); //动态赋值
-				if(childNum==1){
-					$(this).siblings('.sub-people').removeClass('off-sub-operation');
-					$(this).parent().removeClass('disable');
-				}
-			});
-			$('.js-child-sub').click(function(){
-				childNum--;
-				if(childNum<1){
-					childNum=0;
-					$(this).addClass('off-sub-operation');
-					$(this).parent().addClass('disable');
-				}
-				$(this).siblings('span').html(childNum);
-				$childResult.html(childNum); //动态赋值
-			});
-		};
-
-		// 婴儿
-		var infant = function(){
-			$('.js-infant-add').click(function(){
-				infantNum++;
-				$(this).siblings('span').html(infantNum);
-				$infantResult.html(infantNum); //动态赋值
-				if(infantNum==1){
-					$(this).siblings('.sub-people').removeClass('off-sub-operation');
-					$(this).parent().removeClass('disable');
-				}
-			});
-			$('.js-infant-sub').click(function(){
-				infantNum--;
-				if(infantNum<1){
-					infantNum=0;
-					$(this).addClass('off-sub-operation');
-					$(this).parent().addClass('disable');
-				}
-				$(this).siblings('span').html(infantNum);
-				$infantResult.html(infantNum); //动态赋值
-			});
-		};
-		adult();
-		child();
-		infant();
-
-		/* 人数提示 */
-		var showAdultTip = 0;
-		var showChildTip = 0;
-		var showInfantTip = 0;
-		var tipFn = function(className,content,showTip){
-			$(className).mouseenter(function(event) {
-				showTip = layer.tips(content, className,{
-					tips: [2, '#8ec060'],
-					time: 0
-				});
-			}).mouseleave(function(event) {
-				layer.close(showTip);
-			});
-		};
-		tipFn('.adult-tip','Adult',showAdultTip);
-		tipFn('.child-tip','Passengers who have not reached their 12th birthday by the date of the last flight are considered child passengers Children 7 years old and older can travel alone with the consent of their parents.',showChildTip);
-		tipFn('.infant-tip','Passengers 7 days old up to those who have not reached their 2nd birthday travel with infant status.',showInfantTip);
 	},
 
 	/* banner */
@@ -1699,14 +2230,23 @@ var LanmeiAirlines = {
 			autoplay: true,
 			autoplaySpeed: 3000,
 			responsive: [
-			{
-				breakpoint: 992,
-				settings: {
-					slidesToShow: 2,
-					slidesToScroll: 1,
-					autoplay: false,
+				{
+					breakpoint: 992,
+					settings: {
+						slidesToShow: 2,
+						slidesToScroll: 1,
+						autoplay: false,
+					}
+				},
+				{
+					breakpoint: 767,
+					settings: {
+						slidesToShow: 1,
+						slidesToScroll: 1,
+						autoplay: false,
+						touchMove:true,
+					}
 				}
-			}
 			],
 		});
 	},
@@ -1839,14 +2379,23 @@ var LanmeiAirlines = {
 				touchMove: false,
 				variableWidth: true,
 				responsive: [
-				{
-					breakpoint: 992,
-					settings: {
-						slidesToShow: 2,
-						slidesToScroll: 1,
-						// touchMove:true,
+					{
+						breakpoint: 992,
+						settings: {
+							slidesToShow: 2,
+							slidesToScroll: 1,
+							// touchMove:true,
+						}
+					},
+					{
+						breakpoint: 767,
+						settings: {
+							slidesToShow: 1,
+							slidesToScroll: 1,
+							touchMove:true,
+							infinite: true,
+						}
 					}
-				}
 				],
 			});
 		};
@@ -1898,14 +2447,23 @@ var LanmeiAirlines = {
 			touchMove: false,
 			variableWidth: true,
 			responsive: [
-			{
-				breakpoint: 992,
-				settings: {
-					slidesToShow: 1,
-					slidesToScroll: 1,
-					// touchMove:true,
-				}
-			}
+				{
+					breakpoint: 992,
+					settings: {
+						slidesToShow: 1,
+						slidesToScroll: 1,
+						// touchMove:true,
+					}
+				},
+				{
+					breakpoint: 767,
+					settings: {
+						slidesToShow: 1,
+						slidesToScroll: 1,
+						touchMove:true,
+						infinite: true,
+					}
+				},
 			],
 		});
 	},
@@ -1920,13 +2478,22 @@ var LanmeiAirlines = {
 			touchMove: false,
 			variableWidth: true,
 			responsive: [
-			{
-				breakpoint: 992,
-				settings: {
-					slidesToShow: 2,
-					// touchMove:true,
-				}
-			}
+				{
+					breakpoint: 992,
+					settings: {
+						slidesToShow: 2,
+						// touchMove:true,
+					}
+				},
+				{
+					breakpoint: 767,
+					settings: {
+						slidesToShow: 1,
+						slidesToScroll: 1,
+						touchMove:true,
+						infinite: true,
+					}
+				},
 			],
 		});
 	},
@@ -1951,6 +2518,16 @@ var LanmeiAirlines = {
 				}
 			}
 			],
+		});
+
+		// 移动端
+		$('.js-mComfortHotel-content').slick({
+			dots: false,
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			infinite: true,
+			touchMove: true,
+			variableWidth: true,
 		});
 	},
 

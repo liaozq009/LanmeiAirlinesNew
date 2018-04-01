@@ -25,6 +25,7 @@
 	<link rel="stylesheet" href="common/EN/fonts/lm-iconfont.css">
 	<link rel="stylesheet" href="libs/daterange/daterangepicker.css">
 	<link rel="stylesheet" href="libs/lmslick/slick.css">
+	<link rel="stylesheet" href="libs/mobile-libs/date/lm-dateRange.css">
 	<link rel="stylesheet" href="common/EN/css/animate.css">
 	<link rel="stylesheet" href="libsEdit/css/lanmeiLibsEdit.css">
 	<link rel="stylesheet" href="common/EN/css/Lanmei-common.css">
@@ -436,12 +437,13 @@
 							<span class="m-city-from js-m-Fcity">Phnom Penh/PNH</span>
 							<i class="local-change js-ticket-change animated fadeInUp"></i>
 						</div>
+						<i class="local-change m-local-change js-mTicket-change animated fadeInUp"></i>
 						<div class="to-com js-ticket-to">
 							<input type="text" class="t-to-input js-to-input" data="js-to-menu" placeholder="To" autocomplete="off">
 							<span class="m-city-to js-m-Tcity">Phnom Penh/PNH</span>
 						</div>
 						<div class="date-com js-ticket-date">
-							<span class="date-result js-date-result"></span>
+							<span class="date-result js-date-result" id="js-mDate-result"></span>
 						</div>
 						<div class="people-com js-ticket-people">
 							<div class="t-people-result">
@@ -459,9 +461,9 @@
 				<!-- 下拉选择菜单 -->
 				<div class="popup-container js-popup-container">
 					<div class="popup-title-wrap">
-						<p class="popup-title js-popup-title">Select destination</p>
+						<p class="popup-title js-popup-title">Select origin</p>
 						<img src="images/EN/close-menu.png" class="popup-close js-popup-close" alt="">
-						<input type="text" name="" class="city-search js-city-search" value="" placeholder="Search">
+						<input type="text" name="" class="city-search js-city-search" value="" data="js-from-menu" placeholder="Search">
 					</div>
 					<div class="popup-box js-popup-box">
 						<div class="popup-content popup-inactive js-popup-content">
@@ -520,6 +522,7 @@
 										</div>
 									</div>
 								</div>
+								<div class="m-select-people"><a href="javascript:;" class="js-mSelect-people">SAVE</a></div>
 							</div>
 						</div>
 					</div>
@@ -571,16 +574,18 @@
 				</form>
 				<!-- 下拉选择菜单 -->
 				<div class="popup-container js-popup-container">
+					<div class="popup-title-wrap">
+						<p class="popup-title js-hotelPopup-title">Select destination</p>
+						<img src="images/EN/close-menu.png" class="popup-close js-hotelPopup-close" alt="">
+						<input type="text" name="" class="city-search js-hotelCity-search" value="" data="js-hotelFrom-menu" placeholder="Search">
+					</div>
 					<div class="popup-box js-hotelPopup-box">
 						<div class="popup-content hotel-popup-content popup-inactive js-hotelPopup-content">
 							<!-- 出发地目的地选择 -->
 							<div class="popup-hotel-from popup-airport js-hotelPopup-from">
 								<h2>Choose the hotel you want :</h2>
 								<ul class="flight-list-wrap hotel-list-wrap js-hotelFrom-menu">
-									<li title="Hong Phann Guest House">Hong Phann Guest House</li>
-									<li title="Phkar Chhouk Tep Monireth Hotel">Phkar Chhouk Tep Monireth Hotel</li>
-									<li title="Tt Guest House">Tt Guest House</li>
-									<li title="Phkar Chhouk Tep 2 Hotel">Phkar Chhouk Tep 2 Hotel</li>
+								 
 								</ul>
 							</div>
 							<!-- 日期选择 -->
@@ -693,6 +698,7 @@
 									</div>
 									<p class="add-rooms-btn js-add-rooms">Add</p>
 								</div>
+								<div class="m-select-rooms"><a href="javascript:;" class="js-mSelect-rooms">SAVE</a></div>
 							</div>
 						</div>
 					</div>
@@ -746,10 +752,13 @@
 					<div class="select-fStatus-time select-air-com js-status-com js-by-route" style="display: none;">
 						<div class="route-from-box from-com js-route-from animated fadeInUp">
 							<input type="text" class="t-from-input js-routeFrom-input" name="fromCity" value="" data="js-routeFrom-menu" placeholder="Origin" autocomplete="off">
-								<i class="local-change js-route-change animated fadeInUp"></i>
+							<span class="m-city-from js-m-fRouteCity">Phnom Penh/PNH</span>
+							<i class="local-change js-route-change animated fadeInUp"></i>
 						</div>
+						<i class="local-change m-local-change js-mfStatus-change animated fadeInUp"></i>
 						<div class="route-to-box to-com js-route-to animated fadeInUp">
 							<input type="text" class="t-to-input js-routeTo-input" name="toCity" value="" data="js-routeTo-menu" placeholder="Destination" autocomplete="off">
+							<span class="m-city-from js-m-tRouteCity">Phnom Penh/PNH</span>
 						</div>
 						<div class="route-date-box fStatus-date js-route-date animated fadeInUp">
 							<span class="date-result js-routeDate-result"></span>
@@ -762,6 +771,11 @@
 				</form>
 				<!-- 下拉选择菜单 -->
 				<div class="popup-container js-popup-container">
+					<div class="popup-title-wrap">
+						<p class="popup-title js-fStatusPopup-title">Select destination</p>
+						<img src="images/EN/close-menu.png" class="popup-close js-fStatusPopup-close" alt="">
+						<input type="text" name="" class="city-search js-fStatusCity-search" value="" data="js-fNumber-menu" placeholder="Search">
+					</div>
 					<div class="popup-box js-fStatusPopup-box">
 						<div class="popup-content popup-inactive js-fStatusPopup-content">
 							<!-- 出发地目的地选择 -->
@@ -785,12 +799,7 @@
 							<div class="popup-fNum-from popup-airport js-fNumBox-from">
 								<h2>Flight :</h2>
 								<ul class="flight-list-wrap js-fNumber-menu">
-									<li title="LQ9503">LQ9503</li>
-									<li title="LQ503">LQ503</li>
-									<li title="LQ9502">LQ9502</li>
-									<li title="LQ502">LQ502</li>
-									<li title="LQ806">LQ806</li>
-									<li title="LQ807">LQ807</li>
+									
 								</ul>
 							</div>
 							<!-- 路线日期选择 -->
@@ -1071,7 +1080,7 @@
 	<!-- 推荐酒店 -->
 	<section class="lm-section-hotel">
 		<div class="section-content-title">POPULAR HOTELS<h2>Choose a comfortable hotel</h2></div>
-		<div class="comfortHotel-content js-comfortHotel-content">
+		<div class="comfortHotel-content pc-comfortHotel-content js-comfortHotel-content">
 			<div class="comfortHotel-item comfortHotel-item-1">
 				<div class="hotel-one hotel-com">
 					<div class="hotel-img">
@@ -1153,6 +1162,93 @@
 				</div>
 			</div>
 		</div>
+		<!-- 移动端推荐酒店 -->
+		<div class="comfortHotel-content mobile-comfortHotel-content js-mComfortHotel-content">
+			<div class="comfortHotel-item comfortHotel-item-1">
+				<div class="hotel-one hotel-com">
+					<div class="hotel-img">
+						<img src="imgage_demo/comfortHotel-1.jpg" alt="">
+						<a href="javascript:;" class="book-hotel">Book now</a>
+						<b></b>
+						<p class="save-percent">Save 40%</p>
+					</div>
+					<div class="hotel-detail">
+						<h2>Oasis Hotel</h2>
+						<p class="stars">
+							<img src="images/EN/comfortHotel-star.png" alt="">
+							<img src="images/EN/comfortHotel-star.png" alt="">
+							<img src="images/EN/comfortHotel-star.png" alt="">
+						</p>
+						<p class="country">Republic of Bashkortostan Russia</p>
+						<p class="area">Gogolya 155 Pribrezhny District Sterlitamak</p>
+						<p class="price-wrap"><span class="price">$ 7.05+</span><span class="night">/ night</span></p>
+					</div>
+				</div>
+			</div>
+			<div class="comfortHotel-item comfortHotel-item-2">
+				<div class="hotel-two hotel-com">
+					<div class="hotel-img">
+						<img src="imgage_demo/comfortHotel-2.jpg" alt="">
+						<a href="javascript:;" class="book-hotel">Book now</a>
+						<b></b>
+						<p class="save-percent">Save 30%</p>
+					</div>
+					<div class="hotel-detail">
+						<h2>Amaks Tourist Hotel</h2>
+						<p class="stars">
+							<img src="images/EN/comfortHotel-star.png" alt="">
+							<img src="images/EN/comfortHotel-star.png" alt="">
+							<img src="images/EN/comfortHotel-star.png" alt="">
+						</p>
+						<p class="country">Republic of Bashkortostan Russia</p>
+						<p class="area">Richarda Zorge Street 17 Ufa</p>
+						<p class="price-wrap"><span class="price">$ 33.28+</span><span class="night">/ night</span></p>
+					</div>
+				</div>
+			</div>
+			<div class="comfortHotel-item comfortHotel-item-3">
+				<div class="hotel-one hotel-com">
+					<div class="hotel-img">
+						<img src="imgage_demo/comfortHotel-3.jpg" alt="">
+						<a href="javascript:;" class="book-hotel">Book now</a>
+						<b></b>
+						<p class="save-percent">Save 20%</p>
+					</div>
+					<div class="hotel-detail">
+						<h2>Svoyak Hotel</h2>
+						<p class="stars">
+							<img src="images/EN/comfortHotel-star.png" alt="">
+							<img src="images/EN/comfortHotel-star.png" alt="">
+							<img src="images/EN/comfortHotel-star.png" alt="">
+						</p>
+						<p class="country">Republic of Bashkortostan Russia</p>
+						<p class="area">Entuziastov Street 3 Ufa</p>
+						<p class="price-wrap"><span class="price">$ 26.42+</span><span class="night">/ night</span></p>
+					</div>
+				</div>
+			</div>
+			<div class="comfortHotel-item comfortHotel-item-4">
+				<div class="hotel-two hotel-com">
+					<div class="hotel-img">
+						<img src="imgage_demo/comfortHotel-2.jpg" alt="">
+						<a href="javascript:;" class="book-hotel">Book now</a>
+						<b></b>
+						<p class="save-percent">Save 10%</p>
+					</div>
+					<div class="hotel-detail">
+						<h2>Azimut Hotel Ufa</h2>
+						<p class="stars">
+							<img src="images/EN/comfortHotel-star.png" alt="">
+							<img src="images/EN/comfortHotel-star.png" alt="">
+							<img src="images/EN/comfortHotel-star.png" alt="">
+						</p>
+						<p class="country">Republic of Bashkortostan Russia</p>
+						<p class="area">81 Pr Oktyabrya Ufa</p>
+						<p class="price-wrap"><span class="price">$ 41.10+</span><span class="night">/ night</span></p>
+					</div>
+				</div>
+			</div>
+		</div>
 	</section>
 
 	<!-- 澜湄新闻 -->
@@ -1224,6 +1320,7 @@
 	<script src="libs/lmslick/slick.min.js"></script>
 	<script src="libs/daterange/moment.js"></script>
 	<script src="libs/daterange/daterangepicker.js"></script>
+	<script src="libs/mobile-libs/date/lm-dateRange.js"></script>
 
 	<!-- 公共JS -->
 	<script src="common/EN/js/Lanmei-common.js"></script>
