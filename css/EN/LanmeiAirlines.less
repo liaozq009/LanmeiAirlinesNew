@@ -858,6 +858,40 @@ body{
 		}
 	}
 }
+.select-fares{
+	width: 330px;
+	height: 230px;
+	margin: 0 auto;
+	padding:0 10px;
+	overflow: inherit;
+	>div{
+		position: relative;
+		margin-right: 0;
+		float: none;
+		visibility: visible;
+		.faresDate-container{width: 600px;}
+		.fares-people-container{
+			top: 62px;
+			box-shadow: none;
+		}
+	}
+	.fares-search{
+		display: block;
+		width: 310px;
+		height: 60px;
+		line-height: 60px;
+		text-align: center;
+		font-size: 20px;
+		color: #fff;
+		border: none;
+		outline: none;
+		border-radius: 2px;
+		background: @webkit-linear;
+		background: @o-linear;
+		background: @moz-linear;
+		background: @linear;
+	}
+}
 .search-flight-wrap{
 	visibility: hidden;
 	margin-top: 20px;
@@ -1477,45 +1511,6 @@ body{
 				}
 			}
 		}
-		&:hover{
-			.hotel-img{
-				.book-hotel{
-					display: block;
-					transition:all .3s;
-					-webkit-transition:all .3s;
-				}
-				>b{
-					display: block;
-					transition:all .3s;
-					-webkit-transition:all .3s;
-				}
-			}
-			.hotel-detail{
-				background: @purple;
-				transition:all .3s;
-				-webkit-transition:all .3s;
-				>h2{
-					color: #fff;
-					transition:all .3s;
-					-webkit-transition:all .3s;
-				}
-				.country{
-					.whiteRgb(.7);
-					transition:all .3s;
-					-webkit-transition:all .3s;
-				}
-				.area{
-					.whiteRgb(.4);
-					transition:all .3s;
-					-webkit-transition:all .3s;
-				}
-				.night{
-					.whiteRgb(.4);
-					transition:all .3s;
-					-webkit-transition:all .3s;
-				}
-			}
-		}
 	}
 	.hotel-one{
 		.hotel-detail{
@@ -2130,6 +2125,47 @@ body{
 			}
 		}
 	}
+	.lm-section-hotel .hotel-com{
+		&:hover{
+			.hotel-img{
+				.book-hotel{
+					display: block;
+					transition:all .3s;
+					-webkit-transition:all .3s;
+				}
+				>b{
+					display: block;
+					transition:all .3s;
+					-webkit-transition:all .3s;
+				}
+			}
+			.hotel-detail{
+				background: @purple;
+				transition:all .3s;
+				-webkit-transition:all .3s;
+				>h2{
+					color: #fff;
+					transition:all .3s;
+					-webkit-transition:all .3s;
+				}
+				.country{
+					.whiteRgb(.7);
+					transition:all .3s;
+					-webkit-transition:all .3s;
+				}
+				.area{
+					.whiteRgb(.4);
+					transition:all .3s;
+					-webkit-transition:all .3s;
+				}
+				.night{
+					.whiteRgb(.4);
+					transition:all .3s;
+					-webkit-transition:all .3s;
+				}
+			}
+		}
+	}
 }
 
 /* pad端 */
@@ -2266,6 +2302,8 @@ body{
 
 /* 手机端以外 */
 @media (min-width: 768px) {
+	.m-nav-mask{display: none;}
+	.m-nav-back{display: none;}
 	.popup-container{position: relative;}
 	.popup-close{display: none;}
 	.popup-box{
@@ -2683,7 +2721,198 @@ body{
 		.h-right > div{display: none;}
 		.h-right .h-login{display: block;}
 	}
+	.lm-section-main{top: 0;overflow: initial;}
+	.content-com-wrap{top: 0;}
 	.lm-aside-flight,.lm-important{display: none;}
+	.lm-nav-wrap{
+		.nav-container {
+			.blackBgRgb(.8);
+			.nav-menu-close{
+				right: 0;
+				top: 14px;
+				padding-left: 30px;
+				font-size: 16px;
+				background-size: 20px;
+			}
+			.m-nav-1{
+				position: absolute;
+				width: 270px;
+				padding-top: 80px;
+				background: none;
+				>li{
+					margin-bottom: 30px;
+					>a{font-size: 16px;}
+					>i{display: none;}
+				}
+			}
+			.m-nav-2{
+				position: absolute;
+				width: 270px;
+				padding-top: 80px;
+				padding-left: 30px;
+				background: none;
+				li{
+					margin-bottom: 30px;
+					>a{font-size: 16px;}
+					>i{display: none;}
+				}
+			}
+			.m-nav-3{
+				position: absolute;
+				width: 270px;
+				padding-top: 80px;
+				padding-left: 30px;
+				background: none;
+				li{
+					margin-bottom: 30px;
+					>a{font-size: 16px;}
+					>i{display: none;}
+				}
+			}
+			.nav-settings{
+				position: absolute;
+				top: 408px;
+				z-index: 12;
+				width: 100%;
+				padding:20px 30px;
+				font-size: 16px;
+				border-top: 1px solid #ccc;
+				.h-lang{
+					text-align: right;
+					height: 30px;
+					line-height: 30px;
+					.lang-menu{
+						position: absolute;
+						top: -100px;
+						right: 20px;
+						width: 180px;
+						height: 100px;
+						border-radius: 2px;
+						background: #fff;
+						padding: 10px;
+						text-align: left;
+						box-shadow: 0 0 50px 0 rgba(31, 44, 92, 0.2);
+						>h2{
+							.purpleRgb(.8);
+							font-size: 20px;
+							font-family: @FBold;
+						}
+						>a{
+							display: block;
+							font-size: 16px;
+							.blackRgb(.7);
+							height: 34px;
+							line-height: 40px;
+							margin-top: 10px;
+							margin-left: 10px;
+							padding-left: 40px;
+							transition:all .3s;
+							-webkit-transition:all .3s;
+							&:hover{
+								color: @green;
+								transition:all .3s;
+								-webkit-transition:all .3s;
+							}
+						}
+						.lang-en{
+							margin-top: 0;
+							background: url('@{url}lang-en.png') left center no-repeat;
+						}
+						.lang-zh{
+							background: url('@{url}lang-zh.png') left center no-repeat;
+						}
+						&::before{
+							position: absolute;
+							bottom: -14px;
+							right: 12px;
+							z-index: 9;
+							filter:alpha(opacity=0);
+							content: "";
+							display: block;
+							width: 0;
+							height: 0;
+							border-left: 14px solid transparent;
+							border-right: 14px solid transparent;
+							border-top: 14px solid #fff;
+						}
+					}
+					>span{
+						float: left;
+						.whiteRgb(.7);
+					}
+				}
+				.customer-service{
+					width: 100%;
+					height: 30px;
+					line-height: 30px;
+					margin-top: 20px;
+					.phone-menu{
+						display: none;
+						position: absolute;
+						top: -120px;
+						right: 30px;
+						width: 220px;
+						height: 178px;
+						border-radius: 2px;
+						background: #fff;
+						padding: 20px;
+						text-align: left;
+						box-shadow: 0 0 50px 0 rgba(31, 44, 92, 0.2);
+						>h2{
+							.purpleRgb(.8);
+							font-size: 20px;
+							font-family: @FBold;
+						}
+						>p{
+							font-size: 16px;
+							.blackRgb(.7);
+							height: 25px;
+							line-height: 32px;
+							margin-top: 10px;
+							margin-left: 10px;
+							padding-left: 40px;
+							background: url('@{url}phone-bg.png') left center no-repeat;
+						}
+						.p1{margin-top: 20px;}
+						&::before{
+							position: absolute;
+							bottom: -14px;
+							left: 96px;
+							z-index: 9;
+							filter:alpha(opacity=0);
+							content: "";
+							display: block;
+							width: 0;
+							height: 0;
+							border-left: 14px solid transparent;
+							border-right: 14px solid transparent;
+							border-top: 14px solid #fff;
+						}
+					}
+					>span{
+						.whiteRgb(.7);
+					}
+				}
+			}
+		}
+		.m-nav-back{
+			display: none;
+			position: absolute;
+			right: 30px;
+	    top: 6px;
+	    z-index: 12;
+		}
+		.m-nav-mask{
+			display: none;
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 96;
+			width: 100%;
+			height: 100%;
+			.blackBgRgb(.3);
+		}
+	}
 	.content-com-inner{
 		width: 100%;
 		left: 0;
@@ -2714,7 +2943,7 @@ body{
 		>form{
 			padding-left: 15px;
 			padding-right: 15px;
-			margin-top: 140px;
+			margin-top: 80px;
 		}
 		.tips-com{font-size: 18px;display: none;}
 		.select-way{
@@ -2881,7 +3110,7 @@ body{
 		height: 60px;
 		top: auto;
 		left: 0;
-		bottom: 30px;
+		bottom: 90px;
 		padding-left: 15px;
 		padding-right: 15px;
 		background: none;
@@ -3328,8 +3557,8 @@ body{
 	}
 	.popup-container.is-show{
 		visibility: visible;
-		-webkit-transform: translateY(0);
-		transform: translateY(0);
+		-webkit-transform: translateY(-60px);
+		transform: translateY(-60px);
 		transition: -webkit-transform .3s;
 		transition: transform .3s;
 		transition: transform .3s,-webkit-transform .3s;
@@ -3346,6 +3575,7 @@ body{
 		margin-bottom: 20px;
 	}
 	.lm-section-fares{margin-bottom: 10px;}
+	.lm-section-news{margin-bottom: 40px;}
 	.section-content-title{
 		font-size: 36px;
 		height: 50px;
@@ -3363,6 +3593,7 @@ body{
 				width: 80px;
 				line-height: 16px;
 				padding-top: 4px;
+				font-size: 12px;
 			}
 			.anchor-center{
 				margin-left: 10px;
@@ -3411,7 +3642,10 @@ body{
 					margin-top: 20px;
 					font-size: 12px;
 				}
-				.p2{margin-top: 6px;}
+				.p2{
+					margin-top: 10px;
+					font-size: 10px;
+				}
 			}
 			.fares-price{
 				width: 90px;
@@ -3466,6 +3700,12 @@ body{
 		.travel-item{
 			width: 290px;
 			margin-left: 15px;
+			.travel-inner {
+				.price-wrap,.locale-wrap{margin-top: 10px;}
+				> h2{font-size: 16px;}
+				.nights{font-size: 12px;}
+				.view{margin-top: 20px;}
+			}
 		}
 	}
 	.mobile-comfortHotel-content{
@@ -3482,13 +3722,80 @@ body{
 			}
 			.hotel-detail{
 				width: 290px;
-				height: 86px;
+				height: 66px;
 				padding:10px;
+				>h2{font-size: 16px;}
 				.stars,.country,.area{display: none;}
-				.price-wrap{margin-top: 10px;}
+				.price-wrap{
+					margin-top: 10px;
+					.price{font-size: 14px;}
+					.night{font-size: 12px;}
+				}
 			}
 		}
 	}
 	.pc-comfortHotel-content{display: none;}
+	.lm-section-news .news-wrap{
+		padding:0 15px;
+		.news-detail{
+			width: 100%;
+			height: 90px;
+			float: none;
+			.news-arrow {
+				height: 30px;
+				line-height: 30px;
+				> p{
+					font-size: 12px;
+					margin-left: 10px;
+					margin-right: 10px;
+				}
+				img{width: 6px;}
+			}
+			.news-info{
+				padding: 16px 10px;
+				> div {
+					>p{
+						display: none;
+					}
+					> h2 > a{
+						height: 34px;
+						font-size: 16px;
+					}
+					.news-info-detail{display: none;}
+				}
+			}
+		}
+		.news-content{
+			margin-left: 0;
+		}
+	}
+	.lm-footer{
+		height: 240px;
+		padding-top: 20px;
+		.lm-logo{
+			width: 100px;
+		}
+		.facebook{
+			margin-top: 12px;
+			>a{
+				i{font-size: 20px;}
+			}
+			.a1{margin-right: 20px;}
+		}
+		.f-email{
+			margin-top: 12px;
+			>img{width: 20px;margin-right: 12px;}
+		}
+		.f-locate{
+			margin-top: 8px;
+			a{font-size: 12px;}
+			>img{width: 20px;margin-right: 12px;}
+		}
+		.copyright{
+			margin-top: 8px;
+			font-size: 12px;
+			a{font-size: 12px;}
+		}
+	}
 
 }
