@@ -2640,6 +2640,24 @@ var LanmeiAirlines = {
 		$('html').click(function(event) {
 			$faresPeople.hide();
 		});
+
+		/* 人数提示 */
+		var showAdultTip = 0;
+		var showChildTip = 0;
+		var showInfantTip = 0;
+		var tipFn = function(className,content,showTip){
+			$(className).mouseenter(function(event) {
+				showTip = layer.tips(content, className,{
+					tips: [2, '#8ec060'],
+					time: 0
+				});
+			}).mouseleave(function(event) {
+				layer.close(showTip);
+			});
+		};
+		tipFn('.adult-tip-fares','Adult',showAdultTip);
+		tipFn('.child-tip-fares','Passengers who have not reached their 12th birthday by the date of the last flight are considered child passengers Children 7 years old and older can travel alone with the consent of their parents.',showChildTip);
+		tipFn('.infant-tip-fares','Passengers 7 days old up to those who have not reached their 2nd birthday travel with infant status.',showInfantTip);
 	},
 
 	/* 推荐旅游 */
