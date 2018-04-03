@@ -85,11 +85,18 @@
 				</div>
 			</div>
 			<div class="v-line"><img src="images/EN/v-line.png" alt="line"></div>
+			<!-- <div class="h-login success-h-login"> -->
 			<div class="h-login">
 				<a href="javascript:;" class="loginBtn">
-					<img src="images/EN/login.png" alt="login">
+					<img src="images/EN/login.png" class="login-icon" alt="login">
+					<img src="images/EN/m-login.png" class="m-login-icon" alt="login">
 					<span>Login</span>
 				</a>
+				<div class="login-menu js-login-menu">
+					<!-- <a href="javascript:;" class="lm-currency" data="en">180</a> -->
+					<a href="javascript:;" class="lm-personal-center" data="en">Personal center</a>
+					<a href="javascript:;" class="lm-logout" data="zh">Logout</a>
+				</div>
 			</div>
 			<div class="dot-login"><img src="images/EN/dot-login.png" alt="dot-login"></div>
 			<div class="h-registered">
@@ -169,7 +176,7 @@
 					<!-- <h2 class="loginTitle">Registered</h2>
 						<span class="verifyInfo">Account or password error !</span> -->
 						<form class="registerWrapper" method="POST" action="">
-							<h2>Registered</h2>
+							<h2>Sign up</h2>
 							<!-- <p>There have been accounts ? <a href="#" data-toggle="modal" data-target="#logonModal">Login</a></p> -->
 							<img src="images/EN/verticalTitleLine.png">
 							<div class="registerContent">
@@ -473,7 +480,7 @@
 							<span class="date-result js-date-result" id="js-mDate-result"></span>
 						</div>
 						<div class="people-com js-ticket-people">
-							<div class="t-people-result">
+							<div class="t-people-result hidden-infant">
 								<p class="p-adult js-p-adult">x <span>1</span></p>
 								<p class="p-child js-p-child">x <span>0</span></p>
 								<p class="p-infant js-p-infant">x <span>0</span></p>
@@ -515,7 +522,7 @@
 							<div class="popup-people js-popup-people">
 								<p class="people-title">Number of passengers :</p>
 								<div class="select-people-container">
-									<div class="s-adult s-people-com">
+									<div class="s-adult s-people-com js-s-adult">
 										<div class="people-prompt">
 											<p class="p1"><img src="images/EN/adult-icon.png">Adult</p>
 											<p class="p2 adult-tip"><img src="images/EN/prompt-icon.png">( 12+ )</p>
@@ -526,25 +533,25 @@
 											<a href="javascript:;" class="add-people js-adult-add"></a>
 										</div>
 									</div>
-									<div class="s-child s-people-com">
+									<div class="s-child s-people-com js-s-child">
 										<div class="people-prompt">
 											<p class="p1"><img src="images/EN/child-icon.png">Child</p>
 											<p class="p2 child-tip"><img src="images/EN/prompt-icon.png">( 2 - 11 )</p>
 										</div>
 										<div class="people-number disable">
 											<a href="javascript:;" class="sub-people off-sub-operation js-child-sub"></a>
-											<span class="adult-num">0</span>
+											<span class="child-num">0</span>
 											<a href="javascript:;" class="add-people js-child-add"></a>
 										</div>
 									</div>
 									<div class="s-infant s-people-com">
 										<div class="people-prompt">
 											<p class="p1"><img src="images/EN/infant-icon.png">Infant</p>
-											<p class="p2 infant-tip"><img src="images/EN/prompt-icon.png">( Under 2 )</p>
+											<p class="p2 infant-tip"><img src="images/EN/prompt-icon.png">( < 2 )</p>
 										</div>
 										<div class="people-number disable">
 											<a href="javascript:;" class="sub-people off-sub-operation js-infant-sub"></a>
-											<span class="adult-num">0</span>
+											<span class="infant-num">0</span>
 											<a href="javascript:;" class="add-people js-infant-add"></a>
 										</div>
 									</div>
@@ -589,7 +596,7 @@
 						<div class="people-com js-hotel-people">
 							<div class="t-people-result">
 								<p class="p-hotelRooms js-p-hotelRooms">x <span>1</span></p>
-								<p class="p-hotelAdult js-p-hotelAdult">x <span>1</span></p>
+								<p class="p-hotelAdult js-p-hotelAdult">x <span>2</span></p>
 								<p class="p-hotelChild js-p-hotelChild">x <span>0</span></p>
 							</div>
 						</div>
@@ -625,13 +632,13 @@
 								<div class="select-people-container js-rooms-container">
 									<div class="s-room-1 s-room-com s-people-com animated fadeInUp" id="js-room1-inner">
 										<p class="rooms-title">Room 1</p>
-										<div class="adult-rooms-content rooms-content-com">
+										<div class="adult-rooms-content rooms-content-com js-adultRooms-content">
 											<div class="hotel-people-prompt people-prompt">
 												<p class="p1"><img src="images/EN/adult-icon.png">Adult</p>
 											</div>
 											<div class="hotel-people-number people-number">
 												<a href="javascript:;" class="sub-people off-sub-operation js-hotelAdult-sub"></a>
-												<span class="adult-num js-hotelAdult-num">1</span>
+												<span class="adult-num js-hotelAdult-num">2</span>
 												<a href="javascript:;" class="add-people js-hotelAdult-add"></a>
 											</div>
 										</div>
@@ -641,7 +648,7 @@
 											</div>
 											<div class="hotel-people-number people-number disable">
 												<a href="javascript:;" class="sub-people off-sub-operation js-hotelChild-sub"></a>
-												<span class="adult-num js-hotelChild-num">0</span>
+												<span class="child-num js-hotelChild-num">0</span>
 												<a href="javascript:;" class="add-people js-hotelChild-add"></a>
 											</div>
 										</div>
@@ -1021,7 +1028,7 @@
 								<div class="faresDate-container js-faresDate-container"></div>
 							</div>
 							<div class="people-com js-fares-people">
-								<div class="t-people-result">
+								<div class="t-people-result hidden-infant">
 									<p class="p-adult js-p-adult">x <span>1</span></p>
 									<p class="p-child js-p-child">x <span>0</span></p>
 									<p class="p-infant js-p-infant">x <span>0</span></p>
@@ -1030,7 +1037,7 @@
 									<div class="popup-people js-faresMenu-people">
 										<p class="people-title">Number of passengers :</p>
 										<div class="select-people-container">
-											<div class="s-adult s-people-com">
+											<div class="s-adult s-people-com js-s-adult">
 												<div class="people-prompt">
 													<p class="p1"><img src="images/EN/adult-icon.png">Adult</p>
 													<p class="p2 adult-tip-fares"><img src="images/EN/prompt-icon.png">( 12+ )</p>
@@ -1041,14 +1048,14 @@
 													<a href="javascript:;" class="add-people js-adult-add"></a>
 												</div>
 											</div>
-											<div class="s-child s-people-com">
+											<div class="s-child s-people-com js-s-child">
 												<div class="people-prompt">
 													<p class="p1"><img src="images/EN/child-icon.png">Child</p>
 													<p class="p2 child-tip-fares"><img src="images/EN/prompt-icon.png">( 2 - 11 )</p>
 												</div>
 												<div class="people-number disable">
 													<a href="javascript:;" class="sub-people off-sub-operation js-child-sub"></a>
-													<span class="adult-num">0</span>
+													<span class="child-num">0</span>
 													<a href="javascript:;" class="add-people js-child-add"></a>
 												</div>
 											</div>
@@ -1059,7 +1066,7 @@
 												</div>
 												<div class="people-number disable">
 													<a href="javascript:;" class="sub-people off-sub-operation js-infant-sub"></a>
-													<span class="adult-num">0</span>
+													<span class="infant-num">0</span>
 													<a href="javascript:;" class="add-people js-infant-add"></a>
 												</div>
 											</div>

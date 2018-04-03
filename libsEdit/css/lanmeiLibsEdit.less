@@ -1,11 +1,59 @@
+@charset "utf-8";
+
+/* 引入字体 */
+@font-face {
+	font-family: CamptonBook;
+	src: url(../../common/EN/fonts/Campton/Rene.Bieder_Campton.Book.otf);
+}
+@font-face {
+	font-family: CamptonBookLight;
+	src: url(../../common/EN/fonts/Campton/Rene.Bieder_Campton.Light.otf);
+}
+@font-face {
+	font-family: CamptonBookBold;
+	src: url(../../common/EN/fonts/Campton/Rene.Bieder_Campton.Bold.otf);
+	font-weight:bold;
+}
 
 /* 定义变量 */
+@url:"../../images/EN/";
+@url2:"../../imgage_demo/";
+/* 定义颜色变量 */
 @green:#8ec060;
 @purple:#1f2c5c;
 @gray:#808080;
 @red:#d0011b;
 @link:#4aa374;
+@webkit-linear:-webkit-linear-gradient(left, #42958a 0%, #1f2c5c 100%);
+@o-linear:-o-linear-gradient(right, #42958a 0%, #1f2c5c 100%);
+@moz-linear:-moz-linear-gradient(right, #42958a 0%, #1f2c5c 100%);
+@linear:linear-gradient(to right, #42958a 0%, #1f2c5c 100%);
+@filter:alpha progid:DXImageTransform.Microsoft.gradient(startcolorstr=#42958a, endcolorstr=#1f2c5c, gradientType=1); /*ie8*/
+@FBook:CamptonBook;
+@FBold:CamptonBookBold;
+@FLight:CamptonBookLight;
 
+.greenRgb(@opacity){
+	color: rgba(142,192,96,@opacity);
+}
+.purpleRgb(@opacity){
+	color: rgba(31,44,92,@opacity);
+}
+.blackRgb(@opacity){
+	color: rgba(0,0,0,@opacity);
+}
+.blackBgRgb(@opacity){
+	background: rgba(0,0,0,@opacity);
+}
+.whiteRgb(@opacity){
+	color: rgba(255,255,255,@opacity);
+}
+.whiteBgRgb(@opacity){
+	background: rgba(255,255,255,@opacity);
+}
+.purpleBgRgb(@opacity){
+	background: rgba(31,44,92,@opacity);
+}
 
 /* Bootstrap修改样式 */
 .carousel-control{
@@ -58,7 +106,7 @@ label{
 		width: 400px;
 		// margin-top: 110px;
 		.modal-content{
-			border-radius: 10px;
+			border-radius: 2px;
 			.modal-header{
 				background: url('../../images/EN/login-close.png') no-repeat top right;
 				border-bottom:none;
@@ -83,7 +131,7 @@ label{
 						margin-left: 10px;
 						font-size: 30px;
 						position: absolute;
-						top: -8px;
+						top: -5px;
 					}
 				}
 			}
@@ -93,8 +141,8 @@ label{
 					width: 100%;
 					text-align: center;
 					color:@purple;
-					font-size:24px;
-					font-weight: bold;
+					font-size:36px;
+					font-family: @FBold;
 					margin-top: 24px;
 				}
 				.verifyInfo{
@@ -120,15 +168,29 @@ label{
 					input{
 						width: 340px;
 						height: 50px;
-						// line-height: 50px;
 						font-size: 14px;
 						color:@purple;
 						font-weight: bold;
 						padding:0 20px;
 						margin:0 auto;
-						background:#f2f2f2;
+						.purpleBgRgb(.04);
 						border:none;
 						border-radius:2px;
+					}
+					:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+						.purpleRgb(.3);font-size: 14px; 
+					}
+
+					::-moz-placeholder { /* Mozilla Firefox 19+ */
+						.purpleRgb(.3);font-size: 14px;
+					}
+
+					input:-ms-input-placeholder{
+						.purpleRgb(.3);font-size: 14px;
+					}
+
+					input::-webkit-input-placeholder{
+						.purpleRgb(.3);font-size: 14px;
 					}
 					
 					.on_changes{
@@ -139,7 +201,7 @@ label{
 						z-index: 99;
 						list-style:none; 
 						background:#FFF; 
-						border:1px solid @green; 
+						border:1px solid rgba(31, 44, 92, 0.3); 
 						display:none; 
 						padding:10px 0;
 						li{
@@ -155,7 +217,7 @@ label{
 						border-color:@green !important;
 					}
 					#LanmeiPassword{
-						margin-top: 30px;
+						margin-top: 20px;
 					}
 					#f-LanmeiPassword{
 						margin-top: 30px;
@@ -189,14 +251,17 @@ label{
 							display: inline-block;
 							width: 16px;
 							height: 16px;
-							border: 1px solid #cccccc;
+							border: 1px solid rgba(31,44,92,.7);
 							border-radius: 2px;
 							margin-right: 10px;
 							margin-top: 4px;
 							cursor: pointer;
 						}
 						.active{
-							background: @green;
+							background: @linear;
+							background: @webkit-linear;
+							background: @o-linear;
+							background: @moz-linear;
 						}
 						.active + p{
 							color: @purple;
@@ -205,12 +270,12 @@ label{
 							float: left;
 							display: inline-block;
 							text-align: left;
-							color:  @gray;
+							.purpleRgb(.7);
 							line-height: 25px;
 						}
 						a{
 							float: right;
-							color: @gray;
+							.purpleRgb(.7);
 							transition:all 0.6s;
 							-webkit-transition:all 0.6s;
 							&:hover{
@@ -231,16 +296,16 @@ label{
 					}
 					.userLoginBtn,.f-userLoginBtn{
 						margin-top: 30px;
-						background:@green;
+						background:@purple;
 						color:#fff;
-						font-size:14px;
+						font-size:18px;
 						font-weight: bold;
 						transition:all 0.6s;
 						-webkit-transition:all 0.6s;
 						&:hover{
 							transition:all 0.6s;
 							-webkit-transition:all 0.6s;
-							background: @purple;
+							background: @green;
 							color:#fff;
 						}
 					}
@@ -283,16 +348,16 @@ label{
 				width: 100%;
 				overflow: hidden;
 				text-align: center;
-				color:#cccccc;
+				.purpleRgb(.3);
 				border-top: none;
 				padding:0 30px;
 				padding-bottom: 30px;
 				a{
-					color: @green;
+					color: @purple;
 					transition:all 0.6s;
 					-webkit-transition:all 0.6s;
 					&:hover{
-						color: @purple;
+						color: @green;
 						transition:all 0.6s;
 						-webkit-transition:all 0.6s;
 					}
@@ -318,9 +383,10 @@ label{
 	text-align: center;
 	>h2{
 		font-weight: bold;
-		font-size:24px;
+		font-size:36px;
 		color:#1f2c5c;
 	}
+	>img{display: none;}
 	>p{
 		font-size:14px;
 		color:@gray;
@@ -337,7 +403,7 @@ label{
 		}
 	}
 	.registerContent{
-		margin-top: 20px;
+		margin-top: 30px;
 		.registerInfo,.registerPassword,.repeatPassword{
 			position: relative;
 			img{
@@ -372,7 +438,7 @@ label{
 				z-index: 99;
 				list-style:none; 
 				background:#FFF; 
-				border:1px solid @green; 
+				border:1px solid rgba(31, 44, 92, 0.3); 
 				display:none; 
 				padding:10px 0;
 				li{
@@ -457,7 +523,7 @@ label{
 			button{
 				border:none;
 				outline: none;
-				background:@green;
+				background:@purple;
 				border-radius:2px;
 				width:340px;
 				color:#fff;
@@ -466,7 +532,7 @@ label{
 				transition:all 0.6s;
 				-webkit-transition:all 0.6s;
 				&:hover{
-					background: @purple;
+					background: @green;
 					transition:all 0.6s;
 					-webkit-transition:all 0.6s;
 				}

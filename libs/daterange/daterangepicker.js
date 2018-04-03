@@ -498,7 +498,7 @@
             var initEndDate = this.endDate.format('ddd, MMMM D, YYYY');
             this.container.find('.start-change-date').html(initStartDate);
             this.container.find('.end-change-date').html(initEndDate);
-            totleNight = parseInt((this.endDate.toDate().getTime()-this.startDate.toDate().getTime())/86400000+1);
+            totleNight = parseInt((this.endDate.toDate().getTime()-this.startDate.toDate().getTime())/86400000);
             this.container.find('.totle-num-date').html(totleNight);
              $('.hotel-day').html(totleNight);
         }else{
@@ -1344,7 +1344,7 @@
                 // this.container.find('input[name=daterangepicker_end]').val(date.format(this.locale.format));
                 this.container.find('.end-change-date').html(date.format('ddd, MMMM D, YYYY'));
                 endNight = date.toDate().getTime();
-                totleNight = (endNight-startNight)/86400000+1;
+                totleNight = (endNight-startNight)/86400000;
                 this.container.find('.totle-num-date').html(totleNight);
                 $('.hotel-day').html(totleNight);
             }

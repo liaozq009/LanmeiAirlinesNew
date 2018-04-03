@@ -82,6 +82,79 @@ body {
 .lm-header .h-right .h-registered > img {
   margin-right: 6px;
 }
+.lm-header .h-right .h-login {
+  position: relative;
+  height: 80px;
+}
+.lm-header .h-right .h-login .m-login-icon {
+  display: none;
+}
+.lm-header .h-right .h-login .login-menu {
+  display: none;
+  position: absolute;
+  top: 76px;
+  left: -180px;
+  width: 240px;
+  height: 120px;
+  border-radius: 2px;
+  background: #fff;
+  padding: 20px;
+  text-align: left;
+  box-shadow: 0 0 50px 0 rgba(31, 44, 92, 0.2);
+}
+.lm-header .h-right .h-login .login-menu > h2 {
+  color: rgba(31, 44, 92, 0.8);
+  font-size: 20px;
+  font-family: CamptonBookBold;
+}
+.lm-header .h-right .h-login .login-menu > a {
+  display: block;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.7);
+  height: 34px;
+  line-height: 40px;
+  margin-top: 10px;
+  margin-left: 10px;
+  padding-left: 40px;
+  transition: all .3s;
+  -webkit-transition: all .3s;
+}
+.lm-header .h-right .h-login .login-menu > a:hover {
+  color: #8ec060;
+  transition: all .3s;
+  -webkit-transition: all .3s;
+}
+.lm-header .h-right .h-login .login-menu .lm-currency {
+  margin-top: 0;
+  background: url('../../images/EN/lm-currency.png') left center no-repeat;
+  background-size: 20px;
+  text-align: right;
+  color: #8ec060;
+}
+.lm-header .h-right .h-login .login-menu .lm-personal-center {
+  background: url('../../images/EN/personal-icon.png') left center no-repeat;
+  margin-top: 0;
+}
+.lm-header .h-right .h-login .login-menu .lm-logout {
+  background: url('../../images/EN/loginout-icon.png') left center no-repeat;
+}
+.lm-header .h-right .h-login .login-menu::before {
+  position: absolute;
+  top: -14px;
+  right: 12px;
+  z-index: 9;
+  filter: alpha(opacity=0);
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+  border-bottom: 14px solid #fff;
+}
+.lm-header .h-right .success-h-login:hover .login-menu {
+  display: block;
+}
 .lm-header .h-phone {
   position: absolute;
   left: -50px;
@@ -861,6 +934,7 @@ body {
 }
 .select-air-com .people-com .t-people-result .p-infant {
   background: url('../../images/EN/infant.png') 0 center no-repeat;
+  display: none;
 }
 .select-air-com .people-com .t-people-result .p-hotelRooms {
   padding-left: 30px;
@@ -874,6 +948,9 @@ body {
 }
 .select-air-com .people-com .t-people-result .p-hotelChild {
   background: url('../../images/EN/child.png') 0 center no-repeat;
+}
+.select-air-com .people-com .hidden-infant {
+  padding-left: 76px;
 }
 .select-fares {
   width: 330px;
@@ -984,6 +1061,10 @@ body {
 .car-content-wrap,
 .fStatus-content-wrap {
   display: none;
+  height: 100%;
+}
+.ticket-content-wrap {
+  height: 100%;
 }
 .range-change-date {
   font-family: CamptonBookBold;
@@ -2375,7 +2456,13 @@ body {
   .m-nav-mask {
     display: none;
   }
+  .nav-settings {
+    display: none;
+  }
   .m-nav-back {
+    display: none;
+  }
+  .m-select-rooms {
     display: none;
   }
   .popup-container {
@@ -2491,6 +2578,7 @@ body {
     display: none;
     width: 410px;
     height: 264px;
+    height: 210px;
     padding: 20px 20px 30px;
   }
   .popup-content .popup-people .people-title {
@@ -2504,6 +2592,9 @@ body {
     margin-top: 10px;
     padding-left: 10px;
     padding-right: 10px;
+  }
+  .popup-content .popup-people .s-infant {
+    display: none;
   }
   .popup-content .popup-people .people-prompt {
     float: left;
@@ -2814,6 +2905,45 @@ body {
   }
   .lm-header .h-right .h-login {
     display: block;
+    height: 60px;
+  }
+  .lm-header .h-right .h-login .m-login-icon {
+    display: inline-block;
+  }
+  .lm-header .h-right .h-login .login-icon {
+    display: none;
+  }
+  .lm-header .h-right .h-login .login-menu {
+    top: 60px;
+    left: -136px;
+    width: 170px;
+    height: 76px;
+    padding: 6px;
+  }
+  .lm-header .h-right .h-login .login-menu .lm-personal-center {
+    background-size: 16px;
+    font-size: 12px;
+    height: 26px;
+    line-height: 26px;
+    margin-top: 0;
+    margin-left: 10px;
+    padding-left: 30px;
+  }
+  .lm-header .h-right .h-login .login-menu .lm-logout {
+    background-size: 16px;
+    font-size: 12px;
+    height: 26px;
+    line-height: 26px;
+    margin-top: 8px;
+    margin-left: 10px;
+    padding-left: 30px;
+  }
+  .lm-header .h-right .h-login .login-menu::before {
+    top: -7px;
+    right: 12px;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid #fff;
   }
   .lm-section-main {
     top: 0;
@@ -2827,6 +2957,7 @@ body {
     display: none;
   }
   .lm-nav-wrap .nav-container {
+    overflow-y: scroll;
     background: rgba(0, 0, 0, 0.8);
   }
   .lm-nav-wrap .nav-container .nav-menu-close {
@@ -2841,6 +2972,8 @@ body {
     width: 270px;
     padding-top: 80px;
     background: none;
+    transition: all 0.6s ease-out;
+    -webkit-transition: all 0.6s ease-out;
   }
   .lm-nav-wrap .nav-container .m-nav-1 > li {
     margin-bottom: 30px;
@@ -2857,6 +2990,8 @@ body {
     padding-top: 80px;
     padding-left: 30px;
     background: none;
+    transition: all 0.6s ease-out;
+    -webkit-transition: all 0.6s ease-out;
   }
   .lm-nav-wrap .nav-container .m-nav-2 li {
     margin-bottom: 30px;
@@ -2873,6 +3008,8 @@ body {
     padding-top: 80px;
     padding-left: 30px;
     background: none;
+    transition: all 0.6s ease-out;
+    -webkit-transition: all 0.6s ease-out;
   }
   .lm-nav-wrap .nav-container .m-nav-3 li {
     margin-bottom: 30px;
@@ -2884,6 +3021,7 @@ body {
     display: none;
   }
   .lm-nav-wrap .nav-container .nav-settings {
+    display: block;
     position: absolute;
     top: 408px;
     z-index: 12;
@@ -3007,6 +3145,9 @@ body {
     border-right: 14px solid transparent;
     border-top: 14px solid #fff;
   }
+  .lm-nav-wrap .nav-container .nav-settings .customer-service:hover .phone-menu {
+    display: block;
+  }
   .lm-nav-wrap .nav-container .nav-settings .customer-service > span {
     color: rgba(255, 255, 255, 0.7);
   }
@@ -3051,7 +3192,7 @@ body {
   .flight-com {
     width: 100%;
     left: 0;
-    top: 0;
+    top: 80px;
     -webkit-transform: scale(1);
     transform: scale(1);
     -webkit-transform-origin: top;
@@ -3060,7 +3201,6 @@ body {
   .flight-com > form {
     padding-left: 15px;
     padding-right: 15px;
-    margin-top: 80px;
   }
   .flight-com .tips-com {
     font-size: 18px;
@@ -3198,8 +3338,8 @@ body {
   .select-air-com .date-com {
     -webkit-animation: fadeInUp 1.5s;
     animation: fadeInUp 1.5s;
-    animation-delay: .9s;
-    -webkit-animation-delay: .9s;
+    animation-delay: 0.6s;
+    -webkit-animation-delay: 0.6s;
   }
   .select-air-com .date-result {
     padding-left: 20px;
@@ -3211,21 +3351,25 @@ body {
   .select-air-com .people-com {
     -webkit-animation: fadeInUp 1.5s;
     animation: fadeInUp 1.5s;
-    animation-delay: 1.2s;
-    -webkit-animation-delay: 1.2s;
+    animation-delay: .6s;
+    -webkit-animation-delay: .6s;
   }
   .select-air-com .people-com .t-people-result {
     line-height: 50px;
     padding-left: 10px;
     padding-right: 10px;
   }
+  .select-air-com .route-from-box {
+    animation-delay: .6s;
+    -webkit-animation-delay: .6s;
+  }
   .search-flight-wrap {
     visibility: visible;
     margin-top: 0;
     -webkit-animation: fadeInUp 1.5s;
     animation: fadeInUp 1.5s;
-    animation-delay: 1.5s;
-    -webkit-animation-delay: 1.5s;
+    animation-delay: .6s;
+    -webkit-animation-delay: .6s;
   }
   .search-flight-wrap .flight-cancel {
     display: none;
@@ -3234,6 +3378,8 @@ body {
     width: 100%;
     height: 50px;
     line-height: 50px;
+    animation-delay: .6s;
+    -webkit-animation-delay: .6s;
   }
   .lm-aside-flight {
     display: block;
@@ -3251,8 +3397,8 @@ body {
     transform-origin: top;
     -webkit-animation: fadeInUp 1.5s;
     animation: fadeInUp 1.5s;
-    animation-delay: 1.8s;
-    -webkit-animation-delay: 1.8s;
+    animation-delay: .6s;
+    -webkit-animation-delay: .6s;
   }
   .lm-aside-flight > ul {
     overflow: hidden;
@@ -3353,6 +3499,9 @@ body {
   .popup-content .popup-airport .flight-list-wrap > li > span {
     color: #1f2c5c;
   }
+  .popup-content .popup-airport .hotel-list-wrap > li {
+    background: url('../../images/EN/hotel-small-icon.png') left center no-repeat;
+  }
   .popup-content .popup-people {
     width: 100%;
     height: auto;
@@ -3384,11 +3533,9 @@ body {
     font-family: CamptonBookLight;
     font-size: 14px;
     color: rgba(0, 0, 0, 0.3);
-    text-align: center;
     cursor: pointer;
   }
   .popup-content .popup-people .people-prompt .p2 > img {
-    display: none;
     margin-left: 10px;
     margin-right: 10px;
     vertical-align: top;
@@ -3680,6 +3827,7 @@ body {
     cursor: pointer;
   }
   .popup-content .hotel-popus-people .m-select-rooms {
+    display: block;
     position: absolute;
     bottom: 0;
     z-index: 9;
@@ -3698,8 +3846,8 @@ body {
   }
   .popup-container.is-show {
     visibility: visible;
-    -webkit-transform: translateY(-60px);
-    transform: translateY(-60px);
+    -webkit-transform: translateY(-140px);
+    transform: translateY(-140px);
     transition: -webkit-transform 0.3s;
     transition: transform .3s;
     transition: transform 0.3s, -webkit-transform 0.3s;

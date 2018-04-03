@@ -477,3 +477,156 @@ body {
     text-align: center;
   }
 }
+@media (max-width: 767px) {
+  /*滚动条整体部分,必须要设置*/
+  ::-webkit-scrollbar {
+    width: 0px;
+    background-color: #B0AEDA;
+  }
+  /*滚动条的轨道*/
+  ::-webkit-scrollbar-track {
+    width: 0px;
+    background-color: #fff;
+  }
+  /*滚动条的滑块按钮*/
+  ::-webkit-scrollbar-thumb {
+    background-color: #8ec060;
+    border: solid 1px #8ec060;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #8ec060;
+  }
+  /*滚动条的上下两端的按钮*/
+  ::-webkit-scrollbar-button {
+    height: 0px;
+    background-color: #1f2c5c;
+  }
+}
+/* 登录窗口适配 */
+@media screen and (max-width: 500px) {
+  .modal .modal-dialog {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+  .modal .modal-dialog .modal-content {
+    width: 100%;
+  }
+  .modal .modal-dialog .modal-content .modal-header {
+    background-size: 110px 28px;
+    padding: 8px;
+  }
+  .modal .modal-dialog .modal-content .modal-header .close {
+    top: 0;
+    font-size: 14px;
+  }
+  .modal .modal-dialog .modal-content .modal-header .close span {
+    top: -2px;
+    font-size: 24px;
+  }
+  .modal .modal-dialog .modal-content .modal-body .loginTitle {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  .modal .modal-dialog .modal-content .modal-body form {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .modal .modal-dialog .modal-content .modal-body form input,
+  .modal .modal-dialog .modal-content .modal-body form .on_changes,
+  .modal .modal-dialog .modal-content .modal-body form button {
+    width: 90%;
+  }
+  .modal .modal-dialog .modal-content .modal-body form input {
+    height: 40px;
+    font-size: 12px;
+  }
+  .modal .modal-dialog .modal-content .modal-body form #LanmeiPassword {
+    margin-top: 10px;
+  }
+  .modal .modal-dialog .modal-content .modal-body form .on_changes {
+    top: 39px;
+    left: 5%;
+  }
+  .modal .modal-dialog .modal-content .modal-body form #f-LanmeiPassword {
+    width: 50%;
+  }
+  .modal .modal-dialog .modal-content .modal-body form #f-getPasswordBtn {
+    width: 38%;
+    margin-left: 2%;
+  }
+  .modal .modal-dialog .modal-content .modal-body form .userLoginBtn {
+    margin-top: 0;
+  }
+  .modal .modal-dialog .modal-content .modal-body form .agree {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .modal .modal-dialog .modal-content .modal-body form .agree p {
+    width: 90%;
+    font-size: 12px;
+    line-height: 16px;
+  }
+  .modal .modal-dialog .modal-content .modal-body form .agree p a {
+    font-size: 12px;
+  }
+  .modal .modal-dialog .modal-content .modal-body form .agree span {
+    margin-top: 1px;
+  }
+  .modal .modal-dialog .modal-content .modal-body .registerWrapper > h2 {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  .modal .modal-dialog .modal-content .modal-body .registerWrapper > img {
+    display: none;
+  }
+  .modal .modal-dialog .modal-content .modal-body .registerWrapper .registerContent {
+    margin-top: 10px;
+  }
+  .modal .modal-dialog .modal-content .modal-body .registerWrapper .registerContent .agree {
+    padding: 0 !important;
+    width: 90%;
+    margin: 0 auto 10px;
+  }
+  .modal .modal-dialog .modal-content .modal-body .registerWrapper .registerContent .agree p {
+    width: 88%;
+  }
+  .modal .modal-dialog .modal-content .modal-body .registerWrapper .registerInfo input {
+    padding-left: 50px !important;
+  }
+  .modal .modal-dialog .modal-content .modal-body .registerWrapper .registerInfo img {
+    left: 36px;
+    top: 14px;
+  }
+  .modal .modal-dialog .modal-content .modal-body .registerWrapper .registerInfo p {
+    padding: 1px 10px 1px 29px;
+  }
+  .modal .modal-dialog .modal-content .modal-body .registerWrapper .registerPassword img,
+  .modal .modal-dialog .modal-content .modal-body .registerWrapper .repeatPassword img {
+    left: 36px;
+    top: 10px;
+  }
+  .modal .modal-dialog .modal-content .modal-body .registerWrapper .registerPassword p,
+  .modal .modal-dialog .modal-content .modal-body .registerWrapper .repeatPassword p {
+    padding: 1px 10px 1px 29px;
+  }
+  .modal .modal-dialog .modal-content .modal-body .registerWrapper .registerPassword p span,
+  .modal .modal-dialog .modal-content .modal-body .registerWrapper .repeatPassword p span {
+    display: none;
+  }
+  .modal .modal-dialog .modal-content .modal-footer {
+    padding-bottom: 20px;
+  }
+  #logonModal .agree p {
+    display: none;
+    width: 65%;
+  }
+  #logonModal .agree span {
+    display: none;
+  }
+  #logonModal .agree a {
+    height: 25px;
+    line-height: 25px;
+  }
+}

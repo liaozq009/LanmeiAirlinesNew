@@ -1,4 +1,21 @@
+@charset "utf-8";
+/* 引入字体 */
+@font-face {
+  font-family: CamptonBook;
+  src: url(../../common/EN/fonts/Campton/Rene.Bieder_Campton.Book.otf);
+}
+@font-face {
+  font-family: CamptonBookLight;
+  src: url(../../common/EN/fonts/Campton/Rene.Bieder_Campton.Light.otf);
+}
+@font-face {
+  font-family: CamptonBookBold;
+  src: url(../../common/EN/fonts/Campton/Rene.Bieder_Campton.Bold.otf);
+  font-weight: bold;
+}
 /* 定义变量 */
+/* 定义颜色变量 */
+/*ie8*/
 /* Bootstrap修改样式 */
 .carousel-control {
   width: 30px;
@@ -50,7 +67,7 @@ label {
   width: 400px;
 }
 .modal .modal-dialog .modal-content {
-  border-radius: 10px;
+  border-radius: 2px;
 }
 .modal .modal-dialog .modal-content .modal-header {
   background: url('../../images/EN/login-close.png') no-repeat top right;
@@ -78,7 +95,7 @@ label {
   margin-left: 10px;
   font-size: 30px;
   position: absolute;
-  top: -8px;
+  top: -5px;
 }
 .modal .modal-dialog .modal-content .modal-body {
   padding: 0;
@@ -87,8 +104,8 @@ label {
   width: 100%;
   text-align: center;
   color: #1f2c5c;
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 36px;
+  font-family: CamptonBookBold;
   margin-top: 24px;
 }
 .modal .modal-dialog .modal-content .modal-body .verifyInfo {
@@ -122,9 +139,27 @@ label {
   font-weight: bold;
   padding: 0 20px;
   margin: 0 auto;
-  background: #f2f2f2;
+  background: rgba(31, 44, 92, 0.04);
   border: none;
   border-radius: 2px;
+}
+.modal .modal-dialog .modal-content .modal-body form :-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: rgba(31, 44, 92, 0.3);
+  font-size: 14px;
+}
+.modal .modal-dialog .modal-content .modal-body form ::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: rgba(31, 44, 92, 0.3);
+  font-size: 14px;
+}
+.modal .modal-dialog .modal-content .modal-body form input:-ms-input-placeholder {
+  color: rgba(31, 44, 92, 0.3);
+  font-size: 14px;
+}
+.modal .modal-dialog .modal-content .modal-body form input::-webkit-input-placeholder {
+  color: rgba(31, 44, 92, 0.3);
+  font-size: 14px;
 }
 .modal .modal-dialog .modal-content .modal-body form .on_changes {
   width: 340px;
@@ -134,7 +169,7 @@ label {
   z-index: 99;
   list-style: none;
   background: #FFF;
-  border: 1px solid #8ec060;
+  border: 1px solid rgba(31, 44, 92, 0.3);
   display: none;
   padding: 10px 0;
 }
@@ -153,7 +188,7 @@ label {
   border-color: #8ec060 !important;
 }
 .modal .modal-dialog .modal-content .modal-body form #LanmeiPassword {
-  margin-top: 30px;
+  margin-top: 20px;
 }
 .modal .modal-dialog .modal-content .modal-body form #f-LanmeiPassword {
   margin-top: 30px;
@@ -182,14 +217,17 @@ label {
   display: inline-block;
   width: 16px;
   height: 16px;
-  border: 1px solid #cccccc;
+  border: 1px solid rgba(31, 44, 92, 0.7);
   border-radius: 2px;
   margin-right: 10px;
   margin-top: 4px;
   cursor: pointer;
 }
 .modal .modal-dialog .modal-content .modal-body form .agree .active {
-  background: #8ec060;
+  background: linear-gradient(to right, #42958a 0%, #1f2c5c 100%);
+  background: -webkit-linear-gradient(left, #42958a 0%, #1f2c5c 100%);
+  background: -o-linear-gradient(right, #42958a 0%, #1f2c5c 100%);
+  background: -moz-linear-gradient(right, #42958a 0%, #1f2c5c 100%);
 }
 .modal .modal-dialog .modal-content .modal-body form .agree .active + p {
   color: #1f2c5c;
@@ -198,12 +236,12 @@ label {
   float: left;
   display: inline-block;
   text-align: left;
-  color: #808080;
+  color: rgba(31, 44, 92, 0.7);
   line-height: 25px;
 }
 .modal .modal-dialog .modal-content .modal-body form .agree a {
   float: right;
-  color: #808080;
+  color: rgba(31, 44, 92, 0.7);
   transition: all 0.6s;
   -webkit-transition: all 0.6s;
 }
@@ -224,9 +262,9 @@ label {
 .modal .modal-dialog .modal-content .modal-body form .userLoginBtn,
 .modal .modal-dialog .modal-content .modal-body form .f-userLoginBtn {
   margin-top: 30px;
-  background: #8ec060;
+  background: #1f2c5c;
   color: #fff;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: bold;
   transition: all 0.6s;
   -webkit-transition: all 0.6s;
@@ -235,7 +273,7 @@ label {
 .modal .modal-dialog .modal-content .modal-body form .f-userLoginBtn:hover {
   transition: all 0.6s;
   -webkit-transition: all 0.6s;
-  background: #1f2c5c;
+  background: #8ec060;
   color: #fff;
 }
 .modal .modal-dialog .modal-content .modal-body form .loginOther {
@@ -281,18 +319,18 @@ label {
   width: 100%;
   overflow: hidden;
   text-align: center;
-  color: #cccccc;
+  color: rgba(31, 44, 92, 0.3);
   border-top: none;
   padding: 0 30px;
   padding-bottom: 30px;
 }
 .modal .modal-dialog .modal-content .modal-footer a {
-  color: #8ec060;
+  color: #1f2c5c;
   transition: all 0.6s;
   -webkit-transition: all 0.6s;
 }
 .modal .modal-dialog .modal-content .modal-footer a:hover {
-  color: #1f2c5c;
+  color: #8ec060;
   transition: all 0.6s;
   -webkit-transition: all 0.6s;
 }
@@ -313,8 +351,11 @@ label {
 }
 .registerWrapper > h2 {
   font-weight: bold;
-  font-size: 24px;
+  font-size: 36px;
   color: #1f2c5c;
+}
+.registerWrapper > img {
+  display: none;
 }
 .registerWrapper > p {
   font-size: 14px;
@@ -332,7 +373,7 @@ label {
   -webkit-transition: all 0.6s;
 }
 .registerWrapper .registerContent {
-  margin-top: 20px;
+  margin-top: 30px;
 }
 .registerWrapper .registerContent .registerInfo,
 .registerWrapper .registerContent .registerPassword,
@@ -383,7 +424,7 @@ label {
   z-index: 99;
   list-style: none;
   background: #FFF;
-  border: 1px solid #8ec060;
+  border: 1px solid rgba(31, 44, 92, 0.3);
   display: none;
   padding: 10px 0;
 }
@@ -479,7 +520,7 @@ label {
 .registerWrapper .registerContent .registerBtn button {
   border: none;
   outline: none;
-  background: #8ec060;
+  background: #1f2c5c;
   border-radius: 2px;
   width: 340px;
   color: #fff;
@@ -489,7 +530,7 @@ label {
   -webkit-transition: all 0.6s;
 }
 .registerWrapper .registerContent .registerBtn button:hover {
-  background: #1f2c5c;
+  background: #8ec060;
   transition: all 0.6s;
   -webkit-transition: all 0.6s;
 }
