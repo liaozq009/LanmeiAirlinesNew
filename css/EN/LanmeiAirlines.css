@@ -152,6 +152,11 @@ body {
   border-right: 14px solid transparent;
   border-bottom: 14px solid #fff;
 }
+.lm-header .h-right .success-h-login > a img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
 .lm-header .h-right .success-h-login:hover .login-menu {
   display: block;
 }
@@ -934,7 +939,6 @@ body {
 }
 .select-air-com .people-com .t-people-result .p-infant {
   background: url('../../images/EN/infant.png') 0 center no-repeat;
-  display: none;
 }
 .select-air-com .people-com .t-people-result .p-hotelRooms {
   padding-left: 30px;
@@ -950,7 +954,13 @@ body {
   background: url('../../images/EN/child.png') 0 center no-repeat;
 }
 .select-air-com .people-com .hidden-infant {
-  padding-left: 76px;
+  padding-left: 60px !important;
+}
+.select-air-com .people-com .hidden-infant .p-infant {
+  display: none;
+}
+.select-air-com .people-com .hidden-infant .p-child {
+  margin-left: 30px;
 }
 .select-fares {
   width: 330px;
@@ -2298,159 +2308,6 @@ body {
     -webkit-transition: all .3s;
   }
 }
-/* pad端 */
-@media (max-width: 992px) {
-  .lm-header .h-logo {
-    display: none;
-  }
-  .lm-header .mobile-logo {
-    display: inline-block;
-    height: 40px;
-  }
-  .lm-header .h-right .v-line {
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-  .lm-header .h-right .v-line-2 {
-    margin-right: 40px;
-  }
-  .lm-header .h-login span,
-  .lm-header .h-registered span {
-    display: none;
-  }
-  .lm-aside-blur,
-  .lm-aside-flight > a,
-  .lm-aside-code,
-  .lm-scroll-down {
-    display: none;
-  }
-  .bg-com,
-  .content-com-wrap {
-    width: 100%;
-  }
-  .lm-aside-flight {
-    left: -11px;
-    -webkit-transform: scale(0.8);
-    transform: scale(0.8);
-    -webkit-transform-origin: top;
-    transform-origin: top;
-  }
-  .content-com-inner {
-    width: 80%;
-    left: 16%;
-  }
-  .content-com-inner > h1 {
-    width: 100%;
-    font-size: 42px;
-  }
-  .flight-com {
-    left: 8%;
-    -webkit-transform: scale(0.8);
-    transform: scale(0.8);
-    -webkit-transform-origin: top;
-    transform-origin: top;
-  }
-  .popup-content .popup-airport-from,
-  .popup-content .popup-airport-to,
-  .popup-content .popup-route-from,
-  .popup-content .popup-route-to {
-    width: 310px;
-  }
-  .popup-content .popup-airport-from .flight-list-wrap > li,
-  .popup-content .popup-airport-to .flight-list-wrap > li,
-  .popup-content .popup-route-from .flight-list-wrap > li,
-  .popup-content .popup-route-to .flight-list-wrap > li {
-    width: 100%;
-  }
-  .popup-content .popup-fNum-from {
-    width: 660px;
-  }
-  .popup-content .hotel-popus-people {
-    width: 750px !important;
-  }
-  .hotel-popup-content,
-  .hotel-content .popup-box {
-    left: 0 !important;
-  }
-  .hotelPeople-popup-box::before {
-    left: 480px;
-  }
-  .popup-content .hotel-popus-people .age-rooms-com {
-    margin-top: 10px;
-    margin-bottom: 20px;
-  }
-  .popup-content .hotel-popus-people .add-rooms-wrap {
-    clear: both;
-    position: relative;
-    z-index: 1;
-  }
-  .popup-content .hotel-popus-people .s-room-2,
-  .popup-content .hotel-popus-people .s-room-3 {
-    clear: both;
-  }
-  .popup-content .hotel-popus-people .add-rooms-wrap p b {
-    display: block;
-  }
-  .lm-section-banner,
-  .lm-section-service,
-  .lm-section-hotel {
-    margin-bottom: 50px;
-  }
-  .lm-section-coupons {
-    margin-bottom: 20px;
-  }
-  .lm-section-travel {
-    margin-bottom: 0;
-  }
-  .lm-section-coupons .coupons-content .slick-item-1 {
-    padding-left: 16px;
-  }
-  .lm-section-coupons .coupons-content .slick-item-1 .slick-content {
-    margin-left: -102px;
-  }
-  .lm-section-fares .fares-item-1 {
-    padding-left: 36px;
-  }
-  .lm-section-travel .travel-content .slick-list {
-    padding-left: 60px;
-  }
-  .lm-section-news .news-detail {
-    width: 400px;
-    height: 278px;
-    margin-left: 0px;
-  }
-  .lm-section-news .news-content {
-    margin-left: 400px;
-  }
-  .lm-section-news .news-content .news-item > img {
-    width: 368px;
-    height: 278px;
-    height: auto;
-  }
-  .lm-section-news .news-detail .news-info > div .news-info-detail {
-    margin-top: 20px;
-  }
-  .lm-section-news .news-detail .news-info > div > h2 > a {
-    height: 50px;
-  }
-  .lm-section-news {
-    margin-bottom: 100px;
-  }
-  .nav-container .m-nav-1 {
-    width: 240px;
-    padding-top: 100px;
-    padding-left: 30px;
-  }
-  .nav-container .m-nav-2,
-  .nav-container .m-nav-3 {
-    width: 260px;
-    padding-top: 100px;
-    padding-left: 20px;
-  }
-  .lm-section-service {
-    background-position: 50% -110px;
-  }
-}
 /* 手机端以外 */
 @media (min-width: 768px) {
   .m-nav-mask {
@@ -2888,6 +2745,159 @@ body {
   }
   .mobile-comfortHotel-content {
     display: none;
+  }
+}
+/* pad端 */
+@media (max-width: 992px) {
+  .lm-header .h-logo {
+    display: none;
+  }
+  .lm-header .mobile-logo {
+    display: inline-block;
+    height: 40px;
+  }
+  .lm-header .h-right .v-line {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .lm-header .h-right .v-line-2 {
+    margin-right: 40px;
+  }
+  .lm-header .h-login span,
+  .lm-header .h-registered span {
+    display: none;
+  }
+  .lm-aside-blur,
+  .lm-aside-flight > a,
+  .lm-aside-code,
+  .lm-scroll-down {
+    display: none;
+  }
+  .bg-com,
+  .content-com-wrap {
+    width: 100%;
+  }
+  .lm-aside-flight {
+    left: -11px;
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+  }
+  .content-com-inner {
+    width: 80%;
+    left: 16%;
+  }
+  .content-com-inner > h1 {
+    width: 100%;
+    font-size: 42px;
+  }
+  .flight-com {
+    left: 8%;
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+  }
+  .popup-content .popup-airport-from,
+  .popup-content .popup-airport-to,
+  .popup-content .popup-route-from,
+  .popup-content .popup-route-to {
+    width: 310px;
+  }
+  .popup-content .popup-airport-from .flight-list-wrap > li,
+  .popup-content .popup-airport-to .flight-list-wrap > li,
+  .popup-content .popup-route-from .flight-list-wrap > li,
+  .popup-content .popup-route-to .flight-list-wrap > li {
+    width: 100%;
+  }
+  .popup-content .popup-fNum-from {
+    width: 660px;
+  }
+  .popup-content .hotel-popus-people {
+    width: 750px !important;
+  }
+  .hotel-popup-content,
+  .hotel-content .popup-box {
+    left: 0 !important;
+  }
+  .hotelPeople-popup-box::before {
+    left: 480px;
+  }
+  .popup-content .hotel-popus-people .age-rooms-com {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  .popup-content .hotel-popus-people .add-rooms-wrap {
+    clear: both;
+    position: relative;
+    z-index: 1;
+  }
+  .popup-content .hotel-popus-people .s-room-2,
+  .popup-content .hotel-popus-people .s-room-3 {
+    clear: both;
+  }
+  .popup-content .hotel-popus-people .add-rooms-wrap p b {
+    display: block;
+  }
+  .lm-section-banner,
+  .lm-section-service,
+  .lm-section-hotel {
+    margin-bottom: 50px;
+  }
+  .lm-section-coupons {
+    margin-bottom: 20px;
+  }
+  .lm-section-travel {
+    margin-bottom: 0;
+  }
+  .lm-section-coupons .coupons-content .slick-item-1 {
+    padding-left: 16px;
+  }
+  .lm-section-coupons .coupons-content .slick-item-1 .slick-content {
+    margin-left: -102px;
+  }
+  .lm-section-fares .fares-item-1 {
+    padding-left: 36px;
+  }
+  .lm-section-travel .travel-content .slick-list {
+    padding-left: 60px;
+  }
+  .lm-section-news .news-detail {
+    width: 400px;
+    height: 278px;
+    margin-left: 0px;
+  }
+  .lm-section-news .news-content {
+    margin-left: 400px;
+  }
+  .lm-section-news .news-content .news-item > img {
+    width: 368px;
+    height: 278px;
+    height: auto;
+  }
+  .lm-section-news .news-detail .news-info > div .news-info-detail {
+    margin-top: 20px;
+  }
+  .lm-section-news .news-detail .news-info > div > h2 > a {
+    height: 50px;
+  }
+  .lm-section-news {
+    margin-bottom: 100px;
+  }
+  .nav-container .m-nav-1 {
+    width: 240px;
+    padding-top: 100px;
+    padding-left: 30px;
+  }
+  .nav-container .m-nav-2,
+  .nav-container .m-nav-3 {
+    width: 260px;
+    padding-top: 100px;
+    padding-left: 20px;
+  }
+  .lm-section-service {
+    background-position: 50% -92px !important;
   }
 }
 /* 手机端 */
@@ -3517,6 +3527,9 @@ body {
     height: 50px;
     margin-top: 20px;
   }
+  .popup-content .popup-people .s-infant {
+    display: none;
+  }
   .popup-content .popup-people .people-prompt {
     float: left;
     width: 90px;
@@ -3860,7 +3873,7 @@ body {
   }
   .daterangepicker .next.available {
     position: absolute;
-    top: 34px;
+    top: 12px;
   }
   .lm-section-banner,
   .lm-section-service,

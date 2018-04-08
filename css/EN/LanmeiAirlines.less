@@ -176,6 +176,13 @@ body{
 			}
 		}
 		.success-h-login{
+			>a{
+				img{
+					width: 30px;
+					height: 30px;
+					border-radius: 50%;
+				}
+			}
 			&:hover{
 				.login-menu{display: block;}
 			}
@@ -916,7 +923,7 @@ body{
 				margin-right: 15px;
 				background: url('@{url}child.png') 0 center no-repeat;
 			}
-			.p-infant{background: url('@{url}infant.png') 0 center no-repeat;display: none;}
+			.p-infant{background: url('@{url}infant.png') 0 center no-repeat;}
 			.p-hotelRooms{
 				padding-left: 30px;
 				width: 70px;
@@ -930,7 +937,9 @@ body{
 			.p-hotelChild{background: url('@{url}child.png') 0 center no-repeat;}
 		}
 		.hidden-infant{
-			padding-left: 76px;
+			padding-left: 60px !important;
+			.p-infant{display: none;}
+			.p-child{margin-left: 30px;}
 		}
 	}
 }
@@ -2248,138 +2257,6 @@ body{
 	}
 }
 
-/* pad端 */
-@media (max-width: 992px) {
-	.lm-header{
-		.h-logo{display: none;}
-		.mobile-logo{
-			display: inline-block;
-			height: 40px;
-		}
-		.h-right{
-			.v-line{margin-left: 10px;margin-right: 10px;}
-			.v-line-2{margin-right: 40px;}
-		}
-		.h-login,.h-registered {
-			span{display: none;}
-		}
-	}
-	.lm-aside-blur,.lm-aside-flight > a,.lm-aside-code,.lm-scroll-down{display: none;}
-	.bg-com,.content-com-wrap{width: 100%;}
-	.lm-aside-flight{
-		left: -11px;
-		-webkit-transform: scale(.8);
-		transform: scale(.8);
-		-webkit-transform-origin: top;
-		transform-origin: top;
-	}
-	.content-com-inner {
-		width: 80%;
-		left: 16%;
-		> h1{
-			width: 100%;
-			font-size: 42px;
-		}
-	}
-	.flight-com{
-		left: 8%;
-		-webkit-transform: scale(.8);
-		transform: scale(.8);
-		-webkit-transform-origin: top;
-		transform-origin: top;
-	}
-	.popup-content {
-		.popup-airport-from,.popup-airport-to,.popup-route-from,.popup-route-to{
-			width: 310px;
-			.flight-list-wrap > li{width: 100%;}
-		}
-		.popup-fNum-from{
-			width: 660px;
-		}
-		.hotel-popus-people{
-			width: 750px !important;
-		}
-	}
-	.hotel-popup-content,.hotel-content .popup-box{
-		left: 0 !important;
-	}
-	.hotelPeople-popup-box::before{
-		left: 480px;
-	}
-	.popup-content .hotel-popus-people .age-rooms-com{
-		margin-top: 10px;
-		margin-bottom: 20px;
-	}
-	.popup-content .hotel-popus-people .add-rooms-wrap{
-		clear: both;
-		position: relative;
-		z-index: 1;
-	}
-	.popup-content .hotel-popus-people {
-		.s-room-2,.s-room-3{
-			clear: both;
-		}
-	}
-	.popup-content .hotel-popus-people .add-rooms-wrap p b{display: block;}
-	.lm-section-banner, .lm-section-service, .lm-section-hotel{
-		margin-bottom: 50px;
-	}
-	.lm-section-coupons{
-		margin-bottom: 20px;
-	}
-	.lm-section-travel{
-		margin-bottom: 0;
-	}
-	.lm-section-coupons .coupons-content .slick-item-1{
-		padding-left: 16px;
-	}
-	.lm-section-coupons .coupons-content .slick-item-1 .slick-content{
-		margin-left: -102px;
-	}
-	.lm-section-fares .fares-item-1{
-		padding-left: 36px;
-	}
-	.lm-section-travel .travel-content .slick-list{
-		padding-left: 60px;
-	}
-	.lm-section-news .news-detail{
-		width: 400px;
-		height: 278px;
-		margin-left: 0px;
-	}
-	.lm-section-news .news-content{
-		margin-left: 400px;
-	}
-	.lm-section-news .news-content .news-item > img{
-		width: 368px;
-		height: 278px;
-		height: auto;
-	}
-	.lm-section-news .news-detail .news-info > div .news-info-detail{
-		margin-top: 20px;
-	}
-	.lm-section-news .news-detail .news-info > div > h2 > a{
-		height: 50px;
-	}
-	.lm-section-news{
-		margin-bottom: 100px;
-	}
-	.nav-container .m-nav-1{
-		width: 240px;
-		padding-top: 100px;
-		padding-left: 30px;
-	}
-	.nav-container .m-nav-2,
-	.nav-container .m-nav-3{
-		width: 260px;
-		padding-top: 100px;
-		padding-left: 20px;
-	}
-	.lm-section-service{
-		background-position: 50% -110px;
-	}
-}
-
 /* 手机端以外 */
 @media (min-width: 768px) {
 	.m-nav-mask{display: none;}
@@ -2794,6 +2671,139 @@ body{
 	.m-select-people{display: none;}
 	.mobile-comfortHotel-content{display: none;}
 }
+
+/* pad端 */
+@media (max-width: 992px) {
+	.lm-header{
+		.h-logo{display: none;}
+		.mobile-logo{
+			display: inline-block;
+			height: 40px;
+		}
+		.h-right{
+			.v-line{margin-left: 10px;margin-right: 10px;}
+			.v-line-2{margin-right: 40px;}
+		}
+		.h-login,.h-registered {
+			span{display: none;}
+		}
+	}
+	.lm-aside-blur,.lm-aside-flight > a,.lm-aside-code,.lm-scroll-down{display: none;}
+	.bg-com,.content-com-wrap{width: 100%;}
+	.lm-aside-flight{
+		left: -11px;
+		-webkit-transform: scale(.8);
+		transform: scale(.8);
+		-webkit-transform-origin: top;
+		transform-origin: top;
+	}
+	.content-com-inner {
+		width: 80%;
+		left: 16%;
+		> h1{
+			width: 100%;
+			font-size: 42px;
+		}
+	}
+	.flight-com{
+		left: 8%;
+		-webkit-transform: scale(.8);
+		transform: scale(.8);
+		-webkit-transform-origin: top;
+		transform-origin: top;
+	}
+	.popup-content {
+		.popup-airport-from,.popup-airport-to,.popup-route-from,.popup-route-to{
+			width: 310px;
+			.flight-list-wrap > li{width: 100%;}
+		}
+		.popup-fNum-from{
+			width: 660px;
+		}
+		.hotel-popus-people{
+			width: 750px !important;
+		}
+	}
+	.hotel-popup-content,.hotel-content .popup-box{
+		left: 0 !important;
+	}
+	.hotelPeople-popup-box::before{
+		left: 480px;
+	}
+	.popup-content .hotel-popus-people .age-rooms-com{
+		margin-top: 10px;
+		margin-bottom: 20px;
+	}
+	.popup-content .hotel-popus-people .add-rooms-wrap{
+		clear: both;
+		position: relative;
+		z-index: 1;
+	}
+	.popup-content .hotel-popus-people {
+		.s-room-2,.s-room-3{
+			clear: both;
+		}
+	}
+	.popup-content .hotel-popus-people .add-rooms-wrap p b{display: block;}
+	.lm-section-banner, .lm-section-service, .lm-section-hotel{
+		margin-bottom: 50px;
+	}
+	.lm-section-coupons{
+		margin-bottom: 20px;
+	}
+	.lm-section-travel{
+		margin-bottom: 0;
+	}
+	.lm-section-coupons .coupons-content .slick-item-1{
+		padding-left: 16px;
+	}
+	.lm-section-coupons .coupons-content .slick-item-1 .slick-content{
+		margin-left: -102px;
+	}
+	.lm-section-fares .fares-item-1{
+		padding-left: 36px;
+	}
+	.lm-section-travel .travel-content .slick-list{
+		padding-left: 60px;
+	}
+	.lm-section-news .news-detail{
+		width: 400px;
+		height: 278px;
+		margin-left: 0px;
+	}
+	.lm-section-news .news-content{
+		margin-left: 400px;
+	}
+	.lm-section-news .news-content .news-item > img{
+		width: 368px;
+		height: 278px;
+		height: auto;
+	}
+	.lm-section-news .news-detail .news-info > div .news-info-detail{
+		margin-top: 20px;
+	}
+	.lm-section-news .news-detail .news-info > div > h2 > a{
+		height: 50px;
+	}
+	.lm-section-news{
+		margin-bottom: 100px;
+	}
+	.nav-container .m-nav-1{
+		width: 240px;
+		padding-top: 100px;
+		padding-left: 30px;
+	}
+	.nav-container .m-nav-2,
+	.nav-container .m-nav-3{
+		width: 260px;
+		padding-top: 100px;
+		padding-left: 20px;
+	}
+	.lm-section-service{
+		background-position: 50% -92px !important;
+	}
+}
+
 
 /* 手机端 */
 @media (max-width: 767px) {
@@ -3370,6 +3380,7 @@ body{
 				height: 50px;
 				margin-top: 20px;
 			}
+			.s-infant{display: none;}
 			.people-prompt{
 				float: left;
 				width: 90px;
@@ -3709,7 +3720,7 @@ body{
 		.calendar{margin:0 auto;}
 		.next.available{
 			position: absolute;
-			top: 34px;
+			top: 12px;
 		}
 	}
 	.lm-section-banner, .lm-section-service, .lm-section-hotel{
