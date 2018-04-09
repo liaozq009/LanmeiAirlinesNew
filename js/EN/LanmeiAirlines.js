@@ -113,9 +113,9 @@ var LanmeiAirlines = {
 			$('.js-phone-menu,.js-lang-menu').hide();
 		});
 
-		$('.js-from-input,.js-to-input,.js-hotel-from').attr('readonly','readonly');
+		$('.js-from-input,.js-to-input,.js-hotelFrom-input,.js-fNumber-input,.js-routeFrom-input,.js-routeTo-input').attr('readonly','readonly');
 		$('.js-select-way').css('visibility','visible');
-		$('.js-select-way').addClass('animated fadeInUp');
+		$('.js-select-way,.js-flight-way').addClass('animated fadeInUp');
 	},
 
 	/* 导航栏 */
@@ -446,6 +446,12 @@ var LanmeiAirlines = {
 			$(id).attr('data-start',startTimeInit);
 			$(id).attr('data-end',endTimeInit);
 		}
+
+		// 酒店当天不可选
+		var minDate = todayTime;
+		if(showTotleDay){
+			minDate=startTime;
+		}
 		
 		var that = this;
 		$(id).daterangepicker({
@@ -453,25 +459,25 @@ var LanmeiAirlines = {
 			format: 'D MMM',
 			startDate: startTime,
 			endDate: endTime,
-			minDate: todayTime,
+			minDate: minDate,
 			// maxDate:'2018-06-02',
-      singleDatePicker: single, //单日期
-      showTotleDay: showTotleDay, //是否显示已经选择的天数
-      showDateTitle: true,
-      showDateTitle1:showDateTitle1,
-      showDateTitle2:showDateTitle2,
-      showDropdowns: false, //下拉选择月份和年份
-      showWeekNumbers: false, //显示周
-      autoApply: true, //自动关闭日期
-      language :'en',
-		},function(start, end, label) {//格式化日期显示框  
-			if (this.singleDatePicker) {
-				$(id).html(start.format('D MMM'));
-				$(id).attr('data-start',start.format('YYYY-MM-DD'));
-			} else {
-				$(id).html(start.format('D MMM') + ' - ' + end.format('D MMM'));
-				$(id).attr('data-start',start.format('YYYY-MM-DD')).attr('data-end',end.format('YYYY-MM-DD'));
-			}
+			singleDatePicker: single, //单日期
+			showTotleDay: showTotleDay, //是否显示已经选择的天数
+			showDateTitle: true,
+			showDateTitle1:showDateTitle1,
+			showDateTitle2:showDateTitle2,
+			showDropdowns: false, //下拉选择月份和年份
+			showWeekNumbers: false, //显示周
+			autoApply: true, //自动关闭日期
+			language :'en',
+			},function(start, end, label) {//格式化日期显示框  
+				if (this.singleDatePicker) {
+					$(id).html(start.format('D MMM'));
+					$(id).attr('data-start',start.format('YYYY-MM-DD'));
+				} else {
+					$(id).html(start.format('D MMM') + ' - ' + end.format('D MMM'));
+					$(id).attr('data-start',start.format('YYYY-MM-DD')).attr('data-end',end.format('YYYY-MM-DD'));
+				}
 
 				// 操作外层box移动
 				if(showTotleDay){ //酒店
@@ -505,7 +511,10 @@ var LanmeiAirlines = {
 					$('.js-fStatusPopup-box').removeClass('popup-box-before'); //隐藏小箭头
 				}
 			} 
-			);
+		);
+
+		// 隐藏日期的apply和cancel按钮
+		$('.js-date-ok').hide();
 	},
 
 	/* 简洁日期选择 */
@@ -562,21 +571,25 @@ var LanmeiAirlines = {
 			endDate: endTime,
 			minDate: todayTime,
 			// maxDate:'2018-06-02',
-	    singleDatePicker: single, //单日期
-	    showDateTitle: true,
-	    showDropdowns: false, //下拉选择月份和年份
-	    showWeekNumbers: false, //显示周
-	    autoApply: true, //自动关闭日期
-	    language :'en',
-		},function(start, end, label) {//格式化日期显示框  
-			if (this.singleDatePicker) {
-				$(id).html(start.format('D MMM'));
-				$(id).attr('data-start',start.format('YYYY-MM-DD'));
-			} else {
-				$(id).html(start.format('D MMM') + ' - ' + end.format('D MMM'));
-				$(id).attr('data-start',start.format('YYYY-MM-DD')).attr('data-end',end.format('YYYY-MM-DD'));
+		    singleDatePicker: single, //单日期
+		    showDateTitle: true,
+		    showDropdowns: false, //下拉选择月份和年份
+		    showWeekNumbers: false, //显示周
+		    autoApply: true, //自动关闭日期
+		    language :'en',
+			},function(start, end, label) {//格式化日期显示框  
+				if (this.singleDatePicker) {
+					$(id).html(start.format('D MMM'));
+					$(id).attr('data-start',start.format('YYYY-MM-DD'));
+				} else {
+					$(id).html(start.format('D MMM') + ' - ' + end.format('D MMM'));
+					$(id).attr('data-start',start.format('YYYY-MM-DD')).attr('data-end',end.format('YYYY-MM-DD'));
+				}
 			}
-		});
+		);
+
+		// 隐藏日期的apply和cancel按钮
+		$('.js-date-ok').hide();
 	},
 
 	/* 移动端日期选择 */
@@ -624,6 +637,12 @@ var LanmeiAirlines = {
 			$(id).attr('data-start',startTimeInit);
 			$(id).attr('data-end',endTimeInit);
 		}
+
+		// 酒店当天不可选
+		var minDate = todayTime;
+		if(showTotleDay){
+			minDate=startTime;
+		}
 		
 		var that = this;
 		$(id).daterangepicker({
@@ -631,24 +650,34 @@ var LanmeiAirlines = {
 			format: 'D MMM',
 			startDate: startTime,
 			endDate: endTime,
-			minDate: todayTime,
+			minDate: minDate,
 			// maxDate:'2018-06-02',
-      singleDatePicker: single, //单日期
-      showTotleDay: showTotleDay, //是否显示已经选择的天数
-      showDateTitle: false,
-      showDropdowns: false, //下拉选择月份和年份
-      showWeekNumbers: false, //显示周
-      autoApply: true, //自动关闭日期
-      language :'en',
-		},function(start, end, label) {//格式化日期显示框  
-			if (this.singleDatePicker) {
-				$(id).html(start.format('D MMM'));
-				$(id).attr('data-start',start.format('YYYY-MM-DD'));
-			} else {
-				$(id).html(start.format('D MMM') + ' - ' + end.format('D MMM'));
-				$(id).attr('data-start',start.format('YYYY-MM-DD')).attr('data-end',end.format('YYYY-MM-DD'));
+			singleDatePicker: single, //单日期
+			showTotleDay: showTotleDay, //是否显示已经选择的天数
+			showDateTitle: false,
+			showDropdowns: false, //下拉选择月份和年份
+			showWeekNumbers: false, //显示周
+			autoApply: true, //自动关闭日期
+			language :'en',
+			},function(start, end, label) {//格式化日期显示框  
+				if (this.singleDatePicker) {
+					$(id).html(start.format('D MMM'));
+					$(id).attr('data-start',start.format('YYYY-MM-DD'));
+				} else {
+					$(id).html(start.format('D MMM') + ' - ' + end.format('D MMM'));
+					$(id).attr('data-start',start.format('YYYY-MM-DD')).attr('data-end',end.format('YYYY-MM-DD'));
+				}
+				$('.popup-container').removeClass('is-show');
+				$('html,body').removeClass('ovfHiden'); //使网页可滚动
 			}
-			$('.popup-container').removeClass('is-show');
+		);
+
+		// 隐藏酒店日期范围
+		$('.js-range-date').hide();
+
+		// 点击OK的时候关闭弹出框
+		$('.js-applyBtn').click(function(event) {
+			$('.js-popup-container').removeClass('is-show');
 			$('html,body').removeClass('ovfHiden'); //使网页可滚动
 		});
 	},
@@ -1558,7 +1587,7 @@ var LanmeiAirlines = {
 		});
 
 		// 日期选择
-		this.mDateSelect(false,'.js-hotelDate-result','.js-hotelPopup-date',false);
+		this.mDateSelect(false,'.js-hotelDate-result','.js-hotelPopup-date',true);
 		$hotelDate.click(function(event) {
 			$('.js-hotelPopup-content>div').hide(); //初始化隐藏出发地、目的地、日期、人数
 			$('.js-hotelPopup-date').show();

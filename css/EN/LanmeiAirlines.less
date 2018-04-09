@@ -1385,7 +1385,7 @@ body{
 		outline: none;
 		transition:all .3s;
 		-webkit-transition:all .3s;
-		>img{width: 100%;}
+		>img{width: 400px;height: 230px;}
 		.travel-inner{
 			padding: 20px 30px 30px;
 			>h2{
@@ -2108,6 +2108,10 @@ body{
 	}
 	.lm-section-travel .travel-item{
 		width: 320px;
+		>img{
+			width: 320px;
+			height: 184px;
+		}
 		.travel-inner{
 			padding:16px 18px 18px;
 			>h2{
@@ -2774,10 +2778,11 @@ body{
 	.lm-section-news .news-content{
 		margin-left: 400px;
 	}
-	.lm-section-news .news-content .news-item > img{
-		width: 368px;
-		height: 278px;
-		height: auto;
+	.lm-section-news .news-content .news-item >a{
+		> img{
+			width: 368px;
+			height: 278px;
+		}
 	}
 	.lm-section-news .news-detail .news-info > div .news-info-detail{
 		margin-top: 20px;
@@ -2852,7 +2857,11 @@ body{
 			}
 		}
 	}
-	.lm-section-main{top: 0;overflow: initial;}
+	.lm-section-main{
+		top: 0;
+		overflow: initial;
+		height: 508px !important;
+	}
 	.content-com-wrap{top: 0;}
 	.lm-aside-flight,.lm-important{display: none;}
 	.lm-nav-wrap{
@@ -2865,6 +2874,9 @@ body{
 				padding-left: 30px;
 				font-size: 16px;
 				background-size: 20px;
+			}
+			.nav-box{
+				width: 300%;
 			}
 			.m-nav-1{
 				position: absolute;
@@ -3138,6 +3150,8 @@ body{
 		.from-com,.to-com{
 			position: relative;
 			width: 50%;
+			animation-delay: 0s;
+			-webkit-animation-delay: 0s;
 			input{
 				border-radius: 0;
 				padding-left: 20px;
@@ -3156,11 +3170,11 @@ body{
 			border-bottom-left-radius: 0;
 			-webkit-animation: fadeInUp 1.5s;
 			animation: fadeInUp 1.5s;
-			animation-delay: .6s;
-			-webkit-animation-delay: .6s;
 		}
 		.hotel-from,.flight-number-box,.fStatus-date{
 			width: 100%;
+			animation-delay: 0s;
+			-webkit-animation-delay: 0s;
 			input{text-align: left;}
 		}
 		.m-city-from,.m-city-to{
@@ -3177,6 +3191,8 @@ body{
 			white-space: nowrap;
 			display: none;
 		}
+		.m-city-from{padding-right: 20px;}
+		.m-city-to{padding-left: 20px;}
 		.m-city-result{
 			>input{
 				padding-top: 10px;
@@ -3203,14 +3219,14 @@ body{
 			padding-left: 20px;
 			padding-right: 20px;
 			background: url('@{url}ticket-change-active.png') center no-repeat;
-			animation-delay: .6s;
-			-webkit-animation-delay: .6s;
+			animation-delay: 0s;
+			-webkit-animation-delay: 0s;
 		}
 		.date-com{
 			-webkit-animation: fadeInUp 1.5s;
 			animation: fadeInUp 1.5s;
-			animation-delay: 0.6s;
-			-webkit-animation-delay: 0.6s;
+			animation-delay: 0s;
+			-webkit-animation-delay: 0s;
 		}
 		.date-result{
 			padding-left: 20px;
@@ -3222,8 +3238,8 @@ body{
 		.people-com {
 			-webkit-animation: fadeInUp 1.5s;
 			animation: fadeInUp 1.5s;
-			animation-delay: .6s;
-			-webkit-animation-delay: .6s;
+			animation-delay: 0s;
+			-webkit-animation-delay: 0s;
 			.t-people-result{
 				line-height: 50px;
 				padding-left: 10px;
@@ -3231,8 +3247,8 @@ body{
 			}
 		}
 		.route-from-box{
-			animation-delay: .6s;
-			-webkit-animation-delay: .6s;
+			animation-delay: 0s;
+			-webkit-animation-delay: 0s;
 		}
 	}
 	.search-flight-wrap{
@@ -3240,15 +3256,13 @@ body{
 		margin-top: 0;
 		-webkit-animation: fadeInUp 1.5s;
 		animation: fadeInUp 1.5s;
-		animation-delay: .6s;
-		-webkit-animation-delay: .6s;
+		animation-delay: 0s;
+		-webkit-animation-delay: 0s;
 		.flight-cancel{display: none;}
 		.flight-search{
 			width: 100%;
 			height: 50px;
 			line-height: 50px;
-			animation-delay: .6s;
-			-webkit-animation-delay: .6s;
 		}
 	}
 	.lm-aside-flight{
@@ -3257,7 +3271,7 @@ body{
 		height: 60px;
 		top: auto;
 		left: 0;
-		bottom: 90px;
+		bottom: 30px;
 		padding-left: 15px;
 		padding-right: 15px;
 		background: none;
@@ -3306,7 +3320,8 @@ body{
 		.popup-close{
 			position: absolute;
 			right: 15px;
-			top: 15px;
+			top: 19px;
+			width: 20px;
 		}
 		.city-search{
 			display: block;
@@ -3505,7 +3520,7 @@ body{
 				position: absolute;
 				bottom: 0;
 				width: 100%;
-				padding:0 5px;
+				padding:8px 10px;
 				>a{
 					display: block;
 					width: 100%;
@@ -3515,6 +3530,7 @@ body{
 					color: #fff;
 					font-size: 20px;
 					background: @linear;
+					border-radius: 2px;
 				}
 			}
 		}
@@ -3717,15 +3733,41 @@ body{
 	}
 	.daterangepicker{
 		width: 100%;
+		box-shadow: none;
 		.calendar{margin:0 auto;}
+		// .calendar.right{margin-bottom: 48px;}
 		.next.available{
 			position: absolute;
 			top: 12px;
+		}
+		.cancelBtn{display: none;}
+		.ranges{
+			display: none;
+			position: fixed;
+		    bottom: 0;
+		    left: 0;
+		    width: 100%;
+			padding: 8px 3px;
+			margin:0;
+			background: #fff;
+			.applyBtn{
+				width: 100%;
+				height: 40px;
+				line-height: 40px;
+				text-align: center;
+				color: #fff;
+				font-size: 20px;
+				background: @linear;
+				padding: 0;
+			    border: none;
+			    border-radius: 2px;
+			}
 		}
 	}
 	.lm-section-banner, .lm-section-service, .lm-section-hotel{
 		margin-bottom: 20px;
 	}
+	.lm-section-banner{margin-top: 0;}
 	.lm-section-fares{margin-bottom: 10px;}
 	.lm-section-news{margin-bottom: 40px;}
 	.section-content-title{
@@ -3852,6 +3894,10 @@ body{
 		.travel-item{
 			width: 290px;
 			margin-left: 15px;
+			>img{
+				width: 290px;
+				height: 167px;
+			}
 			.travel-inner {
 				.price-wrap,.locale-wrap{margin-top: 10px;}
 				> h2{font-size: 16px;}
@@ -3871,6 +3917,12 @@ body{
 				width: 290px;
 				height: 180px;
 				float: none;
+				.m-book-hotel{
+					display: block;
+				    width: 290px;
+				    height: 180px;
+				    >img{width: 100%;height: 100%;}
+				}
 			}
 			.hotel-detail{
 				width: 290px;

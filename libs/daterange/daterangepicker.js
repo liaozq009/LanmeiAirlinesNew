@@ -1,11 +1,4 @@
-/**
-* @version: 2.1.24
-* @author: Dan Grossman http://www.dangrossman.info/
-* @copyright: Copyright (c) 2012-2016 Dan Grossman. All rights reserved.
-* @license: Licensed under the MIT license. See http://www.opensource.org/licenses/mit-license.php
-* @website: https://www.improvely.com/
-*/
-// Follow the UMD template https://github.com/umdjs/umd/blob/master/templates/returnExportsGlobal.js
+
 (function (root, factory) {
     if (typeof define === 'function' && define.amd) {
         // AMD. Make globaly available as well
@@ -94,7 +87,7 @@
                 direction: 'ltr',
                 format: moment.localeData().longDateFormat('DM'),
                 separator: ' - ',
-                applyLabel: 'Apply',
+                applyLabel: 'OK',
                 cancelLabel: 'Cancel',
                 weekLabel: 'W',
                 customRangeLabel: 'Custom Range',
@@ -145,10 +138,10 @@
                     '</div>' +
                     '<div class="calendar-table"></div>' +
                 '</div>' +
-                '<div class="range-change-date">From <span class="start-change-date">Wed, 14 Nov 2018</span> to <span class="end-change-date">Wed, 14 Nov 2018</span>(<span class="totle-num-date">3</span> nights)</div>'
-                '<div class="ranges">' +
+                '<div class="range-change-date js-range-date">From <span class="start-change-date">Wed, 14 Nov 2018</span> to <span class="end-change-date">Wed, 14 Nov 2018</span>(<span class="totle-num-date">3</span> nights)</div>'+
+                '<div class="ranges js-date-ok">' +
                     '<div class="range_inputs">' +
-                        '<button class="applyBtn" disabled="disabled" type="button"></button> ' +
+                        '<button class="applyBtn js-applyBtn" disabled="disabled" type="button"></button> ' +
                         '<button class="cancelBtn" type="button"></button>' +
                     '</div>' +
                 '</div>' +
@@ -1242,7 +1235,7 @@
                 target.closest(this.container).length ||
                 target.closest('.calendar-table').length
                 ) return;
-            this.hide();
+            //this.hide();
             this.element.trigger('outsideClick.daterangepicker', this);
         },
 

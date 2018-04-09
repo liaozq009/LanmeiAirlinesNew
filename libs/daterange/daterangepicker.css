@@ -110,10 +110,7 @@
     .daterangepicker td{
        cursor: pointer;
     }
-    .daterangepicker td.available:hover, .daterangepicker th.available:hover {
-      background-color: #1f2c5c;
-      border-color: transparent;
-      color: #fff; }
+   
     .daterangepicker th.available.next:hover,.daterangepicker th.available.prev:hover {
       background: #fff;
       cursor: pointer;
@@ -313,4 +310,12 @@
 }
 .daterangepicker .calendar-table tbody tr:nth-of-type(even),.daterangepicker .calendar-table thead tr:nth-of-type(even){
   background-color: rgba(31,44,92,0.04);
+}
+
+/* hover效果 */
+@media (min-width: 992px) {
+  .daterangepicker td.available:hover, .daterangepicker th.available:hover {
+    background-color: #1f2c5c;
+    border-color: transparent;
+    color: #fff; }
 }

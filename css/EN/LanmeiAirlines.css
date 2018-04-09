@@ -1431,7 +1431,8 @@ body {
   -webkit-transition: all .3s;
 }
 .lm-section-travel .travel-item > img {
-  width: 100%;
+  width: 400px;
+  height: 230px;
 }
 .lm-section-travel .travel-item .travel-inner {
   padding: 20px 30px 30px;
@@ -2169,6 +2170,10 @@ body {
   .lm-section-travel .travel-item {
     width: 320px;
   }
+  .lm-section-travel .travel-item > img {
+    width: 320px;
+    height: 184px;
+  }
   .lm-section-travel .travel-item .travel-inner {
     padding: 16px 18px 18px;
   }
@@ -2871,10 +2876,9 @@ body {
   .lm-section-news .news-content {
     margin-left: 400px;
   }
-  .lm-section-news .news-content .news-item > img {
+  .lm-section-news .news-content .news-item > a > img {
     width: 368px;
     height: 278px;
-    height: auto;
   }
   .lm-section-news .news-detail .news-info > div .news-info-detail {
     margin-top: 20px;
@@ -2958,6 +2962,7 @@ body {
   .lm-section-main {
     top: 0;
     overflow: initial;
+    height: 508px !important;
   }
   .content-com-wrap {
     top: 0;
@@ -2976,6 +2981,9 @@ body {
     padding-left: 30px;
     font-size: 16px;
     background-size: 20px;
+  }
+  .lm-nav-wrap .nav-container .nav-box {
+    width: 300%;
   }
   .lm-nav-wrap .nav-container .m-nav-1 {
     position: absolute;
@@ -3268,6 +3276,8 @@ body {
   .select-air-com .to-com {
     position: relative;
     width: 50%;
+    animation-delay: 0s;
+    -webkit-animation-delay: 0s;
   }
   .select-air-com .from-com input,
   .select-air-com .to-com input {
@@ -3287,13 +3297,13 @@ body {
     border-bottom-left-radius: 0;
     -webkit-animation: fadeInUp 1.5s;
     animation: fadeInUp 1.5s;
-    animation-delay: .6s;
-    -webkit-animation-delay: .6s;
   }
   .select-air-com .hotel-from,
   .select-air-com .flight-number-box,
   .select-air-com .fStatus-date {
     width: 100%;
+    animation-delay: 0s;
+    -webkit-animation-delay: 0s;
   }
   .select-air-com .hotel-from input,
   .select-air-com .flight-number-box input,
@@ -3314,6 +3324,12 @@ body {
     text-overflow: ellipsis;
     white-space: nowrap;
     display: none;
+  }
+  .select-air-com .m-city-from {
+    padding-right: 20px;
+  }
+  .select-air-com .m-city-to {
+    padding-left: 20px;
   }
   .select-air-com .m-city-result > input {
     padding-top: 10px;
@@ -3342,14 +3358,14 @@ body {
     padding-left: 20px;
     padding-right: 20px;
     background: url('../../images/EN/ticket-change-active.png') center no-repeat;
-    animation-delay: .6s;
-    -webkit-animation-delay: .6s;
+    animation-delay: 0s;
+    -webkit-animation-delay: 0s;
   }
   .select-air-com .date-com {
     -webkit-animation: fadeInUp 1.5s;
     animation: fadeInUp 1.5s;
-    animation-delay: 0.6s;
-    -webkit-animation-delay: 0.6s;
+    animation-delay: 0s;
+    -webkit-animation-delay: 0s;
   }
   .select-air-com .date-result {
     padding-left: 20px;
@@ -3361,8 +3377,8 @@ body {
   .select-air-com .people-com {
     -webkit-animation: fadeInUp 1.5s;
     animation: fadeInUp 1.5s;
-    animation-delay: .6s;
-    -webkit-animation-delay: .6s;
+    animation-delay: 0s;
+    -webkit-animation-delay: 0s;
   }
   .select-air-com .people-com .t-people-result {
     line-height: 50px;
@@ -3370,16 +3386,16 @@ body {
     padding-right: 10px;
   }
   .select-air-com .route-from-box {
-    animation-delay: .6s;
-    -webkit-animation-delay: .6s;
+    animation-delay: 0s;
+    -webkit-animation-delay: 0s;
   }
   .search-flight-wrap {
     visibility: visible;
     margin-top: 0;
     -webkit-animation: fadeInUp 1.5s;
     animation: fadeInUp 1.5s;
-    animation-delay: .6s;
-    -webkit-animation-delay: .6s;
+    animation-delay: 0s;
+    -webkit-animation-delay: 0s;
   }
   .search-flight-wrap .flight-cancel {
     display: none;
@@ -3388,8 +3404,6 @@ body {
     width: 100%;
     height: 50px;
     line-height: 50px;
-    animation-delay: .6s;
-    -webkit-animation-delay: .6s;
   }
   .lm-aside-flight {
     display: block;
@@ -3397,7 +3411,7 @@ body {
     height: 60px;
     top: auto;
     left: 0;
-    bottom: 90px;
+    bottom: 30px;
     padding-left: 15px;
     padding-right: 15px;
     background: none;
@@ -3454,7 +3468,8 @@ body {
   .popup-title-wrap .popup-close {
     position: absolute;
     right: 15px;
-    top: 15px;
+    top: 19px;
+    width: 20px;
   }
   .popup-title-wrap .city-search {
     display: block;
@@ -3655,7 +3670,7 @@ body {
     position: absolute;
     bottom: 0;
     width: 100%;
-    padding: 0 5px;
+    padding: 8px 10px;
   }
   .popup-content .popup-people .m-select-people > a {
     display: block;
@@ -3666,6 +3681,7 @@ body {
     color: #fff;
     font-size: 20px;
     background: linear-gradient(to right, #42958a 0%, #1f2c5c 100%);
+    border-radius: 2px;
   }
   .popup-content .hotel-popus-people {
     width: 100% !important;
@@ -3867,6 +3883,7 @@ body {
   }
   .daterangepicker {
     width: 100%;
+    box-shadow: none;
   }
   .daterangepicker .calendar {
     margin: 0 auto;
@@ -3875,10 +3892,38 @@ body {
     position: absolute;
     top: 12px;
   }
+  .daterangepicker .cancelBtn {
+    display: none;
+  }
+  .daterangepicker .ranges {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 8px 3px;
+    margin: 0;
+    background: #fff;
+  }
+  .daterangepicker .ranges .applyBtn {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    background: linear-gradient(to right, #42958a 0%, #1f2c5c 100%);
+    padding: 0;
+    border: none;
+    border-radius: 2px;
+  }
   .lm-section-banner,
   .lm-section-service,
   .lm-section-hotel {
     margin-bottom: 20px;
+  }
+  .lm-section-banner {
+    margin-top: 0;
   }
   .lm-section-fares {
     margin-bottom: 10px;
@@ -4016,6 +4061,10 @@ body {
     width: 290px;
     margin-left: 15px;
   }
+  .lm-section-travel .travel-item > img {
+    width: 290px;
+    height: 167px;
+  }
   .lm-section-travel .travel-item .travel-inner .price-wrap,
   .lm-section-travel .travel-item .travel-inner .locale-wrap {
     margin-top: 10px;
@@ -4040,6 +4089,15 @@ body {
     width: 290px;
     height: 180px;
     float: none;
+  }
+  .mobile-comfortHotel-content .hotel-com .hotel-img .m-book-hotel {
+    display: block;
+    width: 290px;
+    height: 180px;
+  }
+  .mobile-comfortHotel-content .hotel-com .hotel-img .m-book-hotel > img {
+    width: 100%;
+    height: 100%;
   }
   .mobile-comfortHotel-content .hotel-com .hotel-detail {
     width: 290px;
