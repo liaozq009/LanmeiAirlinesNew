@@ -1211,7 +1211,11 @@
 
             $(document).off('.daterangepicker');
             $(window).off('.daterangepicker');
-            this.container.hide();
+            // 延迟关闭日期
+            var that = this;
+            setTimeout(function(){
+                 that.container.hide();
+            },600);
             this.element.trigger('hide.daterangepicker', this);
             this.isShowing = false;
         },

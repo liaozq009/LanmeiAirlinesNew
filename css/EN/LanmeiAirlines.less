@@ -557,7 +557,7 @@ body{
 				height: 100px;
 				border-left: 6px solid transparent;
 				border-right: 6px solid transparent !important;
-				color:#e9ecfa;
+				.purpleRgb(.2);
 				text-align: center;
 				background-size: 50px 50px !important;
 				span{
@@ -937,9 +937,13 @@ body{
 			.p-hotelChild{background: url('@{url}child.png') 0 center no-repeat;}
 		}
 		.hidden-infant{
-			padding-left: 60px !important;
+			text-align: center;
+			>p{
+				float: none;
+				display: inline;
+			}
 			.p-infant{display: none;}
-			.p-child{margin-left: 30px;}
+			.p-child{margin-left: 30px;margin-right: 0;}
 		}
 	}
 }
@@ -954,7 +958,10 @@ body{
 		margin-right: 0;
 		float: none;
 		visibility: visible;
-		.faresDate-container{width: 600px;}
+		.faresDate-container{
+			position: absolute;
+			width: 586px;
+		}
 		.fares-people-container{
 			top: 62px;
 			box-shadow: none;
@@ -1385,7 +1392,7 @@ body{
 		outline: none;
 		transition:all .3s;
 		-webkit-transition:all .3s;
-		>img{width: 400px;height: 230px;}
+		>a>img{width: 400px;height: 230px;}
 		.travel-inner{
 			padding: 20px 30px 30px;
 			>h2{
@@ -2108,7 +2115,7 @@ body{
 	}
 	.lm-section-travel .travel-item{
 		width: 320px;
-		>img{
+		>a>img{
 			width: 320px;
 			height: 184px;
 		}
@@ -2325,7 +2332,8 @@ body{
 				margin-bottom: 20px;
 			}
 			.flight-list-wrap{
-				overflow: hidden;
+				max-height: 300px;
+			    overflow-y: scroll;
 				>li{
 					float: left;
 					width: 50%;
@@ -2635,7 +2643,6 @@ body{
 					border-radius:2px;
 					background: url('@{url}rooms-icon.png') 20px center no-repeat #fff;
 					b{
-						display: none;
 						position: absolute;
 						top: 0;
 						right: 0;
@@ -2748,7 +2755,6 @@ body{
 			clear: both;
 		}
 	}
-	.popup-content .hotel-popus-people .add-rooms-wrap p b{display: block;}
 	.lm-section-banner, .lm-section-service, .lm-section-hotel{
 		margin-bottom: 50px;
 	}
@@ -2862,6 +2868,7 @@ body{
 		overflow: initial;
 		height: 508px !important;
 	}
+	.cloud-iframe{display: none;}
 	.content-com-wrap{top: 0;}
 	.lm-aside-flight,.lm-important{display: none;}
 	.lm-nav-wrap{
@@ -2869,22 +2876,28 @@ body{
 			overflow-y: scroll;
 			.blackBgRgb(.8);
 			.nav-menu-close{
-				right: 0;
+				position: fixed;
+				left: -200px;
 				top: 14px;
+				width: 28px;
 				padding-left: 30px;
 				font-size: 16px;
 				background-size: 20px;
+				transition: all 0.3s ease-out;
+				-webkit-transition: all 0.3s ease-out;
 			}
 			.nav-box{
-				width: 300%;
+				width: 810px;
+				overflow:hidden;
+				transition: all 0.3s ease-out;
+				-webkit-transition: all 0.3s ease-out;
 			}
 			.m-nav-1{
-				position: absolute;
+				position: static;
+				float: left;
 				width: 270px;
 				padding-top: 80px;
 				background: none;
-				transition: all 0.6s ease-out;
-				-webkit-transition: all 0.6s ease-out;
 				>li{
 					margin-bottom: 30px;
 					>a{font-size: 16px;}
@@ -2892,13 +2905,13 @@ body{
 				}
 			}
 			.m-nav-2{
-				position: absolute;
+				position: static;
+				float: left;
 				width: 270px;
+				left: 0;
 				padding-top: 80px;
 				padding-left: 30px;
 				background: none;
-				transition: all 0.6s ease-out;
-				-webkit-transition: all 0.6s ease-out;
 				li{
 					margin-bottom: 30px;
 					>a{font-size: 16px;}
@@ -2906,13 +2919,13 @@ body{
 				}
 			}
 			.m-nav-3{
-				position: absolute;
+				position: static;
+				float: left;
 				width: 270px;
+				left: 0;
 				padding-top: 80px;
 				padding-left: 30px;
 				background: none;
-				transition: all 0.6s ease-out;
-				-webkit-transition: all 0.6s ease-out;
 				li{
 					margin-bottom: 30px;
 					>a{font-size: 16px;}
@@ -3051,10 +3064,12 @@ body{
 		}
 		.m-nav-back{
 			display: none;
-			position: absolute;
-			right: 30px;
+			position: fixed;
+			left: 220px;
 			top: 6px;
 			z-index: 12;
+			transition: all 0.3s ease-out;
+			-webkit-transition: all 0.3s ease-out;
 		}
 		.m-nav-mask{
 			display: none;
@@ -3071,7 +3086,7 @@ body{
 		width: 100%;
 		left: 0;
 		top: 0;
-		padding:15px;
+		padding:20px 15px;
 		>h1{
 			height: 50px;
 			font-size: 26px;
@@ -3089,7 +3104,7 @@ body{
 	.flight-com{
 		width: 100%;
 		left: 0;
-		top: 80px;
+		top: 90px;
 		-webkit-transform: scale(1);
 		transform: scale(1);
 		-webkit-transform-origin: top;
@@ -3101,6 +3116,7 @@ body{
 		.tips-com{font-size: 18px;display: none;}
 		.select-way{
 			height: auto;
+			margin-bottom: 12px;
 			>a{
 				height: 30px;
 				line-height: 30px;
@@ -3146,7 +3162,7 @@ body{
 	}
 	.select-air-com {
 		position: relative;
-		margin-top: 20px;
+		margin-top: 0;
 		.from-com,.to-com{
 			position: relative;
 			width: 50%;
@@ -3205,6 +3221,7 @@ body{
 			width: 100%;
 			height: 50px;
 			margin-right: 0;
+			margin-bottom: 12px;
 			box-shadow: none;
 		}
 		.local-change{
@@ -3244,11 +3261,41 @@ body{
 				line-height: 50px;
 				padding-left: 10px;
 				padding-right: 10px;
+				text-align: center;
+				>p{
+					float: none;
+					display: inline;
+				}
 			}
 		}
 		.route-from-box{
 			animation-delay: 0s;
 			-webkit-animation-delay: 0s;
+		}
+		.hotel-day{top: 10px;}
+	}
+	.select-fares{
+		width: 100%;
+		height: 190px;
+		.fares-search{
+			width: 100%;
+			height: 50px;
+			line-height: 50px;
+		}
+		>div{
+			box-shadow: 0 0 50px 0 rgba(31, 44, 92, 0.1);
+			.faresDate-container{
+				width: 286px;
+			    left: -10px;
+			}
+		}
+		.fares-people-container{
+			position: absolute;
+			top: 56px;
+			width: 272px;
+			background: #fff;
+			padding-top: 20px;
+			.popup-people .people-number{width: 150px;}
 		}
 	}
 	.search-flight-wrap{
@@ -3514,6 +3561,8 @@ body{
 				}
 			}
 			.select-people-container{
+				position: relative;
+			    z-index: 3;
 				padding: 0 12px 20px 20px;
 			}
 			.m-select-people{
@@ -3626,7 +3675,7 @@ body{
 					display: none;
 					position: absolute;
 					top: 42px;
-					left: 20px;
+					left: 10px;
 					width: 78px;
 					height: 182px;
 					overflow: hidden;
@@ -3690,7 +3739,6 @@ body{
 						border-radius: 2px;
 						cursor: pointer;
 					}
-					&:hover b{display: block;}
 				}
 				.add-rooms-btn{
 					width:100%;
@@ -3705,7 +3753,7 @@ body{
 			}
 			.m-select-rooms{
 				display: block;
-				position: absolute;
+				position: relative;
 				bottom: 0;
 				z-index: 9;
 				width: 100%;
@@ -3894,13 +3942,14 @@ body{
 		.travel-item{
 			width: 290px;
 			margin-left: 15px;
-			>img{
+			>a>img{
 				width: 290px;
 				height: 167px;
 			}
 			.travel-inner {
 				.price-wrap,.locale-wrap{margin-top: 10px;}
 				> h2{font-size: 16px;}
+				.price{font-size: 14px;}
 				.nights{font-size: 12px;}
 				.view{margin-top: 20px;}
 			}
