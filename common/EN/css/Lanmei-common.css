@@ -384,16 +384,19 @@ body {
 .lm-footer .f-email {
   margin-top: 18px;
 }
-.lm-footer .f-email img {
-  margin-right: 20px;
+.lm-footer .f-email > i {
+  margin-right: 12px;
 }
-.lm-footer .f-locate {
+.lm-footer .f-local {
   margin-top: 14px;
 }
-.lm-footer .f-locate img {
-  margin-right: 20px;
+.lm-footer .f-local > i {
+  margin-right: 12px;
 }
-.lm-footer .f-locate a {
+.lm-footer .f-local > i::before {
+  color: #fff;
+}
+.lm-footer .f-local a {
   color: #fff;
 }
 .lm-footer .copyright {

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>月亮</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="首页" transform="translate(-1300.000000, -380.000000)" fill="#1F2C5C">
+            <g id="弹开订酒店">
+                <g id="日期" transform="translate(1040.000000, 365.000000)">
+                    <path d="M260.153935,27.8429943 C260.052498,28.5473631 260,29.2675508 260,30 C260,38.2842712 266.715729,45 275,45 C283.284271,45 290,38.2842712 290,30 C290,21.7157288 283.284271,15 275,15 C274.267551,15 273.547363,15.0524976 272.842994,15.1539354 C274.187846,16.7266317 275,18.7684715 275,21 C275,25.9705627 270.970563,30 266,30 C263.768472,30 261.726632,29.1878465 260.153935,27.8429943 Z" id="月亮"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

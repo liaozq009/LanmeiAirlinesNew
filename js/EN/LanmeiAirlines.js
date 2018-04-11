@@ -108,13 +108,29 @@ var LanmeiAirlines = {
 
 	/* 移动端事件 */
 	mobileEvent:function(){
-		$('.js-h-lang>img').click(function(e) {
+		// 语言切换
+		$('.js-mh-lang').click(function(e) {
 			e.stopPropagation();
-			$(this).siblings('.js-lang-menu').show();
+			$(this).children('.js-mLang-menu').show();
 		});
-		$('.js-h-phone>img').click(function(e) {
+		$('.js-mLang-menu>a').click(function(e) {
 			e.stopPropagation();
-			$(this).siblings('.js-phone-menu').show();
+			var data = $(this).attr('data');
+			switch (data) {
+				case 'en':
+				$('.js-mh-lang').removeClass('h-lang-zh').addClass('h-lang-en');
+				$('.js-mLang-menu').hide();
+				break;
+				case 'zh':
+				$('.js-mh-lang').removeClass('h-lang-en').addClass('h-lang-zh');
+				$('.js-mLang-menu').hide();
+				break;
+			}
+		});
+
+		$('.js-mh-phone').click(function(e) {
+			e.stopPropagation();
+			$(this).children('.js-mPhone-menu').show();
 		});
 		$('html').click(function(event) {
 			$('.js-phone-menu,.js-lang-menu').hide();
@@ -2347,7 +2363,7 @@ var LanmeiAirlines = {
 				'<p class="rooms-title js-rooms-title">Room '+roomsNum+'</p>'+
 				'<div class="adult-rooms-content rooms-content-com js-adultRooms-content">'+
 				'<div class="hotel-people-prompt people-prompt">'+
-				'<p class="p1"><img src="images/EN/adult-icon.png">Adult</p>'+
+				'<p class="p1">Adult</p>'+
 				'</div>'+
 				'<div class="hotel-people-number people-number">'+
 				'<a href="javascript:;" class="sub-people off-sub-operation js-hotelAdult-sub"></a>'+
@@ -2357,7 +2373,7 @@ var LanmeiAirlines = {
 				'</div>'+
 				'<div class="child-rooms-content rooms-content-com js-childRooms-content">'+
 				'<div class="hotel-people-prompt people-prompt">'+
-				'<p class="p1"><img src="images/EN/Child-icon.png">Child</p>'+
+				'<p class="p1">Child</p>'+
 				'</div>'+
 				'<div class="hotel-people-number people-number disable">'+
 				'<a href="javascript:;" class="sub-people off-sub-operation js-hotelChild-sub"></a>'+

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="24px" viewBox="0 0 30 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>成人（下拉）</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.699999988">
+        <g id="首页" transform="translate(-1310.000000, -518.000000)" fill="#000000">
+            <g id="弹开订票">
+                <g id="选择人数" transform="translate(1270.000000, 435.000000)">
+                    <g id="Adult" transform="translate(40.000000, 83.000000)">
+                        <path d="M0.0437188079,24 C0.0147495301,23.8585536 0,23.7156309 0,23.5714286 C0,20.4944135 6.71572875,18 15,18 C23.2842712,18 30,20.4944135 30,23.5714286 C30,23.7156309 29.9852505,23.8585536 29.9562812,24 L0.0437188079,24 Z M8,1.99406028 C8,0.892771196 8.89706013,0 10.0058587,0 L19.9941413,0 C21.1019465,0 22,0.894513756 22,1.99406028 L22,9.00544301 C22,12.8684302 18.8581267,16 15,16 C11.1340068,16 8,12.8580054 8,9.00544301 L8,1.99406028 Z M19,10 L11,10 C11,12.209139 12.790861,14 15,14 C17.209139,14 19,12.209139 19,10 Z" id="成人（下拉）"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

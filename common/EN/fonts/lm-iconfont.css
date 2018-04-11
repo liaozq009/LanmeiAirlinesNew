@@ -20,44 +20,24 @@
   text-transform: none;
   line-height: 1;
   display: inline-block;
+  vertical-align: top;
 
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-left-arrow:before {
-  content: "\e900";
+.icon-local:before {
+  content: "\e902";
+  color: #4b4b4c;
 }
-.icon-x:before {
-  content: "\222";
+.icon-email:before {
+  content: "\e903";
+  color: #fff;
 }
-.icon-close:before {
-  content: "\e69a";
-}
-.icon-feijizhizao:before {
-  content: "\e617";
-}
-.icon-googleplus:before {
-  content: "\e721";
-}
-.icon-fangxiang-copy:before {
-  content: "\e60f";
-}
-.icon-dianhua:before {
-  content: "\e6c4";
-}
-.icon-tuite:before {
-  content: "\e601";
-}
-.icon-youtube:before {
-  content: "\e6ae";
-}
-.icon-inst:before {
-  content: "\e656";
-}
-.icon-xiangshang-copy-copy-copy:before {
-  content: "\e653";
+.icon-see:before {
+  content: "\e901";
+  color: #c8c9cc;
 }
 .icon-wb:before {
   content: "\e602";
@@ -65,24 +45,29 @@
 .icon-facebook:before {
   content: "\e606";
 }
-.icon-in:before {
-  content: "\e64b";
+.icon-upTop:before {
+  content: "\e617";
 }
-.icon-fangxiang-copy1:before {
-  content: "\e502";
+.icon-right-arrow:before {
+  content: "\e653";
+}
+.icon-close:before {
+  content: "\e69a";
+}
+.icon-left-arrow:before {
+  content: "\e900";
 }
 
 /* add css */
-.icon-dianhua:before { font-size: 20px; color:#1f2c5c;}
-
-.icon-xiangshang-copy-copy-copy:before { font-size: 18px;}
-
-.icon-fangxiang-copy:before { font-size: 51px; }
-
-.icon-fangxiang-copy1:before { font-size: 51px;}
-
 .icon-left-arrow{
   font-weight: bold;
-  position: relative;
-  top: 8px;
+}
+.icon-local{
+  font-size: 16px;
+}
+.icon-see{
+  font-size: 15px;
+}
+.icon-email{
+  font-size: 20px;
 }

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="18px" viewBox="0 0 20 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>调换（选中）</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="首页" transform="translate(-660.000000, -386.000000)" fill="#8EC060">
+            <g id="弹开订票">
+                <path d="M660,391 L664,386 L664,396 L660,391 Z M664,389 L674,389 L674,393 L664,393 L664,389 Z M680,399 L676,404 L676,394 L680,399 Z M676,397 L676,401 L666,401 L666,397 L676,397 Z" id="调换（选中）"></path>
+            </g>
+        </g>
+    </g>
+</svg>
