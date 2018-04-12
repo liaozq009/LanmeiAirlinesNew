@@ -69,6 +69,8 @@
 
 </head>
 <body>
+	<!-- 页面loading -->
+	<div class="lm-loading"><img src="images/EN/construction.gif" alt="loading"></div>
 	<!-- 页面顶部 -->
 	<header class="lm-header">
 		<div class="h-menu js-h-menu">
@@ -89,6 +91,7 @@
 			<!-- <div class="h-login success-h-login"> -->
 			<div class="h-login">
 				<a href="javascript:;" class="loginBtn">
+					<p class="head-portrait"></p>
 					<span>Login</span>
 				</a>
 				<div class="login-menu js-login-menu">
@@ -850,31 +853,32 @@
 		<!-- 左侧航班选择 -->
 		<aside class="lm-aside-flight">
 			<ul class="js-aside-flight">
-				<li class="li-child1"><a href="javascript:;" data-href="ticket-content" class="nth-child1 active"><span>Ticket</span></a></li>
-				<li class="li-child2"><a href="javascript:;" data-href="hotel-content" class="nth-child2"><span>Hotel</span></a></li>
-				<li class="li-child3"><a href="javascript:;" data-href="car-content" class="nth-child3"><span>Car</span></a></li>
-				<li class="li-child4"><a href="javascript:;" data-href="flight-content" class="nth-child4"><span>Flight Status</span></a></li>
+				<li class="li-child1"><a href="javascript:;" data-href="ticket-content" class="nth-child1 active js-a-ticket"><span>Ticket</span></a></li>
+				<li class="li-child2"><a href="javascript:;" data-href="hotel-content" class="nth-child2 js-a-hotel"><span>Hotel</span></a></li>
+				<li class="li-child3"><a href="javascript:;" data-href="car-content" class="nth-child3 js-a-car"><span>Car</span></a></li>
+				<li class="li-child4"><a href="javascript:;" data-href="flight-content" class="nth-child4 js-a-flight"><span>Flight Status</span></a></li>
 				<li class="li-slide"></li>
 			</ul>
-			<a href="javascript:void(0)" class="flight-up-arrow"></a>
-			<a href="javascript:void(0)" class="flight-down-arrow"></a>
+			<a href="javascript:void(0)" class="flight-up-arrow js-flight-up"></a>
+			<a href="javascript:void(0)" class="flight-down-arrow js-flight-down"></a>
 		</aside>
 
 		<!-- 左侧blur内容 -->
 		<aside class="lm-aside-blur js-aside-blur">
-			<img src="imgage_demo/travel-01.jpg" alt="blur" class="blur-img-ticket blur-img">
-			<img src="imgage_demo/travel-02.jpg" alt="blur" class="blur-img-hotel blur-img">
-			<img src="imgage_demo/travel-03.jpg" alt="blur" class="blur-img-car blur-img">
-			<img src="imgage_demo/travel-02.jpg" alt="blur" class="blur-img-flight blur-img">
+			<img src="imgage_demo/blur-01.jpg" alt="blur" class="blur-img-ticket blur-img">
+			<img src="imgage_demo/blur-02.jpg" alt="blur" class="blur-img-hotel blur-img">
+			<img src="imgage_demo/blur-03.jpg" alt="blur" class="blur-img-car blur-img">
+			<img src="imgage_demo/blur-04.jpg" alt="blur" class="blur-img-flight blur-img">
 		</aside>
 
 		<!-- 右侧二维码 -->
 		<aside class="lm-aside-code js-aside-code">
 			<div class="small-code"><img src="images/EN/QR-code-bg.png"></div>
 			<h3>Follow us :</h3>
+			<p>Official Account</p>
 			<div class="facebook-icon">
-				<a href="javascript:;"><img src="images/EN/facebook-icon.png" class="img-1" alt="facebook-icon"></a>
-				<a href="javascript:;"><img src="images/EN/Sinaweibo.png" class="img-2" alt="Sinaweibo-icon"></a>
+				<a href="https://www.facebook.com/lanmeiairlines/"><i class="iconfont icon-facebook img-1"></i></a>
+				<a href="http://weibo.com/lanmeiair"><i class="iconfont icon-wb img-2"></i></a>
 			</div>
 		</aside>
 		<div class="aside-code-mask js-code-mask"></div>
@@ -1392,6 +1396,13 @@
 		</p>
 		<p class="copyright">© Copyright 2017 Lanmei Airlines. All Rights Reserved. ICP:Guangdong Province <a href="http://www.miitbeian.gov.cn" target="_Blank" rel="nofollow">ICP-17005494-1</a></p>
 	</footer>
+
+	<div class="BackToTop">
+		<div class="top">
+			<img src="images/EN/ToTop-icon-active.png" class="img02">
+			<p>UP</p>
+		</div>
+	</div>
 
 	<!-- 选择航班遮罩层 -->
 	<div class="lm-flight-mask js-ticket-mask"></div>

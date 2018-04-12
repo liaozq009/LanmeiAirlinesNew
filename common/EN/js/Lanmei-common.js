@@ -186,8 +186,9 @@ var LanmeiAirlinesCommon = {
 			if (_tick) clearTimeout(_tick);
 			_tick = setTimeout(function() {
 				var winWidth = $(window).width();
-				// if(winWidth>=992){
-					// $(window).scrollTop()>300 ? $('.BackToTop').fadeIn('slow') : $('.BackToTop').fadeOut('slow');
+				if(winWidth>=992){
+					console.log($(window).scrollTop());
+					$(window).scrollTop()>300 ? $('.BackToTop').fadeIn('slow') : $('.BackToTop').fadeOut('slow');
 					
 					getBottom = $(document).height() - $(window).height() - $(window).scrollTop();
 					if(getBottom<320){
@@ -195,7 +196,7 @@ var LanmeiAirlinesCommon = {
 					}else{
 						$('.BackToTop').css('bottom',70);
 					}
-				// }
+				}
 			}, 100);
 		});
 

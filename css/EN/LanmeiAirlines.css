@@ -96,8 +96,12 @@ body {
 .lm-header .h-right .h-login .loginBtn {
   display: inline-block;
   height: 60px;
-  width: 60px;
   text-align: right;
+}
+.lm-header .h-right .h-login .loginBtn .head-portrait {
+  float: left;
+  width: 24px;
+  height: 60px;
   background: url('../../images/EN/login.png') left center no-repeat;
 }
 .lm-header .h-right .h-login .login-menu {
@@ -162,6 +166,14 @@ body {
   border-left: 14px solid transparent;
   border-right: 14px solid transparent;
   border-bottom: 14px solid #fff;
+}
+.lm-header .h-right .success-h-login .loginBtn .head-portrait {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  margin-top: 15px;
+  border-radius: 50%;
+  background-size: 30px;
 }
 .lm-header .h-right .success-h-login > a img {
   width: 30px;
@@ -611,18 +623,32 @@ body {
   border-radius: 2px;
 }
 .lm-aside-flight .flight-up-arrow {
-  background: url('../../images/EN/f-arrow-up.png') center no-repeat #1f2c5c;
+  background: url('../../images/EN/f-arrow-up.png') center no-repeat #8ec060;
+  transition: all .3s;
+  -webkit-transition: all .3s;
+}
+.lm-aside-flight .flight-up-arrow:hover {
+  background: url('../../images/EN/f-arrow-up-active.png') center no-repeat #1f2c5c;
+  transition: all .3s;
+  -webkit-transition: all .3s;
 }
 .lm-aside-flight .flight-down-arrow {
   left: 170px;
   background: url('../../images/EN/f-arrow-down.png') center no-repeat #8ec060;
+  transition: all .3s;
+  -webkit-transition: all .3s;
+}
+.lm-aside-flight .flight-down-arrow:hover {
+  background: url('../../images/EN/f-arrow-down-active.png') center no-repeat #1f2c5c;
+  transition: all .3s;
+  -webkit-transition: all .3s;
 }
 .lm-aside-blur {
   position: absolute;
   left: 0;
   top: 50%;
   width: 6%;
-  height: 50%;
+  height: 42%;
   overflow: hidden;
 }
 .lm-aside-blur .blur-img {
@@ -671,8 +697,32 @@ body {
   width: 100%;
   text-align: center;
 }
+.lm-aside-code .facebook-icon a i {
+  transition: all .3s;
+  -webkit-transition: all .3s;
+}
+.lm-aside-code .facebook-icon a i:before {
+  color: #D2D5DE;
+}
+.lm-aside-code .facebook-icon a:hover i {
+  transition: all .3s;
+  -webkit-transition: all .3s;
+}
+.lm-aside-code .facebook-icon a:hover i:before {
+  color: #8ec060;
+}
 .lm-aside-code .facebook-icon .img-2 {
   margin-left: 50px;
+}
+.lm-aside-code > p {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  margin-top: 90px;
+  color: #000;
+  opacity: 0.5;
+  font-size: 16px;
+  text-align: center;
 }
 .lm-aside-code > h3 {
   font-size: 18px;
@@ -789,6 +839,14 @@ body {
   background: #fff;
   box-shadow: 0 0 50px 0 rgba(31, 44, 92, 0.1);
   border-radius: 2px;
+  transition: all .3s;
+  -webkit-transition: all .3s;
+}
+.flight-com .select-way > a:hover {
+  background: #8ec060;
+  color: #fff;
+  transition: all .3s;
+  -webkit-transition: all .3s;
 }
 .flight-com .select-way .active {
   background: #8ec060;
@@ -1508,8 +1566,7 @@ body {
   float: right;
   color: rgba(0, 0, 0, 0.2);
 }
-.lm-section-travel .travel-item .travel-inner .locale-wrap .see img {
-  display: inline-block;
+.lm-section-travel .travel-item .travel-inner .locale-wrap .see i {
   margin-left: 10px;
 }
 .lm-section-travel .travel-item .travel-inner .view {
@@ -2765,6 +2822,13 @@ body {
     color: rgba(31, 44, 92, 0.3);
     background: url('../../images/EN/add-rooms.png') 20px center no-repeat #fff;
     cursor: pointer;
+    transition: all .3s;
+    -webkit-transition: all .3s;
+  }
+  .popup-content .hotel-popus-people .add-rooms-wrap .add-rooms-btn:hover {
+    color: rgba(31, 44, 92, 0.7);
+    transition: all .3s;
+    -webkit-transition: all .3s;
   }
   .popup-inactive {
     opacity: 0;
@@ -2973,32 +3037,39 @@ body {
   }
   .lm-header .h-right .h-login .loginBtn {
     width: 30px;
+  }
+  .lm-header .h-right .h-login .loginBtn .head-portrait {
+    width: 30px;
+    height: 30px;
+    margin-top: 15px;
     background: url('../../images/EN/svg/m-login.svg') right center no-repeat;
   }
   .lm-header .h-right .h-login .login-menu {
     top: 60px;
-    left: -136px;
-    width: 170px;
+    left: -114px;
+    width: 150px;
     height: 76px;
     padding: 6px;
   }
   .lm-header .h-right .h-login .login-menu .lm-personal-center {
-    background-size: 16px;
     font-size: 12px;
     height: 26px;
     line-height: 26px;
     margin-top: 0;
     margin-left: 10px;
     padding-left: 30px;
+    background: url('../../images/EN/svg/personal-icon.svg') left center no-repeat;
+    background-size: 16px;
   }
   .lm-header .h-right .h-login .login-menu .lm-logout {
-    background-size: 16px;
     font-size: 12px;
     height: 26px;
     line-height: 26px;
     margin-top: 8px;
     margin-left: 10px;
     padding-left: 30px;
+    background: url('../../images/EN/svg/loginout-icon.svg') left center no-repeat;
+    background-size: 16px;
   }
   .lm-header .h-right .h-login .login-menu::before {
     top: -7px;
@@ -3491,7 +3562,7 @@ body {
     box-shadow: 0 0 50px 0 rgba(31, 44, 92, 0.1);
   }
   .select-fares > div .faresDate-container {
-    width: 286px;
+    width: 310px;
     left: -10px;
   }
   .select-fares .fares-people-container {

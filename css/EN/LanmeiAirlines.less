@@ -122,9 +122,13 @@ body{
 			.loginBtn{
 				display: inline-block;
 				height: 60px;
-			    width: 60px; 
 			    text-align: right;
-			    background: url('@{url}login.png') left center no-repeat;
+			    .head-portrait{
+			    	float: left;
+			    	width: 24px;
+			    	height: 60px;
+			    	background: url('@{url}login.png') left center no-repeat;
+			    }
 			}
 			.login-menu{
 				display: none;
@@ -191,6 +195,16 @@ body{
 			}
 		}
 		.success-h-login{
+			.loginBtn{
+				.head-portrait{
+					width: 30px;
+				    height: 30px;
+				    margin-right: 10px;
+			        margin-top: 15px;
+				    border-radius: 50%;
+					background-size: 30px;
+				}
+			}
 			>a{
 				img{
 					width: 30px;
@@ -632,11 +646,25 @@ body{
 		border-radius: 2px;
 	}
 	.flight-up-arrow{
-		background: url('@{url}f-arrow-up.png') center no-repeat @purple;
+		background: url('@{url}f-arrow-up.png') center no-repeat @green;
+		transition: all .3s;
+		-webkit-transition: all .3s;
+		&:hover{
+			background: url('@{url}f-arrow-up-active.png') center no-repeat @purple;
+			transition: all .3s;
+			-webkit-transition: all .3s;
+		}
 	}
 	.flight-down-arrow{
 		left: 170px;
 		background: url('@{url}f-arrow-down.png') center no-repeat @green;
+		transition: all .3s;
+		-webkit-transition: all .3s;
+		&:hover{
+			background: url('@{url}f-arrow-down-active.png') center no-repeat @purple;
+			transition: all .3s;
+			-webkit-transition: all .3s;
+		}
 	}
 }
 .lm-aside-blur{
@@ -644,7 +672,7 @@ body{
 	left: 0;
 	top: 50%;
 	width: 6%;
-	height: 50%;
+	height: 42%;
 	overflow: hidden;
 	.blur-img{
 		-webkit-filter: blur(4px);filter: blur(4px);
@@ -687,9 +715,33 @@ body{
 		left: 0;
 		width: 100%;
 		text-align: center;
+		a{
+			i{
+				&:before{color: #D2D5DE;}
+				transition: all .3s;
+				-webkit-transition: all .3s;
+			}
+			&:hover{
+				i{
+					&:before{color: @green;}
+					transition: all .3s;
+					-webkit-transition: all .3s;
+				}
+			}
+		}
 		.img-2{
 			margin-left: 50px;
 		}
+	}
+	>p{
+		position: absolute;
+		top: 50%;
+	    width: 100%;
+		margin-top: 90px;
+	    color: #000;
+	    opacity: 0.5;
+	    font-size: 16px;
+	    text-align: center;
 	}
 	>h3{
 		font-size:18px;
@@ -800,6 +852,14 @@ body{
 			background:#fff;
 			box-shadow:0 0 50px 0 rgba(31,44,92,0.10);
 			border-radius:2px;
+			transition:all .3s;
+			-webkit-transition:all .3s;
+			&:hover{
+				background: @green;
+				color: #fff;
+				transition:all .3s;
+				-webkit-transition:all .3s;
+			}
 		}
 		.active{
 			background: @green;
@@ -1464,8 +1524,7 @@ body{
 				.see{
 					float: right;
 					.blackRgb(.2);
-					img{
-						display: inline-block;
+					i{
 						margin-left: 10px;
 					}
 				}
@@ -2721,6 +2780,13 @@ body{
 					.purpleRgb(.3);
 					background: url('@{url}add-rooms.png') 20px center no-repeat #fff;
 					cursor: pointer;
+					transition: all .3s;
+					-webkit-transition: all .3s;
+					&:hover{
+						.purpleRgb(.7);
+						transition: all .3s;
+						-webkit-transition: all .3s;
+					}
 				}
 			}
 		}
@@ -2898,12 +2964,17 @@ body{
 			height: 60px;
 			.loginBtn{
 				width: 30px;
-				background: url('@{url}svg/m-login.svg') right center no-repeat;
+				.head-portrait{
+					width: 30px;
+					height: 30px;
+					margin-top: 15px;
+					background: url('@{url}svg/m-login.svg') right center no-repeat;
+				}
 			}
 			.login-menu{
 				top: 60px;
-				left: -136px;
-				width: 170px;
+				left: -114px;
+				width: 150px;
 				height: 76px;
 				padding: 6px;
 				.lm-personal-center{
@@ -2914,6 +2985,8 @@ body{
 					margin-top: 0;
 					margin-left: 10px;
 					padding-left: 30px;
+					background: url('@{url}svg/personal-icon.svg') left center no-repeat;
+					background-size: 16px;
 				}
 				.lm-logout{
 					background-size: 16px;
@@ -2923,6 +2996,8 @@ body{
 					margin-top: 8px;
 					margin-left: 10px;
 					padding-left: 30px;
+					background: url('@{url}svg/loginout-icon.svg') left center no-repeat;
+					background-size: 16px;
 				}
 				&::before{
 					top: -7px;
@@ -3376,7 +3451,7 @@ body{
 		>div{
 			box-shadow: 0 0 50px 0 rgba(31, 44, 92, 0.1);
 			.faresDate-container{
-				width: 286px;
+				width: 310px;
 			    left: -10px;
 			}
 		}
