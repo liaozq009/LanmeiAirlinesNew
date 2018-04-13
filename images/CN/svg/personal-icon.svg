@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>个人中心</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#42958A" offset="0%"></stop>
+            <stop stop-color="#1F2C5C" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="首页" transform="translate(-1659.000000, -139.000000)" stroke-width="2" stroke="url(#linearGradient-1)">
+            <g id="top">
+                <g id="个人弹出" transform="translate(1639.000000, 60.000000)">
+                    <path d="M38.9447167,98 C38.5786642,94.7057751 36.4236292,91.8741436 33.3426032,90.6408799 L31.7377329,89.9984874 L33.0946816,88.927522 C34.2899965,87.9841254 35,86.5515624 35,85 C35,82.2385763 32.7614237,80 30,80 C27.2385763,80 25,82.2385763 25,85 C25,86.5515624 25.7100035,87.9841254 26.9053184,88.927522 L28.2622671,89.9984874 L26.6573968,90.6408799 C23.5763708,91.8741436 21.4213358,94.7057751 21.0552833,98 L38.9447167,98 Z" id="个人中心"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -72,8 +72,8 @@
         if(language.language == 'cn'){
             this.locale = {
                 direction: 'ltr',
-                format: moment.localeData().longDateFormat('LS'),
-                separator: ' - ',
+                format: moment.localeData().longDateFormat('MD'),
+                separator: ' ~ ',
                 applyLabel: '确定',
                 cancelLabel: '取消',
                 weekLabel: 'W',
@@ -1342,6 +1342,9 @@
                 this.container.find('.end-change-date').html(date.format('ddd, MMMM D, YYYY'));
                 endNight = date.toDate().getTime();
                 totleNight = (endNight-startNight)/86400000;
+                if(totleNight<0){
+                    totleNight=0;
+                }
                 this.container.find('.totle-num-date').html(totleNight);
                 $('.hotel-day').html(totleNight);
             }

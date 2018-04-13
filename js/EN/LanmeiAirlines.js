@@ -109,31 +109,22 @@ var LanmeiAirlines = {
 	/* 移动端事件 */
 	mobileEvent:function(){
 		// 语言切换
-		$('.js-mh-lang').click(function(e) {
-			e.stopPropagation();
-			$(this).children('.js-mLang-menu').show();
-		});
 		$('.js-mLang-menu>a').click(function(e) {
 			e.stopPropagation();
 			var data = $(this).attr('data');
 			switch (data) {
 				case 'en':
 				$('.js-mh-lang').removeClass('h-lang-zh').addClass('h-lang-en');
-				$('.js-mLang-menu').hide();
 				break;
 				case 'zh':
 				$('.js-mh-lang').removeClass('h-lang-en').addClass('h-lang-zh');
-				$('.js-mLang-menu').hide();
 				break;
 			}
 		});
-
+		// 电话
 		$('.js-mh-phone').click(function(e) {
 			e.stopPropagation();
 			$(this).children('.js-mPhone-menu').show();
-		});
-		$('html').click(function(event) {
-			$('.js-phone-menu,.js-lang-menu').hide();
 		});
 
 		$('.js-from-input,.js-to-input,.js-hotelFrom-input,.js-fNumber-input,.js-routeFrom-input,.js-routeTo-input').attr('readonly','readonly');
@@ -3207,14 +3198,6 @@ var LanmeiAirlines = {
 			e.stopPropagation();
 			$('.js-lang-menu').show();
 		});
-		$('.js-h-phone').click(function(e) {
-			e.stopPropagation();
-			$('.js-phone-menu').show();
-		});
-		$('html').click(function(event) {
-			$('.js-lang-menu').hide();
-			$('.js-phone-menu').hide();
-		});
 		$('.js-lang-menu>a').click(function(event) {
 			var data = $(this).attr('data');
 			switch (data) {
@@ -3227,6 +3210,22 @@ var LanmeiAirlines = {
 				$langMenu.hide();
 				break;
 			}
+		});
+
+		/* 电话 */
+		var $phoneMenu = $('.js-phone-menu');
+		$('.js-h-phone').mouseenter(function(event) {
+			$phoneMenu.show();
+		}).mouseleave(function(event) {
+			$phoneMenu.hide();
+		});
+		$('.js-h-phone').click(function(e) {
+			e.stopPropagation();
+			$('.js-phone-menu').show();
+		});
+		$('html').click(function(event) {
+			$('.js-lang-menu').hide();
+			$('.js-phone-menu').hide();
 		});
 	},
 };

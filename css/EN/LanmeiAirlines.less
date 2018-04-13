@@ -265,9 +265,7 @@ body{
 				border-bottom: 14px solid #fff;
 			}
 		}
-		&:hover{
-			.phone-menu{display: block;}
-		}
+		&:hover{.phone-menu{display: block;}}
 	}
 	.h-lang{
 		position: absolute;
@@ -330,6 +328,7 @@ body{
 				border-bottom: 14px solid #fff;
 			}
 		}
+		&:hover{.lang-menu{display: block;}}
 	}
 }
 .lm-footer{
@@ -744,7 +743,7 @@ body{
 	    text-align: center;
 	}
 	>h3{
-		font-size:18px;
+		font-size:16px;
 		font-family: @FBold;
 		color:#000;
 		opacity: .5;
@@ -776,7 +775,7 @@ body{
 			float: left;
 			width:110px;
 			height:30px;
-			line-height: 30px;
+			line-height: 34px;
 			margin-top: 15px;
 			padding-left: 30px;
 			font-size: 14px;
@@ -3094,6 +3093,7 @@ body{
 					line-height: 30px;
 					background: url('@{url}svg/lang-en.svg') right center no-repeat;
 					.lang-menu{
+						display: none;
 						position: absolute;
 						top: -100px;
 						right: 20px;
@@ -3148,6 +3148,7 @@ body{
 							border-top: 14px solid #fff;
 						}
 					}
+					&:hover{.lang-menu{display: block;}}
 					>span{
 						float: left;
 						.whiteRgb(.7);

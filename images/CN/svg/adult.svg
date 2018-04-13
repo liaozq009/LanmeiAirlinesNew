@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="24px" viewBox="0 0 30 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>成人</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#42958A" offset="0%"></stop>
+            <stop stop-color="#1F2C5C" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="首页" transform="translate(-1410.000000, -383.000000)" fill="url(#linearGradient-1)">
+            <g id="弹开订票">
+                <g id="人数" transform="translate(1390.000000, 365.000000)">
+                    <path d="M20.0437188,42 C20.0147495,41.8585536 20,41.7156309 20,41.5714286 C20,38.4944135 26.7157288,36 35,36 C43.2842712,36 50,38.4944135 50,41.5714286 C50,41.7156309 49.9852505,41.8585536 49.9562812,42 L20.0437188,42 Z M28,19.9940603 C28,18.8927712 28.8970601,18 30.0058587,18 L39.9941413,18 C41.1019465,18 42,18.8945138 42,19.9940603 L42,27.005443 C42,30.8684302 38.8581267,34 35,34 C31.1340068,34 28,30.8580054 28,27.005443 L28,19.9940603 Z M39,28 L31,28 C31,30.209139 32.790861,32 35,32 C37.209139,32 39,30.209139 39,28 Z" id="成人"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

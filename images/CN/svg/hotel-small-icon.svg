@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>酒店（搜索结果）</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.5">
+        <g id="首页" transform="translate(-360.000000, -520.000000)" fill="#1F2C5C">
+            <g id="弹开订酒店">
+                <g id="输入文字弹出目的地" transform="translate(340.000000, 435.000000)">
+                    <path d="M39,103 C39.5522847,103 40,103.447715 40,104 L40,105 L20,105 L20,104 L20,104 C20,103.447715 20.4477153,103 21,103 L21,87 C21,85.8954305 21.8954305,85 23,85 L33,85 C34.1045695,85 35,85.8954305 35,87 L35,91 L37,91 C38.1045695,91 39,91.8954305 39,93 L39,103 Z M21,103 L21,103 Z M32,103 L32,97 C32,96.4477153 31.5522847,96 31,96 L25,96 C24.4477153,96 24,96.4477153 24,97 L24,103 L27,103 L27,96 L29,96 L29,103 L32,103 Z M23,87 L23,89 L27,89 L27,87 L23,87 Z M29,87 L29,89 L33,89 L33,87 L29,87 Z M23,91 L23,93 L27,93 L27,91 L23,91 Z M35,95 L35,97 L37,97 L37,95 L35,95 Z M29,91 L29,93 L33,93 L33,91 L29,91 Z M35,99 L35,101 L37,101 L37,99 L35,99 Z" id="酒店（搜索结果）"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

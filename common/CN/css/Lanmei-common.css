@@ -1,0 +1,658 @@
+@charset "utf-8";
+/* 定义变量 */
+/* 定义颜色变量 */
+/*rewrite browser scrollbar stylesheet*/
+/*滚动条整体部分,必须要设置*/
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: #B0AEDA;
+}
+/*滚动条的轨道*/
+::-webkit-scrollbar-track {
+  width: 8px;
+  background-color: #fff;
+}
+/*滚动条的滑块按钮*/
+::-webkit-scrollbar-thumb {
+  background-color: #8ec060;
+  border: solid 1px #8ec060;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #8ec060;
+}
+/*滚动条的上下两端的按钮*/
+::-webkit-scrollbar-button {
+  height: 0px;
+  background-color: #1f2c5c;
+}
+/* IE下滚动条 */
+/*三角箭头的颜色*/
+* {
+  scrollbar-arrow-color: #1f2c5c;
+  /*滚动条滑块按钮的颜色*/
+  scrollbar-face-color: #8ec060;
+  /*滚动条整体颜色*/
+  scrollbar-highlight-color: #8ec060;
+  /*滚动条阴影*/
+  scrollbar-shadow-color: none;
+  /*滚动条轨道颜色*/
+  scrollbar-track-color: #fff;
+}
+/* reset.css */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li,
+input {
+  margin: 0;
+  padding: 0;
+}
+ul,
+li {
+  list-style: none;
+}
+a {
+  color: #666;
+  text-decoration: none;
+}
+a:hover,
+a:focus {
+  /*color:#ff0700;*/
+  text-decoration: none;
+  outline: none;
+}
+input {
+  border: 0;
+  outline: none;
+}
+img {
+  vertical-align: middle;
+  border: none;
+}
+input::-ms-clear {
+  display: none;
+}
+.ovfHiden {
+  overflow: hidden;
+  height: 100%;
+}
+/* 引入字体 */
+@font-face {
+  font-family: CamptonBook;
+  src: url(../fonts/Campton/Rene.Bieder_Campton.Book.otf);
+}
+@font-face {
+  font-family: CamptonBookBold;
+  src: url(../fonts/Campton/Rene.Bieder_Campton.Bold.otf);
+  font-weight: bold;
+}
+/* project mcins style sheet*/
+body {
+  min-width: 320px;
+  max-width: 1920px;
+  font-family: "Microsoft YaHei", sans-serif;
+  font-size: 14px;
+  color: #fff;
+  background: #FAFBFF;
+}
+/* 子页面头部样式 */
+.lanmeiHeader-subpage {
+  height: 200px;
+  background: url("../../../images/CN/subNavbarBg.png") center no-repeat;
+}
+.lanmeiHeader-subpage .lanmeiNav {
+  width: 960px;
+  margin: 0 auto;
+}
+.lanmeiHeader-subpage .lanmeiNav .lanmeiLogo {
+  float: left;
+  height: 100px;
+  line-height: 100px;
+  margin-top: 16px;
+}
+.lanmeiHeader-subpage .lanmeiNav .lanmeiLogo .navbar-brand {
+  height: 100px;
+}
+.lanmeiHeader-subpage .lanmeiNav .lanmeiHeadInfo {
+  float: left;
+  margin-left: 20px;
+  margin-top: 16px;
+}
+.lanmeiHeader-subpage .lanmeiNav .lanmeiHeadInfo > ul > li {
+  float: left;
+  position: relative;
+  height: 100px;
+  line-height: 100px;
+  margin-right: 20px;
+  font-size: 14px;
+}
+.lanmeiHeader-subpage .lanmeiNav .lanmeiHeadInfo > ul > li a {
+  font-size: 14px;
+}
+.lanmeiHeader-subpage .lanmeiNav .lanmeiHeadInfo > ul > li .phoneBtn {
+  font-size: 14px;
+  color: #1f2c5c;
+}
+.lanmeiHeader-subpage .lanmeiNav .lanmeiHeadInfo > ul .nth-child1 {
+  line-height: 52px;
+}
+.lanmeiHeader-subpage .lanmeiNav .lanmeiHeadInfo > ul .nth-child1 > img {
+  margin-top: 26px;
+  margin-right: 11px;
+}
+.lanmeiHeader-subpage .lanmeiNav .lanmeiHeadInfo > ul .nth-child1 > div {
+  float: right;
+  height: 78px;
+  line-height: 78px;
+}
+.lanmeiHeader-subpage .lanmeiNav .lanmeiHeadInfo > ul .nth-child1 > div > span {
+  margin-right: 10px;
+}
+/* 子页面页脚样式 */
+.footerInfo {
+  width: 100%;
+  height: 270px;
+  background: url("../../../images/CN/footerBg.jpg") no-repeat;
+}
+.footerInfo .footerBg {
+  width: 100%;
+  height: 270px;
+  background: rgba(31, 44, 92, 0.7);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#B21F2C5C", endColorstr="#B21F2C5C");
+}
+.footerInfo .footerBg > div {
+  width: 960px;
+  margin: 0 auto;
+}
+.footerInfo .HelpfulInformation {
+  height: 70px;
+  line-height: 70px;
+  padding: 0 10px;
+  border-bottom: 1px solid #fff;
+}
+.footerInfo .HelpfulInformation > p {
+  float: left;
+  font-weight: bold;
+  font-size: 18px;
+  color: #ffffff;
+}
+.footerInfo .HelpfulInformation .languageSelectBox {
+  height: 70px;
+  float: right;
+  font-weight: bold;
+  font-size: 18px;
+  color: #ffffff;
+}
+.footerInfo .HelpfulInformation .languageSelectBox .languageBox {
+  position: relative;
+  top: 10px;
+  display: inline-block;
+  width: 60px;
+  height: 50px;
+  vertical-align: top;
+}
+.footerInfo .HelpfulInformation .languageSelectBox .languageBox .ENbottomLine {
+  width: 40px;
+  top: 50px;
+  left: 10px;
+}
+.footerInfo .HelpfulInformation .languageSelectBox .languageBox .languageSelect {
+  display: inline-block;
+  width: 60px;
+  height: 50px;
+  border: 1px solid transparent;
+  border-bottom: none;
+  background: url("../../../images/CN/selectUSA.png") center no-repeat;
+}
+.footerInfo .HelpfulInformation .languageSelectBox .languageBox .active {
+  border-color: #ddd;
+  background-color: #fff;
+}
+.footerInfo .HelpfulInformation .languageSelectBox .languageBox .languageDownMenu {
+  display: none;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 60px;
+  border: 1px solid #ddd;
+  border-top: none;
+  background: #fff;
+  z-index: 999;
+}
+.footerInfo .HelpfulInformation .languageSelectBox .languageBox .languageDownMenu > li {
+  height: 50px;
+}
+.footerInfo .HelpfulInformation .languageSelectBox .languageBox .languageDownMenu > li a {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+.footerInfo .HelpfulInformation .languageSelectBox .languageBox .languageDownMenu .nth-child1 a {
+  background: url("../../../images/CN/selectChina.png") center no-repeat;
+}
+.footerInfo .HelpfulInformation .languageSelectBox .languageBox .languageDownMenu .nth-child2 a {
+  background: url("../../../images/CN/selectUSA.png") center no-repeat;
+}
+.footerInfo .contactUs {
+  height: 60px;
+  padding: 20px 10px;
+  font-size: 14px;
+  color: #ffffff;
+}
+.footerInfo .contactUs .nth-child1 {
+  float: left;
+}
+.footerInfo .contactUs .nth-child1 span {
+  font-size: 14px;
+  color: #ffffff;
+  margin-left: 20px;
+}
+.footerInfo .contactUs .nth-child2 {
+  float: right;
+}
+.footerInfo .contactUs .nth-child2 span {
+  font-size: 14px;
+  color: #ffffff;
+}
+.footerInfo .contactUs .nth-child2 a {
+  color: #fff;
+  -webkit-transition-duration: .5s;
+  transition-duration: .5s;
+}
+.footerInfo .contactUs .nth-child2 a i {
+  font-size: 26px;
+  margin-left: 18px;
+}
+.footerInfo .contactUs .nth-child2 a:hover {
+  -webkit-transition-duration: .5s;
+  transition-duration: .5s;
+  color: #8ec060;
+}
+.footerInfo .location {
+  padding: 10px;
+}
+.footerInfo .location a {
+  font-size: 14px;
+  color: #ffffff;
+  margin-left: 20px;
+}
+.footerInfo .LanmeiAirlinesBerhad {
+  height: 60px;
+  padding: 20px 10px;
+  font-size: 14px;
+  color: #ffffff;
+}
+.footerInfo .LanmeiAirlinesBerhad > a {
+  float: left;
+}
+.footerInfo .LanmeiAirlinesBerhad > a img {
+  vertical-align: text-bottom;
+}
+.footerInfo .LanmeiAirlinesBerhad > div {
+  float: left;
+  margin-left: 20px;
+}
+.footerInfo .LanmeiAirlinesBerhad > div .p1 {
+  font-size: 14px;
+  color: #ffffff;
+  display: inline-block;
+  padding-top: 12px;
+  visibility: hidden;
+}
+.footerInfo .LanmeiAirlinesBerhad > div .p2 {
+  font-size: 14px;
+  color: #ffffff;
+}
+.footerInfo .LanmeiAirlinesBerhad > div .p2 a {
+  color: #8ec060;
+}
+/* 返回页面顶部 */
+.BackToTop {
+  display: none;
+  position: fixed;
+  right: 0;
+  bottom: 130px;
+  z-index: 99999;
+  border-radius: 2px;
+  width: 50px;
+  height: 50px;
+  padding-top: 7px;
+  text-align: center;
+  cursor: pointer;
+  background: #8ec060;
+  -webkit-transition-duration: 1s;
+  transition-duration: 1s;
+}
+.BackToTop img {
+  margin-bottom: 2px;
+}
+.BackToTop .QRcode {
+  margin-bottom: 15px;
+}
+.BackToTop .QRcode p {
+  line-height: 14px;
+  margin-bottom: 8px;
+}
+.BackToTop .QRcode .small-code:hover + .big-code {
+  display: block;
+}
+.BackToTop .QRcode .big-code {
+  display: none;
+  position: absolute;
+  left: -200px;
+  top: 0;
+}
+.BackToTop p {
+  font-size: 12px;
+  color: #fff;
+  letter-spacing: 0;
+  text-align: center;
+}
+.BackToTop:hover {
+  -webkit-transition-duration: 1s;
+  transition-duration: 1s;
+  background: #8ec060;
+  border-color: transparent;
+}
+/* loading */
+.lm-loading {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 99999;
+  background: #f2f2f2;
+}
+.lm-loading img {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.lm-footer {
+  width: 100%;
+  height: 250px;
+  padding-top: 30px;
+  text-align: center;
+  background: #1f2c5c;
+}
+.lm-footer .facebook {
+  margin-top: 16px;
+}
+.lm-footer .facebook > .a1 {
+  margin-right: 40px;
+}
+.lm-footer .facebook a {
+  color: #07133e;
+  -webkit-transition-duration: .5s;
+  transition-duration: .5s;
+}
+.lm-footer .facebook a:hover {
+  color: #8ec060;
+  -webkit-transition-duration: .5s;
+  transition-duration: .5s;
+}
+.lm-footer .f-email {
+  margin-top: 18px;
+}
+.lm-footer .f-email > i {
+  margin-right: 12px;
+}
+.lm-footer .f-local {
+  margin-top: 14px;
+}
+.lm-footer .f-local > i {
+  margin-right: 12px;
+}
+.lm-footer .f-local > i::before {
+  color: #fff;
+}
+.lm-footer .f-local a {
+  color: #fff;
+}
+.lm-footer .copyright {
+  margin-top: 14px;
+  color: rgba(255, 255, 255, 0.4);
+}
+.lm-footer .copyright a {
+  color: rgba(255, 255, 255, 0.4);
+  transition: all .3s;
+  -webkit-transition: all .3s;
+}
+.lm-footer .copyright a:hover {
+  color: #8ec060;
+  transition: all .3s;
+  -webkit-transition: all .3s;
+}
+/* 移动端新增代码 */
+.m-header {
+  display: none;
+}
+@media screen and (max-width: 992px) {
+  .lanmeiHeader-subpage {
+    display: none;
+  }
+  .footerInfo {
+    display: none;
+  }
+  .BackToTop {
+    display: none;
+    width: 0.3rem;
+    height: 0.6rem;
+    padding: 0.08rem 0 0.1rem;
+  }
+  .BackToTop .QRcode {
+    height: 0.2rem;
+    line-height: 0.2rem;
+    margin-bottom: 0.04rem;
+  }
+  .BackToTop .QRcode p {
+    display: none;
+  }
+  .BackToTop .QRcode .small-code {
+    width: 0.2rem;
+  }
+  .BackToTop .QRcode .bg-code {
+    width: 1rem;
+    left: -1rem;
+  }
+  .BackToTop .top {
+    height: 0.2rem;
+    line-height: 0.2rem;
+  }
+  .BackToTop .top img {
+    width: 0.14rem;
+  }
+  .BackToTop .top p {
+    display: none;
+  }
+  .m-header {
+    display: block;
+    position: fixed;
+    top: 0;
+    z-index: 9;
+    width: 100%;
+    height: 0.4rem;
+    background: #1f2c5c;
+  }
+  .m-header i {
+    float: left;
+    color: #fff;
+    font-size: 0.16rem;
+    margin-top: 0.04rem;
+    margin-left: 0.1rem;
+  }
+  .m-header h2 {
+    width: 100%;
+    height: 0.4rem;
+    line-height: 0.4rem;
+    color: #fff;
+    font-size: 0.16rem;
+    text-align: center;
+  }
+}
+@media (max-width: 767px) {
+  /*滚动条整体部分,必须要设置*/
+  ::-webkit-scrollbar {
+    width: 0px;
+    background-color: #B0AEDA;
+  }
+  /*滚动条的轨道*/
+  ::-webkit-scrollbar-track {
+    width: 0px;
+    background-color: #fff;
+  }
+  /*滚动条的滑块按钮*/
+  ::-webkit-scrollbar-thumb {
+    background-color: #8ec060;
+    border: solid 1px #8ec060;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #8ec060;
+  }
+  /*滚动条的上下两端的按钮*/
+  ::-webkit-scrollbar-button {
+    height: 0px;
+    background-color: #1f2c5c;
+  }
+  .lm-loading img {
+    width: 160px;
+  }
+}
+/* 登录窗口适配 */
+@media screen and (max-width: 500px) {
+  .modal .modal-dialog {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+  .modal .modal-dialog .modal-content {
+    width: 100%;
+  }
+  .modal .modal-dialog .modal-content .modal-header {
+    background-size: 110px 28px;
+    padding: 8px;
+  }
+  .modal .modal-dialog .modal-content .modal-header .close {
+    top: 0;
+    font-size: 14px;
+  }
+  .modal .modal-dialog .modal-content .modal-header .close span {
+    top: -2px;
+    font-size: 24px;
+  }
+  .modal .modal-dialog .modal-content .modal-body .loginTitle {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  .modal .modal-dialog .modal-content .modal-body form {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .modal .modal-dialog .modal-content .modal-body form input,
+  .modal .modal-dialog .modal-content .modal-body form .on_changes,
+  .modal .modal-dialog .modal-content .modal-body form button {
+    width: 90%;
+  }
+  .modal .modal-dialog .modal-content .modal-body form input {
+    height: 40px;
+    font-size: 12px;
+  }
+  .modal .modal-dialog .modal-content .modal-body form #LanmeiPassword {
+    margin-top: 10px;
+  }
+  .modal .modal-dialog .modal-content .modal-body form .on_changes {
+    top: 39px;
+    left: 5%;
+  }
+  .modal .modal-dialog .modal-content .modal-body form #f-LanmeiPassword {
+    width: 50%;
+  }
+  .modal .modal-dialog .modal-content .modal-body form #f-getPasswordBtn {
+    width: 38%;
+    margin-left: 2%;
+  }
+  .modal .modal-dialog .modal-content .modal-body form .userLoginBtn {
+    margin-top: 0;
+  }
+  .modal .modal-dialog .modal-content .modal-body form .agree {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .modal .modal-dialog .modal-content .modal-body form .agree p {
+    width: 90%;
+    font-size: 12px;
+    line-height: 16px;
+  }
+  .modal .modal-dialog .modal-content .modal-body form .agree p a {
+    font-size: 12px;
+  }
+  .modal .modal-dialog .modal-content .modal-body form .agree span {
+    margin-top: 1px;
+  }
+  .modal .modal-dialog .modal-content .modal-body .registerWrapper > h2 {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  .modal .modal-dialog .modal-content .modal-body .registerWrapper > img {
+    display: none;
+  }
+  .modal .modal-dialog .modal-content .modal-body .registerWrapper .registerContent {
+    margin-top: 10px;
+  }
+  .modal .modal-dialog .modal-content .modal-body .registerWrapper .registerContent .agree {
+    padding: 0 !important;
+    width: 90%;
+    margin: 0 auto 10px;
+  }
+  .modal .modal-dialog .modal-content .modal-body .registerWrapper .registerContent .agree p {
+    width: 88%;
+  }
+  .modal .modal-dialog .modal-content .modal-body .registerWrapper .registerInfo input {
+    padding-left: 50px !important;
+  }
+  .modal .modal-dialog .modal-content .modal-body .registerWrapper .registerInfo img {
+    left: 36px;
+    top: 14px;
+  }
+  .modal .modal-dialog .modal-content .modal-body .registerWrapper .registerInfo p {
+    padding: 1px 10px 1px 29px;
+  }
+  .modal .modal-dialog .modal-content .modal-body .registerWrapper .registerPassword img,
+  .modal .modal-dialog .modal-content .modal-body .registerWrapper .repeatPassword img {
+    left: 36px;
+    top: 10px;
+  }
+  .modal .modal-dialog .modal-content .modal-body .registerWrapper .registerPassword p,
+  .modal .modal-dialog .modal-content .modal-body .registerWrapper .repeatPassword p {
+    padding: 1px 10px 1px 29px;
+  }
+  .modal .modal-dialog .modal-content .modal-body .registerWrapper .registerPassword p span,
+  .modal .modal-dialog .modal-content .modal-body .registerWrapper .repeatPassword p span {
+    display: none;
+  }
+  .modal .modal-dialog .modal-content .modal-footer {
+    padding-bottom: 20px;
+  }
+  #logonModal .agree p {
+    display: none;
+    width: 65%;
+  }
+  #logonModal .agree span {
+    display: none;
+  }
+  #logonModal .agree a {
+    height: 25px;
+    line-height: 25px;
+  }
+}
