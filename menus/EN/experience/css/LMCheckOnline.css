@@ -22,6 +22,7 @@
   padding: 35px 20px;
   border-radius: 6px;
   margin-top: 20px;
+  margin-bottom: 30px;
 }
 .lm-section .check-start > div {
   float: left;
@@ -57,36 +58,9 @@
 .lm-section .check-start .startBtn a img {
   left: 8px;
 }
-.lm-section .check-steps {
-  margin-top: 30px;
-  margin-bottom: 50px;
-}
-.lm-section .check-steps h2 {
-  font-size: 18px;
-  font-weight: bold;
-  color: #1f2c5c;
-  margin-bottom: 20px;
-  line-height: 30px;
-}
-.lm-section .check-steps .h2-steps {
-  font-size: 14px;
-}
-.lm-section .check-steps h3 {
-  font-size: 16px;
-  font-weight: bold;
-  color: #1f2c5c;
-  margin-bottom: 20px;
-  line-height: 28px;
-}
-.lm-section .check-steps p {
-  font-size: 14px;
-  color: #808080;
-  margin: 10px 0;
-}
 @media screen and (max-width: 992px) {
   .lm-section {
     width: 100%;
-    padding: 15px;
   }
   .lm-section .check-start .startBtn {
     width: 43%;
@@ -96,10 +70,6 @@
   }
 }
 @media screen and (max-width: 767px) {
-  .lm-section .title h1 {
-    font-size: 0.26rem;
-    text-align: center;
-  }
   .lm-section .check-start {
     height: 250px;
     padding: 15px;
@@ -108,11 +78,15 @@
     float: none;
     width: 2.6rem;
   }
+  .lm-section .check-start > div > p {
+    margin-bottom: 0.1rem;
+  }
   .lm-section .check-start .startBtn {
     width: 100%;
     float: left;
   }
   .lm-section .check-start .startBtn a {
+    font-size: 14px;
     font-weight: normal;
   }
   .lm-section .check-start .c-2,

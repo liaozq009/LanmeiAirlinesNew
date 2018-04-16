@@ -28,286 +28,6 @@ body {
   background: #FAFBFF;
 }
 /* 内容样式 */
-.lm-header {
-  position: fixed;
-  z-index: 99;
-  width: 100%;
-  height: 60px;
-  line-height: 60px;
-  padding: 0 20px;
-  text-align: center;
-  background: -webkit-linear-gradient(left, #42958a 0%, #1f2c5c 100%);
-  background: -o-linear-gradient(right, #42958a 0%, #1f2c5c 100%);
-  background: -moz-linear-gradient(right, #42958a 0%, #1f2c5c 100%);
-  background: linear-gradient(to right, #42958a 0%, #1f2c5c 100%);
-}
-.lm-header .h-menu {
-  position: absolute;
-  width: 110px;
-  height: 60px;
-  font-weight: bold;
-  font-size: 18px;
-  text-align: right;
-  cursor: pointer;
-  background: url('../../images/CN/menu.png') left center no-repeat;
-}
-.lm-header .h-menu > img {
-  margin-right: 20px;
-}
-.lm-header .h-logo-wrap {
-  width: 262px;
-  height: 60px;
-  margin: 0 auto;
-  background: url('../../images/CN/logo.png') center no-repeat;
-}
-.lm-header .h-right {
-  position: absolute;
-  right: 20px;
-  top: 0;
-}
-.lm-header .h-right > div {
-  float: left;
-}
-.lm-header .h-right > div > a {
-  color: #fff;
-}
-.lm-header .h-right > div > a:hover {
-  color: #fff;
-}
-.lm-header .h-right .v-line {
-  margin-left: 20px;
-  margin-right: 20px;
-}
-.lm-header .h-right .v-line-2 {
-  margin-right: 46px;
-}
-.lm-header .h-right .dot-login {
-  margin-left: 10px;
-  margin-right: 10px;
-}
-.lm-header .h-right .h-login > img,
-.lm-header .h-right .h-registered > img {
-  margin-right: 6px;
-}
-.lm-header .h-right .h-login {
-  position: relative;
-  height: 80px;
-}
-.lm-header .h-right .h-login .loginBtn {
-  display: inline-block;
-  height: 60px;
-  text-align: right;
-}
-.lm-header .h-right .h-login .loginBtn .head-portrait {
-  float: left;
-  width: 24px;
-  height: 60px;
-  background: url('../../images/CN/login.png') left center no-repeat;
-}
-.lm-header .h-right .h-login .login-menu {
-  display: none;
-  position: absolute;
-  top: 76px;
-  left: -180px;
-  width: 240px;
-  height: 120px;
-  border-radius: 2px;
-  background: #fff;
-  padding: 20px;
-  text-align: left;
-  box-shadow: 0 0 50px 0 rgba(31, 44, 92, 0.2);
-}
-.lm-header .h-right .h-login .login-menu > h2 {
-  color: rgba(31, 44, 92, 0.8);
-  font-size: 20px;
-  font-weight: bold;
-}
-.lm-header .h-right .h-login .login-menu > a {
-  display: block;
-  font-size: 16px;
-  color: rgba(0, 0, 0, 0.7);
-  height: 34px;
-  line-height: 40px;
-  margin-top: 10px;
-  margin-left: 10px;
-  padding-left: 40px;
-  transition: all .3s;
-  -webkit-transition: all .3s;
-}
-.lm-header .h-right .h-login .login-menu > a:hover {
-  color: #8ec060;
-  transition: all .3s;
-  -webkit-transition: all .3s;
-}
-.lm-header .h-right .h-login .login-menu .lm-currency {
-  margin-top: 0;
-  background: url('../../images/CN/lm-currency.png') left center no-repeat;
-  background-size: 20px;
-  text-align: right;
-  color: #8ec060;
-}
-.lm-header .h-right .h-login .login-menu .lm-personal-center {
-  background: url('../../images/CN/personal-icon.png') left center no-repeat;
-  margin-top: 0;
-}
-.lm-header .h-right .h-login .login-menu .lm-logout {
-  background: url('../../images/CN/loginout-icon.png') left center no-repeat;
-}
-.lm-header .h-right .h-login .login-menu::before {
-  position: absolute;
-  top: -14px;
-  right: 12px;
-  z-index: 9;
-  filter: alpha(opacity=0);
-  content: "";
-  display: block;
-  width: 0;
-  height: 0;
-  border-left: 14px solid transparent;
-  border-right: 14px solid transparent;
-  border-bottom: 14px solid #fff;
-}
-.lm-header .h-right .success-h-login .loginBtn .head-portrait {
-  width: 30px;
-  height: 30px;
-  margin-right: 10px;
-  margin-top: 15px;
-  border-radius: 50%;
-  background-size: 30px;
-}
-.lm-header .h-right .success-h-login > a img {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-}
-.lm-header .h-right .success-h-login:hover .login-menu {
-  display: block;
-}
-.lm-header .h-phone {
-  position: absolute;
-  left: -50px;
-  width: 80px;
-  height: 80px;
-}
-.lm-header .h-phone .phone-menu {
-  display: none;
-  position: absolute;
-  top: 76px;
-  left: -66px;
-  width: 220px;
-  height: 178px;
-  border-radius: 2px;
-  background: #fff;
-  padding: 20px;
-  text-align: left;
-  box-shadow: 0 0 50px 0 rgba(31, 44, 92, 0.2);
-}
-.lm-header .h-phone .phone-menu > h2 {
-  color: rgba(31, 44, 92, 0.8);
-  font-size: 20px;
-  font-weight: bold;
-}
-.lm-header .h-phone .phone-menu > p {
-  font-size: 16px;
-  color: rgba(0, 0, 0, 0.7);
-  height: 25px;
-  line-height: 32px;
-  margin-top: 10px;
-  margin-left: 10px;
-  padding-left: 40px;
-  background: url('../../images/CN/phone-bg.png') left center no-repeat;
-}
-.lm-header .h-phone .phone-menu .p1 {
-  margin-top: 20px;
-}
-.lm-header .h-phone .phone-menu::before {
-  position: absolute;
-  top: -14px;
-  left: 96px;
-  z-index: 9;
-  filter: alpha(opacity=0);
-  content: "";
-  display: block;
-  width: 0;
-  height: 0;
-  border-left: 14px solid transparent;
-  border-right: 14px solid transparent;
-  border-bottom: 14px solid #fff;
-}
-.lm-header .h-phone:hover .phone-menu {
-  display: block;
-}
-.lm-header .h-lang {
-  position: absolute;
-  right: -20px;
-  width: 70px;
-  height: 80px;
-}
-.lm-header .h-lang .lang-menu {
-  display: none;
-  position: absolute;
-  top: 76px;
-  left: -216px;
-  width: 278px;
-  height: 160px;
-  border-radius: 2px;
-  background: #fff;
-  padding: 20px;
-  text-align: left;
-  box-shadow: 0 0 50px 0 rgba(31, 44, 92, 0.2);
-}
-.lm-header .h-lang .lang-menu > h2 {
-  color: rgba(31, 44, 92, 0.8);
-  font-size: 20px;
-  font-weight: bold;
-}
-.lm-header .h-lang .lang-menu > a {
-  display: block;
-  font-size: 16px;
-  color: rgba(0, 0, 0, 0.7);
-  height: 34px;
-  line-height: 40px;
-  margin-top: 10px;
-  margin-left: 10px;
-  padding-left: 40px;
-  transition: all .3s;
-  -webkit-transition: all .3s;
-}
-.lm-header .h-lang .lang-menu > a:hover {
-  color: #8ec060;
-  transition: all .3s;
-  -webkit-transition: all .3s;
-}
-.lm-header .h-lang .lang-menu .lang-en {
-  margin-top: 20px;
-  background: url('../../images/CN/lang-en.png') left center no-repeat;
-}
-.lm-header .h-lang .lang-menu .lang-zh {
-  background: url('../../images/CN/lang-zh.png') left center no-repeat;
-}
-.lm-header .h-lang .lang-menu::before {
-  position: absolute;
-  top: -14px;
-  right: 12px;
-  z-index: 9;
-  filter: alpha(opacity=0);
-  content: "";
-  display: block;
-  width: 0;
-  height: 0;
-  border-left: 14px solid transparent;
-  border-right: 14px solid transparent;
-  border-bottom: 14px solid #fff;
-}
-.lm-header .h-lang:hover .lang-menu {
-  display: block;
-}
-.lm-footer .lm-logo {
-  width: 140px;
-  height: 53px;
-  margin: 0 auto;
-  background: url('../../images/CN/lanmeiFooterLogo.png') center no-repeat;
-}
 .lm-nav-wrap {
   padding-top: 60px;
 }
@@ -619,30 +339,30 @@ body {
 .lm-aside-flight > a {
   display: block;
   position: absolute;
-  bottom: -170px;
+  bottom: -220px;
   left: 60px;
   width: 80px;
   height: 80px;
   border-radius: 2px;
 }
 .lm-aside-flight .flight-up-arrow {
-  background: url('../../images/CN/f-arrow-up.png') center no-repeat #8ec060;
+  background: url('../../images/CN/f-arrow-up.png') center no-repeat #1f2c5c;
   transition: all .3s;
   -webkit-transition: all .3s;
 }
 .lm-aside-flight .flight-up-arrow:hover {
-  background: url('../../images/CN/f-arrow-up-active.png') center no-repeat #1f2c5c;
+  background: url('../../images/CN/f-arrow-up-active.png') center no-repeat #8ec060;
   transition: all .3s;
   -webkit-transition: all .3s;
 }
 .lm-aside-flight .flight-down-arrow {
   left: 170px;
-  background: url('../../images/CN/f-arrow-down.png') center no-repeat #8ec060;
+  background: url('../../images/CN/f-arrow-down.png') center no-repeat #1f2c5c;
   transition: all .3s;
   -webkit-transition: all .3s;
 }
 .lm-aside-flight .flight-down-arrow:hover {
-  background: url('../../images/CN/f-arrow-down-active.png') center no-repeat #1f2c5c;
+  background: url('../../images/CN/f-arrow-down-active.png') center no-repeat #8ec060;
   transition: all .3s;
   -webkit-transition: all .3s;
 }
@@ -1193,7 +913,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  padding-top: 60px;
+  padding-top: 30px;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   background: rgba(0, 0, 0, 0);
@@ -1880,9 +1600,6 @@ body {
 .ie11 .lm-section-hotel .hotel-com .hotel-detail .price-wrap .price {
   color: #00928d;
 }
-.lte_ie9 .lm-header {
-  background: #42958a;
-}
 .lte_ie9 .popup-content .popup-people .people-number {
   background: #42958a;
 }
@@ -2002,14 +1719,6 @@ body {
 .ie8 .lm-header .h-phone .phone-menu > h2,
 .ie8 .lm-header .h-lang .lang-menu > h2 {
   color: #4C567D;
-}
-.ie8 .lm-header .h-phone .phone-menu > p,
-.ie8 .lm-header .h-lang .lang-menu a {
-  color: #4C4C4C;
-}
-.ie8 .lm-header .h-phone .phone-menu > p:hover,
-.ie8 .lm-header .h-lang .lang-menu a:hover {
-  color: #8ec060;
 }
 .ie8 .modal-dialog {
   margin: 30px auto;
@@ -2862,24 +2571,6 @@ body {
 }
 /* pad端 */
 @media (max-width: 992px) {
-  .lm-header .h-logo {
-    display: none;
-  }
-  .lm-header .mobile-logo {
-    display: inline-block;
-    height: 40px;
-  }
-  .lm-header .h-right .v-line {
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-  .lm-header .h-right .v-line-2 {
-    margin-right: 40px;
-  }
-  .lm-header .h-login span,
-  .lm-header .h-registered span {
-    display: none;
-  }
   .cloud-iframe {
     display: none;
   }
@@ -3014,73 +2705,6 @@ body {
 }
 /* 手机端 */
 @media (max-width: 767px) {
-  .lm-header {
-    position: absolute;
-    z-index: 9;
-    padding: 0 15px;
-  }
-  .lm-header .h-menu {
-    width: 38px;
-    background-image: url('../../images/CN/svg/menu.svg');
-  }
-  .lm-header .h-menu span {
-    display: none;
-  }
-  .lm-header .h-logo-wrap {
-    width: 100px;
-    background: url('../../images/CN/svg/lanmeiFooterLogo.svg') center no-repeat;
-    background-size: 100px;
-  }
-  .lm-header .h-right > div {
-    display: none;
-  }
-  .lm-header .h-right .h-login {
-    display: block;
-    height: 60px;
-  }
-  .lm-header .h-right .h-login .loginBtn {
-    width: 30px;
-  }
-  .lm-header .h-right .h-login .loginBtn .head-portrait {
-    width: 30px;
-    height: 30px;
-    margin-top: 15px;
-    background: url('../../images/CN/svg/m-login.svg') right center no-repeat;
-  }
-  .lm-header .h-right .h-login .login-menu {
-    top: 60px;
-    left: -114px;
-    width: 150px;
-    height: 76px;
-    padding: 6px;
-  }
-  .lm-header .h-right .h-login .login-menu .lm-personal-center {
-    font-size: 12px;
-    height: 26px;
-    line-height: 26px;
-    margin-top: 0;
-    margin-left: 10px;
-    padding-left: 30px;
-    background: url('../../images/CN/svg/personal-icon.svg') left center no-repeat;
-    background-size: 16px;
-  }
-  .lm-header .h-right .h-login .login-menu .lm-logout {
-    font-size: 12px;
-    height: 26px;
-    line-height: 26px;
-    margin-top: 8px;
-    margin-left: 10px;
-    padding-left: 30px;
-    background: url('../../images/CN/svg/loginout-icon.svg') left center no-repeat;
-    background-size: 16px;
-  }
-  .lm-header .h-right .h-login .login-menu::before {
-    top: -7px;
-    right: 12px;
-    border-left: 7px solid transparent;
-    border-right: 7px solid transparent;
-    border-bottom: 7px solid #fff;
-  }
   .lm-section-main {
     top: 0;
     overflow: initial;
@@ -4397,54 +4021,5 @@ body {
   }
   .lm-section-news .news-wrap .news-content {
     margin-left: 0;
-  }
-  .lm-footer {
-    height: 240px;
-    padding-top: 20px;
-  }
-  .lm-footer .lm-logo {
-    width: 100px;
-    height: 38px;
-    margin: 0 auto;
-    background: url('../../images/CN/svg/lanmeiFooterLogo.svg') center no-repeat;
-  }
-  .lm-footer .facebook {
-    margin-top: 12px;
-  }
-  .lm-footer .facebook > a i {
-    font-size: 20px;
-  }
-  .lm-footer .facebook .a1 {
-    margin-right: 20px;
-  }
-  .lm-footer .f-email {
-    margin-top: 12px;
-  }
-  .lm-footer .f-email > i {
-    margin-right: 8px;
-  }
-  .lm-footer .f-local {
-    margin-top: 8px;
-    padding-left: 10px;
-    padding-top: 10px;
-  }
-  .lm-footer .f-local a {
-    font-size: 12px;
-    color: #fff;
-  }
-  .lm-footer .f-local > i {
-    margin-right: 8px;
-  }
-  .lm-footer .f-local > i::before {
-    color: #fff;
-  }
-  .lm-footer .copyright {
-    margin-top: 8px;
-    font-size: 12px;
-    padding-left: 8px;
-    padding-right: 8px;
-  }
-  .lm-footer .copyright a {
-    font-size: 12px;
   }
 }

@@ -31,6 +31,7 @@
 		padding:35px 20px;
 		border-radius: 6px;
 		margin-top: 20px;
+		margin-bottom: 30px;
 		>div{
 			float: left;
 			width: 24%;
@@ -64,36 +65,11 @@
 			}
 		}
 	}
-	.check-steps{
-		margin-top: 30px;
-		margin-bottom: 50px;
-		h2{
-			font-size: 18px;
-			font-weight: bold;
-			color:@purple;
-			margin-bottom: 20px;
-			line-height: 30px;
-		}
-		.h2-steps{font-size: 14px;}
-		h3{
-			font-size: 16px;
-			font-weight: bold;
-			color:@purple;
-			margin-bottom: 20px;
-			line-height: 28px;
-		}
-		p{
-			font-size: 14px;
-			color:@gray;
-			margin:10px 0;
-		}
-	}
 }
 
 @media screen and (max-width:992px){
 	.lm-section{
 		width: 100%;
-		padding:15px;
 		.check-start{
 			.startBtn{
 				width: 43%;
@@ -107,23 +83,21 @@
 
 @media screen and (max-width:767px){
 	.lm-section{
-		.title{
-			h1{
-				font-size: 0.26rem;
-				text-align: center;
-			}
-		}
 		.check-start{
 			height: 250px;
 			padding:15px;
 			>div{
 				float: none;
 				width: 2.6rem;
+				>p{
+					margin-bottom: 0.1rem;
+				}
 			}
 			.startBtn{
 				width: 100%;
 				float: left;
 				a{
+					font-size: 14px;
 					font-weight: normal;
 				}
 			}

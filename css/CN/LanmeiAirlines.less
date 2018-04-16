@@ -64,281 +64,6 @@ body{
 }
 
 /* 内容样式 */
-.lm-header{
-	position: fixed;
-	z-index: 99;
-	width: 100%;
-	height: 60px;
-	line-height: 60px;
-	padding: 0 20px;
-	text-align: center;
-	background: @webkit-linear;
-	background: @o-linear;
-	background: @moz-linear;
-	background: @linear;
-	.h-menu{
-		position: absolute;
-		width: 110px;
-		height: 60px;
-		font-weight: bold;
-		font-size:18px;
-		text-align: right;
-		cursor: pointer;
-		background: url('@{url}menu.png') left center no-repeat;
-		>img{margin-right: 20px;}
-	}
-	.h-logo-wrap{
-		width: 262px;
-		height: 60px;
-		margin:0 auto;
-		background: url('@{url}logo.png') center no-repeat;
-	}
-	.h-right{
-		position: absolute;
-		right: 20px;
-		top: 0;
-		>div{
-			float: left;
-			>a{
-				color:#fff;
-				&:hover{
-					color: #fff;
-				}
-			}
-		}
-		.v-line{
-			margin-left: 20px;
-			margin-right: 20px;
-		}
-		.v-line-2{margin-right: 46px;}
-		.dot-login{
-			margin-left: 10px;
-			margin-right: 10px;
-		}
-		.h-login>img,.h-registered>img{margin-right: 6px;}
-		.h-login{
-			position: relative;
-			height: 80px;
-			.loginBtn{
-				display: inline-block;
-				height: 60px;
-			    text-align: right;
-			    .head-portrait{
-			    	float: left;
-			    	width: 24px;
-			    	height: 60px;
-			    	background: url('@{url}login.png') left center no-repeat;
-			    }
-			}
-			.login-menu{
-				display: none;
-				position: absolute;
-				top: 76px;
-				left: -180px;
-				width: 240px;
-				height: 120px;
-				border-radius: 2px;
-				background: #fff;
-				padding: 20px;
-				text-align: left;
-				box-shadow: 0 0 50px 0 rgba(31, 44, 92, 0.2);
-				>h2{
-					.purpleRgb(.8);
-					font-size: 20px;
-					font-weight: bold;
-				}
-				>a{
-					display: block;
-					font-size: 16px;
-					.blackRgb(.7);
-					height: 34px;
-					line-height: 40px;
-					margin-top: 10px;
-					margin-left: 10px;
-					padding-left: 40px;
-					transition:all .3s;
-					-webkit-transition:all .3s;
-					&:hover{
-						color: @green;
-						transition:all .3s;
-						-webkit-transition:all .3s;
-					}
-				}
-				.lm-currency{
-					margin-top: 0;
-					background: url('@{url}lm-currency.png') left center no-repeat;
-					background-size: 20px;
-					text-align: right;
-					color: @green;
-				}
-				.lm-personal-center{
-					background: url('@{url}personal-icon.png') left center no-repeat;
-					margin-top: 0;
-				}
-				.lm-logout{
-					background: url('@{url}loginout-icon.png') left center no-repeat;
-				}
-				&::before{
-					position: absolute;
-					top: -14px;
-					right: 12px;
-					z-index: 9;
-					filter:alpha(opacity=0);
-					content: "";
-					display: block;
-					width: 0;
-					height: 0;
-					border-left: 14px solid transparent;
-					border-right: 14px solid transparent;
-					border-bottom: 14px solid #fff;
-				}
-			}
-		}
-		.success-h-login{
-			.loginBtn{
-				.head-portrait{
-					width: 30px;
-				    height: 30px;
-				    margin-right: 10px;
-			        margin-top: 15px;
-				    border-radius: 50%;
-					background-size: 30px;
-				}
-			}
-			>a{
-				img{
-					width: 30px;
-					height: 30px;
-					border-radius: 50%;
-				}
-			}
-			&:hover{
-				.login-menu{display: block;}
-			}
-		}
-	}
-	.h-phone{
-		position: absolute;
-		left: -50px;
-		width: 80px;
-		height: 80px;
-		.phone-menu{
-			display: none;
-			position: absolute;
-			top: 76px;
-			left: -66px;
-			width: 220px;
-			height: 178px;
-			border-radius: 2px;
-			background: #fff;
-			padding: 20px;
-			text-align: left;
-			box-shadow: 0 0 50px 0 rgba(31, 44, 92, 0.2);
-			>h2{
-				.purpleRgb(.8);
-				font-size: 20px;
-				font-weight: bold;
-			}
-			>p{
-				font-size: 16px;
-				.blackRgb(.7);
-				height: 25px;
-				line-height: 32px;
-				margin-top: 10px;
-				margin-left: 10px;
-				padding-left: 40px;
-				background: url('@{url}phone-bg.png') left center no-repeat;
-			}
-			.p1{margin-top: 20px;}
-			&::before{
-				position: absolute;
-				top: -14px;
-				left: 96px;
-				z-index: 9;
-				filter:alpha(opacity=0);
-				content: "";
-				display: block;
-				width: 0;
-				height: 0;
-				border-left: 14px solid transparent;
-				border-right: 14px solid transparent;
-				border-bottom: 14px solid #fff;
-			}
-		}
-		&:hover{.phone-menu{display: block;}}
-	}
-	.h-lang{
-		position: absolute;
-		right: -20px;
-		width: 70px;
-		height: 80px;
-		.lang-menu{
-			display: none;
-			position: absolute;
-			top: 76px;
-			left: -216px;
-			width: 278px;
-			height: 160px;
-			border-radius: 2px;
-			background: #fff;
-			padding: 20px;
-			text-align: left;
-			box-shadow: 0 0 50px 0 rgba(31, 44, 92, 0.2);
-			>h2{
-				.purpleRgb(.8);
-				font-size: 20px;
-				font-weight: bold;
-			}
-			>a{
-				display: block;
-				font-size: 16px;
-				.blackRgb(.7);
-				height: 34px;
-				line-height: 40px;
-				margin-top: 10px;
-				margin-left: 10px;
-				padding-left: 40px;
-				transition:all .3s;
-				-webkit-transition:all .3s;
-				&:hover{
-					color: @green;
-					transition:all .3s;
-					-webkit-transition:all .3s;
-				}
-			}
-			.lang-en{
-				margin-top: 20px;
-				background: url('@{url}lang-en.png') left center no-repeat;
-			}
-			.lang-zh{
-				background: url('@{url}lang-zh.png') left center no-repeat;
-			}
-			&::before{
-				position: absolute;
-				top: -14px;
-				right: 12px;
-				z-index: 9;
-				filter:alpha(opacity=0);
-				content: "";
-				display: block;
-				width: 0;
-				height: 0;
-				border-left: 14px solid transparent;
-				border-right: 14px solid transparent;
-				border-bottom: 14px solid #fff;
-			}
-		}
-		&:hover{.lang-menu{display: block;}}
-	}
-}
-.lm-footer{
-	.lm-logo{
-		width: 140px;
-		height: 53px;
-		margin:0 auto;
-		background: url('@{url}lanmeiFooterLogo.png') center no-repeat;
-	}
-}
 .lm-nav-wrap{padding-top: 60px;}
 .nav-container{
 	position: fixed;
@@ -638,29 +363,29 @@ body{
 	>a{
 		display: block;
 		position: absolute;
-		bottom: -170px;
+		bottom: -220px;
 		left: 60px;
 		width: 80px;
 		height: 80px;
 		border-radius: 2px;
 	}
 	.flight-up-arrow{
-		background: url('@{url}f-arrow-up.png') center no-repeat @green;
+		background: url('@{url}f-arrow-up.png') center no-repeat @purple;
 		transition: all .3s;
 		-webkit-transition: all .3s;
 		&:hover{
-			background: url('@{url}f-arrow-up-active.png') center no-repeat @purple;
+			background: url('@{url}f-arrow-up-active.png') center no-repeat @green;
 			transition: all .3s;
 			-webkit-transition: all .3s;
 		}
 	}
 	.flight-down-arrow{
 		left: 170px;
-		background: url('@{url}f-arrow-down.png') center no-repeat @green;
+		background: url('@{url}f-arrow-down.png') center no-repeat @purple;
 		transition: all .3s;
 		-webkit-transition: all .3s;
 		&:hover{
-			background: url('@{url}f-arrow-down-active.png') center no-repeat @purple;
+			background: url('@{url}f-arrow-down-active.png') center no-repeat @green;
 			transition: all .3s;
 			-webkit-transition: all .3s;
 		}
@@ -1168,7 +893,7 @@ body{
 			left: 0;
 			width: 100%;
 			height: 100%;
-			padding-top: 60px;
+			padding-top: 30px;
 			-webkit-backface-visibility: hidden;
 			backface-visibility: hidden;
 			.blackBgRgb(0);
@@ -1852,9 +1577,6 @@ body{
 }
 
 .lte_ie9{
-	.lm-header{
-		background: #42958a;
-	}
 	.popup-content .popup-people .people-number{
 		background: #42958a;
 	}
@@ -1968,14 +1690,6 @@ body{
 	.lm-header .h-phone .phone-menu > h2,
 	.lm-header .h-lang .lang-menu > h2{
 		color: #4C567D;
-	}
-	.lm-header .h-phone .phone-menu > p,
-	.lm-header .h-lang .lang-menu a{
-		color: #4C4C4C;
-	}
-	.lm-header .h-phone .phone-menu > p:hover,
-	.lm-header .h-lang .lang-menu a:hover{
-		color: #8ec060;
 	}
 	.modal-dialog{
 		margin:30px auto;
@@ -2809,20 +2523,6 @@ body{
 
 /* pad端 */
 @media (max-width: 992px) {
-	.lm-header{
-		.h-logo{display: none;}
-		.mobile-logo{
-			display: inline-block;
-			height: 40px;
-		}
-		.h-right{
-			.v-line{margin-left: 10px;margin-right: 10px;}
-			.v-line-2{margin-right: 40px;}
-		}
-		.h-login,.h-registered {
-			span{display: none;}
-		}
-	}
 	.cloud-iframe{display: none;}
 	.lm-aside-blur,.lm-aside-flight > a,.lm-aside-code,.lm-scroll-down{display: none;}
 	.bg-com,.content-com-wrap{width: 100%;}
@@ -2943,71 +2643,6 @@ body{
 
 /* 手机端 */
 @media (max-width: 767px) {
-	.lm-header{
-		position: absolute;
-		z-index: 9;
-		padding:0 15px;
-		.h-menu {
-			width: 38px;
-			background-image: url('@{url}svg/menu.svg');
-			span{display: none;}
-		}
-		.h-logo-wrap{
-		    width: 100px;
-			background: url('@{url}svg/lanmeiFooterLogo.svg') center no-repeat;
-			background-size: 100px;
-		}
-		.h-right > div{display: none;}
-		.h-right .h-login{
-			display: block;
-			height: 60px;
-			.loginBtn{
-				width: 30px;
-				.head-portrait{
-					width: 30px;
-					height: 30px;
-					margin-top: 15px;
-					background: url('@{url}svg/m-login.svg') right center no-repeat;
-				}
-			}
-			.login-menu{
-				top: 60px;
-				left: -114px;
-				width: 150px;
-				height: 76px;
-				padding: 6px;
-				.lm-personal-center{
-					background-size: 16px;
-					font-size: 12px;
-					height: 26px;
-					line-height: 26px;
-					margin-top: 0;
-					margin-left: 10px;
-					padding-left: 30px;
-					background: url('@{url}svg/personal-icon.svg') left center no-repeat;
-					background-size: 16px;
-				}
-				.lm-logout{
-					background-size: 16px;
-					font-size: 12px;
-					height: 26px;
-					line-height: 26px;
-					margin-top: 8px;
-					margin-left: 10px;
-					padding-left: 30px;
-					background: url('@{url}svg/loginout-icon.svg') left center no-repeat;
-					background-size: 16px;
-				}
-				&::before{
-					top: -7px;
-					right: 12px;
-					border-left: 7px solid transparent;
-					border-right: 7px solid transparent;
-					border-bottom: 7px solid #fff;
-				}
-			}
-		}
-	}
 	.lm-section-main{
 		top: 0;
 		overflow: initial;
@@ -4224,43 +3859,4 @@ body{
 			margin-left: 0;
 		}
 	}
-	.lm-footer{
-		height: 240px;
-		padding-top: 20px;
-		.lm-logo{
-			width: 100px;
-			height: 38px;
-			margin:0 auto;
-			background: url('@{url}svg/lanmeiFooterLogo.svg') center no-repeat;
-		}
-		.facebook{
-			margin-top: 12px;
-			>a{
-				i{font-size: 20px;}
-			}
-			.a1{margin-right: 20px;}
-		}
-		.f-email{
-			margin-top: 12px;
-			>i{margin-right: 8px;}
-		}
-		.f-local{
-			margin-top: 8px;
-			padding-left: 10px;
-			padding-top: 10px;
-			a{font-size: 12px;color: #fff;}
-			>i{
-				margin-right: 8px;
-				&::before{color: #fff;}
-			}
-		}
-		.copyright{
-			margin-top: 8px;
-			font-size: 12px;
-			padding-left: 8px;
-			padding-right: 8px;
-			a{font-size: 12px;}
-		}
-	}
-
 }

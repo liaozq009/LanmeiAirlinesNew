@@ -1,7 +1,21 @@
 @charset "utf-8";
+/* 引入字体 */
+@font-face {
+  font-family: CamptonBook;
+  src: url(../fonts/Campton/Rene.Bieder_Campton.Book.otf);
+}
+@font-face {
+  font-family: CamptonBookLight;
+  src: url(../fonts/Campton/Rene.Bieder_Campton.Light.otf);
+}
+@font-face {
+  font-family: CamptonBookBold;
+  src: url(../fonts/Campton/Rene.Bieder_Campton.Bold.otf);
+  font-weight: bold;
+}
 /* 定义变量 */
 /* 定义颜色变量 */
-/*rewrite browser scrollbar stylesheet*/
+/*ie8*/
 /*滚动条整体部分,必须要设置*/
 ::-webkit-scrollbar {
   width: 8px;
@@ -83,16 +97,6 @@ input::-ms-clear {
   overflow: hidden;
   height: 100%;
 }
-/* 引入字体 */
-@font-face {
-  font-family: CamptonBook;
-  src: url(../fonts/Campton/Rene.Bieder_Campton.Book.otf);
-}
-@font-face {
-  font-family: CamptonBookBold;
-  src: url(../fonts/Campton/Rene.Bieder_Campton.Bold.otf);
-  font-weight: bold;
-}
 /* project mcins style sheet*/
 body {
   min-width: 320px;
@@ -102,217 +106,279 @@ body {
   color: #fff;
   background: #FAFBFF;
 }
-/* 子页面头部样式 */
-.lanmeiHeader-subpage {
-  height: 200px;
-  background: url("../../../images/EN/subNavbarBg.png") center no-repeat;
+/* 页面顶部 */
+.lm-header {
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  padding: 0 20px;
+  text-align: center;
+  background: -webkit-linear-gradient(left, #42958a 0%, #1f2c5c 100%);
+  background: -o-linear-gradient(right, #42958a 0%, #1f2c5c 100%);
+  background: -moz-linear-gradient(right, #42958a 0%, #1f2c5c 100%);
+  background: linear-gradient(to right, #42958a 0%, #1f2c5c 100%);
 }
-.lanmeiHeader-subpage .lanmeiNav {
-  width: 960px;
-  margin: 0 auto;
+.lm-header .h-menu {
+  position: absolute;
+  width: 110px;
+  height: 60px;
+  font-size: 18px;
+  text-align: right;
+  cursor: pointer;
+  background: url('../../../images/EN/menu.png') left center no-repeat;
 }
-.lanmeiHeader-subpage .lanmeiNav .lanmeiLogo {
-  float: left;
-  height: 100px;
-  line-height: 100px;
-  margin-top: 16px;
-}
-.lanmeiHeader-subpage .lanmeiNav .lanmeiLogo .navbar-brand {
-  height: 100px;
-}
-.lanmeiHeader-subpage .lanmeiNav .lanmeiHeadInfo {
-  float: left;
-  margin-left: 20px;
-  margin-top: 16px;
-}
-.lanmeiHeader-subpage .lanmeiNav .lanmeiHeadInfo > ul > li {
-  float: left;
-  position: relative;
-  height: 100px;
-  line-height: 100px;
+.lm-header .h-menu > img {
   margin-right: 20px;
-  font-size: 14px;
 }
-.lanmeiHeader-subpage .lanmeiNav .lanmeiHeadInfo > ul > li a {
-  font-size: 14px;
+.lm-header .h-logo-wrap {
+  width: 262px;
+  height: 60px;
+  margin: 0 auto;
+  background: url('../../../images/EN/logo.png') center no-repeat;
 }
-.lanmeiHeader-subpage .lanmeiNav .lanmeiHeadInfo > ul > li .phoneBtn {
-  font-size: 14px;
-  color: #1f2c5c;
+.lm-header .h-right {
+  position: absolute;
+  right: 20px;
+  top: 0;
 }
-.lanmeiHeader-subpage .lanmeiNav .lanmeiHeadInfo > ul .nth-child1 {
-  line-height: 52px;
+.lm-header .h-right > div {
+  float: left;
 }
-.lanmeiHeader-subpage .lanmeiNav .lanmeiHeadInfo > ul .nth-child1 > img {
-  margin-top: 26px;
-  margin-right: 11px;
+.lm-header .h-right > div > a {
+  color: #fff;
 }
-.lanmeiHeader-subpage .lanmeiNav .lanmeiHeadInfo > ul .nth-child1 > div {
-  float: right;
-  height: 78px;
-  line-height: 78px;
+.lm-header .h-right > div > a:hover {
+  color: #fff;
 }
-.lanmeiHeader-subpage .lanmeiNav .lanmeiHeadInfo > ul .nth-child1 > div > span {
+.lm-header .h-right .v-line {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.lm-header .h-right .v-line-2 {
+  margin-right: 46px;
+}
+.lm-header .h-right .dot-login {
+  margin-left: 10px;
   margin-right: 10px;
 }
-/* 子页面页脚样式 */
-.footerInfo {
-  width: 100%;
-  height: 270px;
-  background: url("../../../images/EN/footerBg.jpg") no-repeat;
+.lm-header .h-right .h-login > img,
+.lm-header .h-right .h-registered > img {
+  margin-right: 6px;
 }
-.footerInfo .footerBg {
-  width: 100%;
-  height: 270px;
-  background: rgba(31, 44, 92, 0.7);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#B21F2C5C", endColorstr="#B21F2C5C");
-}
-.footerInfo .footerBg > div {
-  width: 960px;
-  margin: 0 auto;
-}
-.footerInfo .HelpfulInformation {
-  height: 70px;
-  line-height: 70px;
-  padding: 0 10px;
-  border-bottom: 1px solid #fff;
-}
-.footerInfo .HelpfulInformation > p {
-  float: left;
-  font-weight: bold;
-  font-size: 18px;
-  color: #ffffff;
-}
-.footerInfo .HelpfulInformation .languageSelectBox {
-  height: 70px;
-  float: right;
-  font-weight: bold;
-  font-size: 18px;
-  color: #ffffff;
-}
-.footerInfo .HelpfulInformation .languageSelectBox .languageBox {
+.lm-header .h-right .h-login {
   position: relative;
-  top: 10px;
+  height: 80px;
+}
+.lm-header .h-right .h-login .loginBtn {
   display: inline-block;
-  width: 60px;
-  height: 50px;
-  vertical-align: top;
+  height: 60px;
+  text-align: right;
 }
-.footerInfo .HelpfulInformation .languageSelectBox .languageBox .ENbottomLine {
-  width: 40px;
-  top: 50px;
-  left: 10px;
+.lm-header .h-right .h-login .loginBtn .head-portrait {
+  float: left;
+  width: 24px;
+  height: 60px;
+  background: url('../../../images/EN/login.png') left center no-repeat;
 }
-.footerInfo .HelpfulInformation .languageSelectBox .languageBox .languageSelect {
-  display: inline-block;
-  width: 60px;
-  height: 50px;
-  border: 1px solid transparent;
-  border-bottom: none;
-  background: url("../../../images/EN/selectUSA.png") center no-repeat;
-}
-.footerInfo .HelpfulInformation .languageSelectBox .languageBox .active {
-  border-color: #ddd;
-  background-color: #fff;
-}
-.footerInfo .HelpfulInformation .languageSelectBox .languageBox .languageDownMenu {
+.lm-header .h-right .h-login .login-menu {
   display: none;
   position: absolute;
-  top: 50px;
-  left: 0;
-  width: 60px;
-  border: 1px solid #ddd;
-  border-top: none;
+  top: 76px;
+  left: -180px;
+  width: 240px;
+  height: 120px;
+  border-radius: 2px;
   background: #fff;
-  z-index: 999;
+  padding: 20px;
+  text-align: left;
+  box-shadow: 0 0 50px 0 rgba(31, 44, 92, 0.2);
 }
-.footerInfo .HelpfulInformation .languageSelectBox .languageBox .languageDownMenu > li {
-  height: 50px;
+.lm-header .h-right .h-login .login-menu > h2 {
+  color: rgba(31, 44, 92, 0.8);
+  font-size: 20px;
+  font-family: CamptonBookBold;
 }
-.footerInfo .HelpfulInformation .languageSelectBox .languageBox .languageDownMenu > li a {
-  position: relative;
-  display: inline-block;
-  width: 100%;
-  height: 100%;
+.lm-header .h-right .h-login .login-menu > a {
+  display: block;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.7);
+  height: 34px;
+  line-height: 40px;
+  margin-top: 10px;
+  margin-left: 10px;
+  padding-left: 40px;
+  transition: all .3s;
+  -webkit-transition: all .3s;
 }
-.footerInfo .HelpfulInformation .languageSelectBox .languageBox .languageDownMenu .nth-child1 a {
-  background: url("../../../images/EN/selectChina.png") center no-repeat;
+.lm-header .h-right .h-login .login-menu > a:hover {
+  color: #8ec060;
+  transition: all .3s;
+  -webkit-transition: all .3s;
 }
-.footerInfo .HelpfulInformation .languageSelectBox .languageBox .languageDownMenu .nth-child2 a {
-  background: url("../../../images/EN/selectUSA.png") center no-repeat;
-}
-.footerInfo .contactUs {
-  height: 60px;
-  padding: 20px 10px;
-  font-size: 14px;
-  color: #ffffff;
-}
-.footerInfo .contactUs .nth-child1 {
-  float: left;
-}
-.footerInfo .contactUs .nth-child1 span {
-  font-size: 14px;
-  color: #ffffff;
-  margin-left: 20px;
-}
-.footerInfo .contactUs .nth-child2 {
-  float: right;
-}
-.footerInfo .contactUs .nth-child2 span {
-  font-size: 14px;
-  color: #ffffff;
-}
-.footerInfo .contactUs .nth-child2 a {
-  color: #fff;
-  -webkit-transition-duration: .5s;
-  transition-duration: .5s;
-}
-.footerInfo .contactUs .nth-child2 a i {
-  font-size: 26px;
-  margin-left: 18px;
-}
-.footerInfo .contactUs .nth-child2 a:hover {
-  -webkit-transition-duration: .5s;
-  transition-duration: .5s;
+.lm-header .h-right .h-login .login-menu .lm-currency {
+  margin-top: 0;
+  background: url('../../../images/EN/lm-currency.png') left center no-repeat;
+  background-size: 20px;
+  text-align: right;
   color: #8ec060;
 }
-.footerInfo .location {
-  padding: 10px;
+.lm-header .h-right .h-login .login-menu .lm-personal-center {
+  background: url('../../../images/EN/personal-icon.png') left center no-repeat;
+  margin-top: 0;
 }
-.footerInfo .location a {
-  font-size: 14px;
-  color: #ffffff;
-  margin-left: 20px;
+.lm-header .h-right .h-login .login-menu .lm-logout {
+  background: url('../../../images/EN/loginout-icon.png') left center no-repeat;
 }
-.footerInfo .LanmeiAirlinesBerhad {
-  height: 60px;
-  padding: 20px 10px;
-  font-size: 14px;
-  color: #ffffff;
+.lm-header .h-right .h-login .login-menu::before {
+  position: absolute;
+  top: -14px;
+  right: 12px;
+  z-index: 9;
+  filter: alpha(opacity=0);
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+  border-bottom: 14px solid #fff;
 }
-.footerInfo .LanmeiAirlinesBerhad > a {
-  float: left;
+.lm-header .h-right .success-h-login .loginBtn .head-portrait {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  margin-top: 15px;
+  border-radius: 50%;
+  background-size: 30px;
 }
-.footerInfo .LanmeiAirlinesBerhad > a img {
-  vertical-align: text-bottom;
+.lm-header .h-right .success-h-login > a img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
 }
-.footerInfo .LanmeiAirlinesBerhad > div {
-  float: left;
-  margin-left: 20px;
+.lm-header .h-right .success-h-login:hover .login-menu {
+  display: block;
 }
-.footerInfo .LanmeiAirlinesBerhad > div .p1 {
-  font-size: 14px;
-  color: #ffffff;
-  display: inline-block;
-  padding-top: 12px;
-  visibility: hidden;
+.lm-header .h-phone {
+  position: absolute;
+  left: -50px;
+  width: 80px;
+  height: 80px;
 }
-.footerInfo .LanmeiAirlinesBerhad > div .p2 {
-  font-size: 14px;
-  color: #ffffff;
+.lm-header .h-phone .phone-menu {
+  display: none;
+  position: absolute;
+  top: 76px;
+  left: -66px;
+  width: 220px;
+  height: 178px;
+  border-radius: 2px;
+  background: #fff;
+  padding: 20px;
+  text-align: left;
+  box-shadow: 0 0 50px 0 rgba(31, 44, 92, 0.2);
 }
-.footerInfo .LanmeiAirlinesBerhad > div .p2 a {
+.lm-header .h-phone .phone-menu > h2 {
+  color: rgba(31, 44, 92, 0.8);
+  font-size: 20px;
+  font-family: CamptonBookBold;
+}
+.lm-header .h-phone .phone-menu > p {
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.7);
+  height: 25px;
+  line-height: 32px;
+  margin-top: 10px;
+  margin-left: 10px;
+  padding-left: 40px;
+  background: url('../../../images/EN/phone-bg.png') left center no-repeat;
+}
+.lm-header .h-phone .phone-menu .p1 {
+  margin-top: 20px;
+}
+.lm-header .h-phone .phone-menu::before {
+  position: absolute;
+  top: -14px;
+  left: 96px;
+  z-index: 9;
+  filter: alpha(opacity=0);
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+  border-bottom: 14px solid #fff;
+}
+.lm-header .h-phone:hover .phone-menu {
+  display: block;
+}
+.lm-header .h-lang {
+  position: absolute;
+  right: -20px;
+  width: 70px;
+  height: 80px;
+}
+.lm-header .h-lang .lang-menu {
+  display: none;
+  position: absolute;
+  top: 76px;
+  left: -216px;
+  width: 278px;
+  height: 160px;
+  border-radius: 2px;
+  background: #fff;
+  padding: 20px;
+  text-align: left;
+  box-shadow: 0 0 50px 0 rgba(31, 44, 92, 0.2);
+}
+.lm-header .h-lang .lang-menu > h2 {
+  color: rgba(31, 44, 92, 0.8);
+  font-size: 20px;
+  font-family: CamptonBookBold;
+}
+.lm-header .h-lang .lang-menu > a {
+  display: block;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.7);
+  height: 34px;
+  line-height: 40px;
+  margin-top: 10px;
+  margin-left: 10px;
+  padding-left: 40px;
+  transition: all .3s;
+  -webkit-transition: all .3s;
+}
+.lm-header .h-lang .lang-menu > a:hover {
   color: #8ec060;
+  transition: all .3s;
+  -webkit-transition: all .3s;
+}
+.lm-header .h-lang .lang-menu .lang-en {
+  margin-top: 20px;
+  background: url('../../../images/EN/lang-en.png') left center no-repeat;
+}
+.lm-header .h-lang .lang-menu .lang-zh {
+  background: url('../../../images/EN/lang-zh.png') left center no-repeat;
+}
+.lm-header .h-lang .lang-menu::before {
+  position: absolute;
+  top: -14px;
+  right: 12px;
+  z-index: 9;
+  filter: alpha(opacity=0);
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+  border-bottom: 14px solid #fff;
+}
+.lm-header .h-lang:hover .lang-menu {
+  display: block;
 }
 /* 返回页面顶部 */
 .BackToTop {
@@ -385,6 +451,12 @@ body {
   text-align: center;
   background: #1f2c5c;
 }
+.lm-footer .lm-logo {
+  width: 140px;
+  height: 53px;
+  margin: 0 auto;
+  background: url('../../../images/EN/lanmeiFooterLogo.png') center no-repeat;
+}
 .lm-footer .facebook {
   margin-top: 16px;
 }
@@ -433,15 +505,39 @@ body {
   transition: all .3s;
   -webkit-transition: all .3s;
 }
-/* 移动端新增代码 */
-.m-header {
-  display: none;
+.lte_ie9 .lm-header {
+  background: #42958a;
 }
+.ie8 .lm-header .h-phone .phone-menu > h2,
+.ie8 .lm-header .h-lang .lang-menu > h2 {
+  color: #4C567D;
+}
+.ie8 .lm-header .h-phone .phone-menu > p,
+.ie8 .lm-header .h-lang .lang-menu a {
+  color: #4C4C4C;
+}
+.ie8 .lm-header .h-phone .phone-menu > p:hover,
+.ie8 .lm-header .h-lang .lang-menu a:hover {
+  color: #8ec060;
+}
+/* 移动端新增代码 */
 @media screen and (max-width: 992px) {
-  .lanmeiHeader-subpage {
+  .lm-header .h-logo {
     display: none;
   }
-  .footerInfo {
+  .lm-header .mobile-logo {
+    display: inline-block;
+    height: 40px;
+  }
+  .lm-header .h-right .v-line {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .lm-header .h-right .v-line-2 {
+    margin-right: 40px;
+  }
+  .lm-header .h-login span,
+  .lm-header .h-registered span {
     display: none;
   }
   .BackToTop {
@@ -475,30 +571,6 @@ body {
   .BackToTop .top p {
     display: none;
   }
-  .m-header {
-    display: block;
-    position: fixed;
-    top: 0;
-    z-index: 9;
-    width: 100%;
-    height: 0.4rem;
-    background: #1f2c5c;
-  }
-  .m-header i {
-    float: left;
-    color: #fff;
-    font-size: 0.16rem;
-    margin-top: 0.04rem;
-    margin-left: 0.1rem;
-  }
-  .m-header h2 {
-    width: 100%;
-    height: 0.4rem;
-    line-height: 0.4rem;
-    color: #fff;
-    font-size: 0.16rem;
-    text-align: center;
-  }
 }
 @media (max-width: 767px) {
   /*滚动条整体部分,必须要设置*/
@@ -524,6 +596,122 @@ body {
   ::-webkit-scrollbar-button {
     height: 0px;
     background-color: #1f2c5c;
+  }
+  .lm-header {
+    position: absolute;
+    z-index: 9;
+    padding: 0 15px;
+  }
+  .lm-header .h-menu {
+    width: 38px;
+    background-image: url('../../../images/EN/svg/menu.svg');
+  }
+  .lm-header .h-menu span {
+    display: none;
+  }
+  .lm-header .h-logo-wrap {
+    width: 100px;
+    background: url('../../../images/EN/svg/lanmeiFooterLogo.svg') center no-repeat;
+    background-size: 100px;
+  }
+  .lm-header .h-right > div {
+    display: none;
+  }
+  .lm-header .h-right .h-login {
+    display: block;
+    height: 60px;
+  }
+  .lm-header .h-right .h-login .loginBtn {
+    width: 30px;
+  }
+  .lm-header .h-right .h-login .loginBtn .head-portrait {
+    width: 30px;
+    height: 30px;
+    margin-top: 15px;
+    background: url('../../../images/EN/svg/m-login.svg') right center no-repeat;
+  }
+  .lm-header .h-right .h-login .login-menu {
+    top: 60px;
+    left: -114px;
+    width: 150px;
+    height: 76px;
+    padding: 6px;
+  }
+  .lm-header .h-right .h-login .login-menu .lm-personal-center {
+    font-size: 12px;
+    height: 26px;
+    line-height: 26px;
+    margin-top: 0;
+    margin-left: 10px;
+    padding-left: 30px;
+    background: url('../../../images/EN/svg/personal-icon.svg') left center no-repeat;
+    background-size: 16px;
+  }
+  .lm-header .h-right .h-login .login-menu .lm-logout {
+    font-size: 12px;
+    height: 26px;
+    line-height: 26px;
+    margin-top: 8px;
+    margin-left: 10px;
+    padding-left: 30px;
+    background: url('../../../images/EN/svg/loginout-icon.svg') left center no-repeat;
+    background-size: 16px;
+  }
+  .lm-header .h-right .h-login .login-menu::before {
+    top: -7px;
+    right: 12px;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid #fff;
+  }
+  .lm-footer {
+    height: 240px;
+    padding-top: 20px;
+  }
+  .lm-footer .lm-logo {
+    width: 100px;
+    height: 38px;
+    margin: 0 auto;
+    background: url('../../../images/EN/svg/lanmeiFooterLogo.svg') center no-repeat;
+  }
+  .lm-footer .facebook {
+    margin-top: 12px;
+  }
+  .lm-footer .facebook > a i {
+    font-size: 20px;
+  }
+  .lm-footer .facebook .a1 {
+    margin-right: 20px;
+  }
+  .lm-footer .f-email {
+    margin-top: 12px;
+  }
+  .lm-footer .f-email > i {
+    margin-right: 8px;
+  }
+  .lm-footer .f-local {
+    margin-top: 8px;
+    padding-left: 10px;
+    padding-top: 10px;
+  }
+  .lm-footer .f-local a {
+    font-size: 12px;
+    color: #fff;
+  }
+  .lm-footer .f-local > i {
+    margin-right: 8px;
+  }
+  .lm-footer .f-local > i::before {
+    color: #fff;
+  }
+  .lm-footer .copyright {
+    margin-top: 8px;
+    font-size: 12px;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .lm-footer .copyright a {
+    font-size: 12px;
   }
   .lm-loading img {
     width: 160px;

@@ -187,7 +187,6 @@ var LanmeiAirlinesCommon = {
 			_tick = setTimeout(function() {
 				var winWidth = $(window).width();
 				if(winWidth>=992){
-					console.log($(window).scrollTop());
 					$(window).scrollTop()>300 ? $('.BackToTop').fadeIn('slow') : $('.BackToTop').fadeOut('slow');
 					
 					getBottom = $(document).height() - $(window).height() - $(window).scrollTop();
