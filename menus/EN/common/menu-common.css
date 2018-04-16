@@ -153,6 +153,7 @@
   }
   .lm-section .lm-content p {
     font-size: 0.14rem;
+    line-height: 0.26rem;
     margin-bottom: 0.2rem;
   }
 }

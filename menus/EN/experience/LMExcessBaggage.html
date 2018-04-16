@@ -15,8 +15,8 @@
 	<link rel="stylesheet" type="text/css" href="../../../libs/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../../../common/EN/fonts/lm-iconfont.css">
 	<link rel="stylesheet" type="text/css" href="../../../common/EN/css/Lanmei-common.css">
-	<link rel="stylesheet" type="text/css" href="../common/menu-common.css">
 	<link rel="stylesheet" type="text/css" href="../../../libsEdit/css/lanmeiLibsEdit.css">
+	<link rel="stylesheet" type="text/css" href="../common/menu-common.css">
 	<link rel="stylesheet" type="text/css" href="css/LMExcessBaggage.css">
 	<!--[if lt IE 9]>
 	<script src="../../../libs/bootstrap/js/html5shiv.min.js"></script>
@@ -25,37 +25,59 @@
 </head>
 <body>
 	<!-- 页面顶部 -->
-	<header class="lanmeiHeader-subpage">
-		<nav class="lanmeiNav">
-			<div class="lanmeiLogo">
-				<a class="navbar-brand" href="../../../index.html""><img src="../../../images/EN/lanmeiLogo.png"></a>
-				<!-- <a class="navbar-brand" href="/index.html"><img src="../../../images/CN/lanmeiLogo.png"></a> -->
+	<header class="lm-header">
+		<div class="h-menu js-h-menu">
+			<span>Menu</span>
+		</div>
+		<a class="h-logo-wrap"></a>
+		<div class="h-right">
+			<div class="h-phone js-h-phone">
+				<img src="../../../images/EN/phone.png">
+				<div class="phone-menu js-phone-menu">
+					<h2>24 online:</h2>
+					<p class="p1">+855 15331852</p>
+					<p>+855 15331857</p>
+					<p>+855 23881865</p>
+				</div>
 			</div>
-			<div class="lanmeiHeadInfo">
-				<ul class="">
-					<li class="nth-child1">
-						<img src="../../../images/EN/phone.png">
-						<div>
-							<span>+855 23881890</span>/
-							<span>+855 23881893</span>/
-							<span>+855 23881865</span>
-						</div>
-					</li>
-				</ul>
+			<div class="v-line"><img src="../../../images/EN/v-line.png" alt="line"></div>
+			<!-- <div class="h-login success-h-login"> -->
+			<div class="h-login">
+				<a href="javascript:;" class="loginBtn">
+					<p class="head-portrait"></p>
+					<span>Login</span>
+				</a>
+				<div class="login-menu js-login-menu">
+					<!-- <a href="javascript:;" class="lm-currency" data="en">180</a> -->
+					<a href="javascript:;" class="lm-personal-center" data="en">Personal center</a>
+					<a href="javascript:;" class="lm-logout" data="zh">Logout</a>
+				</div>
 			</div>
-		</nav>
-	</header>
-	<header class="m-header">
-		<a href="../../../index.html"><i class="iconfont icon-left-arrow"></i></a>
-		<h2 class="m-nav-title" data-title="f-nav-title">Rates of Baggage and Seat Selection</h2>
+			<div class="dot-login"><img src="../../../images/EN/dot-login.png" alt="dot-login"></div>
+			<div class="h-registered">
+				<a href="javascript:;" class="REGISTEREDBtn">
+					<img src="../../../images/EN/registered.png" alt="registered">
+					<span>Registered</span>
+				</a>
+			</div>
+			<div class="v-line v-line-2"><img src="../../../images/EN/v-line.png" alt="line"></div>
+			<div class="h-lang js-h-lang">
+				<img src="../../../images/EN/lang-en.png" class="js-choose-lang">
+				<div class="lang-menu js-lang-menu">
+					<h2>Choose a language:</h2>
+					<a href="javascript:;" class="lang-en" data="en">English</a>
+					<a href="javascript:;" class="lang-zh" data="zh">Chinese</a>
+				</div>
+			</div>
+		</div>
 	</header>
 
 	<!-- 页面主体 -->
 	<section class="lm-section">
-		<div class="title">
+		<div class="lm-title">
 			<h1>Rates of Baggage and Seat Selection</h1>
 		</div>
-		<div class="check-steps">
+		<div class="lm-content">
 		    <h2>1.Carry-on Baggage</h2>
 			<p>For all routes operated by Lanmei Airlines, each passenger is allowed to carry ONE piece of carry-on baggage, which must not exceed 115cm (55cm x 40cm x 20cm) in size and 7kg in weight.</p>
 			<p> In addition to the cabin baggage mentioned above, a passenger is entitled to bring 1 more small item, which must not exceed 80CM (40cm x 30cm x 10cm) in size, aboard the aircraft. These items include:</p>
@@ -152,37 +174,18 @@
 	</section>
 
 	<!-- 页脚 -->
-	<footer class="footerInfo">
-		<div class="footerBg">
-			<div class="HelpfulInformation">
-				<p>Helpful Information</p>
-			</div>
-			<div class="contactUs">
-				<div class="nth-child1"><img src="../../../images/EN/email.png"><span>lm-ec@lanmeiairlines.com</span></div>
-				<div class="nth-child2">
-					<span>FOLLOW</span>
-					<a href="https://www.facebook.com/lanmeiairlines/">
-						<i class="iconfont icon-facebook"></i>
-					</a>
-					<a href="#"><i class="iconfont icon-in"></i></a>
-					<a href="#"><i class="iconfont icon-inst"></i></a>
-					<a href="#"><i class="iconfont icon-youtube"></i></a>
-					<a href="#"><i class="iconfont icon-googleplus"></i></a>
-					<a href="http://weibo.com/lanmeiair"><i class="iconfont icon-wb"></i></a>
-					<a href="#"><i class="iconfont icon-tuite"></i></a>
-				</div>
-			</div>
-			<div class="location">
-				<img src="../../../images/EN/location.png"><a href="https://www.google.com.kh/maps/place/Lanmei+Airlines/@11.5637415,104.8830989,17z/data=!3m1!4b1!4m5!3m4!1s0x310951a3c5cdaf97:0x77359b117b2ff068!8m2!3d11.5637363!4d104.8852876" target="_Blank">No.575 D&E, Russian Federation Boulevard, Phnom Penh, Cambodia</a>
-			</div>
-			<div class="LanmeiAirlinesBerhad">
-				<a href="../../index.html"><img src="../../../images/EN/lanmeiFooterLogo.png"></a>
-				<div>
-					<p class="p1">Terms of Use | Privacy Policy | Cookies</p>
-					<p class="p2">© Copyright 2017 Lanmei Airlines. All Rights Reserved. ICP: Guangdong Province <a href="http://www.miitbeian.gov.cn" target="_Blank">ICP-17005494-1</a></p>
-				</div>
-			</div>
-		</div>
+	<footer class="lm-footer">
+		<p class="lm-logo"></p>
+		<p class="facebook">
+			<a href="https://www.facebook.com/lanmeiairlines/" class="a1"><i class="iconfont icon-facebook"></i></a>
+			<a href="http://weibo.com/lanmeiair"><i class="iconfont icon-wb"></i></a>
+		</p>
+		<p class="f-email"><i class="iconfont icon-email"></i><span>lm-ec@lanmeiairlines.com</span></p>
+		<p class="f-local">
+			<i class="iconfont icon-local"></i>
+			<a href="https://goo.gl/maps/7pyBze8BFe52" target="_Blank">No.575 D&amp;E, Russian Federation Boulevard, Phnom Penh, Cambodia</a>
+		</p>
+		<p class="copyright">© Copyright 2017 Lanmei Airlines. All Rights Reserved. ICP:Guangdong Province <a href="http://www.miitbeian.gov.cn" target="_Blank" rel="nofollow">ICP-17005494-1</a></p>
 	</footer>
 
 	<!-- 回到顶部 -->
@@ -205,6 +208,6 @@
 	<script type="text/javascript" src="../../../libs/mobile-libs/fastclick/fastclick.js"></script>
 	<script type="text/javascript" src="../../../libs/bootstrap/js/bootstrap.min.js"></script>
 	<!-- 公共JS -->
-	<script type="text/javascript" src="../../../common/EN/js/Lanmei-common.js"></script>
+	<script type="text/javascript" src="../common/menu-common.js"></script>
 </body>
 </html>
