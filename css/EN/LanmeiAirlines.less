@@ -912,7 +912,7 @@ body{
 		}
 		.slick-detail{
 			p{
-				float: left;
+				display: inline-block;
 				font-size: 18px;
 				.purpleRgb(.9);
 				padding:5px 10px;
@@ -921,8 +921,8 @@ body{
 				border-radius: 2px;
 				-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
 				transition: opacity 0.35s, transform 0.35s;
-				-webkit-transform: translate3d(-360px,0,0);
-				transform: translate3d(-390px,0,0);
+				-webkit-transform: translate3d(-800px,0,0);
+				transform: translate3d(-800px,0,0);
 			}
 			p:first-child{
 				-webkit-transition-delay: 0.15s;
@@ -1341,7 +1341,11 @@ body{
 				height: 30px;
 				line-height: 32px;
 				padding:0 10px;
-				.blackBgRgb(.6);
+				background: -webkit-linear-gradient(left, #F7B733 0%, #FC4A1A 100%);
+				background: -o-linear-gradient(right, #F7B733 0%, #FC4A1A 100%);
+				background: -moz-linear-gradient(right, #F7B733 0%, #FC4A1A 100%);
+				background: linear-gradient(to right, #F7B733 0%, #FC4A1A 100%);
+				// .blackBgRgb(.6);
 			}
 		}
 		.hotel-detail{
@@ -1589,6 +1593,9 @@ body{
 	.popup-content{
 		color: #8F95AD;
 	}
+	.lm-section-hotel .hotel-com .hotel-img .save-percent{
+		background: #FC4A1A;
+	}
 }
 .ie8{
 	.section-content-title{
@@ -1702,6 +1709,9 @@ body{
 	}
 	.flight-com{
 		left: 30%;
+	}
+	.lm-section-hotel .hotel-com .hotel-img .save-percent{
+		background: #FC4A1A;
 	}
 }
 

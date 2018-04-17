@@ -1,51 +1,28 @@
 /* 定义变量 */
 /* 定义颜色变量 */
-.lm-section {
-  width: 940px;
-  min-height: 300px;
-  margin: 0 auto;
-}
-.lm-section .title h1 {
-  font-size: 50px;
-  color: #1f2c5c;
-}
-.lm-section .content {
-  margin: 30px 0;
-}
-.lm-section .content > h2 {
-  font-size: 20px;
-  font-weight: bold;
-  color: #1f2c5c;
-  margin-bottom: 20px;
-  line-height: 28px;
-}
-.lm-section .content > p {
-  font-size: 16px;
-  margin-bottom: 20px;
-  line-height: 26px;
-}
-.lm-section .content > p a {
-  color: #018e88;
-}
-.lm-section .content .img {
+.lm-section .lm-content .img {
   width: 100%;
 }
-.lm-section .content .img img {
+.lm-section .lm-content .img img {
   width: 100%;
 }
-.lm-section .content .getPassport {
+.lm-section .lm-content .getPassport {
   margin-top: 30px;
+  margin-bottom: 30px;
+  overflow: hidden;
 }
-.lm-section .content .getPassport a {
+.lm-section .lm-content .getPassport a {
+  color: #fff;
   float: left;
 }
-.lm-section .content .getPassport a img {
+.lm-section .lm-content .getPassport a img {
   left: 14px;
 }
 .lm-section .searchFlight {
-  background: #f2f2f2;
+  width: 100%;
   height: 70px;
   padding: 15px;
+  background: #f2f2f2;
   overflow: hidden;
 }
 .lm-section .searchFlight h2 {
@@ -61,40 +38,30 @@
 /*************** 屏幕适配 ********************/
 /* pad端 */
 @media screen and (max-width: 992px) {
-  .lm-section {
-    width: 100%;
-    padding: 15px;
-  }
-  .lm-section .title h1 {
-    font-size: 0.26rem;
-    text-align: center;
-  }
-  .lm-section .content {
+  .lm-section .lm-content {
     margin-top: 0.15rem;
     margin-bottom: 0;
   }
-  .lm-section .content > h2 {
+  .lm-section .lm-content > h2 {
     font-size: 0.16rem;
-    text-align: center;
   }
-  .lm-section .content > p {
+  .lm-section .lm-content > p {
     font-size: 0.14rem;
-    text-indent: 2em;
   }
-  .lm-section .content .getPassport {
+  .lm-section .lm-content .getPassport {
     margin-top: 0.15rem;
     margin-bottom: 0.15rem;
     text-align: center;
   }
-  .lm-section .content .getPassport a {
+  .lm-section .lm-content .getPassport a {
     float: none;
-    width: 1.1rem;
+    width: 1.3rem;
     height: 0.3rem;
     line-height: 0.3rem;
     font-size: 0.14rem;
     font-weight: normal;
   }
-  .lm-section .content .getPassport a img {
+  .lm-section .lm-content .getPassport a img {
     width: 0.14rem;
     left: 0.06rem;
   }
@@ -122,9 +89,6 @@
   .lm-section .searchFlight > a img {
     width: 0.14rem;
     left: 0.06rem;
-  }
-  .footerInfo {
-    display: none;
   }
 }
 /* 手机端 */

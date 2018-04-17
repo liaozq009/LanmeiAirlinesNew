@@ -931,7 +931,7 @@ body {
   height: 100%;
 }
 .lm-section-banner .slick-item .slick-detail p {
-  float: left;
+  display: inline-block;
   font-size: 18px;
   color: rgba(31, 44, 92, 0.9);
   padding: 5px 10px;
@@ -940,8 +940,8 @@ body {
   border-radius: 2px;
   -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
   transition: opacity 0.35s, transform 0.35s;
-  -webkit-transform: translate3d(-360px, 0, 0);
-  transform: translate3d(-390px, 0, 0);
+  -webkit-transform: translate3d(-800px, 0, 0);
+  transform: translate3d(-800px, 0, 0);
 }
 .lm-section-banner .slick-item .slick-detail p:first-child {
   -webkit-transition-delay: 0.15s;
@@ -1388,7 +1388,10 @@ body {
   height: 30px;
   line-height: 32px;
   padding: 0 10px;
-  background: rgba(0, 0, 0, 0.6);
+  background: -webkit-linear-gradient(left, #F7B733 0%, #FC4A1A 100%);
+  background: -o-linear-gradient(right, #F7B733 0%, #FC4A1A 100%);
+  background: -moz-linear-gradient(right, #F7B733 0%, #FC4A1A 100%);
+  background: linear-gradient(to right, #F7B733 0%, #FC4A1A 100%);
 }
 .lm-section-hotel .hotel-com .hotel-detail {
   position: relative;
@@ -1612,6 +1615,9 @@ body {
 .lte_ie9 .popup-content {
   color: #8F95AD;
 }
+.lte_ie9 .lm-section-hotel .hotel-com .hotel-img .save-percent {
+  background: #FC4A1A;
+}
 .ie8 .section-content-title {
   color: #E4E5EE;
 }
@@ -1735,6 +1741,9 @@ body {
 }
 .ie8 .flight-com {
   left: 30%;
+}
+.ie8 .lm-section-hotel .hotel-com .hotel-img .save-percent {
+  background: #FC4A1A;
 }
 /* 屏幕缩放 */
 @media screen and (max-width: 1800px) {

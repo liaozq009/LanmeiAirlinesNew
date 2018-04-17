@@ -2,25 +2,21 @@
 /* 定义变量 */
 /* 定义颜色变量 */
 /* 公共样式 */
-.menu-wrap {
+.lm-content .menu-wrap {
   overflow: hidden;
 }
-.menu-wrap > li {
+.lm-content .menu-wrap > li {
   float: left;
   width: 33.33%;
-  height: 350px;
+  height: 410px;
   text-align: center;
   padding: 20px;
 }
-.menu-wrap > li h2 {
+.lm-content .menu-wrap > li h2 {
   margin-top: 20px;
-  font-size: 22px;
-  color: #1f2c5c;
+  margin-bottom: 20px;
 }
-.menu-wrap > li p {
-  margin: 20px 0;
-  font-size: 16px;
-  color: #808080;
+.lm-content .menu-wrap > li p {
   text-align: left;
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -30,24 +26,24 @@
   text-overflow: ellipsis;
   word-wrap: break-word;
 }
-.menu-wrap > li a {
+.lm-content .menu-wrap > li a {
   display: inline-block;
   width: 100%;
   text-align: left;
   font-size: 16px;
   color: #1f2c5c;
 }
-.menu-wrap > li a img {
+.lm-content .menu-wrap > li a img {
   margin-left: 10px;
 }
-.menu-wrap .n2,
-.menu-wrap .n5 {
+.lm-content .menu-wrap .n2,
+.lm-content .menu-wrap .n5 {
   border-left: 1px solid #ccc;
   border-right: 1px solid #ccc;
 }
-.menu-wrap .n4,
-.menu-wrap .n5,
-.menu-wrap .n6 {
+.lm-content .menu-wrap .n4,
+.lm-content .menu-wrap .n5,
+.lm-content .menu-wrap .n6 {
   margin-top: 60px;
 }
 /* 主体代码 */
@@ -55,23 +51,6 @@
   width: 940px;
   min-height: 300px;
   margin: 0 auto;
-}
-.lm-section .title h1 {
-  font-size: 50px;
-  color: #1f2c5c;
-}
-.lm-section .title h2 {
-  font-size: 32px;
-  color: #1f2c5c;
-  margin-top: 30px;
-}
-.lm-section .title p {
-  font-size: 16px;
-  color: #808080;
-  margin-top: 30px;
-}
-.lm-section .content {
-  margin: 30px 0;
 }
 .lm-section .searchFlight {
   background: #f2f2f2;
@@ -160,10 +139,10 @@
 }
 /*************** 屏幕适配 ********************/
 @media screen and (min-width: 767px) {
-  .menu-wrap > li {
+  .lm-content .menu-wrap > li {
     position: relative;
   }
-  .menu-wrap > li a {
+  .lm-content .menu-wrap > li a {
     position: absolute;
     left: 20px;
     bottom: 20px;
@@ -175,39 +154,21 @@
     width: 100%;
     padding: 15px;
   }
-  .lm-section .title h1 {
-    font-size: 0.26rem;
-    text-align: center;
-  }
-  .lm-section .title h2 {
-    font-size: 0.16rem;
-    text-align: center;
-  }
-  .lm-section .title p {
-    font-size: 18px;
-    text-indent: 2em;
-  }
   .lm-section .service .s-2 {
     margin-top: 2%;
     margin-bottom: 2%;
   }
-  .menu-wrap > li h2 {
+  .lm-content .menu-wrap > li h2 {
     font-size: 18px;
   }
-  .menu-wrap > li p {
+  .lm-content .menu-wrap > li p {
     font-size: 14px;
+    line-height: 26px;
   }
 }
 /* 手机端 */
 @media screen and (max-width: 767px) {
-  .lm-section .title h2 {
-    margin-top: 0.15rem;
-  }
-  .lm-section .title p {
-    font-size: 0.14rem;
-    margin-top: 0.15rem;
-  }
-  .lm-section .content {
+  .lm-section .lm-content {
     margin-top: 0;
     margin-bottom: 0.3rem;
   }
@@ -278,30 +239,30 @@
   .lm-section .facility > h2 {
     font-size: 0.2rem;
   }
-  .menu-wrap > li {
+  .lm-content .menu-wrap > li {
     width: 100%;
     height: auto;
     padding: 0.1rem;
     margin-top: 0.2rem;
   }
-  .menu-wrap > li h2 {
+  .lm-content .menu-wrap > li h2 {
     font-size: 0.16rem;
     margin-top: 0.15rem;
   }
-  .menu-wrap > li p {
+  .lm-content .menu-wrap > li p {
     font-size: 0.14rem;
     margin: 0.1rem 0;
   }
-  .menu-wrap > li a {
+  .lm-content .menu-wrap > li a {
     font-size: 0.16rem;
   }
-  .menu-wrap .n2,
-  .menu-wrap .n5 {
+  .lm-content .menu-wrap .n2,
+  .lm-content .menu-wrap .n5 {
     border: none;
   }
-  .menu-wrap .n4,
-  .menu-wrap .n5,
-  .menu-wrap .n6 {
+  .lm-content .menu-wrap .n4,
+  .lm-content .menu-wrap .n5,
+  .lm-content .menu-wrap .n6 {
     margin-top: 0.2rem;
   }
 }

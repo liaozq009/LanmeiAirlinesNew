@@ -9,14 +9,14 @@
 	<!-- 实现响应式的设置 -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>LanmeiAirlines</title>
+	<title>Be Unique, Lanmei Airlines</title>
 	<!-- 引入图标 -->
 	<link rel="icon" href="../../../images/EN/lanmeiLogo.ico">
 	<link rel="stylesheet" type="text/css" href="../../../libs/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../../../common/EN/fonts/lm-iconfont.css">
 	<link rel="stylesheet" type="text/css" href="../../../common/EN/css/Lanmei-common.css">
-	<link rel="stylesheet" type="text/css" href="../common/menu-common.css">
 	<link rel="stylesheet" type="text/css" href="../../../libsEdit/css/lanmeiLibsEdit.css">
+	<link rel="stylesheet" type="text/css" href="../common/menu-common.css">
 	<link rel="stylesheet" type="text/css" href="css/LMAirportService.css">
 	<!--[if lt IE 9]>
 	<script src="../../../libs/bootstrap/js/html5shiv.min.js"></script>
@@ -25,81 +25,101 @@
 </head>
 <body>
 	<!-- 页面顶部 -->
-	<header class="lanmeiHeader-subpage">
-		<nav class="lanmeiNav">
-			<div class="lanmeiLogo">
-				<a class="navbar-brand" href="../../../index.html""><img src="../../../images/EN/lanmeiLogo.png"></a>
-				<!-- <a class="navbar-brand" href="/index.html"><img src="../../../images/CN/lanmeiLogo.png"></a> -->
+	<header class="lm-header">
+		<div class="h-menu js-h-menu">
+			<span>Menu</span>
+		</div>
+		<a class="h-logo-wrap"></a>
+		<div class="h-right">
+			<div class="h-phone js-h-phone">
+				<img src="../../../images/EN/phone.png">
+				<div class="phone-menu js-phone-menu">
+					<h2>24 online:</h2>
+					<p class="p1">+855 15331852</p>
+					<p>+855 15331857</p>
+					<p>+855 23881865</p>
+				</div>
 			</div>
-			<div class="lanmeiHeadInfo">
-				<ul class="">
-					<li class="nth-child1">
-						<img src="../../../images/EN/phone.png">
-						<div>
-							<span>+855 23881890</span>/
-							<span>+855 23881893</span>/
-							<span>+855 23881865</span>
-						</div>
-					</li>
-				</ul>
+			<div class="v-line"><img src="../../../images/EN/v-line.png" alt="line"></div>
+			<!-- <div class="h-login success-h-login"> -->
+			<div class="h-login">
+				<a href="javascript:;" class="loginBtn">
+					<p class="head-portrait"></p>
+					<span>Login</span>
+				</a>
+				<div class="login-menu js-login-menu">
+					<!-- <a href="javascript:;" class="lm-currency" data="en">180</a> -->
+					<a href="javascript:;" class="lm-personal-center" data="en">Personal center</a>
+					<a href="javascript:;" class="lm-logout" data="zh">Logout</a>
+				</div>
 			</div>
-		</nav>
-	</header>
-	<header class="m-header">
-		<a href="../../../index.html"><i class="iconfont icon-left-arrow"></i></a>
-		<h2 class="m-nav-title" data-title="f-nav-title">Phnom Penh International Airport guide</h2>
+			<div class="dot-login"><img src="../../../images/EN/dot-login.png" alt="dot-login"></div>
+			<div class="h-registered">
+				<a href="javascript:;" class="REGISTEREDBtn">
+					<img src="../../../images/EN/registered.png" alt="registered">
+					<span>Registered</span>
+				</a>
+			</div>
+			<div class="v-line v-line-2"><img src="../../../images/EN/v-line.png" alt="line"></div>
+			<div class="h-lang js-h-lang">
+				<img src="../../../images/EN/lang-en.png" class="js-choose-lang">
+				<div class="lang-menu js-lang-menu">
+					<h2>Choose a language:</h2>
+					<a href="javascript:;" class="lang-en" data="en">English</a>
+					<a href="javascript:;" class="lang-zh" data="zh">Chinese</a>
+				</div>
+			</div>
+		</div>
 	</header>
 
 	<!-- 页面主体 -->
 	<section class="lm-section">
-		<div class="title">
+		<div class="lm-title">
 			<h1>Phnom Penh International Airport guide</h1>
-			<h2>Ready to fly?</h2>
-			<p>Get your trip off to a flying start with Phnom Penh International Airport. Don't worry. From check-in details to airport facilities for departures and subsequent travel information for arrivals, we've got everything covered.</p>
 		</div>
-		<div class="content">
+		<div class="lm-content">
 			<ul class="menu-wrap">
 				<li class="n1">
-					<img src="images/f-icon1.png" alt="">
+					<img src="images/f-icon1.jpg" alt="">
 					<h2>Which terminal?</h2>
 					<p>There is only one Terminal in Phnom Penh International Airport, so it’s easy for you to find the ticket counter and check-in counter.</p>
-					<!-- <a href="#">航班状态<img src="../../../images/EN/moreNews.png" alt=""></a> -->
+					<!-- <a href="#">航班状态<img src="../common/images/moreNews.png" alt=""></a> -->
 				</li>
 				<li class="n2">
-					<img src="images/f-icon2.png" alt="">
+					<img src="images/f-icon2.jpg" alt="">
 					<h2>When does my flight depart/arrive?</h2>
 					<p>Unsure of your time arrangement? It's best to be safe than sorry. Check your departure and arrival time with our handy flight status tool.</p>
-					<a href="#">Flight status<img src="../../../images/EN/moreNews.png" alt=""></a>
+					<a href="#">Flight status<img src="../common/images/moreNews.png" alt=""></a>
 				</li>
 				<li class="n3">
-					<img src="images/f-icon3.png" alt="">
+					<img src="images/f-icon3.jpg" alt="">
 					<h2>What time should I arrive at the airport?</h2>
 					<p>Leave those last-minute airport dashes to the big screen! We recommend that you arrive at least two hours before your flight is due to leave.</p>
-					<!-- <a href="#">航班状态<img src="../../../images/EN/moreNews.png" alt=""></a> -->
+					<!-- <a href="#">航班状态<img src="../common/images/moreNews.png" alt=""></a> -->
 				</li>
 				<li class="n4">
-					<img src="images/f-icon4.png" alt="">
+					<img src="images/f-icon4.jpg" alt="">
 					<h2>Do I need a visa?</h2>
 					<p>Check out our Visa information pages for every country that we fly to.</p>
-					<a href="LMVisa.html">Visa information<img src="../../../images/EN/moreNews.png" alt=""></a>
+					<a href="LMVisa.html">Visa information<img src="../common/images/moreNews.png" alt=""></a>
 				</li>
 				<li class="n5">
-					<img src="images/f-icon5.png" alt="">
+					<img src="images/f-icon5.jpg" alt="">
 					<h2>Online check in</h2>
 					<p>The best way to check-in is online where you can pick your seat and print your boarding card. If you’re travelling with carry-on baggage only, you can print off your own boarding pass and we’ll see you at the gate. At present, check-in online is not supported in Phnom Penh, Siem Reap, Sihanoukville, Macau and Palau.</p>
-					<a href="LMCheckOnline.html">Check in online now<img src="../../../images/EN/moreNews.png" alt=""></a>
+					<a href="LMCheckOnline.html">Check in online now<img src="../common/images/moreNews.png" alt=""></a>
 				</li>
 				<li class="n6">
-					<img src="images/f-icon6.png" alt="">
+					<img src="images/f-icon6.jpg" alt="">
 					<h2>Counter check in and bag drop</h2>
 					<p>It’s easy for you to find our desks in the Terminal. Check-in service starts from four hours before departure and closes one hour before departure.</p>
-					<a href="LMBaggage.html">Baggage allowance<img src="../../../images/EN/moreNews.png" alt=""></a>
+					<a href="LMBaggage.html">Baggage allowance<img src="../common/images/moreNews.png" alt=""></a>
 				</li>
 			</ul>
 		</div>
 		<div class="nextBtn searchFlight">
-			<h2><img src="../../../images/EN/m-tickit-icon-active.png" alt="">Search for flights</h2>
-			<a href="javascript:void(0)" class="a-search-flight" target="_blank">Book now<img src="../../../images/EN/schedulesArrow.png"></a>
+			<h2><img src="../common/images/m-tickit-icon-active.png" alt="">Search for flights</h2>
+			<a href="javascript:void(0)" class="a-search-flight" target="_blank">Book now<img src="../common/images/schedulesArrow.png"></a>
 		</div>
 		<div class="service">
 			<div class="s-1">
@@ -112,80 +132,61 @@
 					</div>
 				</div>
 			</div>
-		<!--	<div class="s-2">
+		<!--<div class="s-2">
 				<ul class="menu-wrap s-menu-wrap">
 					<li class="n1">
 						<img src="images/s2.jpg" alt="">
 						<h2>体面气派地乘机</h2>
 						<p>在我们的贵宾休息室和共用贵宾休息室放松休憩，享受机上奢华用餐并在我们可完全平躺的睡床上酣然入梦。这些尽属豪华商务舱体验。</p>
-						<a href="#">探索豪华商务舱<img src="../../../images/EN/moreNews.png" alt=""></a>
+						<a href="#">探索豪华商务舱<img src="../common/images/moreNews.png" alt=""></a>
 					</li>
 					<li class="n2">
 						<img src="images/s3.jpg" alt="">
 						<h2>探索飞行俱乐部</h2>
 						<p>飞行俱乐部金卡会员可以免费进入我们的所有贵宾休息室以及我们在任何机场拥有的共用贵宾休息室。立即开启超值冒险之旅。</p>
-						<a href="#">加入飞行俱乐部<img src="../../../images/EN/moreNews.png" alt=""></a>
+						<a href="#">加入飞行俱乐部<img src="../common/images/moreNews.png" alt=""></a>
 					</li>
 				</ul>
 			</div>-->
 		</div>
-		<div class="facility">
+		<div class="facility lm-content">
 			<h2>Phnom Penh International Airport's facilities</h2>
 			<ul class="menu-wrap f-menu-wrap">
 				<li class="n1">
 					<img src="images/mfm1.png" alt="">
 					<h2>Food and drink</h2>
 					<p>Phnom Penh International Airport has a wide range of cafes and restaurants for your choice.</p>
-					<a href="javascript:void(0)">Places to eat <img src="../../../images/EN/moreNews.png" alt=""></a>
+					<a href="javascript:void(0)">Places to eat <img src="../common/images/moreNews.png" alt=""></a>
 				</li>
 				<li class="n2">
 					<img src="images/mfm2.png" alt="">
 					<h2>Shopping</h2>
 					<p>Grab that last-minute to buy souvenirs from one of Phnom Penh International Airport's gift shops.</p>
-					<a href="javascript:void(0)">Shops<img src="../../../images/EN/moreNews.png" alt=""></a>
+					<a href="javascript:void(0)">Shops<img src="../common/images/moreNews.png" alt=""></a>
 				</li>
 				<li class="n3">
 					<img src="images/f3.png" alt="">
 					<h2>Special assistance</h2>
 					<p>Our teams are always on hand to help make your journey go smoothly.</p>
-					<a href="javascript:void(0)" class="help-infos">Airport Assistance<img src="../../../images/EN/moreNews.png" alt=""></a>
+					<a href="javascript:void(0)" class="help-infos">Airport Assistance<img src="../common/images/moreNews.png" alt=""></a>
 				</li>
 			</ul>
 		</div>
 	</section>
 
 	<!-- 页脚 -->
-	<footer class="footerInfo">
-		<div class="footerBg">
-			<div class="HelpfulInformation">
-				<p>Helpful Information</p>
-			</div>
-			<div class="contactUs">
-				<div class="nth-child1"><img src="../../../images/EN/email.png"><span>lm-ec@lanmeiairlines.com</span></div>
-				<div class="nth-child2">
-					<span>FOLLOW</span>
-					<a href="https://www.facebook.com/lanmeiairlines/">
-						<i class="iconfont icon-facebook"></i>
-					</a>
-					<a href="#"><i class="iconfont icon-in"></i></a>
-					<a href="#"><i class="iconfont icon-inst"></i></a>
-					<a href="#"><i class="iconfont icon-youtube"></i></a>
-					<a href="#"><i class="iconfont icon-googleplus"></i></a>
-					<a href="http://weibo.com/lanmeiair"><i class="iconfont icon-wb"></i></a>
-					<a href="#"><i class="iconfont icon-tuite"></i></a>
-				</div>
-			</div>
-			<div class="location">
-				<img src="../../../images/EN/location.png"><a href="https://www.google.com.kh/maps/place/Lanmei+Airlines/@11.5637415,104.8830989,17z/data=!3m1!4b1!4m5!3m4!1s0x310951a3c5cdaf97:0x77359b117b2ff068!8m2!3d11.5637363!4d104.8852876" target="_Blank">No.575 D&E, Russian Federation Boulevard, Phnom Penh, Cambodia</a>
-			</div>
-			<div class="LanmeiAirlinesBerhad">
-				<a href="../../index.html"><img src="../../../images/EN/lanmeiFooterLogo.png"></a>
-				<div>
-					<p class="p1">Terms of Use | Privacy Policy | Cookies</p>
-					<p class="p2">© Copyright 2017 Lanmei Airlines. All Rights Reserved. ICP: Guangdong Province <a href="http://www.miitbeian.gov.cn" target="_Blank">ICP-17005494-1</a></p>
-				</div>
-			</div>
-		</div>
+	<footer class="lm-footer">
+		<p class="lm-logo"></p>
+		<p class="facebook">
+			<a href="https://www.facebook.com/lanmeiairlines/" class="a1"><i class="iconfont icon-facebook"></i></a>
+			<a href="http://weibo.com/lanmeiair"><i class="iconfont icon-wb"></i></a>
+		</p>
+		<p class="f-email"><i class="iconfont icon-email"></i><span>lm-ec@lanmeiairlines.com</span></p>
+		<p class="f-local">
+			<i class="iconfont icon-local"></i>
+			<a href="https://goo.gl/maps/7pyBze8BFe52" target="_Blank">No.575 D&amp;E, Russian Federation Boulevard, Phnom Penh, Cambodia</a>
+		</p>
+		<p class="copyright">© Copyright 2017 Lanmei Airlines. All Rights Reserved. ICP:Guangdong Province <a href="http://www.miitbeian.gov.cn" target="_Blank" rel="nofollow">ICP-17005494-1</a></p>
 	</footer>
 
 	<!-- 回到顶部 -->
@@ -208,7 +209,7 @@
 	<script type="text/javascript" src="../../../libs/mobile-libs/fastclick/fastclick.js"></script>
 	<script type="text/javascript" src="../../../libs/bootstrap/js/bootstrap.min.js"></script>
 	<!-- 公共JS -->
-	<script type="text/javascript" src="../../../common/EN/js/Lanmei-common.js"></script>
+	<script type="text/javascript" src="../common/menu-common.js"></script>
 	<!-- 业务代码 -->
 	<script type="text/javascript" src="js/LMAirportService.js"></script>
 </body>

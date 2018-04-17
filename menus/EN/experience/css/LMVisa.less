@@ -8,21 +8,7 @@
 @link:#4aa374;
 
 .lm-section{
-	width: 940px;
-	min-height: 300px;
-	margin:0 auto;
-	.title{
-		h1{
-			font-size: 50px;
-			color: @purple;
-		}
-	}
-	.content{
-		margin:30px 0;
-		>h2{
-			font-size: 32px;
-			color: @purple;
-		}
+	.lm-content{
 		.subMenu{
 			width: 100%;
 			overflow: hidden;
@@ -149,18 +135,11 @@
 	.lm-section{
 		width: 100%;
 		padding:0.15rem;
-		.title{
-			h1{
-				font-size: 0.26rem;
-				text-align: center;
-			}
-		}
-		.content{
+		.lm-content{
 			margin-top: 0.15rem;
 			margin-bottom: 0;
 			>h2{
 				font-size: 0.16rem;
-				text-align: center;
 			}
 			.subMenu{
 				margin-top: 0.15rem;
@@ -221,7 +200,7 @@
 /* 手机端 */
 @media screen and (max-width: 767px){
 	.lm-section{
-		.content{
+		.lm-content{
 			.subMenu{
 				ul{
 					li{
