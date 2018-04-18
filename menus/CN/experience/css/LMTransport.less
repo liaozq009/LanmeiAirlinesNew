@@ -11,41 +11,25 @@
 	width: 940px;
 	min-height: 300px;
 	margin:0 auto;
-	.title{
-		h1{
-			font-size: 36px;
-			color: @purple;
-		}
-	}
-	.check-steps{
+	.catalog{
+		overflow: hidden;
+		border:1px solid #808080;
 		margin-top: 30px;
-		margin-bottom: 50px;
-		font-size: 14px;
-		color:@gray;
-		margin-top:10px;
-		h2{
-			font-size: 22px;
-			font-weight: bold;
-			color:@purple;
-			margin:26px 0 20px;
-			text-align: center;
-			text-indent: 2em;
-			line-height: 30px;
-		}
-		h3{
-			font-size: 16px;
-			font-weight: bold;
-			color:@purple;
-			margin:20px 0 20px;
-			line-height: 28px;
-			text-indent: 2em;
-		}
-		p{
-			font-size: 14px;
-			color:@gray;
-			margin-top:20px;
-			text-indent: 2em;
-			line-height: 26px;
+		margin-bottom: 30px;
+		>div{
+			float: left;
+			width: 25%;
+			padding:10px;
+			a{
+				display: block;
+				margin-top: 6px;
+				color:#00908c;
+				font-size: 14px;
+				overflow: hidden;
+			    text-overflow: ellipsis;
+			    white-space: nowrap;
+			}
+			p{color:@purple;}
 		}
 	}
 }
@@ -54,10 +38,20 @@
 	.lm-section{
 		width: 100%;
 		padding:15px;
-		.title{
-			h1{
-				font-size: 0.26rem;
-				text-align: center;
+		.catalog{
+			margin-top: 0;
+			>div{
+				width: 50%;
+			}
+		}
+	}
+}
+@media screen and (max-width:767px){
+	.lm-section{
+		.catalog{
+			>div{
+				width: 100%;
+				padding:6px 10px;
 			}
 		}
 	}

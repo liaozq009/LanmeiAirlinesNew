@@ -5,29 +5,12 @@
   min-height: 300px;
   margin: 0 auto;
 }
-.lm-section .title h1 {
-  font-size: 50px;
-  color: #1f2c5c;
-}
-.lm-section .title h2 {
-  font-size: 32px;
-  color: #1f2c5c;
-  margin-top: 12px;
-}
-.lm-section .content {
-  margin-bottom: 30px;
-}
-.lm-section .content > h2 {
-  font-size: 32px;
-  color: #1f2c5c;
-  margin-top: 30px;
-}
-.lm-section .content .subMenu {
+.lm-section .lm-content .subMenu {
   width: 100%;
   overflow: hidden;
   margin-top: 30px;
 }
-.lm-section .content .subMenu ul li {
+.lm-section .lm-content .subMenu ul li {
   width: 300px;
   list-style: none;
   position: relative;
@@ -36,17 +19,17 @@
   margin-bottom: 20px;
   /*遮罩*/
 }
-.lm-section .content .subMenu ul li .a1 img {
+.lm-section .lm-content .subMenu ul li .a1 img {
   width: 100%;
 }
-.lm-section .content .subMenu ul li .a1 .divA {
+.lm-section .lm-content .subMenu ul li .a1 .divA {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 50px;
 }
-.lm-section .content .subMenu ul li .a1 .divA .p1 {
+.lm-section .lm-content .subMenu ul li .a1 .divA .p1 {
   width: 100%;
   height: 50px;
   line-height: 50px;
@@ -56,7 +39,7 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7F1F2C5C', endColorstr='#7F1F2C5C');
   padding: 0 10px;
 }
-.lm-section .content .subMenu ul li .a2 {
+.lm-section .lm-content .subMenu ul li .a2 {
   position: absolute;
   top: 0;
   left: -300px;
@@ -68,7 +51,7 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7F1F2C5C', endColorstr='#7F1F2C5C');
   transition: all 0.5s;
 }
-.lm-section .content .subMenu ul li .a2 .p4 {
+.lm-section .lm-content .subMenu ul li .a2 .p4 {
   width: 100%;
   text-align: center;
   position: absolute;
@@ -80,7 +63,7 @@
   font-weight: bold;
   transition: all 0.2s 0.1s ease-out;
 }
-.lm-section .content .subMenu ul li .a2 .p5 {
+.lm-section .lm-content .subMenu ul li .a2 .p5 {
   width: 100%;
   text-align: center;
   line-height: 20px ;
@@ -93,20 +76,20 @@
   color: white;
   transition: all 0.2s 0.2s ease-out;
 }
-.lm-section .content .subMenu ul li .a2 .p6 {
+.lm-section .lm-content .subMenu ul li .a2 .p6 {
   position: absolute;
   top: 140px;
   left: 175px;
   transform: scale(1.4);
   transition: all 0.3s 0.2s ;
 }
-.lm-section .content .subMenu ul li .a2 .p6 span {
+.lm-section .lm-content .subMenu ul li .a2 .p6 span {
   font-family: Arial;
   font-size: 36px;
   font-weight: 700;
   color: white;
 }
-.lm-section .content .subMenu ul li .a2 .p7 {
+.lm-section .lm-content .subMenu ul li .a2 .p7 {
   position: absolute;
   bottom: -50px;
   left: 145px;
@@ -118,8 +101,8 @@
   border: 1px solid;
   transition: all 0.2s 0.5s ;
 }
-.lm-section .content .subMenu ul .n2,
-.lm-section .content .subMenu ul .n5 {
+.lm-section .lm-content .subMenu ul .n2,
+.lm-section .lm-content .subMenu ul .n5 {
   margin: 0 20px;
 }
 .lm-section .searchFlight {
@@ -138,51 +121,42 @@
 .lm-section .searchFlight h2 img {
   margin-right: 10px;
 }
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 992px) {
   .lm-section {
     width: 100%;
     padding: 0.15rem;
   }
-  .lm-section .title h1 {
-    font-size: 0.26rem;
-    text-align: center;
-  }
-  .lm-section .title h2 {
-    font-size: 0.18rem;
-    text-align: center;
-  }
-  .lm-section .content {
+  .lm-section .lm-content {
     margin-top: 0;
     margin-bottom: 0;
   }
-  .lm-section .content > h2 {
+  .lm-section .lm-content > h2 {
     font-size: 0.16rem;
-    text-align: center;
     margin-top: 0;
   }
-  .lm-section .content .subMenu {
+  .lm-section .lm-content .subMenu {
     margin-top: 0.15rem;
   }
-  .lm-section .content .subMenu ul li {
+  .lm-section .lm-content .subMenu ul li {
     width: 50%;
     margin-bottom: 0.15rem;
     padding: 0 15px;
     /*遮罩*/
   }
-  .lm-section .content .subMenu ul li .a1 img {
+  .lm-section .lm-content .subMenu ul li .a1 img {
     width: 100%;
   }
-  .lm-section .content .subMenu ul li .a1 .divA {
+  .lm-section .lm-content .subMenu ul li .a1 .divA {
     padding: 0 15px;
   }
-  .lm-section .content .subMenu ul li .a1 .divA .p1 {
+  .lm-section .lm-content .subMenu ul li .a1 .divA .p1 {
     font-size: 0.16rem;
   }
-  .lm-section .content .subMenu ul li .a2 {
+  .lm-section .lm-content .subMenu ul li .a2 {
     display: none;
   }
-  .lm-section .content .subMenu ul .n2,
-  .lm-section .content .subMenu ul .n5 {
+  .lm-section .lm-content .subMenu ul .n2,
+  .lm-section .lm-content .subMenu ul .n5 {
     margin: 0 0 0.15rem;
   }
   .lm-section .searchFlight {
@@ -212,11 +186,11 @@
   }
 }
 @media screen and (max-width: 767px) {
-  .lm-section .content .subMenu ul li {
+  .lm-section .lm-content .subMenu ul li {
     width: 100%;
     padding: 0;
   }
-  .lm-section .content .subMenu ul li .a1 .divA {
+  .lm-section .lm-content .subMenu ul li .a1 .divA {
     padding: 0;
   }
 }

@@ -7,6 +7,14 @@
 @red:#d0011b;
 @link:#4aa374;
 
+.lanmeiHeader .lanmeiNav{
+	border:none;
+}
+.lanmeiHeader .lanmeiNav .lanmeiHeadInfo{
+	float: left;
+	margin-left: 20px;
+}
+
 .lm-section{
 	width: 940px;
 	min-height: 300px;
@@ -23,9 +31,10 @@
 		padding:35px 20px;
 		border-radius: 6px;
 		margin-top: 20px;
+		margin-bottom: 30px;
 		>div{
 			float: left;
-			width: 28%;
+			width: 24%;
 			margin-right: 20px;
 			>p{
 				font-size: 14px;
@@ -45,41 +54,15 @@
 			}
 		}
 		.startBtn{
+			width: 44%;
 			margin-bottom: 0;
 			margin-top: 30px;
 			a{
 				float: left;
-				width: 120px;
+				width: 160px;
 				font-size: 16px;
 				img{left: 8px;}
 			}
-		}
-	}
-	.check-steps{
-		margin-top: 30px;
-		margin-bottom: 50px;
-		h2{
-			font-size: 18px;
-			font-weight: bold;
-			color:@purple;
-			margin-bottom: 20px;
-			line-height: 28px;
-		}
-		.h2-steps{font-size: 14px;text-indent: 2em;}
-		h3{
-			font-size: 16px;
-			font-weight: bold;
-			color:@purple;
-			margin-bottom: 20px;
-			line-height: 28px;
-			text-indent: 2em;
-		}
-		p{
-			font-size: 14px;
-			color:@gray;
-			margin-bottom: 20px;
-			line-height: 26px;
-			text-indent: 2em;
 		}
 	}
 }
@@ -87,30 +70,52 @@
 @media screen and (max-width:992px){
 	.lm-section{
 		width: 100%;
-		padding:15px;
+		.check-start{
+			.startBtn{
+				width: 43%;
+				p{
+					a{margin-left: 6px !important;}
+				}
+			}
+		}
 	}
 }
 
 @media screen and (max-width:767px){
 	.lm-section{
-		.title{
-			h1{
-				font-size: 0.26rem;
-				text-align: center;
-			}
-		}
 		.check-start{
 			height: 250px;
 			padding:15px;
 			>div{
 				float: none;
 				width: 2.6rem;
+				>p{
+					margin-bottom: 0.1rem;
+				}
 			}
 			.startBtn{
+				width: 100%;
 				float: left;
-				a{font-weight: normal;}
+				a{
+					font-size: 14px;
+					font-weight: normal;
+				}
 			}
 			.c-2,.startBtn{margin-top: 15px;}
+		}
+	}
+}
+
+@media screen and (max-width:374px){
+	.startBtn{
+		width: 100%;
+		float: left;
+		p{
+			font-size: 12px !important;
+			a{
+				font-weight: normal;
+				font-size: 12px;
+			}
 		}
 	}
 }

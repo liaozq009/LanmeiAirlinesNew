@@ -34,6 +34,7 @@
 }
 .lm-section .lm-content {
   overflow: hidden;
+  margin-bottom: 0;
 }
 .lm-section .lm-content .commerce {
   font-size: 20px;

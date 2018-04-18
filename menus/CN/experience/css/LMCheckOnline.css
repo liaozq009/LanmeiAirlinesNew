@@ -1,5 +1,12 @@
 /* 定义变量 */
 /* 定义颜色变量 */
+.lanmeiHeader .lanmeiNav {
+  border: none;
+}
+.lanmeiHeader .lanmeiNav .lanmeiHeadInfo {
+  float: left;
+  margin-left: 20px;
+}
 .lm-section {
   width: 940px;
   min-height: 300px;
@@ -15,10 +22,11 @@
   padding: 35px 20px;
   border-radius: 6px;
   margin-top: 20px;
+  margin-bottom: 30px;
 }
 .lm-section .check-start > div {
   float: left;
-  width: 28%;
+  width: 24%;
   margin-right: 20px;
 }
 .lm-section .check-start > div > p {
@@ -38,58 +46,30 @@
   padding: 0 20px;
 }
 .lm-section .check-start .startBtn {
+  width: 44%;
   margin-bottom: 0;
   margin-top: 30px;
 }
 .lm-section .check-start .startBtn a {
   float: left;
-  width: 120px;
+  width: 160px;
   font-size: 16px;
 }
 .lm-section .check-start .startBtn a img {
   left: 8px;
 }
-.lm-section .check-steps {
-  margin-top: 30px;
-  margin-bottom: 50px;
-}
-.lm-section .check-steps h2 {
-  font-size: 18px;
-  font-weight: bold;
-  color: #1f2c5c;
-  margin-bottom: 20px;
-  line-height: 28px;
-}
-.lm-section .check-steps .h2-steps {
-  font-size: 14px;
-  text-indent: 2em;
-}
-.lm-section .check-steps h3 {
-  font-size: 16px;
-  font-weight: bold;
-  color: #1f2c5c;
-  margin-bottom: 20px;
-  line-height: 28px;
-  text-indent: 2em;
-}
-.lm-section .check-steps p {
-  font-size: 14px;
-  color: #808080;
-  margin-bottom: 20px;
-  line-height: 26px;
-  text-indent: 2em;
-}
 @media screen and (max-width: 992px) {
   .lm-section {
     width: 100%;
-    padding: 15px;
+  }
+  .lm-section .check-start .startBtn {
+    width: 43%;
+  }
+  .lm-section .check-start .startBtn p a {
+    margin-left: 6px !important;
   }
 }
 @media screen and (max-width: 767px) {
-  .lm-section .title h1 {
-    font-size: 0.26rem;
-    text-align: center;
-  }
   .lm-section .check-start {
     height: 250px;
     padding: 15px;
@@ -98,14 +78,32 @@
     float: none;
     width: 2.6rem;
   }
+  .lm-section .check-start > div > p {
+    margin-bottom: 0.1rem;
+  }
   .lm-section .check-start .startBtn {
+    width: 100%;
     float: left;
   }
   .lm-section .check-start .startBtn a {
+    font-size: 14px;
     font-weight: normal;
   }
   .lm-section .check-start .c-2,
   .lm-section .check-start .startBtn {
     margin-top: 15px;
+  }
+}
+@media screen and (max-width: 374px) {
+  .startBtn {
+    width: 100%;
+    float: left;
+  }
+  .startBtn p {
+    font-size: 12px !important;
+  }
+  .startBtn p a {
+    font-weight: normal;
+    font-size: 12px;
   }
 }

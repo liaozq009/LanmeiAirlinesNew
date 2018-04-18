@@ -16,7 +16,7 @@ body{
 
 .siteMapBanner{
 	position: absolute;
-	top: 98px;
+	top: 60px;
 	z-index: -1;
 	width: 100%;
 	height: 200px;
@@ -25,7 +25,7 @@ body{
 		width: 100%;
 		height: 200px;
 		text-align: center;
-		line-height: 230px;
+		line-height: 200px;
 		background-image:linear-gradient(-45deg, rgba(142,192,96,0.7) 0%, rgba(31,44,92,0.7) 100%);
 		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2212C5C,endColorstr=#B2212C5C);
 		font-weight:bold;
@@ -38,7 +38,7 @@ body{
 .siteMapWrapper{
 	width: 960px;
 	min-height: 300px;
-	margin:120px auto 56px;
+	margin:220px auto 56px;
 	padding:0 10px;
 	.site-map-box{
 		background:#fff;
@@ -77,8 +77,8 @@ body{
 				width: 100%;
 				margin-bottom: 10px;
 				font-size: 14px;
+				color: @gray;
 				line-height: 26px;
-				text-indent: 2em;
 				p{font-size: 14px;}
 				a{color:@link;}
 			}
@@ -100,10 +100,9 @@ body{
 /* 配置屏幕 */
 @media screen and (max-width: 992px) {
 	.siteMapBanner{
-		display: none;
 		position: static;
 		height: 1.3rem;
-		margin-top: 0.4rem;
+		margin-top: 0;
 		h2{
 			height: 1.3rem;
 			line-height: 1.3rem;
@@ -113,7 +112,8 @@ body{
 	.siteMapWrapper{
 		width: 100%;
 		padding:15px;
-		margin-top: 0.4rem;
+		margin-top: 0;
+		margin-bottom: 0;
 		.site-map-box{
 			padding:0;
 			.site-map-title{
@@ -138,6 +138,19 @@ body{
 		.site-map-box{
 			.site-map-title{
 				>.img01,>.img02{display: none;}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 374px) {
+	.siteMapWrapper{
+		>.n15{
+			.site-map-title{
+				h2{
+					padding-top: 6px;
+					line-height: 20px;
+				}
 			}
 		}
 	}

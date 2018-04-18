@@ -5,48 +5,44 @@
   min-height: 300px;
   margin: 0 auto;
 }
-.lm-section .title h1 {
-  font-size: 36px;
-  color: #1f2c5c;
-}
-.lm-section .check-steps {
+.lm-section .catalog {
+  overflow: hidden;
+  border: 1px solid #808080;
   margin-top: 30px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
+}
+.lm-section .catalog > div {
+  float: left;
+  width: 25%;
+  padding: 10px;
+}
+.lm-section .catalog > div a {
+  display: block;
+  margin-top: 6px;
+  color: #00908c;
   font-size: 14px;
-  color: #808080;
-  margin-top: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
-.lm-section .check-steps h2 {
-  font-size: 22px;
-  font-weight: bold;
+.lm-section .catalog > div p {
   color: #1f2c5c;
-  margin: 26px 0 20px;
-  text-align: center;
-  text-indent: 2em;
-  line-height: 30px;
-}
-.lm-section .check-steps h3 {
-  font-size: 16px;
-  font-weight: bold;
-  color: #1f2c5c;
-  margin: 20px 0 20px;
-  line-height: 28px;
-  text-indent: 2em;
-}
-.lm-section .check-steps p {
-  font-size: 14px;
-  color: #808080;
-  margin-top: 20px;
-  text-indent: 2em;
-  line-height: 26px;
 }
 @media screen and (max-width: 992px) {
   .lm-section {
     width: 100%;
     padding: 15px;
   }
-  .lm-section .title h1 {
-    font-size: 0.26rem;
-    text-align: center;
+  .lm-section .catalog {
+    margin-top: 0;
+  }
+  .lm-section .catalog > div {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .lm-section .catalog > div {
+    width: 100%;
+    padding: 6px 10px;
   }
 }

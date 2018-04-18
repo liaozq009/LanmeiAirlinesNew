@@ -3,7 +3,9 @@ var LanmeiAirlines = {
 	fromCityData: ['Sihanoukville/KOS/Cambodia','Macao/MFM/Macao,China','Phnom Penh/PNH/Cambodia','Siem Reap/REP/Cambodia','Ho Chi Minh/SGN/Vietnam','Hanoi/HAN/Vietnam','HongKong/HKG/HongKong,China','SEOUL/ICN/Korea','Bangkok/BKK/Thailand','Shijiazhuang/SJW/China','Singapore/SIN/Singapore'],
 	toCityData: ['Sihanoukville/KOS/Cambodia','Macao/MFM/Macao,China','Phnom Penh/PNH/Cambodia','Siem Reap/REP/Cambodia','Ho Chi Minh/SGN/Vietnam','Hanoi/HAN/Vietnam','HongKong/HKG/HongKong,China','SEOUL/ICN/Korea','Bangkok/BKK/Thailand','Shijiazhuang/SJW/China','Singapore/SIN/Singapore'],
 	hotelCityData: ['Hong Phann Guest House','Phkar Chhouk Tep Monireth Hotel','Tt Guest House','Phkar Chhouk Tep 2 Hotel'],
-	fNumberData: ['LQ9503','LQ503','LQ9502','LQ502','LQ806','LQ807'],
+	carRouteData: ['机场--东横','机场--索菲特'],
+	carTicketTypeData: ['单程','往返'],
+	fNumberData: ['LQ503','LQ502','LQ806','LQ807','LQ315','LQ316','LQ317','LQ318','LQ9302','LQ9303','LQ333','LQ332','LQ660','LQ661','LQ970','LQ971','LQ666','LQ667','LQ670','LQ671','LQ780','LQ781','LQ916','LQ917','LQ9509','LQ9508'],
 	indexLiFrom: 0, //定义键盘移动index 
 	indexLiTo: 0,
 	init:function(){
@@ -127,7 +129,7 @@ var LanmeiAirlines = {
 			$(this).children('.js-mPhone-menu').show();
 		});
 
-		$('.js-from-input,.js-to-input,.js-hotelFrom-input,.js-fNumber-input,.js-routeFrom-input,.js-routeTo-input').attr('readonly','readonly');
+		$('.js-from-input,.js-to-input,.js-hotelFrom-input,.js-routeId-input,.js-ticketType-input,.js-fNumber-input,.js-routeFrom-input,.js-routeTo-input').attr('readonly','readonly');
 		$('.js-select-way').css('visibility','visible');
 		$('.js-select-way,.js-flight-way').addClass('animated fadeInUp');
 	},
@@ -394,7 +396,7 @@ var LanmeiAirlines = {
 				that.hotelSelect();
 				break;
 				case "car-content":
-
+				that.carSelect();
 				break;
 				case "flight-content":
 				that.fStatusSelect();
@@ -491,7 +493,7 @@ var LanmeiAirlines = {
 				that.mHotelSelect();
 				break;
 				case "car-content":
-
+				that.mCarSelect();
 				break;
 				case "flight-content":
 				that.mfStatusSelect();
@@ -1727,6 +1729,260 @@ var LanmeiAirlines = {
 		});
 		//房间保存
 		$('.js-mSelect-rooms').click(function(event) {
+			hideContainer();
+		});
+	},
+
+	/* 租车选择 */
+	carSelect:function(){
+		var $mask = $('.js-hotel-mask'); //遮罩层
+		var $mask2 = $('.js-hotel-mask2'); //遮罩层2
+		var $carBox = $('.js-carPopup-box'); //租车c3动画最外层
+		var $carContent = $('.js-carPopup-content'); //租车c3动画内容
+
+		/* 输入框 */
+		var $ticketNumInput = $('.js-ticketNum-input'); //机票号码输入框
+		var $routeIdInput = $('.js-routeId-input'); //预订路线
+		var $ticketTypeInput = $('.js-ticketType-input'); //票种
+
+		/* 下拉菜单 */
+		var $routeIdMenuSub = $('.js-routeId-menu'); 
+		var $ticketTypeMenuSub = $('.js-ticketType-menu'); 
+
+		/* 下拉菜单外层 */
+		var $routeIdBox = $('.js-carPopup-routeId'); 
+		var $ticketTypeBox = $('.js-carPopup-ticketType'); 
+
+		/* 点击第一个div,然后显示其他div  */
+		var $ticketNum = $('.js-ticket-num'); //机票号div
+		var $carZoom = $('.js-route-id,.js-ticket-type,.js-car-cancel,.js-car-search');
+
+		/* css3动画 */
+		var carPopupShow = function(){
+			$mask.fadeIn(); //显示遮罩层
+			$mask2.fadeIn(); //显示遮罩层
+			$carBox.addClass('popup-box-before'); //展示小箭头
+			$carContent.removeClass('popup-inactive').addClass('popup-active'); 
+		};
+		var carPopupHide = function(){
+			$carContent.removeClass('popup-active').addClass('popup-inactive'); 
+			$carBox.removeClass('popup-box-before'); //隐藏小箭头
+		};
+
+		/* 获取屏幕尺寸 */
+		var winWidth = $(window).width();
+		var that = this;
+
+		/* 机票号码 */
+		var carZoomShow = true;
+		var carOneClick = true;
+		$ticketNumInput.click(function(){
+			if(carOneClick){ //防止点击取消后，快速点击出发地产生的bug
+				$mask.fadeIn(); //显示遮罩层
+				carPopupHide();
+				if(carZoomShow){
+					$carZoom.addClass('animated fadeInUp').css('visibility','visible');
+					carZoomShow = false; 
+					setTimeout(function(){
+						$carZoom.removeClass('animated fadeInUp');
+					}, 2200);
+				}
+			}
+		}).one('click',function(){
+			$carBox.css('left',350);
+		});
+
+		/* 预订路线 */
+		$routeIdInput.click(function(){
+			if(winWidth>1300){
+				$carBox.css('left',350);
+			}else if(winWidth<=1300){
+				$carBox.css({'top':-10,'left':0});
+			}
+			carPopupShow(); //增加c3动画
+			$carContent.css('z-index','1'); //覆盖cancel按钮
+			$routeIdBox.show();
+			$ticketTypeBox.hide();
+		}).one('click',function(){
+			$routeIdMenuSub.empty();
+			$.each(that.carRouteData,function(i,val){
+				$routeIdMenuSub.append('<li title="'+val+'">'+val+'</li>');
+			});
+			// $('.js-from-menu>li:first').addClass('active');
+			that.keyEvent('.js-routeId-input','.js-routeId-menu',that.indexLiFrom); //绑定键盘事件
+		});
+
+		/* 机票类型 */
+		$ticketTypeInput.click(function(){
+			if(winWidth>1300){
+				$carBox.css('left',700);
+			}else if(winWidth<=1300){
+				$carBox.css({'top':-10,'left':0});
+			}
+			carPopupShow(); //增加c3动画
+			$carContent.css('z-index','1'); //覆盖cancel按钮
+			$routeIdBox.hide();
+			$ticketTypeBox.show();
+		}).one('click',function(){
+			$ticketTypeMenuSub.empty();
+			$.each(that.carTicketTypeData,function(i,val){
+				$ticketTypeMenuSub.append('<li title="'+val+'">'+val+'</li>');
+			});
+			// $('.js-from-menu>li:first').addClass('active');
+			that.keyEvent('.js-ticketType-input','.js-ticketType-menu',that.indexLiFrom); //绑定键盘事件
+		});
+
+		/* 点击取消 */
+		var cancel = function(){
+			carOneClick = false; //防止快速点击出发地
+
+			$carZoom.addClass('animated fadeOutDown');
+
+			$mask.fadeOut(); //隐藏遮罩层
+			$mask2.fadeOut(); //隐藏遮罩层
+
+			carPopupHide(); //隐藏弹出内容层
+
+			carZoomShow = true; //重新点击出发地时再次显示目的地、日期、人数的动画
+
+			$carBox.css('left',0); //下拉框归零
+			setTimeout(function(){
+				$carZoom.removeClass('animated fadeOutDown');
+				$carZoom.css('visibility','hidden');
+	      		carOneClick = true; //可以继续点击出发地
+	    	}, 2200);
+		};
+
+		/* 点击遮罩层 */
+		$mask.click(function(){
+			cancel();
+		});
+		$mask2.click(function(){
+			carPopupHide(); //隐藏弹出内容层
+			$(this).fadeOut();
+		});
+
+		$('.js-tips-com').click(function(event) {
+			carPopupHide(); //隐藏弹出内容层
+			$mask2.fadeOut();
+		});
+
+		/* 点击取消 */
+		$('.js-car-cancel').click(function(){
+			cancel();
+		});
+
+		/* 租车路线选择 */
+		$routeIdMenuSub.on('click','>li',function(){
+			var text = $(this).attr('title');
+			$routeIdInput.val(text);
+			if(winWidth>1300){
+				$carBox.css('left',700);
+			}else if(winWidth<=1300){
+				$carBox.css({'top':-10,'left':0});
+			}
+			$routeIdBox.hide();
+			$ticketTypeBox.show();
+
+			$ticketTypeMenuSub.empty();
+			$.each(that.carTicketTypeData,function(i,val){
+				$ticketTypeMenuSub.append('<li title="'+val+'">'+val+'</li>');
+			});
+
+			$routeIdBox.slideUp(function(){ //酒店出发地隐藏
+				$ticketTypeBox.slideDown(); //酒店日期显示
+			}); 
+		});
+
+		/* 票种选择 */
+		$ticketTypeMenuSub.on('click','>li',function(){
+			var text = $(this).attr('title');
+			$ticketTypeInput.val(text);
+			
+			carPopupHide();
+		});
+	},
+
+	/* 移动端租车选择 */
+	mCarSelect:function(){
+		var that = this;
+		var $container = $('.js-popup-container');
+		var $carBox = $('.js-carPopup-box'); //租车c3动画最外层
+		var $routeIdInput = $('.js-routeId-input'); //预订路线
+		var $ticketTypeInput = $('.js-ticketType-input'); //票种
+		var $routeIdMenuSub = $('.js-routeId-menu'); 
+		var $ticketTypeMenuSub = $('.js-ticketType-menu'); 
+
+		var $close = $('.js-carPopup-close');
+		var $searchInput = $('.js-routeId-search'); //模糊搜索框
+		var $searchTitle = $('.js-carPouple-title'); //标题
+
+		var winHeight = $(window).height();
+
+		var hideContainer = function(){
+			$container.removeClass('is-show');
+			$('html,body').removeClass('ovfHiden'); //使网页可滚动
+		};
+		var ovfHiden = function(){
+			$('html,body').addClass('ovfHiden'); //使网页不可滚动
+		};
+
+		// 关闭弹出框
+		$close.click(function(event) {
+			hideContainer();
+		});
+
+		// 预订路线
+		$routeIdInput.click(function(event) {
+			$('.js-carPopup-content>div').hide(); //初始化隐藏
+			$('.js-carPopup-routeId').show();
+
+			$routeIdMenuSub.empty();
+			$.each(that.carRouteData,function(i,val){
+				$routeIdMenuSub.append('<li title="'+val+'">'+val+'</li>');
+			});
+
+			ovfHiden(); //使网页不可滚动
+			$searchInput.hide();
+			$carBox.height(winHeight-58);
+			$searchTitle.html('Choose your route id');
+
+			$container.addClass('is-show');
+		});
+
+		// this.autoComplete('.js-routeId-search');
+
+		// 预定路线选择 
+		$routeIdMenuSub.on('click','>li',function(){
+			var text1 = $(this).attr('title');
+			$routeIdInput.val(text1);
+			hideContainer();
+		});
+
+		// 票种路线
+		$ticketTypeInput.click(function(event) {
+			$('.js-carPopup-content>div').hide(); //初始化隐藏
+			$('.js-carPopup-ticketType').show();
+
+			$ticketTypeMenuSub.empty();
+			$.each(that.carTicketTypeData,function(i,val){
+				$ticketTypeMenuSub.append('<li title="'+val+'">'+val+'</li>');
+			});
+
+			ovfHiden(); //使网页不可滚动
+			$searchInput.hide();
+			$carBox.height(winHeight-58);
+			$searchTitle.html('Choose your ticket type');
+
+			$container.addClass('is-show');
+		});
+
+		// this.autoComplete('.js-routeId-search');
+
+		// 票种选择 
+		$ticketTypeMenuSub.on('click','>li',function(){
+			var text1 = $(this).attr('title');
+			$ticketTypeInput.val(text1);
 			hideContainer();
 		});
 	},

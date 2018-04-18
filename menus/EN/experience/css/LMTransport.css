@@ -28,12 +28,6 @@
 .lm-section .catalog > div p {
   color: #1f2c5c;
 }
-.lm-section .lm-content h3 {
-  color: #1f2c5c;
-  font-size: 20px;
-  margin-bottom: 30px;
-  line-height: 28px;
-}
 @media screen and (max-width: 992px) {
   .lm-section {
     width: 100%;
@@ -50,11 +44,5 @@
   .lm-section .catalog > div {
     width: 100%;
     padding: 6px 10px;
-  }
-  .lm-section .lm-content h3 {
-    color: #1f2c5c;
-    font-size: 0.14rem;
-    margin-bottom: 30px;
-    line-height: 0.2rem;
   }
 }

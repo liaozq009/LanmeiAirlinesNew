@@ -58,11 +58,18 @@
   color: #141414;
   margin-bottom: 30px;
 }
+.lm-section .lm-content h3 {
+  color: #1f2c5c;
+  font-size: 20px;
+  margin-bottom: 30px;
+  line-height: 28px;
+}
 .lm-section .lm-content p {
   font-size: 16px;
   color: #808080;
   margin-bottom: 30px;
   line-height: 26px;
+  word-wrap: break-word;
 }
 .lm-section .lm-content a {
   color: #4aa374;
@@ -150,6 +157,12 @@
   .lm-section .lm-content h2 {
     font-size: 0.16rem;
     margin-bottom: 0.2rem;
+  }
+  .lm-section .lm-content h3 {
+    color: #1f2c5c;
+    font-size: 0.14rem;
+    margin-bottom: 0.2rem;
+    line-height: 0.26rem;
   }
   .lm-section .lm-content p {
     font-size: 0.14rem;

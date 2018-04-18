@@ -22,21 +22,18 @@
 }
 .lm-section .check-steps .h2-steps {
   font-size: 14px;
-  text-indent: 2em;
 }
 .lm-section .check-steps h3 {
   font-size: 16px;
   color: #1f2c5c;
   margin-bottom: 20px;
   line-height: 28px;
-  text-indent: 2em;
 }
 .lm-section .check-steps p {
   font-size: 14px;
   color: #808080;
   margin-bottom: 20px;
   line-height: 26px;
-  text-indent: 2em;
 }
 @media screen and (max-width: 992px) {
   .lm-section {

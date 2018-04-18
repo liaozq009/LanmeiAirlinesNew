@@ -675,7 +675,7 @@ body {
     border-bottom: 7px solid #fff;
   }
   .lm-footer {
-    height: 240px;
+    height: 200px;
     padding-top: 20px;
   }
   .lm-footer .lm-logo {
@@ -702,7 +702,7 @@ body {
   .lm-footer .f-local {
     margin-top: 8px;
     padding-left: 10px;
-    padding-top: 10px;
+    padding-top: 4px;
   }
   .lm-footer .f-local a {
     font-size: 12px;
@@ -715,7 +715,7 @@ body {
     color: #fff;
   }
   .lm-footer .copyright {
-    margin-top: 8px;
+    margin-top: 12px;
     font-size: 12px;
     padding-left: 8px;
     padding-right: 8px;
