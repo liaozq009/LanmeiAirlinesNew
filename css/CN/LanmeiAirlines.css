@@ -616,6 +616,12 @@ body {
   color: rgba(31, 44, 92, 0.3);
   font-size: 20px;
 }
+.select-air-com > div input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+.select-air-com > div input[type="number"] {
+  -moz-appearance: textfield;
+}
 .select-air-com > div .t-from-input {
   background: url('../../images/CN/city-from.png') 20px no-repeat #fff;
 }
@@ -624,6 +630,18 @@ body {
 }
 .select-air-com > div .h-from-input {
   background: url('../../images/CN/hotel-from.png') 20px no-repeat #fff;
+}
+.select-air-com > div .ticket-num-input {
+  background: url('../../images/CN/ticket-num.png') 20px no-repeat #fff;
+}
+.select-air-com > div .route-id-input {
+  background: url('../../images/CN/route-id.png') 20px no-repeat #fff;
+}
+.select-air-com > div .ticket-type-input {
+  background: url('../../images/CN/ticket-type.png') 20px no-repeat #fff;
+}
+.select-air-com > div .people-num-input {
+  background: url('../../images/CN/adult.png') 20px no-repeat #fff;
 }
 .select-air-com > div .f-from-input {
   background: url('../../images/CN/flight-number.png') 20px no-repeat #fff;
@@ -2223,6 +2241,25 @@ body {
   .popup-content .popup-hotel-from {
     width: 660px;
   }
+  .popup-content .popup-ticket-type {
+    width: 310px;
+  }
+  .popup-content .popup-ticket-type .flight-list-wrap > li {
+    background: none;
+    padding-left: 0;
+  }
+  .popup-content .popup-ticket-type .flight-list-wrap > li:hover {
+    background: none;
+  }
+  .popup-content .popup-route-id {
+    width: 400px;
+  }
+  .popup-content .popup-route-id .flight-list-wrap > li {
+    background: url('../../images/CN/car-small-icon.png') left center no-repeat;
+  }
+  .popup-content .popup-route-id .flight-list-wrap > li:hover {
+    background: url('../../images/CN/car-small-icon-active.png') left center no-repeat;
+  }
   .popup-content .popup-airport-to {
     display: none;
   }
@@ -3379,6 +3416,9 @@ body {
   }
   .popup-content .popup-airport .hotel-list-wrap > li {
     background: url('../../images/CN/svg/hotel-small-icon.svg') left center no-repeat;
+  }
+  .popup-content .popup-airport .car-list-wrap > li {
+    background: url('../../images/CN/svg/car-small-icon.svg') left center no-repeat;
   }
   .popup-content .popup-people {
     width: 100%;

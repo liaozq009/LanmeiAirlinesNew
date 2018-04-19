@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
 	<meta charset="UTF-8">
 	<!-- 让 Bootstrap 兼容 IE 兼容模型 -->
@@ -9,14 +9,14 @@
 	<!-- 实现响应式的设置 -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>LanmeiAirlines</title>
+	<title>独特的澜湄航空</title>
 	<!-- 引入图标 -->
 	<link rel="icon" href="../../../images/CN/lanmeiLogo.ico">
 	<link rel="stylesheet" type="text/css" href="../../../libs/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../../../common/CN/fonts/lm-iconfont.css">
 	<link rel="stylesheet" type="text/css" href="../../../common/CN/css/Lanmei-common.css">
-	<link rel="stylesheet" type="text/css" href="../common/menu-common.css">
 	<link rel="stylesheet" type="text/css" href="../../../libsEdit/css/lanmeiLibsEdit.css">
+	<link rel="stylesheet" type="text/css" href="../common/menu-common.css">
 	<link rel="stylesheet" type="text/css" href="css/LMExcessBaggage.css">
 	<!--[if lt IE 9]>
 	<script src="../../../libs/bootstrap/js/html5shiv.min.js"></script>
@@ -25,37 +25,59 @@
 </head>
 <body>
 	<!-- 页面顶部 -->
-	<header class="lanmeiHeader-subpage">
-		<nav class="lanmeiNav">
-			<div class="lanmeiLogo">
-				<a class="navbar-brand" href="../../../index.html""><img src="../../../images/CN/lanmeiLogo.png"></a>
-				<!-- <a class="navbar-brand" href="/index.html"><img src="../../../images/CN/lanmeiLogo.png"></a> -->
+	<header class="lm-header">
+		<div class="h-menu js-h-menu">
+			<span>菜单</span>
+		</div>
+		<a href="/index_cn.html" class="h-logo-wrap"></a>
+		<div class="h-right">
+			<div class="h-phone js-h-phone">
+				<img src="../../../images/CN/phone.png">
+				<div class="phone-menu js-phone-menu">
+					<h2>24小时客服电话:</h2>
+					<p class="p1">+855 15331852</p>
+					<p>+855 15331857</p>
+					<p>+855 23881865</p>
+				</div>
 			</div>
-			<div class="lanmeiHeadInfo">
-				<ul class="">
-					<li class="nth-child1">
-						<img src="../../../images/CN/phone.png">
-						<div>
-							<span>+855 23881890</span>/
-							<span>+855 23881893</span>/
-							<span>+855 23881865</span>
-						</div>
-					</li>
-				</ul>
+			<div class="v-line"><img src="../../../images/CN/v-line.png" alt="line"></div>
+			<!-- <div class="h-login success-h-login"> -->
+			<div class="h-login">
+				<a href="javascript:;" class="loginBtn">
+					<p class="head-portrait"></p>
+					<span>登录</span>
+				</a>
+				<div class="login-menu js-login-menu">
+					<!-- <a href="javascript:;" class="lm-currency" data="en">180</a> -->
+					<a href="javascript:;" class="lm-personal-center" data="en">个人中心</a>
+					<a href="javascript:;" class="lm-logout" data="zh">退出登录</a>
+				</div>
 			</div>
-		</nav>
-	</header>
-	<header class="m-header">
-		<a href="../../../index.html"><i class="iconfont icon-left-arrow"></i></a>
-		<h2 class="m-nav-title" data-title="f-nav-title">关于行李和座位预订费用</h2>
+			<div class="dot-login"><img src="../../../images/CN/dot-login.png" alt="dot-login"></div>
+			<div class="h-registered">
+				<a href="javascript:;" class="REGISTEREDBtn">
+					<img src="../../../images/CN/registered.png" alt="registered">
+					<span>注册</span>
+				</a>
+			</div>
+			<div class="v-line v-line-2"><img src="../../../images/CN/v-line.png" alt="line"></div>
+			<div class="h-lang js-h-lang">
+				<img src="../../../images/CN/lang-en.png" class="js-choose-lang">
+				<div class="lang-menu js-lang-menu">
+					<h2>选择语言：</h2>
+					<a href="javascript:;" class="lang-en" data="en">English</a>
+					<a href="javascript:;" class="lang-zh" data="zh">简体中文</a>
+				</div>
+			</div>
+		</div>
 	</header>
 
 	<!-- 页面主体 -->
 	<section class="lm-section">
-		<div class="title">
+		<div class="lm-title">
 			<h1>关于行李和座位预订费用</h1>
 		</div>
-		<div class="check-steps">
+		<div class="lm-content">
 		    <h2>1.随身携带行李</h2>
 			<p>对于澜湄航空运营的所有航线，每位乘客可携带1件尺寸不得超过115cm（55cm×40cm×20cm），重量不得超过7公斤的随身行李。</p>
 			<p>除了以上提及的机舱行李外，乘客还可以携带1件尺寸不得超过80cm（40cmx 30cmx10cm）的小型物品。 这些物品包括：</p>
@@ -67,7 +89,7 @@
 			<p>任何超过免费随身行李限额的物品都必须进行托运。</p>
 
 			<h2>2.托运行李</h2>
-			<p>每位旅客享有15公斤免费托运行李额。 逾重行李额收费标准如下：</p>
+			<p>对于澜湄航空运营的所有航线（除曼谷线20公斤以外），每位旅客享有15公斤免费托运行李额。 逾重行李额收费标准如下：</p>
 			<p>2.1柬埔寨境内航线</p>
 			<p>每公斤2美元。</p>
 			<p>2.2国际航线</p>
@@ -147,58 +169,28 @@
 				</tbody>
 			</table>
 			<p>东盟航线指出境和入境国都为东盟国家。非东盟航线指出境或入境国家为非东盟国家。</p>
-			<p> *仅适用于澜湄航空网站</p>
 		</div>
 	</section>
 
 	<!-- 页脚 -->
-	<footer class="footerInfo">
-		<div class="footerBg">
-			<div class="HelpfulInformation">
-				<p>帮助信息</p>
-			</div>
-			<div class="contactUs">
-				<div class="nth-child1"><img src="../../../images/CN/email.png"><span>LM-EC@lanmeiairlines.com</span></div>
-				<div class="nth-child2">
-					<span>FOLLOW</span>
-					<a href="https://www.facebook.com/lanmeiairlines/">
-						<i class="iconfont icon-facebook"></i>
-					</a>
-					<a href="#"><i class="iconfont icon-in"></i></a>
-					<a href="#"><i class="iconfont icon-inst"></i></a>
-					<a href="#"><i class="iconfont icon-youtube"></i></a>
-					<a href="#"><i class="iconfont icon-googleplus"></i></a>
-					<a href="http://weibo.com/lanmeiair"><i class="iconfont icon-wb"></i></a>
-					<a href="#"><i class="iconfont icon-tuite"></i></a>
-				</div>
-			</div>
-			<div class="location">
-				<img src="../../../images/CN/location.png"><a href="http://www.google.cn/maps/place/Lanmei+Airlines/@11.5637363,104.8836365,17.75z/data=!4m5!3m4!1s0x310951a3c5cdaf97:0x77359b117b2ff068!8m2!3d11.5637363!4d104.8852876" target="_blank">柬埔寨金边市俄罗斯大道575号</a>
-			</div>
-			<div class="mobile-contactUs" style="display: none;">
-				<a href="https://www.facebook.com/lanmeiairlines/">
-					<i class="iconfont icon-facebook"></i>
-				</a>
-				<a href="#"><i class="iconfont icon-in"></i></a>
-				<a href="#"><i class="iconfont icon-inst"></i></a>
-				<a href="#"><i class="iconfont icon-youtube"></i></a>
-				<a href="#"><i class="iconfont icon-googleplus"></i></a>
-				<a href="http://weibo.com/lanmeiair"><i class="iconfont icon-wb"></i></a>
-				<a href="#"><i class="iconfont icon-tuite"></i></a>
-			</div>
-			<div class="LanmeiAirlinesBerhad">
-				<div class="nth-child2">
-					<span>使用条款 | 隐私策略 | Cookies</span>
-				</div>
-				<div class="nth-child1"><a href="../../../index.html" rel="nofollow"><img src="../../../images/CN/lanmeiFooterLogo.png"></a><span>© Copyright 2017 澜湄航空 粤<a href="http://www.miitbeian.gov.cn" target="_Blank">ICP备17005494-1</a></span></div>
-			</div>
-		</div>
+	<footer class="lm-footer">
+		<p class="lm-logo"></p>
+		<p class="facebook">
+			<a href="https://www.facebook.com/lanmeiairlines/" class="a1"><i class="iconfont icon-facebook"></i></a>
+			<a href="http://weibo.com/lanmeiair"><i class="iconfont icon-wb"></i></a>
+		</p>
+		<p class="f-email"><i class="iconfont icon-email"></i><span>lm-ec@lanmeiairlines.com</span></p>
+		<p class="f-local">
+			<i class="iconfont icon-local"></i>
+			<a href="https://goo.gl/maps/7pyBze8BFe52" target="_Blank">柬埔寨金边市俄罗斯大道575号</a>
+		</p>
+		<p class="copyright">© Copyright 2017 澜湄航空 粤 <a href="http://www.miitbeian.gov.cn" target="_Blank" rel="nofollow">ICP-17005494-1</a></p>
 	</footer>
 
 	<!-- 回到顶部 -->
 	<div class="BackToTop">
 		<div class="QRcode">
-			<p>微信<br/>公众号</p>
+			<p>微信 <br> 公众号</p>
 			<img src="../../../images/CN/QR-code-s.png" class="small-code">
 			<img src="../../../images/CN/QR-code-b.png" class="big-code">
 		</div>
@@ -215,6 +207,6 @@
 	<script type="text/javascript" src="../../../libs/mobile-libs/fastclick/fastclick.js"></script>
 	<script type="text/javascript" src="../../../libs/bootstrap/js/bootstrap.min.js"></script>
 	<!-- 公共JS -->
-	<script type="text/javascript" src="../../../common/CN/js/Lanmei-common.js"></script>
+	<script type="text/javascript" src="../common/menu-common.js"></script>
 </body>
 </html>

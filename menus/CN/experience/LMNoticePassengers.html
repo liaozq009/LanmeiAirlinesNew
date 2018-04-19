@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
 	<meta charset="UTF-8">
 	<!-- 让 Bootstrap 兼容 IE 兼容模型 -->
@@ -9,14 +9,14 @@
 	<!-- 实现响应式的设置 -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>LanmeiAirlines</title>
+	<title>独特的澜湄航空</title>
 	<!-- 引入图标 -->
 	<link rel="icon" href="../../../images/CN/lanmeiLogo.ico">
 	<link rel="stylesheet" type="text/css" href="../../../libs/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../../../common/CN/fonts/lm-iconfont.css">
 	<link rel="stylesheet" type="text/css" href="../../../common/CN/css/Lanmei-common.css">
-	<link rel="stylesheet" type="text/css" href="../common/menu-common.css">
 	<link rel="stylesheet" type="text/css" href="../../../libsEdit/css/lanmeiLibsEdit.css">
+	<link rel="stylesheet" type="text/css" href="../common/menu-common.css">
 	<link rel="stylesheet" type="text/css" href="css/LMNoticePassengers.css">
 	<!--[if lt IE 9]>
 	<script src="../../../libs/bootstrap/js/html5shiv.min.js"></script>
@@ -25,29 +25,51 @@
 </head>
 <body>
 	<!-- 页面顶部 -->
-	<header class="lanmeiHeader-subpage">
-		<nav class="lanmeiNav">
-			<div class="lanmeiLogo">
-				<a class="navbar-brand" href="../../../index.html""><img src="../../../images/CN/lanmeiLogo.png"></a>
-				<!-- <a class="navbar-brand" href="/index_cn.html"><img src="../../../images/CN/lanmeiLogo.png"></a> -->
+	<header class="lm-header">
+		<div class="h-menu js-h-menu">
+			<span>菜单</span>
+		</div>
+		<a href="/index_cn.html" class="h-logo-wrap"></a>
+		<div class="h-right">
+			<div class="h-phone js-h-phone">
+				<img src="../../../images/CN/phone.png">
+				<div class="phone-menu js-phone-menu">
+					<h2>24小时客服电话:</h2>
+					<p class="p1">+855 15331852</p>
+					<p>+855 15331857</p>
+					<p>+855 23881865</p>
+				</div>
 			</div>
-			<div class="lanmeiHeadInfo">
-				<ul class="">
-					<li class="nth-child1">
-						<img src="../../../images/CN/phone.png">
-						<div>
-							<span>+855 23881890</span>/
-							<span>+855 23881893</span>/
-							<span>+855 23881865</span>
-						</div>
-					</li>
-				</ul>
+			<div class="v-line"><img src="../../../images/CN/v-line.png" alt="line"></div>
+			<!-- <div class="h-login success-h-login"> -->
+			<div class="h-login">
+				<a href="javascript:;" class="loginBtn">
+					<p class="head-portrait"></p>
+					<span>登录</span>
+				</a>
+				<div class="login-menu js-login-menu">
+					<!-- <a href="javascript:;" class="lm-currency" data="en">180</a> -->
+					<a href="javascript:;" class="lm-personal-center" data="en">个人中心</a>
+					<a href="javascript:;" class="lm-logout" data="zh">退出登录</a>
+				</div>
 			</div>
-		</nav>
-	</header>
-	<header class="m-header">
-		<a href="../../../index-zh.html"><i class="iconfont icon-left-arrow"></i></a>
-		<h2 class="m-nav-title" data-title="f-nav-title">旅客须知</h2>
+			<div class="dot-login"><img src="../../../images/CN/dot-login.png" alt="dot-login"></div>
+			<div class="h-registered">
+				<a href="javascript:;" class="REGISTEREDBtn">
+					<img src="../../../images/CN/registered.png" alt="registered">
+					<span>注册</span>
+				</a>
+			</div>
+			<div class="v-line v-line-2"><img src="../../../images/CN/v-line.png" alt="line"></div>
+			<div class="h-lang js-h-lang">
+				<img src="../../../images/CN/lang-en.png" class="js-choose-lang">
+				<div class="lang-menu js-lang-menu">
+					<h2>选择语言：</h2>
+					<a href="javascript:;" class="lang-en" data="en">English</a>
+					<a href="javascript:;" class="lang-zh" data="zh">简体中文</a>
+				</div>
+			</div>
+		</div>
 	</header>
 
 	<div class="siteMapBanner">
@@ -58,8 +80,8 @@
 		<div class="site-map-box n1">
 			<div class="site-map-title js-title-toggle">
 				<h2><span>旅客须知</span></h2>
-				<img src="../../../images/CN/i-add.png" class="img01">
-				<img src="../../../images/CN/i-subtract.png" class="img02">
+				<img src="../common/images/i-add.png" class="img01">
+				<img src="../common/images/i-subtract.png" class="img02">
 			</div>
 			<ul class="site-map-content ul-1">
 				<li>
@@ -76,8 +98,8 @@
 		<div class="site-map-box n2">
 			<div class="site-map-title js-title-toggle">
 				<h2><span>网上订票</span></h2>
-				<img src="../../../images/CN/i-add.png" class="img01">
-				<img src="../../../images/CN/i-subtract.png" class="img02">
+				<img src="../common/images/i-add.png" class="img01">
+				<img src="../common/images/i-subtract.png" class="img02">
 			</div>
 			<ul class="site-map-content ul-2">
 				<li>
@@ -93,8 +115,8 @@
 		<div class="site-map-box n3">
 			<div class="site-map-title js-title-toggle">
 				<h2><span>定座</span></h2>
-				<img src="../../../images/CN/i-add.png" class="img01">
-				<img src="../../../images/CN/i-subtract.png" class="img02">
+				<img src="../common/images/i-add.png" class="img01">
+				<img src="../common/images/i-subtract.png" class="img02">
 			</div>
 			<ul class="site-map-content ul-3">
 				<li>
@@ -105,8 +127,8 @@
 		<div class="site-map-box n4">
 			<div class="site-map-title js-title-toggle">
 				<h2><span>旅行证件</span></h2>
-				<img src="../../../images/CN/i-add.png" class="img01">
-				<img src="../../../images/CN/i-subtract.png" class="img02">
+				<img src="../common/images/i-add.png" class="img01">
+				<img src="../common/images/i-subtract.png" class="img02">
 			</div>
 			<ul class="site-map-content ul-4">
 				<li>
@@ -118,8 +140,8 @@
 		<div class="site-map-box n5">
 			<div class="site-map-title js-title-toggle">
 				<h2><span>客票</span></h2>
-				<img src="../../../images/CN/i-add.png" class="img01">
-				<img src="../../../images/CN/i-subtract.png" class="img02">
+				<img src="../common/images/i-add.png" class="img01">
+				<img src="../common/images/i-subtract.png" class="img02">
 			</div>
 			<ul class="site-map-content ul-5">
 				<li>
@@ -130,8 +152,8 @@
 		<div class="site-map-box n6">
 			<div class="site-map-title js-title-toggle">
 				<h2><span>客票有效期</span></h2>
-				<img src="../../../images/CN/i-add.png" class="img01">
-				<img src="../../../images/CN/i-subtract.png" class="img02">
+				<img src="../common/images/i-add.png" class="img01">
+				<img src="../common/images/i-subtract.png" class="img02">
 			</div>
 			<ul class="site-map-content ul-6">
 				<li>
@@ -142,8 +164,8 @@
 		<div class="site-map-box n7">
 			<div class="site-map-title js-title-toggle">
 				<h2><span>票价和费用</span></h2>
-				<img src="../../../images/CN/i-add.png" class="img01">
-				<img src="../../../images/CN/i-subtract.png" class="img02">
+				<img src="../common/images/i-add.png" class="img01">
+				<img src="../common/images/i-subtract.png" class="img02">
 			</div>
 			<ul class="site-map-content ul-7">
 				<li>
@@ -154,8 +176,8 @@
 		<div class="site-map-box n8">
 			<div class="site-map-title js-title-toggle">
 				<h2><span>客票遗失</span></h2>
-				<img src="../../../images/CN/i-add.png" class="img01">
-				<img src="../../../images/CN/i-subtract.png" class="img02">
+				<img src="../common/images/i-add.png" class="img01">
+				<img src="../common/images/i-subtract.png" class="img02">
 			</div>
 			<ul class="site-map-content ul-8">
 				<li>
@@ -166,8 +188,8 @@
 		<div class="site-map-box n9">
 			<div class="site-map-title js-title-toggle">
 				<h2><span>退票</span></h2>
-				<img src="../../../images/CN/i-add.png" class="img01">
-				<img src="../../../images/CN/i-subtract.png" class="img02">
+				<img src="../common/images/i-add.png" class="img01">
+				<img src="../common/images/i-subtract.png" class="img02">
 			</div>
 			<ul class="site-map-content ul-9">
 				<li>
@@ -178,8 +200,8 @@
 		<div class="site-map-box n10">
 			<div class="site-map-title js-title-toggle">
 				<h2><span>乘机</span></h2>
-				<img src="../../../images/CN/i-add.png" class="img01">
-				<img src="../../../images/CN/i-subtract.png" class="img02">
+				<img src="../common/images/i-add.png" class="img01">
+				<img src="../common/images/i-subtract.png" class="img02">
 			</div>
 			<ul class="site-map-content ul-10">
 				<li>
@@ -190,8 +212,8 @@
 		<div class="site-map-box n11">
 			<div class="site-map-title js-title-toggle">
 				<h2><span>特殊旅客</span></h2>
-				<img src="../../../images/CN/i-add.png" class="img01">
-				<img src="../../../images/CN/i-subtract.png" class="img02">
+				<img src="../common/images/i-add.png" class="img01">
+				<img src="../common/images/i-subtract.png" class="img02">
 			</div>
 			<ul class="site-map-content ul-11">
 				<li>
@@ -202,8 +224,8 @@
 		<div class="site-map-box n12">
 			<div class="site-map-title js-title-toggle">
 				<h2><span>随身携带物品</span></h2>
-				<img src="../../../images/CN/i-add.png" class="img01">
-				<img src="../../../images/CN/i-subtract.png" class="img02">
+				<img src="../common/images/i-add.png" class="img01">
+				<img src="../common/images/i-subtract.png" class="img02">
 			</div>
 			<ul class="site-map-content ul-12">
 				<li>
@@ -214,8 +236,8 @@
 		<div class="site-map-box n13">
 			<div class="site-map-title js-title-toggle">
 				<h2><span>免费行李额</span></h2>
-				<img src="../../../images/CN/i-add.png" class="img01">
-				<img src="../../../images/CN/i-subtract.png" class="img02">
+				<img src="../common/images/i-add.png" class="img01">
+				<img src="../common/images/i-subtract.png" class="img02">
 			</div>
 			<ul class="site-map-content ul-13">
 				<li>
@@ -226,8 +248,8 @@
 		<div class="site-map-box n14">
 			<div class="site-map-title js-title-toggle">
 				<h2><span>行李包装</span></h2>
-				<img src="../../../images/CN/i-add.png" class="img01">
-				<img src="../../../images/CN/i-subtract.png" class="img02">
+				<img src="../common/images/i-add.png" class="img01">
+				<img src="../common/images/i-subtract.png" class="img02">
 			</div>
 			<ul class="site-map-content ul-14">
 				<li>
@@ -238,8 +260,8 @@
 		<div class="site-map-box n15">
 			<div class="site-map-title js-title-toggle">
 				<h2><span>不准作为行李运输的物品</span></h2>
-				<img src="../../../images/CN/i-add.png" class="img01">
-				<img src="../../../images/CN/i-subtract.png" class="img02">
+				<img src="../common/images/i-add.png" class="img01">
+				<img src="../common/images/i-subtract.png" class="img02">
 			</div>
 			<ul class="site-map-content ul-15">
 				<li>
@@ -250,8 +272,8 @@
 		<div class="site-map-box n16">
 			<div class="site-map-title js-title-toggle">
 				<h2><span>赔偿</span></h2>
-				<img src="../../../images/CN/i-add.png" class="img01">
-				<img src="../../../images/CN/i-subtract.png" class="img02">
+				<img src="../common/images/i-add.png" class="img01">
+				<img src="../common/images/i-subtract.png" class="img02">
 			</div>
 			<ul class="site-map-content ul-16">
 				<li>
@@ -262,8 +284,8 @@
 		<div class="site-map-box n17">
 			<div class="site-map-title js-title-toggle">
 				<h2><span>声明</span></h2>
-				<img src="../../../images/CN/i-add.png" class="img01">
-				<img src="../../../images/CN/i-subtract.png" class="img02">
+				<img src="../common/images/i-add.png" class="img01">
+				<img src="../common/images/i-subtract.png" class="img02">
 			</div>
 			<ul class="site-map-content ul-17">
 				<li>
@@ -274,53 +296,24 @@
 	</div>
 	
 	<!-- 页脚 -->
-	<footer class="footerInfo">
-		<div class="footerBg">
-			<div class="HelpfulInformation">
-				<p>帮助信息</p>
-			</div>
-			<div class="contactUs">
-				<div class="nth-child1"><img src="../../../images/CN/email.png"><span>LM-EC@lanmeiairlines.com</span></div>
-				<div class="nth-child2">
-					<span>FOLLOW</span>
-					<a href="https://www.facebook.com/lanmeiairlines/">
-						<i class="iconfont icon-facebook"></i>
-					</a>
-					<a href="#"><i class="iconfont icon-in"></i></a>
-					<a href="#"><i class="iconfont icon-inst"></i></a>
-					<a href="#"><i class="iconfont icon-youtube"></i></a>
-					<a href="#"><i class="iconfont icon-googleplus"></i></a>
-					<a href="http://weibo.com/lanmeiair"><i class="iconfont icon-wb"></i></a>
-					<a href="#"><i class="iconfont icon-tuite"></i></a>
-				</div>
-			</div>
-			<div class="location">
-				<img src="../../../images/CN/location.png"><a href="http://www.google.cn/maps/place/Lanmei+Airlines/@11.5637363,104.8836365,17.75z/data=!4m5!3m4!1s0x310951a3c5cdaf97:0x77359b117b2ff068!8m2!3d11.5637363!4d104.8852876" target="_blank">柬埔寨金边市俄罗斯大道575号</a>
-			</div>
-			<div class="mobile-contactUs" style="display: none;">
-				<a href="https://www.facebook.com/lanmeiairlines/">
-					<i class="iconfont icon-facebook"></i>
-				</a>
-				<a href="#"><i class="iconfont icon-in"></i></a>
-				<a href="#"><i class="iconfont icon-inst"></i></a>
-				<a href="#"><i class="iconfont icon-youtube"></i></a>
-				<a href="#"><i class="iconfont icon-googleplus"></i></a>
-				<a href="http://weibo.com/lanmeiair"><i class="iconfont icon-wb"></i></a>
-				<a href="#"><i class="iconfont icon-tuite"></i></a>
-			</div>
-			<div class="LanmeiAirlinesBerhad">
-				<div class="nth-child2">
-					<span>使用条款 | 隐私策略 | Cookies</span>
-				</div>
-				<div class="nth-child1"><a href="../../../index.html" rel="nofollow"><img src="../../../images/CN/lanmeiFooterLogo.png"></a><span>© Copyright 2017 澜湄航空 粤<a href="http://www.miitbeian.gov.cn" target="_Blank">ICP备17005494-1</a></span></div>
-			</div>
-		</div>
+	<footer class="lm-footer">
+		<p class="lm-logo"></p>
+		<p class="facebook">
+			<a href="https://www.facebook.com/lanmeiairlines/" class="a1"><i class="iconfont icon-facebook"></i></a>
+			<a href="http://weibo.com/lanmeiair"><i class="iconfont icon-wb"></i></a>
+		</p>
+		<p class="f-email"><i class="iconfont icon-email"></i><span>lm-ec@lanmeiairlines.com</span></p>
+		<p class="f-local">
+			<i class="iconfont icon-local"></i>
+			<a href="https://goo.gl/maps/7pyBze8BFe52" target="_Blank">柬埔寨金边市俄罗斯大道575号</a>
+		</p>
+		<p class="copyright">© Copyright 2017 澜湄航空 粤 <a href="http://www.miitbeian.gov.cn" target="_Blank" rel="nofollow">ICP-17005494-1</a></p>
 	</footer>
 
 	<!-- 回到顶部 -->
 	<div class="BackToTop">
 		<div class="QRcode">
-			<p>微信<br/>公众号</p>
+			<p>微信 <br> 公众号</p>
 			<img src="../../../images/CN/QR-code-s.png" class="small-code">
 			<img src="../../../images/CN/QR-code-b.png" class="big-code">
 		</div>
@@ -337,7 +330,7 @@
 	<script type="text/javascript" src="../../../libs/mobile-libs/fastclick/fastclick.js"></script>
 	<script type="text/javascript" src="../../../libs/bootstrap/js/bootstrap.min.js"></script>
 	<!-- 公共JS -->
-	<script type="text/javascript" src="../../../common/CN/js/Lanmei-common.js"></script>
+	<script type="text/javascript" src="../common/menu-common.js"></script>
 	<!-- 业务代码 -->
 	<script type="text/javascript" src="js/LMNoticePassengers.js"></script>
 </body>

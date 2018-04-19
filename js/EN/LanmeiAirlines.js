@@ -1744,6 +1744,7 @@ var LanmeiAirlines = {
 		var $ticketNumInput = $('.js-ticketNum-input'); //机票号码输入框
 		var $routeIdInput = $('.js-routeId-input'); //预订路线
 		var $ticketTypeInput = $('.js-ticketType-input'); //票种
+		var $peopleNumInput = $('.js-peopleNum-input'); //票种
 
 		/* 下拉菜单 */
 		var $routeIdMenuSub = $('.js-routeId-menu'); 
@@ -1755,7 +1756,7 @@ var LanmeiAirlines = {
 
 		/* 点击第一个div,然后显示其他div  */
 		var $ticketNum = $('.js-ticket-num'); //机票号div
-		var $carZoom = $('.js-route-id,.js-ticket-type,.js-car-cancel,.js-car-search');
+		var $carZoom = $('.js-route-id,.js-ticket-type,.js-people-num,.js-car-cancel,.js-car-search');
 
 		/* css3动画 */
 		var carPopupShow = function(){
@@ -1900,6 +1901,11 @@ var LanmeiAirlines = {
 			$ticketTypeInput.val(text);
 			
 			carPopupHide();
+		});
+
+		/* 机票人数只能输入数字 */
+		$peopleNumInput.keyup(function(event) {
+			$(this).val($(this).val().replace(/[^\d]/ig,''));
 		});
 	},
 

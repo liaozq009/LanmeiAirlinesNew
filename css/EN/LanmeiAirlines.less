@@ -627,6 +627,13 @@ body{
 		input::-webkit-input-placeholder{
 			.purpleRgb(.3);font-size: 20px;
 		}
+		input::-webkit-outer-spin-button,
+	    input::-webkit-inner-spin-button {
+	        -webkit-appearance: none;
+	    }
+	    input[type="number"]{
+	        -moz-appearance: textfield;
+	    }
 		.t-from-input {
 			background: url('@{url}city-from.png') 20px no-repeat #fff;
 		}
@@ -635,6 +642,18 @@ body{
 		}
 		.h-from-input{
 			background: url('@{url}hotel-from.png') 20px no-repeat #fff;
+		}
+		.ticket-num-input{
+			background: url('@{url}ticket-num.png') 20px no-repeat #fff;
+		}
+		.route-id-input{
+			background: url('@{url}route-id.png') 20px no-repeat #fff;
+		}
+		.ticket-type-input{
+			background: url('@{url}ticket-type.png') 20px no-repeat #fff;
+		}
+		.people-num-input{
+			background: url('@{url}adult.png') 20px no-repeat #fff;
 		}
 		.f-from-input{
 			background: url('@{url}flight-number.png') 20px no-repeat #fff;
@@ -2170,12 +2189,21 @@ body{
 		.popup-hotel-from{
 			width: 660px;
 		}
-		.popup-route-id,.popup-ticket-type{
+		.popup-ticket-type{
 			width: 310px;
 			.flight-list-wrap > li{
 				background: none;
 				padding-left: 0;
 				&:hover{background: none;}
+			}
+		}
+		.popup-route-id{
+			width: 400px;
+			.flight-list-wrap > li{
+				background: url('@{url}car-small-icon.png') left center no-repeat;
+				&:hover{
+					background: url('@{url}car-small-icon-active.png') left center no-repeat;
+				}
 			}
 		}
 		.popup-airport-to{display: none;}
@@ -3262,6 +3290,11 @@ body{
 			.hotel-list-wrap{
 				>li{
 					background: url('@{url}svg/hotel-small-icon.svg') left center no-repeat;
+				}
+			}
+			.car-list-wrap{
+				>li{
+					background: url('@{url}svg/car-small-icon.svg') left center no-repeat;
 				}
 			}
 		}
