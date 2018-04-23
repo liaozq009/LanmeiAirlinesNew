@@ -488,7 +488,6 @@ body{
 	right: 0; 
 	width:500px;
 	height:60px;
-	line-height: 60px;
 	padding-left: 30px;
 	background:#fff;
 	box-shadow:0 0 50px 0 rgba(31,44,92,0.20);
@@ -527,11 +526,14 @@ body{
 		}
 	}
 	>ul{
-		height: 60px;
+		height: 40px;
 		float: left;
+		margin-top: 10px;
 		overflow: hidden;
 		>li{
 			width: 350px;
+			height: 40px;
+			line-height: 40px;
 			opacity:0.7;
 			filter:alpha(opacity=70);
 			color:#000;
@@ -1514,20 +1516,22 @@ body{
 			line-height: 50px;
 			padding-left: 30px;
 			padding-right: 30px;
-			.news-arrow-com{
-				width: 20px;
-				text-align: center;
-				float: left;
-				display: block;
-			}
-			>p{
-				float: left;
-				margin-left: 20px;
-				margin-right: 20px;
-				font-family: @FBold;
-				.blackRgb(.2);
-				.s1{
-					.blackRgb(.7);
+			.news-arrow-box{
+				.news-arrow-com{
+					width: 40px;
+					text-align: center;
+					float: left;
+					display: block;
+				}
+				>p{
+					float: left;
+					margin-left: 5px;
+					margin-right: 5px;
+					font-family: @FBold;
+					.blackRgb(.2);
+					.s1{
+						.blackRgb(.7);
+					}
 				}
 			}
 			.news-more{
@@ -1664,10 +1668,10 @@ body{
 	.lm-section-hotel .hotel-com:hover .hotel-img > b{
 		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F1f2c5c,endColorstr=#7F1f2c5c);
 	}
-	.lm-section-news .news-detail .news-arrow > p{
+	.lm-section-news .news-detail .news-arrow .news-arrow-box > p{
 		color: #C8C9CC;
 	}
-	.lm-section-news .news-detail .news-arrow > p .s1{
+	.lm-section-news .news-detail .news-arrow .news-arrow-box > p .s1{
 		color: #4B4B4C;
 	}
 	.lm-section-news .news-detail .news-info .news-info-detail p{
@@ -2198,7 +2202,6 @@ body{
 			}
 		}
 		.popup-route-id{
-			width: 400px;
 			.flight-list-wrap > li{
 				background: url('@{url}car-small-icon.png') left center no-repeat;
 				&:hover{
@@ -2690,6 +2693,26 @@ body{
 		overflow: initial;
 		height: 508px !important;
 	}
+	.ticket-bg{
+		background: url('@{url2}ticket-bg-mobile.jpg') center no-repeat;
+		background-size: cover;
+	}
+	.hotel-bg{
+		background: url('@{url2}hotel-bg-mobile.jpg') center no-repeat;
+		background-size: cover;
+	}
+	.car-bg{
+		background: url('@{url2}car-bg-mobile.jpg') center no-repeat;
+		background-size: cover;
+	}
+	.fStatus-bg{
+		background: url('@{url2}flightStatus-bg-mobile.jpg') center no-repeat;
+		background-size: cover;
+	}
+	.lm-section-service{
+		background: url('@{url}lanmeiService-bg-mobile.jpg') center no-repeat;
+		background-size: cover;
+	}
 	.cloud-iframe{display: none;}
 	.content-com-wrap{top: 0;}
 	.lm-aside-flight,.lm-important{display: none;}
@@ -2845,35 +2868,35 @@ body{
 					.phone-menu{
 						display: none;
 						position: absolute;
-						top: -120px;
-						right: 30px;
-						width: 210px;
-						height: 178px;
+						top: -92px;
+						width: 170px;
+						height: 146px;
 						border-radius: 2px;
 						background: #fff;
-						padding: 20px;
+						padding: 10px;
 						text-align: left;
 						box-shadow: 0 0 50px 0 rgba(31, 44, 92, 0.2);
 						>h2{
 							.purpleRgb(.8);
-							font-size: 20px;
+							font-size: 16px;
 							font-family: @FBold;
 						}
 						>p{
-							font-size: 16px;
+							font-size: 14px;
 							.blackRgb(.7);
 							height: 25px;
 							line-height: 32px;
 							margin-top: 10px;
 							margin-left: 10px;
-							padding-left: 40px;
+							padding-left: 30px;
 							background: url('@{url}svg/phone-bg.svg') left center no-repeat;
+							background-size: 16px;
 						}
-						.p1{margin-top: 20px;}
+						.p1{margin-top: 12px;}
 						&::before{
 							position: absolute;
 							bottom: -14px;
-							left: 96px;
+							left: 71px;
 							z-index: 9;
 							filter:alpha(opacity=0);
 							content: "";
@@ -3892,12 +3915,14 @@ body{
 			.news-arrow {
 				height: 30px;
 				line-height: 30px;
-				> p{
-					font-size: 12px;
-					margin-left: 10px;
-					margin-right: 10px;
+				padding-right: 0;
+				.news-arrow-box{
+					float: right;
+					> p{
+						font-size: 12px;
+					}
+					img{width: 6px;}
 				}
-				img{width: 6px;}
 			}
 			.news-info{
 				padding: 16px 10px;

@@ -611,7 +611,7 @@
 				<div class="popup-container js-popup-container">
 					<div class="popup-title-wrap">
 						<p class="popup-title js-hotelPopup-title">Select destination</p>
-						<img src="images/EN/close-menu.png" class="popup-close js-hotelPopup-close" alt="">
+						<p class="popup-close js-hotelPopup-close"></p>
 						<input type="text" name="" class="city-search js-hotelCity-search" value="" data="js-hotelFrom-menu" placeholder="Search">
 					</div>
 					<div class="popup-box js-hotelPopup-box">
@@ -766,7 +766,7 @@
 							<input type="text" class="ticket-type-input js-ticketType-input" name="" value="" placeholder="Ticket type" autocomplete="off">
 						</div>
 						<div class="car-people-num car-com js-people-num animated fadeInUp">
-							<input type="number" class="people-num-input js-peopleNum-input" name="" value=""  placeholder="People number" autocomplete="off">
+							<input type="number" class="people-num-input js-peopleNum-input" name="" value="" pattern="[0-9]*" placeholder="People number" autocomplete="off">
 						</div>
 					</div>
 					<div class="search-flight-wrap js-search-car">
@@ -778,7 +778,7 @@
 				<div class="popup-container js-popup-container">
 					<div class="popup-title-wrap">
 						<p class="popup-title js-carPouple-title">Choose your car</p>
-						<img src="images/EN/close-menu.png" class="popup-close js-carPopup-close" alt="">
+						<p class="popup-close js-carPopup-close"></p>
 						<input type="text" name="" class="city-search js-routeId-search" value=""  placeholder="Search">
 					</div>
 					<div class="popup-box js-carPopup-box">
@@ -856,7 +856,7 @@
 				<div class="popup-container js-popup-container">
 					<div class="popup-title-wrap">
 						<p class="popup-title js-fStatusPopup-title">Select destination</p>
-						<img src="images/EN/close-menu.png" class="popup-close js-fStatusPopup-close" alt="">
+						<p class="popup-close js-fStatusPopup-close"></p>
 						<input type="text" name="" class="city-search js-fStatusCity-search" value="" data="js-fNumber-menu" placeholder="Search">
 					</div>
 					<div class="popup-box js-fStatusPopup-box">
@@ -1400,9 +1400,11 @@
 		<div class="news-wrap">
 			<div class="news-detail">
 				<div class="news-arrow">
-					<a href="javascript:;" class="news-arrow-com js-news-left"><img src="images/EN/left-arrow.png"></a>
-					<p class="js-news-pages"><span class="s1">1</span> / <span class="s2">3</span></p>
-					<a href="javascript:;" class="news-arrow-com js-news-right"><img src="images/EN/right-arrow.png"></a>
+					<div class="news-arrow-box">
+						<a href="javascript:;" class="news-arrow-com js-news-left"><img src="images/EN/left-arrow.png"></a>
+						<p class="js-news-pages"><span class="s1">1</span> / <span class="s2">3</span></p>
+						<a href="javascript:;" class="news-arrow-com js-news-right"><img src="images/EN/right-arrow.png"></a>
+					</div>
 					<!-- <a href="javascript:;" class="news-more">More</a> -->
 				</div>
 				<div class="news-info js-news-info">

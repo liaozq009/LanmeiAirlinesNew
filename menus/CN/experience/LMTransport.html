@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
 	<meta charset="UTF-8">
 	<!-- 让 Bootstrap 兼容 IE 兼容模型 -->
@@ -9,14 +9,14 @@
 	<!-- 实现响应式的设置 -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>LanmeiAirlines</title>
+	<title>独特的澜湄航空</title>
 	<!-- 引入图标 -->
 	<link rel="icon" href="../../../images/CN/lanmeiLogo.ico">
 	<link rel="stylesheet" type="text/css" href="../../../libs/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../../../common/CN/fonts/lm-iconfont.css">
 	<link rel="stylesheet" type="text/css" href="../../../common/CN/css/Lanmei-common.css">
-	<link rel="stylesheet" type="text/css" href="../common/menu-common.css">
 	<link rel="stylesheet" type="text/css" href="../../../libsEdit/css/lanmeiLibsEdit.css">
+	<link rel="stylesheet" type="text/css" href="../common/menu-common.css">
 	<link rel="stylesheet" type="text/css" href="css/LMTransport.css">
 	<!--[if lt IE 9]>
 	<script src="../../../libs/bootstrap/js/html5shiv.min.js"></script>
@@ -25,38 +25,60 @@
 </head>
 <body>
 	<!-- 页面顶部 -->
-	<header class="lanmeiHeader-subpage">
-		<nav class="lanmeiNav">
-			<div class="lanmeiLogo">
-				<a class="navbar-brand" href="../../../index-zh.html""><img src="../../../images/EN/lanmeiLogo.png"></a>
-				<!-- <a class="navbar-brand" href="/index_cn.html"><img src="../../../images/CN/lanmeiLogo.png"></a> -->
+	<header class="lm-header">
+		<div class="h-menu js-h-menu">
+			<span>菜单</span>
+		</div>
+		<a href="/index_cn.html" class="h-logo-wrap"></a>
+		<div class="h-right">
+			<div class="h-phone js-h-phone">
+				<img src="../../../images/CN/phone.png">
+				<div class="phone-menu js-phone-menu">
+					<h2>24小时客服电话:</h2>
+					<p class="p1">+855 15331852</p>
+					<p>+855 15331857</p>
+					<p>+855 23881865</p>
+				</div>
 			</div>
-			<div class="lanmeiHeadInfo">
-				<ul class="">
-					<li class="nth-child1">
-						<img src="../../../images/CN/phone.png">
-						<div>
-							<span>+855 23881890</span>/
-							<span>+855 23881893</span>/
-							<span>+855 23881865</span>
-						</div>
-					</li>
-				</ul>
+			<div class="v-line"><img src="../../../images/CN/v-line.png" alt="line"></div>
+			<!-- <div class="h-login success-h-login"> -->
+			<div class="h-login">
+				<a href="javascript:;" class="loginBtn">
+					<p class="head-portrait"></p>
+					<span>登录</span>
+				</a>
+				<div class="login-menu js-login-menu">
+					<!-- <a href="javascript:;" class="lm-currency" data="en">180</a> -->
+					<a href="javascript:;" class="lm-personal-center" data="en">个人中心</a>
+					<a href="javascript:;" class="lm-logout" data="zh">退出登录</a>
+				</div>
 			</div>
-		</nav>
-	</header>
-	<header class="m-header">
-		<a href="../../../index-zh.html"><i class="iconfont icon-left-arrow"></i></a>
-		<h2 class="m-nav-title" data-title="f-nav-title">运输总条件</h2>
+			<div class="dot-login"><img src="../../../images/CN/dot-login.png" alt="dot-login"></div>
+			<div class="h-registered">
+				<a href="javascript:;" class="REGISTEREDBtn">
+					<img src="../../../images/CN/registered.png" alt="registered">
+					<span>注册</span>
+				</a>
+			</div>
+			<div class="v-line v-line-2"><img src="../../../images/CN/v-line.png" alt="line"></div>
+			<div class="h-lang js-h-lang">
+				<img src="../../../images/CN/lang-en.png" class="js-choose-lang">
+				<div class="lang-menu js-lang-menu">
+					<h2>选择语言：</h2>
+					<a href="javascript:;" class="lang-en" data="en">English</a>
+					<a href="javascript:;" class="lang-zh" data="zh">简体中文</a>
+				</div>
+			</div>
+		</div>
 	</header>
 
 	<!-- 页面主体 -->
 	<section class="lm-section">
-		<div class="title">
-			<h1>澜湄航空(柬埔寨)股份有限公司旅客、行李运输总条件</h1>
+		<div class="lm-title">
+			<h1 style="text-align: center;">澜湄航空(柬埔寨)股份有限公司旅客、行李运输总条件</h1>
 		</div>
-		<div class="check-steps">
-		   <h2>第一章 定义</h2>
+		<div class="lm-content">
+		   <h2 style="margin-top: 0;">第一章 定义</h2>
 	
 		   <h3>第一条 澜湄航空(柬埔寨)股份有限公司旅客、行李运输总条件（以下简称“条件”）中的下列用语，除具体条文中有其它要求或另有规定外，含义如下：</h3>
 		   <p>（一）“公约”是指根据合同规定适用于该项运输的一九二九年十月十二日在华沙签订的《统一国际航空运输某些规则的公约》（简称华沙公约）和一九五五年九月二十八日在海牙签订的《修改一九二九年十月十二日在华沙签订的统一国际航空运输某些规则的公约的议定书》（简称海牙议定书）以及一九九九年五月二十八日在蒙特利尔签订的《统一国际航空运输某些规则的公约》（简称1999年蒙特利尔公约）。</p>
@@ -262,7 +284,7 @@
 		   <p>4、由于包装、形状、重量、体积、性质不适合航空运输的物品；</p>
 		   <p>5、活体动物，但按照本章第十二条规定办理的除外。</p>
 		   <p>（二）不得作为托运行李运输的物品</p>
-		   旅客不得在托运行李中夹带易碎或易腐物品、货币、珠宝、古玩字画、贵重金属、金银制品、流通票据、有价证券、银行卡、信用卡或其它贵重物品、商业、官方或私人文件、护照和其它证明文件或样品、药品或医疗装置和设备、钥匙、电脑、摄像机、相机、手机或其他电子装备。对旅客违反上述规定而造成的损失，澜湄航空只承担一般托运行李赔偿责任。
+		   <p>旅客不得在托运行李中夹带易碎或易腐物品、货币、珠宝、古玩字画、贵重金属、金银制品、流通票据、有价证券、银行卡、信用卡或其它贵重物品、商业、官方或私人文件、护照和其它证明文件或样品、药品或医疗装置和设备、钥匙、电脑、摄像机、相机、手机或其他电子装备。对旅客违反上述规定而造成的损失，澜湄航空只承担一般托运行李赔偿责任。</p>
 		   <p>（三）限制运输的物品</p>
 		   <p>下列物品只有在符合澜湄航空运输条件的情况下，并经澜湄航空同意，方可接受运输：</p>
 		   <p>1、用于狩猎和体育活动的枪支和弹药可凭枪支运输许可证或国家体育行政部门的批准证明作为托运行李运输，但不得作为非托运行李带入客舱。枪支必须卸下子弹和扣上保险并妥善包装。弹药的运输按国际民用航空组织和国际航空运输协会的规定及出境、入境或所经过国家适用的法律、法规或者命令办理。</p>
@@ -333,17 +355,17 @@
 		   <p>（二）除非损失是由于澜湄航空的故意或明知而轻率地作为或不作为所造成的，澜湄航空对班期时刻表或以其它形式公布的时刻表中的差错或遗漏不承担责任。澜湄航空雇员、代理人或澜湄航空的代表就始发或到达时间、日期或任何航班飞行所作的解释仅供参考。</p>
 		   <p>（三）客票售出后澜湄航空可能会变更航班时刻，若旅客给澜湄航空提供了有效的联系方式，澜湄航空应及时向旅客通知时刻变更信息。客票售出后，如果澜湄航空对航班时刻做出超过三小时以上的变更而旅客不能接受，并且澜湄航空无法为旅客安排其可以接受的替代航班，旅客可按照第十一章第五条非自愿退票的规定办理退票。</p>
 		   <h3>第二条  航班取消及变更</h3>
-		   由于下列情况之一的，澜湄航空可以不经事先通知，取消、终止、变更、延期或者推迟航班飞行：
+		   <p>由于下列情况之一的，澜湄航空可以不经事先通知，取消、终止、变更、延期或者推迟航班飞行：</p>
 		   <p>（一）为遵守有关国家的法律、法规和命令；</p>
 		   <p>（二）为保证飞行安全；</p>
 		   <p>（三）承运人无法控制或不可预见的原因。</p>
 		   <h3>第三条  不正常航班后续安排</h3>
-		   由于本章第二条所列的原因之一，澜湄航空取消或延误航班，未能向旅客提供事先已定妥的座位（包括舱位等级），或未能在旅客的中途分程地点或目的地点停留，或造成旅客已定妥座位的航班衔接错失，澜湄航空将考虑旅客的合理需要采取下列措施之一供旅客选择：
+		   <p>由于本章第二条所列的原因之一，澜湄航空取消或延误航班，未能向旅客提供事先已定妥的座位（包括舱位等级），或未能在旅客的中途分程地点或目的地点停留，或造成旅客已定妥座位的航班衔接错失，澜湄航空将考虑旅客的合理需要采取下列措施之一供旅客选择：</p>
 		   <p>（一）为旅客安排在第一个能够定妥座位的澜湄航空后续航班。</p>
 		   <p>（二）变更原客票列明的航程，安排澜湄航空的航班将旅客运达目的地或中途分程地点，票款、逾重行李费和其他服务费用的差额多退少不补。</p>
 		   <p>（三）按照本条件第十一章第五条非自愿退票有关规定办理退票。 </p>
 		   <h3>第四条 有限责任</h3>
-		   以上所列的补救措施是旅客可选择的全部补救措施，除公约另有规定外澜湄航空不再承担其他责任。
+		   <p>以上所列的补救措施是旅客可选择的全部补救措施，除公约另有规定外澜湄航空不再承担其他责任。</p>
 
 		   <h2>第十章 客票变更</h2>
 		   <h3>第一条 旅客未开始旅行或者已开始旅行但未到达目的地点前，要求改变客票中未使用部分载明的航程、目的地点、座位等级、航班或者客票有效期为自愿改变航程。承运人取消旅客已定妥座位的航班，或者取消航班在旅客的目的地点、中途分程地点降停，或者未能合理地按照班期飞行，或者未能提供事先定妥的座位造成旅客改变航程，为非自愿改变航程。</h3>
@@ -453,53 +475,24 @@
 	</section>
 
 	<!-- 页脚 -->
-	<footer class="footerInfo">
-		<div class="footerBg">
-			<div class="HelpfulInformation">
-				<p>帮助信息</p>
-			</div>
-			<div class="contactUs">
-				<div class="nth-child1"><img src="../../../images/CN/email.png"><span>LM-EC@lanmeiairlines.com</span></div>
-				<div class="nth-child2">
-					<span>FOLLOW</span>
-					<a href="https://www.facebook.com/lanmeiairlines/">
-						<i class="iconfont icon-facebook"></i>
-					</a>
-					<a href="#"><i class="iconfont icon-in"></i></a>
-					<a href="#"><i class="iconfont icon-inst"></i></a>
-					<a href="#"><i class="iconfont icon-youtube"></i></a>
-					<a href="#"><i class="iconfont icon-googleplus"></i></a>
-					<a href="http://weibo.com/lanmeiair"><i class="iconfont icon-wb"></i></a>
-					<a href="#"><i class="iconfont icon-tuite"></i></a>
-				</div>
-			</div>
-			<div class="location">
-				<img src="../../../images/CN/location.png"><a href="http://www.google.cn/maps/place/Lanmei+Airlines/@11.5637363,104.8836365,17.75z/data=!4m5!3m4!1s0x310951a3c5cdaf97:0x77359b117b2ff068!8m2!3d11.5637363!4d104.8852876" target="_blank">柬埔寨金边市俄罗斯大道575号</a>
-			</div>
-			<div class="mobile-contactUs" style="display: none;">
-				<a href="https://www.facebook.com/lanmeiairlines/">
-					<i class="iconfont icon-facebook"></i>
-				</a>
-				<a href="#"><i class="iconfont icon-in"></i></a>
-				<a href="#"><i class="iconfont icon-inst"></i></a>
-				<a href="#"><i class="iconfont icon-youtube"></i></a>
-				<a href="#"><i class="iconfont icon-googleplus"></i></a>
-				<a href="http://weibo.com/lanmeiair"><i class="iconfont icon-wb"></i></a>
-				<a href="#"><i class="iconfont icon-tuite"></i></a>
-			</div>
-			<div class="LanmeiAirlinesBerhad">
-				<div class="nth-child2">
-					<span>使用条款 | 隐私策略 | Cookies</span>
-				</div>
-				<div class="nth-child1"><a href="../../../index.html" rel="nofollow"><img src="../../../images/CN/lanmeiFooterLogo.png"></a><span>© Copyright 2017 澜湄航空 粤<a href="http://www.miitbeian.gov.cn" target="_Blank">ICP备17005494-1</a></span></div>
-			</div>
-		</div>
+	<footer class="lm-footer">
+		<p class="lm-logo"></p>
+		<p class="facebook">
+			<a href="https://www.facebook.com/lanmeiairlines/" class="a1"><i class="iconfont icon-facebook"></i></a>
+			<a href="http://weibo.com/lanmeiair"><i class="iconfont icon-wb"></i></a>
+		</p>
+		<p class="f-email"><i class="iconfont icon-email"></i><span>lm-ec@lanmeiairlines.com</span></p>
+		<p class="f-local">
+			<i class="iconfont icon-local"></i>
+			<a href="https://goo.gl/maps/7pyBze8BFe52" target="_Blank">柬埔寨金边市俄罗斯大道575号</a>
+		</p>
+		<p class="copyright">© Copyright 2017 澜湄航空 粤 <a href="http://www.miitbeian.gov.cn" target="_Blank" rel="nofollow">ICP-17005494-1</a></p>
 	</footer>
 
 	<!-- 回到顶部 -->
 	<div class="BackToTop">
 		<div class="QRcode">
-			<p>微信<br/>公众号</p>
+			<p>微信 <br> 公众号</p>
 			<img src="../../../images/CN/QR-code-s.png" class="small-code">
 			<img src="../../../images/CN/QR-code-b.png" class="big-code">
 		</div>
@@ -516,7 +509,7 @@
 	<script type="text/javascript" src="../../../libs/mobile-libs/fastclick/fastclick.js"></script>
 	<script type="text/javascript" src="../../../libs/bootstrap/js/bootstrap.min.js"></script>
 	<!-- 公共JS -->
-	<script type="text/javascript" src="../../../common/CN/js/Lanmei-common.js"></script>
+	<script type="text/javascript" src="../common/menu-common.js"></script>
 	<!-- 业务代码 -->
 	<script type="text/javascript" src="js/LMTransport.js"></script>
 </body>

@@ -123,11 +123,6 @@ var LanmeiAirlines = {
 				break;
 			}
 		});
-		// 电话
-		$('.js-mh-phone').click(function(e) {
-			e.stopPropagation();
-			$(this).children('.js-mPhone-menu').show();
-		});
 
 		$('.js-from-input,.js-to-input,.js-hotelFrom-input,.js-routeId-input,.js-ticketType-input,.js-fNumber-input,.js-routeFrom-input,.js-routeTo-input').attr('readonly','readonly');
 		$('.js-select-way').css('visibility','visible');
@@ -3425,14 +3420,14 @@ var LanmeiAirlines = {
 			var docthis = $(".js-important-line");
 			//默认参数
 			value=$.extend({
-				"li_h":"60",
+				"li_h":"40",
 				"time":3000,
 				"movetime":1000
 			});
 			
 			//向上滑动动画
 			function autoani(){
-				$("li:first",docthis).animate({"margin-top":-value.li_h},value.movetime,function(){
+				$(".js-important-line li:first").animate({"margin-top":-value.li_h},value.movetime,function(){
 					$(this).css("margin-top",0).appendTo(".js-important-line");
 				});
 			}
