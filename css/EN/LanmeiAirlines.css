@@ -1616,6 +1616,29 @@ body {
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
 }
+.route-id-modal .modal-body .route-id-title {
+  padding: 20px;
+}
+.route-id-modal .modal-body .route-id-title p {
+  color: #1f2c5c;
+  font-size: 18px;
+}
+.route-id-modal .modal-body > h2 {
+  font-family: CamptonBookBold;
+  font-size: 24px;
+  color: #1f2c5c;
+  padding-left: 20px;
+}
+.route-id-modal .modal-body .route-id-content {
+  padding: 20px;
+  padding-left: 40px;
+}
+.route-id-modal .modal-body .route-id-content li {
+  list-style: disc;
+  font-size: 16px;
+  color: #808080;
+  line-height: 28px;
+}
 /* ie兼容 */
 .ie11 .rooms-content-com {
   margin-left: 18px !important;
@@ -2237,6 +2260,22 @@ body {
   .popup-content .popup-airport .hotel-list-wrap > li:hover {
     background: url('../../images/EN/hotel-small-icon-active.png') left center no-repeat;
   }
+  .popup-content .popup-airport .car-list-wrap > li {
+    padding-right: 30px;
+  }
+  .popup-content .popup-airport .car-list-wrap > li span {
+    color: #8f95ad;
+  }
+  .popup-content .popup-airport .car-list-wrap > li > p {
+    width: 42px;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+    float: right;
+  }
+  .popup-content .popup-airport .car-list-wrap > li:hover span {
+    color: #8ec060;
+  }
   .popup-content .popup-hotel-from {
     width: 660px;
   }
@@ -2249,6 +2288,10 @@ body {
   }
   .popup-content .popup-ticket-type .flight-list-wrap > li:hover {
     background: none;
+  }
+  .popup-content .popup-route-id {
+    width: 660px;
+    padding-right: 0;
   }
   .popup-content .popup-route-id .flight-list-wrap > li {
     background: url('../../images/EN/car-small-icon.png') left center no-repeat;
@@ -3119,7 +3162,7 @@ body {
     text-align: center;
     background: #fff;
   }
-  .select-air-com .car-ticket-num {
+  .select-air-com .car-route-id {
     width: 100%;
   }
   .select-air-com .car-com input {

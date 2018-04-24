@@ -756,10 +756,7 @@
 				<form id="air-car-form" action="" method="POST" target="_blank">
 					<p class="tips-com animated fadeInUp js-tips-com">Choose the car you want.</p>
 					<div class="select-car-time select-air-com js-car-time">
-						<div class="car-ticket-num from-com js-ticket-num animated fadeInUp">
-							<input type="text" class="ticket-num-input js-ticketNum-input" name="" value=""  placeholder="Ticket no" autocomplete="off">
-						</div>
-						<div class="car-route-id car-com js-route-id animated fadeInUp">
+						<div class="car-route-id from-com js-route-id animated fadeInUp">
 							<input type="text" class="route-id-input js-routeId-input" name="" value="" placeholder="Route id" autocomplete="off">
 						</div>
 						<div class="ticket-type-box car-com js-ticket-type animated fadeInUp">
@@ -794,6 +791,27 @@
 								<ul class="flight-list-wrap car-list-wrap js-ticketType-menu">
 									
 								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 租车路线弹出框 -->
+			<div class="modal fade route-id-modal" id="js-routeIdModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">Close<span aria-hidden="true">&times;</span></button>
+						</div>
+						<div class="modal-body">
+							<div class="route-id-title">
+								<p>Off-Peak: 60 minutes /bus</p>
+								<p>Peak hour: 30 minutes /bus</p>
+								<p>Operation Time：09:00~17:50</p>
+							</div>
+							<h2>Route details:</h2>
+							<div class="route-id-content js-routeId-content">
+								
 							</div>
 						</div>
 					</div>

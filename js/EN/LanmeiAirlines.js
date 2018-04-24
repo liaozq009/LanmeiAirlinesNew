@@ -1736,7 +1736,6 @@ var LanmeiAirlines = {
 		var $carContent = $('.js-carPopup-content'); //租车c3动画内容
 
 		/* 输入框 */
-		var $ticketNumInput = $('.js-ticketNum-input'); //机票号码输入框
 		var $routeIdInput = $('.js-routeId-input'); //预订路线
 		var $ticketTypeInput = $('.js-ticketType-input'); //票种
 		var $peopleNumInput = $('.js-peopleNum-input'); //票种
@@ -1750,8 +1749,8 @@ var LanmeiAirlines = {
 		var $ticketTypeBox = $('.js-carPopup-ticketType'); 
 
 		/* 点击第一个div,然后显示其他div  */
-		var $ticketNum = $('.js-ticket-num'); //机票号div
-		var $carZoom = $('.js-route-id,.js-ticket-type,.js-people-num,.js-car-cancel,.js-car-search');
+		var $ticketNum = $('.js-route-id'); //机票号div
+		var $carZoom = $('.js-ticket-type,.js-people-num,.js-car-cancel,.js-car-search');
 
 		/* css3动画 */
 		var carPopupShow = function(){
@@ -1769,13 +1768,22 @@ var LanmeiAirlines = {
 		var winWidth = $(window).width();
 		var that = this;
 
-		/* 机票号码 */
+		/* 预定路线 */
 		var carZoomShow = true;
 		var carOneClick = true;
-		$ticketNumInput.click(function(){
+		/* 预订路线 */
+		$routeIdInput.click(function(){
 			if(carOneClick){ //防止点击取消后，快速点击出发地产生的bug
-				$mask.fadeIn(); //显示遮罩层
-				carPopupHide();
+				if(winWidth>1300){
+					$carBox.css('left',0);
+				}else if(winWidth<=1300){
+					$carBox.css({'top':-10,'left':0});
+				}
+				carPopupShow(); //增加c3动画
+				$carContent.css('z-index','1'); //覆盖cancel按钮
+				$routeIdBox.show();
+				$ticketTypeBox.hide();
+
 				if(carZoomShow){
 					$carZoom.addClass('animated fadeInUp').css('visibility','visible');
 					carZoomShow = false; 
@@ -1785,33 +1793,49 @@ var LanmeiAirlines = {
 				}
 			}
 		}).one('click',function(){
-			$carBox.css('left',350);
-		});
-
-		/* 预订路线 */
-		$routeIdInput.click(function(){
-			if(winWidth>1300){
-				$carBox.css('left',350);
-			}else if(winWidth<=1300){
-				$carBox.css({'top':-10,'left':0});
-			}
-			carPopupShow(); //增加c3动画
-			$carContent.css('z-index','1'); //覆盖cancel按钮
-			$routeIdBox.show();
-			$ticketTypeBox.hide();
-		}).one('click',function(){
 			$routeIdMenuSub.empty();
 			$.each(that.carRouteData,function(i,val){
-				$routeIdMenuSub.append('<li title="'+val+'">'+val+'</li>');
+				$routeIdMenuSub.append('<li><span title="'+val+'">'+val+'</span> <p class="js-route-details" data="route-id-'+i+'" title="Route details"><img src="images/EN/prompt-icon.png" alt=""/></p> </li>');
 			});
 			// $('.js-from-menu>li:first').addClass('active');
-			that.keyEvent('.js-routeId-input','.js-routeId-menu',that.indexLiFrom); //绑定键盘事件
+			// that.keyEvent('.js-routeId-input','.js-routeId-menu',that.indexLiFrom); //绑定键盘事件
+		});
+
+		/* 弹出大巴路线详情 */
+		var routeHtml_1 = '<ul>'+
+				'<li>Phnom Penh International Airport</li>'+
+				'<li>Le President Hotel</li>'+
+				'<li>Raffles Hotel Le Royal</li>'+
+				'<li>Sunway Hotel</li>'+
+				'<li>Preah Sisowath High School</li>'+
+				'<li>NagaWorld Hotel & Entertainment Complex</li>'+
+				'<li>Toyoko Inn Phnom Penh</li>'+
+			'</ul>';
+		var routeHtml_2 = '<ul>'+
+				'<li>Phnom Penh International Airport</li>'+
+				'<li>InterContinental Phnom Penh</li>'+
+				'<li>Sihanouk West</li>'+
+				'<li>Sihanouk East</li>'+
+				'<li>NagaWorld Hotel & Entertainment Complex</li>'+
+				'<li>Toyoko - Inn Phnom Penh</li>'+
+				'<li>Hotel Sofitel Phnom Penh Phokeethra</li>'+
+			'</ul>';
+
+		$routeIdMenuSub.on('click','.js-route-details',function(){
+			$('#js-routeIdModal').modal();
+			var data = $(this).attr('data');
+			console.log(data);
+			if(data=='route-id-0'){
+				$('.js-routeId-content').html(routeHtml_1);
+			}else if(data=='route-id-1'){
+				$('.js-routeId-content').html(routeHtml_2);
+			}
 		});
 
 		/* 机票类型 */
 		$ticketTypeInput.click(function(){
 			if(winWidth>1300){
-				$carBox.css('left',700);
+				$carBox.css('left',350);
 			}else if(winWidth<=1300){
 				$carBox.css({'top':-10,'left':0});
 			}
@@ -1825,7 +1849,7 @@ var LanmeiAirlines = {
 				$ticketTypeMenuSub.append('<li title="'+val+'">'+val+'</li>');
 			});
 			// $('.js-from-menu>li:first').addClass('active');
-			that.keyEvent('.js-ticketType-input','.js-ticketType-menu',that.indexLiFrom); //绑定键盘事件
+			// that.keyEvent('.js-ticketType-input','.js-ticketType-menu',that.indexLiFrom); //绑定键盘事件
 		});
 
 		/* 点击取消 */
@@ -1869,11 +1893,11 @@ var LanmeiAirlines = {
 		});
 
 		/* 租车路线选择 */
-		$routeIdMenuSub.on('click','>li',function(){
+		$routeIdMenuSub.on('click','>li>span',function(){
 			var text = $(this).attr('title');
 			$routeIdInput.val(text);
 			if(winWidth>1300){
-				$carBox.css('left',700);
+				$carBox.css('left',350);
 			}else if(winWidth<=1300){
 				$carBox.css({'top':-10,'left':0});
 			}

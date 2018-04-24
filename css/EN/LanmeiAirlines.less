@@ -1592,6 +1592,34 @@ body{
 	}
 }
 
+.route-id-modal{
+	.modal-body{
+		.route-id-title{
+			padding: 20px;
+			p{
+				color: @purple;
+				font-size: 18px;
+			}
+		}
+		>h2{
+			font-family: @FBold;
+			font-size: 24px;
+			color: @purple;
+			padding-left: 20px;
+		}
+		.route-id-content{
+			padding: 20px;
+			padding-left: 40px;
+			li{
+				list-style: disc;
+				font-size: 16px;
+				color: #808080;
+				line-height: 28px;
+			}
+		}
+	}
+}
+
 /* ie兼容 */
 .ie11 {
 	.rooms-content-com{
@@ -2189,6 +2217,22 @@ body{
 					}
 				}
 			}
+			.car-list-wrap{
+				>li{
+					padding-right: 30px;
+					span{color:#8f95ad};
+					>p{
+						width: 42px;
+						height: 22px;
+						line-height: 22px;
+						text-align: center;
+						float: right;
+					}
+					&:hover{
+						span{color: @green;}
+					}
+				}
+			}
 		}
 		.popup-hotel-from{
 			width: 660px;
@@ -2202,6 +2246,8 @@ body{
 			}
 		}
 		.popup-route-id{
+			width: 660px;
+			padding-right: 0;
 			.flight-list-wrap > li{
 				background: url('@{url}car-small-icon.png') left center no-repeat;
 				&:hover{
@@ -3031,7 +3077,7 @@ body{
 				background:#fff;
 			}
 		}
-		.car-ticket-num{width: 100%;}
+		.car-route-id{width: 100%;}
 		.car-com{
 			input{
 				border-radius: 0;
