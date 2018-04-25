@@ -3,8 +3,8 @@ var LanmeiAirlines = {
 	fromCityData: ['Sihanoukville/KOS/Cambodia','Macao/MFM/Macao,China','Phnom Penh/PNH/Cambodia','Siem Reap/REP/Cambodia','Ho Chi Minh/SGN/Vietnam','Hanoi/HAN/Vietnam','HongKong/HKG/HongKong,China','SEOUL/ICN/Korea','Bangkok/BKK/Thailand','Shijiazhuang/SJW/China','Singapore/SIN/Singapore'],
 	toCityData: ['Sihanoukville/KOS/Cambodia','Macao/MFM/Macao,China','Phnom Penh/PNH/Cambodia','Siem Reap/REP/Cambodia','Ho Chi Minh/SGN/Vietnam','Hanoi/HAN/Vietnam','HongKong/HKG/HongKong,China','SEOUL/ICN/Korea','Bangkok/BKK/Thailand','Shijiazhuang/SJW/China','Singapore/SIN/Singapore'],
 	hotelCityData: ['Hong Phann Guest House','Phkar Chhouk Tep Monireth Hotel','Tt Guest House','Phkar Chhouk Tep 2 Hotel'],
-	carRouteData: ['机场--东横','机场--索菲特'],
-	carTicketTypeData: ['单程','往返'],
+	carRouteData: ['Airport --> Toyoko Inn','Airport --> Sofitel'],
+	carTicketTypeData: ['One-way','Return'],
 	fNumberData: ['LQ503','LQ502','LQ806','LQ807','LQ315','LQ316','LQ317','LQ318','LQ9302','LQ9303','LQ333','LQ332','LQ660','LQ661','LQ970','LQ971','LQ666','LQ667','LQ670','LQ671','LQ780','LQ781','LQ916','LQ917','LQ9509','LQ9508'],
 	indexLiFrom: 0, //定义键盘移动index 
 	indexLiTo: 0,
@@ -1802,29 +1802,12 @@ var LanmeiAirlines = {
 		});
 
 		/* 弹出大巴路线详情 */
-		var routeHtml_1 = '<ul>'+
-				'<li>Phnom Penh International Airport</li>'+
-				'<li>Le President Hotel</li>'+
-				'<li>Raffles Hotel Le Royal</li>'+
-				'<li>Sunway Hotel</li>'+
-				'<li>Preah Sisowath High School</li>'+
-				'<li>NagaWorld Hotel & Entertainment Complex</li>'+
-				'<li>Toyoko Inn Phnom Penh</li>'+
-			'</ul>';
-		var routeHtml_2 = '<ul>'+
-				'<li>Phnom Penh International Airport</li>'+
-				'<li>InterContinental Phnom Penh</li>'+
-				'<li>Sihanouk West</li>'+
-				'<li>Sihanouk East</li>'+
-				'<li>NagaWorld Hotel & Entertainment Complex</li>'+
-				'<li>Toyoko - Inn Phnom Penh</li>'+
-				'<li>Hotel Sofitel Phnom Penh Phokeethra</li>'+
-			'</ul>';
+		var routeHtml_1 = '<img src="images/EN/airport-route-1.jpg" alt="Route details">';
+		var routeHtml_2 = '<img src="images/EN/airport-route-2.jpg" alt="Route details">';
 
 		$routeIdMenuSub.on('click','.js-route-details',function(){
 			$('#js-routeIdModal').modal();
 			var data = $(this).attr('data');
-			console.log(data);
 			if(data=='route-id-0'){
 				$('.js-routeId-content').html(routeHtml_1);
 			}else if(data=='route-id-1'){
@@ -1964,7 +1947,7 @@ var LanmeiAirlines = {
 
 			$routeIdMenuSub.empty();
 			$.each(that.carRouteData,function(i,val){
-				$routeIdMenuSub.append('<li title="'+val+'">'+val+'</li>');
+				$routeIdMenuSub.append('<li><span title="'+val+'" data-val="'+i+'">'+val+'</span> <p class="js-route-details" data="route-id-'+i+'" title="Route details"></p> </li>');
 			});
 
 			ovfHiden(); //使网页不可滚动
@@ -1975,10 +1958,41 @@ var LanmeiAirlines = {
 			$container.addClass('is-show');
 		});
 
+		/* 弹出大巴路线详情 */
+		var routeHtml_1 = '<ul>'+
+				'<li>Phnom Penh International Airport</li>'+
+				'<li>Le President Hotel</li>'+
+				'<li>Raffles Hotel Le Royal</li>'+
+				'<li>Sunway Hotel</li>'+
+				'<li>Preah Sisowath High School</li>'+
+				'<li>NagaWorld Hotel & Entertainment Complex</li>'+
+				'<li>Toyoko Inn Phnom Penh</li>'+
+			'</ul>';
+		var routeHtml_2 = '<ul>'+
+				'<li>Phnom Penh International Airport</li>'+
+				'<li>InterContinental Phnom Penh</li>'+
+				'<li>Sihanouk West</li>'+
+				'<li>Sihanouk East</li>'+
+				'<li>NagaWorld Hotel & Entertainment Complex</li>'+
+				'<li>Toyoko - Inn Phnom Penh</li>'+
+				'<li>Hotel Sofitel Phnom Penh Phokeethra</li>'+
+			'</ul>';
+
+		$routeIdMenuSub.on('click','.js-route-details',function(e){
+			e.stopPropagation();
+			$('#js-routeIdModal').modal();
+			var data = $(this).attr('data');
+			if(data=='route-id-0'){
+				$('.js-routeId-content').html(routeHtml_1);
+			}else if(data=='route-id-1'){
+				$('.js-routeId-content').html(routeHtml_2);
+			}
+		});
+
 		// this.autoComplete('.js-routeId-search');
 
 		// 预定路线选择 
-		$routeIdMenuSub.on('click','>li',function(){
+		$routeIdMenuSub.on('click','>li>span',function(){
 			var text1 = $(this).attr('title');
 			$routeIdInput.val(text1);
 			hideContainer();

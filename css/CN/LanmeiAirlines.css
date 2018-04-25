@@ -243,7 +243,7 @@ body {
   top: 60px;
   right: 0;
   width: 94%;
-  height: 220px;
+  height: 180px;
   background-image: -webkit-linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 100%);
 }
 .content-com-inner {
@@ -256,7 +256,7 @@ body {
   opacity: 0.9;
   filter: alpha(opacity=90);
   font-weight: bold;
-  font-size: 64px;
+  font-size: 58px;
   line-height: 70px;
 }
 .content-com-inner > h1 span {
@@ -534,7 +534,7 @@ body {
 }
 .flight-com {
   position: absolute;
-  top: 280px;
+  top: 240px;
   left: 16%;
   z-index: 11;
 }
@@ -603,20 +603,20 @@ body {
 .select-air-com > div :-moz-placeholder {
   /* Mozilla Firefox 4 to 18 */
   color: rgba(31, 44, 92, 0.3);
-  font-size: 20px;
+  font-size: 16px;
 }
 .select-air-com > div ::-moz-placeholder {
   /* Mozilla Firefox 19+ */
   color: rgba(31, 44, 92, 0.3);
-  font-size: 20px;
+  font-size: 16px;
 }
 .select-air-com > div input:-ms-input-placeholder {
   color: rgba(31, 44, 92, 0.3);
-  font-size: 20px;
+  font-size: 16px;
 }
 .select-air-com > div input::-webkit-input-placeholder {
   color: rgba(31, 44, 92, 0.3);
-  font-size: 20px;
+  font-size: 16px;
 }
 .select-air-com > div input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -978,9 +978,9 @@ body {
 .section-content-title {
   position: relative;
   height: 130px;
-  line-height: 140px;
+  line-height: 116px;
   margin-bottom: 30px;
-  font-size: 90px;
+  font-size: 70px;
   font-weight: bold;
   color: rgba(31, 44, 92, 0.1);
   text-align: center;
@@ -1615,12 +1615,16 @@ body {
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
 }
+.route-id-modal .modal-dialog {
+  width: 700px;
+}
 .route-id-modal .modal-body .route-id-title {
   padding: 20px;
 }
 .route-id-modal .modal-body .route-id-title p {
-  color: #1f2c5c;
+  color: #808080;
   font-size: 18px;
+  line-height: 28px;
 }
 .route-id-modal .modal-body > h2 {
   font-family: CamptonBookBold;
@@ -1631,6 +1635,9 @@ body {
 .route-id-modal .modal-body .route-id-content {
   padding: 20px;
   padding-left: 40px;
+}
+.route-id-modal .modal-body .route-id-content > img {
+  width: 100%;
 }
 .route-id-modal .modal-body .route-id-content li {
   list-style: disc;
@@ -2916,7 +2923,7 @@ body {
     text-align: right;
     height: 30px;
     line-height: 30px;
-    background: url('../../images/CN/svg/lang-en.svg') right center no-repeat;
+    background: url('../../images/CN/svg/lang-zh.svg') right center no-repeat;
   }
   .lm-nav-wrap .nav-container .nav-settings .h-lang .lang-menu {
     display: none;
@@ -3067,11 +3074,10 @@ body {
     width: 100%;
     left: 0;
     top: 0;
-    padding: 20px 15px;
+    padding: 30px 15px;
   }
   .content-com-inner > h1 {
-    height: 50px;
-    font-size: 26px;
+    font-size: 22px;
     line-height: 26px;
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -3473,7 +3479,7 @@ body {
   .popup-content .popup-airport .flight-list-wrap > li {
     width: 100%;
     height: 30px;
-    line-height: 30px;
+    line-height: 36px;
     padding-left: 30px;
     margin-bottom: 10px;
     font-size: 16px;
@@ -3491,6 +3497,17 @@ body {
   }
   .popup-content .popup-airport .car-list-wrap > li {
     background: url('../../images/CN/svg/car-small-icon.svg') left center no-repeat;
+  }
+  .popup-content .popup-airport .car-list-wrap > li span {
+    color: rgba(31, 44, 92, 0.5);
+  }
+  .popup-content .popup-airport .car-list-wrap > li > p {
+    width: 42px;
+    height: 30x;
+    line-height: 22px;
+    text-align: center;
+    float: right;
+    background: url('../../images/CN/svg/prompt-icon.svg') center no-repeat;
   }
   .popup-content .popup-people {
     width: 100%;
@@ -3854,6 +3871,26 @@ body {
     font-size: 20px;
     background: linear-gradient(to right, #42958a 0%, #1f2c5c 100%);
   }
+  .route-id-modal .modal-dialog {
+    width: 90%;
+  }
+  .route-id-modal .modal-body .route-id-title {
+    padding: 0.15rem;
+  }
+  .route-id-modal .modal-body .route-id-title p {
+    font-size: 0.12rem;
+    line-height: 0.26rem;
+  }
+  .route-id-modal .modal-body > h2 {
+    font-size: 0.18rem;
+  }
+  .route-id-modal .modal-body .route-id-content {
+    padding: 0.1rem 0.15rem 0.15rem 0.3rem;
+  }
+  .route-id-modal .modal-body .route-id-content li {
+    font-size: 0.12rem;
+    line-height: 0.26rem;
+  }
   .popup-container.is-show {
     visibility: visible;
     -webkit-transform: translateY(-150px);
@@ -4144,5 +4181,24 @@ body {
   }
   .lm-section-news .news-wrap .news-content {
     margin-left: 0;
+  }
+}
+/* 游记弹出框样式 */
+.travel-diary .close-diary {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  margin-left: 300px;
+  background: url(../../../images/EN/mobal-close.png) center no-repeat #fff;
+  box-shadow: 0 0 30px 0 rgba(170, 199, 249, 0.5);
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  opacity: 1;
+  cursor: pointer;
+}
+@media (max-width: 1600px) {
+  .close-diary {
+    top: 20px;
   }
 }

@@ -276,7 +276,7 @@ body{
 	top:60px;
 	right: 0;
 	width: 94%;
-	height: 220px;
+	height: 180px;
 	background-image:-webkit-linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.1) 100%);
 }
 .content-com-inner{
@@ -288,7 +288,7 @@ body{
 		opacity:0.9;
 		filter:alpha(opacity=90);
 		font-weight: bold;
-		font-size:64px;
+		font-size:58px;
 		line-height:70px;
 		span{color: @green;}
 	}
@@ -551,7 +551,7 @@ body{
 }
 .flight-com{
 	position: absolute;
-	top: 280px;
+	top: 240px;
 	left: 16%;
 	z-index: 11;
 	.tips-com{
@@ -615,19 +615,19 @@ body{
 			border-radius: 2px;
 		}
 		:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-			.purpleRgb(.3);font-size: 20px; 
+			.purpleRgb(.3);font-size: 16px; 
 		}
 
 		::-moz-placeholder { /* Mozilla Firefox 19+ */
-			.purpleRgb(.3);font-size: 20px;
+			.purpleRgb(.3);font-size: 16px;
 		}
 
 		input:-ms-input-placeholder{
-			.purpleRgb(.3);font-size: 20px;
+			.purpleRgb(.3);font-size: 16px;
 		}
 
 		input::-webkit-input-placeholder{
-			.purpleRgb(.3);font-size: 20px;
+			.purpleRgb(.3);font-size: 16px;
 		}
 		input::-webkit-inner-spin-button {
 		    -webkit-appearance: none;
@@ -963,9 +963,9 @@ body{
 .section-content-title{
 	position: relative;
 	height: 130px;
-	line-height: 140px;
+	line-height: 116px;
 	margin-bottom: 30px;
-	font-size: 90px;
+	font-size: 70px;
 	font-weight: bold;
 	.purpleRgb(.1);
 	text-align: center;
@@ -1592,12 +1592,14 @@ body{
 }
 
 .route-id-modal{
+	.modal-dialog{width: 700px;}
 	.modal-body{
 		.route-id-title{
 			padding: 20px;
 			p{
-				color: @purple;
+				color: #808080;
 				font-size: 18px;
+				line-height: 28px;
 			}
 		}
 		>h2{
@@ -1609,6 +1611,7 @@ body{
 		.route-id-content{
 			padding: 20px;
 			padding-left: 40px;
+			>img{width: 100%;}
 			li{
 				list-style: disc;
 				font-size: 16px;
@@ -2840,7 +2843,7 @@ body{
 					text-align: right;
 					height: 30px;
 					line-height: 30px;
-					background: url('@{url}svg/lang-en.svg') right center no-repeat;
+					background: url('@{url}svg/lang-zh.svg') right center no-repeat;
 					.lang-menu{
 						display: none;
 						position: absolute;
@@ -2990,10 +2993,9 @@ body{
 		width: 100%;
 		left: 0;
 		top: 0;
-		padding:20px 15px;
+		padding:30px 15px;
 		>h1{
-			height: 50px;
-			font-size: 26px;
+			font-size: 22px;
 			line-height: 26px;
 			display: -webkit-box;
 			-webkit-box-orient: vertical;
@@ -3347,7 +3349,7 @@ body{
 				>li{
 					width: 100%;
 					height: 30px;
-					line-height: 30px;
+					line-height: 36px;
 					padding-left: 30px;
 					margin-bottom: 10px;
 					font-size: 16px;
@@ -3367,6 +3369,17 @@ body{
 			.car-list-wrap{
 				>li{
 					background: url('@{url}svg/car-small-icon.svg') left center no-repeat;
+					span{
+						.purpleRgb(.5);
+					}
+					>p{
+						width: 42px;
+						height: 30x;
+						line-height: 22px;
+						text-align: center;
+						float: right;
+						background: url('@{url}svg/prompt-icon.svg') center no-repeat;
+					}
 				}
 			}
 		}
@@ -3739,6 +3752,22 @@ body{
 			}
 		}
 	}
+	.route-id-modal {
+		.modal-dialog{width: 90%;}
+		.modal-body{
+			.route-id-title {
+				padding: 0.15rem;
+				p {font-size: 0.12rem;line-height: 0.26rem;}
+			}
+			>h2{
+				font-size: 0.18rem;
+			}
+			.route-id-content{
+				padding: 0.1rem 0.15rem 0.15rem 0.3rem;
+				li{font-size: 0.12rem;line-height: 0.26rem;}
+			}
+		}
+	}
 	.popup-container.is-show{
 		visibility: visible;
 		-webkit-transform: translateY(-150px);
@@ -3991,3 +4020,26 @@ body{
 		}
 	}
 }
+
+/* 游记弹出框样式 */
+.travel-diary{
+	.close-diary{
+		position: absolute;
+	    top: 50px;
+	    left: 50%;
+	    margin-left: 300px;
+	    background: url(../../../images/EN/mobal-close.png) center no-repeat #fff;
+	    box-shadow: 0 0 30px 0 rgba(170,199,249,0.50);
+	    width: 30px;
+	    height: 30px;
+	    border-radius: 100%;
+	    opacity: 1;
+	    cursor: pointer
+	}
+}
+@media (max-width: 1600px){
+	.close-diary{
+	  	top: 20px;
+	  }
+}
+
