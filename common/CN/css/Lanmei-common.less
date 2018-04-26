@@ -52,7 +52,7 @@
 	background: rgba(31,44,92,@opacity);
 }
 
-/*滚动条整体部分,必须要设置*/
+/* 滚动条整体部分,必须要设置 */
 ::-webkit-scrollbar{
 	width: 8px;
 	background-color: #B0AEDA;
@@ -163,6 +163,16 @@ body {
 		cursor: pointer;
 		background: url('@{url}menu.png') left center no-repeat;
 		>img{margin-right: 20px;}
+	}
+	.menu-guide{
+		position: absolute;
+	    top: 15px;
+	    left: 160px;
+		width: 240px;
+		height: 30px;
+		line-height: 30px;
+		padding-left: 40px;
+		background: url('@{url}menu-guide.png') left center no-repeat;
 	}
 	.h-logo-wrap{
 		width: 205px;
@@ -299,6 +309,7 @@ body {
 		left: -50px;
 		width: 80px;
 		height: 80px;
+		background: url('@{url}phone.png') center 20px no-repeat;
 		.phone-menu{
 			display: none;
 			position: absolute;
@@ -349,6 +360,11 @@ body {
 		right: -20px;
 		width: 70px;
 		height: 80px;
+		>p{
+			width: 70px;
+			height: 80px;
+			background: url('@{url}lang-zh.png') center 15px no-repeat;
+		}
 		.lang-menu{
 			display: none;
 			position: absolute;
@@ -406,6 +422,19 @@ body {
 			}
 		}
 		&:hover{.lang-menu{display: block;}}
+	}
+}
+
+.lm-sub-header{
+	position: relative;
+	top: 0;
+	.h-logo-wrap{
+		margin:0;
+		display: block;
+		cursor: pointer;
+	}
+	.h-right{
+		.h-phone{left: -150px;}
 	}
 }
 
@@ -557,6 +586,7 @@ body {
 @media screen and (max-width: 992px) {
 	.lm-header{
 		.h-logo{display: none;}
+		.menu-guide{display: none;}
 		.mobile-logo{
 			display: inline-block;
 			height: 40px;
@@ -567,6 +597,33 @@ body {
 		}
 		.h-login,.h-registered {
 			span{display: none;}
+		}
+	}
+	.lm-sub-header{
+		.h-right {
+		 	.h-phone{
+				left: -110px;
+				.phone-menu{
+					width: 170px;
+					height: 146px;
+					padding: 10px;
+					>h2{font-size: 16px;}
+					>p{
+						font-size: 14px;
+						padding-left: 30px;
+						background-size: 16px;
+					}
+					.p1{margin-top: 12px;}
+				}
+		 	}
+		}
+		.h-lang .lang-menu{
+			>h2{font-size: 16px;}
+			left: -130px;
+			width: 190px;
+			height: 126px;
+			padding: 10px;
+			.lang-en{margin-top: 12px;}
 		}
 	}
 	.BackToTop{
@@ -681,6 +738,30 @@ body {
 					border-left: 7px solid transparent;
 					border-right: 7px solid transparent;
 					border-bottom: 7px solid #fff;
+				}
+			}
+		}
+	}
+
+	.lm-sub-header {
+		position: relative;
+		.h-right {
+			> div{display: block;}
+		}
+		.h-phone{
+			background: url('@{url}svg/phone.svg') center 20px no-repeat;
+			.phone-menu > p{
+				background: url('@{url}svg/phone-bg.svg') left center no-repeat;
+			}
+		}
+		.h-lang {
+			> p{background: url('@{url}svg/lang-en.svg') center 15px no-repeat;}
+			.lang-menu {
+				.lang-en{
+					background: url('@{url}svg/lang-en.svg') left center no-repeat;
+				}
+				.lang-zh{
+					background: url('@{url}svg/lang-zh.svg') left center no-repeat;
 				}
 			}
 		}
@@ -847,4 +928,39 @@ body {
 			}
 		}
 	}
-}	
+}
+
+/* 游记弹出框样式 */
+.travel-diary{
+	.diaryModal{
+		background: rgba(255, 255, 255, 1);
+	}
+	.modal-content{
+		width: 100%;
+	    height: 760px;
+	    background: rgba(241, 250, 255, 0.8);
+	    box-shadow: 0 0 50px 0 rgba(111, 162, 246, 0.5);
+	    border-radius: 10px;
+	    border: none;
+	}
+	.close-diary{
+		position: absolute;
+	    top: 50px;
+	    left: 50%;
+	    margin-left: 300px;
+	    background: url('@{url}mobal-close.png') center no-repeat #fff;
+	    box-shadow: 0 0 30px 0 rgba(170,199,249,0.50);
+	    width: 30px;
+	    height: 30px;
+	    border-radius: 100%;
+	    border:none;
+	    opacity: 1;
+	    cursor: pointer
+	}
+}
+@media (max-width: 1600px){
+	.close-diary{
+	  	top: 20px;
+	  }
+}
+

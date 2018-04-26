@@ -14,26 +14,6 @@
   font-weight: bold;
 }
 /* 定义颜色变量 */
-.lm-header {
-  position: relative;
-}
-.lm-header .h-menu {
-  display: none;
-}
-.lm-header .h-logo-wrap {
-  margin: 0;
-  display: block;
-  cursor: pointer;
-}
-.lm-header .h-right .v-line,
-.lm-header .h-right .h-login,
-.lm-header .h-right .dot-login,
-.lm-header .h-right .h-registered {
-  display: none;
-}
-.lm-header .h-right .h-phone {
-  left: -150px;
-}
 .lm-section {
   width: 940px;
   min-height: 664px;
@@ -110,37 +90,6 @@
   -webkit-transition: all .3s;
 }
 @media screen and (max-width: 992px) {
-  .lm-header .h-right .h-phone {
-    left: -110px;
-  }
-  .lm-header .h-right .h-phone .phone-menu {
-    width: 170px;
-    height: 146px;
-    padding: 10px;
-  }
-  .lm-header .h-right .h-phone .phone-menu > h2 {
-    font-size: 16px;
-  }
-  .lm-header .h-right .h-phone .phone-menu > p {
-    font-size: 14px;
-    padding-left: 30px;
-    background-size: 16px;
-  }
-  .lm-header .h-right .h-phone .phone-menu .p1 {
-    margin-top: 12px;
-  }
-  .lm-header .h-lang .lang-menu {
-    left: -130px;
-    width: 190px;
-    height: 126px;
-    padding: 10px;
-  }
-  .lm-header .h-lang .lang-menu > h2 {
-    font-size: 16px;
-  }
-  .lm-header .h-lang .lang-menu .lang-en {
-    margin-top: 12px;
-  }
   .lm-section {
     width: 100%;
     padding: 0.3rem 0.15rem 0.1rem;
@@ -169,10 +118,5 @@
     font-size: 0.14rem;
     margin-bottom: 0.2rem;
     line-height: 0.26rem;
-  }
-}
-@media screen and (max-width: 767px) {
-  .lm-header .h-right > div {
-    display: block;
   }
 }

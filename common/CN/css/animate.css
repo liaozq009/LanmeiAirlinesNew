@@ -71,6 +71,34 @@ html, body {
   animation-name: bounce;
 }
 
+@-webkit-keyframes bounce-left {
+  25% {
+   -webkit-transform: translateX(-10px);
+  }
+  50%, 100% {
+   -webkit-transform: translateX(0);
+  }
+   75% {
+  -webkit-transform: translateX(10px);
+  }
+}
+@keyframes bounce-left {
+  25% {
+    transform: translateX(-10px);
+  }
+  50%, 100% {
+    transform: translateX(0);
+  }
+  75% {
+    transform: translateX(10px);
+  }
+}
+
+.bounce-left {
+  -webkit-animation: bounce-left 1s ease-in infinite;
+  animation: bounce-left 1s ease-in infinite;
+}
+
 @-webkit-keyframes flash {
   0%, 50%, 100% {
     opacity: 1;

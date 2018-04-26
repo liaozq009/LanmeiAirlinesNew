@@ -16,7 +16,7 @@
 /* 定义变量 */
 /* 定义颜色变量 */
 /*ie8*/
-/*滚动条整体部分,必须要设置*/
+/* 滚动条整体部分,必须要设置 */
 ::-webkit-scrollbar {
   width: 8px;
   background-color: #B0AEDA;
@@ -141,6 +141,16 @@ body {
 }
 .lm-header .h-menu > img {
   margin-right: 20px;
+}
+.lm-header .menu-guide {
+  position: absolute;
+  top: 15px;
+  left: 160px;
+  width: 240px;
+  height: 30px;
+  line-height: 30px;
+  padding-left: 40px;
+  background: url('../../../images/CN/menu-guide.png') left center no-repeat;
 }
 .lm-header .h-logo-wrap {
   width: 205px;
@@ -276,6 +286,7 @@ body {
   left: -50px;
   width: 80px;
   height: 80px;
+  background: url('../../../images/CN/phone.png') center 20px no-repeat;
 }
 .lm-header .h-phone .phone-menu {
   display: none;
@@ -330,6 +341,11 @@ body {
   right: -20px;
   width: 70px;
   height: 80px;
+}
+.lm-header .h-lang > p {
+  width: 70px;
+  height: 80px;
+  background: url('../../../images/CN/lang-zh.png') center 15px no-repeat;
 }
 .lm-header .h-lang .lang-menu {
   display: none;
@@ -389,6 +405,18 @@ body {
 }
 .lm-header .h-lang:hover .lang-menu {
   display: block;
+}
+.lm-sub-header {
+  position: relative;
+  top: 0;
+}
+.lm-sub-header .h-logo-wrap {
+  margin: 0;
+  display: block;
+  cursor: pointer;
+}
+.lm-sub-header .h-right .h-phone {
+  left: -150px;
 }
 /* 返回页面顶部 */
 .BackToTop {
@@ -535,6 +563,9 @@ body {
   .lm-header .h-logo {
     display: none;
   }
+  .lm-header .menu-guide {
+    display: none;
+  }
   .lm-header .mobile-logo {
     display: inline-block;
     height: 40px;
@@ -549,6 +580,37 @@ body {
   .lm-header .h-login span,
   .lm-header .h-registered span {
     display: none;
+  }
+  .lm-sub-header .h-right .h-phone {
+    left: -110px;
+  }
+  .lm-sub-header .h-right .h-phone .phone-menu {
+    width: 170px;
+    height: 146px;
+    padding: 10px;
+  }
+  .lm-sub-header .h-right .h-phone .phone-menu > h2 {
+    font-size: 16px;
+  }
+  .lm-sub-header .h-right .h-phone .phone-menu > p {
+    font-size: 14px;
+    padding-left: 30px;
+    background-size: 16px;
+  }
+  .lm-sub-header .h-right .h-phone .phone-menu .p1 {
+    margin-top: 12px;
+  }
+  .lm-sub-header .h-lang .lang-menu {
+    left: -130px;
+    width: 190px;
+    height: 126px;
+    padding: 10px;
+  }
+  .lm-sub-header .h-lang .lang-menu > h2 {
+    font-size: 16px;
+  }
+  .lm-sub-header .h-lang .lang-menu .lang-en {
+    margin-top: 12px;
   }
   .BackToTop {
     display: none;
@@ -673,6 +735,27 @@ body {
     border-left: 7px solid transparent;
     border-right: 7px solid transparent;
     border-bottom: 7px solid #fff;
+  }
+  .lm-sub-header {
+    position: relative;
+  }
+  .lm-sub-header .h-right > div {
+    display: block;
+  }
+  .lm-sub-header .h-phone {
+    background: url('../../../images/CN/svg/phone.svg') center 20px no-repeat;
+  }
+  .lm-sub-header .h-phone .phone-menu > p {
+    background: url('../../../images/CN/svg/phone-bg.svg') left center no-repeat;
+  }
+  .lm-sub-header .h-lang > p {
+    background: url('../../../images/CN/svg/lang-en.svg') center 15px no-repeat;
+  }
+  .lm-sub-header .h-lang .lang-menu .lang-en {
+    background: url('../../../images/CN/svg/lang-en.svg') left center no-repeat;
+  }
+  .lm-sub-header .h-lang .lang-menu .lang-zh {
+    background: url('../../../images/CN/svg/lang-zh.svg') left center no-repeat;
   }
   .lm-footer {
     height: 200px;
@@ -852,5 +935,36 @@ body {
   #logonModal .agree a {
     height: 25px;
     line-height: 25px;
+  }
+}
+/* 游记弹出框样式 */
+.travel-diary .diaryModal {
+  background: #ffffff;
+}
+.travel-diary .modal-content {
+  width: 100%;
+  height: 760px;
+  background: rgba(241, 250, 255, 0.8);
+  box-shadow: 0 0 50px 0 rgba(111, 162, 246, 0.5);
+  border-radius: 10px;
+  border: none;
+}
+.travel-diary .close-diary {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  margin-left: 300px;
+  background: url('../../../images/CN/mobal-close.png') center no-repeat #fff;
+  box-shadow: 0 0 30px 0 rgba(170, 199, 249, 0.5);
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  border: none;
+  opacity: 1;
+  cursor: pointer;
+}
+@media (max-width: 1600px) {
+  .close-diary {
+    top: 20px;
   }
 }

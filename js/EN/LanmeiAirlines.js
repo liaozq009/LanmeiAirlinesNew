@@ -3493,19 +3493,6 @@ var LanmeiAirlines = {
 			e.stopPropagation();
 			$('.js-lang-menu').show();
 		});
-		$('.js-lang-menu>a').click(function(event) {
-			var data = $(this).attr('data');
-			switch (data) {
-				case 'en':
-				$('.js-choose-lang').attr('src','images/EN/lang-en.png')
-				$langMenu.hide();
-				break;
-				case 'zh':
-				$('.js-choose-lang').attr('src','images/EN/lang-zh.png');
-				$langMenu.hide();
-				break;
-			}
-		});
 
 		/* 电话 */
 		var $phoneMenu = $('.js-phone-menu');
