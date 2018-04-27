@@ -812,16 +812,7 @@ body {
   width: 310px;
   height: 60px;
   line-height: 60px;
-  text-align: center;
   font-size: 20px;
-  color: #fff;
-  border: none;
-  outline: none;
-  border-radius: 2px;
-  background: -webkit-linear-gradient(left, #42958a 0%, #1f2c5c 100%);
-  background: -o-linear-gradient(right, #42958a 0%, #1f2c5c 100%);
-  background: -moz-linear-gradient(right, #42958a 0%, #1f2c5c 100%);
-  background: linear-gradient(to right, #42958a 0%, #1f2c5c 100%);
 }
 .search-flight-wrap {
   visibility: hidden;
@@ -1639,6 +1630,7 @@ body {
 }
 .route-id-modal .modal-body .route-id-content > img {
   width: 100%;
+  cursor: zoom-in;
 }
 .route-id-modal .modal-body .route-id-content li {
   list-style: disc;
@@ -2268,6 +2260,7 @@ body {
     background: url('../../images/EN/hotel-small-icon-active.png') left center no-repeat;
   }
   .popup-content .popup-airport .car-list-wrap > li {
+    padding-top: 12px;
     padding-right: 30px;
   }
   .popup-content .popup-airport .car-list-wrap > li span {
@@ -2275,10 +2268,9 @@ body {
   }
   .popup-content .popup-airport .car-list-wrap > li > p {
     width: 42px;
-    height: 22px;
-    line-height: 22px;
-    text-align: center;
+    height: 30px;
     float: right;
+    background: url('../../images/EN/prompt-icon.png') center no-repeat;
   }
   .popup-content .popup-airport .car-list-wrap > li:hover span {
     color: #8ec060;
@@ -2305,6 +2297,9 @@ body {
   }
   .popup-content .popup-route-id .flight-list-wrap > li:hover {
     background: url('../../images/EN/car-small-icon-active.png') left center no-repeat;
+  }
+  .popup-content .popup-route-id .car-list-wrap > li {
+    width: 100%;
   }
   .popup-content .popup-airport-to {
     display: none;

@@ -46,7 +46,8 @@ var LanmeiAirlines = {
 			this.asideMenu();
 			this.ticketSelect();
 			// 判断是否为ie浏览器
-			if (window.ActiveXObject || "ActiveXObject" in window){
+			var agent = navigator.userAgent.toLowerCase();
+			if (window.ActiveXObject || "ActiveXObject" in window || (agent.indexOf("safari") > 0 && agent.indexOf("chrome") < 0) ){
 				// alert("ie");
 			}else{
 				//alert("not ie");
@@ -171,7 +172,8 @@ var LanmeiAirlines = {
 		});
 
 		// 点击一级菜单
-		$('.js-nav-first a').click(function(event) {
+		$('.js-nav-first a').click(function(e) {
+			!$(this).attr('data-href') && e.preventDefault();
 			if(winWidth>992){
 				$secondMenu.css('left',270);
 				$threeMenu.css('left',-300);
@@ -193,7 +195,8 @@ var LanmeiAirlines = {
 		});
 
 		// 点击二级菜单
-		$('.js-nav-second a').click(function(event) {
+		$('.js-nav-second a').click(function(e) {
+			!$(this).attr('data-href') && e.preventDefault();
 			if(!$(this).attr('data-href')){
 				if(winWidth>992){
 					$threeMenu.css('left',570);
@@ -1795,7 +1798,7 @@ var LanmeiAirlines = {
 		}).one('click',function(){
 			$routeIdMenuSub.empty();
 			$.each(that.carRouteData,function(i,val){
-				$routeIdMenuSub.append('<li><span title="'+val+'">'+val+'</span> <p class="js-route-details" data="route-id-'+i+'" title="Route details"><img src="images/EN/prompt-icon.png" alt=""/></p> </li>');
+				$routeIdMenuSub.append('<li><span title="'+val+'">'+val+'</span> <p class="js-route-details" data="route-id-'+i+'" title="Route details"></p> </li>');
 			});
 			// $('.js-from-menu>li:first').addClass('active');
 			// that.keyEvent('.js-routeId-input','.js-routeId-menu',that.indexLiFrom); //绑定键盘事件
@@ -1813,6 +1816,16 @@ var LanmeiAirlines = {
 			}else if(data=='route-id-1'){
 				$('.js-routeId-content').html(routeHtml_2);
 			}
+		});
+		$('.js-routeId-content').click(function(event) {
+			var src = $(this).children('img').attr('src');
+			layer.open({
+			  area: ['90%', 'auto'],
+			  type: 1,
+			  shadeClose: true,
+			  title: false, //不显示标题
+			  content: '<img src="'+src+'" alt="Route details" style="width:100%;margin-top:30px;">'
+			});
 		});
 
 		/* 机票类型 */

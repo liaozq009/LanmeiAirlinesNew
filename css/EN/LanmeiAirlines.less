@@ -800,16 +800,7 @@ body{
 		width: 310px;
 		height: 60px;
 		line-height: 60px;
-		text-align: center;
 		font-size: 20px;
-		color: #fff;
-		border: none;
-		outline: none;
-		border-radius: 2px;
-		background: @webkit-linear;
-		background: @o-linear;
-		background: @moz-linear;
-		background: @linear;
 	}
 }
 .search-flight-wrap{
@@ -1612,7 +1603,10 @@ body{
 		.route-id-content{
 			padding: 20px;
 			padding-top: 0;
-			>img{width: 100%;}
+			>img{
+				width: 100%;
+				cursor: zoom-in;
+			}
 			li{
 				list-style: disc;
 				font-size: 16px;
@@ -2222,14 +2216,14 @@ body{
 			}
 			.car-list-wrap{
 				>li{
+					padding-top: 12px;
 					padding-right: 30px;
 					span{color:#8f95ad};
 					>p{
 						width: 42px;
-						height: 22px;
-						line-height: 22px;
-						text-align: center;
+						height: 30px;
 						float: right;
+						background: url('@{url}prompt-icon.png') center no-repeat;
 					}
 					&:hover{
 						span{color: @green;}
@@ -2257,6 +2251,7 @@ body{
 					background: url('@{url}car-small-icon-active.png') left center no-repeat;
 				}
 			}
+			.car-list-wrap > li{width: 100%;}
 		}
 		.popup-airport-to{display: none;}
 		.popup-date{

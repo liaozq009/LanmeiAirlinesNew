@@ -556,7 +556,3 @@ body .layui-layer-page .layui-layer-content {
   font-size: 20px;
   text-align: center;
 }
-body .layui-layer-page {
-  min-width: 300px !important;
-  max-width: 500px !important;
-}

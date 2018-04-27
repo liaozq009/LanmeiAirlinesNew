@@ -144,7 +144,7 @@ body {
 	background: @linear;
 	.h-menu{
 		position: absolute;
-		width: 110px;
+		width: 100px;
 		height: 60px;
 		font-size:18px;
 		text-align: right;
@@ -156,7 +156,7 @@ body {
 		position: absolute;
 	    top: 15px;
 	    left: 160px;
-		width: 240px;
+		width: 210px;
 		height: 30px;
 		line-height: 30px;
 		padding-left: 40px;
@@ -277,7 +277,7 @@ body {
 				    margin-right: 10px;
 			        margin-top: 15px;
 				    border-radius: 50%;
-					background-size: 30px;
+					background-size: 30px 30px;
 				}
 			}
 			>a{
@@ -291,6 +291,8 @@ body {
 				.login-menu{display: block;}
 			}
 		}
+		.success-h-login~.dot-login{display: none;}
+		.success-h-login~.h-registered{display: none;}
 	}
 	.h-phone{
 		position: absolute;
@@ -944,8 +946,25 @@ body {
 	}
 }
 @media (max-width: 1600px){
-	.close-diary{
+	.travel-diary .close-diary{
 	  	top: 20px;
 	  }
 }
 
+/* 公共按钮 */
+.lm-btn{
+	color: #fff;
+	border: none;
+	outline: none;
+	border-radius: 2px;
+	text-align: center;
+	background: @purple;
+	transition: all .3s;
+	-webkit-transition: all .3s;
+	&:hover{
+		color: #fff;
+		background: @green;
+		transition: all .3s;
+		-webkit-transition: all .3s;
+	}
+}
