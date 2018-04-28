@@ -685,7 +685,7 @@ body .layui-layer-page .layui-layer-content {
     text-align: center;
   }
   .lm-footer {
-    display: block;
+    display: none;
   }
   .lm-toTop {
     display: none !important;
@@ -882,27 +882,4 @@ body .layui-layer-page .layui-layer-content {
   .lm-m-toTop {
     display: block;
   }
-}
-.lm-header {
-  line-height: normal;
-}
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-ul,
-li,
-dl,
-dt,
-dd,
-input {
-  font-size: 14px;
-}
-.iconfont.icon-facebook,
-.iconfont.icon-wb {
-  font-size: 26px;
 }

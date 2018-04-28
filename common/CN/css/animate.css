@@ -3328,3 +3328,33 @@ html, body {
   -webkit-animation-name: zoomOutUp;
   animation-name: zoomOutUp;
 }
+
+.lm-page-moveFromRight {
+  -webkit-animation: moveFromRight 2s ease both;
+  animation: moveFromRight 2s ease both;
+}
+@-webkit-keyframes moveFromRight {
+  from { -webkit-transform: translateX(100%); }
+}
+@keyframes moveFromRight {
+  from { -webkit-transform: translateX(100%); transform: translateX(100%); }
+}
+
+.lm-page-moveFromBottom {
+  -webkit-animation: moveFromBottom 2s ease both;
+  animation: moveFromBottom 2s ease both;
+}
+.lm-page-moveFromBottom3 {
+  -webkit-animation: moveFromBottom 3s ease both;
+  animation: moveFromBottom 3s ease both;
+}
+.lm-page-moveFromBottom4 {
+  -webkit-animation: moveFromBottom 4s ease both;
+  animation: moveFromBottom 4s ease both;
+}
+@-webkit-keyframes moveFromBottom {
+  from { -webkit-transform: translateY(100%);border:red solid 1px; }
+}
+@keyframes moveFromBottom {
+  from { -webkit-transform: translateY(100%); transform: translateY(100%); }
+}

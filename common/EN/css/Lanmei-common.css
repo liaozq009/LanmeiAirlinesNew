@@ -122,7 +122,7 @@ body {
 }
 .lm-header .h-menu {
   position: absolute;
-  width: 100px;
+  width: 150px;
   height: 60px;
   font-size: 18px;
   text-align: right;
@@ -135,7 +135,7 @@ body {
 .lm-header .menu-guide {
   position: absolute;
   top: 15px;
-  left: 160px;
+  left: 200px;
   width: 210px;
   height: 30px;
   line-height: 30px;

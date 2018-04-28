@@ -4150,6 +4150,10 @@ body {
     height: 30px;
     line-height: 30px;
     padding-right: 0;
+    padding-left: 0;
+  }
+  .lm-section-news .news-wrap .news-detail .news-arrow .news-more {
+    float: left;
   }
   .lm-section-news .news-wrap .news-detail .news-arrow .news-arrow-box {
     float: right;
