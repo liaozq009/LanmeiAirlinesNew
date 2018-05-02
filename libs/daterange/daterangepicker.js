@@ -42,6 +42,7 @@
         this.autoUpdateInput = true;
         this.alwaysShowCalendars = false;
         this.ranges = {};
+        this.outsideClickHide = $.extend({outsideClickHide:false}, {outsideClickHide:options.outsideClickHide}).outsideClickHide;
 
         // 全局定义酒店入住了多少晚
         var showTotleDay = $.extend({showTotleDay:false}, {showTotleDay:options.showTotleDay});
@@ -67,9 +68,9 @@
         this.cancelClass = 'btn-default';
 
         // 语言选择
-        var language = $.extend({language:'en'}, {language:options.language});
+        this.language = $.extend({language:'en'}, {language:options.language});
 
-        if(language.language == 'cn'){
+        if(this.language.language == 'cn'){
             this.locale = {
                 direction: 'ltr',
                 format: moment.localeData().longDateFormat('MD'),
@@ -82,7 +83,7 @@
                 monthNames: ["一月","二月","三月","四月","五月","六月","七月","八月","九月","十月","十一月","十二月"],
                 firstDay: moment.localeData().firstDayOfWeek()
             };
-        }else if(language.language == 'en'){
+        }else if(this.language.language == 'en'){
             this.locale = {
                 direction: 'ltr',
                 format: moment.localeData().longDateFormat('DM'),
@@ -138,7 +139,8 @@
                     '</div>' +
                     '<div class="calendar-table"></div>' +
                 '</div>' +
-                '<div class="range-change-date js-range-date">From <span class="start-change-date">Wed, 14 Nov 2018</span> to <span class="end-change-date">Wed, 14 Nov 2018</span>(<span class="totle-num-date">3</span> nights)</div>'+
+                '<div class="range-change-date js-range-date range-date-en">From <span class="start-change-date">Wed, 14 Nov 2018</span> to <span class="end-change-date">Wed, 14 Nov 2018</span>(<span class="totle-num-date">3</span> nights)</div>'+
+                '<div class="range-change-date js-range-date range-date-zh">从 <span class="start-change-date">2018-05-02</span> 到 <span class="end-change-date">2018-05-03</span>(<span class="totle-num-date">3</span> 晚)</div>'+
                 '<div class="ranges js-date-ok">' +
                     '<div class="range_inputs">' +
                         '<button class="applyBtn js-applyBtn" disabled="disabled" type="button"></button> ' +
@@ -487,10 +489,21 @@
         // 初始化酒店入住天数
         if(showTotleDay.showTotleDay){
             this.container.find('.range-change-date').show();
-            var initStartDate = this.startDate.format('ddd, MMMM D, YYYY');
-            var initEndDate = this.endDate.format('ddd, MMMM D, YYYY');
-            this.container.find('.start-change-date').html(initStartDate);
-            this.container.find('.end-change-date').html(initEndDate);
+            if(this.language.language == 'cn'){
+                this.container.find('.range-date-en').hide();
+                this.container.find('.range-date-zh').show();
+                var initStartDate_zh = this.startDate.format('YYYY-MM-DD');
+                var initEndDate_zh = this.endDate.format('YYYY-MM-DD');
+                this.container.find('.start-change-date').html(initStartDate_zh);
+                this.container.find('.end-change-date').html(initEndDate_zh);
+            }else if(this.language.language == 'en'){
+               this.container.find('.range-date-en').show();
+               this.container.find('.range-date-zh').hide();
+                var initStartDate = this.startDate.format('ddd, MMMM D, YYYY');
+                var initEndDate = this.endDate.format('ddd, MMMM D, YYYY');
+                this.container.find('.start-change-date').html(initStartDate);
+                this.container.find('.end-change-date').html(initEndDate);
+            }
             totleNight = parseInt((this.endDate.toDate().getTime()-this.startDate.toDate().getTime())/86400000);
             this.container.find('.totle-num-date').html(totleNight);
              $('.hotel-day').html(totleNight);
@@ -1213,9 +1226,14 @@
             $(window).off('.daterangepicker');
             // 延迟关闭日期
             var that = this;
-            setTimeout(function(){
-                 that.container.hide();
-            },600);
+            if(that.outsideClickHide){
+                that.container.hide();
+            }else{
+                setTimeout(function(){
+                     that.container.hide();
+                },600);
+            }
+            
             this.element.trigger('hide.daterangepicker', this);
             this.isShowing = false;
         },
@@ -1239,7 +1257,10 @@
                 target.closest(this.container).length ||
                 target.closest('.calendar-table').length
                 ) return;
-            //this.hide();
+
+            if(this.outsideClickHide){
+                this.hide();
+            }
             this.element.trigger('outsideClick.daterangepicker', this);
         },
 
@@ -1335,11 +1356,19 @@
 
             if (this.endDate && !this.container.find('input[name=daterangepicker_start]').is(":focus")) {
                 // this.container.find('input[name=daterangepicker_start]').val(date.format(this.locale.format));
-                this.container.find('.start-change-date').html(date.format('ddd, MMMM D, YYYY'));
+                if(this.language.language == 'cn'){
+                     this.container.find('.start-change-date').html(date.format('YYYY-MM-DD'));
+                }else if(this.language.language == 'en'){
+                     this.container.find('.start-change-date').html(date.format('ddd, MMMM D, YYYY'));
+                }
                 startNight = date.toDate().getTime();
             } else if (!this.endDate && !this.container.find('input[name=daterangepicker_end]').is(":focus")) {
                 // this.container.find('input[name=daterangepicker_end]').val(date.format(this.locale.format));
-                this.container.find('.end-change-date').html(date.format('ddd, MMMM D, YYYY'));
+                 if(this.language.language == 'cn'){
+                    this.container.find('.end-change-date').html(date.format('YYYY-MM-DD'));
+                 }else if(this.language.language == 'en'){
+                    this.container.find('.end-change-date').html(date.format('ddd, MMMM D, YYYY'));
+                 }
                 endNight = date.toDate().getTime();
                 totleNight = (endNight-startNight)/86400000;
                 if(totleNight<0){

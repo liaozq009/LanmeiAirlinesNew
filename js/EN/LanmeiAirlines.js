@@ -1,13 +1,16 @@
 
 var LanmeiAirlines = {
-	fromCityData: ['Sihanoukville/KOS/Cambodia','Macao/MFM/Macao,China','Phnom Penh/PNH/Cambodia','Siem Reap/REP/Cambodia','Ho Chi Minh/SGN/Vietnam','Hanoi/HAN/Vietnam','HongKong/HKG/HongKong,China','SEOUL/ICN/Korea','Bangkok/BKK/Thailand','Shijiazhuang/SJW/China','Singapore/SIN/Singapore'],
-	toCityData: ['Sihanoukville/KOS/Cambodia','Macao/MFM/Macao,China','Phnom Penh/PNH/Cambodia','Siem Reap/REP/Cambodia','Ho Chi Minh/SGN/Vietnam','Hanoi/HAN/Vietnam','HongKong/HKG/HongKong,China','SEOUL/ICN/Korea','Bangkok/BKK/Thailand','Shijiazhuang/SJW/China','Singapore/SIN/Singapore'],
+	fromCityData: ['Sihanoukville/KOS/Cambodia','Macao/MFM/Macao,China','Phnom Penh/PNH/Cambodia','Siem Reap/REP/Cambodia','Ho Chi Minh/SGN/Vietnam','Hanoi/HAN/Vietnam','HongKong/HKG/HongKong,China','SEOUL/ICN/Korea','Bangkok/BKK/Thailand','Shijiazhuang/SJW/China','Singapore/SIN/Singapore','Guangzhou/CAN/China'],
+	toCityData: ['Sihanoukville/KOS/Cambodia','Macao/MFM/Macao,China','Phnom Penh/PNH/Cambodia','Siem Reap/REP/Cambodia','Ho Chi Minh/SGN/Vietnam','Hanoi/HAN/Vietnam','HongKong/HKG/HongKong,China','SEOUL/ICN/Korea','Bangkok/BKK/Thailand','Shijiazhuang/SJW/China','Singapore/SIN/Singapore','Guangzhou/CAN/China'],
 	hotelCityData: ['Hong Phann Guest House','Phkar Chhouk Tep Monireth Hotel','Tt Guest House','Phkar Chhouk Tep 2 Hotel'],
 	carRouteData: ['Airport --> Toyoko Inn','Airport --> Sofitel'],
 	carTicketTypeData: ['One-way','Return'],
 	fNumberData: ['LQ503','LQ502','LQ806','LQ807','LQ315','LQ316','LQ317','LQ318','LQ9302','LQ9303','LQ333','LQ332','LQ660','LQ661','LQ970','LQ971','LQ666','LQ667','LQ670','LQ671','LQ780','LQ781','LQ916','LQ917','LQ9509','LQ9508'],
 	indexLiFrom: 0, //定义键盘移动index 
 	indexLiTo: 0,
+	indexLiFlightNum: 0,
+	indexLiRouteFrom: 0,
+	indexLiRouteTo: 0,
 	init:function(){
 		this.selectPeople();
 		this.selectHotelRooms();
@@ -893,6 +896,37 @@ var LanmeiAirlines = {
 			}); 
 		};
 
+		/* 设置出发地的值 */
+		var routeFromCityVal = function(text1,text2){ 
+			$('.js-routeFrom-input').val(text2[0]+'/'+text2[1]);
+			$('.js-fStatusPopup-box').css('left',350);
+			var tocityArr = that.toCityData;
+			tocityArr.remove(text1);
+
+			$('.js-routeTo-menu').empty();
+			$.each(tocityArr,function(i,val){
+				$('.js-routeTo-menu').append('<li title="'+val+'">'+val+'</li>');
+			});
+			$('.js-routeTo-input').focus();
+			$('.js-routeTo-menu>li:first').addClass('active');
+			keyDown('.js-routeTo-input','.js-routeTo-menu',that.indexLiRouteTo); //绑定键盘事件
+
+			$('.js-routeBox-from').slideUp(function(){ //出发地隐藏
+				$('.js-routeBox-to').slideDown(); //目的地显示
+			}); 
+		};
+
+		/* 设置目的地的值 */
+		var routeToCityVal = function(text1,text2){
+			$('.js-routeTo-input').val(text2[0]+'/'+text2[1]);
+			$('.js-fStatusPopup-box').css('left',700);
+
+			$('.js-routeBox-to').slideUp(function(){ //出发地隐藏
+				$('.js-routeDate-result').click(); //日期展示
+				$('.js-routePopup-date').slideDown(); //目的地显示
+			}); 
+		};
+
 		/* 键盘上下选择城市 */
 		var keyDown = function(input,ul,indexLi){
 			var $input = $(input);
@@ -925,12 +959,24 @@ var LanmeiAirlines = {
 				}else if(event.which == 40){//向下
 					keychang();
 				}else if(event.which == 13){ //回车
+
 					var text1 = $fUl.children().eq(indexLi).attr('title');
 					var text2 = text1.split('/');
 					if(input=='.js-from-input'){
 						fromCityVal(text1,text2);
 					}else if(input=='.js-to-input'){
 						toCityVal(text1,text2);
+					}else if(input=='.js-fNumber-input'){
+						$('.js-fNumber-input').val(text1);
+						$box.css('left',350);
+						$('.js-fNumBox-from').slideUp(function(){ 
+							$('.js-numDate-result').click(); //日期展示
+							$('.js-numPopup-date').slideDown(); 
+						}); 
+					}else if(input=='.js-routeFrom-input'){
+						routeFromCityVal(text1,text2);
+					}else if(input=='.js-routeTo-input'){
+						routeToCityVal(text1,text2);
 					}
 				}
 			});	
@@ -1081,7 +1127,7 @@ var LanmeiAirlines = {
 			$.each(that.fromCityData,function(i,val){
 				$fromMenuSub.append('<li title="'+val+'">'+val+'</li>');
 			});
-			// $('.js-from-menu>li:first').addClass('active');
+			$('.js-from-menu>li:first').addClass('active');
 			that.keyEvent('.js-from-input','.js-from-menu',that.indexLiFrom); //绑定键盘事件
 		});
 
@@ -1640,7 +1686,6 @@ var LanmeiAirlines = {
 
 		    $('#air-hotel-form').submit();
 		});
-
 	},
 
 	/* 移动端酒店选择 */
@@ -2160,8 +2205,8 @@ var LanmeiAirlines = {
 			$.each(that.fNumberData,function(i,val){
 				$fNumberFromMenuSub.append('<li title="'+val+'">'+val+'</li>');
 			});
-			// $('.js-from-menu>li:first').addClass('active');
-			that.keyEvent('.js-fNumber-input','.js-fNumber-menu',that.indexLiFrom); //绑定键盘事件
+			$('.js-fNumber-menu>li:first').addClass('active');
+			that.keyEvent('.js-fNumber-input','.js-fNumber-menu',that.indexLiFlightNum); //绑定键盘事件
 		});
 
 		this.autoComplete('.js-fNumber-input'); //模糊搜索
@@ -2182,8 +2227,8 @@ var LanmeiAirlines = {
 			$.each(that.fromCityData,function(i,val){
 				$routeFromMenuSub.append('<li title="'+val+'">'+val+'</li>');
 			});
-			// $('.js-from-menu>li:first').addClass('active');
-			that.keyEvent('.js-routeFrom-input','.js-routeFrom-menu',that.indexLiFrom); //绑定键盘事件
+			$('.js-routeFrom-menu>li:first').addClass('active');
+			that.keyEvent('.js-routeFrom-input','.js-routeFrom-menu',that.indexLiRouteFrom); //绑定键盘事件
 		});
 
 		this.autoComplete('.js-routeFrom-input'); //模糊搜索
@@ -2202,7 +2247,7 @@ var LanmeiAirlines = {
 				$.each(tocityArr,function(i,val){
 					$routeToMenuSub.append('<li title="'+val+'">'+val+'</li>');
 				});
-				// $('.js-to-menu>li:first').addClass('active');
+				$('.js-routeTo-menu>li:first').addClass('active');
 			}
 
 			if(winWidth>1300){
@@ -2215,7 +2260,7 @@ var LanmeiAirlines = {
 			$('.js-fStatusPopup-content>div').hide();
 			$routeToBox.show();
 
-			that.keyEvent('.js-routeTo-input','.js-routeTo-menu',that.indexLiTo); //绑定键盘事件
+			that.keyEvent('.js-routeTo-input','.js-routeTo-menu',that.indexLiRouteTo); //绑定键盘事件
 		});
 
 		this.autoComplete('.js-routeTo-input'); //模糊搜索
@@ -2310,9 +2355,9 @@ var LanmeiAirlines = {
 			}else if(winWidth<=1300){
 				$fStatusBox.css({'top':-10,'left':0});
 			}
-			$fNumFromBox.slideUp(function(){ //酒店出发地隐藏
+			$fNumFromBox.slideUp(function(){ 
 				$('.js-numDate-result').click(); //日期展示
-				$numDateBox.slideDown(); //酒店日期显示
+				$numDateBox.slideDown(); 
 			}); 
 		});
 
