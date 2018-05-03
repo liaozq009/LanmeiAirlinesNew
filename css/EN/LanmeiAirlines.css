@@ -1296,6 +1296,7 @@ body {
 }
 .lm-section-travel .travel-item .travel-inner .locale-wrap .locale i {
   margin-right: 10px;
+  margin-top: 4px;
 }
 .lm-section-travel .travel-item .travel-inner .locale-wrap .see {
   float: right;
@@ -1303,6 +1304,7 @@ body {
 }
 .lm-section-travel .travel-item .travel-inner .locale-wrap .see i {
   margin-left: 10px;
+  margin-top: 2px;
 }
 .lm-section-travel .travel-item .travel-inner .view {
   display: block;
@@ -1776,7 +1778,7 @@ body {
   padding-left: 0;
 }
 .ie8 .lm-section-main {
-  height: 768px !important;
+  height: 958px !important;
 }
 .ie8 .flight-com {
   left: 30%;
@@ -2607,7 +2609,7 @@ body {
     right: 0;
     width: 16px;
     height: 16px;
-    line-height: 18px;
+    line-height: 20px;
     text-align: center;
     color: #fff;
     font-weight: 100;

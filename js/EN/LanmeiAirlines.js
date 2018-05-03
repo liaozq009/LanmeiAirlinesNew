@@ -52,6 +52,7 @@ var LanmeiAirlines = {
 			var agent = navigator.userAgent.toLowerCase();
 			if (window.ActiveXObject || "ActiveXObject" in window || (agent.indexOf("safari") > 0 && agent.indexOf("chrome") < 0) ){
 				// alert("ie");
+				$('.js-cloud-iframe').remove();
 			}else{
 				//alert("not ie");
 				$('.js-cloud-iframe').attr('src','libs/clouds/lm-cloud.html');
@@ -1606,36 +1607,9 @@ var LanmeiAirlines = {
 			}); 
 		});
 
-		/* 酒店搜索 ----- 位置搜索 */
-		/* var last;
-		  $('.js-hotelFrom-input').keyup(function (event) {//.input为你的输入框
-		      last = event.timeStamp;
-		      //利用event的timeStamp来标记时间，这样每次的keyup事件都会修改last的值，注意last必需为全局变量
-		      setTimeout(function () {    //设时延迟0.5s执行
-		          if (last - event.timeStamp == 0)
-		          //如果时间差为0（也就是你停止输入0.5s之内都没有其它的keyup事件发生）则做你想要做的事
-		          {
-		              var term = $('.js-hotelFrom-input').val();
-		              $.ajax({
-		                  url: "http://hotels.lanmeiairlines.com/soap/auto-complete-general",
-		                  dataType: 'json',
-		                  data: {
-		                      term: term,
-		                  },
-		                  success: function (data) {
-		                      var str = '';
-		                      for (var i = 0; i < data.length; i++) {
-		                          str += '<li title="' + data[i].value + '">' + data[i].value + '</li>';
-		                      }
-		                      $('.js-hotelFrom-menu').html(str);
-		                  }
-		              });
-		          }
-		      }, 200);
-		  });*/
-
 		$('.js-hotelFrom-input').keyup(function () {//.input为你的输入框
 		    var term = $('.js-hotelFrom-input').val();
+		    $('.js-hotelFrom-menu').html('<li>Loading...</li>');
 		    $.ajax({
 		        url: "http://hotels.lanmeiairlines.com/soap/auto-complete-general",
 		        dataType: 'json',
@@ -1723,9 +1697,9 @@ var LanmeiAirlines = {
 			$('.js-hotelPopup-from').show();
 
 			$hotelFromMenuSub.empty();
-			$.each(that.hotelCityData,function(i,val){
-				$hotelFromMenuSub.append('<li title="'+val+'">'+val+'</li>');
-			});
+			// $.each(that.hotelCityData,function(i,val){
+				// $hotelFromMenuSub.append('<li>Please enter where you want to go</li>');
+			// });
 
 			ovfHiden(); //使网页不可滚动
 			$hotelBox.height(winHeight-108);
@@ -1770,9 +1744,29 @@ var LanmeiAirlines = {
 
 			$container.addClass('is-show');
 		});
+
 		//房间保存
 		$('.js-mSelect-rooms').click(function(event) {
 			hideContainer();
+		});
+
+		$('.js-hotelCity-search').keyup(function () {//.input为你的输入框
+		    var term = $('.js-hotelCity-search').val();
+		    $('.js-hotelFrom-menu').html('<li>Loading...</li>');
+		    $.ajax({
+		        url: "http://hotels.lanmeiairlines.com/soap/auto-complete-general",
+		        dataType: 'json',
+		        data: {
+		            term: term,
+		        },
+		        success: function (data) {
+		            var str = '';
+		            for (var i = 0; i < data.length; i++) {
+		                str += '<li title="' + data[i].value + '"data-cate ="' + data[i].cate + '" data-id ="' + data[i].id + '">' + data[i].value + '</li>';
+		            }
+		            $('.js-hotelFrom-menu').html(str);
+		        }
+		    });
 		});
 	},
 
