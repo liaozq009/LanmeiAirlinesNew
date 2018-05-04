@@ -125,7 +125,6 @@ body {
 	max-width: 1920px;
 	font-family: CamptonBook,"Microsoft YaHei",sans-serif;
 	font-size: 14px;
-	color: #fff;
 	background: #FAFBFF;
 }
 
@@ -143,11 +142,13 @@ body {
 	background: @o-linear;
 	background: @moz-linear;
 	background: @linear;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#42958a', endColorstr='#1f2c5c', GradientType=1);
 	.h-menu{
 		position: absolute;
 		width: 150px;
 		height: 60px;
 		font-size:18px;
+		color: #fff;
 		text-align: right;
 		cursor: pointer;
 		background: url('@{url}menu.png') left center no-repeat;
@@ -161,6 +162,7 @@ body {
 		height: 30px;
 		line-height: 30px;
 		padding-left: 40px;
+		color: #fff;
 		background: url('@{url}menu-guide.png') left center no-repeat;
 	}
 	.h-logo-wrap{
@@ -520,6 +522,7 @@ body {
 		}
 	}
 	.f-email{
+		color: #fff;
 		margin-top: 18px;
 		>i{margin-right: 12px;}
 	}
@@ -551,7 +554,7 @@ body {
 
 .lte_ie9{
 	.lm-header{
-		background: #42958a;
+		// background: #306073;
 	}
 }
 
@@ -568,6 +571,8 @@ body {
 	.lm-header .h-lang .lang-menu a:hover{
 		color: #8ec060;
 	}
+	.lm-footer .copyright{color: #808080;}
+	.icon-local::before{color: #fff;}
 }
 
 /* 移动端新增代码 */

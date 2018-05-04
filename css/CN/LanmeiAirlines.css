@@ -244,6 +244,7 @@ body {
   right: 0;
   width: 94%;
   height: 180px;
+  color: #fff;
   background-image: -webkit-linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 100%);
 }
 .content-com-inner {
@@ -541,6 +542,7 @@ body {
 .flight-com .tips-com {
   opacity: 0.5;
   filter: alpha(opacity=50);
+  color: #fff;
   font-size: 24px;
   animation-delay: .3s;
   -webkit-animation-delay: .3s;
@@ -722,6 +724,7 @@ body {
   height: 30px;
   line-height: 40px;
   font-size: 12px;
+  color: #fff;
   text-align: right;
   padding-right: 6px;
   background: url('../../images/CN/hotel-day.png') center no-repeat;
@@ -925,6 +928,7 @@ body {
   width: 100%;
   height: 100%;
   padding-top: 30px;
+  color: #fff;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   background: rgba(0, 0, 0, 0);
@@ -1004,8 +1008,12 @@ body {
   border-radius: 2px;
 }
 .lm-section-coupons .coupons-anchor .active {
-  background: #8ec060;
   color: #fff;
+  background: -webkit-linear-gradient(left, #42958a 0%, #1f2c5c 100%);
+  background: -o-linear-gradient(right, #42958a 0%, #1f2c5c 100%);
+  background: -moz-linear-gradient(right, #42958a 0%, #1f2c5c 100%);
+  background: linear-gradient(to right, #42958a 0%, #1f2c5c 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#42958a', endColorstr='#1f2c5c', GradientType=1);
 }
 .lm-section-coupons .coupons-anchor .anchor-center {
   margin-left: 30px;
@@ -1026,6 +1034,7 @@ body {
   left: 50%;
   width: 290px;
   margin-left: -145px;
+  color: #fff;
   text-align: center;
 }
 .lm-section-coupons .coupons-content .slick-item .slick-content > h2 {
@@ -1138,6 +1147,7 @@ body {
   height: 210px;
   padding-top: 40px;
   text-align: center;
+  color: #fff;
   border-radius: 0 2px 2px 0;
   background: -webkit-linear-gradient(left top, #42958a 0%, #1f2c5c 100%);
   background: -webkit-linear-gradient(bottom right, #42958a 0%, #1f2c5c 100%);
@@ -1400,6 +1410,7 @@ body {
   top: 40px;
   height: 30px;
   line-height: 32px;
+  color: #fff;
   padding: 0 10px;
   background: -webkit-linear-gradient(left, #F7B733 0%, #FC4A1A 100%);
   background: -o-linear-gradient(right, #F7B733 0%, #FC4A1A 100%);
@@ -3200,11 +3211,6 @@ body {
     width: 100%;
     animation-delay: 0s;
     -webkit-animation-delay: 0s;
-  }
-  .select-air-com .hotel-from input,
-  .select-air-com .flight-number-box input,
-  .select-air-com .fStatus-date input {
-    text-align: left;
   }
   .select-air-com .m-city-from,
   .select-air-com .m-city-to {
