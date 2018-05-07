@@ -5,7 +5,7 @@ var LanmeiAirlines = {
 	hotelCityData: ['Hong Phann Guest House','Phkar Chhouk Tep Monireth Hotel','Tt Guest House','Phkar Chhouk Tep 2 Hotel'],
 	carRouteData: ['Airport --> Toyoko Inn','Airport --> Sofitel'],
 	carTicketTypeData: ['One-way','Return'],
-	fNumberData: ['LQ503','LQ502','LQ806','LQ807','LQ315','LQ316','LQ317','LQ318','LQ9302','LQ9303','LQ333','LQ332','LQ660','LQ661','LQ970','LQ971','LQ666','LQ667','LQ670','LQ671','LQ780','LQ781','LQ916','LQ917','LQ9509','LQ9508'],
+	fNumberData: ['LQ315','LQ316','LQ317','LQ318','LQ332','LQ333','LQ502','LQ503','LQ660','LQ661','LQ666','LQ667','LQ670','LQ671','LQ780','LQ781','LQ806','LQ807','LQ916','LQ917','LQ970','LQ971','LQ9302','LQ9303','LQ9508','LQ9509'],
 	indexLiFrom: 0, //定义键盘移动index 
 	indexLiTo: 0,
 	indexLiFlightNum: 0,
@@ -1870,7 +1870,7 @@ var LanmeiAirlines = {
 		/* 机票类型 */
 		$ticketTypeInput.click(function(){
 			if(winWidth>1300){
-				$carBox.css('left',350);
+				$carBox.css('left',700);
 			}else if(winWidth<=1300){
 				$carBox.css({'top':-10,'left':0});
 			}
@@ -1932,7 +1932,7 @@ var LanmeiAirlines = {
 			var text = $(this).attr('title');
 			$routeIdInput.val(text);
 			if(winWidth>1300){
-				$carBox.css('left',350);
+				$carBox.css('left',700);
 			}else if(winWidth<=1300){
 				$carBox.css({'top':-10,'left':0});
 			}

@@ -17,8 +17,11 @@ body {
   height: 200px;
   text-align: center;
   line-height: 200px;
-  background-image: linear-gradient(-45deg, rgba(142, 192, 96, 0.7) 0%, rgba(31, 44, 92, 0.7) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2212C5C, 5C, endColorstr=#B2212C5C, 5C);
+  background: -webkit-linear-gradient(left, rgba(66, 149, 138, 0.6), rgba(31, 44, 92, 0.6));
+  background: -o-linear-gradient(right, rgba(66, 149, 138, 0.6), rgba(31, 44, 92, 0.6));
+  background: -moz-linear-gradient(right, rgba(66, 149, 138, 0.6), rgba(31, 44, 92, 0.6));
+  background: linear-gradient(to right, rgba(66, 149, 138, 0.6), rgba(31, 44, 92, 0.6));
+  filter: alpha(opacity=60) progid:DXImageTransform.Microsoft.gradient(startcolorstr=#42958a, endcolorstr=#1f2c5c, gradientType=1);
   font-weight: bold;
   font-size: 60px;
   color: #ffffff;

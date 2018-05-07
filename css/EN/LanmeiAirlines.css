@@ -654,6 +654,9 @@ body {
 .select-air-com .hotel-from {
   width: 660px;
 }
+.select-air-com .car-route-id {
+  width: 660px;
+}
 .select-air-com .flight-number-box,
 .select-air-com .fStatus-date {
   width: 660px;
@@ -994,8 +997,9 @@ body {
   margin-bottom: 60px;
 }
 .lm-section-coupons .coupons-anchor {
-  width: 660px;
+  width: 100%;
   margin: 0 auto 30px;
+  text-align: center;
 }
 .lm-section-coupons .coupons-anchor > a {
   display: inline-block;
@@ -1017,7 +1021,6 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#42958a', endColorstr='#1f2c5c', GradientType=1);
 }
 .lm-section-coupons .coupons-anchor .anchor-center {
-  margin-left: 30px;
   margin-right: 30px;
 }
 .lm-section-coupons .coupons-content {
@@ -1911,7 +1914,6 @@ body {
     font-size: 20px;
   }
   .lm-section-coupons .coupons-anchor {
-    width: 528px;
     margin-bottom: 14px;
   }
   .lm-section-coupons .coupons-anchor > a {
@@ -1921,7 +1923,6 @@ body {
     font-size: 14px;
   }
   .lm-section-coupons .coupons-anchor .anchor-center {
-    margin-left: 24px;
     margin-right: 24px;
   }
   .lm-section-coupons .coupons-content {
@@ -3505,6 +3506,11 @@ body {
   }
   .popup-content .popup-airport .car-list-wrap > li span {
     color: rgba(31, 44, 92, 0.5);
+    display: inline-block;
+    width: 82%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   .popup-content .popup-airport .car-list-wrap > li > p {
     width: 42px;
@@ -3964,17 +3970,12 @@ body {
     font-size: 16px;
     margin-top: -9px;
   }
-  .lm-section-coupons .coupons-anchor {
-    width: 260px;
-  }
   .lm-section-coupons .coupons-anchor > a {
-    width: 80px;
-    line-height: 16px;
-    padding-top: 4px;
+    width: 110px;
+    line-height: 40px;
     font-size: 12px;
   }
   .lm-section-coupons .coupons-anchor .anchor-center {
-    margin-left: 10px;
     margin-right: 10px;
   }
   .lm-section-coupons .coupons-content {

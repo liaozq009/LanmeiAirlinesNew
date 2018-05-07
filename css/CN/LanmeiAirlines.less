@@ -663,6 +663,7 @@ body{
 		}
 	}
 	.hotel-from{width: 660px;}
+	.car-route-id{width: 660px;}
 	.flight-number-box,.fStatus-date{width: 660px;}
 	.fStatus-date{margin-right: 0;}
 	.from-com{
@@ -977,8 +978,9 @@ body{
 	position: relative;
 	margin-bottom: 60px;
 	.coupons-anchor{
-		width: 660px;
+		width: 100%;
 		margin: 0 auto 30px;
+		text-align: center;
 		>a{
 			display: inline-block;
 			width:200px;
@@ -999,7 +1001,6 @@ body{
 		    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#42958a', endColorstr='#1f2c5c', GradientType=1);
 		}
 		.anchor-center{
-			margin-left: 30px;
 			margin-right: 30px;
 		}
 	}
@@ -1875,7 +1876,6 @@ body{
 		>h2{font-size: 20px;}
 	}
 	.lm-section-coupons .coupons-anchor{
-		width: 528px;
 		margin-bottom: 14px;
 		>a{
 			width: 160px;
@@ -1884,7 +1884,6 @@ body{
 			font-size: 14px;
 		}
 		.anchor-center{
-			margin-left: 24px;
 			margin-right: 24px;
 		}
 	}
@@ -3387,6 +3386,11 @@ body{
 					background: url('@{url}svg/car-small-icon.svg') left center no-repeat;
 					span{
 						.purpleRgb(.5);
+						display: inline-block;
+						width: 82%;
+						overflow: hidden;
+					    text-overflow: ellipsis;
+					    white-space: nowrap;
 					}
 					>p{
 						width: 42px;
@@ -3833,7 +3837,7 @@ body{
 	.section-content-title{
 		font-size: 36px;
 		height: 50px;
-		line-height: 58px;
+		line-height: 48px;
 		margin-bottom: 10px;
 		>h2{
 			font-size: 16px;
@@ -3842,14 +3846,12 @@ body{
 	}
 	.lm-section-coupons {
 		.coupons-anchor{
-			width: 260px;
 			>a{
-				width: 80px;
+				width: 110px;
 				line-height: 40px;
 				font-size: 12px;
 			}
 			.anchor-center{
-				margin-left: 10px;
 				margin-right: 10px;
 			}
 		}
