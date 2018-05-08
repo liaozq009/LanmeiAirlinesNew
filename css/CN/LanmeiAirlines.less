@@ -2,16 +2,8 @@
 
 /* 引入字体 */
 @font-face {
-	font-family: CamptonBook;
-	src: url(../../common/EN/fonts/Campton/Rene.Bieder_Campton.Book.otf);
-}
-@font-face {
-	font-family: CamptonBookLight;
-	src: url(../../common/EN/fonts/Campton/Rene.Bieder_Campton.Light.otf);
-}
-@font-face {
-	font-family: CamptonBookBold;
-	src: url(../../common/EN/fonts/Campton/Rene.Bieder_Campton.Bold.otf);
+	font-family: NotoSansBold;
+	src: url(../../common/CN/fonts/NotoSans/SourceHanSansCN-Bold.otf);
 	font-weight:bold;
 }
 
@@ -26,9 +18,7 @@
 @moz-linear:-moz-linear-gradient(right, #42958a 0%, #1f2c5c 100%);
 @linear:linear-gradient(to right, #42958a 0%, #1f2c5c 100%);
 @filter:alpha progid:DXImageTransform.Microsoft.gradient(startcolorstr=#42958a, endcolorstr=#1f2c5c, gradientType=1); /*ie8*/
-@FBook:CamptonBook;
-@FBold:CamptonBookBold;
-@FLight:CamptonBookLight;
+@FBold:NotoSansBold;
 
 .greenRgb(@opacity){
 	color: rgba(142,192,96,@opacity);
@@ -85,7 +75,7 @@ body{
 		padding-left: 58px;
 		font-size: 18px;
 		color: #fff;
-		font-weight: bold;
+		font-family: @FBold;
 		background: url('@{url}close-menu.png') left center no-repeat;
 		cursor: pointer;
 	}
@@ -126,7 +116,7 @@ body{
 				>a{
 					opacity: 1;
 					filter:alpha(opacity=100);
-					font-weight: bold;
+					font-family: @FBold;
 				}
 			}
 		}
@@ -135,7 +125,7 @@ body{
 			>a{
 				opacity: 1;
 				filter:alpha(opacity=100);
-				font-weight: bold;
+				font-family: @FBold;
 			}
 		}
 	}
@@ -179,7 +169,7 @@ body{
 				>a{
 					opacity: 1;
 					filter:alpha(opacity=100);
-					font-weight: bold;
+					font-family: @FBold;
 				}
 			}
 		}
@@ -188,7 +178,7 @@ body{
 			>a{
 				opacity: 1;
 				filter:alpha(opacity=100);
-				font-weight: bold;
+				font-family: @FBold;
 			}
 		}
 	}
@@ -219,7 +209,7 @@ body{
 				>a{
 					opacity: 1;
 					filter:alpha(opacity=100);
-					font-weight: bold;
+					font-family: @FBold;
 				}
 			}
 		}
@@ -288,7 +278,7 @@ body{
 	>h1{
 		opacity:0.9;
 		filter:alpha(opacity=90);
-		font-weight: bold;
+		font-family: @FBold;
 		font-size:58px;
 		line-height:70px;
 		span{color: @green;}
@@ -470,7 +460,7 @@ body{
 	}
 	>h3{
 		font-size:16px;
-		font-weight: bold;
+		font-family: @FBold;
 		color:#000;
 		opacity: .5;
 		filter:alpha(opacity=50);
@@ -877,7 +867,7 @@ body{
 	height: 100%;
 }
 .range-change-date{
-	font-weight: bold;
+	font-family: @FBold;
 	text-align: center;
 	clear: both;
 	padding-top: 7px;
@@ -962,7 +952,7 @@ body{
 	line-height: 116px;
 	margin-bottom: 30px;
 	font-size: 70px;
-	font-weight: bold;
+	font-family: @FBold;
 	.purpleRgb(.1);
 	text-align: center;
 	>h2{
@@ -1026,11 +1016,11 @@ body{
 					left: 0;
 					bottom: 18px;
 					font-size: 30px;
-					font-weight: bold;
+					font-family: @FBold;
 				}
 				.s2{
 					font-size: 72px;
-					font-weight: bold;
+					font-family: @FBold;
 				}
 				.p1{
 					font-size: 20px;
@@ -1100,7 +1090,7 @@ body{
 			>h2{
 				margin-top: 30px;
 				font-size: 20px;
-				font-weight: bold;
+				font-family: @FBold;
 				.purpleRgb(.9);
 				overflow: hidden;
 				>span{
@@ -1134,7 +1124,7 @@ body{
 			box-shadow: 0 10px 40px rgba(0,65,144,.3);
 			>h2{
 				font-size:48px;
-				font-weight: bold;
+				font-family: @FBold;
 			}
 			>a{
 				display: inline-block;
@@ -1226,7 +1216,7 @@ body{
 			padding: 20px 30px 30px;
 			>h2{
 				width: 100%;
-				font-weight: bold;
+				font-family: @FBold;
 				font-size: 24px;
 				color: @purple;
 				overflow: hidden;
@@ -1241,7 +1231,7 @@ body{
 			}
 			.price{
 				font-size: 20px;
-				font-weight: bold;
+				font-family: @FBold;
 				background: -webkit-linear-gradient(left,  #b4ec80, #00928d);
 				background: -o-linear-gradient(right,  #b4ec80, #00928d);
 				background: -moz-linear-gradient(right,  #b4ec80, #00928d);
@@ -1385,7 +1375,7 @@ body{
 			>h2{
 				width: 100%;
 				font-size: 24px;
-				font-weight: bold;
+				font-family: @FBold;
 				color: @purple;
 				overflow: hidden;
 				text-overflow:ellipsis;
@@ -1425,7 +1415,7 @@ body{
 				margin-top: 27px;
 				.price{
 					font-size: 36px;
-					font-weight: bold;
+					font-family: @FBold;
 					background: -webkit-linear-gradient(left,  #b4ec80, #00928d);
 					background: -o-linear-gradient(right,  #b4ec80, #00928d);
 					background: -moz-linear-gradient(right,  #b4ec80, #00928d);
@@ -1531,7 +1521,7 @@ body{
 					float: left;
 					margin-left: 5px;
 					margin-right: 5px;
-					font-weight: bold;
+					font-family: @FBold;
 					.blackRgb(.2);
 					.s1{
 						.blackRgb(.7);
@@ -1540,7 +1530,7 @@ body{
 			}
 			.news-more{
 				float: right;
-				font-weight: bold;
+				font-family: @FBold;
 				.blackRgb(.2);
 			}
 		}
@@ -1552,7 +1542,7 @@ body{
 			>div{
 				>h2>a{
 					font-size: 24px;
-					font-weight: bold;
+					font-family: @FBold;
 					color: @purple;
 					display: -webkit-box;
 					-webkit-box-orient: vertical;
@@ -2189,7 +2179,7 @@ body{
 			width: 660px;
 			padding:20px 20px 10px;
 			>h2{
-				font-weight: bold;
+				font-family: @FBold;
 				font-size: 20px;
 				.purpleRgb(.8);
 				margin-bottom: 20px;
@@ -2278,7 +2268,7 @@ body{
 				padding-left: 10px;
 				padding-top: 20px;
 				font-size: 20px;
-				font-weight: bold;
+				font-family: @FBold;
 				.purpleRgb(.8); 
 			}
 		}
@@ -2291,7 +2281,7 @@ body{
 			.people-title{
 				padding-bottom: 10px;
 				font-size: 20px;
-				font-weight: bold;
+				font-family: @FBold;
 				.purpleRgb(.8); 
 			}
 			.s-people-com{
@@ -2329,7 +2319,6 @@ body{
 					height: 20px;
 					line-height: 24px;
 					margin-top: 5px;
-					font-family: @FLight;
 					font-size: 14px;
 					.blackRgb(.3);
 					cursor: pointer;
@@ -2392,7 +2381,7 @@ body{
 					}
 				}
 				>span{
-					font-weight: bold;
+					font-family: @FBold;
 					font-size: 24px;
 					color: #fff;
 				}
@@ -2516,7 +2505,6 @@ body{
 					height:34px;
 					line-height: 38px;
 					font-size: 18px;
-					font-family: @FBook;
 					text-align: left;
 					padding-left: 20px;
 					padding-right: 20px;
@@ -2875,7 +2863,7 @@ body{
 						>h2{
 							.purpleRgb(.8);
 							font-size: 20px;
-							font-weight: bold;
+							font-family: @FBold;
 						}
 						>a{
 							display: block;
@@ -3410,7 +3398,7 @@ body{
 				display: none;
 				padding-bottom: 10px;
 				font-size: 20px;
-				font-weight: bold;
+				font-family: @FBold;
 				.purpleRgb(.8); 
 			}
 			.s-people-com{
@@ -3443,7 +3431,6 @@ body{
 				}
 				.p2{
 					margin-top: 5px;
-					font-family: @FLight;
 					font-size: 14px;
 					.blackRgb(.3);
 					cursor: pointer;
@@ -3506,7 +3493,7 @@ body{
 					}
 				}
 				>span{
-					font-weight: bold;
+					font-family: @FBold;
 					font-size: 24px;
 					color: #fff;
 				}
@@ -3664,7 +3651,6 @@ body{
 					margin: 0 auto;
 					line-height: 38px;
 					font-size: 18px;
-					font-family: @FBook;
 					text-align: left;
 					padding-left: 20px;
 					padding-right: 20px;

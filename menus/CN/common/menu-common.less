@@ -2,16 +2,8 @@
 
 /* 引入字体 */
 @font-face {
-	font-family: CamptonBook;
-	src: url(../../../common/CN/fonts/Campton/Rene.Bieder_Campton.Book.otf);
-}
-@font-face {
-	font-family: CamptonBookLight;
-	src: url(../../../common/CN/fonts/Campton/Rene.Bieder_Campton.Light.otf);
-}
-@font-face {
-	font-family: CamptonBookBold;
-	src: url(../../../common/CN/fonts/Campton/Rene.Bieder_Campton.Bold.otf);
+	font-family: NotoSansBold;
+	src: url(../../../common/CN/fonts/NotoSans/SourceHanSansCN-Bold.otf);
 	font-weight:bold;
 }
 
@@ -21,9 +13,7 @@
 @gray:#808080;
 @red:#d0011b;
 @link:#4aa374;
-@FBook:CamptonBook;
-@FBold:CamptonBookBold;
-@FLight:CamptonBookLight;
+@FBold:NotoSansBold;
 
 .lm-section{
 	width: 940px;
@@ -37,6 +27,7 @@
 			font-size: 36px;
 			color:@purple;
 			text-align: center;
+			font-family: @FBold;
 		}
 	}
 	.lm-content{

@@ -3,18 +3,15 @@
 
 /* 引入字体 */
 @font-face {
-	font-family: CamptonBook;
-	src: url(../fonts/Campton/Rene.Bieder_Campton.Book.otf);
+	font-family: NotoSans;
+	src: url(../fonts/NotoSans/SourceHanSansCN-Regular.otf);
 }
 @font-face {
-	font-family: CamptonBookLight;
-	src: url(../fonts/Campton/Rene.Bieder_Campton.Light.otf);
-}
-@font-face {
-	font-family: CamptonBookBold;
-	src: url(../fonts/Campton/Rene.Bieder_Campton.Bold.otf);
+	font-family: NotoSansBold;
+	src: url(../fonts/NotoSans/SourceHanSansCN-Bold.otf);
 	font-weight:bold;
 }
+
 /* 定义变量 */
 @url:"../../../images/CN/";
 @url2:"../../../imgage_demo/";
@@ -26,9 +23,8 @@
 @moz-linear:-moz-linear-gradient(right, #42958a 0%, #1f2c5c 100%);
 @linear:linear-gradient(to right, #42958a 0%, #1f2c5c 100%);
 @filter:alpha progid:DXImageTransform.Microsoft.gradient(startcolorstr=#42958a, endcolorstr=#1f2c5c, gradientType=1); /*ie8*/
-@FBook:CamptonBook;
-@FBold:CamptonBookBold;
-@FLight:CamptonBookLight;
+@FBook:NotoSans;
+@FBold:NotoSansBold;
 
 .greenRgb(@opacity){
 	color: rgba(142,192,96,@opacity);
@@ -120,22 +116,11 @@ img {
 input::-ms-clear{display : none; }
 .ovfHiden{overflow: hidden;height: 100%;}
 
-/* 引入字体 */
-@font-face {
-	font-family: CamptonBook;
-	src: url(../fonts/Campton/Rene.Bieder_Campton.Book.otf);
-}
-@font-face {
-	font-family: CamptonBookBold;
-	src: url(../fonts/Campton/Rene.Bieder_Campton.Bold.otf);
-	font-weight:bold;
-}
-
 /* project mcins style sheet*/
 body {
 	min-width: 320px;
 	max-width: 1920px;
-	font-family: "Microsoft YaHei",sans-serif;
+	font-family: NotoSans;
 	font-size: 14px;
 	background: #FAFBFF;
 }
@@ -235,7 +220,7 @@ body {
 				>h2{
 					.purpleRgb(.8);
 					font-size: 20px;
-					font-weight: bold;
+					font-family: @FBold;
 				}
 				>a{
 					display: block;
@@ -330,7 +315,7 @@ body {
 			>h2{
 				.purpleRgb(.8);
 				font-size: 20px;
-				font-weight: bold;
+				font-family: @FBold;
 			}
 			>p{
 				font-size: 16px;
@@ -385,7 +370,7 @@ body {
 			>h2{
 				.purpleRgb(.8);
 				font-size: 20px;
-				font-weight: bold;
+				font-family: @FBold;
 			}
 			>a{
 				display: block;
@@ -500,6 +485,8 @@ body {
 	z-index: 99999;
 	// background: url("@{url}gif-bg.jpg") center no-repeat;
 	background: #f2f2f2;
+	opacity: 0.9;
+	filter:alpha(opacity=90);
 	img{
 		position: absolute;
 		left: 0;

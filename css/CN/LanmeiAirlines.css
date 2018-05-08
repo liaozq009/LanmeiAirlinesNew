@@ -1,16 +1,8 @@
 @charset "utf-8";
 /* 引入字体 */
 @font-face {
-  font-family: CamptonBook;
-  src: url(../../common/EN/fonts/Campton/Rene.Bieder_Campton.Book.otf);
-}
-@font-face {
-  font-family: CamptonBookLight;
-  src: url(../../common/EN/fonts/Campton/Rene.Bieder_Campton.Light.otf);
-}
-@font-face {
-  font-family: CamptonBookBold;
-  src: url(../../common/EN/fonts/Campton/Rene.Bieder_Campton.Bold.otf);
+  font-family: NotoSansBold;
+  src: url(../../common/CN/fonts/NotoSans/SourceHanSansCN-Bold.otf);
   font-weight: bold;
 }
 /* 定义变量 */
@@ -52,7 +44,7 @@ body {
   padding-left: 58px;
   font-size: 18px;
   color: #fff;
-  font-weight: bold;
+  font-family: NotoSansBold;
   background: url('../../images/CN/close-menu.png') left center no-repeat;
   cursor: pointer;
 }
@@ -96,7 +88,7 @@ body {
 .nav-container .m-nav-1 > li:hover > a {
   opacity: 1;
   filter: alpha(opacity=100);
-  font-weight: bold;
+  font-family: NotoSansBold;
 }
 .nav-container .m-nav-1 .active > i {
   visibility: visible;
@@ -104,7 +96,7 @@ body {
 .nav-container .m-nav-1 .active > a {
   opacity: 1;
   filter: alpha(opacity=100);
-  font-weight: bold;
+  font-family: NotoSansBold;
 }
 .nav-container .m-nav-2 {
   position: absolute;
@@ -151,7 +143,7 @@ body {
 .nav-container .m-nav-2 li:hover > a {
   opacity: 1;
   filter: alpha(opacity=100);
-  font-weight: bold;
+  font-family: NotoSansBold;
 }
 .nav-container .m-nav-2 .active > i {
   visibility: visible;
@@ -159,7 +151,7 @@ body {
 .nav-container .m-nav-2 .active > a {
   opacity: 1;
   filter: alpha(opacity=100);
-  font-weight: bold;
+  font-family: NotoSansBold;
 }
 .nav-container .m-nav-3 {
   position: absolute;
@@ -191,7 +183,7 @@ body {
 .nav-container .m-nav-3 li:hover > a {
   opacity: 1;
   filter: alpha(opacity=100);
-  font-weight: bold;
+  font-family: NotoSansBold;
 }
 .lm-section-main {
   position: relative;
@@ -256,7 +248,7 @@ body {
 .content-com-inner > h1 {
   opacity: 0.9;
   filter: alpha(opacity=90);
-  font-weight: bold;
+  font-family: NotoSansBold;
   font-size: 58px;
   line-height: 70px;
 }
@@ -450,7 +442,7 @@ body {
 }
 .lm-aside-code > h3 {
   font-size: 16px;
-  font-weight: bold;
+  font-family: NotoSansBold;
   color: #000;
   opacity: .5;
   filter: alpha(opacity=50);
@@ -898,7 +890,7 @@ body {
   height: 100%;
 }
 .range-change-date {
-  font-weight: bold;
+  font-family: NotoSansBold;
   text-align: center;
   clear: both;
   padding-top: 7px;
@@ -979,7 +971,7 @@ body {
   line-height: 116px;
   margin-bottom: 30px;
   font-size: 70px;
-  font-weight: bold;
+  font-family: NotoSansBold;
   color: rgba(31, 44, 92, 0.1);
   text-align: center;
 }
@@ -1049,11 +1041,11 @@ body {
   left: 0;
   bottom: 18px;
   font-size: 30px;
-  font-weight: bold;
+  font-family: NotoSansBold;
 }
 .lm-section-coupons .coupons-content .slick-item .slick-content .s2 {
   font-size: 72px;
-  font-weight: bold;
+  font-family: NotoSansBold;
 }
 .lm-section-coupons .coupons-content .slick-item .slick-content .p1 {
   font-size: 20px;
@@ -1124,7 +1116,7 @@ body {
 .lm-section-fares .fares-item .fares-trip > h2 {
   margin-top: 30px;
   font-size: 20px;
-  font-weight: bold;
+  font-family: NotoSansBold;
   color: rgba(31, 44, 92, 0.9);
   overflow: hidden;
 }
@@ -1163,7 +1155,7 @@ body {
 }
 .lm-section-fares .fares-item .fares-price > h2 {
   font-size: 48px;
-  font-weight: bold;
+  font-family: NotoSansBold;
 }
 .lm-section-fares .fares-item .fares-price > a {
   display: inline-block;
@@ -1267,7 +1259,7 @@ body {
 }
 .lm-section-travel .travel-item .travel-inner > h2 {
   width: 100%;
-  font-weight: bold;
+  font-family: NotoSansBold;
   font-size: 24px;
   color: #1f2c5c;
   overflow: hidden;
@@ -1282,7 +1274,7 @@ body {
 }
 .lm-section-travel .travel-item .travel-inner .price {
   font-size: 20px;
-  font-weight: bold;
+  font-family: NotoSansBold;
   background: -webkit-linear-gradient(left, #b4ec80, #00928d);
   background: -o-linear-gradient(right, #b4ec80, #00928d);
   background: -moz-linear-gradient(right, #b4ec80, #00928d);
@@ -1433,7 +1425,7 @@ body {
 .lm-section-hotel .hotel-com .hotel-detail > h2 {
   width: 100%;
   font-size: 24px;
-  font-weight: bold;
+  font-family: NotoSansBold;
   color: #1f2c5c;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1474,7 +1466,7 @@ body {
 }
 .lm-section-hotel .hotel-com .hotel-detail .price-wrap .price {
   font-size: 36px;
-  font-weight: bold;
+  font-family: NotoSansBold;
   background: -webkit-linear-gradient(left, #b4ec80, #00928d);
   background: -o-linear-gradient(right, #b4ec80, #00928d);
   background: -moz-linear-gradient(right, #b4ec80, #00928d);
@@ -1562,7 +1554,7 @@ body {
   float: left;
   margin-left: 5px;
   margin-right: 5px;
-  font-weight: bold;
+  font-family: NotoSansBold;
   color: rgba(0, 0, 0, 0.2);
 }
 .lm-section-news .news-detail .news-arrow .news-arrow-box > p .s1 {
@@ -1570,7 +1562,7 @@ body {
 }
 .lm-section-news .news-detail .news-arrow .news-more {
   float: right;
-  font-weight: bold;
+  font-family: NotoSansBold;
   color: rgba(0, 0, 0, 0.2);
 }
 .lm-section-news .news-detail .news-info {
@@ -1581,7 +1573,7 @@ body {
 }
 .lm-section-news .news-detail .news-info > div > h2 > a {
   font-size: 24px;
-  font-weight: bold;
+  font-family: NotoSansBold;
   color: #1f2c5c;
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -1634,7 +1626,7 @@ body {
   line-height: 28px;
 }
 .route-id-modal .modal-body > h2 {
-  font-family: CamptonBookBold;
+  font-family: NotoSansBold;
   font-size: 24px;
   color: #1f2c5c;
   padding-left: 20px;
@@ -2238,7 +2230,7 @@ body {
     padding: 20px 20px 10px;
   }
   .popup-content .popup-airport > h2 {
-    font-weight: bold;
+    font-family: NotoSansBold;
     font-size: 20px;
     color: rgba(31, 44, 92, 0.8);
     margin-bottom: 20px;
@@ -2331,7 +2323,7 @@ body {
     padding-left: 10px;
     padding-top: 20px;
     font-size: 20px;
-    font-weight: bold;
+    font-family: NotoSansBold;
     color: rgba(31, 44, 92, 0.8);
   }
   .popup-content .popup-people {
@@ -2344,7 +2336,7 @@ body {
   .popup-content .popup-people .people-title {
     padding-bottom: 10px;
     font-size: 20px;
-    font-weight: bold;
+    font-family: NotoSansBold;
     color: rgba(31, 44, 92, 0.8);
   }
   .popup-content .popup-people .s-people-com {
@@ -2379,7 +2371,6 @@ body {
     height: 20px;
     line-height: 24px;
     margin-top: 5px;
-    font-family: CamptonBookLight;
     font-size: 14px;
     color: rgba(0, 0, 0, 0.3);
     cursor: pointer;
@@ -2441,7 +2432,7 @@ body {
     background: url('../../images/CN/add-people.png') center no-repeat rgba(255, 255, 255, 0.1);
   }
   .popup-content .popup-people .people-number > span {
-    font-weight: bold;
+    font-family: NotoSansBold;
     font-size: 24px;
     color: #fff;
   }
@@ -2555,7 +2546,6 @@ body {
     height: 34px;
     line-height: 38px;
     font-size: 18px;
-    font-family: CamptonBook;
     text-align: left;
     padding-left: 20px;
     padding-right: 20px;
@@ -2955,7 +2945,7 @@ body {
   .lm-nav-wrap .nav-container .nav-settings .h-lang .lang-menu > h2 {
     color: rgba(31, 44, 92, 0.8);
     font-size: 20px;
-    font-weight: bold;
+    font-family: NotoSansBold;
   }
   .lm-nav-wrap .nav-container .nav-settings .h-lang .lang-menu > a {
     display: block;
@@ -3029,7 +3019,7 @@ body {
   .lm-nav-wrap .nav-container .nav-settings .customer-service .phone-menu > h2 {
     color: rgba(31, 44, 92, 0.8);
     font-size: 16px;
-    font-family: CamptonBookBold;
+    font-family: NotoSansBold;
   }
   .lm-nav-wrap .nav-container .nav-settings .customer-service .phone-menu > p {
     font-size: 14px;
@@ -3531,7 +3521,7 @@ body {
     display: none;
     padding-bottom: 10px;
     font-size: 20px;
-    font-weight: bold;
+    font-family: NotoSansBold;
     color: rgba(31, 44, 92, 0.8);
   }
   .popup-content .popup-people .s-people-com {
@@ -3561,7 +3551,6 @@ body {
   }
   .popup-content .popup-people .people-prompt .p2 {
     margin-top: 5px;
-    font-family: CamptonBookLight;
     font-size: 14px;
     color: rgba(0, 0, 0, 0.3);
     cursor: pointer;
@@ -3623,7 +3612,7 @@ body {
     background: url('../../images/CN/add-people.png') center no-repeat rgba(255, 255, 255, 0.1);
   }
   .popup-content .popup-people .people-number > span {
-    font-weight: bold;
+    font-family: NotoSansBold;
     font-size: 24px;
     color: #fff;
   }
@@ -3780,7 +3769,6 @@ body {
     margin: 0 auto;
     line-height: 38px;
     font-size: 18px;
-    font-family: CamptonBook;
     text-align: left;
     padding-left: 20px;
     padding-right: 20px;

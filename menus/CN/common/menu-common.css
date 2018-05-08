@@ -1,16 +1,8 @@
 @charset "utf-8";
 /* 引入字体 */
 @font-face {
-  font-family: CamptonBook;
-  src: url(../../../common/CN/fonts/Campton/Rene.Bieder_Campton.Book.otf);
-}
-@font-face {
-  font-family: CamptonBookLight;
-  src: url(../../../common/CN/fonts/Campton/Rene.Bieder_Campton.Light.otf);
-}
-@font-face {
-  font-family: CamptonBookBold;
-  src: url(../../../common/CN/fonts/Campton/Rene.Bieder_Campton.Bold.otf);
+  font-family: NotoSansBold;
+  src: url(../../../common/CN/fonts/NotoSans/SourceHanSansCN-Bold.otf);
   font-weight: bold;
 }
 /* 定义颜色变量 */
@@ -28,6 +20,7 @@
   font-size: 36px;
   color: #1f2c5c;
   text-align: center;
+  font-family: NotoSansBold;
 }
 .lm-section .lm-content {
   margin-bottom: 30px;

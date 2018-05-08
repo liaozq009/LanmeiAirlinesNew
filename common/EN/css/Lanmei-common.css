@@ -101,7 +101,7 @@ input::-ms-clear {
 body {
   min-width: 320px;
   max-width: 1920px;
-  font-family: CamptonBook, "Microsoft YaHei", sans-serif;
+  font-family: CamptonBook;
   font-size: 14px;
   background: #FAFBFF;
 }
@@ -472,6 +472,8 @@ body {
   position: fixed;
   z-index: 99999;
   background: #f2f2f2;
+  opacity: 0.9;
+  filter: alpha(opacity=90);
 }
 .lm-loading img {
   position: absolute;
