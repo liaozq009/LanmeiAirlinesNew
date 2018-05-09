@@ -1543,7 +1543,7 @@ body {
 .lm-section-news .news-detail {
   float: left;
   width: 600px;
-  height: 400px;
+  height: 500px;
   margin-left: 120px;
 }
 .lm-section-news .news-detail .news-arrow {
@@ -1653,6 +1653,63 @@ body {
   font-size: 16px;
   color: #808080;
   line-height: 28px;
+}
+.cloud-iframe {
+  border: 0;
+}
+.bus-download-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: url('../../images/EN/bus-download-bg.jpg') center no-repeat;
+}
+.bus-download-wrap .bus-code-wrap {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 46%;
+}
+.bus-download-wrap .bus-code-wrap .bus-code-info {
+  width: 76%;
+  float: left;
+  margin-top: 30px;
+  text-align: left;
+}
+.bus-download-wrap .bus-code-wrap .bus-code-info > h2 {
+  font-size: 24px;
+  font-family: CamptonBookBold;
+  color: #1f2c5c;
+  margin-bottom: 20px;
+}
+.bus-download-wrap .bus-code-wrap .bus-code-info > p {
+  font-size: 16px;
+  margin-top: 10px;
+  color: #808080;
+}
+.bus-download-wrap .bus-code-wrap .bus-code-info .bus-info-more {
+  margin-top: 30px;
+  font-size: 14px;
+  color: #00908c;
+}
+.bus-download-wrap .bus-code-wrap .bus-code-img {
+  float: right;
+}
+.bus-download-wrap .bus-code-wrap .download-code-btn {
+  display: block;
+  color: #fff;
+  width: 100px;
+  font-size: 16px;
+  border-radius: 2px;
+  margin: 0 auto;
+  padding: 5px;
+  background: #1f2c5c;
+  transition: all .3s;
+  -webkit-transition: all .3s;
+}
+.bus-download-wrap .bus-code-wrap .download-code-btn:hover {
+  background: #8ec060;
+  transition: all .3s;
+  -webkit-transition: all .3s;
 }
 /* ie兼容 */
 .ie11 .rooms-content-com {
@@ -2076,7 +2133,7 @@ body {
   }
   .lm-section-news .news-detail {
     width: 480px;
-    height: 320px;
+    height: 420px;
     margin-left: 96px;
   }
   .lm-section-news .news-detail .news-info {
@@ -2092,9 +2149,9 @@ body {
   .lm-section-news .news-content {
     margin-left: 576px;
   }
-  .lm-section-news .news-content .news-item > img {
+  .lm-section-news .news-content .news-item > a > img {
     width: 528px;
-    height: 400px;
+    height: 420px;
   }
 }
 /* hover效果 */
@@ -2278,15 +2335,21 @@ body {
     background: url('../../images/EN/hotel-small-icon-active.png') left center no-repeat;
   }
   .popup-content .popup-airport .car-list-wrap > li {
-    padding-top: 12px;
     padding-right: 30px;
+    height: 40px;
+    line-height: 46px;
   }
   .popup-content .popup-airport .car-list-wrap > li span {
+    display: inline-block;
+    width: 520px;
     color: #8f95ad;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   .popup-content .popup-airport .car-list-wrap > li > p {
     width: 42px;
-    height: 30px;
+    height: 40px;
     float: right;
     background: url('../../images/EN/prompt-icon.png') center no-repeat;
   }
@@ -2775,6 +2838,14 @@ body {
     width: 400px;
     height: 278px;
     margin-left: 0px;
+  }
+  .lm-section-news .news-detail .news-info {
+    height: 228px;
+    padding: 22px 18px;
+  }
+  .lm-section-news .news-detail .news-info > div .news-info-detail p {
+    height: 90px;
+    overflow: hidden;
   }
   .lm-section-news .news-content {
     margin-left: 400px;

@@ -3,7 +3,7 @@ var LanmeiAirlines = {
 	fromCityData: ['Sihanoukville/KOS/Cambodia','Macao/MFM/Macao,China','Phnom Penh/PNH/Cambodia','Siem Reap/REP/Cambodia','Ho Chi Minh/SGN/Vietnam','Hanoi/HAN/Vietnam','HongKong/HKG/HongKong,China','SEOUL/ICN/Korea','Bangkok/BKK/Thailand','Shijiazhuang/SJW/China','Singapore/SIN/Singapore','Guangzhou/CAN/China'],
 	toCityData: ['Sihanoukville/KOS/Cambodia','Macao/MFM/Macao,China','Phnom Penh/PNH/Cambodia','Siem Reap/REP/Cambodia','Ho Chi Minh/SGN/Vietnam','Hanoi/HAN/Vietnam','HongKong/HKG/HongKong,China','SEOUL/ICN/Korea','Bangkok/BKK/Thailand','Shijiazhuang/SJW/China','Singapore/SIN/Singapore','Guangzhou/CAN/China'],
 	hotelCityData: ['Hong Phann Guest House','Phkar Chhouk Tep Monireth Hotel','Tt Guest House','Phkar Chhouk Tep 2 Hotel'],
-	carRouteData: ['Airport --> Toyoko Inn','Airport --> Sofitel'],
+	carRouteData: ['Phnom Penh International Airport --> Toyoko Inn Phnom Penh','Phnom Penh International Airport -->  Hotel Sofitel Phnom Penh Phokeethra'],
 	carTicketTypeData: ['One-way','Return'],
 	fNumberData: ['LQ315','LQ316','LQ317','LQ318','LQ332','LQ333','LQ502','LQ503','LQ660','LQ661','LQ666','LQ667','LQ670','LQ671','LQ780','LQ781','LQ806','LQ807','LQ916','LQ917','LQ970','LQ971','LQ9302','LQ9303','LQ9508','LQ9509'],
 	indexLiFrom: 0, //定义键盘移动index 
@@ -54,7 +54,22 @@ var LanmeiAirlines = {
 				// alert("ie");
 				$('.js-cloud-iframe').remove();
 			}else{
-				//alert("not ie");
+				//alert("not ie and safari");
+				//iframe异步无阻塞加载onload事件
+				// function createIframe() {
+				// 	var i = document.createElement("iframe");
+				// 	i.src ="libs/clouds/lm-cloud.html";
+				// 	i.scrolling ="auto";
+				// 	i.width ="100%";
+				// 	i.height ="100%";
+				// 	i.className = "cloud-iframe";
+				// 	$('.js-ticket-bg').append(i);
+				// };
+				// // Check for browser support of event handling capability
+				// if (window.addEventListener){window.addEventListener("load", createIframe, false);}
+				// else if (window.attachEvent){window.attachEvent("onload", createIframe);}
+				// else{window.onload = createIframe;} 
+
 				$('.js-cloud-iframe').attr('src','libs/clouds/lm-cloud.html');
 			}
 		}else{
@@ -1961,6 +1976,21 @@ var LanmeiAirlines = {
 		$peopleNumInput.keyup(function(event) {
 			$(this).val($(this).val().replace(/[^\d]/ig,''));
 		});
+
+        /*二维码下载*/
+        $('.js-car-search').click(function () {
+			layer.open({
+			  area: ['90%', '600px'],
+			  type: 1,
+			  shadeClose: true,
+			  title: false, //不显示标题
+			  content: '<div class="bus-download-wrap"><div class="bus-code-wrap"><div class="bus-code-info"><h2>使用说明:</h2><p>1、请下载并保存此二维码。二维码作为优惠购票的唯一凭证，请妥善保管。</p><p>2、持此二维码至KKSTAR上车点，向车站工作人员出示此二维码，扫码后即享优惠价3.5美金/单程/座位（原价5美金/单程/座位）。</p><p>3、此二维码无使用期限及班次限制。可随时持该二维码前往KKSTAR售票点扫码购票。</p><a href="javascript:;" class="bus-info-more js-busInfo-more">查看更多</a></div><div class="bus-code-img"><img src="./images/EN/bus-code.jpg" /><a href="javascript:;" class="download-code-btn js-download-code">Download</a></div></div></div>'
+			});        	
+		});
+
+		$(document).on('click','.js-download-code',function(){
+			alert('下载成功');
+		});
 	},
 
 	/* 移动端租车选择 */
@@ -3223,8 +3253,8 @@ var LanmeiAirlines = {
 		};
 		
 		var $content = $('.js-coupons-content');
-		$content.html(shoppingStr);
-		slick('#js-shopping-coupons');
+		$content.html(hotelStr);
+		slick('#js-hotel-coupons');
 
 		// 切换优惠券
 		var $loading = $('.js-coupons-loading');
@@ -3485,7 +3515,7 @@ var LanmeiAirlines = {
 			if(winWidth<=1400){
 				$('.js-news-mask').width(conWidth-558);
 			}else{
-				$('.js-news-mask').width(conWidth-684);
+				$('.js-news-mask').width(conWidth-690);
 			}
 		};
 		winResize();

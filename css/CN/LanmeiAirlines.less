@@ -1502,7 +1502,7 @@ body{
 	.news-detail{
 		float: left;
 		width: 600px;
-		height: 400px;
+		height: 500px;
 		margin-left: 120px;
 		.news-arrow{
 			width: 100%;
@@ -1616,6 +1616,65 @@ body{
 				color: #808080;
 				line-height: 28px;
 			}
+		}
+	}
+}
+
+.cloud-iframe{
+	border:0;
+}
+
+.bus-download-wrap{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background: url('@{url}bus-download-bg.jpg') center no-repeat;
+	.bus-code-wrap{
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 46%;
+		.bus-code-info{
+			width: 76%;
+			float: left;
+			margin-top: 30px;
+			text-align: left;
+			>h2{
+				font-size: 24px;
+				font-family: @FBold;
+				color: @purple;
+				margin-bottom: 20px;
+			}
+			>p{
+				font-size: 16px;
+				margin-top: 10px;
+				color: #808080;
+			}
+			.bus-info-more{
+				margin-top: 30px;
+			    font-size: 14px;
+			    color: #00908c;
+			}
+		}
+		.bus-code-img{
+			float: right;
+		}
+		.download-code-btn{
+			display: block;
+		    color: #fff;
+		    width: 100px;
+		    font-size: 16px;
+		    border-radius: 2px;
+		    margin: 0 auto;
+		    padding: 5px;
+		    background: @purple;
+		    transition: all .3s;
+		    -webkit-transition: all .3s;
+		    &:hover{
+		    	background: @green;
+		    	transition: all .3s;
+		    	-webkit-transition: all .3s;
+		    }
 		}
 	}
 }
@@ -1860,9 +1919,9 @@ body{
 		margin-bottom: 160px;
 	}
 	.section-content-title{
-		font-size: 72px;
+		font-size: 62px;
 		height: 104px;
-		line-height: 106px;
+		line-height: 94px;
 		>h2{font-size: 20px;}
 	}
 	.lm-section-coupons .coupons-anchor{
@@ -2016,7 +2075,7 @@ body{
 	.lm-section-news {
 		.news-detail{
 			width: 480px;
-			height: 320px;
+			height: 420px;
 			margin-left: 96px;
 			.news-info{
 				height: 320px;
@@ -2029,9 +2088,9 @@ body{
 		}
 		.news-content{
 			margin-left: 576px;
-			.news-item>img{
+			.news-item>a>img{
 				width: 528px;
-				height: 400px;
+				height: 420px;
 			}
 		}
 	}
@@ -2225,13 +2284,20 @@ body{
 			}
 			.car-list-wrap{
 				>li{
-					height: 30px;
-				    line-height: 30px;
+					height: 40px;
+				    line-height: 40px;
 					padding-right: 30px;
-					span{color:#8f95ad};
+					span{
+						display: inline-block;
+					    width: 520px;
+						color:#8f95ad;
+					    overflow: hidden;
+					    text-overflow: ellipsis;
+					    white-space: nowrap;
+					}
 					>p{
 						width: 42px;
-						height: 30px;
+						height: 40px;
 						float: right;
 						background: url('@{url}prompt-icon.png') center no-repeat;
 					}
@@ -2706,6 +2772,14 @@ body{
 		width: 400px;
 		height: 278px;
 		margin-left: 0px;
+		.news-info{
+			height: 228px;
+			padding: 22px 18px;
+			> div .news-info-detail p{
+				height: 90px;
+			    overflow: hidden;
+			}
+		}
 	}
 	.lm-section-news .news-content{
 		margin-left: 400px;
