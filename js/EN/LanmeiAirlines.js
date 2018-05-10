@@ -20,6 +20,7 @@ var LanmeiAirlines = {
 		this.recommendTravel();
 		this.recommendHotel();
 		this.lmNews();
+		this.ticketCommon();
 		this.otherEvent();
 		this.isPc();
 		this.isIE();
@@ -387,6 +388,7 @@ var LanmeiAirlines = {
 		var that = this;
 		$slide.click(function(){
 			$loader.fadeIn();
+			$('.js-ticket-mask,.js-ticket-mask2').hide();
 			$slide.removeClass('active');
 			var href = $(this).attr('data-href');
 			switch (href) {
@@ -1468,8 +1470,8 @@ var LanmeiAirlines = {
 
 	/* 酒店选择 */
 	hotelSelect:function(){
-		var $mask = $('.js-hotel-mask'); //遮罩层
-		var $mask2 = $('.js-hotel-mask2'); //遮罩层2
+		var $mask = $('.js-ticket-mask'); //遮罩层
+		var $mask2 = $('.js-ticket-mask2'); //遮罩层2
 		var $hotelBox = $('.js-hotelPopup-box'); //酒店c3动画最外层
 		var $hotelContent = $('.js-hotelPopup-content'); //酒店c3动画内容
 
@@ -1787,8 +1789,8 @@ var LanmeiAirlines = {
 
 	/* 租车选择 */
 	carSelect:function(){
-		var $mask = $('.js-hotel-mask'); //遮罩层
-		var $mask2 = $('.js-hotel-mask2'); //遮罩层2
+		var $mask = $('.js-ticket-mask'); //遮罩层
+		var $mask2 = $('.js-ticket-mask2'); //遮罩层2
 		var $carBox = $('.js-carPopup-box'); //租车c3动画最外层
 		var $carContent = $('.js-carPopup-content'); //租车c3动画内容
 
@@ -1976,21 +1978,6 @@ var LanmeiAirlines = {
 		$peopleNumInput.keyup(function(event) {
 			$(this).val($(this).val().replace(/[^\d]/ig,''));
 		});
-
-        /*二维码下载*/
-        $('.js-car-search').click(function () {
-			layer.open({
-			  area: ['90%', '600px'],
-			  type: 1,
-			  shadeClose: true,
-			  title: false, //不显示标题
-			  content: '<div class="bus-download-wrap"><div class="bus-code-wrap"><div class="bus-code-info"><h2>使用说明:</h2><p>1、请下载并保存此二维码。二维码作为优惠购票的唯一凭证，请妥善保管。</p><p>2、持此二维码至KKSTAR上车点，向车站工作人员出示此二维码，扫码后即享优惠价3.5美金/单程/座位（原价5美金/单程/座位）。</p><p>3、此二维码无使用期限及班次限制。可随时持该二维码前往KKSTAR售票点扫码购票。</p><a href="javascript:;" class="bus-info-more js-busInfo-more">查看更多</a></div><div class="bus-code-img"><img src="./images/EN/bus-code.jpg" /><a href="javascript:;" class="download-code-btn js-download-code">Download</a></div></div></div>'
-			});        	
-		});
-
-		$(document).on('click','.js-download-code',function(){
-			alert('下载成功');
-		});
 	},
 
 	/* 移动端租车选择 */
@@ -2110,8 +2097,8 @@ var LanmeiAirlines = {
 
 	/* 航班动态选择 */
 	fStatusSelect:function(){
-		var $mask = $('.js-fStatus-mask'); //遮罩层
-		var $mask2 = $('.js-fStatus-mask2'); //遮罩层2
+		var $mask = $('.js-ticket-mask'); //遮罩层
+		var $mask2 = $('.js-ticket-mask2'); //遮罩层2
 		var $fStatusBox = $('.js-fStatusPopup-box'); //航班动态c3动画最外层
 		var $fStatusContent = $('.js-fStatusPopup-content'); //航班动态c3动画内容
 
@@ -2620,6 +2607,35 @@ var LanmeiAirlines = {
 			$fStatusBox.height(winHeight-58);
 
 			$container.addClass('is-show');
+		});
+	},
+
+	/* PC和移动端都使用的事件 */
+	ticketCommon:function(){
+        /*二维码下载*/
+        $('.js-car-search').click(function () {
+			layer.open({
+			  area: ['90%', 'auto'],
+			  type: 1,
+			  id: 'bus-download-id',
+			  shadeClose: true,
+			  title: false, //不显示标题
+			  content: '<div class="bus-download-wrap"><div class="bus-code-wrap"><div class="bus-code-img"><img src="./images/EN/bus-code.jpg" /><a href="javascript:;" class="download-code-btn js-download-code">Download</a></div><div class="bus-code-info"><h2>使用说明:</h2><p>1、请下载并保存此二维码。二维码作为优惠购票的唯一凭证，请妥善保管。</p><p>2、持此二维码至KKSTAR上车点，向车站工作人员出示此二维码，扫码后即享优惠价3.5美金/单程/座位（原价5美金/单程/座位）。</p><p>3、此二维码无使用期限及班次限制。可随时持该二维码前往KKSTAR售票点扫码购票。</p><a href="javascript:;" class="bus-info-more js-busInfo-more">查看更多</a></div></div></div>'
+			});        	
+		});
+
+		$(document).on('click','.js-download-code',function(){
+			alert('下载成功');
+		});
+
+		$(document).on('click','.js-busInfo-more',function(){
+			layer.open({
+			  area: ['auto', 'auto'],
+			  type: 1,
+			  shadeClose: true,
+			  title: false, //不显示标题
+			  content:'<div class="bus-code-info bus-code-detail"><h2>注意事项:</h2><p>1、如二维码遗失或保存失败，请重新选择所需线路及张数并生成相应的二维码。</p><p>2、此二维码仅限购买您所选择的线路及张数，如需更改其他线路或更改购买张数，请重新选择线路及张数并生成相应的二维码。</p><p>3、为保证行车安全，机场大巴规定一人一座，所有乘客均需购票占位。</p><p>4、扫码购票后，车票仅限该路线当班有效，无班次车票限该路线当日有效，如需延期，请至柜台重新登记，更改车班以一次为限。</p><p>5、扫码购票后，凡逾时、自行涂改、损毁、无购票证明联、无司机联或票面不完整者，视为无效票，不得乘车或退票。</p></div>',
+			}); 
 		});
 	},
 

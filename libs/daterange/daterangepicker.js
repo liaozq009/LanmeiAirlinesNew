@@ -30,6 +30,7 @@
         this.dateLimit = false;
         this.autoApply = false;
         this.singleDatePicker = false;
+        this.singleDatePicker_2 = $.extend({singleDatePicker_2:false}, {singleDatePicker_2:options.singleDatePicker_2}).singleDatePicker_2; //单日期单日历
         this.showDropdowns = false;
         this.showWeekNumbers = false;
         this.showISOWeekNumbers = false;
@@ -402,7 +403,9 @@
             this.container.addClass('single');
             this.container.find('.calendar.left').addClass('single');
             this.container.find('.calendar.left').show();
-            // this.container.find('.calendar.right').hide();
+           if(this.singleDatePicker_2){ //单日期单日历
+               this.container.find('.calendar.right').hide();
+           }
             this.container.find('.daterangepicker_input input, .daterangepicker_input > i').hide();
             if (this.timePicker) {
                 this.container.find('.ranges ul').hide();
@@ -813,8 +816,8 @@
             }
 
             html += '<th colspan="5" class="month">' + dateHtml + '</th>';
-            // if ((!maxDate || maxDate.isAfter(calendar.lastDay)) && (!this.linkedCalendars || side == 'right' || this.singleDatePicker)) {
-            if ((!maxDate || maxDate.isAfter(calendar.lastDay)) && (!this.linkedCalendars || side == 'right')) { //调整箭头
+            if ((!maxDate || maxDate.isAfter(calendar.lastDay)) && (!this.linkedCalendars || side == 'right' || this.singleDatePicker_2)) {
+            // if ((!maxDate || maxDate.isAfter(calendar.lastDay)) && (!this.linkedCalendars || side == 'right')) { //调整箭头
                 html += '<th class="next available"><i class="fa fa-' + arrow.right + ' glyphicon glyphicon-date-next"></i></th>';
             } else {
                 html += '<th></th>';
@@ -1216,7 +1219,7 @@
             }
 
             //if a new date range was selected, invoke the user callback function
-            if (!this.startDate.isSame(this.oldStartDate) || !this.endDate.isSame(this.oldEndDate))
+            // if (!this.startDate.isSame(this.oldStartDate) || !this.endDate.isSame(this.oldEndDate))
                 this.callback(this.startDate, this.endDate, this.chosenLabel);
 
             //if picker is attached to a text input, update it

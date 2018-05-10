@@ -304,7 +304,7 @@ body{
 	position: absolute;
 	top: 120px;
 	left: 28px;
-	z-index: 1;
+	z-index: 10;
 	width: 110px;
 	height: 400px;
 	border-radius: 2px;
@@ -1646,26 +1646,8 @@ body{
 		top: 0;
 		width: 46%;
 		.bus-code-info{
-			width: 76%;
-			float: left;
 			margin-top: 30px;
-			text-align: left;
-			>h2{
-				font-size: 24px;
-				font-family: @FBold;
-				color: @purple;
-				margin-bottom: 20px;
-			}
-			>p{
-				font-size: 16px;
-				margin-top: 10px;
-				color: #808080;
-			}
-			.bus-info-more{
-				margin-top: 30px;
-			    font-size: 14px;
-			    color: #00908c;
-			}
+			margin-right: 160px;
 		}
 		.bus-code-img{
 			float: right;
@@ -1688,6 +1670,30 @@ body{
 		    }
 		}
 	}
+}
+#bus-download-id{height: 600px;}
+.bus-code-info{
+	text-align: left;
+	>h2{
+		font-size: 24px;
+		font-family: @FBold;
+		color: @purple;
+		margin-bottom: 20px;
+	}
+	>p{
+		font-size: 16px;
+		margin-top: 10px;
+		color: #808080;
+	}
+	.bus-info-more{
+		display: block;
+		margin-top: 10px;
+	    font-size: 14px;
+	    color: #00908c;
+	}
+}
+.bus-code-detail{
+	padding:10px;
 }
 
 /* ie兼容 */
@@ -2821,6 +2827,7 @@ body{
 	.lm-section-service{
 		background-position: 50% -92px !important;
 	}
+	.bus-download-wrap .bus-code-wrap .bus-code-info{margin-right: 0;}
 }
 
 
@@ -4088,7 +4095,6 @@ body{
 					> p{
 						font-size: 12px;
 					}
-					img{width: 6px;}
 				}
 			}
 			.news-info{
@@ -4109,4 +4115,31 @@ body{
 			margin-left: 0;
 		}
 	}
+	.bus-download-wrap{
+		height: auto;
+		background: #fff;
+		.bus-code-wrap{
+			position: static;
+			width: 100%;
+			.bus-code-info{
+				margin-top: 0.1rem;
+			}
+		}
+	}
+	.bus-code-info{
+		>h2{
+			font-size: 0.18rem;
+			margin-bottom: 0.1rem;
+		}
+		>p{
+			font-size: 0.14rem;
+			margin-top: 0.06rem;
+			line-height: 0.24rem;
+		}
+		.bus-info-more{
+			font-size: 0.12rem;
+			margin-top: 0.06rem;
+		}
+	}
+	#bus-download-id{height: auto !important;}
 }
