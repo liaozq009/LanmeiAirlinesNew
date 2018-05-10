@@ -1087,7 +1087,8 @@ var LanmeiAirlines = {
 		var fromCityVal = function(text1,text2){ 
 			$fromInput.val(text2[0]+'/'+text2[1]);
 			$box.css('left',350);
-			var tocityArr = that.toCityData;
+			var tocityArr = that.toCityData.slice(0);
+			
 			tocityArr.remove(text1);
 
 			$toMenuSub.empty();
@@ -2143,7 +2144,7 @@ var LanmeiAirlines = {
 		/* 设置出发地的值 */
 		var fromCityVal = function(text1,text2){ 
 			$routeFromInput.val(text2[0]+'/'+text2[1]);
-			var tocityArr = that.toCityData;
+			var tocityArr = that.toCityData.slice(0);
 			tocityArr.remove(text1);
 
 			$routeToMenuSub.empty();

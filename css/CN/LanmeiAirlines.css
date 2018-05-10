@@ -783,6 +783,9 @@ body {
   margin-left: 30px;
   margin-right: 0;
 }
+.select-air-com .car-people-num {
+  margin-right: 0;
+}
 .select-fares {
   width: 330px;
   height: 230px;
