@@ -2082,15 +2082,27 @@ body{
 	.lm-section-news {
 		.news-detail{
 			width: 480px;
-			height: 420px;
+			height: 370px;
 			margin-left: 96px;
+			overflow: hidden;
 			.news-info{
 				height: 320px;
 				padding: 32px 24px;
 				>h2{
 					font-size: 20px;
 				}
-				.news-info-detail{margin-top: 32px;}
+				>div .news-info-detail{
+					margin-top: 16px;
+					>p{
+						display: -webkit-box;
+				    -webkit-box-orient: vertical;
+				    -webkit-line-clamp: 6;
+				    overflow: hidden;
+				    white-space: normal!important;
+				    text-overflow: ellipsis;
+				    word-wrap: break-word;
+					}
+				}
 			}
 		}
 		.news-content{
