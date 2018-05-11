@@ -1,7 +1,6 @@
 
 var LanmeiAirlines = {
-	fromCityData: ['Sihanoukville/KOS/Cambodia','Macao/MFM/Macao,China','Phnom Penh/PNH/Cambodia','Siem Reap/REP/Cambodia','Ho Chi Minh/SGN/Vietnam','Hanoi/HAN/Vietnam','HongKong/HKG/HongKong,China','SEOUL/ICN/Korea','Bangkok/BKK/Thailand','Shijiazhuang/SJW/China','Singapore/SIN/Singapore'],
-	toCityData: ['Sihanoukville/KOS/Cambodia','Macao/MFM/Macao,China','Phnom Penh/PNH/Cambodia','Siem Reap/REP/Cambodia','Ho Chi Minh/SGN/Vietnam','Hanoi/HAN/Vietnam','HongKong/HKG/HongKong,China','SEOUL/ICN/Korea','Bangkok/BKK/Thailand','Shijiazhuang/SJW/China','Singapore/SIN/Singapore'],
+	cityData: ['澳门(aomen)/MFM/中华人民共和国澳门特别行政区','长沙(changsha)/CSX/中华人民共和国','广州(guangzhou)/SJW/中华人民共和国','河内(henei)/HAN/越南','胡志明(huzhiming)/SGN/越南','金边(jinbian)/PNH/柬埔寨','曼谷(mangu)/BKK/泰国','南宁(nanning)/NNG/中华人民共和国','石家庄(shijiazhuang)/SJW/中华人民共和国','西哈努克市(xihanuke)/KOS/柬埔寨','暹粒(xianli)/REP/柬埔寨','香港(xianggang)/HKG/中华人民共和国香港特别行政区','新加坡(xinjiapo)/SIN/新加坡'],
 	hotelCityData: ['Hong Phann Guest House','Phkar Chhouk Tep Monireth Hotel','Tt Guest House','Phkar Chhouk Tep 2 Hotel'],
 	fNumberData: ['LQ9503','LQ503','LQ9502','LQ502','LQ806','LQ807'],
 	indexLiFrom: 0, //定义键盘移动index 
@@ -804,16 +803,16 @@ var LanmeiAirlines = {
 
 			switch (data) {
 				case 'js-from-menu':
-					currenData=that.fromCityData
+					currenData=that.cityData
 					break;
 				case 'js-routeFrom-menu':
-					currenData=that.fromCityData
+					currenData=that.cityData
 					break;
 				case 'js-to-menu':
-					currenData=that.toCityData
+					currenData=that.cityData
 					break;
 				case 'js-routeTo-menu':
-					currenData=that.toCityData
+					currenData=that.cityData
 					break;
 				case 'js-fNumber-menu':
 					currenData=that.fNumberData
@@ -866,7 +865,7 @@ var LanmeiAirlines = {
 		var fromCityVal = function(text1,text2){ 
 			$fromInput.val(text2[0]+'/'+text2[1]);
 			$box.css('left',350);
-			var tocityArr = that.toCityData;
+			var tocityArr = that.cityData;
 			tocityArr.remove(text1);
 
 			$toMenuSub.empty();
@@ -1023,7 +1022,7 @@ var LanmeiAirlines = {
 		var fromCityVal = function(text1,text2){ 
 			$fromInput.val(text2[0]+'/'+text2[1]);
 			$box.css('left',350);
-			var tocityArr = that.toCityData;
+			var tocityArr = that.cityData;
 			tocityArr.remove(text1);
 
 			$toMenuSub.empty();
@@ -1078,7 +1077,7 @@ var LanmeiAirlines = {
 			}
 		}).one('click',function(){
 			$fromMenuSub.empty();
-			$.each(that.fromCityData,function(i,val){
+			$.each(that.cityData,function(i,val){
 				$fromMenuSub.append('<li title="'+val+'">'+val+'</li>');
 			});
 			// $('.js-from-menu>li:first').addClass('active');
@@ -1092,7 +1091,7 @@ var LanmeiAirlines = {
 			if(fromVal==''){
 				$toMenuSub.append('<li title="No results found">No results found</li>');
 			}else{
-				var tocityArr = that.toCityData;
+				var tocityArr = that.cityData;
 				tocityArr.remove(fromVal);
 
 				$toMenuSub.empty();
@@ -1294,7 +1293,7 @@ var LanmeiAirlines = {
 			$('.js-popup-content>div').hide(); //初始化隐藏出发地、目的地、日期、人数
 			$('.js-airport-from').show();
 			var toVal = $toInput.attr('data-city'); //获取目的地的值进行过滤
-			$.each(that.fromCityData,function(i,val){
+			$.each(that.cityData,function(i,val){
 				$fromMenuSub.append('<li title="'+val+'">'+val+'</li>');
 			});
 			$fromMenuSub.children('li:contains('+toVal+')').remove(); //过滤
@@ -1322,7 +1321,7 @@ var LanmeiAirlines = {
 			$('.js-popup-content>div').hide(); //初始化隐藏出发地、目的地、日期、人数
 			$('.js-airport-to').show();
 			var fromVal = $fromInput.attr('data-city'); //获取出发地的值进行过滤
-			$.each(that.toCityData,function(i,val){
+			$.each(that.cityData,function(i,val){
 				$toMenuSub.append('<li title="'+val+'">'+val+'</li>');
 			});
 
@@ -1779,7 +1778,7 @@ var LanmeiAirlines = {
 		/* 设置出发地的值 */
 		var fromCityVal = function(text1,text2){ 
 			$routeFromInput.val(text2[0]+'/'+text2[1]);
-			var tocityArr = that.toCityData;
+			var tocityArr = that.cityData;
 			tocityArr.remove(text1);
 
 			$routeToMenuSub.empty();
@@ -1871,7 +1870,7 @@ var LanmeiAirlines = {
 			$routeFromBox.show();
 		}).one('click',function(){
 			$routeFromMenuSub.empty();
-			$.each(that.fromCityData,function(i,val){
+			$.each(that.cityData,function(i,val){
 				$routeFromMenuSub.append('<li title="'+val+'">'+val+'</li>');
 			});
 			// $('.js-from-menu>li:first').addClass('active');
@@ -1887,7 +1886,7 @@ var LanmeiAirlines = {
 			if(fromVal==''){
 				$routeToMenuSub.append('<li title="No results found">No results found</li>');
 			}else{
-				var tocityArr = that.toCityData;
+				var tocityArr = that.cityData;
 				tocityArr.remove(fromVal);
 
 				$routeToMenuSub.empty();
@@ -2164,7 +2163,7 @@ var LanmeiAirlines = {
 			$('.js-fStatusPopup-content>div').hide(); 
 			$('.js-routeBox-from').show();
 			var toVal = $routeToInput.attr('data-city'); //获取目的地的值进行过滤
-			$.each(that.fromCityData,function(i,val){
+			$.each(that.cityData,function(i,val){
 				$routeFromMenuSub.append('<li title="'+val+'">'+val+'</li>');
 			});
 			$routeFromMenuSub.children('li:contains('+toVal+')').remove(); //过滤
@@ -2193,7 +2192,7 @@ var LanmeiAirlines = {
 			$('.js-fStatusPopup-content>div').hide(); 
 			$('.js-routeBox-to').show();
 			var fromVal = $routeFromInput.attr('data-city'); //获取出发地的值进行过滤
-			$.each(that.toCityData,function(i,val){
+			$.each(that.cityData,function(i,val){
 				$routeToMenuSub.append('<li title="'+val+'">'+val+'</li>');
 			});
 

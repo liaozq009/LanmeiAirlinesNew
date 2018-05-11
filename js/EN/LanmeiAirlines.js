@@ -1,7 +1,6 @@
 
 var LanmeiAirlines = {
-	fromCityData: ['Sihanoukville/KOS/Cambodia','Macao/MFM/Macao,China','Phnom Penh/PNH/Cambodia','Siem Reap/REP/Cambodia','Ho Chi Minh/SGN/Vietnam','Hanoi/HAN/Vietnam','HongKong/HKG/HongKong,China','SEOUL/ICN/Korea','Bangkok/BKK/Thailand','Shijiazhuang/SJW/China','Singapore/SIN/Singapore','Guangzhou/CAN/China'],
-	toCityData: ['Sihanoukville/KOS/Cambodia','Macao/MFM/Macao,China','Phnom Penh/PNH/Cambodia','Siem Reap/REP/Cambodia','Ho Chi Minh/SGN/Vietnam','Hanoi/HAN/Vietnam','HongKong/HKG/HongKong,China','SEOUL/ICN/Korea','Bangkok/BKK/Thailand','Shijiazhuang/SJW/China','Singapore/SIN/Singapore','Guangzhou/CAN/China'],
+	cityData: ['Bangkok/BKK/Thailand','Changsha/CSX/China','Guangzhou/CAN/China','Hanoi/HAN/Vietnam','HongKong/HKG/HongKong,China','Ho Chi Minh/SGN/Vietnam','Macao/MFM/Macao,China','Nanning/NNG/China','Phnom Penh/PNH/Cambodia','Shijiazhuang/SJW/China','Siem Reap/REP/Cambodia','Sihanoukville/KOS/Cambodia','Singapore/SIN/Singapore'],
 	hotelCityData: ['Hong Phann Guest House','Phkar Chhouk Tep Monireth Hotel','Tt Guest House','Phkar Chhouk Tep 2 Hotel'],
 	carRouteData: ['Phnom Penh International Airport --> Toyoko Inn Phnom Penh','Phnom Penh International Airport -->  Hotel Sofitel Phnom Penh Phokeethra'],
 	carTicketTypeData: ['One-way','Return'],
@@ -647,7 +646,7 @@ var LanmeiAirlines = {
 	},
 
 	/* 简洁日期选择 */
-	simpleDate:function(single,id,container){
+	simpleDate:function(single,singleCal,id,container){
 		// 日期选择
 		var formatDate = function(num) { //日期格式化
 			return num < 10 ? (num = '0' + num) : num;
@@ -701,6 +700,7 @@ var LanmeiAirlines = {
 			minDate: todayTime,
 			// maxDate:'2018-06-02',
 		    singleDatePicker: single, //单日期
+		    singleDatePicker_2: singleCal, //单日期单日历
 		    showDateTitle: true,
 		    showDropdowns: false, //下拉选择月份和年份
 		    showWeekNumbers: false, //显示周
@@ -825,16 +825,16 @@ var LanmeiAirlines = {
 
 			switch (data) {
 				case 'js-from-menu':
-					currenData=that.fromCityData
+					currenData=that.cityData
 					break;
 				case 'js-routeFrom-menu':
-					currenData=that.fromCityData
+					currenData=that.cityData
 					break;
 				case 'js-to-menu':
-					currenData=that.toCityData
+					currenData=that.cityData
 					break;
 				case 'js-routeTo-menu':
-					currenData=that.toCityData
+					currenData=that.cityData
 					break;
 				case 'js-fNumber-menu':
 					currenData=that.fNumberData
@@ -883,67 +883,37 @@ var LanmeiAirlines = {
 		var $toInput = $('.js-to-input'); //机票目的地
 		var $toMenuSub = $('.js-to-menu'); //目的地下拉菜单
 
-		/* 设置出发地的值 */
-		var fromCityVal = function(text1,text2){ 
-			$fromInput.val(text2[0]+'/'+text2[1]);
-			$box.css('left',350);
-			var tocityArr = that.toCityData;
-			tocityArr.remove(text1);
+		var $routeFromInput = $('.js-routeFrom-input'); //航班动态出发地
+		var $routeToInput = $('.js-routeTo-input'); //航班动态查询目的地
+		var $fStatusBox = $('.js-fStatusPopup-box'); //航班动态c3动画最外层
+		var $routeFromBox = $('.js-routeBox-from'); //航班动态出发地外层
+		var $routeToBox = $('.js-routeBox-to'); //航班动态目的地外层
+		var $routeDateBox = $('.js-routePopup-date'); //航班动态日期外层
+		var $routeToMenuSub = $('.js-routeTo-menu'); //航班号下拉菜单 --- 航班动态
 
+		/* 设置目的地下拉的值 */
+		var toCityVal = function(text){
+			var tocityArr = that.cityData.slice(0);
+			tocityArr.remove(text);
 			$toMenuSub.empty();
 			$.each(tocityArr,function(i,val){
 				$toMenuSub.append('<li title="'+val+'">'+val+'</li>');
-			});
-			$toInput.focus();
-			$('.js-to-menu>li:first').addClass('active');
-			keyDown('.js-to-input','.js-to-menu',that.indexLiTo); //绑定键盘事件
-
-			$fromBox.slideUp(function(){ //出发地隐藏
-				$toBox.slideDown(); //目的地显示
-			}); 
+			});	
+			$('.js-to-menu>li:first').addClass('active');		
 		};
 
-		/* 设置目的地的值 */
-		var toCityVal = function(text1,text2){
-			$toInput.val(text2[0]+'/'+text2[1]);
-			$box.css('left',700);
-
-			$toBox.slideUp(function(){ //出发地隐藏
-				$('.js-date-result').click(); //日期展示
-				$dateBox.slideDown(); //目的地显示
-			}); 
-		};
-
-		/* 设置出发地的值 */
-		var routeFromCityVal = function(text1,text2){ 
-			$('.js-routeFrom-input').val(text2[0]+'/'+text2[1]);
-			$('.js-fStatusPopup-box').css('left',350);
-			var tocityArr = that.toCityData;
-			tocityArr.remove(text1);
-
-			$('.js-routeTo-menu').empty();
+		var routeToCityVal = function(text){
+			var tocityArr = that.cityData.slice(0);
+			tocityArr.remove(text);
+			$routeToMenuSub.empty();
 			$.each(tocityArr,function(i,val){
-				$('.js-routeTo-menu').append('<li title="'+val+'">'+val+'</li>');
-			});
-			$('.js-routeTo-input').focus();
-			$('.js-routeTo-menu>li:first').addClass('active');
-			keyDown('.js-routeTo-input','.js-routeTo-menu',that.indexLiRouteTo); //绑定键盘事件
-
-			$('.js-routeBox-from').slideUp(function(){ //出发地隐藏
-				$('.js-routeBox-to').slideDown(); //目的地显示
-			}); 
+				$routeToMenuSub.append('<li title="'+val+'">'+val+'</li>');
+			});	
+			$('.js-routeTo-menu>li:first').addClass('active');		
 		};
 
-		/* 设置目的地的值 */
-		var routeToCityVal = function(text1,text2){
-			$('.js-routeTo-input').val(text2[0]+'/'+text2[1]);
-			$('.js-fStatusPopup-box').css('left',700);
-
-			$('.js-routeBox-to').slideUp(function(){ //出发地隐藏
-				$('.js-routeDate-result').click(); //日期展示
-				$('.js-routePopup-date').slideDown(); //目的地显示
-			}); 
-		};
+		/* 获取屏幕尺寸 */
+		var winWidth = $(window).width();
 
 		/* 键盘上下选择城市 */
 		var keyDown = function(input,ul,indexLi){
@@ -981,9 +951,31 @@ var LanmeiAirlines = {
 					var text1 = $fUl.children().eq(indexLi).attr('title');
 					var text2 = text1.split('/');
 					if(input=='.js-from-input'){
-						fromCityVal(text1,text2);
+						$fromInput.val(text2[0]+'/'+text2[1]).attr('data-city',text1); //出发地赋值
+						toCityVal(text1); //下拉菜单赋值筛选
+
+						if(winWidth>1300){
+							$box.css('left',350);
+						}else if(winWidth<=1300){
+							$box.css({'top':-88,'left':350});
+						}
+						$toInput.focus();
+						$('.js-to-menu>li:first').addClass('active');
+
+						$fromBox.slideUp(function(){ //出发地隐藏
+							$toBox.slideDown(); //目的地显示
+						}); 
 					}else if(input=='.js-to-input'){
-						toCityVal(text1,text2);
+						$toInput.val(text2[0]+'/'+text2[1]).attr('data-city',text1);
+						if(winWidth>1300){
+							$box.css('left',700);
+						}else if(winWidth<=1300){
+							$box.css({'top':-10,'left':0});
+						}
+						$toBox.slideUp(function(){ //出发地隐藏
+							$('.js-date-result').click(); //日期展示
+							$dateBox.slideDown(); //目的地显示
+						}); 
 					}else if(input=='.js-fNumber-input'){
 						$('.js-fNumber-input').val(text1);
 						$box.css('left',350);
@@ -992,9 +984,34 @@ var LanmeiAirlines = {
 							$('.js-numPopup-date').slideDown(); 
 						}); 
 					}else if(input=='.js-routeFrom-input'){
-						routeFromCityVal(text1,text2);
+						$routeFromInput.val(text2[0]+'/'+text2[1]).attr('data-city',text1); //出发地赋值
+						routeToCityVal(text1); //下拉菜单赋值筛选
+
+						if(winWidth>1300){
+							$fStatusBox.css('left',350);
+						}else if(winWidth<=1300){
+							$fStatusBox.css({'top':-90,'left':350});
+						}
+
+						$routeToInput.focus();
+						$('.js-to-menu>li:first').addClass('active');
+
+						$routeFromBox.slideUp(function(){ //酒店出发地隐藏
+							$routeToBox.slideDown(); //酒店日期显示
+						}); 
+
 					}else if(input=='.js-routeTo-input'){
-						routeToCityVal(text1,text2);
+						$routeToInput.val(text2[0]+'/'+text2[1]).attr('data-city',text1);
+
+						if(winWidth>1300){
+							$fStatusBox.css('left',700);
+						}else if(winWidth<=1300){
+							$fStatusBox.css({'top':-10,'left':0});
+						}
+						$routeToBox.slideUp(function(){ //航班动态目的地隐藏
+							$('.js-routeDate-result').click(); //日期展示
+							$routeDateBox.slideDown(); //酒店日期显示
+						}); 
 					}
 				}
 			});	
@@ -1083,35 +1100,26 @@ var LanmeiAirlines = {
 		/* 获取屏幕尺寸 */
 		var winWidth = $(window).width();
 
-		/* 设置出发地的值 */
-		var fromCityVal = function(text1,text2){ 
-			$fromInput.val(text2[0]+'/'+text2[1]);
-			$box.css('left',350);
-			var tocityArr = that.toCityData.slice(0);
-			
-			tocityArr.remove(text1);
+		/* 设置出发地下拉的值 */
+		var fromCityVal = function(text){ 
+			var fromcityArr = that.cityData.slice(0);
+			fromcityArr.remove(text);
+			$fromMenuSub.empty();
+			$.each(fromcityArr,function(i,val){
+				$fromMenuSub.append('<li title="'+val+'">'+val+'</li>');
+			});
+			$('.js-from-menu>li:first').addClass('active');
+		};
 
+		/* 设置目的地下拉的值 */
+		var toCityVal = function(text){
+			var tocityArr = that.cityData.slice(0);
+			tocityArr.remove(text);
 			$toMenuSub.empty();
 			$.each(tocityArr,function(i,val){
 				$toMenuSub.append('<li title="'+val+'">'+val+'</li>');
-			});
-			$toInput.focus();
-			$('.js-to-menu>li:first').addClass('active');
-
-			$fromBox.slideUp(function(){ //出发地隐藏
-				$toBox.slideDown(); //目的地显示
-			}); 
-		};
-
-		/* 设置目的地的值 */
-		var toCityVal = function(text1,text2){
-			$toInput.val(text2[0]+'/'+text2[1]);
-			$box.css('left',700);
-
-			$toBox.slideUp(function(){ //出发地隐藏
-				$('.js-date-result').click(); //日期展示
-				$dateBox.slideDown(); //目的地显示
-			}); 
+			});	
+			$('.js-to-menu>li:first').addClass('active');		
 		};
 
 		/* 点击机票出发地 */
@@ -1119,8 +1127,8 @@ var LanmeiAirlines = {
 		var oneClick = true;
 		$fromInput.click(function(){
 			if(oneClick){ //防止点击取消后，快速点击出发地产生的bug
-				// alert(window.screen.width);
-				// alert(winWidth);
+				fromCityVal($toInput.attr('data-city')); //下拉菜单赋值
+
 				if(winWidth>1300){
 					$box.css('left',0);
 				}else if(winWidth<=1300){
@@ -1141,31 +1149,12 @@ var LanmeiAirlines = {
 					}, 2200);
 				}
 			}
-		}).one('click',function(){
-			$fromMenuSub.empty();
-			$.each(that.fromCityData,function(i,val){
-				$fromMenuSub.append('<li title="'+val+'">'+val+'</li>');
-			});
-			$('.js-from-menu>li:first').addClass('active');
-			that.keyEvent('.js-from-input','.js-from-menu',that.indexLiFrom); //绑定键盘事件
 		});
 
 		/* 点击机票目的地 */
 		$toInput.click(function(e){
-			var fromVal = $fromInput.val();
-			$toMenuSub.empty();
-			if(fromVal==''){
-				$toMenuSub.append('<li title="No results found">No results found</li>');
-			}else{
-				var tocityArr = that.toCityData;
-				tocityArr.remove(fromVal);
+			toCityVal($fromInput.attr('data-city')); //下拉菜单赋值
 
-				$toMenuSub.empty();
-				$.each(tocityArr,function(i,val){
-					$toMenuSub.append('<li title="'+val+'">'+val+'</li>');
-				});
-				// $('.js-to-menu>li:first').addClass('active');
-			}
 			if(winWidth>1300){
 				$box.css('left',350);
 			}else if(winWidth<=1300){
@@ -1265,13 +1254,28 @@ var LanmeiAirlines = {
 		$fromMenuSub.on('click','>li',function(){
 			var text1 = $(this).attr('title');
 			var text2 = text1.split('/');
-			fromCityVal(text1,text2);
+			$fromInput.val(text2[0]+'/'+text2[1]).attr('data-city',text1); //出发地赋值
+			toCityVal(text1); //下拉菜单赋值筛选
+
+			if(winWidth>1300){
+				$box.css('left',350);
+			}else if(winWidth<=1300){
+				$box.css({'top':-88,'left':350});
+			}
+
+			$toInput.focus();
+			$('.js-to-menu>li:first').addClass('active');
+
+			$fromBox.slideUp(function(){ //出发地隐藏
+				$toBox.slideDown(); //目的地显示
+			}); 
 		});
 
 		/* 机票目的地选择 */
 		$toMenuSub.on('click','>li',function(){
-			var text = $(this).html().split('/');
-			$toInput.val(text[0]+'/'+text[1]);
+			var text1 = $(this).attr('title');
+			var text2 = text1.split('/');
+			$toInput.val(text2[0]+'/'+text2[1]).attr('data-city',text1);
 			if(winWidth>1300){
 				$box.css('left',700);
 			}else if(winWidth<=1300){
@@ -1286,6 +1290,10 @@ var LanmeiAirlines = {
 		// 模糊匹配
 		this.autoComplete('.js-from-input');
 		this.autoComplete('.js-to-input');
+
+		// 键盘事件
+		this.keyEvent('.js-from-input','.js-from-menu',that.indexLiFrom);
+		this.keyEvent('.js-to-input','.js-to-menu',that.indexLiTo); 
 
 		/* 机票搜索 --- 按钮点击 */
 		$('.js-ticket-search').click(function () {
@@ -1359,7 +1367,7 @@ var LanmeiAirlines = {
 			$('.js-popup-content>div').hide(); //初始化隐藏出发地、目的地、日期、人数
 			$('.js-airport-from').show();
 			var toVal = $toInput.attr('data-city'); //获取目的地的值进行过滤
-			$.each(that.fromCityData,function(i,val){
+			$.each(that.cityData,function(i,val){
 				$fromMenuSub.append('<li title="'+val+'">'+val+'</li>');
 			});
 			$fromMenuSub.children('li:contains('+toVal+')').remove(); //过滤
@@ -1387,7 +1395,7 @@ var LanmeiAirlines = {
 			$('.js-popup-content>div').hide(); //初始化隐藏出发地、目的地、日期、人数
 			$('.js-airport-to').show();
 			var fromVal = $fromInput.attr('data-city'); //获取出发地的值进行过滤
-			$.each(that.toCityData,function(i,val){
+			$.each(that.cityData,function(i,val){
 				$toMenuSub.append('<li title="'+val+'">'+val+'</li>');
 			});
 
@@ -1971,7 +1979,7 @@ var LanmeiAirlines = {
 		$ticketTypeMenuSub.on('click','>li',function(){
 			var text = $(this).attr('title');
 			$ticketTypeInput.val(text);
-			
+			$peopleNumInput.focus();
 			carPopupHide();
 		});
 
@@ -2141,18 +2149,26 @@ var LanmeiAirlines = {
 			$fStatusBox.removeClass('popup-box-before'); //隐藏小箭头
 		};
 
-		/* 设置出发地的值 */
-		var fromCityVal = function(text1,text2){ 
-			$routeFromInput.val(text2[0]+'/'+text2[1]);
-			var tocityArr = that.toCityData.slice(0);
-			tocityArr.remove(text1);
+		/* 设置出发地下拉的值 */
+		var fromCityVal = function(text){ 
+			var fromcityArr = that.cityData.slice(0);
+			fromcityArr.remove(text);
+			$routeFromMenuSub.empty();
+			$.each(fromcityArr,function(i,val){
+				$routeFromMenuSub.append('<li title="'+val+'">'+val+'</li>');
+			});
+			$('.js-routeFrom-menu>li:first').addClass('active');
+		};
 
+		/* 设置目的地下拉的值 */
+		var toCityVal = function(text){
+			var tocityArr = that.cityData.slice(0);
+			tocityArr.remove(text);
 			$routeToMenuSub.empty();
 			$.each(tocityArr,function(i,val){
 				$routeToMenuSub.append('<li title="'+val+'">'+val+'</li>');
-			});
-			$routeToInput.focus();
-			$('.js-routeTo-menu>li:first').addClass('active');
+			});	
+			$('.js-routeTo-menu>li:first').addClass('active');		
 		};
 
 		/* 日期选择 */
@@ -2218,13 +2234,14 @@ var LanmeiAirlines = {
 				$fNumberFromMenuSub.append('<li title="'+val+'">'+val+'</li>');
 			});
 			$('.js-fNumber-menu>li:first').addClass('active');
-			that.keyEvent('.js-fNumber-input','.js-fNumber-menu',that.indexLiFlightNum); //绑定键盘事件
 		});
 
 		this.autoComplete('.js-fNumber-input'); //模糊搜索
+		this.keyEvent('.js-fNumber-input','.js-fNumber-menu',that.indexLiFlightNum); //绑定键盘事件
 
 		/* 点击航班动态 按地址查询 出发地 */
 		$routeFromInput.click(function(){
+			fromCityVal($routeToInput.attr('data-city')); //下拉菜单赋值
 			if(winWidth>1300){
 				$fStatusBox.css('left',0);
 			}else if(winWidth<=1300){
@@ -2234,33 +2251,11 @@ var LanmeiAirlines = {
 
 			$('.js-fStatusPopup-content>div').hide();
 			$routeFromBox.show();
-		}).one('click',function(){
-			$routeFromMenuSub.empty();
-			$.each(that.fromCityData,function(i,val){
-				$routeFromMenuSub.append('<li title="'+val+'">'+val+'</li>');
-			});
-			$('.js-routeFrom-menu>li:first').addClass('active');
-			that.keyEvent('.js-routeFrom-input','.js-routeFrom-menu',that.indexLiRouteFrom); //绑定键盘事件
 		});
-
-		this.autoComplete('.js-routeFrom-input'); //模糊搜索
 
 		/* 点击航班动态 按地址查询 目的地 */
 		$routeToInput.click(function(){
-			var fromVal = $routeFromInput.val();
-			$routeToMenuSub.empty();
-			if(fromVal==''){
-				$routeToMenuSub.append('<li title="No results found">No results found</li>');
-			}else{
-				var tocityArr = that.toCityData;
-				tocityArr.remove(fromVal);
-
-				$routeToMenuSub.empty();
-				$.each(tocityArr,function(i,val){
-					$routeToMenuSub.append('<li title="'+val+'">'+val+'</li>');
-				});
-				$('.js-routeTo-menu>li:first').addClass('active');
-			}
+			toCityVal($routeFromInput.attr('data-city')); //下拉菜单赋值
 
 			if(winWidth>1300){
 				$fStatusBox.css('left',350);
@@ -2271,11 +2266,13 @@ var LanmeiAirlines = {
 
 			$('.js-fStatusPopup-content>div').hide();
 			$routeToBox.show();
-
-			that.keyEvent('.js-routeTo-input','.js-routeTo-menu',that.indexLiRouteTo); //绑定键盘事件
 		});
 
+		this.autoComplete('.js-routeFrom-input'); //模糊搜索
 		this.autoComplete('.js-routeTo-input'); //模糊搜索
+
+		this.keyEvent('.js-routeFrom-input','.js-routeFrom-menu',that.indexLiRouteFrom); //绑定键盘事件
+		this.keyEvent('.js-routeTo-input','.js-routeTo-menu',that.indexLiRouteTo); //绑定键盘事件
 
 		/* 点击航班号日期 --- 航班动态查询 */
 		$numDate.click(function(event) {
@@ -2377,13 +2374,17 @@ var LanmeiAirlines = {
 		$routeFromMenuSub.on('click','>li',function(){
 			var text1 = $(this).attr('title');
 			var text2 = text1.split('/');
-			fromCityVal(text1,text2);
+			$routeFromInput.val(text2[0]+'/'+text2[1]).attr('data-city',text1); //出发地赋值
+			toCityVal(text1); //下拉菜单赋值筛选
 
 			if(winWidth>1300){
 				$fStatusBox.css('left',350);
 			}else if(winWidth<=1300){
 				$fStatusBox.css({'top':-90,'left':350});
 			}
+
+			$routeToInput.focus();
+			$('.js-to-menu>li:first').addClass('active');
 
 			$routeFromBox.slideUp(function(){ //酒店出发地隐藏
 				$routeToBox.slideDown(); //酒店日期显示
@@ -2392,8 +2393,10 @@ var LanmeiAirlines = {
 
 		/* 航班号选择 --- 目的地查询 */
 		$routeToMenuSub.on('click','>li',function(){
-			var text = $(this).html().split('/');
-			$routeToInput.val(text[0]+'/'+text[1]);
+			var text1 = $(this).attr('title');
+			var text2 = text1.split('/');
+			$routeToInput.val(text2[0]+'/'+text2[1]).attr('data-city',text1);
+
 			if(winWidth>1300){
 				$fStatusBox.css('left',700);
 			}else if(winWidth<=1300){
@@ -2529,7 +2532,7 @@ var LanmeiAirlines = {
 			$('.js-fStatusPopup-content>div').hide(); 
 			$('.js-routeBox-from').show();
 			var toVal = $routeToInput.attr('data-city'); //获取目的地的值进行过滤
-			$.each(that.fromCityData,function(i,val){
+			$.each(that.cityData,function(i,val){
 				$routeFromMenuSub.append('<li title="'+val+'">'+val+'</li>');
 			});
 			$routeFromMenuSub.children('li:contains('+toVal+')').remove(); //过滤
@@ -2558,7 +2561,7 @@ var LanmeiAirlines = {
 			$('.js-fStatusPopup-content>div').hide(); 
 			$('.js-routeBox-to').show();
 			var fromVal = $routeFromInput.attr('data-city'); //获取出发地的值进行过滤
-			$.each(that.toCityData,function(i,val){
+			$.each(that.cityData,function(i,val){
 				$routeToMenuSub.append('<li title="'+val+'">'+val+'</li>');
 			});
 
@@ -2615,14 +2618,20 @@ var LanmeiAirlines = {
 	ticketCommon:function(){
         /*二维码下载*/
         $('.js-car-search').click(function () {
-			layer.open({
-			  area: ['90%', 'auto'],
-			  type: 1,
-			  id: 'bus-download-id',
-			  shadeClose: true,
-			  title: false, //不显示标题
-			  content: '<div class="bus-download-wrap"><div class="bus-code-wrap"><div class="bus-code-img"><img src="./images/EN/bus-code.jpg" /><a href="javascript:;" class="download-code-btn js-download-code">Download</a></div><div class="bus-code-info"><h2>使用说明:</h2><p>1、请下载并保存此二维码。二维码作为优惠购票的唯一凭证，请妥善保管。</p><p>2、持此二维码至KKSTAR上车点，向车站工作人员出示此二维码，扫码后即享优惠价3.5美金/单程/座位（原价5美金/单程/座位）。</p><p>3、此二维码无使用期限及班次限制。可随时持该二维码前往KKSTAR售票点扫码购票。</p><a href="javascript:;" class="bus-info-more js-busInfo-more">查看更多</a></div></div></div>'
-			});        	
+        	$(this).html('Loading...');
+        	setTimeout(function(){
+        		layer.open({
+        		  area: ['90%', 'auto'],
+        		  type: 1,
+        		  id: 'bus-download-id',
+        		  shadeClose: true,
+        		  title: false, //不显示标题
+        		  content: '<div class="bus-download-wrap"><div class="bus-code-wrap"><div class="bus-code-img"><img src="./images/EN/bus-code.jpg" /><a href="javascript:;" class="download-code-btn js-download-code">Download</a></div><div class="bus-code-info"><h2>使用说明:</h2><p>1、请下载并保存此二维码。二维码作为优惠购票的唯一凭证，请妥善保管。</p><p>2、持此二维码至KKSTAR上车点，向车站工作人员出示此二维码，扫码后即享优惠价3.5美金/单程/座位（原价5美金/单程/座位）。</p><p>3、此二维码无使用期限及班次限制。可随时持该二维码前往KKSTAR售票点扫码购票。</p><a href="javascript:;" class="bus-info-more js-busInfo-more">查看更多</a></div></div></div>'
+        		});     
+        	},3000);
+        	setTimeout(function(){
+	        	$('.js-car-search').html('Search');
+        	},4000);
 		});
 
 		$(document).on('click','.js-download-code',function(){
@@ -3345,7 +3354,7 @@ var LanmeiAirlines = {
 			$('#js-faresModal').modal();
 		});
 
-		this.simpleDate(false,'.js-faresDate-result','.js-faresDate-container');
+		this.simpleDate(false,false,'.js-faresDate-result','.js-faresDate-container');
 
 		var $faresPeople = $('.js-faresPeople-container,.js-faresMenu-people');
 		$('.js-fares-people').click(function(e) {

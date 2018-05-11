@@ -9,7 +9,7 @@
 	<!-- 实现响应式的设置 -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Be Unique, Lanmei Airlines</title>
+	<title>LanmeiAirlines</title>
 	<!-- 引入图标 -->
 	<link rel="icon" href="../../../images/EN/lanmeiLogo.ico">
 	<link rel="stylesheet" type="text/css" href="../../../libs/bootstrap/css/bootstrap.min.css">
@@ -17,33 +17,100 @@
 	<link rel="stylesheet" type="text/css" href="../../../common/EN/css/Lanmei-common.css">
 	<link rel="stylesheet" type="text/css" href="../../../libsEdit/css/lanmeiLibsEdit.css">
 	<link rel="stylesheet" type="text/css" href="../common/menu-common.css">
+
 	<!--[if lt IE 9]>
-	<script src="../../../libs/bootstrap/js/html5shiv.min.js"></script>
-	<script src="../../../libs/bootstrap/js/respond.min.js"></script>
-	<![endif]-->
-	<style type="text/css">
-		.lm-section {
-		  width: 940px;
-		  overflow: hidden;
-		  margin: 0 auto 50px;
-		}
-		.lm-section > div img {
-		  margin-top: 10px;
-		}
-		@media screen and (max-width: 992px) {
-		  .m-header h2{
-		  	width: 90%;
-		  	overflow: hidden;
-	  	    text-overflow: ellipsis;
-	  	    white-space: nowrap;
-		  }
-		  .lm-section {
-		    width: 100%;
-		    padding: 15px;
-		    margin-bottom: 0;
-		  }
-		}
-	</style>
+	<script src="../../libs/bootstrap/js/html5shiv.min.js"></script>
+	<script src="../../libs/bootstrap/js/respond.min.js"></script>
+<![endif]-->
+<style>
+.importantInfoList {
+	width: 960px;
+	margin: 50px auto;
+	min-height: 568px;
+}
+.importantInfoList .infoListCommon > span {
+	font-size: 14px;
+	color: #808080;
+}
+.importantInfoList .infoListCommon > h2 {
+	margin-top: 20px;
+}
+.importantInfoList .infoListCommon > h2 a {
+	font-size: 24px;
+	color: #1f2c5c;
+	-webkit-transition: all 1s;
+	transition: all 1s;
+}
+.importantInfoList .infoListCommon > h2 a:hover {
+	color: #8dbf60;
+	-webkit-transition: all 1s;
+	transition: all 1s;
+}
+.importantInfoList .infoListCommon > p {
+	font-size: 16px;
+	color: #ccc;
+	line-height: 26px;
+	margin-top: 20px;
+	text-indent: 2em;
+}
+.importantInfoList .infoListCommon > p a {
+	font-size: 16px;
+	-webkit-transition: all 1s;
+	transition: all 1s;
+}
+.importantInfoList .infoListCommon > p a:hover {
+	color: #8dbf60;
+	-webkit-transition: all 1s;
+	transition: all 1s;
+}
+.importantInfoList .infoListCommon > div {
+	margin: 30px auto;
+	line-height: 26px;
+	text-indent: 2em;
+}
+.importantInfoList .infoListCommon > div a {
+	font-size: 16px;
+	-webkit-transition: all 1s;
+	transition: all 1s;
+}
+.importantInfoList .infoListCommon > div a:hover {
+	color: #8dbf60;
+	-webkit-transition: all 1s;
+	transition: all 1s;
+}
+.dashed-bottom{
+	border-bottom: 1px dashed #808080;
+}
+/* 配置屏幕 针对小屏幕*/
+@media screen and (max-width: 992px) {
+	.importantInfoList {
+		width: 100%;
+		padding: 0 0.15rem;
+		margin: 0.2rem auto;
+	}
+	.importantInfoList .infoListCommon > span {
+		font-size: 0.14rem;
+	}
+	.importantInfoList .infoListCommon > h2 {
+		margin-top: 0.1rem;
+	}
+	.importantInfoList .infoListCommon > h2 a {
+		font-size: 0.16rem;
+	}
+	.importantInfoList .infoListCommon > p {
+		font-size: 0.12rem;
+		line-height: 0.16rem;
+	}
+	.importantInfoList .infoListCommon .dashed-bottom {
+		margin: 0.2rem 0;
+	}
+	.importantInfoList .infoListCommon > div img {
+		width: 100%;
+	}
+}
+
+.mobile-menu,.mobile-user,.languageSelectBox,.lanmeiHeadInfo>ul>.nth-child3,.lanmeiHeadInfo>ul>.nth-child2{display:none;}
+</style>
 </head>
 <body>
 	<!-- 页面顶部 -->
@@ -69,16 +136,20 @@
 		</div>
 	</header>
 
-	<!-- 页面主体 -->
-	<section class="lm-section container">
-		<div class="row">
-			<img src="images/irregular-flight-1.jpg"  class="img-responsive col-md-12 col-sm-12 col-xs-12">
-			<img src="images/irregular-flight-3.jpg"  class="img-responsive col-md-12 col-sm-12 col-xs-12">
-			<img src="images/irregular-flight-4.jpg"  class="img-responsive col-md-12 col-sm-12 col-xs-12">
-			<img src="images/irregular-flight-5.jpg"  class="img-responsive col-md-12 col-sm-12 col-xs-12">
+	<!-- 重要信息内容列表 -->
+	<div class="importantInfoList">
+		<div class="infoList1 infoListCommon">
+			<span>2017.12.04</span>
+			<h2><a href="LMIrregularFlight-Korea.html" target="_blank">PROCEDURES, TERMS & CONDITIONS FOR IRREGULAR FLIGHT FOR KOREA</a></h2>
+			<div class="dashed-bottom"></div>
 		</div>
-	</section>
-
+		<div class="infoList2 infoListCommon">
+			<span>2017.12.04</span>
+			<h2><a href="LMServicesPlan-Korea.html" target="_blank">CUSTOMER SERVICES PLAN FOR KOREA</a></h2>
+			<div class="dashed-bottom"></div>
+		</div>
+	</div>
+	
 	<!-- 页脚 -->
 	<footer class="lm-footer">
 		<p class="lm-logo"></p>
