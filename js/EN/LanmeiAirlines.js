@@ -102,7 +102,7 @@ var LanmeiAirlines = {
 			cursorborderradius: 0,
 			cursorwidth: "8px",
 			cursorfixedheight: 150,
-			cursorcolor: "#8ec060",
+			cursorcolor: "#1f2c5c",
 			zindex: 9999,
 			cursorborder: 0,
 			scrollspeed: 26,
@@ -701,7 +701,7 @@ var LanmeiAirlines = {
 			// maxDate:'2018-06-02',
 		    singleDatePicker: single, //单日期
 		    singleDatePicker_2: singleCal, //单日期单日历
-		    showDateTitle: true,
+		    showDateTitle: false,
 		    showDropdowns: false, //下拉选择月份和年份
 		    showWeekNumbers: false, //显示周
 		    autoApply: true, //自动关闭日期
@@ -2512,7 +2512,7 @@ var LanmeiAirlines = {
 		});
 
 		// 日期选择
-		this.mDateSelect(false,'.js-numDate-result','.js-numPopup-date',false);
+		this.mDateSelect(true,'.js-numDate-result','.js-numPopup-date',false);
 		$numDate.click(function(event) {
 			$('.js-fStatusPopup-content>div').hide(); 
 			$('.js-numPopup-date').show();
@@ -2599,7 +2599,7 @@ var LanmeiAirlines = {
 		this.autoComplete('.js-fStatusCity-search');
 
 		// 日期选择
-		this.mDateSelect(false,'.js-routeDate-result','.js-routePopup-date',false);
+		this.mDateSelect(true,'.js-routeDate-result','.js-routePopup-date',false);
 		$routeDate.click(function(event) {
 			$('.js-fStatusPopup-content>div').hide(); 
 			$('.js-routePopup-date').show();
@@ -2625,8 +2625,8 @@ var LanmeiAirlines = {
         		  type: 1,
         		  id: 'bus-download-id',
         		  shadeClose: true,
-        		  title: false, //不显示标题
-        		  content: '<div class="bus-download-wrap"><div class="bus-code-wrap"><div class="bus-code-img"><img src="./images/EN/bus-code.jpg" /><a href="javascript:;" class="download-code-btn js-download-code">Download</a></div><div class="bus-code-info"><h2>使用说明:</h2><p>1、请下载并保存此二维码。二维码作为优惠购票的唯一凭证，请妥善保管。</p><p>2、持此二维码至KKSTAR上车点，向车站工作人员出示此二维码，扫码后即享优惠价3.5美金/单程/座位（原价5美金/单程/座位）。</p><p>3、此二维码无使用期限及班次限制。可随时持该二维码前往KKSTAR售票点扫码购票。</p><a href="javascript:;" class="bus-info-more js-busInfo-more">查看更多</a></div></div></div>'
+        		  title: false, //不显示标题 
+        		  content: '<div class="bus-download-wrap"><div class="bus-code-wrap"><div class="bus-code-img"><img src="./images/EN/bus-code.jpg" /><a href="javascript:;" class="download-code-btn js-download-code">Download</a><p class="download-code-tips">Long press and save image</p></div><div class="bus-code-info"><h2>Instructions:</h2><p>1. Please download and keep the QR code which is the only certificate for ticket discount. Please keep it well!</p><p>2. Please show the QR code to the staff of ticket office and passenger will be given the preferential price of 3.5 USD/one-way/seat (Original price is 5 USD/one-way/seat).</p><p>3. There is no limit to service term of the QR code. Passengers can buy tickets with the QR code at KKSTAR ticket counter at any time.</p><a href="javascript:;" class="bus-info-more js-busInfo-more">More</a></div></div></div>'
         		});     
         	},3000);
         	setTimeout(function(){
@@ -2644,7 +2644,7 @@ var LanmeiAirlines = {
 			  type: 1,
 			  shadeClose: true,
 			  title: false, //不显示标题
-			  content:'<div class="bus-code-info bus-code-detail"><h2>注意事项:</h2><p>1、如二维码遗失或保存失败，请重新选择所需线路及张数并生成相应的二维码。</p><p>2、此二维码仅限购买您所选择的线路及张数，如需更改其他线路或更改购买张数，请重新选择线路及张数并生成相应的二维码。</p><p>3、为保证行车安全，机场大巴规定一人一座，所有乘客均需购票占位。</p><p>4、扫码购票后，车票仅限该路线当班有效，无班次车票限该路线当日有效，如需延期，请至柜台重新登记，更改车班以一次为限。</p><p>5、扫码购票后，凡逾时、自行涂改、损毁、无购票证明联、无司机联或票面不完整者，视为无效票，不得乘车或退票。</p></div>',
+			  content:'<div class="bus-code-info bus-code-detail"><h2>Notes:</h2><p>1. If the QR code is missing or if you failed to keep the QR Code, please reselect the routes and the number of tickets, and then generate the corresponding QR code.</p><p>2. The QR code is limited to the purchase of selected routes and the number of tickets. For any change, please reselect the info required and then generate the corresponding QR code.</p><p>3. In order to ensure driving safety, one seat is for one person as stipulated by airport bus. All passengers are required to purchase tickets.</p><p>4. Passengers are required to board strictly according to the time, date and route as stipulated by the ticket. Please find the ticket counter to change time if required, which is only permitted for once.</p><p>5. Any expired, unofficial modified, damaged, fragmented ticket and tickets without receipt or certificate will be refused for boarding and refund.</p></div>',
 			}); 
 		});
 	},
@@ -3135,7 +3135,7 @@ var LanmeiAirlines = {
 			'<div class="slick-item slick-item-1">'+
 			'<img src="images/EN/ticket-coupons.png" class="coupons-img">'+
 			'<div class="slick-content">'+
-			'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
+			'<h2><span class="s2">90</span><span class="s1">% off</span></h2>'+
 			'<p class="p1">Air Ticket Coupon</p>'+
 			'<p class="p2">Receive Immediately</p>'+
 			'</div>'+
@@ -3144,7 +3144,7 @@ var LanmeiAirlines = {
 			'<div class="slick-item slick-item-2">'+
 			'<img src="images/EN/ticket-coupons.png" class="coupons-img">'+
 			'<div class="slick-content">'+
-			'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
+			'<h2><span class="s2">5</span><span class="s1">$</span></h2>'+
 			'<p class="p1">Air Ticket Coupon</p>'+
 			'<p class="p2">Receive Immediately</p>'+
 			'</div>'+
@@ -3153,7 +3153,7 @@ var LanmeiAirlines = {
 			'<div class="slick-item slick-item-3">'+
 			'<img src="images/EN/ticket-coupons.png" class="coupons-img">'+
 			'<div class="slick-content">'+
-			'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
+			'<h2><span class="s2">50</span><span class="s1">$</span></h2>'+
 			'<p class="p1">Air Ticket Coupon</p>'+
 			'<p class="p2">Receive Immediately</p>'+
 			'</div>'+
@@ -3162,7 +3162,7 @@ var LanmeiAirlines = {
 			'<div class="slick-item slick-item-4">'+
 			'<img src="images/EN/ticket-coupons.png" class="coupons-img">'+
 			'<div class="slick-content">'+
-			'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
+			'<h2><span class="s2">20</span><span class="s1">$</span></h2>'+
 			'<p class="p1">Air Ticket Coupon</p>'+
 			'<p class="p2">Receive Immediately</p>'+
 			'</div>'+
@@ -3174,7 +3174,7 @@ var LanmeiAirlines = {
 			'<div class="slick-item slick-item-1">'+
 			'<img src="images/EN/shopping-coupons.png" class="coupons-img">'+
 			'<div class="slick-content">'+
-			'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
+			'<h2><span class="s2">80</span><span class="s1">$</span></h2>'+
 			'<p class="p1">Air Ticket Coupon</p>'+
 			'<p class="p2">Receive Immediately</p>'+
 			'</div>'+
@@ -3183,7 +3183,7 @@ var LanmeiAirlines = {
 			'<div class="slick-item slick-item-2">'+
 			'<img src="images/EN/shopping-coupons.png" class="coupons-img">'+
 			'<div class="slick-content">'+
-			'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
+			'<h2><span class="s2">70</span><span class="s1">$</span></h2>'+
 			'<p class="p1">Air Ticket Coupon</p>'+
 			'<p class="p2">Receive Immediately</p>'+
 			'</div>'+
@@ -3192,7 +3192,7 @@ var LanmeiAirlines = {
 			'<div class="slick-item slick-item-3">'+
 			'<img src="images/EN/shopping-coupons.png" class="coupons-img">'+
 			'<div class="slick-content">'+
-			'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
+			'<h2><span class="s2">60</span><span class="s1">$</span></h2>'+
 			'<p class="p1">Air Ticket Coupon</p>'+
 			'<p class="p2">Receive Immediately</p>'+
 			'</div>'+
@@ -3201,7 +3201,7 @@ var LanmeiAirlines = {
 			'<div class="slick-item slick-item-4">'+
 			'<img src="images/EN/shopping-coupons.png" class="coupons-img">'+
 			'<div class="slick-content">'+
-			'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
+			'<h2><span class="s2">20</span><span class="s1">$</span></h2>'+
 			'<p class="p1">Air Ticket Coupon</p>'+
 			'<p class="p2">Receive Immediately</p>'+
 			'</div>'+
@@ -3213,7 +3213,7 @@ var LanmeiAirlines = {
 			'<div class="slick-item slick-item-1">'+
 			'<img src="images/EN/hotel-coupons.png" class="coupons-img">'+
 			'<div class="slick-content">'+
-			'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
+			'<h2><span class="s2">5</span><span class="s1">$</span></h2>'+
 			'<p class="p1">Air Ticket Coupon</p>'+
 			'<p class="p2">Receive Immediately</p>'+
 			'</div>'+
@@ -3222,7 +3222,7 @@ var LanmeiAirlines = {
 			'<div class="slick-item slick-item-2">'+
 			'<img src="images/EN/hotel-coupons.png" class="coupons-img">'+
 			'<div class="slick-content">'+
-			'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
+			'<h2><span class="s2">10</span><span class="s1">$</span></h2>'+
 			'<p class="p1">Air Ticket Coupon</p>'+
 			'<p class="p2">Receive Immediately</p>'+
 			'</div>'+
@@ -3231,7 +3231,7 @@ var LanmeiAirlines = {
 			'<div class="slick-item slick-item-3">'+
 			'<img src="images/EN/hotel-coupons.png" class="coupons-img">'+
 			'<div class="slick-content">'+
-			'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
+			'<h2><span class="s2">30</span><span class="s1">$</span></h2>'+
 			'<p class="p1">Air Ticket Coupon</p>'+
 			'<p class="p2">Receive Immediately</p>'+
 			'</div>'+
@@ -3240,7 +3240,7 @@ var LanmeiAirlines = {
 			'<div class="slick-item slick-item-4">'+
 			'<img src="images/EN/hotel-coupons.png" class="coupons-img">'+
 			'<div class="slick-content">'+
-			'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
+			'<h2><span class="s2">20</span><span class="s1">$</span></h2>'+
 			'<p class="p1">Air Ticket Coupon</p>'+
 			'<p class="p2">Receive Immediately</p>'+
 			'</div>'+
@@ -3360,6 +3360,9 @@ var LanmeiAirlines = {
 		$('.js-fares-people').click(function(e) {
 			e.stopPropagation();
 			$faresPeople.show();
+		});
+		$('.js-close-faresMenu').click(function(event) {
+			$faresPeople.hide();
 		});
 		$('.js-faresPeople-container').click(function(e) {
 			e.stopPropagation();

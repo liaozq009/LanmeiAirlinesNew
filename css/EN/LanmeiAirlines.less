@@ -310,6 +310,7 @@ body{
 	border-radius: 2px;
 	background: #fff;
 	>ul{
+		border-radius: 2px;
 		li{
 			width: 110px;
 			height: 100px;
@@ -713,6 +714,7 @@ body{
 		padding-left: 70px;
 		font-size: 20px;
 		color: @purple;
+		border-radius: 2px;
 		background: url('@{url}date.png') 20px no-repeat #fff;
 	}
 	.h-date-result{
@@ -741,6 +743,7 @@ body{
 			line-height: 60px;
 			padding-left: 20px;
 			padding-right: 20px;
+			border-radius: 2px;
 			background: #fff;
 			>p{
 				float: left;
@@ -1024,13 +1027,11 @@ body{
 					line-height: 1;
 				}
 				.s1{
-					position: absolute;
-					right: 0;
-					bottom: 18px;
 					font-size: 30px;
 					font-family: @FBold;
 				}
 				.s2{
+					margin-right: 10px;
 					font-size: 72px;
 					font-family: @FBold;
 				}
@@ -1211,6 +1212,7 @@ body{
 	}
 }
 .lm-section-travel{
+	display: none;
 	margin-bottom: 50px;
 	.travel-content .slick-list{
 		padding-left: 120px;
@@ -1525,9 +1527,22 @@ body{
 			.news-arrow-box{
 				.news-arrow-com{
 					width: 40px;
+					height: 50px;
 					text-align: center;
 					float: left;
 					display: block;
+				}
+				.news-arrow-left{
+					background: url('@{url}left-arrow.png') center no-repeat;
+					&:hover{
+						background: url('@{url}left-arrow-active.png') center no-repeat;
+					}
+				}
+				.news-arrow-right{
+					background: url('@{url}right-arrow.png') center no-repeat;
+					&:hover{
+						background: url('@{url}right-arrow-active.png') center no-repeat;
+					}
 				}
 				>p{
 					float: left;
@@ -1652,6 +1667,7 @@ body{
 		}
 		.bus-code-img{
 			float: right;
+			width: 150px;
 		}
 		.download-code-btn{
 			display: block;
@@ -1669,6 +1685,9 @@ body{
 		    	transition: all .3s;
 		    	-webkit-transition: all .3s;
 		    }
+		}
+		.download-code-tips{
+			display: none; 
 		}
 	}
 }
@@ -1695,6 +1714,15 @@ body{
 }
 .bus-code-detail{
 	padding:10px;
+}
+.close-faresMenu{
+	position: absolute;
+	top: 0px;
+	right: 10px;
+	width: 30px;
+	text-align: center;
+	font-size: 26px;
+	cursor: pointer;
 }
 
 /* ie兼容 */
@@ -2124,7 +2152,7 @@ body{
 /* hover效果 */
 @media (min-width: 992px) {
 	.lm-section-banner{
-		.slick-item{
+		.slick-item-hover{
 			&:hover{
 				.slick-content{
 					.blackRgb(.6);
@@ -3181,7 +3209,6 @@ body{
 			animation-delay: 0s;
 			-webkit-animation-delay: 0s;
 			input{
-				border-radius: 0;
 				padding-left: 20px;
 				padding-right: 20px;
 				text-align: center;
@@ -3191,7 +3218,7 @@ body{
 		.car-route-id{width: 100%;}
 		.car-com{
 			input{
-				border-radius: 0;
+				border-radius: 2px;
 				padding-left: 20px;
 				padding-right: 20px;
 				text-align: center;
@@ -3200,12 +3227,22 @@ body{
 		}
 		.from-com{
 			z-index: 1;
-			border-top-right-radius: 0;
-			border-bottom-right-radius: 0;
+			input{
+				border-top-right-radius: 0;
+				border-bottom-right-radius: 0;
+			}
+		}
+		.car-route-id,.hotel-from,.flight-number-box{
+			input{
+				border-top-right-radius: 2px;
+				border-bottom-right-radius: 2px;
+			}
 		}
 		.to-com{
-			border-top-left-radius: 0;
-			border-bottom-left-radius: 0;
+			input{
+				border-top-left-radius: 0;
+				border-bottom-left-radius: 0;
+			}
 			-webkit-animation: fadeInUp 1.5s;
 			animation: fadeInUp 1.5s;
 		}
@@ -3924,9 +3961,9 @@ body{
 	.lm-section-fares{margin-bottom: 10px;}
 	.lm-section-news{margin-bottom: 40px;}
 	.section-content-title{
-		font-size: 36px;
-		height: 50px;
-		line-height: 58px;
+		font-size: 28px;
+		height: 38px;
+		line-height: 42px;
 		margin-bottom: 10px;
 		>h2{
 			font-size: 16px;
@@ -3978,6 +4015,7 @@ body{
 				width: 200px;
 				height: 100px;
 				padding:16px 10px;
+				margin-top: 5px;
 				.p1{
 					img{width: 80%;}
 					span{font-size: 12px;}
@@ -3993,7 +4031,7 @@ body{
 			}
 			.fares-price{
 				width: 90px;
-				height: 120px;
+				height: 110px;
 				padding-top: 28px;
 				>h2{font-size: 24px;}
 				>a{
@@ -4005,6 +4043,9 @@ body{
 			}
 		}
 		.fares-item-1{padding-left: 15px;}
+	}
+	.slick-list{
+		overflow: initial;
 	}
 	.lm-section-service{
 		height: 120px;
@@ -4104,6 +4145,15 @@ body{
 				.news-more{float: left;}
 				.news-arrow-box{
 					float: right;
+					.news-arrow-com{
+						height: 30px;
+					}
+					.news-arrow-left{
+						background: url('@{url}svg/left-arrow.svg') center no-repeat;
+					}
+					.news-arrow-right{
+						background: url('@{url}svg/right-arrow.svg') center no-repeat;
+					}
 					> p{
 						font-size: 12px;
 					}
@@ -4134,23 +4184,43 @@ body{
 			position: static;
 			width: 100%;
 			.bus-code-info{
-				margin-top: 0.1rem;
+				margin-top: 0;
+			}
+			.bus-code-img{
+				width: 110px;
+				img{width: 100%;}
+			}
+			.download-code-btn{display: none;}
+			.download-code-tips{
+				display: block;
+				font-size: 0.1rem;
+				color: #FF5722;
 			}
 		}
 	}
 	.bus-code-info{
 		>h2{
-			font-size: 0.18rem;
+			font-size: 0.14rem;
 			margin-bottom: 0.1rem;
 		}
 		>p{
-			font-size: 0.14rem;
+			font-size: 0.12rem;
 			margin-top: 0.06rem;
 			line-height: 0.24rem;
 		}
 		.bus-info-more{
 			font-size: 0.12rem;
 			margin-top: 0.06rem;
+		}
+	}
+	.bus-code-detail{
+		height: 400px;
+		overflow-y:scroll; 
+		>h2{
+			font-size: 0.14rem;
+		}
+		>p{
+			font-size: 0.12rem;
 		}
 	}
 	#bus-download-id{height: auto !important;}

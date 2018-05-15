@@ -279,6 +279,9 @@ body {
   border-radius: 2px;
   background: #fff;
 }
+.lm-aside-flight > ul {
+  border-radius: 2px;
+}
 .lm-aside-flight > ul li {
   width: 110px;
   height: 100px;
@@ -715,6 +718,7 @@ body {
   padding-left: 70px;
   font-size: 20px;
   color: #1f2c5c;
+  border-radius: 2px;
   background: url('../../images/EN/date.png') 20px no-repeat #fff;
 }
 .select-air-com .h-date-result {
@@ -745,6 +749,7 @@ body {
   line-height: 60px;
   padding-left: 20px;
   padding-right: 20px;
+  border-radius: 2px;
   background: #fff;
 }
 .select-air-com .people-com .t-people-result > p {
@@ -1049,13 +1054,11 @@ body {
   line-height: 1;
 }
 .lm-section-coupons .coupons-content .slick-item .slick-content .s1 {
-  position: absolute;
-  right: 0;
-  bottom: 18px;
   font-size: 30px;
   font-family: CamptonBookBold;
 }
 .lm-section-coupons .coupons-content .slick-item .slick-content .s2 {
+  margin-right: 10px;
   font-size: 72px;
   font-family: CamptonBookBold;
 }
@@ -1248,6 +1251,7 @@ body {
   margin-left: 0;
 }
 .lm-section-travel {
+  display: none;
   margin-bottom: 50px;
 }
 .lm-section-travel .travel-content .slick-list {
@@ -1558,9 +1562,22 @@ body {
 }
 .lm-section-news .news-detail .news-arrow .news-arrow-box .news-arrow-com {
   width: 40px;
+  height: 50px;
   text-align: center;
   float: left;
   display: block;
+}
+.lm-section-news .news-detail .news-arrow .news-arrow-box .news-arrow-left {
+  background: url('../../images/EN/left-arrow.png') center no-repeat;
+}
+.lm-section-news .news-detail .news-arrow .news-arrow-box .news-arrow-left:hover {
+  background: url('../../images/EN/left-arrow-active.png') center no-repeat;
+}
+.lm-section-news .news-detail .news-arrow .news-arrow-box .news-arrow-right {
+  background: url('../../images/EN/right-arrow.png') center no-repeat;
+}
+.lm-section-news .news-detail .news-arrow .news-arrow-box .news-arrow-right:hover {
+  background: url('../../images/EN/right-arrow-active.png') center no-repeat;
 }
 .lm-section-news .news-detail .news-arrow .news-arrow-box > p {
   float: left;
@@ -1678,6 +1695,7 @@ body {
 }
 .bus-download-wrap .bus-code-wrap .bus-code-img {
   float: right;
+  width: 150px;
 }
 .bus-download-wrap .bus-code-wrap .download-code-btn {
   display: block;
@@ -1695,6 +1713,9 @@ body {
   background: #8ec060;
   transition: all .3s;
   -webkit-transition: all .3s;
+}
+.bus-download-wrap .bus-code-wrap .download-code-tips {
+  display: none;
 }
 #bus-download-id {
   height: 600px;
@@ -1721,6 +1742,15 @@ body {
 }
 .bus-code-detail {
   padding: 10px;
+}
+.close-faresMenu {
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  width: 30px;
+  text-align: center;
+  font-size: 26px;
+  cursor: pointer;
 }
 /* ie兼容 */
 .ie11 .rooms-content-com {
@@ -2176,18 +2206,18 @@ body {
 }
 /* hover效果 */
 @media (min-width: 992px) {
-  .lm-section-banner .slick-item:hover .slick-content {
+  .lm-section-banner .slick-item-hover:hover .slick-content {
     color: rgba(0, 0, 0, 0.6);
     transition: all .35s;
     -webkit-transition: all .35s;
   }
-  .lm-section-banner .slick-item:hover > img {
+  .lm-section-banner .slick-item-hover:hover > img {
     opacity: 0.4;
     filter: alpha(opacity=40);
     -webkit-transform: scale(1.1, 1.1);
     transform: scale(1.1, 1.1);
   }
-  .lm-section-banner .slick-item:hover .slick-detail p {
+  .lm-section-banner .slick-item-hover:hover .slick-detail p {
     opacity: 1;
     filter: alpha(opacity=100);
     -webkit-transform: translate3d(0, 0, 0);
@@ -2195,15 +2225,15 @@ body {
     -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
     transition: opacity 0.35s, transform 0.35s;
   }
-  .lm-section-banner .slick-item:hover .slick-detail p:first-child {
+  .lm-section-banner .slick-item-hover:hover .slick-detail p:first-child {
     -webkit-transition-delay: 0s;
     transition-delay: 0s;
   }
-  .lm-section-banner .slick-item:hover .slick-detail p:nth-of-type(2) {
+  .lm-section-banner .slick-item-hover:hover .slick-detail p:nth-of-type(2) {
     -webkit-transition-delay: 0.05s;
     transition-delay: 0.05s;
   }
-  .lm-section-banner .slick-item:hover .slick-detail p:nth-of-type(3) {
+  .lm-section-banner .slick-item-hover:hover .slick-detail p:nth-of-type(3) {
     -webkit-transition-delay: 0.1s;
     transition-delay: 0.1s;
   }
@@ -3269,7 +3299,6 @@ body {
   }
   .select-air-com .from-com input,
   .select-air-com .to-com input {
-    border-radius: 0;
     padding-left: 20px;
     padding-right: 20px;
     text-align: center;
@@ -3279,7 +3308,7 @@ body {
     width: 100%;
   }
   .select-air-com .car-com input {
-    border-radius: 0;
+    border-radius: 2px;
     padding-left: 20px;
     padding-right: 20px;
     text-align: center;
@@ -3287,14 +3316,24 @@ body {
   }
   .select-air-com .from-com {
     z-index: 1;
+  }
+  .select-air-com .from-com input {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
   }
+  .select-air-com .car-route-id input,
+  .select-air-com .hotel-from input,
+  .select-air-com .flight-number-box input {
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+  }
   .select-air-com .to-com {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
     -webkit-animation: fadeInUp 1.5s;
     animation: fadeInUp 1.5s;
+  }
+  .select-air-com .to-com input {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
   }
   .select-air-com .hotel-from,
   .select-air-com .flight-number-box,
@@ -4053,9 +4092,9 @@ body {
     margin-bottom: 40px;
   }
   .section-content-title {
-    font-size: 36px;
-    height: 50px;
-    line-height: 58px;
+    font-size: 28px;
+    height: 38px;
+    line-height: 42px;
     margin-bottom: 10px;
   }
   .section-content-title > h2 {
@@ -4111,6 +4150,7 @@ body {
     width: 200px;
     height: 100px;
     padding: 16px 10px;
+    margin-top: 5px;
   }
   .lm-section-fares .fares-item .fares-trip .p1 img {
     width: 80%;
@@ -4128,7 +4168,7 @@ body {
   }
   .lm-section-fares .fares-item .fares-price {
     width: 90px;
-    height: 120px;
+    height: 110px;
     padding-top: 28px;
   }
   .lm-section-fares .fares-item .fares-price > h2 {
@@ -4142,6 +4182,9 @@ body {
   }
   .lm-section-fares .fares-item-1 {
     padding-left: 15px;
+  }
+  .slick-list {
+    overflow: initial;
   }
   .lm-section-service {
     height: 120px;
@@ -4263,6 +4306,15 @@ body {
   .lm-section-news .news-wrap .news-detail .news-arrow .news-arrow-box {
     float: right;
   }
+  .lm-section-news .news-wrap .news-detail .news-arrow .news-arrow-box .news-arrow-com {
+    height: 30px;
+  }
+  .lm-section-news .news-wrap .news-detail .news-arrow .news-arrow-box .news-arrow-left {
+    background: url('../../images/EN/svg/left-arrow.svg') center no-repeat;
+  }
+  .lm-section-news .news-wrap .news-detail .news-arrow .news-arrow-box .news-arrow-right {
+    background: url('../../images/EN/svg/right-arrow.svg') center no-repeat;
+  }
   .lm-section-news .news-wrap .news-detail .news-arrow .news-arrow-box > p {
     font-size: 12px;
   }
@@ -4291,20 +4343,44 @@ body {
     width: 100%;
   }
   .bus-download-wrap .bus-code-wrap .bus-code-info {
-    margin-top: 0.1rem;
+    margin-top: 0;
+  }
+  .bus-download-wrap .bus-code-wrap .bus-code-img {
+    width: 110px;
+  }
+  .bus-download-wrap .bus-code-wrap .bus-code-img img {
+    width: 100%;
+  }
+  .bus-download-wrap .bus-code-wrap .download-code-btn {
+    display: none;
+  }
+  .bus-download-wrap .bus-code-wrap .download-code-tips {
+    display: block;
+    font-size: 0.1rem;
+    color: #FF5722;
   }
   .bus-code-info > h2 {
-    font-size: 0.18rem;
+    font-size: 0.14rem;
     margin-bottom: 0.1rem;
   }
   .bus-code-info > p {
-    font-size: 0.14rem;
+    font-size: 0.12rem;
     margin-top: 0.06rem;
     line-height: 0.24rem;
   }
   .bus-code-info .bus-info-more {
     font-size: 0.12rem;
     margin-top: 0.06rem;
+  }
+  .bus-code-detail {
+    height: 400px;
+    overflow-y: scroll;
+  }
+  .bus-code-detail > h2 {
+    font-size: 0.14rem;
+  }
+  .bus-code-detail > p {
+    font-size: 0.12rem;
   }
   #bus-download-id {
     height: auto !important;

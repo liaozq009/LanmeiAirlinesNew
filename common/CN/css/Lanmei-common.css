@@ -426,7 +426,7 @@ body {
   padding-top: 7px;
   text-align: center;
   cursor: pointer;
-  background: #8ec060;
+  background: #1f2c5c;
   -webkit-transition-duration: 1s;
   transition-duration: 1s;
 }
@@ -488,7 +488,7 @@ body {
 }
 .lm-footer .lm-logo {
   width: 140px;
-  height: 53px;
+  height: 58px;
   margin: 0 auto;
   background: url('../../../images/CN/lanmeiFooterLogo.png') center no-repeat;
 }
