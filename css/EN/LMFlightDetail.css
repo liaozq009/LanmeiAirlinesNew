@@ -1,0 +1,766 @@
+/* 定义变量 */
+@font-face {
+  font-family: CamptonBookBold;
+  src: url(../../common/EN/fonts/Campton/Rene.Bieder_Campton.Bold.otf);
+  font-weight: bold;
+}
+/* 定义颜色变量 */
+/* 选择机票信息 */
+/* 修改行程日期 选择日期和选择时间页面 */
+.changeSearch {
+  width: 960px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+.changeSearch .changeSearchTitle {
+  height: 36px;
+  line-height: 36px;
+}
+.changeSearch .changeSearchTitle > h2 {
+  float: left;
+  font-family: CamptonBookBold;
+  font-size: 20px;
+  color: #121c3e;
+  text-align: left;
+}
+.changeSearch .changeSearchTitle > h2 img {
+  margin-right: 20px;
+}
+.changeSearch .selectWay {
+  height: 84px;
+  padding: 30px 20px;
+}
+.changeSearch .selectWay > a {
+  display: inline-block;
+  border-radius: 2px;
+  width: 100px;
+  height: 24px;
+  line-height: 24px;
+  font-size: 14px;
+  color: #1f2c5c;
+  text-align: center;
+  margin-right: 20px;
+}
+.changeSearch .selectWay > a.active {
+  background: #8ec060;
+  color: #ffffff;
+}
+.changeSearch .selectWay .Stopover {
+  width: 170px;
+}
+.changeSearch {
+  margin-top: 50px;
+}
+.changeSearch .selectWay a {
+  width: 120px;
+}
+.changeSearch .selectAirCommon {
+  height: 74px;
+}
+.changeSearch .selectAirCommon .local_timeSelect {
+  height: 100%;
+  width: 100%;
+}
+.changeSearch .selectAirCommon .local_timeSelect .timeSelectEnd {
+  display: none;
+}
+.changeSearch .selectAirCommon .local_timeSelect .localSelectEnd {
+  margin-right: 110px;
+}
+.changeSearch .selectAirCommon .local_timeSelect .flightSelectStart {
+  display: none;
+  width: 480px;
+  margin-right: 110px;
+}
+.changeSearch .selectAirCommon .local_timeSelect .flightSelectStart .bottomLine {
+  width: 460px;
+}
+.changeSearch .selectAirCommon .local_timeSelect .flightSelectStart input {
+  width: 480px;
+}
+.changeSearch .selectAirCommon .local_timeSelect .flightSelectStart img {
+  right: 20px;
+}
+.changeSearch .selectAirCommon .local_timeSelect .flightSelectStart .clear {
+  right: 50px;
+}
+.changeSearch .selectAirCommon .local_timeSelect .flightSelectStart .fromcityMenu {
+  width: 480px;
+}
+.changeSearch .selectAirCommon .local_timeSelect .f-search-btn {
+  display: inline-block;
+  background: #1f2c5c;
+  border-radius: 2px;
+  width: 90px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 14px;
+  color: #fff;
+  text-align: center;
+  margin-top: 33px;
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+}
+.changeSearch .selectAirCommon .local_timeSelect .f-search-btn:hover {
+  background: #8ec060;
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+}
+/* 出发地和目的地选择 选择时间和选择航班*/
+.selectAir {
+  height: 200px;
+}
+.selectAir .local_timeSelect,
+.selectAir .passenger_Select {
+  float: left;
+  width: 360px;
+  height: 220px;
+}
+.selectAir .local_timeSelect > div,
+.selectAir .passenger_Select > div {
+  width: 220px;
+  height: 82px;
+  float: left;
+  position: relative;
+  margin-bottom: 20px;
+}
+.selectAir .local_timeSelect > div p span,
+.selectAir .passenger_Select > div p span {
+  font-family: CamptonBookBold;
+  font-size: 20px;
+  color: #1f2c5c;
+  text-align: left;
+}
+.selectAir .local_timeSelect > div p img,
+.selectAir .passenger_Select > div p img {
+  margin-right: 30px;
+  vertical-align: top;
+}
+.selectAir .local_timeSelect > div input,
+.selectAir .passenger_Select > div input {
+  margin-top: 10px;
+  border-bottom: none;
+  font-size: 14px;
+  color: #121c3e;
+  padding: 0 20px;
+  background: #fff;
+  box-shadow: 0 0 50px 0 rgba(31, 44, 92, 0.1);
+  border-radius: 2px;
+  width: 218px;
+  height: 38px;
+  line-height: 38px;
+  text-overflow: ellipsis;
+}
+.selectAir .local_timeSelect > div input :focus,
+.selectAir .passenger_Select > div input :focus {
+  border-color: #8ec060;
+}
+.selectAir .local_timeSelect > div #timeFrom,
+.selectAir .passenger_Select > div #timeFrom,
+.selectAir .local_timeSelect > div #timeTo,
+.selectAir .passenger_Select > div #timeTo {
+  width: 220px;
+}
+.selectAir .local_timeSelect > div > img,
+.selectAir .passenger_Select > div > img {
+  position: absolute;
+  right: 50px;
+  top: 51px;
+}
+.selectAir .local_timeSelect > div #localChangeImg,
+.selectAir .passenger_Select > div #localChangeImg {
+  position: absolute;
+  right: 10px;
+  top: 44px;
+  display: inline-block;
+  width: 20px;
+  height: 18px;
+  cursor: pointer;
+}
+.selectAir .local_timeSelect > div .clear,
+.selectAir .passenger_Select > div .clear {
+  display: none;
+  position: absolute;
+  right: 69px;
+  top: 44px;
+  font-size: 12px !important;
+  cursor: pointer;
+}
+.selectAir .local_timeSelect > div .img01,
+.selectAir .passenger_Select > div .img01 {
+  background: url("../../images/EN/ticket-change2.png") no-repeat;
+}
+.selectAir .local_timeSelect > div .img01:hover,
+.selectAir .passenger_Select > div .img01:hover {
+  background: url("../../images/EN/ticket-change-active.png") no-repeat;
+}
+.selectAir .local_timeSelect .localSelectEnd .clear,
+.selectAir .passenger_Select .localSelectEnd .clear {
+  right: 30px;
+}
+.selectAir .local_timeSelect {
+  width: 580px;
+}
+.selectAir .local_timeSelect .localSelectStart {
+  width: 260px;
+}
+.selectAir .local_timeSelect .timeSelectStart {
+  width: 260px;
+}
+.selectAir .local_timeSelect .timeSelectEnd img,
+.selectAir .local_timeSelect .localSelectEnd img {
+  right: 13px !important;
+}
+.selectAir .local_timeSelect .timeSelectEnd {
+  visibility: hidden;
+}
+.selectAir .passenger_Select .AdultSelect,
+.selectAir .passenger_Select .ChildSelect,
+.selectAir .passenger_Select .InfantSelect {
+  width: 155px;
+}
+.selectAir .passenger_Select .AdultSelect input,
+.selectAir .passenger_Select .ChildSelect input,
+.selectAir .passenger_Select .InfantSelect input {
+  width: 155px;
+}
+.selectAir .passenger_Select .AdultSelect > div,
+.selectAir .passenger_Select .ChildSelect > div,
+.selectAir .passenger_Select .InfantSelect > div {
+  position: relative;
+  width: 155px;
+  height: 40px;
+}
+.selectAir .passenger_Select .AdultSelect > div .addArrow,
+.selectAir .passenger_Select .ChildSelect > div .addArrow,
+.selectAir .passenger_Select .InfantSelect > div .addArrow,
+.selectAir .passenger_Select .AdultSelect > div .downArrow,
+.selectAir .passenger_Select .ChildSelect > div .downArrow,
+.selectAir .passenger_Select .InfantSelect > div .downArrow {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  display: inline-block;
+  width: 16px;
+  height: 20px;
+  line-height: 30px;
+  cursor: pointer;
+  z-index: 99;
+}
+.selectAir .passenger_Select .AdultSelect > div .downArrow,
+.selectAir .passenger_Select .ChildSelect > div .downArrow,
+.selectAir .passenger_Select .InfantSelect > div .downArrow {
+  top: 30px;
+  line-height: 10px;
+}
+.selectAir .passenger_Select .AdultSelect p img,
+.selectAir .passenger_Select .ChildSelect p img,
+.selectAir .passenger_Select .InfantSelect p img {
+  margin-right: 10px;
+}
+.selectAir .passenger_Select .ChildSelect .ageTip,
+.selectAir .passenger_Select .InfantSelect .ageTip {
+  position: absolute;
+  bottom: -30px;
+  left: 26px;
+  color: #ccc;
+}
+.selectAir .passenger_Select .ChildSelect {
+  margin-left: 40px;
+}
+.selectAir .passenger_Select .ChildSelect .ageTip {
+  left: 43px !important;
+}
+.selectAir .passenger_Select .InfantSelect {
+  width: 100px;
+}
+.selectAir .passenger_Select .CabinSelect {
+  width: 260px;
+}
+.selectAir .passenger_Select .searchAir {
+  width: 100px;
+  margin-top: 32px;
+}
+.selectAir .passenger_Select .searchAir a {
+  background: #8ec060;
+  border-radius: 2px;
+  width: 90px;
+  height: 40px;
+  line-height: 28px;
+  font-size: 14px;
+  color: #ffffff;
+  text-align: center;
+}
+.selectAir .passenger_Select .searchAir a:hover {
+  background: #1f2c5c;
+}
+.selectAir .passenger_Select .searchAir .active {
+  background: #1f2c5c;
+}
+.selectAir .bottomLine {
+  width: 198px;
+}
+.selectAir .menu-com {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width:100%;
+  height: 100%;
+  padding: 20px;
+  padding-bottom: 10px;
+  font-size: 16px;
+  color: rgba(31, 44, 92, 0.5);
+  background: #fff;
+  z-index: 999;
+  border-radius: 2px;
+  border-top: none;
+  overflow-y: scroll;
+}
+.cityMenu-wrap{
+  display: none;
+  position: absolute;
+  top: 90px;
+  width: 480px;
+  height: 256px;
+  box-shadow: 0 0 50px 0 rgba(31, 44, 92, 0.1);
+}
+.cityMenu-wrap::before{
+  position: absolute;
+  top: -14px;
+  left: 109px;
+  z-index: 9;
+  filter: alpha(opacity=0);
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+  border-bottom: 14px solid #fff;
+  transition: opacity 0.2s ease-out;
+  -webkit-transition: opacity 0.2s ease-out;
+}
+.dataMenu-wrap{
+  width: 312px;
+  height: 279px;
+}
+.selectAir .menu-com > li {
+  float: left;
+  width: 50%;
+  padding-left: 30px;
+  padding-right: 10px;
+  margin-bottom: 10px;
+  background: url(../../images/EN/city-icon.png) left center no-repeat;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: all .3s;
+  -webkit-transition: all .3s;
+}
+.selectAir .menu-com > li span{
+  color: #1f2c5c;
+}
+.selectAir .menu-com > li:hover{
+  color: #8ec060;
+  background: url(../../images/EN/city-icon-active.png) left center no-repeat;
+}
+.selectAir .menu-com > li a {
+  display: inline-block;
+  width: 100%;
+  height: 40px;
+  font-size: 14px;
+  padding: 0px 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.selectAir .menu-com > li a:hover {
+  background: #8ec060;
+  color: #fff;
+}
+.selectAir .CabinMenu {
+  height: 100px;
+}
+/* 航班信息 */
+.lm-flight-wrap {
+  width: 940px;
+  min-height: 370px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+.lm-flight-wrap .f-info-time {
+  height: 100px;
+  background: #1f2c5c;
+  padding-top: 10px;
+}
+.lm-flight-wrap .f-info-time .f-info-bg {
+  float: left;
+  width: 128px;
+  padding-left: 12px;
+  padding-top: 30px;
+}
+.lm-flight-wrap .f-info-time .f-time-select {
+  float: right;
+  width: 812px;
+  height: 90px;
+  background: #fff;
+  border: 1px solid #ccc;
+}
+.lm-flight-wrap .f-info-time .f-time-select li {
+  float: left;
+  width: 14.2857%;
+  height: 100%;
+  padding: 14px 0 14px 16px;
+}
+.lm-flight-wrap .f-info-time .f-time-select li a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  border-right: 1px solid #ccc;
+}
+.lm-flight-wrap .f-info-time .f-time-select li a p {
+  font-size: 14px;
+  color: #1f2c5c;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+.lm-flight-wrap .f-info-time .f-time-select li a .f-date {
+  font-size: 20px;
+  color: #1f2c5c;
+  opacity: 1;
+  filter: alpha(opacity=100);
+  font-family: CamptonBookBold;
+}
+.lm-flight-wrap .f-info-time .f-time-select .active {
+  background: #8ec060;
+}
+.lm-flight-wrap .f-info-time .f-time-select .active a p {
+  color: #fff;
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+.lm-flight-wrap .f-info-detail {
+  margin-top: 50px;
+}
+.lm-flight-wrap .f-info-detail .f-info-title {
+  font-size: 18px;
+  color: #1f2c5c;
+  font-family: CamptonBookBold;
+}
+.lm-flight-wrap .f-info-detail .f-info-title span {
+  color: #00908c;
+}
+.lm-flight-wrap .f-info-detail .f-info-title .f-from-city {
+  margin-right: 10px;
+}
+.lm-flight-wrap .f-info-detail .f-info-title .f-to-city {
+  margin-left: 10px;
+}
+.lm-flight-wrap .f-info-detail .f-info-content {
+  margin-top: 20px;
+}
+.lm-flight-wrap .f-info-detail .f-info-content .i-content-title {
+  width: 100%;
+  height: 70px;
+  background: #42958a;
+  border-radius: 4px;
+  background: -webkit-linear-gradient(left, #42958a 0%, #1f2c5c 100%);
+  background: -o-linear-gradient(right, #42958a 0%, #1f2c5c 100%);
+  background: -moz-linear-gradient(right, #42958a 0%, #1f2c5c 100%);
+  background: linear-gradient(to right, #42958a 0%, #1f2c5c 100%);
+}
+.lm-flight-wrap .f-info-detail .f-info-content .i-content-title > p {
+  float: left;
+  width: 86px;
+  height: 70px;
+  font-size: 14px;
+  color: #fff;
+  padding: 15px 0;
+  text-align: center;
+}
+.lm-flight-wrap .f-info-detail .f-info-content .i-content-title > p span {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  line-height: 40px;
+  border-right: 2px solid #fff;
+}
+.lm-flight-wrap .f-info-detail .f-info-content .i-content-title .f-no {
+  width: 88px;
+}
+.lm-flight-wrap .f-info-detail .f-info-content .i-content-title .f-remarks span,
+.lm-flight-wrap .f-info-detail .f-info-content .i-content-title .f-time span {
+  border: none;
+  border-left: 2px solid #fff;
+}
+.lm-flight-wrap .f-info-detail .f-info-content .i-content-title .f-time span {
+  line-height: 20px;
+}
+.lm-flight-wrap .f-info-detail .f-info-content .i-content-title > div {
+  float: left;
+  width: 340px;
+  height: 70px;
+  padding: 0 10px;
+}
+.lm-flight-wrap .f-info-detail .f-info-content .i-content-title > div > h2 {
+  height: 35px;
+  line-height: 35px;
+  color: #fff;
+  font-size: 14px;
+  font-family: CamptonBookBold;
+  text-align: center;
+  border-bottom: 2px solid #fff;
+}
+.lm-flight-wrap .f-info-detail .f-info-content .i-content-title > div > div {
+  width: 100%;
+  height: 35px;
+  padding: 5px 0;
+}
+.lm-flight-wrap .f-info-detail .f-info-content .i-content-title > div > div > span {
+  display: inline-block;
+  float: left;
+  width: 50%;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+  color: #fff;
+  font-size: 14px;
+}
+.lm-flight-wrap .f-info-detail .f-info-content .i-content-title > div > div .s-1 {
+  border-right: 2px solid #fff;
+}
+.lm-flight-wrap .f-info-detail .f-info-content .i-content-title .f-departure {
+  position: relative;
+}
+.lm-flight-wrap .f-info-detail .f-info-content .i-content-title .f-departure b {
+  position: absolute;
+  right: 0;
+  top: 15px;
+  width: 2px;
+  height: 40px;
+  background: #fff;
+}
+.lm-flight-wrap .f-info-detail .f-info-content .i-content-inner {
+  overflow: hidden;
+}
+.lm-flight-wrap .f-info-detail .f-info-content .i-content-inner > li {
+  height: 50px;
+  padding: 15px 0;
+}
+.lm-flight-wrap .f-info-detail .f-info-content .i-content-inner > li > span {
+  float: left;
+  display: inline-block;
+  width: 170px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  color: #1f2c5c;
+  font-size: 20px;
+  font-family: CamptonBookBold;
+  border-right: 2px solid #ccc;
+}
+.lm-flight-wrap .f-info-detail .f-info-content .i-content-inner > li .c-inner-no {
+  width: 88px;
+  font-size: 14px;
+  color: #808080;
+  font-weight: normal;
+}
+.lm-flight-wrap .f-info-detail .f-info-content .i-content-inner > li .c-inner-remarks,
+.lm-flight-wrap .f-info-detail .f-info-content .i-content-inner > li .c-inner-time {
+  width: 86px;
+  border: none;
+  font-size: 14px;
+  color: #8ec060;
+  font-weight: normal;
+}
+.lm-flight-wrap .f-info-detail .f-info-content .i-content-inner > li .c-inner-time {
+  color: #1f2c5c;
+  font-family: CamptonBookBold;
+  border-right: 2px solid #ccc;
+}
+.lm-flight-wrap .f-info-detail .f-info-content .i-attention {
+  margin-top: 30px;
+  padding: 0 25px;
+}
+.lm-flight-wrap .f-info-detail .f-info-content .i-attention .i-attention-title {
+  font-size: 18px;
+  font-family: CamptonBookBold;
+  color: #1f2c5c;
+}
+.lm-flight-wrap .f-info-detail .f-info-content .i-attention .i-attention-content {
+  font-size: 14px;
+  color: #808080;
+  margin-top: 14px;
+  line-height: 20px;
+}
+.no-flight-info {
+  position: relative;
+  width: 960px;
+  margin: 30px auto 70px;
+  text-align: center;
+}
+.no-flight-info p {
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  margin-left: -325px;
+  width: 650px;
+  height: 60px;
+  font-size: 18px;
+  color: #ccc;
+}
+/* 修改公共样式 */
+.selectAirCommon span {
+  font-size: 14px !important;
+}
+.local_timeSelect > div p img {
+  margin-right: 10px !important;
+  vertical-align: bottom !important;
+}
+.CabinSelect p img {
+  margin-right: 10px !important;
+  vertical-align: bottom !important;
+}
+.calendar {
+  position: relative;
+}
+.daterangepicker.ltr .calendar.left{
+  margin-top: 0;
+}
+
+input.active{
+  border: 2px solid #8EC060!important;
+  border-bottom: none!important;
+}
+
+@media (max-width: 992px) {
+  .selectAir .local_timeSelect > div #localChangeImg{
+    display: none;
+  }
+  .changeSearch {
+    width: 100%;
+    padding: 0 15px;
+    margin-top: 0.2rem;
+  }
+  .changeSearch .changeSearchTitle {
+    height: 0.2rem;
+    line-height: 0.2rem;
+  }
+  .changeSearch .changeSearchTitle > h2 {
+    font-size: 0.14rem;
+  }
+  .changeSearch .changeSearchTitle > h2 img {
+    height: 0.2rem;
+    margin-right: 0.1rem;
+  }
+  .changeSearch .selectWay {
+    height: auto;
+    padding: 0.2rem 0;
+  }
+  .changeSearch .selectWay > a {
+    font-size: 12px;
+  }
+  .changeSearch .selectAirCommon {
+    height: auto;
+  }
+  .changeSearch .selectAirCommon .local_timeSelect .flightSelectStart {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .changeSearch .selectAirCommon .local_timeSelect .flightSelectStart input {
+    width: 100%;
+  }
+  .changeSearch .selectAirCommon .local_timeSelect .timeSelectStart {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .changeSearch .selectAirCommon .local_timeSelect .timeSelectStart input {
+    width: 100%;
+  }
+  .changeSearch .selectAirCommon .local_timeSelect .timeSelectStart > img {
+    right: 20px;
+  }
+  .changeSearch .selectAirCommon .local_timeSelect .f-search-btn {
+    width: 100%;
+    margin-top: 0;
+  }
+  .lm-flight-wrap {
+    padding: 0 15px;
+    width: 100%;
+    margin-top: 0;
+  }
+  .lm-flight-wrap .f-info-time {
+    display: none;
+  }
+  .lm-flight-wrap .f-info-detail {
+    margin-top: 30px;
+  }
+  .lm-flight-wrap .f-info-detail .f-info-content {
+    margin-top: 10px;
+  }
+  .lm-flight-wrap .f-info-detail .f-info-content .i-content-title {
+    display: none;
+  }
+  .lm-flight-wrap .f-info-detail .f-info-content .i-content-inner > li {
+    height: auto;
+    overflow: hidden;
+    border-bottom: 1px solid #ccc;
+  }
+  .lm-flight-wrap .f-info-detail .f-info-content .i-content-inner > li > span {
+    width: 50%;
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  .lm-flight-wrap .f-info-detail .f-info-title{font-size: 16px;}
+  .lm-flight-wrap .f-info-detail .f-info-content .i-content-inner > li .c-inner-remarks, 
+  .lm-flight-wrap .f-info-detail .f-info-content .i-content-inner > li .c-inner-time{
+    width: 50%;
+  }
+  .lm-flight-wrap .f-info-detail .f-info-content .i-content-inner > li .d-inner-arrival,
+  .lm-flight-wrap .f-info-detail .f-info-content .i-content-inner > li .a-inner-arrival {
+    border-right: none;
+  }
+  .lm-flight-wrap .f-info-detail .f-info-content .i-content-inner > li .c-inner-no {
+    width: 100%;
+    border-right: none;
+  }
+  .selectAir {
+    height: auto;
+  }
+  .selectAir .menu-com {
+    width: 100%;
+  }
+  .selectAir .local_timeSelect {
+    float: none;
+  }
+  .selectAir .local_timeSelect .localSelectStart {
+    width: 100%;
+  }
+  .selectAir .local_timeSelect .localSelectEnd {
+    width: 100%;
+    margin-right: 0;
+  }
+  .selectAir .flightMenu {
+    width: 100%;
+  }
+  .selectAir .local_timeSelect > div input, .selectAir .passenger_Select > div input{width: 100%;}
+  .flightStatusDate-container {
+    width: 100%;
+    right: 0;
+  }
+  .daterangepicker{width: 300px;}
+}
+
+@media (max-width: 500px) {
+  .cityMenu-wrap{
+    width: 100%;
+  }
+  .selectAir .menu-com > li{
+    width: 100%;
+  }
+  .selectAir .flightMenu > li{
+    width: 50%;
+  }
+}

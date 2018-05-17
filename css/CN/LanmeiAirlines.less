@@ -2335,6 +2335,7 @@ body{
 					padding-right: 30px;
 					span{
 						display: inline-block;
+						float: left;
 					    width: 520px;
 						color:#8f95ad;
 					    overflow: hidden;
@@ -2721,12 +2722,18 @@ body{
 	.popup-inactive{
 		opacity: 0;
 		visibility: hidden;
+		transform: perspective(600px) rotateX(-10deg);
 		-webkit-transform: perspective(600px) rotateX(-10deg);
+		-moz-transform: perspective(600px) rotateX(-10deg);
+		-ms-transform: perspective(600px) rotateX(-10deg);
 	}
 	.popup-active{
 		opacity: 1;
 		visibility: visible;
+		transform: perspective(600px) rotateX(0);
 		-webkit-transform: perspective(600px) rotateX(0);
+		-moz-transform: perspective(600px) rotateX(0);
+		-ms-transform: perspective(600px) rotateX(0);
 	}
 	.popup-title-wrap{display: none;}
 	.m-city-from,.m-city-to{display: none;}
@@ -4035,9 +4042,6 @@ body{
 			}
 		}
 		.fares-item-1{padding-left: 15px;}
-	}
-	.slick-list{
-		overflow: initial;
 	}
 	.lm-section-service{
 		height: 120px;

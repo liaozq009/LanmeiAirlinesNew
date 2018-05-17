@@ -423,7 +423,7 @@ var LanmeiAirlines = {
 		});
 
 		// 点击箭头切换
-		var page = 1;
+		/*var page = 1;
 		$('.js-flight-down').click(function(event) {
 			$loader.fadeIn();
 			page++;
@@ -467,7 +467,7 @@ var LanmeiAirlines = {
 					flightShow();
 				break;
 			}
-		});
+		}); */
 	},
 
 	/* 移动端左侧边栏切换 */
