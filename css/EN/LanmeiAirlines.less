@@ -85,7 +85,6 @@ body{
 		padding-left: 58px;
 		font-size: 18px;
 		color: #fff;
-		font-family: @FBold;
 		background: url('@{url}close-menu.png') left center no-repeat;
 		cursor: pointer;
 	}
@@ -442,17 +441,13 @@ body{
 		width: 100%;
 		text-align: center;
 		a{
-			i{
-				&:before{color: #D2D5DE;}
+			color: #D2D5DE;
+			transition: all .3s;
+			-webkit-transition: all .3s;
+			&:hover{
+				color: @green;
 				transition: all .3s;
 				-webkit-transition: all .3s;
-			}
-			&:hover{
-				i{
-					&:before{color: @green;}
-					transition: all .3s;
-					-webkit-transition: all .3s;
-				}
 			}
 		}
 		.img-2{
@@ -512,6 +507,13 @@ body{
 			filter: @filter; /*ie8*/
 			:root .gradient{filter:none;} ; /*ie9*/
 			border-radius:0 20px 20px 0;
+			transition: all .3s;
+			transition: all .3s;
+			&:hover{
+				color: @green;
+				transition: all .3s;
+				transition: all .3s;
+			}
 			>p{
 				display: inline-block;
 				position: absolute;
@@ -929,6 +931,7 @@ body{
 				left: 0;
 				width: 100%;
 				height: 100%;
+				cursor: default;
 			}
 		}
 		.slick-detail{
@@ -987,6 +990,7 @@ body{
 		margin: 0 auto 30px;
 		text-align: center;
 		>a{
+			position: relative;
 			display: inline-block;
 			width:200px;
 			height:50px;
@@ -996,6 +1000,7 @@ body{
 			text-align: center;
 			background:#e9ecfa;
 			border-radius:2px;
+			overflow: hidden;
 		}
 		.active{
 			color: #fff;
@@ -1004,6 +1009,29 @@ body{
 			background: @moz-linear;
 			background: @linear;
 		    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#42958a', endColorstr='#1f2c5c', GradientType=1);
+		}
+		.hover-active{
+			&::after{
+				content: attr(data-text);
+			    position: absolute;
+			    top: 0;
+			    left: 0;
+			    width: 200px;
+			    height: 50px;
+			    color: @purple;
+			    -webkit-transform-origin: -25% 50%;
+			    transform-origin: -25% 50%;
+			    -webkit-transform: rotate3d(0, 0, 1, 45deg);
+			    transform: rotate3d(0, 0, 1, 45deg);
+			    -webkit-transition: -webkit-transform 0.3s ease-in;
+			    transition: transform 0.3s ease-in;
+			}
+			&:hover:after{
+				-webkit-transform: rotate3d(0, 0, 1, 0deg);
+				transform: rotate3d(0, 0, 1, 0deg);
+				-webkit-transition-timing-function: ease-out;
+				transition-timing-function: ease-out;
+			}
 		}
 		.anchor-center{
 			margin-right: 30px;
@@ -1197,12 +1225,16 @@ body{
 				width: 100%;
 				height: 100%;
 				color:#fff;
+				transition: all .3s;
+				-webkit-transition: all .3s;
 				img{
 					margin-top: 20px;
 				}
 				p{margin-top: 16px;}
 				&:hover{
 					.purpleBgRgb(0.4);
+					transition: all .3s;
+					-webkit-transition: all .3s;
 				}
 			}
 		}
@@ -1546,6 +1578,7 @@ body{
 				}
 				>p{
 					float: left;
+					width: 30px;
 					margin-left: 5px;
 					margin-right: 5px;
 					font-family: @FBold;
@@ -1559,13 +1592,21 @@ body{
 				float: right;
 				font-family: @FBold;
 				.blackRgb(.2);
+				transition: all .3s;
+				-webkit-transition: all .3s;
+				&:hover{
+					.blackRgb(.7);
+					transition: all .3s;
+					-webkit-transition: all .3s;
+				}
 			}
 		}
 		.news-info{
 			width: 100%;
 			height: 400px;
 			padding:40px 30px;
-			background: #fff;
+			background: #fff; 
+			box-shadow: 0 0 100px rgba(31,44,92,0.1);
 			>div{
 				>h2>a{
 					font-size: 24px;
@@ -2149,47 +2190,49 @@ body{
 	}
 }
 
-/* hover效果 */
-@media (min-width: 992px) {
-	.lm-section-banner{
-		.slick-item-hover{
-			&:hover{
-				.slick-content{
-					.blackRgb(.6);
-					transition:all .35s;
-					-webkit-transition:all .35s;
+/* banner hover效果 */
+.lm-section-banner{
+	.slick-item-hover{
+		&:hover{
+			.slick-content{
+				.whiteBgRgb(0.6);
+				transition:all .35s;
+				-webkit-transition:all .35s;
+			}
+			>img{
+				opacity: 0.4;
+				filter:alpha(opacity=40);
+				-webkit-transform: scale(1.1,1.1);
+				transform: scale(1.1,1.1);
+			}
+			.slick-detail {
+				p{
+					opacity: 1;
+					filter:alpha(opacity=100);
+					-webkit-transform: translate3d(0,0,0);
+					transform: translate3d(0,0,0);
+					-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+					transition: opacity 0.35s, transform 0.35s;
 				}
-				>img{
-					opacity: 0.4;
-					filter:alpha(opacity=40);
-					-webkit-transform: scale(1.1,1.1);
-					transform: scale(1.1,1.1);
+				p:first-child{
+					-webkit-transition-delay: 0s;
+					transition-delay: 0s;
 				}
-				.slick-detail {
-					p{
-						opacity: 1;
-						filter:alpha(opacity=100);
-						-webkit-transform: translate3d(0,0,0);
-						transform: translate3d(0,0,0);
-						-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-						transition: opacity 0.35s, transform 0.35s;
-					}
-					p:first-child{
-						-webkit-transition-delay: 0s;
-						transition-delay: 0s;
-					}
-					p:nth-of-type(2){
-						-webkit-transition-delay: 0.05s;
-						transition-delay: 0.05s;
-					}
-					p:nth-of-type(3){
-						-webkit-transition-delay: 0.1s;
-						transition-delay: 0.1s;
-					}
+				p:nth-of-type(2){
+					-webkit-transition-delay: 0.05s;
+					transition-delay: 0.05s;
+				}
+				p:nth-of-type(3){
+					-webkit-transition-delay: 0.1s;
+					transition-delay: 0.1s;
 				}
 			}
 		}
 	}
+}
+
+/* hover效果 */
+@media (min-width: 1200px) {
 	.lm-section-hotel .hotel-com{
 		&:hover{
 			.hotel-img{
@@ -2235,6 +2278,7 @@ body{
 
 /* 手机端以外 */
 @media (min-width: 768px) {
+	.banner-click-hover{display: none;}
 	.m-nav-mask{display: none;}
 	.nav-settings{display: none;}
 	.m-nav-back{display: none;}
@@ -2750,10 +2794,21 @@ body{
 }
 
 /* pad端 */
-@media (max-width: 992px) {
+@media (max-width: 1200px) {
 	.cloud-iframe{display: none;}
 	.lm-aside-blur,.lm-aside-flight > a,.lm-aside-code,.lm-scroll-down{display: none;}
 	.bg-com,.content-com-wrap{width: 100%;}
+	.lm-section-banner{
+		position: relative;
+		.slick-item-hover{
+			.slick-content{padding-top: 10px;}
+			.slick-detail {
+				p{
+					font-size: 12px;
+				}
+			}
+		}
+	}
 	.lm-aside-flight{
 		left: -11px;
 		-webkit-transform: scale(.8);
@@ -2764,9 +2819,11 @@ body{
 	.content-com-inner {
 		width: 80%;
 		left: 16%;
+		top: 60px;
 		> h1{
 			width: 100%;
 			font-size: 42px;
+			line-height: 60px;
 		}
 	}
 	.flight-com{
@@ -2900,6 +2957,18 @@ body{
 	.fStatus-bg{
 		background: url('@{url2}flightStatus-bg-mobile.jpg') center no-repeat;
 		background-size: cover;
+	}
+	.lm-section-banner{
+		.banner-click-hover{
+			display: none;
+		    position: absolute;
+		    right: 10px;
+		    top: 0;
+		    width: 20px;
+		    height: 16px;
+		    color: @purple;
+			text-align: center;
+		}
 	}
 	.lm-section-service{
 		background: url('@{url}lanmeiService-bg-mobile.jpg') center no-repeat;

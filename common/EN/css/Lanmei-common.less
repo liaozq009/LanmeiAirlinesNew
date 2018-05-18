@@ -179,8 +179,15 @@ body {
 			float: left;
 			>a{
 				color:#fff;
+				transition: all .3s;
+				-webkit-transition: all .3s;
+				>span{
+					margin-left: 4px;
+				}
 				&:hover{
-					color: #fff;
+					color: @green;
+					transition: all .3s;
+					-webkit-transition: all .3s;
 				}
 			}
 		}
@@ -578,7 +585,7 @@ body {
 }
 
 /* 移动端新增代码 */
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1200px) {
 	.lm-header{
 		.h-logo{display: none;}
 		.menu-guide{display: none;}

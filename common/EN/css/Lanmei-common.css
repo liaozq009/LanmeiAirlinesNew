@@ -161,9 +161,16 @@ body {
 }
 .lm-header .h-right > div > a {
   color: #fff;
+  transition: all .3s;
+  -webkit-transition: all .3s;
+}
+.lm-header .h-right > div > a > span {
+  margin-left: 4px;
 }
 .lm-header .h-right > div > a:hover {
-  color: #fff;
+  color: #8ec060;
+  transition: all .3s;
+  -webkit-transition: all .3s;
 }
 .lm-header .h-right .v-line {
   margin-left: 20px;
@@ -564,7 +571,7 @@ body {
   color: #fff;
 }
 /* 移动端新增代码 */
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1200px) {
   .lm-header .h-logo {
     display: none;
   }
