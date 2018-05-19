@@ -2996,6 +2996,11 @@ body {
     margin-right: 0;
   }
 }
+@media (min-width: 767px) and (max-width: 1300px) {
+  .lm-section-main {
+    overflow: initial;
+  }
+}
 /* 手机端 */
 @media (max-width: 767px) {
   .lm-section-main {

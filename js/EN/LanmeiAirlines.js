@@ -3573,13 +3573,8 @@ var LanmeiAirlines = {
 	otherEvent:function(){
 		/* 首屏自适应高度 */
 		var winHeight = $(window).height();
-		var winWidth = $(window).width();
 		$('.js-section-main').height(winHeight);
 		$('.js-aside-code').height(winHeight-60);
-		if(768<=winWidth && winWidth<=1300){
-			$('.js-section-main').height(768);
-			$('.js-aside-code').height(708);
-		}
 
 		/* 文字滚动 */
 		var slideUp = function(){
