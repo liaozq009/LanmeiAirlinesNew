@@ -1016,8 +1016,8 @@ body{
 			    position: absolute;
 			    top: 0;
 			    left: 0;
-			    width: 200px;
-			    height: 50px;
+			    width: 100%;
+			    height: 100%;
 			    color: @purple;
 			    -webkit-transform-origin: -25% 50%;
 			    transform-origin: -25% 50%;
@@ -1933,6 +1933,7 @@ body{
 	}
 	.flight-com{
 		left: 7%;
+		top: 280px;
 	}
 }
 @media screen and (max-width: 1480px) {
@@ -1989,6 +1990,9 @@ body{
 }
 /* 适配1366 */
 @media screen and (max-width: 1400px) {
+	.nav-container {
+		.m-nav-1,.m-nav-2,.m-nav-3{padding-top: 100px;}
+	}
 	.lm-section-banner,.lm-section-service,.lm-section-hotel{
 		margin-bottom: 80px;
 	}
@@ -2793,8 +2797,8 @@ body{
 	.mobile-comfortHotel-content{display: none;}
 }
 
-/* pad端 */
-@media (max-width: 1200px) {
+/* 中屏幕 */
+@media (max-width: 1300px) {
 	.cloud-iframe{display: none;}
 	.lm-aside-blur,.lm-aside-flight > a,.lm-aside-code,.lm-scroll-down{display: none;}
 	.bg-com,.content-com-wrap{width: 100%;}
