@@ -266,14 +266,13 @@ body{
 	right: 0;
 	width: 94%;
 	height: 180px;
+	padding-left: 10%;
 	color: #fff;
 	background-image:-webkit-linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.1) 100%);
 }
 .content-com-inner{
 	position: absolute;
-	top:60px;
-	left: 11%;
-	width: 678px;
+	padding-top: 60px;
 	>h1{
 		opacity:0.9;
 		filter:alpha(opacity=90);
@@ -282,12 +281,6 @@ body{
 		line-height:70px;
 		span{color: @green;}
 	}
-}
-.fStatus-content-inner{
-	width: 908px;
-}
-.car-content-inner{
-	width: 756px;
 }
 .lm-aside-flight{
 	position: absolute;
@@ -546,8 +539,10 @@ body{
 .flight-com{
 	position: absolute;
 	top: 240px;
-	left: 16%;
+	right: 0;
 	z-index: 11;
+	width: 94%;
+	padding-left: 10%;
 	.tips-com{
 		opacity:0.5;
 		filter:alpha(opacity=50);
@@ -1904,14 +1899,6 @@ body{
 }
 
 /* 屏幕缩放 */
-@media screen and (max-width: 1800px) {
-	.content-com-inner{
-		left: 5%;
-	}
-	.flight-com{
-		left: 11%;
-	}
-}
 @media screen and (max-width: 1660px) {
 	.flight-com,.content-com-inner,.lm-aside-flight,.lm-important{
 		-webkit-transform: scale(.8); 
@@ -1922,9 +1909,13 @@ body{
 	.lm-important{
 		right: -50px;
 	}
+	.content-com-wrap{
+		height: 176px;
+		padding-left: 0%;
+	}
 	.flight-com{
-		left: 7%;
-		top: 280px;
+		top: 240px;
+		padding-left: 0%;
 	}
 }
 @media screen and (max-width: 1480px) {
@@ -1935,48 +1926,18 @@ body{
 		transform-origin: top;
 	}
 	.content-com-wrap{
-		height: 160px;
+		// height: 160px;
+	}
+	.content-com-inner{
+		position: relative;
+	    left: -6%;
 	}
 	.flight-com{
-		top: 220px;
+		width: 100%;
 	}
 	.lm-important{
 		right: -75px;
 		bottom: 70px;
-	}
-	.content-com-inner{
-		left: 0%;
-		top: 40px;
-	}
-	.flight-com{
-		left: -2%;
-	}
-}
-@media screen and (max-width: 1300px) {
-	.flight-com,.content-com-inner,.lm-aside-flight,.lm-important{
-		-webkit-transform: scale(1); 
-		transform: scale(1); 
-		-webkit-transform-origin: top;
-		transform-origin: top;
-	}
-	.flight-com{
-		width: 700px;
-		left: 26%;
-		top: 260px;
-	}
-	.content-com-inner{
-		left: 21%;
-	}
-	.search-flight-wrap{
-		padding-left: 0;
-	}
-}
-
-/* 调整滑动组件左右箭头居中 */
-@media screen and (min-width: 1400px){
-	.lm-section-coupons,.lm-section-fares,.lm-section-hotel{
-		.slick-prev{margin-top: -75px;}
-		.slick-next{margin-top: -75px;}
 	}
 }
 /* 适配1366 */
@@ -2183,6 +2144,59 @@ body{
 				height: 420px;
 			}
 		}
+	}
+}
+@media screen and (max-width: 1300px) {
+	.flight-com{
+		width: 80%;
+		left: 3%;
+	}
+	.content-com-inner{
+		left: 0%;
+	}
+	.search-flight-wrap{
+		padding-left: 0;
+	}
+	.hotel-popup-content,.hotel-content .popup-box{
+		left: 0 !important;
+	}
+	.hotelPeople-popup-box::before{
+		left: 480px;
+	}
+	.lm-aside-flight{
+		left: -11px;
+		-webkit-transform: scale(.8);
+		transform: scale(.8);
+		-webkit-transform-origin: top;
+		transform-origin: top;
+	}
+	.cloud-iframe{display: none;}
+	.lm-aside-blur,.lm-aside-flight > a,.lm-aside-code,.lm-scroll-down{display: none;}
+	.bg-com,.content-com-wrap{width: 100%;}
+	.lm-section-banner{
+		position: relative;
+		.slick-item-hover{
+			.slick-content{padding-top: 10px;}
+			.slick-detail {
+				p{
+					font-size: 12px;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 767px) and (max-width: 1300px) {
+	.lm-section-main{
+		overflow: initial;
+	}
+}
+
+/* 调整滑动组件左右箭头居中 */
+@media screen and (min-width: 1400px){
+	.lm-section-coupons,.lm-section-fares,.lm-section-hotel{
+		.slick-prev{margin-top: -75px;}
+		.slick-next{margin-top: -75px;}
 	}
 }
 
@@ -2789,39 +2803,11 @@ body{
 	.mobile-comfortHotel-content{display: none;}
 }
 
-/* 中屏幕 */
-@media (max-width: 1300px) {
-	.cloud-iframe{display: none;}
-	.lm-aside-blur,.lm-aside-flight > a,.lm-aside-code,.lm-scroll-down{display: none;}
-	.bg-com,.content-com-wrap{width: 100%;}
-	.lm-section-banner{
-		position: relative;
-		.slick-item-hover{
-			.slick-content{padding-top: 10px;}
-			.slick-detail {
-				p{
-					font-size: 12px;
-				}
-			}
-		}
-	}
-	.lm-aside-flight{
-		left: -11px;
-		-webkit-transform: scale(.8);
-		transform: scale(.8);
-		-webkit-transform-origin: top;
-		transform-origin: top;
-	}
-	.content-com-inner {
-		width: 80%;
-		left: 16%;
-		> h1{
-			width: 100%;
-			font-size: 42px;
-			line-height: 60px;
-		}
-	}
+/* pad */
+@media (max-width: 992px) {
+	.content-com-inner{left: 3%;}
 	.flight-com{
+		width: 100%;
 		left: 8%;
 		-webkit-transform: scale(.8);
 		transform: scale(.8);
@@ -2928,13 +2914,6 @@ body{
 	}
 	.bus-download-wrap .bus-code-wrap .bus-code-info{margin-right: 0;}
 }
-
-@media (min-width: 767px) and (max-width: 1300px) {
-	.lm-section-main{
-		overflow: initial;
-	}
-}
-
 
 /* 手机端 */
 @media (max-width: 767px) {
