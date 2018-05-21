@@ -240,7 +240,6 @@ body {
   background-image: -webkit-linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 100%);
 }
 .content-com-inner {
-  position: absolute;
   padding-top: 60px;
 }
 .content-com-inner > h1 {
@@ -807,6 +806,9 @@ body {
   top: 62px;
   box-shadow: none;
 }
+.select-fares .popup-content .popup-people .m-select-people {
+  display: none;
+}
 .select-fares .fares-search {
   display: block;
   width: 310px;
@@ -997,6 +999,7 @@ body {
   text-align: center;
 }
 .lm-section-coupons .coupons-anchor > a {
+  position: relative;
   display: inline-block;
   width: 200px;
   height: 50px;
@@ -1594,9 +1597,10 @@ body {
 }
 .lm-section-news .news-detail .news-arrow .news-arrow-box > p {
   float: left;
-  width: 30px;
+  width: 40px;
   margin-left: 5px;
   margin-right: 5px;
+  text-align: center;
   font-family: NotoSansBold;
   color: rgba(0, 0, 0, 0.2);
 }
@@ -1918,7 +1922,41 @@ body {
   height: 958px !important;
 }
 .ie8 .flight-com {
-  left: 30%;
+  width: 900px;
+  top: 100px;
+  left: 200px;
+}
+.ie8 .content-com-wrap {
+  display: none;
+}
+.ie8 .hotel-popup-content,
+.ie8 .hotel-content .popup-box {
+  left: 0 !important;
+}
+.ie8 .hotel-popup-content,
+.ie8 .hotel-content .popup-box {
+  left: 0 !important;
+}
+.ie8 .popup-content .hotel-popus-people {
+  width: 750px !important;
+}
+.ie8 .popup-content .hotel-popus-people .age-rooms-com {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.ie8 .popup-content .hotel-popus-people .add-rooms-wrap {
+  clear: both;
+  position: relative;
+  z-index: 1;
+}
+.ie8 .popup-content .hotel-popus-people .s-room-2,
+.ie8 .popup-content .hotel-popus-people .s-room-3 {
+  clear: both;
+}
+.ie8 .lm-section-banner,
+.ie8 .lm-section-service,
+.ie8 .lm-section-hotel {
+  margin-bottom: 50px;
 }
 .ie8 .lm-section-hotel .hotel-com .hotel-img .save-percent {
   background: #FC4A1A;
@@ -1938,11 +1976,11 @@ body {
     right: -50px;
   }
   .content-com-wrap {
-    height: 176px;
+    height: 136px;
     padding-left: 0%;
   }
   .flight-com {
-    top: 240px;
+    top: 200px;
     padding-left: 0%;
   }
 }
@@ -2191,10 +2229,10 @@ body {
     height: 420px;
   }
 }
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1360px) {
   .flight-com {
-    width: 80%;
-    left: 3%;
+    width: 120%;
+    left: -3%;
   }
   .content-com-inner {
     left: 0%;
@@ -2851,17 +2889,20 @@ body {
   }
 }
 /* pad */
-@media (max-width: 992px) {
+@media (max-width: 1200px) {
   .content-com-inner {
-    left: 3%;
+    left: 0%;
   }
   .flight-com {
-    width: 100%;
+    width: 700px;
     left: 8%;
     -webkit-transform: scale(0.8);
     transform: scale(0.8);
     -webkit-transform-origin: top;
     transform-origin: top;
+  }
+  .search-flight-wrap {
+    padding-left: 0;
   }
   .popup-content .popup-airport-from,
   .popup-content .popup-airport-to,
@@ -2971,8 +3012,22 @@ body {
     margin-right: 0;
   }
 }
+@media (max-width: 992px) {
+  .content-com-inner {
+    left: 2%;
+  }
+}
 /* 手机端 */
 @media (max-width: 767px) {
+  .flight-com,
+  .content-com-inner,
+  .lm-aside-flight,
+  .lm-important {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+  }
   .lm-section-main {
     top: 0;
     overflow: initial;
@@ -4231,6 +4286,9 @@ body {
   }
   .lm-section-fares .fares-item-1 {
     padding-left: 15px;
+  }
+  .lm-section-hotel .hotel-com .hotel-img .save-percent {
+    top: 20px;
   }
   .lm-section-service {
     height: 120px;
