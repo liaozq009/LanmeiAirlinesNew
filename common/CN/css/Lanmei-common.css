@@ -24,12 +24,12 @@
 }
 /*滚动条的滑块按钮*/
 ::-webkit-scrollbar-thumb {
-  background-color: #8ec060;
-  border: solid 1px #8ec060;
+  background-color: #1f2c5c;
+  border: solid 1px #1f2c5c;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #8ec060;
+  background-color: #1f2c5c;
 }
 /*滚动条的上下两端的按钮*/
 ::-webkit-scrollbar-button {
@@ -294,9 +294,8 @@ body {
   display: none;
   position: absolute;
   top: 76px;
-  left: -66px;
-  width: 220px;
-  height: 178px;
+  left: -76px;
+  width: 240px;
   border-radius: 2px;
   background: #fff;
   padding: 20px;
@@ -324,7 +323,7 @@ body {
 .lm-header .h-phone .phone-menu::before {
   position: absolute;
   top: -14px;
-  left: 96px;
+  left: 106px;
   z-index: 9;
   filter: alpha(opacity=0);
   content: "";
@@ -594,8 +593,8 @@ body {
     left: -110px;
   }
   .lm-sub-header .h-right .h-phone .phone-menu {
-    width: 170px;
-    height: 146px;
+    width: 180px;
+    height: 80px;
     padding: 10px;
   }
   .lm-sub-header .h-right .h-phone .phone-menu > h2 {
