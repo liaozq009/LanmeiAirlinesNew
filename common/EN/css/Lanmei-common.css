@@ -714,6 +714,7 @@ body {
     height: 30px;
     margin-top: 15px;
     background: url('../../../images/EN/svg/m-login.svg') right center no-repeat;
+    background-size: 30px 30px;
   }
   .lm-header .h-right .h-login .login-menu {
     top: 60px;
