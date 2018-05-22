@@ -3,14 +3,33 @@
 /* 定义颜色变量 */
 @green:#8ec060;
 @purple:#1f2c5c;
-@gray:#808080;
+@gray:#7C7D7F;
 @red:#d0011b;
 @link:#4aa374;
 
 .lm-section{
-	width: 940px;
+	position: relative;
+	width: 80%;
 	min-height: 300px;
 	margin:0 auto;
+	margin-top: 180px;
+	margin-bottom: 120px;
+	padding-top: 100px;
+	background: rgba(255,255,255,0.94);
+	border-radius: 2px;
+	box-shadow: 0 0 100px rgba(31, 44, 92, 0.1);
+	.lm-title-logo{
+		position: absolute;
+		top: 0;
+		left: 50%;
+		margin-left: -70px;
+		margin-top: -70px;
+		width: 140px;
+		height: 140px;
+		border-radius: 50%;
+		background: url('../images/lanmeiLogo.jpg') center no-repeat #fff;
+		box-shadow: 0 0 100px rgba(31, 44, 92, 0.1);
+	}
 	.title{
 		h1{
 			span{color:@green;}
@@ -21,10 +40,7 @@
 		}
 	}
 	.content{
-		min-height: 500px;
-		margin:30px 0;
-		padding: 30px 20px;
-		border-left:2px solid @purple;
+		padding: 0 40px;
 		.timeline{
 			.t-title{
 				position: relative;
@@ -72,6 +88,16 @@
 	.lm-section{
 		width: 100%;
 		padding:0.15rem;
+		padding-top: 0.6rem;
+		margin-top: 0.6rem;
+		margin-bottom: 0.4rem;
+		.lm-title-logo{
+			width: 0.8rem;
+			height: 0.8rem;
+			margin-left: -0.4rem;
+			margin-top: -0.4rem;
+			background-size: 0.8rem; 
+		}
 		.title{
 			display: none;
 			h1{
@@ -80,6 +106,7 @@
 		}
 		.content{
 			margin:0.1rem 0;
+			padding: 0;
 			.timeline{
 				.t-title{
 					font-size: 0.16rem;
@@ -95,6 +122,7 @@
 				}
 				.t-menu{
 					>p{
+						text-align: left;
 						font-size: 0.14rem;
 						line-height: 0.26rem;
 					}
