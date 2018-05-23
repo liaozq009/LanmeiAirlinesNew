@@ -55,22 +55,6 @@ var LanmeiAirlines = {
 				// alert("ie");
 				$('.js-cloud-iframe').remove();
 			}else{
-				//alert("not ie and safari");
-				//iframe异步无阻塞加载onload事件
-				// function createIframe() {
-				// 	var i = document.createElement("iframe");
-				// 	i.src ="libs/clouds/lm-cloud.html";
-				// 	i.scrolling ="auto";
-				// 	i.width ="100%";
-				// 	i.height ="100%";
-				// 	i.className = "cloud-iframe";
-				// 	$('.js-ticket-bg').append(i);
-				// };
-				// // Check for browser support of event handling capability
-				// if (window.addEventListener){window.addEventListener("load", createIframe, false);}
-				// else if (window.attachEvent){window.attachEvent("onload", createIframe);}
-				// else{window.onload = createIframe;} 
-
 				$('.js-cloud-iframe').attr('src','libs/clouds/lm-cloud.html');
 			}
 		}else{
@@ -1067,8 +1051,9 @@ var LanmeiAirlines = {
 
 		/* 设置目的地下拉的值 */
 		var toCityVal = function(text){
-			var tocityArr = that.cityData.slice(0);
-			tocityArr.remove(text);
+			var tocityArr = that.cityData;
+			// var tocityArr = that.cityData.slice(0);
+			// tocityArr.remove(text);
 			$toMenuSub.empty();
 			$.each(tocityArr,function(i,val){
 				$toMenuSub.append('<li title="'+val+'">'+val+'</li>');
@@ -1077,8 +1062,9 @@ var LanmeiAirlines = {
 		};
 
 		var routeToCityVal = function(text){
-			var tocityArr = that.cityData.slice(0);
-			tocityArr.remove(text);
+			var tocityArr = that.cityData;
+			// var tocityArr = that.cityData.slice(0);
+			// tocityArr.remove(text);
 			$routeToMenuSub.empty();
 			$.each(tocityArr,function(i,val){
 				$routeToMenuSub.append('<li title="'+val+'">'+val+'</li>');
@@ -1276,8 +1262,9 @@ var LanmeiAirlines = {
 
 		/* 设置出发地下拉的值 */
 		var fromCityVal = function(text){ 
-			var fromcityArr = that.cityData.slice(0);
-			fromcityArr.remove(text);
+			var fromcityArr = that.cityData;
+			// var fromcityArr = that.cityData.slice(0);
+			// fromcityArr.remove(text);
 			$fromMenuSub.empty();
 			$.each(fromcityArr,function(i,val){
 				$fromMenuSub.append('<li title="'+val+'">'+val+'</li>');
@@ -1287,8 +1274,9 @@ var LanmeiAirlines = {
 
 		/* 设置目的地下拉的值 */
 		var toCityVal = function(text){
-			var tocityArr = that.cityData.slice(0);
-			tocityArr.remove(text);
+			var tocityArr = that.cityData;
+			// var tocityArr = that.cityData.slice(0);
+			// tocityArr.remove(text);
 			$toMenuSub.empty();
 			$.each(tocityArr,function(i,val){
 				$toMenuSub.append('<li title="'+val+'">'+val+'</li>');
@@ -2330,8 +2318,9 @@ var LanmeiAirlines = {
 
 		/* 设置出发地下拉的值 */
 		var fromCityVal = function(text){ 
-			var fromcityArr = that.cityData.slice(0);
-			fromcityArr.remove(text);
+			var fromcityArr = that.cityData;
+			// var fromcityArr = that.cityData.slice(0);
+			// fromcityArr.remove(text);
 			$routeFromMenuSub.empty();
 			$.each(fromcityArr,function(i,val){
 				$routeFromMenuSub.append('<li title="'+val+'">'+val+'</li>');
@@ -2341,8 +2330,9 @@ var LanmeiAirlines = {
 
 		/* 设置目的地下拉的值 */
 		var toCityVal = function(text){
-			var tocityArr = that.cityData.slice(0);
-			tocityArr.remove(text);
+			var tocityArr = that.cityData;
+			// var tocityArr = that.cityData.slice(0);
+			// tocityArr.remove(text);
 			$routeToMenuSub.empty();
 			$.each(tocityArr,function(i,val){
 				$routeToMenuSub.append('<li title="'+val+'">'+val+'</li>');

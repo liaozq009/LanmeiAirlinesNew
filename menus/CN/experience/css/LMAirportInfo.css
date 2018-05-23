@@ -1,9 +1,25 @@
+@charset "utf-8";
+/* 引入字体 */
+@font-face {
+  font-family: NotoSansBold;
+  src: url(../../../../common/CN/fonts/NotoSans/SourceHanSansCN-Bold.otf);
+  font-weight: bold;
+}
 /* 定义颜色变量 */
 /* 机场服务公共样式 */
 .airport-section {
   width: 960px;
   min-height: 473px;
   margin: 50px auto;
+}
+.airport-section .lm-title {
+  margin-bottom: 30px;
+}
+.airport-section .lm-title h1 {
+  font-size: 36px;
+  color: #1f2c5c;
+  text-align: center;
+  font-family: NotoSansBold;
 }
 .airport-title {
   font-size: 20px;
@@ -127,6 +143,12 @@
     width: 100%;
     padding: 0.3rem 0.15rem;
     margin: 0;
+  }
+  .airport-section .lm-title {
+    margin-bottom: 0.2rem;
+  }
+  .airport-section .lm-title h1 {
+    font-size: 0.2rem;
   }
 }
 @media screen and (max-width: 767px) {
