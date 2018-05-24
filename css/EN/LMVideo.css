@@ -1,0 +1,122 @@
+/* 定义变量 */
+/* 定义公共样式 */
+/* 内容样式 */
+.lm-banner {
+  width: 100%;
+  height: 663px;
+  padding-top: 50px;
+  background: url("../../live/images/EN/lm-live-bg.png") center no-repeat;
+  background-size: cover;
+}
+.lm-banner .lm-video-main {
+  width: 940px;
+  height: 620px;
+  margin: 0 auto;
+  padding: 20px;
+  padding-top: 145px;
+  background: url("../../live/images/EN/lm-video-bg.png") center no-repeat;
+}
+.lm-banner .lm-video-main .lm-video-content {
+  width: 760px;
+  height: 100%;
+  float: left;
+}
+.lm-banner .lm-video-main .lm-video-list {
+  width: 120px;
+  height: 100%;
+  float: right;
+}
+.lm-banner .lm-video-main .lm-video-list .video-list-inner {
+  width: 100%;
+  height: 430px;
+  background: rgba(0, 0, 0, 0.3);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4C000000", endColorstr="#4C000000");
+  border-radius: 4px;
+  padding-top: 14px;
+}
+.lm-banner .lm-video-main .lm-video-list .video-list-inner > li {
+  position: relative;
+  width: 92px;
+  height: 60px;
+  margin-bottom: 14px;
+  margin-left: 14px;
+  cursor: pointer;
+}
+.lm-banner .lm-video-main .lm-video-list .video-list-inner > li > img {
+  width: 92px;
+  height: 60px;
+}
+.lm-banner .lm-video-main .lm-video-list .video-list-inner > li .video-list-active {
+  position: absolute;
+  left: -8px;
+  top: 0;
+  visibility: hidden;
+}
+.lm-banner .lm-video-main .lm-video-list .video-list-inner .active .video-list-active {
+  visibility: visible;
+}
+.lm-banner .lm-video-main .lm-video-list .video-list-refresh {
+  display: none;
+  margin-top: 14px;
+  overflow: hidden;
+  text-align: center;
+  color: #fff;
+}
+.lm-banner .lm-video-main .lm-video-list .video-list-refresh .v-refresh {
+  float: left;
+}
+.lm-banner .lm-video-main .lm-video-list .video-list-refresh .v-enter {
+  float: right;
+}
+.lm-banner .lm-video-main .lm-video-list .video-list-refresh a {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  display: inline-block;
+  background: #ffffff;
+  border-radius: 100%;
+}
+.lm-banner .lm-video-main .lm-video-list .video-list-refresh p {
+  margin-top: 8px;
+}
+@media (max-width: 992px) {
+  body {
+    background: url(../../live/images/EN/lm-live-bg.png) center no-repeat;
+    background-size: cover;
+  }
+  .lm-banner {
+    height: auto;
+    background: none;
+    padding-top: 30px;
+  }
+  .lm-banner .lm-video-main {
+    width: 100%;
+    height: auto;
+    padding-top: 0;
+    background: none;
+  }
+  .lm-banner .lm-video-main .lm-video-content {
+    width: 100%;
+    float: none;
+  }
+  .lm-banner .lm-video-main .lm-video-list {
+    width: 100%;
+    height: auto;
+    float: none;
+    margin-top: 10px;
+  }
+  .lm-banner .lm-video-main .lm-video-list .video-list-inner {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.1);
+  }
+  .lm-banner .lm-video-main .lm-video-list .video-list-inner > li {
+    margin-bottom: 0;
+    float: left;
+  }
+  .lm-banner .lm-video-main .lm-video-list .video-list-inner > li .video-list-active {
+    left: -4px;
+  }
+}

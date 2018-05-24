@@ -30,10 +30,13 @@
 		}
 	}
 }
+.airport-wrap{
+	margin-top: 40px;
+}
 .airport-title{
-	font-size: 20px;
-	font-weight: bold;
-	color:@purple;
+	font-size: 24px;
+	font-family: @FBold;
+	color:#181819;
 	padding:0 10px;
 	img{margin-right: 20px;}
 }
@@ -44,7 +47,7 @@
 	background: #fff;
 	>h2{
 		font-size: 14px;
-		font-weight: bold;
+		font-family: @FBold;
 		margin-top: 20px;
 		color: @purple;
 	}
@@ -54,7 +57,7 @@
 	>p{
 		font-size: 14px;
 		margin-top: 10px;
-		color: @purple;
+		color: #7C7D7F;
 	}
 	.airport-content-title{
 		text-align: center;
@@ -67,8 +70,8 @@
 		margin-top: 20px;
 		th,td{
 			font-size: 14px;
-			color:@purple;
-			padding:10px 0;
+			color: #7C7D7F;
+			padding:10px;
 			text-align: center;
 		}
 		.content-inner-title{
@@ -87,7 +90,7 @@
 		.content-inner-title{margin-top: 10px;}
 	}
 	.airport-stop-p1{
-		color:@purple;
+		color: #7C7D7F;
 		font-size: 14px;
 		padding-left: 10px;
 		margin-top: 20px;
@@ -119,13 +122,16 @@
 		padding:30px;
 		>h2{
 			font-size: 14px;
-			font-weight: bold;
-			margin-top: 10px;
+			font-family: @FBold;
+			margin-top: 20px;
 			color: @purple;
+		}
+		>h2:first-child{
+			margin-top: 0;
 		}
 		>p{
 			font-size:14px;
-			color:#333333;
+			color:#7C7D7F;
 		}
 	}
 }
@@ -150,6 +156,11 @@
 			}
 		}
 	}
+	.airport-content{
+		p{
+			img{width: 100%;}
+		}
+	}
 }
 
 @media screen and (max-width:767px){
@@ -157,7 +168,7 @@
 		font-size: 0.14rem;
 		img{height: 0.2rem;margin-right: 0.1rem;}
 	}
-	.airport-traffic,.airport-call{margin-top: 0.2rem;}
+	.airport-wrap,.airport-traffic,.airport-call{margin-top: 0.2rem;}
 	.airport-content{
 		margin-top: 0.1rem;
 		padding:0.1rem;
@@ -181,5 +192,9 @@
 	.airport-call .airport-call-content{
 		padding:0.1rem;
 		>h2,>p{font-size: 12px;}
+	}
+	.airport-content .airport-content-inner th, 
+	.airport-content .airport-content-inner td{
+		padding: 6px;
 	}
 }

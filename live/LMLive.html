@@ -11,8 +11,11 @@
 	<title>Be Unique, Lanmei Airlines</title>
 
 	<!-- 引入图标 -->
-	<link rel="icon" href="images/EN/lanmeiLogo.ico">
-	<link rel="stylesheet" type="text/css" href="libsEdit/css/LMLive-libs-edit.css">
+	<link rel="icon" href="../images/EN/lanmeiLogo.ico">
+	<link rel="stylesheet" type="text/css" href="../libs/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../common/EN/fonts/lm-iconfont.css">
+	<link rel="stylesheet" type="text/css" href="../common/EN/css/Lanmei-common.css">
+	<link rel="stylesheet" type="text/css" href="../libsEdit/css/lanmeiLibsEdit.css">
 	<link rel="stylesheet" type="text/css" href="common/EN/css/LMLive-common.css">
 	<link rel="stylesheet" type="text/css" href="css/EN/LMLive.css">
 
@@ -20,59 +23,41 @@
 </head>
 <body>
 	<!-- 页面顶部 -->
-	<div class="lm-header">
-		<div class="lanmeiNav">
-			<div class="lanmeiLogo">
-				<a class="navbar-brand" href="../index.html""><img src="images/EN/lanmeiLogo.png"></a>
+	<header class="lm-header lm-sub-header">
+		<a href="/index.html" class="h-logo-wrap"></a>
+		<div class="h-right">
+			<div class="h-phone js-h-phone">
+				<div class="phone-menu js-phone-menu">
+					<h2>24 online:</h2>
+					<p class="p1">+855 023 981 800</p>
+				</div>
 			</div>
-			<div class="lanmeiHeadInfo">
-				<ul class="">
-					<li>
-						<img src="images/EN/phone.png">
-						<span>+855 23881865（CAMBODIA）</span>
-					</li>
-					<li><a href="javascript:void(0)" class="btn loginBtn">LOGIN</a></li>
-					<li><a href="javascript:void(0)" class="btn REGISTEREDBtn">REGISTERED</a></li>
-				</ul>
+			<div class="h-lang js-h-lang">
+				<p class="js-choose-lang"></p>
+				<div class="lang-menu js-lang-menu">
+					<h2>Choose a language:</h2>
+					<a href="/index.html" class="lang-en" data="en">English</a>
+					<a href="/index_cn.html" class="lang-zh" data="zh">简体中文</a>
+				</div>
 			</div>
 		</div>
-
-		<!-- 菜单选择 -->
-		<div class="LMCompanyInfo">
-			<ul>
-				<li class="nth-child1">
-					<a href="#PLANTOTRAVEL">PLAN TO TRAVEL</a>
-				</li>
-				<li class="nth-child2">
-					<a href="#LANMEIMEMBERVS">LANMEI MEMBER CENTER</a>
-				</li>
-				<li class="nth-child3">
-					<a href="#LANMEICOMMUNITY">LANMEI COMMUNITY</a>
-				</li>
-				<li class="nth-child5">
-					<a href="#DUTYFERR">LANMEI DUTY FREE</a>
-				</li>
-				<li class="nth-child6">
-					<a href="#ABOUTUS">ABOUT US</a>
-				</li>
-			</ul>
-		</div>
-	</div>
+	</header>
 
 	<!-- banner -->
 	<div class="lm-banner">
 		<div class="lm-video-main">
 			<div class="lm-video-content">
-				<img src="images/EN/lm-video-content1.png">
-				<img src="images/EN/lm-video-content2.png">
+				<!-- <img src="../../live/images/EN/lm-video-content1.png">
+				<img src="../../live/images/EN/lm-video-content2.png"> -->
+				<video width="100%" height="auto" id="videoSource" autoplay="autoplay" loop="loop" poster="/" controls>
+					<source src="../video/LMVideo-1.mp4" type="video/mp4">
+					<!-- <source src="https://static.jianshukeji.com/highcharts/../../live/images/images-videoo.mp4" type="video/mp4"> -->
+				</video>
 			</div>
 			<div class="lm-video-list">
 				<ul class="video-list-inner">
-					<li data-id="v-list-1"><img src="images/EN/v-list-1.png"><i class="video-list-active"><img src="images/EN/v-list-active.png"></i></li>
-					<li class="active" data-id="v-list-2"><img src="images/EN/v-list-2.png"><i class="video-list-active"><img src="images/EN/v-list-active.png"></i></li>
-					<li data-id="v-list-3"><img src="images/EN/v-list-3.png"><i class="video-list-active"><img src="images/EN/v-list-active.png"></i></li>
-					<li data-id="v-list-4"><img src="images/EN/v-list-4.png"><i class="video-list-active"><img src="images/EN/v-list-active.png"></i></li>
-					<li data-id="v-list-5"><img src="images/EN/v-list-5.png"><i class="video-list-active"><img src="images/EN/v-list-active.png"></i></li>
+					<li class="active" data-id="v-list-1"><img src="images/EN/v-list-1.jpg"><i class="video-list-active"><img src="images/EN/v-list-active.png"></i></li>
+					<li data-id="v-list-2"><img src="images/EN/v-list-2.jpg"><i class="video-list-active"><img src="images/EN/v-list-active.png"></i></li>
 				</ul>
 				<div class="video-list-refresh">
 					<div  class="v-refresh">
@@ -332,48 +317,30 @@
 	</div>
 
 	<!-- 页脚 -->
-	<div class="lm-footer">
-		<div class="footerBg">
-			<div class="HelpfulInformation">
-				<p>Helpful Information</p>
-			</div>
-			<div class="contactUs">
-				<div class="nth-child1"><img src="images/EN/email.png"><span>lm-ec@lanmeiairlines.com</span></div>
-				<div class="nth-child2">
-					<span>FOLLOW</span>
-					<a href="https://www.facebook.com/lanmeiairlines/"><img src="images/EN/contact1.png"></a>
-					<a href="#"><img src="images/EN/contact2.png"></a>
-					<a href="#"><img src="images/EN/contact3.png"></a>
-					<a href="#"><img src="images/EN/contact4.png"></a>
-					<a href="#"><img src="images/EN/contact5.png"></a>
-					<a href="http://weibo.com/lanmeiair"><img src="images/EN/contact6.png"></a>
-					<a href="#"><img src="images/EN/contact7.png"></a>
-				</div>
-			</div>
-			<div class="location">
-				<img src="images/EN/location.png"><a href="https://www.google.com.kh/maps/place/Lanmei+Airlines/@11.5637415,104.8830989,17z/data=!3m1!4b1!4m5!3m4!1s0x310951a3c5cdaf97:0x77359b117b2ff068!8m2!3d11.5637363!4d104.8852876" target="_Blank">No.575 D&E, Russian Federation Boulevard, Phnom Penh, Cambodia</a>
-			</div>
-			<div class="LanmeiAirlinesBerhad">
-				<a href="../index.html"><img src="images/EN/lanmeiFooterLogo.png"></a>
-				<div>
-					<p class="p1">Terms of Use | Privacy Policy | Cookies</p>
-					<p class="p2">© Copyright 2017 Lanmei Airlines. All Rights Reserved. ICP: Guangdong Province <a href="http://www.miitbeian.gov.cn" target="_Blank">ICP-17005494-1</a></p>
-				</div>
-			</div>
+	<footer class="lm-footer">
+		<p class="lm-logo"></p>
+		<p class="facebook">
+			<a href="https://www.facebook.com/lanmeiairlines/" class="a1"><i class="iconfont icon-facebook"></i></a>
+			<a href="http://weibo.com/lanmeiair"><i class="iconfont icon-wb"></i></a>
+		</p>
+		<p class="f-email"><i class="iconfont icon-email"></i><span>lm-ec@lanmeiairlines.com</span></p>
+		<p class="f-local">
+			<i class="iconfont icon-local"></i>
+			<a href="https://goo.gl/maps/7pyBze8BFe52" target="_Blank">No.575 D&amp;E, Russian Federation Boulevard, Phnom Penh, Cambodia</a>
+		</p>
+		<p class="copyright">© Copyright 2017 Lanmei Airlines. All Rights Reserved. ICP:Guangdong Province <a href="http://www.miitbeian.gov.cn" target="_Blank" rel="nofollow">ICP-17005494-1</a></p>
+	</footer>
+
+	<!-- 回到顶部 -->
+	<div class="BackToTop">
+		<div class="top">
+			<img src="../images/EN/ToTop-icon-active.png" class="img02">
+			<p>UP</p>
 		</div>
 	</div>
 
-	<!-- 回到顶部 -->
-	<div class="lm-toTop">
-		<!-- <img src="images/EN/ToTop-icon.png" class="img01"> -->
-		<img src="images/EN/ToTop-icon-active.png" class="img02">
-		<p>UP</p>
-	</div>
-
-	<!-- 第三方库-->
-	<script type="text/javascript" src="libs/jQuery/jquery-1.11.3.js"></script>
-	<!-- 公共JS -->
-	<script type="text/javascript" src="common/EN/js/LMLive-common.js"></script>
+	<script type="text/javascript" src="../libs/jQuery/jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="../libs/bootstrap/js/bootstrap.min.js"></script>
 	<!-- 业务代码 -->
 	<script type="text/javascript" src="js/EN/LMLive.js"></script>
 

@@ -1,0 +1,124 @@
+
+/* 定义变量 */
+@url:"../../live/images/EN/";
+@green:#8ec060;
+@purple:#1f2c5c;
+@gray:#808080;
+@red:#d0011b;
+@link:#00908c;
+
+/* 定义公共样式 */
+
+/* 内容样式 */
+.lm-banner{
+	width: 100%;
+	height: 663px;
+	padding-top: 50px;
+	background: url("@{url}lm-live-bg.png") center no-repeat;
+	background-size: cover;
+	.lm-video-main{
+		width: 940px;
+		height: 620px;
+		margin:0 auto;
+		padding:20px;
+		padding-top:145px;
+		background: url("@{url}lm-video-bg.png") center no-repeat;
+		.lm-video-content{
+			width: 760px;
+			height: 100%;
+			float: left;
+		}
+		.lm-video-list{
+			width: 120px;
+			height: 100%;
+			float: right;
+			.video-list-inner{
+				width: 100%;
+				height: 430px;
+				background:rgba(0,0,0,.3);
+				filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#4C000000",endColorstr="#4C000000");
+				border-radius: 4px;
+				padding-top: 14px;
+				>li{
+					position: relative;
+					width: 92px;
+					height: 60px;
+					margin-bottom: 14px;
+					margin-left: 14px;
+					cursor: pointer;
+					>img{
+						width: 92px;
+						height: 60px;
+					}
+					.video-list-active{
+						position: absolute;
+						left: -8px;
+						top: 0;
+						visibility: hidden;
+					}
+				}
+				.active {
+					.video-list-active{visibility: visible;}
+				}
+			}
+			.video-list-refresh{
+				display: none;
+				margin-top: 14px;
+				overflow: hidden;
+				text-align: center;
+				color: #fff;
+				.v-refresh{float: left;}
+				.v-enter{float: right;}
+				a{
+					width:50px;
+					height:50px;
+					line-height: 50px;
+					display: inline-block;
+					background:#ffffff;
+					border-radius:100%;
+				}
+				p{margin-top: 8px;}
+			}
+		}
+	}
+}
+
+@media (max-width: 992px) {
+	body{
+		background: url(../../live/images/EN/lm-live-bg.png) center no-repeat;
+		background-size: cover;
+	}
+	.lm-banner {
+		height: auto;
+		background: none;
+		padding-top: 30px;
+		.lm-video-main{
+			width: 100%;
+			height: auto;
+			padding-top: 0;
+			background: none;
+			.lm-video-content{
+				width: 100%;
+				float: none;
+			}
+			.lm-video-list{
+				width: 100%;
+				height: auto;
+				float: none;
+				margin-top: 10px;
+				.video-list-inner{
+					width: 100%;
+					height: auto;
+					padding: 10px;
+					overflow: hidden;
+					background: rgba(0,0,0,0.1);
+					>li{
+						margin-bottom: 0;
+						float: left;
+						.video-list-active{left: -4px;}
+					}
+				}
+			}
+		}
+	}
+}
