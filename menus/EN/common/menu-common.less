@@ -2,14 +2,6 @@
 
 /* 引入字体 */
 @font-face {
-	font-family: CamptonBook;
-	src: url(../../../common/EN/fonts/Campton/Rene.Bieder_Campton.Book.otf);
-}
-@font-face {
-	font-family: CamptonBookLight;
-	src: url(../../../common/EN/fonts/Campton/Rene.Bieder_Campton.Light.otf);
-}
-@font-face {
 	font-family: CamptonBookBold;
 	src: url(../../../common/EN/fonts/Campton/Rene.Bieder_Campton.Bold.otf);
 	font-weight:bold;
@@ -77,7 +69,8 @@
 		h2{
 			font-size: 24px;
 			color:#181819;
-			margin-bottom: 30px;
+			margin-bottom: 20px;
+			padding-top: 14px;
 			line-height: 36px;
 		}
 		h3{
@@ -89,8 +82,8 @@
 		p{
 			font-size: 16px;
 			color:#7C7D7F;
-			margin-bottom: 20px;
-			line-height: 26px;
+			margin-bottom: 16px;
+			line-height: 24px;
 			word-wrap:break-word;
 		}
 		a{
@@ -125,6 +118,10 @@
     	transition: all .3s;
     	-webkit-transition: all .3s;
     }
+}
+
+.table-hover > tbody > tr:hover{
+	background-color: #F1F3F9;
 }
 
 @media screen and (max-width:992px){

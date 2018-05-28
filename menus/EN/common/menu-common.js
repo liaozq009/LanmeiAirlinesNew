@@ -17,7 +17,7 @@ var LanmeiAirlinesCommon = {
 						'<div class="h-right">'+
 							'<div class="h-phone js-h-phone">'+
 								'<div class="phone-menu js-phone-menu">'+
-									'<h2>24 online:</h2>'+
+									'<h2>Hotline:</h2>'+
 									'<p class="p1">+855 023 981 800</p>'+
 								'</div>'+
 							'</div>'+
