@@ -314,8 +314,8 @@ body {
 			display: none;
 			position: absolute;
 			top: 76px;
-			left: -76px;
-			width: 240px;
+			left: -70px;
+			width: 220px;
 			border-radius: 2px;
 			background: #fff;
 			padding: 20px;
@@ -340,7 +340,8 @@ body {
 			&::before{
 				position: absolute;
 				top: -14px;
-				left: 106px;
+				left: 50%;
+			    margin-left: -14px;
 				z-index: 9;
 				filter:alpha(opacity=0);
 				content: "";
@@ -559,10 +560,6 @@ body {
 			}
 		}
 	}
-	.footer-center{
-		width: 660px;
-		margin: 0 auto;
-	}
 }
 
 .lte_ie9{
@@ -753,13 +750,17 @@ body {
 	.lm-sub-header {
 		position: relative;
 		.h-right {
-			> div{display: block;}
+			> div{
+				height: 60px;
+				display: block;
+			}
 		}
 		.h-phone{
 			background: url('@{url}svg/phone.svg') center 20px no-repeat;
 			.phone-menu > p{
 				background: url('@{url}svg/phone-bg.svg') left center no-repeat;
 			}
+			.phone-menu::before{left: 60%;}
 		}
 		.h-lang {
 			> p{background: url('@{url}svg/lang-en.svg') center 15px no-repeat;}

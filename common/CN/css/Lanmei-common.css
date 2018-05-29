@@ -294,8 +294,8 @@ body {
   display: none;
   position: absolute;
   top: 76px;
-  left: -76px;
-  width: 240px;
+  left: -70px;
+  width: 220px;
   border-radius: 2px;
   background: #fff;
   padding: 20px;
@@ -323,7 +323,8 @@ body {
 .lm-header .h-phone .phone-menu::before {
   position: absolute;
   top: -14px;
-  left: 106px;
+  left: 50%;
+  margin-left: -14px;
   z-index: 9;
   filter: alpha(opacity=0);
   content: "";
@@ -749,6 +750,7 @@ body {
     position: relative;
   }
   .lm-sub-header .h-right > div {
+    height: 60px;
     display: block;
   }
   .lm-sub-header .h-phone {
@@ -756,6 +758,9 @@ body {
   }
   .lm-sub-header .h-phone .phone-menu > p {
     background: url('../../../images/CN/svg/phone-bg.svg') left center no-repeat;
+  }
+  .lm-sub-header .h-phone .phone-menu::before {
+    left: 60%;
   }
   .lm-sub-header .h-lang > p {
     background: url('../../../images/CN/svg/lang-zh.svg') center 15px no-repeat;

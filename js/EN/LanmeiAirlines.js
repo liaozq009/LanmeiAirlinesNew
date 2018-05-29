@@ -296,7 +296,7 @@ var LanmeiAirlines = {
 
 		$('.js-from-input,.js-to-input,.js-hotelFrom-input,.js-routeId-input,.js-ticketType-input,.js-fNumber-input,.js-routeFrom-input,.js-routeTo-input').attr('readonly','readonly');
 		$('.js-select-way').css('visibility','visible');
-		$('.js-select-way,.js-flight-way').addClass('animated fadeInUp');
+		// $('.js-select-way,.js-flight-way').addClass('animated fadeInUp');
 
 		// banner
 		$('.slick-item-hover').click(function(event) {
@@ -1303,7 +1303,7 @@ var LanmeiAirlines = {
 
 				$popupContent.css('z-index','1'); //覆盖cancel按钮
 				if(zoomShow){
-					$selectWay.css({'height':'auto','margin-top':'40px'}).addClass('animated fadeInUp'); //展示单程往返
+					$selectWay.css({'height':'auto','margin-top':'40px'}); //展示单程往返
 					$zoom.addClass('animated fadeInUp').css('visibility','visible');
 					zoomShow = false; //重新点击出发地时再次显示目的地、日期、人数的动画
 					setTimeout(function(){
@@ -1360,7 +1360,7 @@ var LanmeiAirlines = {
 
 			$zoom.addClass('animated fadeOutDown');
 
-			$selectWay.css({'height':'0','margin-top':'0'}).addClass('animated fadeOutDown'); //隐藏单程往返
+			$selectWay.css({'height':'0','margin-top':'0'}); //隐藏单程往返
 
 			$mask.fadeOut(); //隐藏遮罩层
 			$mask2.fadeOut(); //隐藏遮罩层
@@ -1374,7 +1374,7 @@ var LanmeiAirlines = {
 			setTimeout(function(){
 				$zoom.removeClass('animated fadeOutDown');
 
-				$selectWay.removeClass('animated fadeOutDown');
+				// $selectWay.removeClass('animated fadeOutDown');
 
 				$zoom.css('visibility','hidden');
 
@@ -2389,7 +2389,7 @@ var LanmeiAirlines = {
 
 				$fStatusContent.css('z-index','1'); //覆盖cancel按钮
 				if(numZoomShow){
-					$selectFlightWay.css({'height':'auto','margin-top':'40px'}).addClass('animated fadeInUp'); //展示单程往返
+					$selectFlightWay.css({'height':'auto','margin-top':'40px'}); //展示单程往返
 					$numZoom.addClass('animated fadeInUp').css('visibility','visible');
 					numZoomShow = false; //重新点击出发地时再次显示目的地、日期、人数的动画
 					setTimeout(function(){
@@ -2476,7 +2476,7 @@ var LanmeiAirlines = {
 			$numZoom.addClass('animated fadeOutDown');
 			$routeZoom.addClass('animated fadeOutDown');
 
-			$selectFlightWay.css({'height':'0','margin-top':'0'}).addClass('animated fadeOutDown'); //隐藏单程往返
+			$selectFlightWay.css({'height':'0','margin-top':'0'}); //隐藏单程往返
 
 			$mask.fadeOut(); //隐藏遮罩层
 			$mask2.fadeOut(); //隐藏遮罩层
@@ -2495,7 +2495,7 @@ var LanmeiAirlines = {
 				$numZoom.removeClass('animated fadeOutDown');
 				$routeZoom.removeClass('animated fadeOutDown');
 
-				$selectFlightWay.removeClass('animated fadeOutDown');
+				// $selectFlightWay.removeClass('animated fadeOutDown');
 
 				$numZoom.css('visibility','hidden');
 		      // $routeZoom.css('visibility','hidden');

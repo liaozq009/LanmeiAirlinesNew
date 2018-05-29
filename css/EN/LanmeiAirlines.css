@@ -1787,6 +1787,73 @@ body {
   font-size: 26px;
   cursor: pointer;
 }
+.lm-footer {
+  height: 270px;
+}
+.lm-footer .footer-left {
+  width: 400px;
+  float: left;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.lm-footer .facebook,
+.lm-footer .f-email {
+  margin-top: 28px;
+}
+.lm-footer .f-local,
+.lm-footer .copyright {
+  display: none;
+}
+.lm-footer .footer-right {
+  height: 186px;
+  margin-left: 400px;
+  overflow: hidden;
+}
+.lm-footer .footer-bottom {
+  padding-left: 96px;
+  padding-right: 30px;
+  margin-top: 20px;
+}
+.lm-footer .footer-bottom .f-local {
+  display: block;
+  float: left;
+  margin-top: 0;
+}
+.lm-footer .footer-bottom .copyright {
+  display: block;
+  float: right;
+  margin-top: 0;
+}
+.lm-footer .footer-box {
+  float: left;
+  width: 25%;
+  text-align: left;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.lm-footer .footer-box h2 {
+  color: #fff;
+  font-size: 24px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.lm-footer .footer-box a {
+  display: block;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: color .3s;
+  -webkit-transition: color .3s;
+}
+.lm-footer .footer-box a:hover {
+  color: #8ec060;
+  transition: color .3s;
+  -webkit-transition: color .3s;
+}
 /* ie兼容 */
 .ie11 .rooms-content-com {
   margin-left: 18px !important;
@@ -2888,6 +2955,27 @@ body {
 }
 /* pad */
 @media (max-width: 1200px) {
+  .lm-footer {
+    height: 240px;
+  }
+  .lm-footer .footer-right,
+  .lm-footer .footer-bottom {
+    display: none;
+  }
+  .lm-footer .footer-left {
+    width: auto;
+    float: none;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .lm-footer .f-local,
+  .lm-footer .copyright {
+    display: block;
+  }
+  .lm-footer .facebook,
+  .lm-footer .f-email {
+    margin-top: 16px;
+  }
   .content-com-inner {
     left: 0%;
   }
@@ -3023,6 +3111,9 @@ body {
 }
 /* 手机端 */
 @media (max-width: 767px) {
+  .lm-footer {
+    height: 240px;
+  }
   .flight-com,
   .content-com-inner,
   .lm-aside-flight,
@@ -3246,7 +3337,7 @@ body {
     display: none;
     position: absolute;
     top: -40px;
-    width: 190px;
+    width: 180px;
     height: 90px;
     border-radius: 2px;
     background: #fff;
