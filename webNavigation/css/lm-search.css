@@ -1,0 +1,172 @@
+@charset "utf-8";
+/*滚动条整体部分,必须要设置*/
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: #B0AEDA;
+}
+/*滚动条的轨道*/
+::-webkit-scrollbar-track {
+  width: 8px;
+  background-color: #fff;
+}
+/*滚动条的滑块按钮*/
+::-webkit-scrollbar-thumb {
+  background-color: #1f2c5c;
+  border: solid 1px #1f2c5c;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #1f2c5c;
+}
+/*滚动条的上下两端的按钮*/
+::-webkit-scrollbar-button {
+  height: 0px;
+  background-color: #1f2c5c;
+}
+/* IE下滚动条 */
+/*三角箭头的颜色*/
+* {
+  scrollbar-arrow-color: #1f2c5c;
+  /*滚动条滑块按钮的颜色*/
+  scrollbar-face-color: #1f2c5c;
+  /*滚动条整体颜色*/
+  scrollbar-highlight-color: #1f2c5c;
+  /*滚动条阴影*/
+  scrollbar-shadow-color: none;
+  /*滚动条轨道颜色*/
+  scrollbar-track-color: #fff;
+  box-sizing: border-box;
+}
+/* reset.css */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li,
+input {
+  margin: 0;
+  padding: 0;
+}
+ul,
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+a:hover,
+a:focus {
+  text-decoration: none;
+  outline: none;
+}
+input {
+  border: 0;
+  outline: none;
+}
+img {
+  vertical-align: middle;
+  border: none;
+}
+input::-ms-clear {
+  display: none;
+}
+body {
+  background: #FAFBFF;
+}
+.lm-logo-wrap {
+  text-align: center;
+  margin-top: 50px;
+}
+.lm-search-wrap {
+  width: 550px;
+  margin: 50px auto;
+  margin-top: 30px;
+}
+.lm-search-wrap input {
+  width: 500px;
+  height: 40px;
+  padding: 10px;
+  background: #fff;
+  border: 1px solid #42958a;
+}
+.lm-search-wrap .search-button {
+  width: 50px;
+  height: 40px;
+  float: right;
+  background: url('../images/icon-search.png') center no-repeat #42958a;
+  background-size: 22px;
+  cursor: pointer;
+}
+.lm-hotSearch-wrap {
+  width: 990px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.lm-hotSearch-wrap .hotSearch-box {
+  overflow: hidden;
+}
+.lm-hotSearch-wrap .hotSearch-box > li {
+  float: left;
+  width: 50px;
+  text-align: center;
+  margin-left: 50px;
+  margin-bottom: 30px;
+}
+.lm-hotSearch-wrap .hotSearch-box > li p {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #7C7D7F;
+}
+.lm-searchList-wrap {
+  width: 990px;
+  margin: 20px auto 100px;
+  overflow: hidden;
+}
+.lm-searchList-wrap .searchList-box {
+  width: 310px;
+  float: left;
+  margin-bottom: 30px;
+}
+.lm-searchList-wrap .searchList-box h2 {
+  color: #1f2c5c;
+  font-size: 24px;
+}
+.lm-searchList-wrap .searchList-box .list-inner {
+  overflow: hidden;
+}
+.lm-searchList-wrap .searchList-box .list-inner li {
+  width: 90px;
+  float: left;
+  height: 30px;
+  line-height: 30px;
+  margin-top: 10px;
+}
+.lm-searchList-wrap .searchList-box .list-inner li a {
+  color: #7C7D7F;
+  font-size: 16px;
+  transition: color .3s;
+  -webkit-transition: color .3s;
+}
+.lm-searchList-wrap .searchList-box .list-inner li a:hover {
+  color: #8ec060;
+  transition: color .3s;
+  -webkit-transition: color .3s;
+}
+.lm-searchList-wrap .searchList-center {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+.lm-footer .copyright {
+  text-align: center;
+  color: #7C7D7F;
+  margin-bottom: 10px;
+}
+.lm-footer .copyright a {
+  color: #7C7D7F;
+}
