@@ -7,80 +7,11 @@
 @green: #8ec060;
 @gray: #7C7D7F;
 
-/*滚动条整体部分,必须要设置*/
-::-webkit-scrollbar{
-	width: 8px;
-	background-color: #B0AEDA;
-}
-/*滚动条的轨道*/
-::-webkit-scrollbar-track{
-	width: 8px;
-	background-color: #fff;
-}
-/*滚动条的滑块按钮*/
-::-webkit-scrollbar-thumb{
-	background-color: @purple;
-	border: solid 1px @purple;
-	border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-	background-color: @purple;
-}
-/*滚动条的上下两端的按钮*/
-::-webkit-scrollbar-button{
-	height: 0px;
-	background-color: @purple;
-}
-
-/* IE下滚动条 */
-/*三角箭头的颜色*/
-*{
-	scrollbar-arrow-color: #1f2c5c;
-	/*滚动条滑块按钮的颜色*/
-	scrollbar-face-color: @purple;
-	/*滚动条整体颜色*/
-	scrollbar-highlight-color: @purple;
-	/*滚动条阴影*/
-	scrollbar-shadow-color: none;
-	/*滚动条轨道颜色*/
-	scrollbar-track-color: #fff;
-
-	box-sizing: border-box;
-}
-
-/* reset.css */
-body,h1,h2,h3,h4,h5,h6,p,ul,li,input {
-	margin: 0;
-	padding: 0;
-}
-ul,li {
-	list-style: none;
-}
-a {
-	text-decoration: none;
-}
-a:hover,
-a:focus {
-	text-decoration:none;
-	outline:none;
-}
-input {
-	border:0;
-	outline: none;
-}
-img {
-	vertical-align:middle;
-	border:none;
-}
-input::-ms-clear{display : none; }
-
-body{
-	background: #FAFBFF;
-}
-
 .lm-logo-wrap{
 	text-align: center;
 	margin-top: 50px;
+	color: @purple;
+    font-size: 36px;
 }
 
 .lm-search-wrap{
@@ -122,6 +53,17 @@ body{
 				font-size: 14px;
 				color: @gray;
 			}
+			img{
+				transition: all .3s;
+				-webkit-transition: all .3s;
+			}
+			&:hover{
+				img{
+					box-shadow: 0px 8px 12px #ddd;
+					transition: all .3s;
+					-webkit-transition: all .3s;
+				}
+			}
 		}
 	}
 }
@@ -132,6 +74,7 @@ body{
 	overflow: hidden;
 	.searchList-box{
 		width: 310px;
+		height: 150px;
 		float: left;
 		margin-bottom: 30px;
 		h2{
@@ -166,13 +109,67 @@ body{
 	}
 }
 
-.lm-footer{
-	.copyright{
-		text-align: center;
-		color: @gray;
-		margin-bottom: 10px;
-		a{
-			color: @gray;
+@media (max-width: 992px){
+	.lm-hotSearch-wrap{
+		width: 100%;
+		.hotSearch-box > li{
+			width: 12.5%;
+			margin-left: 0;
+		}
+	}
+	.lm-searchList-wrap {
+		width: 100%;
+		.searchList-box{
+			width: 100%;
+			height: auto;
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+	}
+}
+
+@media (max-width: 767px){
+	.lm-search-wrap{
+		width: 100%;
+		padding-left: 15px;
+		padding-right: 15px;
+		input{
+			width: 80%;
+		}
+		.search-button{
+			width: 20%;
+		}
+	}
+	.lm-hotSearch-wrap{
+		padding-left: 15px;
+		padding-right: 15px;
+		.hotSearch-box {
+			> li {
+				width: 20%;
+				margin-bottom: 0.2rem;
+				img{width: 30px;}
+				p{font-size: 0.12rem;}
+			}
+		}
+	}
+	.lm-logo-wrap{
+		margin-top: 0.3rem;
+		font-size: 0.24rem;
+	}
+	.lm-search-wrap{
+		margin-top: 0.1rem;
+		margin-bottom: 0.3rem;
+	}
+	.lm-searchList-wrap{
+		margin-top: 0.1rem;
+		margin-bottom: 0.2rem;
+		.searchList-box {
+			h2{font-size: 0.2rem;}
+			.list-inner li{
+				height: 0.3rem;
+				line-height: 0.3rem;
+				a{font-size: 0.14rem;}
+			}
 		}
 	}
 }

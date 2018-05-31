@@ -1106,7 +1106,11 @@
 
             this.container.find('input[name=daterangepicker_start]').val(this.startDate.format(this.locale.format));
             if(this.showTotleDay){
-                this.container.find('.start-change-date').html(this.startDate.format('ddd, MMMM D, YYYY')); //解决点击结束时间的时候，开始时间也变成结束时间
+                if(this.language.language == 'cn'){
+                    this.container.find('.start-change-date').html(this.startDate.format('YYYY-MM-DD')); //解决点击结束时间的时候，开始时间也变成结束时间
+                }else if(this.language.language == 'en'){
+                    this.container.find('.start-change-date').html(this.startDate.format('ddd, MMMM D, YYYY')); //解决点击结束时间的时候，开始时间也变成结束时间
+                }
             }
             if (this.endDate)
                 this.container.find('input[name=daterangepicker_end]').val(this.endDate.format(this.locale.format));
