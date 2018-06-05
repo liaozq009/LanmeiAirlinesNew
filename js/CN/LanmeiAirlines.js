@@ -6,6 +6,7 @@ var LanmeiAirlines = {
 	indexLiFrom: 0, //定义键盘移动index 
 	indexLiTo: 0,
 	init:function(){
+		this.storage();
 		this.selectPeople();
 		this.selectHotelRooms();
 		this.banner();
@@ -18,6 +19,21 @@ var LanmeiAirlines = {
 		this.isPc();
 		this.isIE();
 		this.login();
+	},
+
+	/* storage */
+	storage:function(){
+		$('.js-lang-menu>a,.js-mLang-menu>a').click(function(){
+			var data = $(this).attr('data');
+
+			if(typeof(Storage)!=="undefined"){
+				if(data=='en'){
+					localStorage.setItem("lm-lang", "en");
+				}else if(data=='zh'){
+					localStorage.setItem("lm-lang", "cn");
+				}
+			}
+		});
 	},
 
 	/* 判断是PC端还是移动端 */
