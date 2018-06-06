@@ -1,0 +1,282 @@
+@charset "utf-8";
+@font-face {
+  font-family: CamptonBookBold;
+  src: url(../../common/EN/fonts/Campton/Rene.Bieder_Campton.Bold.otf);
+  font-weight: bold;
+}
+/* 定义变量 */
+.lm-section {
+  width: 1400px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+.lm-title {
+  width: 100%;
+  text-align: center;
+}
+.lm-title h1 {
+  font-size: 36px;
+  color: #1f2c5c;
+  font-family: CamptonBookBold;
+}
+.lm-content {
+  width: 100%;
+  margin-top: 50px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.lm-content > div {
+  float: left;
+  width: 660px;
+  height: 60px;
+  line-height: 60px;
+  margin-bottom: 40px;
+  background: #fff;
+  box-shadow: 0 0 50px 0 rgba(31, 44, 92, 0.1);
+  border-radius: 2px;
+}
+.lm-content > div > input {
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
+  color: #1f2c5c;
+  padding-left: 70px;
+  padding-right: 20px;
+}
+.lm-content > div :-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: rgba(31, 44, 92, 0.3);
+  font-size: 20px;
+}
+.lm-content > div ::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: rgba(31, 44, 92, 0.3);
+  font-size: 20px;
+}
+.lm-content > div input:-ms-input-placeholder {
+  color: rgba(31, 44, 92, 0.3);
+  font-size: 20px;
+}
+.lm-content > div input::-webkit-input-placeholder {
+  color: rgba(31, 44, 92, 0.3);
+  font-size: 20px;
+}
+.lm-content .flight-num-wrap,
+.lm-content .name-wrap {
+  margin-right: 40px;
+}
+.lm-content .name-wrap {
+  position: relative;
+}
+.lm-content .name-wrap input {
+  width: 50%;
+  float: left;
+}
+.lm-content .name-wrap .input-line {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -1px;
+  margin-top: -16px;
+  display: block;
+  width: 2px;
+  height: 32px;
+  background: rgba(31, 44, 92, 0.3);
+  border-radius: 1px;
+}
+.lm-content .name-wrap .firstName-input {
+  padding-left: 20px;
+}
+.lm-content .flight-num-wrap input {
+  background: url('../../images/EN/flight-number.png') 20px center no-repeat;
+}
+.lm-content .date-wrap input {
+  background: url('../../images/EN/date.png') 20px center no-repeat;
+}
+.lm-content .name-wrap .lastName-input {
+  background: url('../../images/EN/baggageName.png') 20px center no-repeat;
+}
+.lm-content .passport-wrap input {
+  background: url('../../images/EN/passport.png') 20px center no-repeat;
+}
+.lm-select-baggage {
+  position: relative;
+  width: 100%;
+  clear: both;
+  margin-top: 50px;
+  text-align: center;
+}
+.lm-select-baggage > img {
+  display: none;
+  width: 100%;
+}
+.lm-select-baggage .baggagePurchase-1 {
+  display: block;
+}
+.lm-select-baggage .baggage-wrap {
+  position: absolute;
+  top: 50px;
+  width: 100%;
+  font-size: 24px;
+  color: rgba(31, 44, 92, 0.5);
+}
+.lm-select-baggage .baggage-wrap input::-webkit-outer-spin-button,
+.lm-select-baggage .baggage-wrap input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+.lm-select-baggage .baggage-wrap input[type="number"] {
+  -moz-appearance: textfield;
+  width: 70px;
+  height: 40px;
+  text-align: center;
+  color: #1f2c5c;
+  font-family: CamptonBookBold;
+  background: rgba(31, 44, 92, 0.1);
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 2px;
+}
+.lm-baggage-price {
+  margin-top: 20px;
+  padding: 0 20px 30px;
+  border-bottom: 1px dashed rgba(31, 44, 92, 0.2);
+  overflow: hidden;
+}
+.lm-baggage-price .price-result {
+  float: left;
+}
+.lm-baggage-price .price-result .totle-price {
+  font-size: 20px;
+  color: #1f2c5c;
+}
+.lm-baggage-price .price-result .totle-price span {
+  font-size: 36px;
+  color: #1f2c5c;
+  font-family: CamptonBookBold;
+  margin-left: 20px;
+}
+.lm-baggage-price .price-result .agree-clause {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #1f2c5c;
+}
+.lm-baggage-price .price-result .agree-clause a {
+  color: #42958a;
+}
+.lm-baggage-price .price-result .agree-clause input[type='checkbox'] {
+  width: 26px;
+  height: 26px;
+  background: rgba(31, 44, 92, 0.2);
+  -webkit-appearance: none;
+  border-radius: 2px;
+  border: none;
+  outline: none;
+  margin-right: 20px;
+  margin-top: 0;
+  vertical-align: text-bottom;
+}
+.lm-baggage-price .price-result .agree-clause input[type=checkbox]:checked {
+  background: #42958a;
+}
+.lm-baggage-price .cal-price {
+  float: right;
+  width: 300px;
+  height: 60px;
+  line-height: 60px;
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  margin-top: 20px;
+  background: #1f2c5c;
+  border-radius: 2px;
+  transition: background .3s;
+  -webkit-transition: background .3s;
+}
+.lm-baggage-price .cal-price:hover {
+  background: #8ec06c;
+  transition: background .3s;
+  -webkit-transition: background .3s;
+}
+.lm-pay-method {
+  margin-top: 30px;
+  margin-bottom: 120px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.lm-pay-method .pay-title {
+  font-size: 20px;
+  font-family: CamptonBookBold;
+  color: #131c3e;
+}
+.lm-pay-method .pay-title img {
+  margin-right: 20px;
+}
+.lm-pay-method .pay-content {
+  margin-top: 30px;
+  overflow: hidden;
+}
+.lm-pay-method .pay-content .pay-select {
+  float: left;
+}
+.lm-pay-method .pay-content .pay-select > a {
+  display: inline-block;
+  width: 200px;
+  height: 80px;
+}
+.lm-pay-method .pay-content .AliPay {
+  background: url('../../images/EN/AliPay-active.png') center no-repeat;
+  margin-right: 36px;
+}
+.lm-pay-method .pay-content .PayPal {
+  background: url('../../images/EN/PayPal.png') center no-repeat;
+}
+.lm-pay-method .pay-content .pay-baggage {
+  width: 160px;
+  height: 60px;
+  line-height: 60px;
+  float: right;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 20px;
+  color: #fff;
+  border-radius: 2px;
+  background: #1f2c5c;
+  transition: background .3s;
+  -webkit-transition: background .3s;
+}
+.lm-pay-method .pay-content .pay-baggage:hover {
+  background: #8ec06c;
+  transition: background .3s;
+  -webkit-transition: background .3s;
+}
+/* 屏幕适配 */
+@media screen and (max-width: 1440px) {
+  .lm-section {
+    width: 990px;
+  }
+  .lm-content > div {
+    width: 460px;
+  }
+  .lm-content .flight-num-wrap,
+  .lm-content .name-wrap {
+    margin-right: 30px;
+  }
+  .lm-baggage-price .cal-price {
+    width: 220px;
+  }
+  .lm-pay-method .pay-content .pay-baggage {
+    width: 120px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .lm-section {
+    width: 100%;
+  }
+  .lm-content > div {
+    width: 100%;
+  }
+  .lm-content .flight-num-wrap,
+  .lm-content .name-wrap {
+    margin-right: 0;
+  }
+}

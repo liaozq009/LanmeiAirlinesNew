@@ -424,6 +424,21 @@ body {
 .lm-sub-header .h-right .h-phone {
   left: -150px;
 }
+.lm-sub-header .h-right .v-line,
+.lm-sub-header .h-right .h-login,
+.lm-sub-header .h-right .dot-login,
+.lm-sub-header .h-right .h-registered {
+  display: none;
+}
+.lm-subLogin-header .h-right .h-phone {
+  left: -50px;
+}
+.lm-subLogin-header .h-right .v-line,
+.lm-subLogin-header .h-right .h-login,
+.lm-subLogin-header .h-right .dot-login,
+.lm-subLogin-header .h-right .h-registered {
+  display: inline-block;
+}
 /* 返回页面顶部 */
 .BackToTop {
   display: none;

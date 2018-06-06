@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- 让 Bootstrap 兼容 IE 兼容模型 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- 让 Bootstrap 兼容 国产浏览器的高速模型 -->
+	<meta name="renderer" content="webkit">
+	<!-- 实现响应式的设置 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Excess baggage purchase</title>
+	<!-- 引入图标 -->
+	<link rel="icon" href="../../images/EN/lanmeiLogo.ico">
+	<link rel="stylesheet" type="text/css" href="../../common/EN/fonts/lm-iconfont.css">
+	<link rel="stylesheet" type="text/css" href="../../libs/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../../libs/daterange/daterangepicker.css">
+	<link rel="stylesheet" type="text/css" href="../../libsEdit/css/lanmeiLibsEdit.css">
+	<link rel="stylesheet" type="text/css" href="../../common/EN/css/Lanmei-common.css">
+	<link rel="stylesheet" type="text/css" href="../../css/EN/LMBaggagePurchase.css">
+	<!--[if lt IE 9]>
+	<script src="../../libs/bootstrap/js/html5shiv.min.js"></script>
+	<script src="../../libs/bootstrap/js/respond.min.js"></script>
+<![endif]-->
+</head>
+<body>
+	<!-- 页面顶部 -->
+	<header class="lm-header lm-sub-header lm-subLogin-header"></header>
+
+	<!-- 主体内容 -->
+	<section class="lm-section">
+		<div class="lm-title">
+			<h1>Excess baggage</h1>
+		</div>
+		<div class="lm-content">
+			<div class="flight-num-wrap">
+				<input type="text" class="js-flightNum-input" name="" value="" placeholder="What is your flight number ?">
+			</div>
+			<div class="date-wrap">
+				<input type="text" class="js-date-input" name="" value="" placeholder="Choose your flight date">
+			</div>
+			<div class="name-wrap">
+				<input type="text" class="lastName-input js-lastName-input" name="" value="" placeholder="Fill in your last name">
+				<b class="input-line"></b>
+				<input type="text" class="firstName-input js-firstName-input" name="" value="" placeholder="Fill in your first name">
+			</div>
+			<div class="passport-wrap">
+				<input type="text" class="js-passport-input" name="" value="" placeholder="Fill in your passport number">
+			</div>
+		</div>
+		<div class="lm-select-baggage">
+			<img src="../../images/EN/baggagePurchase-1.jpg" class="baggagePurchase-1">
+			<img src="../../images/EN/baggagePurchase-2.gif" class="baggagePurchase-2">
+			<img src="../../images/EN/baggagePurchase-3.gif" class="baggagePurchase-3">
+			<img src="../../images/EN/baggagePurchase-4.gif" class="baggagePurchase-4">
+			<p class="baggage-wrap">15 kg free baggage + <input type="number" class="baggage-input js-baggage-input" name="" value="" pattern="[0-9]*" placeholder="" autocomplete="off"> kg excess baggage</p>
+		</div>
+		<div class="lm-baggage-price">
+			<div class="price-result">
+				<p class="totle-price">Total : <span>USD 24</span></p>
+				<label class="agree-clause">
+					<input type="checkbox"> I have read and agree to the <a href="#">"excess baggage clause"</a>
+				</label>
+			</div>
+			<a href="javascript:;" class="cal-price js-cal-price">Calculate the price</a>
+		</div>
+		<div class="lm-pay-method">
+			<h3 class="pay-title"><img src="../../images/EN/v-big-line.png">Pleas Select The Pay Method</h3>
+			<div class="pay-content">
+				<div class="pay-select">
+					<input type="hidden" name="" value="" class="js-pay-method">
+					<a href="javascript:;" class="AliPay js-AliPay"></a>
+					<a href="javascript:;" class="PayPal js-PayPal"></a>
+				</div>
+				<a href="javascript:;" class="pay-baggage js-pay-baggage">Pay</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- 页脚 -->
+	<footer class="lm-footer"></footer>
+
+	<!-- 回到顶部 -->
+	<div class="BackToTop"></div>
+
+	<!-- 第三方库-->
+	<script type="text/javascript" src="../../libs/jQuery/jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="../../libs/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../../libs/layer/layer.js"></script>
+	<script type="text/javascript" src="../../libs/daterange/moment.js"></script>
+	<script type="text/javascript" src="../../libs/daterange/daterangepicker.js"></script>
+	<!-- 公共JS -->
+	<script type="text/javascript" src="../../common/EN/js/Lanmei-common.js"></script>
+	<script type="text/javascript" src="../../common/EN/js/head-footer.js"></script>
+	<script type="text/javascript" src="../../common/EN/js/Lanmei-common-data.js"></script>
+	<script type="text/javascript" src="../../common/EN/js/Lanmei-daterange.js"></script>
+	<!-- 业务代码 -->
+	<script type="text/javascript" src="../../js/EN/LMBaggagePurchase.js"></script>
+</body>
+</html>

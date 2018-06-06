@@ -1,0 +1,268 @@
+@charset "utf-8";
+
+@font-face {
+	font-family: CamptonBookBold;
+	src: url(../../common/EN/fonts/Campton/Rene.Bieder_Campton.Bold.otf);
+	font-weight:bold;
+}
+
+/* 定义变量 */
+@url:"../../images/EN/";
+@purple:#1f2c5c;
+@green:#8ec06c;
+@link:#42958a;
+@FBold:CamptonBookBold;
+
+.purpleRgb(@opacity){
+	color: rgba(31,44,92,@opacity);
+}
+
+.purpleBgRgb(@opacity){
+	background: rgba(31,44,92,@opacity);
+}
+
+.lm-section{
+	width: 1400px;
+	margin: 0 auto;
+	margin-top: 50px;
+}
+.lm-title{
+	width: 100%;
+	text-align: center;
+	h1{
+		font-size: 36px;
+		color: @purple;
+		font-family: @FBold;
+	}
+}
+.lm-content{
+	width: 100%;
+	margin-top: 50px;
+	padding-left: 20px;
+	padding-right: 20px;
+	>div{
+		float: left;
+		width:660px;
+		height:60px;
+		line-height: 60px;
+		margin-bottom: 40px;
+		background:#fff;
+		box-shadow:0 0 50px 0 rgba(31,44,92,0.10);
+		border-radius:2px;
+		>input{
+			width: 100%;
+			height: 100%;
+			font-size: 20px;
+			color: @purple;
+			padding-left: 70px;
+			padding-right: 20px;
+		}
+		:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+			.purpleRgb(0.3);font-size: 20px; 
+		}
+
+		::-moz-placeholder { /* Mozilla Firefox 19+ */
+			.purpleRgb(0.3);font-size: 20px;
+		}
+
+		input:-ms-input-placeholder{
+			.purpleRgb(0.3);font-size: 20px;
+		}
+
+		input::-webkit-input-placeholder{
+			.purpleRgb(0.3);font-size: 20px;
+		}
+	}
+	.flight-num-wrap,.name-wrap{margin-right: 40px;}
+	.name-wrap{
+		position: relative;
+		input{
+			width: 50%;
+			float: left;
+		}
+		.input-line{
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin-left: -1px;
+		    margin-top: -16px;
+			display: block;
+			width:2px;
+			height:32px;
+			.purpleBgRgb(0.3);
+			border-radius:1px;
+		}
+		.firstName-input{padding-left: 20px;}
+	}
+	.flight-num-wrap input{background: url('@{url}flight-number.png') 20px center no-repeat;}
+	.date-wrap input{background: url('@{url}date.png') 20px center no-repeat;}
+	.name-wrap .lastName-input{background: url('@{url}baggageName.png') 20px center no-repeat;}
+	.passport-wrap input{background: url('@{url}passport.png') 20px center no-repeat;}
+}
+.lm-select-baggage{
+	position: relative;
+	width: 100%;
+	clear: both;
+	margin-top: 50px;
+	text-align: center;
+	>img{
+		display: none;
+		width: 100%;
+	}
+	.baggagePurchase-1{display: block;}
+	.baggage-wrap{
+		position: absolute;
+		top: 50px;
+		width: 100%;
+		font-size: 24px;
+		.purpleRgb(0.5);
+		input::-webkit-outer-spin-button,
+	    input::-webkit-inner-spin-button {
+	        -webkit-appearance: none;
+	    }
+	    input[type="number"]{
+	        -moz-appearance: textfield;
+	        width:70px;
+	        height:40px;
+	        text-align: center;
+	        color: @purple;
+	        font-family: @FBold;
+	        .purpleBgRgb(0.1);
+	        padding-left: 10px;
+	        padding-right: 10px;
+	        border-radius:2px;
+	    }
+	}
+}
+.lm-baggage-price{
+	margin-top: 20px;
+	padding: 0 20px 30px;
+	border-bottom: 1px dashed rgba(31,44,92,0.2);
+	overflow: hidden;
+	.price-result{
+		float: left;
+		.totle-price{
+			font-size:20px;
+			color:@purple;
+			span{
+				font-size: 36px;
+				color: @purple;
+				font-family: @FBold;
+				margin-left: 20px;
+			}
+		}
+		.agree-clause{
+			margin-top: 20px;
+			font-size: 18px;
+			color: @purple;
+			a{color: @link;}
+			input[type='checkbox']{
+			    width: 26px;
+			    height: 26px;
+			    .purpleBgRgb(0.2);
+			    -webkit-appearance:none;
+			    border-radius: 2px;
+			    border: none;
+			    outline: none;
+			    margin-right: 20px;
+				margin-top: 0;
+				vertical-align: text-bottom;
+			}
+			input[type=checkbox]:checked{
+			   background: @link;
+			}
+		}
+	}
+	.cal-price{
+		float: right;
+		width:300px;
+		height:60px;
+		line-height: 60px;
+		font-size: 20px;
+		color: #fff;
+		text-align: center;
+		margin-top: 20px;
+		background:@purple;
+		border-radius:2px;
+		transition: background .3s;
+		-webkit-transition: background .3s;
+		&:hover{
+			background: @green;
+			transition: background .3s;
+			-webkit-transition: background .3s;
+		}
+	}
+}
+.lm-pay-method{
+	margin-top: 30px;
+	margin-bottom: 120px;
+	padding-left: 20px;
+	padding-right: 20px;
+	.pay-title{
+		font-size:20px;
+		font-family: @FBold;
+		color:#131c3e;
+		img{margin-right: 20px;}
+	}
+	.pay-content{
+		margin-top: 30px;
+		overflow: hidden;
+		.pay-select{
+			float: left;
+			>a{
+				display: inline-block;
+				width: 200px;
+				height: 80px;
+			}
+		}
+		.AliPay{background: url('@{url}AliPay-active.png') center no-repeat;margin-right: 36px;}
+		.PayPal{background: url('@{url}PayPal.png') center no-repeat;}
+		.pay-baggage{
+			width:160px;
+			height:60px;
+			line-height: 60px;
+			float: right;
+			margin-top: 10px;
+			text-align: center;
+			font-size: 20px;
+			color: #fff;
+			border-radius:2px;
+			background:@purple;
+			transition: background .3s;
+			-webkit-transition: background .3s;
+			&:hover{
+				background: @green;
+				transition: background .3s;
+				-webkit-transition: background .3s;
+			}
+		}
+	}
+}
+
+/* 屏幕适配 */
+@media screen and (max-width: 1440px) {
+	.lm-section{
+		width: 990px;
+	}
+	.lm-content {
+		> div{
+			width: 460px;
+		}
+		.flight-num-wrap,.name-wrap{
+			margin-right: 30px;
+		}
+	}
+	.lm-baggage-price .cal-price{
+		width: 220px;
+	}
+	.lm-pay-method .pay-content .pay-baggage{width: 120px;}
+}
+@media screen and (max-width: 992px) {
+	.lm-section{
+		width: 100%;
+	}
+	.lm-content {
+		> div{width: 100%;}
+		.flight-num-wrap,.name-wrap{margin-right: 0;}
+	}
+}

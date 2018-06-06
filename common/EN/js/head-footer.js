@@ -8,6 +8,25 @@ $(document).ready(function($) {
 								'<p class="p1">+855 23981800</p>'+
 							'</div>'+
 						'</div>'+
+						'<div class="v-line"><img src="../../images/EN/v-line.png" alt="line"></div>'+
+						'<div class="h-login">'+
+							'<a href="javascript:;" class="loginBtn">'+
+								'<p class="head-portrait"></p>'+
+								'<span>Login</span>'+
+							'</a>'+
+							'<div class="login-menu js-login-menu">'+
+								'<a href="javascript:;" class="lm-personal-center">Personal center</a>'+
+								'<a href="javascript:;" class="lm-logout">Logout</a>'+
+							'</div>'+
+						'</div>'+
+						'<div class="dot-login"><img src="../../images/EN/dot-login.png" alt="dot-login"></div>'+
+						'<div class="h-registered">'+
+							'<a href="javascript:;" class="REGISTEREDBtn">'+
+								'<img src="../../images/EN/registered.png" alt="registered">'+
+								'<span>Registered</span>'+
+							'</a>'+
+						'</div>'+
+						'<div class="v-line v-line-2"><img src="../../images/EN/v-line.png" alt="line"></div>'+
 						'<div class="h-lang js-h-lang">'+
 							'<p class="js-choose-lang"></p>'+
 							'<div class="lang-menu js-lang-menu">'+
