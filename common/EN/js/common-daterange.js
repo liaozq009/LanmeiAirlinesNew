@@ -76,13 +76,13 @@ if(!window.jQuery){
 		
 		var that = this;
 		this.element.daterangepicker({
-		    parentEl:thas.container,
+		    parentEl:that.container,
 		    format: 'D MMM',
 		    startDate: startTime,
 		    endDate: endTime,
 		    minDate: todayTime,
 		    // maxDate:'2018-06-02',
-		    singleDatePicker: thas.single, //单日期
+		    singleDatePicker: that.single, //单日期
 		    singleDatePicker_2: true, //单日期单日历
 		    outsideClickHide: true, //点击空白隐藏日期控件
 		    showDateTitle: false,
@@ -91,7 +91,7 @@ if(!window.jQuery){
 		    autoApply: true, //自动关闭日期
 		    language :'en',
 		    },function(start, end, label) {//格式化日期显示框  
-		        $('.cityMenu-wrap').hide();
+		        $(that.container).parent().hide(); //外框隐藏
 		        if (this.singleDatePicker) {
 		            that.element.html(start.format('D MMM'));
 		            that.element.attr('data-start',start.format('YYYY-MM-DD'));

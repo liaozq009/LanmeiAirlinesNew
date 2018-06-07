@@ -27,6 +27,154 @@
 	<!-- 页面顶部 -->
 	<header class="lm-header lm-sub-header lm-subLogin-header"></header>
 
+	<!-- 登录模态框 -->
+	<div class="modal fade" id="logonModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">Close<span aria-hidden="true">&times;</span></button>
+				</div>
+				<div class="modal-body">
+					<h2 class="loginTitle">Login</h2>
+					<span class="verifyInfo">Account or password error !</span>
+					<form id="loginForm" method="POST" action="">
+						<div class="form-group">
+							<input type="text" class="form-control" id="LanmeiUserName" placeholder="Email">
+							<ul class="login_on_changes on_changes">
+								<li email="@gmail.com"></li>
+								<li email="@qq.com"></li>
+								<li email="@sina.com"></li>
+								<li email="@163.com"></li>
+								<li email="@hotmail.com"></li>
+								<li email="@126.com"></li>
+								<li email="@yahoo.com"></li>
+							</ul>
+						</div>
+						<div class="form-group">
+							<input type="password" class="form-control" id="LanmeiPassword" placeholder="Password">
+						</div>
+						<div class="agree form-group">
+							<span class=""></span>
+							<p>Remember me next 30 days</p>
+							<a href="#" class="forgetBtn">Forget ?</a>
+						</div>
+						<div class="form-group">
+							<button type="button" class="btn userLoginBtn">Login</button>
+						</div>
+						<!-- <div class="loginOther">
+							<p>Login With</p>
+							<button  type="button" class="btn Facebook">Facebook</button>
+							<button class="btn Wechat">Wechat</button>
+						</div> -->
+					</form>
+				</div>
+				<div class="modal-footer">
+					Still no account ? Immediately <a href="javascript:void(0)" class="regBtn">registered</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 注册模态框 -->
+	<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">Close<span aria-hidden="true">&times;</span></button>
+				</div>
+				<div class="modal-body">
+					<!-- <h2 class="loginTitle">Registered</h2>
+						<span class="verifyInfo">Account or password error !</span> -->
+						<form class="registerWrapper" method="POST" action="">
+							<h2>Sign up</h2>
+							<!-- <p>There have been accounts ? <a href="#" data-toggle="modal" data-target="#logonModal">Login</a></p> -->
+							<img src="../../images/EN/verticalTitleLine.png">
+							<div class="registerContent">
+								<div class="registerInfo">
+									<input type="text" name="" value="" id="registerUserName" placeholder="Please enter email address">
+									<img src="../../images/EN/register-email.png">
+									<p>This email is already in use !</p>
+									<ul class="register_on_changes on_changes">
+										<li email="@gmail.com"></li>
+										<li email="@qq.com"></li>
+										<li email="@sina.com"></li>
+										<li email="@163.com"></li>
+										<li email="@hotmail.com"></li>
+										<li email="@126.com"></li>
+										<li email="@yahoo.com"></li>
+									</ul>
+								</div>
+								<div class="registerPassword">
+									<input type="password" name="" value="" id="registerPassword" placeholder="Password with 8-16 characters">
+									<img src="../../images/EN/register-password.png">
+									<p>Password strength : <span><i class="i1"></i><i class="i2"></i><i class="i3"></i><i class="i4"></i><i class="i5"></i><i class="i6"></i></span></p>
+								</div>
+								<div class="repeatPassword">
+									<input type="password" name="" value="" id="repeatPassword" placeholder="Please repeat password">
+									<img src="../../images/EN/register-password.png">
+									<p>Passwords don’t match !</p>
+									<span>
+										Password must be with 3 or 4 combination with 
+										number (0-9), lowercase letter (a-z), uppercase 
+										letter (A-Z) or special characters.
+									</span>
+								</div>
+								<div class="agree">
+									<span></span>
+									<p>I hereby agree to    <a href="#">Lanmeiairlines’ terms and conditions</a></p>
+								</div>
+								<div class="registerBtn">
+									<button id="registerBtn">Register</button>
+								</div>
+							</div>
+						</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 忘记密码模态框 -->
+	<div class="modal fade" id="forgetModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">Close<span aria-hidden="true">&times;</span></button>
+				</div>
+				<div class="modal-body">
+					<h2 class="loginTitle">Forget Password</h2>
+					<span class="verifyInfo">Account or password error !</span>
+					<form id="f-loginForm" method="POST" action="">
+						<div class="form-group">
+							<input type="text" class="form-control" id="f-LanmeiUserName" placeholder="Email">
+							<ul class="forget_on_changes on_changes">
+								<li email="@gmail.com"></li>
+								<li email="@qq.com"></li>
+								<li email="@sina.com"></li>
+								<li email="@163.com"></li>
+								<li email="@hotmail.com"></li>
+								<li email="@126.com"></li>
+								<li email="@yahoo.com"></li>
+							</ul>
+						</div>
+						<div class="form-group">
+							<input type="password" class="form-control" id="f-LanmeiPassword" placeholder="Password">
+							<button type="button" id="f-getPasswordBtn">Get Password</button>
+						</div>
+						<div class="agree form-group">
+							<p>Please pay attention to the E-mail information</p>
+						</div>
+						<div class="form-group">
+							<button type="button" class="btn f-userLoginBtn">Login</button>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<a href="javascript:;" class="a_login">Login</a><a href="javascript:;" class="a_registered">Registered</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<!-- 主体内容 -->
 	<section class="lm-section">
 		<div class="lm-title">
@@ -34,15 +182,23 @@
 		</div>
 		<div class="lm-content">
 			<div class="flight-num-wrap">
-				<input type="text" class="js-flightNum-input" name="" value="" placeholder="What is your flight number ?">
+				<input type="text" class="js-flightNum-input" data="flightMenu" name="" value="" placeholder="What is your flight number ?">
+				<div class="dropdownMenu-wrap">
+					<ul class="flightMenu menu-com" data="flight-menu">
+						
+					</ul>
+				</div>
 			</div>
 			<div class="date-wrap">
-				<input type="text" class="js-date-input" name="" value="" placeholder="Choose your flight date">
+				<input type="text" class="js-date-input" name="" value="" placeholder="Choose your flight date" readonly>
+				<div class="dropdownMenu-wrap dataMenu-wrap">
+					<div class="flightDate-container js-flightDate-container"></div>
+				</div>
 			</div>
 			<div class="name-wrap">
-				<input type="text" class="lastName-input js-lastName-input" name="" value="" placeholder="Fill in your last name">
+				<input type="text" class="lastName-input js-lastName-input" name="" value="" placeholder="Last name">
 				<b class="input-line"></b>
-				<input type="text" class="firstName-input js-firstName-input" name="" value="" placeholder="Fill in your first name">
+				<input type="text" class="firstName-input js-firstName-input" name="" value="" placeholder="First name">
 			</div>
 			<div class="passport-wrap">
 				<input type="text" class="js-passport-input" name="" value="" placeholder="Fill in your passport number">
@@ -67,9 +223,9 @@
 		<div class="lm-pay-method">
 			<h3 class="pay-title"><img src="../../images/EN/v-big-line.png">Pleas Select The Pay Method</h3>
 			<div class="pay-content">
-				<div class="pay-select">
+				<div class="pay-select js-pay-select">
 					<input type="hidden" name="" value="" class="js-pay-method">
-					<a href="javascript:;" class="AliPay js-AliPay"></a>
+					<a href="javascript:;" class="AliPay active js-AliPay"></a>
 					<a href="javascript:;" class="PayPal js-PayPal"></a>
 				</div>
 				<a href="javascript:;" class="pay-baggage js-pay-baggage">Pay</a>
@@ -89,11 +245,13 @@
 	<script type="text/javascript" src="../../libs/layer/layer.js"></script>
 	<script type="text/javascript" src="../../libs/daterange/moment.js"></script>
 	<script type="text/javascript" src="../../libs/daterange/daterangepicker.js"></script>
+	<script type="text/javascript" src="../../libs/auto-complete-mail.js"></script>
 	<!-- 公共JS -->
-	<script type="text/javascript" src="../../common/EN/js/Lanmei-common.js"></script>
 	<script type="text/javascript" src="../../common/EN/js/head-footer.js"></script>
-	<script type="text/javascript" src="../../common/EN/js/Lanmei-common-data.js"></script>
-	<script type="text/javascript" src="../../common/EN/js/Lanmei-daterange.js"></script>
+	<script type="text/javascript" src="../../common/EN/js/common-data.js"></script>
+	<script type="text/javascript" src="../../common/EN/js/common-login.js"></script>
+	<script type="text/javascript" src="../../common/EN/js/common-daterange.js"></script>
+	<script type="text/javascript" src="../../common/EN/js/Lanmei-common.js"></script>
 	<!-- 业务代码 -->
 	<script type="text/javascript" src="../../js/EN/LMBaggagePurchase.js"></script>
 </body>

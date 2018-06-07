@@ -26,10 +26,10 @@
   padding-right: 20px;
 }
 .lm-content > div {
+  position: relative;
   float: left;
   width: 660px;
   height: 60px;
-  line-height: 60px;
   margin-bottom: 40px;
   background: #fff;
   box-shadow: 0 0 50px 0 rgba(31, 44, 92, 0.1);
@@ -64,6 +64,89 @@
 .lm-content .flight-num-wrap,
 .lm-content .name-wrap {
   margin-right: 40px;
+}
+.lm-content .dropdownMenu-wrap {
+  display: none;
+  position: absolute;
+  top: 90px;
+  z-index: 9;
+  width: 660px;
+  height: 318px;
+  box-shadow: 0 0 50px 0 rgba(31, 44, 92, 0.1);
+}
+.lm-content .dropdownMenu-wrap:before {
+  position: absolute;
+  top: -14px;
+  left: 109px;
+  z-index: 9;
+  filter: alpha(opacity=0);
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+  border-bottom: 14px solid #fff;
+  transition: opacity 0.2s ease-out;
+  -webkit-transition: opacity 0.2s ease-out;
+}
+.lm-content .dropdownMenu-wrap .menu-com {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  padding-bottom: 10px;
+  font-size: 16px;
+  color: rgba(31, 44, 92, 0.5);
+  background: #fff;
+  z-index: 999;
+  border-radius: 2px;
+  border-top: none;
+  overflow-y: scroll;
+}
+.lm-content .dropdownMenu-wrap .menu-com > li {
+  float: left;
+  width: 25%;
+  padding-left: 30px;
+  padding-right: 10px;
+  margin-bottom: 10px;
+  background: url('../../images/EN/city-icon.png') left center no-repeat;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: all .3s;
+  -webkit-transition: all .3s;
+}
+.lm-content .dropdownMenu-wrap .menu-com > li:hover {
+  color: #8ec060;
+  background: url('../../images/EN/city-icon-active.png') left center no-repeat;
+}
+.lm-content .dropdownMenu-wrap .menu-com > li span {
+  color: #1f2c5c;
+}
+.lm-content .dropdownMenu-wrap .menu-com > li a {
+  display: inline-block;
+  width: 100%;
+  height: 40px;
+  font-size: 14px;
+  padding: 0px 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.lm-content .dropdownMenu-wrap .menu-com > li a:hover {
+  background: #8ec060;
+  color: #fff;
+}
+.lm-content .dropdownMenu-wrap .menu-com .no-result-match {
+  width: 100%;
+}
+.lm-content .dataMenu-wrap {
+  width: 312px;
+  height: 279px;
 }
 .lm-content .name-wrap {
   position: relative;
@@ -224,11 +307,18 @@
   height: 80px;
 }
 .lm-pay-method .pay-content .AliPay {
+  background: url('../../images/EN/AliPay.png') center no-repeat;
+  margin-right: 36px;
+}
+.lm-pay-method .pay-content .AliPay.active {
   background: url('../../images/EN/AliPay-active.png') center no-repeat;
   margin-right: 36px;
 }
 .lm-pay-method .pay-content .PayPal {
   background: url('../../images/EN/PayPal.png') center no-repeat;
+}
+.lm-pay-method .pay-content .PayPal.active {
+  background: url('../../images/EN/PayPal-active.png') center no-repeat;
 }
 .lm-pay-method .pay-content .pay-baggage {
   width: 160px;
@@ -248,6 +338,10 @@
   background: #8ec06c;
   transition: background .3s;
   -webkit-transition: background .3s;
+}
+/* 修改日期样式 */
+.daterangepicker.ltr .calendar.left {
+  margin-top: 6px;
 }
 /* 屏幕适配 */
 @media screen and (max-width: 1440px) {
@@ -278,5 +372,140 @@
   .lm-content .flight-num-wrap,
   .lm-content .name-wrap {
     margin-right: 0;
+  }
+}
+@media screen and (max-width: 767px) {
+  .lm-section {
+    padding: .3rem .15rem .1rem;
+    margin-top: 0;
+  }
+  .lm-title h1 {
+    font-size: .2rem;
+  }
+  .lm-content {
+    margin-top: 0.2rem;
+    padding: 0;
+  }
+  .lm-content > div {
+    height: 40px;
+    line-height: 40px;
+    margin-bottom: 0.1rem;
+  }
+  .lm-content > div > input {
+    font-size: 16px;
+    background-size: 24px !important;
+    background-position: 13px center !important;
+    padding-left: 50px;
+  }
+  .lm-content > div :-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    font-size: 14px;
+  }
+  .lm-content > div ::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    font-size: 14px;
+  }
+  .lm-content > div input:-ms-input-placeholder {
+    font-size: 14px;
+  }
+  .lm-content > div input::-webkit-input-placeholder {
+    font-size: 14px;
+  }
+  .lm-content .dropdownMenu-wrap {
+    width: 100%;
+    top: 60px;
+  }
+  .lm-content .dropdownMenu-wrap .menu-com {
+    font-size: 14px;
+  }
+  .lm-content .dropdownMenu-wrap .menu-com > li {
+    width: 50%;
+    line-height: 24px;
+  }
+  .lm-content .name-wrap .input-line {
+    height: 22px;
+    margin-top: -11px;
+  }
+  .lm-content .name-wrap .lastName-input {
+    padding-right: 10px;
+  }
+  .lm-content .name-wrap .firstName-input {
+    padding-left: 10px;
+  }
+  .daterangepicker {
+    width: 300px;
+  }
+  .lm-select-baggage {
+    padding-top: .2rem;
+  }
+  .lm-select-baggage .baggage-wrap {
+    font-size: .14rem;
+    top: .36rem;
+  }
+  .lm-select-baggage .baggage-wrap input[type="number"] {
+    width: .5rem;
+    height: .3rem;
+  }
+  .lm-baggage-price {
+    padding: 0;
+    padding-bottom: .2rem;
+    margin-top: .2rem;
+  }
+  .lm-baggage-price .price-result .totle-price {
+    font-size: .14rem;
+  }
+  .lm-baggage-price .price-result .totle-price span {
+    font-size: .24rem;
+  }
+  .lm-baggage-price .price-result .agree-clause {
+    font-size: .12rem;
+    margin-top: .1rem;
+  }
+  .lm-baggage-price .price-result .agree-clause input[type='checkbox'] {
+    width: .12rem;
+    height: .12rem;
+    margin-right: .06rem;
+    vertical-align: text-top;
+  }
+  .lm-baggage-price .cal-price {
+    float: left;
+    width: 1.5rem;
+    height: .4rem;
+    line-height: .4rem;
+    margin-top: .1rem;
+    font-size: .14rem;
+  }
+  .lm-pay-method {
+    margin-top: .2rem;
+    margin-bottom: .4rem;
+    padding: 0;
+  }
+  .lm-pay-method .pay-title {
+    font-size: .16rem;
+  }
+  .lm-pay-method .pay-title img {
+    height: .24rem;
+    margin-right: .1rem;
+  }
+  .lm-pay-method .pay-content {
+    margin-top: .2rem;
+  }
+  .lm-pay-method .pay-content .AliPay {
+    margin-right: .18rem;
+  }
+  .lm-pay-method .pay-content .AliPay,
+  .lm-pay-method .pay-content .PayPal {
+    background-size: 1.2rem .48rem;
+  }
+  .lm-pay-method .pay-content .pay-select > a {
+    width: 1.2rem;
+    height: .48rem;
+  }
+  .lm-pay-method .pay-content .pay-baggage {
+    width: 100%;
+    height: .4rem;
+    line-height: .4rem;
+    margin-top: 0;
+    font-size: .14rem;
   }
 }

@@ -636,6 +636,9 @@ body {
   .lm-sub-header .h-lang .lang-menu .lang-en {
     margin-top: 12px;
   }
+  .lm-subLogin-header .h-right .h-phone {
+    left: -50px;
+  }
   .BackToTop {
     display: none;
     width: 0.3rem;
@@ -785,6 +788,15 @@ body {
   }
   .lm-sub-header .h-lang .lang-menu .lang-zh {
     background: url('../../../images/CN/svg/lang-zh.svg') left center no-repeat;
+  }
+  .lm-subLogin-header .h-right .h-phone,
+  .lm-subLogin-header .h-right .v-line,
+  .lm-subLogin-header .h-right .dot-login,
+  .lm-subLogin-header .h-right .h-registered {
+    display: none;
+  }
+  .lm-subLogin-header .h-right .v-line-2 {
+    display: inline-block;
   }
   .lm-footer {
     height: 200px;

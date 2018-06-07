@@ -1,6 +1,6 @@
 
 var LanmeiAirlines = {
-	cityData: ['澳门(aomen)/MFM/中华人民共和国澳门特别行政区','长沙(changsha)/CSX/中华人民共和国','广州(guangzhou)/SJW/中华人民共和国','河内(henei)/HAN/越南','胡志明(huzhiming)/SGN/越南','金边(jinbian)/PNH/柬埔寨','曼谷(mangu)/BKK/泰国','南宁(nanning)/NNG/中华人民共和国','石家庄(shijiazhuang)/SJW/中华人民共和国','西哈努克市(xihanuke)/KOS/柬埔寨','暹粒(xianli)/REP/柬埔寨','香港(xianggang)/HKG/中华人民共和国香港特别行政区','新加坡(xinjiapo)/SIN/新加坡'],
+	cityData: ['澳门(aomen)/MFM/中华人民共和国澳门特别行政区','长沙(changsha)/CSX/中华人民共和国','广州(guangzhou)/SJW/中华人民共和国','河内(henei)/HAN/越南','胡志明(huzhiming)/SGN/越南','金边(jinbian)/PNH/柬埔寨','曼谷(mangu)/BKK/泰国','南宁(nanning)/NNG/中华人民共和国','石家庄(shijiazhuang)/SJW/中华人民共和国','西哈努克市(xihanuke)/KOS/柬埔寨','暹粒(xianli)/REP/柬埔寨','香港(xianggang)/HKG/中华人民共和国香港特别行政区','新加坡(xinjiapo)/SIN/新加坡','西安(xi`an)/XIY/中华人民共和国'],
 	hotelCityData: ['Hong Phann Guest House','Phkar Chhouk Tep Monireth Hotel','Tt Guest House','Phkar Chhouk Tep 2 Hotel'],
 	fNumberData: ['LQ9503','LQ503','LQ9502','LQ502','LQ806','LQ807'],
 	indexLiFrom: 0, //定义键盘移动index 
