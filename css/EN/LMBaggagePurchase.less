@@ -84,8 +84,9 @@
 		box-shadow: 0 0 50px 0 rgba(31, 44, 92, 0.1);
 		&:before{
 			position: absolute;
-			top: -14px;
-			left: 109px;
+			top: -13px;
+			left: 50%;
+		    margin-left: -14px;
 			z-index: 9;
 			filter: alpha(opacity=0);
 			content: "";
@@ -112,7 +113,7 @@
 			z-index: 999;
 			border-radius: 2px;
 			border-top: none;
-			overflow-y: scroll;
+			overflow-y: auto;
 			>li{
 				float: left;
 				width: 25%;
@@ -230,6 +231,7 @@
 				color: @purple;
 				font-family: @FBold;
 				margin-left: 20px;
+				.real-price{margin-left: 0;}
 			}
 		}
 		.agree-clause{
@@ -336,6 +338,12 @@
 		> div{
 			width: 460px;
 		}
+		.dropdownMenu-wrap{
+			width: 460px;
+		}
+		.dataMenu-wrap{
+			width: 312px;
+		}
 		.flight-num-wrap,.name-wrap{
 			margin-right: 30px;
 		}
@@ -366,9 +374,8 @@
 		margin-top: 0.2rem;
 		padding: 0;
 		>div{
-			height: 40px;
-			line-height: 40px;
-			margin-bottom: 0.1rem;
+			height: 50px;
+			margin-bottom: 0.2rem;
 			>input{
 				font-size: 16px;
 				background-size: 24px !important;
@@ -393,7 +400,7 @@
 		}
 		.dropdownMenu-wrap{
 			width: 100%;
-			top: 60px;
+			top: 70px;
 			.menu-com {
 				font-size: 14px;
 				> li{
@@ -402,7 +409,11 @@
 				}
 			}
 		}
+		.dataMenu-wrap{width: 300px;}
+		.flight-num-wrap input{background: url('@{url}svg/flightNum.svg') 20px center no-repeat;}
+		.date-wrap input{background: url('@{url}svg/date.svg') 20px center no-repeat;}
 		.name-wrap {
+			.lastName-input{background: url('@{url}svg/baggageName.svg') 20px center no-repeat;}
 			.input-line{
 				height: 22px;
 				margin-top: -11px;
@@ -410,13 +421,16 @@
 			.lastName-input{padding-right: 10px;}
 			.firstName-input{padding-left: 10px;}
 		}
+		.passport-wrap input{background: url('@{url}svg/passport.svg') 20px center no-repeat;}
+		.dropdownMenu-wrap .menu-com > li{background: url('@{url}svg/city-icon.svg') left center no-repeat;}
+		.dropdownMenu-wrap .menu-com > li:hover{background: url('@{url}svg/city-icon-active.svg') left center no-repeat;}
 	}
 	.daterangepicker{width: 300px;}
 	.lm-select-baggage {
 		padding-top: .2rem;
 		.baggage-wrap{
 			font-size: .14rem;
-			top: .36rem;
+			top: .2rem;
 			input[type="number"]{
 				width: .5rem;
 				height: .3rem;
@@ -466,10 +480,10 @@
 		.pay-content {
 			margin-top: .2rem;
 			.AliPay{
-				margin-right: .18rem;
+				margin-right: .18rem !important;
 			}
 			.AliPay,.PayPal{
-				background-size: 1.2rem .48rem;
+				background-size: 1.2rem .48rem !important;
 			}
 			.pay-select > a{
 				width: 1.2rem;

@@ -48,9 +48,10 @@ var LMBaggage = {
             $('.lm-select-baggage>img').hide();
         };
         var _tick = null;
-        $('.js-baggage-input').on('keyup',function(event) {
+        $('.js-baggage-input').on('input',function(event) {
             //获取输入的关键词
-            this.value=this.value.replace(/^[0]+[0-9]*$/gi,"")
+            this.value=this.value.replace(/^[0]+[0-9]*$/gi,"");
+            this.value=this.value.replace(/\D/g,"");
             var that = this;
             if (_tick) clearTimeout(_tick);
             _tick = setTimeout(function() {

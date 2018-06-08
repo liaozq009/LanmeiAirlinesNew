@@ -8,6 +8,25 @@ $(document).ready(function($) {
 									'<p class="p1">+855 23981800</p>'+
 								'</div>'+
 							'</div>'+
+							'<div class="v-line"><img src="../../images/CN/v-line.png" alt="line"></div>'+
+							'<div class="h-login">'+
+								'<a href="javascript:;" class="loginBtn">'+
+									'<p class="head-portrait"></p>'+
+									'<span>登录</span>'+
+								'</a>'+
+								'<div class="login-menu js-login-menu">'+
+									'<a href="javascript:;" class="lm-personal-center">个人中心</a>'+
+									'<a href="javascript:;" class="lm-logout">注销</a>'+
+								'</div>'+
+							'</div>'+
+							'<div class="dot-login"><img src="../../images/CN/dot-login.png" alt="dot-login"></div>'+
+							'<div class="h-registered">'+
+								'<a href="javascript:;" class="REGISTEREDBtn">'+
+									'<img src="../../images/CN/registered.png" alt="registered">'+
+									'<span>注册</span>'+
+								'</a>'+
+							'</div>'+
+							'<div class="v-line v-line-2"><img src="../../images/CN/v-line.png" alt="line"></div>'+
 							'<div class="h-lang js-h-lang">'+
 								'<p class="js-choose-lang"></p>'+
 								'<div class="lang-menu js-lang-menu">'+

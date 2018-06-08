@@ -76,8 +76,9 @@
 }
 .lm-content .dropdownMenu-wrap:before {
   position: absolute;
-  top: -14px;
-  left: 109px;
+  top: -13px;
+  left: 50%;
+  margin-left: -14px;
   z-index: 9;
   filter: alpha(opacity=0);
   content: "";
@@ -104,7 +105,7 @@
   z-index: 999;
   border-radius: 2px;
   border-top: none;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 .lm-content .dropdownMenu-wrap .menu-com > li {
   float: left;
@@ -238,6 +239,9 @@
   font-family: CamptonBookBold;
   margin-left: 20px;
 }
+.lm-baggage-price .price-result .totle-price span .real-price {
+  margin-left: 0;
+}
 .lm-baggage-price .price-result .agree-clause {
   margin-top: 20px;
   font-size: 18px;
@@ -351,6 +355,12 @@
   .lm-content > div {
     width: 460px;
   }
+  .lm-content .dropdownMenu-wrap {
+    width: 460px;
+  }
+  .lm-content .dataMenu-wrap {
+    width: 312px;
+  }
   .lm-content .flight-num-wrap,
   .lm-content .name-wrap {
     margin-right: 30px;
@@ -387,9 +397,8 @@
     padding: 0;
   }
   .lm-content > div {
-    height: 40px;
-    line-height: 40px;
-    margin-bottom: 0.1rem;
+    height: 50px;
+    margin-bottom: 0.2rem;
   }
   .lm-content > div > input {
     font-size: 16px;
@@ -413,7 +422,7 @@
   }
   .lm-content .dropdownMenu-wrap {
     width: 100%;
-    top: 60px;
+    top: 70px;
   }
   .lm-content .dropdownMenu-wrap .menu-com {
     font-size: 14px;
@@ -421,6 +430,18 @@
   .lm-content .dropdownMenu-wrap .menu-com > li {
     width: 50%;
     line-height: 24px;
+  }
+  .lm-content .dataMenu-wrap {
+    width: 300px;
+  }
+  .lm-content .flight-num-wrap input {
+    background: url('../../images/EN/svg/flightNum.svg') 20px center no-repeat;
+  }
+  .lm-content .date-wrap input {
+    background: url('../../images/EN/svg/date.svg') 20px center no-repeat;
+  }
+  .lm-content .name-wrap .lastName-input {
+    background: url('../../images/EN/svg/baggageName.svg') 20px center no-repeat;
   }
   .lm-content .name-wrap .input-line {
     height: 22px;
@@ -432,6 +453,15 @@
   .lm-content .name-wrap .firstName-input {
     padding-left: 10px;
   }
+  .lm-content .passport-wrap input {
+    background: url('../../images/EN/svg/passport.svg') 20px center no-repeat;
+  }
+  .lm-content .dropdownMenu-wrap .menu-com > li {
+    background: url('../../images/EN/svg/city-icon.svg') left center no-repeat;
+  }
+  .lm-content .dropdownMenu-wrap .menu-com > li:hover {
+    background: url('../../images/EN/svg/city-icon-active.svg') left center no-repeat;
+  }
   .daterangepicker {
     width: 300px;
   }
@@ -440,7 +470,7 @@
   }
   .lm-select-baggage .baggage-wrap {
     font-size: .14rem;
-    top: .36rem;
+    top: .2rem;
   }
   .lm-select-baggage .baggage-wrap input[type="number"] {
     width: .5rem;
@@ -491,11 +521,11 @@
     margin-top: .2rem;
   }
   .lm-pay-method .pay-content .AliPay {
-    margin-right: .18rem;
+    margin-right: .18rem !important;
   }
   .lm-pay-method .pay-content .AliPay,
   .lm-pay-method .pay-content .PayPal {
-    background-size: 1.2rem .48rem;
+    background-size: 1.2rem .48rem !important;
   }
   .lm-pay-method .pay-content .pay-select > a {
     width: 1.2rem;

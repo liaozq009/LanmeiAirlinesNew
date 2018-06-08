@@ -9,10 +9,10 @@ var LMComLogin = {
 	        var tips = $('.verifyInfo');
 	        tips.addClass('visible');
 	        if(reg1.test(val)){
-	            tips.html('Passed validation');
+	            tips.html('通过验证');
 	            tips.css('color','#8ec060');
 	        }else{
-	            tips.html("Your input is unqualified. Please input again!");
+	            tips.html("您的输入是不合格的。请再次输入！");
 	            tips.css('color','#d0011b');
 	        }
 	    };
@@ -71,10 +71,10 @@ var LMComLogin = {
 	        tips.addClass('visible');
 	        var val = $(this).val();
 	        if(reg2.test(val)){
-	            tips.html('Passed validation');
+	            tips.html('通过验证');
 	            tips.css('color','#8ec060');
 	        }else{
-	            tips.html("Your input is unqualified. Please input again!");
+	            tips.html("您的输入是不合格的。请再次输入！");
 	            tips.css('color','#d0011b');
 	        }
 	    });
@@ -116,10 +116,10 @@ var LMComLogin = {
 	        var tips = $('#registerUserName').siblings('p');
 	        tips.addClass('visible');
 	        if(reg1.test(val)){
-	            tips.html('Passed validation');
+	            tips.html('通过验证');
 	            tips.css('color','#8ec060');
 	        }else{
-	            tips.html("Your input is unqualified. Please input again!");
+	            tips.html("您的输入是不合格的。请再次输入！");
 	            tips.css('color','#d0011b');
 	        }
 	    };
@@ -138,10 +138,10 @@ var LMComLogin = {
 	        tips.addClass('visible');
 	        var val = $(this).val();
 	        if(reg2.test(val)){
-	            tips.html('Passed validation');
+	            tips.html('通过验证');
 	            tips.css('color','#8ec060');
 	        }else{
-	            tips.html("Your input is unqualified. Please input again!");
+	            tips.html("您的输入是不合格的。请再次输入！");
 	            tips.css('color','#d0011b');
 	        }
 	    });
@@ -153,10 +153,10 @@ var LMComLogin = {
 	        var val1 = $('#registerPassword').val();
 	        var val2 = $(this).val();
 	        if(val1==val2){
-	            tips.html('Passed validation');
+	            tips.html('通过验证');
 	            tips.css('color','#8ec060');
 	        }else{
-	            tips.html("Your input is unqualified. Please input again!");
+	            tips.html("您的输入是不合格的。请再次输入！");
 	            tips.css('color','#d0011b');
 	        }
 	    });
@@ -180,21 +180,21 @@ var LMComLogin = {
 	        tips.addClass("visible");
 	        tips.html("");
 	        if(email == "" || pwd == ""){
-	            tips.html("Your input is unqualified. Please input again!");
+	            tips.html("您的输入是不合格的。请再次输入！");
 	            tips.css('color','#d0011b');
 	            return;
 	        }
 	        
 	        var regEmail=/^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$/; 
 	        if(!regEmail.test(email)){
-	            tips.html("Enter unqualified. Please input again!");
+	            tips.html("输入无效，请再次输入！");
 	            tips.css('color','#d0011b');
 	            return;
 	        }
 	        //密码
 	        var regPwd=/^(?!^[0-9]+$)(?!^[A-z]+$)(?!^[^A-z0-9]+$)^.{6,16}$/; 
 	        if(!regPwd.test(pwd)){
-	            tips.html("Enter unqualified. Please input again!");
+	            tips.html("输入无效，请再次输入！");
 	            tips.css('color','#d0011b');
 	            return;
 	        }
@@ -214,13 +214,13 @@ var LMComLogin = {
 	                if(code == "0000"){
 	                    window.location.reload();
 	                }else if(code == "0001" || code == "0004"){
-	                    $('.verifyInfo').addClass('visible').html("The user name or password is incorrect!").css('color','#d0011b');
+	                    $('.verifyInfo').addClass('visible').html("用户名或密码不正确！").css('color','#d0011b');
 	                }else if(code == "0002" || code == "0003"){
-	                    $('.verifyInfo').addClass('visible').html("The user is abnormal!").css('color','#d0011b');
+	                    $('.verifyInfo').addClass('visible').html("用户异常！").css('color','#d0011b');
 	                }
 	            },
 	            error:function(){
-	                $('.verifyInfo').addClass('visible').html("The server is abnormal!").css('color','#d0011b');  
+	                $('.verifyInfo').addClass('visible').html("服务器异常！").css('color','#d0011b');  
 	            }
 	        });
 	    });
@@ -236,9 +236,8 @@ var LMComLogin = {
 	    if(null != $.cookie("lanmei_username") && undefined != $.cookie("lanmei_username")){
 	        //$("#loginAndLoginoutBtn span").html($.cookie("lanmei_username")).attr('title',$.cookie("lanmei_username"));
 	        $("#loginAndLoginoutBtn span").html($.cookie("lanmei_username"));
-	        console.log($.cookie("user_avatar"));
 	        $("#loginAndLoginoutBtn .head-portrait").css('background-image','url('+$.cookie("user_avatar")+')');
-	        $("#registerAndAccountBtn span").html("LOGOUT"); //改为注销
+	        $("#registerAndAccountBtn span").html("注销"); //改为注销
 	        $(".h-login").addClass("success-h-login");
 	        var winWidth = $(window).width();
 	        if(winWidth>993){
@@ -249,12 +248,12 @@ var LMComLogin = {
 	        }
 	    }else if(null != $.cookie("lanmei_nickname") && undefined != $.cookie("lanmei_nickname")){
 	        $("#loginAndLoginoutBtn span").html($.cookie("lanmei_nickname"));
-	        $("#loginAndLoginoutBtn img").attr('src','/lanmeiairlines/default/images/EN/login-icon.png');
-	        $("#registerAndAccountBtn span").html("LOGOUT"); //改为注销
+	        $("#loginAndLoginoutBtn img").attr('src','/lanmeiairlines/default/images/CN/login-icon.png');
+	        $("#registerAndAccountBtn span").html("注销"); //改为注销
 	        
 	        var winWidth = $(window).width();
 	        if(winWidth>993){
-	            layer.tips('Enter personal center!', '#loginAndLoginoutBtn img',{
+	            layer.tips('进入个人中心！', '#loginAndLoginoutBtn img',{
 	                tips: [3, '#8ec060'],
 	                time: 6000
 	            });
@@ -270,21 +269,21 @@ var LMComLogin = {
 	        tips.addClass("visible");
 	        tips.html("");
 	        if(email == "" || pwd == ""){
-	            tips.html("Your input is unqualified. Please input again!");
+	            tips.html("您的输入是不合格的。请再次输入！");
 	            tips.css('color','#d0011b');
 	            return;
 	        }
 	        
 	        var regEmail=/^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$/; 
 	        if(!regEmail.test(email)){
-	            tips.html("Enter unqualified. Please input again!");
+	            tips.html("输入无效，请重新输入！");
 	            tips.css('color','#d0011b');
 	            return;
 	        }
 	        //密码
 	        var regPwd=/^(?!^[0-9]+$)(?!^[A-z]+$)(?!^[^A-z0-9]+$)^.{6,16}$/; 
 	        if(!regPwd.test(pwd)){
-	            tips.html("Enter unqualified. Please input again!");
+	            tips.html("输入无效，请重新输入!");
 	            tips.css('color','#d0011b');
 	            return;
 	        }
@@ -304,13 +303,13 @@ var LMComLogin = {
 	                if(code == "0000"){
 	                    window.location.reload();
 	                }else if(code == "0001" || code == "0004"){
-	                    $('.verifyInfoForget').addClass('visible').html("The user name or password is incorrect!").css('color','#d0011b');
+	                    $('.verifyInfoForget').addClass('visible').html("用户名或密码不正确！").css('color','#d0011b');
 	                }else if(code == "0002" || code == "0003"){
-	                    $('.verifyInfoForget').addClass('visible').html("The user is abnormal!").css('color','#d0011b');
+	                    $('.verifyInfoForget').addClass('visible').html("用户异常！").css('color','#d0011b');
 	                }
 	            },
 	            error:function(){
-	                $('.verifyInfoForget').addClass('visible').html("The server is abnormal！").css('color','#d0011b');  
+	                $('.verifyInfoForget').addClass('visible').html("服务器异常！").css('color','#d0011b');  
 	            }
 	        });
 	    })
@@ -332,7 +331,7 @@ var LMComLogin = {
 	        var regEmail=/^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$/; 
 	        if(!regEmail.test(email)){
 	            $verifyInfoForget.css("visibility", "visible");
-	            $verifyInfoForget.html("Enter unqualified. Please input again!");
+	            $verifyInfoForget.html("输入无效，请重新输入！");
 	            return false;
 	        }
 	        $verifyInfoForget.css("visibility", "hidden");
@@ -361,17 +360,17 @@ var LMComLogin = {
 	                //code 0000修改密码成功并已发送邮件; 0001该用户不存在 ；0004邮箱格式不正确； 0002服务器异常
 	                if(code == "0000"){
 	                    settime();
-	                    $verifyInfoForget.css({"visibility":"visible","color":"rgb(142, 192, 96)"}).html(" Password changing succeeds! New password has been sent to" + email + "，Please  check!");
+	                    $verifyInfoForget.css({"visibility":"visible","color":"rgb(142, 192, 96)"}).html(" 更改密码成功！已发送新密码到" + email + "，请检查！");
 	                }else if(code == "0001"){
-	                    $verifyInfoForget.css("visibility","visible").html("he user non-existent!");
+	                    $verifyInfoForget.css("visibility","visible").html("用户不存在！");
 	                }else if(code == "0002"){
-	                    $verifyInfoForget.css("visibility","visible").html("Abnormal server. Please try again later!");
+	                    $verifyInfoForget.css("visibility","visible").html("异常的服务器。请稍后再试。");
 	                }else if(code == "0004"){
-	                    $verifyInfoForget.css("visibility","visible").html("Enter unqualified. Please input again!");
+	                    $verifyInfoForget.css("visibility","visible").html("输入无效，请重新输入！");
 	                }
 	            },
 	            error:function(){
-	                $(".verifyInfoForget").css("visibility","visible").html("Abnormal server. Please try again later!s");
+	                $(".verifyInfoForget").css("visibility","visible").html("异常的服务器。请稍后再试...");
 	            }
 	        });
 	        
@@ -382,7 +381,7 @@ var LMComLogin = {
 	    function settime(){
 	        if(countdown == 0){
 	            $("#f-getPasswordBtn").attr("disabled",false);
-	            $("#f-getPasswordBtn").html("Get Password");
+	            $("#f-getPasswordBtn").html("获取密码");
 	            countdown =60;
 	            return;
 	        }else{
@@ -397,7 +396,7 @@ var LMComLogin = {
 	    $(".lm-personal-center").click(function(){
 	        if(null != $.cookie("lanmei_username") && undefined != $.cookie("lanmei_username")){
 	            //open一个页面
-	            window.open("/member/index.jhtml");
+	            window.open("/member/indexCN.jhtml");
 	        }else{
 	            $(".verifyInfo").html("");
 	            $("#LanmeiUserName").val("");
@@ -422,13 +421,13 @@ var LMComLogin = {
 	        if(null == lanmeiUsername || undefined == lanmeiUsername || "" == lanmeiUsername){
 	            $('#registerModal').modal();
 	        }else{
-	            window.location.href = "/logout/index.jhtml";  //注销用户名
+	            window.location.href = "/logout/indexCN.jhtml";  //注销用户名
 	        }
 	    });
 	    
 	    $(".memberInfo").click(function(){
 	    	if(null != $.cookie("lanmei_username") && undefined != $.cookie("lanmei_username")){
-	    		window.open("../member/index.jhtml?info="+$(this).attr("data-type"));
+	    		window.open("../member/indexCN.jhtml?info="+$(this).attr("data-type"));
 	        }else{
 	        	 $(".verifyInfo").html("");
 	             $("#LanmeiUserName").val("");
@@ -439,7 +438,7 @@ var LMComLogin = {
 	    
 	    $(".myCoupon").click(function(){
 	    	if(null != $.cookie("lanmei_username") && undefined != $.cookie("lanmei_username")){
-	    		window.open("../member/index.jhtml?coupon="+$(this).attr("data-type"));
+	    		window.open("../member/indexCN.jhtml?coupon="+$(this).attr("data-type"));
 	        }else{
 	        	 $(".verifyInfo").html("");
 	             $("#LanmeiUserName").val("");
@@ -450,7 +449,7 @@ var LMComLogin = {
 	    
 	    $(".myOrder").click(function(){
 	    	if(null != $.cookie("lanmei_username") && undefined != $.cookie("lanmei_username")){
-	    		window.open("../member/index.jhtml?order="+$(this).attr("data-type"));
+	    		window.open("../member/indexCN.jhtml?order="+$(this).attr("data-type"));
 	        }else{
 	        	 $(".verifyInfo").html("");
 	             $("#LanmeiUserName").val("");
@@ -458,7 +457,6 @@ var LMComLogin = {
 	             $('#logonModal').modal();
 	        }
 		});
-	    
 	},
 };
 
