@@ -57,6 +57,7 @@
 			padding-left: 70px;
 			padding-right: 20px;
 		}
+		.active-input{border:1px solid red;}
 		:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
 			.purpleRgb(0.3);font-size: 20px; 
 		}
@@ -294,14 +295,14 @@
 			float: left;
 			>a{
 				display: inline-block;
-				width: 200px;
-				height: 80px;
+				width: 220px;
+				height: 100px;
 			}
 		}
-		.AliPay{background: url('@{url}AliPay.png') center no-repeat;margin-right: 36px;}
-		.AliPay.active{background: url('@{url}AliPay-active.png') center no-repeat;margin-right: 36px;}
-		.PayPal{background: url('@{url}PayPal.png') center no-repeat;}
-		.PayPal.active{background: url('@{url}PayPal-active.png') center no-repeat;}
+		.AliPay{background: url('@{url}AliPay.png') center no-repeat;}
+		.AliPay.active{background: url('@{url}AliPay-active.png') center no-repeat;}
+		.PayPal{background: url('@{url}PayPal.png') center no-repeat;margin-right: 36px;}
+		.PayPal.active{background: url('@{url}PayPal-active.png') center no-repeat;margin-right: 36px;}
 		.pay-baggage{
 			width:160px;
 			height:60px;
@@ -321,6 +322,10 @@
 				-webkit-transition: background .3s;
 			}
 		}
+	}
+	.pay-tips{
+		margin-top: 30px;
+		color: @purple;
 	}
 }
 
@@ -479,15 +484,15 @@
 		}
 		.pay-content {
 			margin-top: .2rem;
-			.AliPay{
+			.PayPal{
 				margin-right: .18rem !important;
 			}
 			.AliPay,.PayPal{
 				background-size: 1.2rem .48rem !important;
 			}
 			.pay-select > a{
-				width: 1.2rem;
-				height: .48rem;
+				width: 1.32rem;
+				height: .6rem;
 			}
 			.pay-baggage{
 				width: 100%;

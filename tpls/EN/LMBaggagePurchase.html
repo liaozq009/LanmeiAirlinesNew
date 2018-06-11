@@ -215,7 +215,7 @@
 			<div class="price-result">
 				<p class="totle-price">Total : <span>USD <span class="real-price">--</span></span></p>
 				<label class="agree-clause">
-					<input type="checkbox"> I have read and agree to the <a href="../../menus/EN/experience/LMExcessBaggage.html" target="_blank">"excess baggage clause"</a>
+					<input type="checkbox" class="js-agree-checkbox"> I have read and agree to the <a href="../../menus/EN/experience/LMExcessBaggage.html" target="_blank">"excess baggage clause"</a>
 				</label>
 			</div>
 			<a href="javascript:;" class="cal-price js-cal-price">Calculate the price</a>
@@ -225,11 +225,14 @@
 			<div class="pay-content">
 				<div class="pay-select js-pay-select">
 					<input type="hidden" name="" value="" class="js-pay-method">
-					<a href="javascript:;" class="AliPay active js-AliPay"></a>
-					<a href="javascript:;" class="PayPal js-PayPal"></a>
+					<a href="javascript:;" class="PayPal active js-PayPal" data-pay="paypal"></a>
+					<a href="javascript:;" class="AliPay js-AliPay" data-pay="alipay"></a>
 				</div>
 				<a href="javascript:;" class="pay-baggage js-pay-baggage">Pay</a>
 			</div>
+			<!-- <p class="pay-tips">温馨提示：网上享受更多优惠，由于个人原因将无法退改已购买行李。</p> -->
+			<p class="pay-tips">Tips: Purchasing baggage allowance online enjoys more discounts. 
+Refund and change are not permitted for personal reason.</p>
 		</div>
 	</section>
 

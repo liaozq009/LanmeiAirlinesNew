@@ -1,0 +1,506 @@
+@charset "utf-8";
+
+@font-face {
+	font-family: NotoSansBold;
+	src: url(../../common/CN/fonts/NotoSans/SourceHanSansCN-Bold.otf);
+	font-weight:bold;
+}
+
+/* 定义变量 */
+@url:"../../images/CN/";
+@purple:#1f2c5c;
+@green:#8ec06c;
+@link:#42958a;
+@FBold:NotoSansBold;
+
+.purpleRgb(@opacity){
+	color: rgba(31,44,92,@opacity);
+}
+
+.purpleBgRgb(@opacity){
+	background: rgba(31,44,92,@opacity);
+}
+
+.lm-section{
+	width: 1400px;
+	margin: 0 auto;
+	margin-top: 50px;
+}
+.lm-title{
+	width: 100%;
+	text-align: center;
+	h1{
+		font-size: 36px;
+		color: @purple;
+		font-family: @FBold;
+	}
+}
+.lm-content{
+	width: 100%;
+	margin-top: 50px;
+	padding-left: 20px;
+	padding-right: 20px;
+	>div{
+		position: relative;
+		float: left;
+		width:660px;
+		height:60px;
+		margin-bottom: 40px;
+		background:#fff;
+		box-shadow:0 0 50px 0 rgba(31,44,92,0.10);
+		border-radius:2px;
+		>input{
+			width: 100%;
+			height: 100%;
+			font-size: 20px;
+			color: @purple;
+			padding-left: 70px;
+			padding-right: 20px;
+		}
+		.active-input{border:1px solid red;}
+		:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+			.purpleRgb(0.3);font-size: 20px; 
+		}
+
+		::-moz-placeholder { /* Mozilla Firefox 19+ */
+			.purpleRgb(0.3);font-size: 20px;
+		}
+
+		input:-ms-input-placeholder{
+			.purpleRgb(0.3);font-size: 20px;
+		}
+
+		input::-webkit-input-placeholder{
+			.purpleRgb(0.3);font-size: 20px;
+		}
+	}
+	.flight-num-wrap,.name-wrap{margin-right: 40px;}
+	.dropdownMenu-wrap{
+		display: none;
+		position: absolute;
+		top: 90px;
+		z-index: 9;
+		width: 660px;
+		height: 318px;
+		box-shadow: 0 0 50px 0 rgba(31, 44, 92, 0.1);
+		&:before{
+			position: absolute;
+			top: -13px;
+			left: 50%;
+		    margin-left: -14px;
+			z-index: 9;
+			filter: alpha(opacity=0);
+			content: "";
+			display: block;
+			width: 0;
+			height: 0;
+			border-left: 14px solid transparent;
+			border-right: 14px solid transparent;
+			border-bottom: 14px solid #fff;
+			transition: opacity 0.2s ease-out;
+			-webkit-transition: opacity 0.2s ease-out;
+		}
+		.menu-com{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width:100%;
+			height: 100%;
+			padding: 20px;
+			padding-bottom: 10px;
+			font-size: 16px;
+			color: rgba(31, 44, 92, 0.5);
+			background: #fff;
+			z-index: 999;
+			border-radius: 2px;
+			border-top: none;
+			overflow-y: auto;
+			>li{
+				float: left;
+				width: 25%;
+				padding-left: 30px;
+				padding-right: 10px;
+				margin-bottom: 10px;
+				background: url('@{url}city-icon.png') left center no-repeat;
+				cursor: pointer;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				transition: all .3s;
+				-webkit-transition: all .3s;
+				&:hover{
+					color: #8ec060;
+					background: url('@{url}city-icon-active.png') left center no-repeat;
+				}
+				span{
+					color: #1f2c5c;
+				}
+				a{
+					display: inline-block;
+					width: 100%;
+					height: 40px;
+					font-size: 14px;
+					padding: 0px 20px;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+					&:hover{
+						background: #8ec060;
+						color: #fff;
+					}
+				}
+			}
+			.no-result-match{width: 100%;}
+		}
+	}
+	.dataMenu-wrap{
+		width: 312px;
+		height: 279px;
+	}
+	.name-wrap{
+		position: relative;
+		input{
+			width: 50%;
+			float: left;
+		}
+		.input-line{
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin-left: -1px;
+		    margin-top: -16px;
+			display: block;
+			width:2px;
+			height:32px;
+			.purpleBgRgb(0.3);
+			border-radius:1px;
+		}
+		.firstName-input{padding-left: 20px;}
+	}
+	.flight-num-wrap input{background: url('@{url}flight-number.png') 20px center no-repeat;}
+	.date-wrap input{background: url('@{url}date.png') 20px center no-repeat;}
+	.name-wrap .lastName-input{background: url('@{url}baggageName.png') 20px center no-repeat;}
+	.passport-wrap input{background: url('@{url}passport.png') 20px center no-repeat;}
+}
+.lm-select-baggage{
+	position: relative;
+	width: 100%;
+	clear: both;
+	margin-top: 50px;
+	text-align: center;
+	>img{
+		display: none;
+		width: 100%;
+	}
+	.baggagePurchase-1{display: block;}
+	.baggage-wrap{
+		position: absolute;
+		top: 50px;
+		width: 100%;
+		font-size: 24px;
+		.purpleRgb(0.5);
+		input::-webkit-outer-spin-button,
+	    input::-webkit-inner-spin-button {
+	        -webkit-appearance: none;
+	    }
+	    input[type="number"]{
+	        -moz-appearance: textfield;
+	        width:70px;
+	        height:40px;
+	        text-align: center;
+	        color: @purple;
+	        font-family: @FBold;
+	        .purpleBgRgb(0.1);
+	        padding-left: 10px;
+	        padding-right: 10px;
+	        border-radius:2px;
+	    }
+	}
+}
+.lm-baggage-price{
+	margin-top: 20px;
+	padding: 0 20px 30px;
+	border-bottom: 1px dashed rgba(31,44,92,0.2);
+	overflow: hidden;
+	.price-result{
+		float: left;
+		.totle-price{
+			font-size:20px;
+			color:@purple;
+			span{
+				font-size: 36px;
+				color: @purple;
+				font-family: @FBold;
+				margin-left: 20px;
+				.real-price{margin-left: 0;}
+			}
+		}
+		.agree-clause{
+			margin-top: 20px;
+			font-size: 18px;
+			color: @purple;
+			a{color: @link;}
+			input[type='checkbox']{
+			    width: 26px;
+			    height: 26px;
+			    .purpleBgRgb(0.2);
+			    -webkit-appearance:none;
+			    border-radius: 2px;
+			    border: none;
+			    outline: none;
+			    margin-right: 20px;
+				margin-top: 0;
+				vertical-align: text-bottom;
+			}
+			input[type=checkbox]:checked{
+			   background: @link;
+			}
+		}
+	}
+	.cal-price{
+		float: right;
+		width:300px;
+		height:60px;
+		line-height: 60px;
+		font-size: 20px;
+		color: #fff;
+		text-align: center;
+		margin-top: 20px;
+		background:@purple;
+		border-radius:2px;
+		transition: background .3s;
+		-webkit-transition: background .3s;
+		&:hover{
+			background: @green;
+			transition: background .3s;
+			-webkit-transition: background .3s;
+		}
+	}
+}
+.lm-pay-method{
+	margin-top: 30px;
+	margin-bottom: 120px;
+	padding-left: 20px;
+	padding-right: 20px;
+	.pay-title{
+		font-size:20px;
+		font-family: @FBold;
+		color:#131c3e;
+		img{margin-right: 20px;}
+	}
+	.pay-content{
+		margin-top: 30px;
+		overflow: hidden;
+		.pay-select{
+			float: left;
+			>a{
+				display: inline-block;
+				width: 220px;
+				height: 100px;
+			}
+		}
+		.AliPay{background: url('@{url}AliPay.png') center no-repeat;margin-right: 36px;}
+		.AliPay.active{background: url('@{url}AliPay-active.png') center no-repeat;margin-right: 36px;}
+		.PayPal{background: url('@{url}PayPal.png') center no-repeat;}
+		.PayPal.active{background: url('@{url}PayPal-active.png') center no-repeat;}
+		.pay-baggage{
+			width:160px;
+			height:60px;
+			line-height: 60px;
+			float: right;
+			margin-top: 10px;
+			text-align: center;
+			font-size: 20px;
+			color: #fff;
+			border-radius:2px;
+			background:@purple;
+			transition: background .3s;
+			-webkit-transition: background .3s;
+			&:hover{
+				background: @green;
+				transition: background .3s;
+				-webkit-transition: background .3s;
+			}
+		}
+	}
+	.pay-tips{
+		margin-top: 30px;
+		color: @purple;
+	}
+}
+
+/* 修改日期样式 */
+.daterangepicker.ltr .calendar.left{
+	margin-top: 6px;
+}
+
+/* 屏幕适配 */
+@media screen and (max-width: 1440px) {
+	.lm-section{
+		width: 990px;
+	}
+	.lm-content {
+		> div{
+			width: 460px;
+		}
+		.dropdownMenu-wrap{
+			width: 460px;
+		}
+		.dataMenu-wrap{
+			width: 312px;
+		}
+		.flight-num-wrap,.name-wrap{
+			margin-right: 30px;
+		}
+	}
+	.lm-baggage-price .cal-price{
+		width: 220px;
+	}
+	.lm-pay-method .pay-content .pay-baggage{width: 120px;}
+}
+@media screen and (max-width: 992px) {
+	.lm-section{
+		width: 100%;
+	}
+	.lm-content {
+		> div{width: 100%;}
+		.flight-num-wrap,.name-wrap{margin-right: 0;}
+	}
+}
+@media screen and (max-width: 767px) {
+	.lm-section{
+		padding: .3rem .15rem .1rem;
+		margin-top: 0;
+	}
+	.lm-title h1{
+		font-size: .2rem;
+	}
+	.lm-content{
+		margin-top: 0.2rem;
+		padding: 0;
+		>div{
+			height: 50px;
+			margin-bottom: 0.2rem;
+			>input{
+				font-size: 16px;
+				background-size: 24px !important;
+				background-position: 13px center !important;
+				padding-left: 50px;
+			}
+			:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+				font-size: 14px; 
+			}
+
+			::-moz-placeholder { /* Mozilla Firefox 19+ */
+				font-size: 14px;
+			}
+
+			input:-ms-input-placeholder{
+				font-size: 14px;
+			}
+
+			input::-webkit-input-placeholder{
+				font-size: 14px;
+			}
+		}
+		.dropdownMenu-wrap{
+			width: 100%;
+			top: 70px;
+			.menu-com {
+				font-size: 14px;
+				> li{
+					width: 50%;
+					line-height: 24px;
+				}
+			}
+		}
+		.dataMenu-wrap{width: 300px;}
+		.flight-num-wrap input{background: url('@{url}svg/flightNum.svg') 20px center no-repeat;}
+		.date-wrap input{background: url('@{url}svg/date.svg') 20px center no-repeat;}
+		.name-wrap {
+			.lastName-input{background: url('@{url}svg/baggageName.svg') 20px center no-repeat;}
+			.input-line{
+				height: 22px;
+				margin-top: -11px;
+			}
+			.lastName-input{padding-right: 10px;}
+			.firstName-input{padding-left: 10px;}
+		}
+		.passport-wrap input{background: url('@{url}svg/passport.svg') 20px center no-repeat;}
+		.dropdownMenu-wrap .menu-com > li{background: url('@{url}svg/city-icon.svg') left center no-repeat;}
+		.dropdownMenu-wrap .menu-com > li:hover{background: url('@{url}svg/city-icon-active.svg') left center no-repeat;}
+	}
+	.daterangepicker{width: 300px;}
+	.lm-select-baggage {
+		padding-top: .2rem;
+		.baggage-wrap{
+			font-size: .14rem;
+			top: .2rem;
+			input[type="number"]{
+				width: .5rem;
+				height: .3rem;
+			}
+		}
+	}
+	.lm-baggage-price {
+		padding: 0;
+		padding-bottom: .2rem;
+		margin-top: .2rem;
+		.price-result {
+			.totle-price{
+				font-size: .14rem;
+				span{font-size: .24rem;}
+			}
+			.agree-clause{
+				font-size: .12rem;
+				margin-top: .1rem;
+				input[type='checkbox']{
+					width: .12rem;
+					height: .12rem;
+					margin-right: .06rem;
+					vertical-align: text-top;
+				}
+			}
+		}
+		.cal-price{
+			float: left;
+			width: 1.5rem;
+		    height: .4rem;
+		    line-height: .4rem;
+		    margin-top: .1rem;
+		    font-size: .14rem;
+		}
+	}
+	.lm-pay-method{
+		margin-top: .2rem;
+		margin-bottom: .4rem;
+		padding: 0;
+		.pay-title{
+			font-size: .16rem;
+			img{
+				height: .24rem;
+				margin-right: .1rem;
+			}
+		}
+		.pay-content {
+			margin-top: .2rem;
+			.AliPay{
+				margin-right: .18rem !important;
+			}
+			.AliPay,.PayPal{
+				background-size: 1.2rem .48rem !important;
+			}
+			.pay-select > a{
+				width: 1.32rem;
+				height: .6rem;
+			}
+			.pay-baggage{
+				width: 100%;
+				height: .4rem;
+			    line-height: .4rem;
+			    margin-top: 0;
+			    font-size: .14rem;
+			}
+		}
+	}
+}

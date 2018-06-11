@@ -71,6 +71,18 @@ var LanmeiAirlines = {
 				$('.js-cloud-iframe').remove();
 			}else{
 				$('.js-cloud-iframe').attr('src','libs/clouds/lm-cloud.html');
+				// $('#videoSource').prop('src','video/cloud-video.mp4');
+				// 视频
+				// var videoHeight = function(){
+				// 	var winHeight = $(window).height();
+				// 	$('.videoSource').height(winHeight-60);
+				// }
+				// videoHeight();
+				// $('#videoSource')[0].play(); 
+				
+				// $(window).resize(function(){
+				// 	videoHeight();
+				// });
 			}
 		}else{
 			this.mobileEvent();

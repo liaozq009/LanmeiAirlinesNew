@@ -27,6 +27,7 @@ var LMBaggage = {
         // 日期选择
         $('.js-date-input').simpleDate({
             single:true,
+            todaySelect:false,
             container:'.js-flightDate-container',
         });
         $('.js-date-input').click(function(event) {
@@ -75,6 +76,16 @@ var LMBaggage = {
         // 选择支付方式
         $('.js-pay-select>a').click(function(event) {
             $(this).addClass('active').siblings('a').removeClass('active');
+            var dataPay = $(this).attr('data-pay');
+            $('.js-pay-method').val(dataPay);
+        });
+
+        // 计算价格
+        $('.js-cal-price').click(function(event) {
+            var agreeClause = $(".js-agree-checkbox").is(':checked'); //是否同意条款 true为同意，false为不同意
+            if($('.js-passport-input').val()==''){
+                $('.js-passport-input').addClass('active-input').focus();
+            }
         });
     },
     /* 模糊匹配 */

@@ -43,6 +43,9 @@
   padding-left: 70px;
   padding-right: 20px;
 }
+.lm-content > div .active-input {
+  border: 1px solid red;
+}
 .lm-content > div :-moz-placeholder {
   /* Mozilla Firefox 4 to 18 */
   color: rgba(31, 44, 92, 0.3);
@@ -307,22 +310,22 @@
 }
 .lm-pay-method .pay-content .pay-select > a {
   display: inline-block;
-  width: 200px;
-  height: 80px;
+  width: 220px;
+  height: 100px;
 }
 .lm-pay-method .pay-content .AliPay {
   background: url('../../images/EN/AliPay.png') center no-repeat;
-  margin-right: 36px;
 }
 .lm-pay-method .pay-content .AliPay.active {
   background: url('../../images/EN/AliPay-active.png') center no-repeat;
-  margin-right: 36px;
 }
 .lm-pay-method .pay-content .PayPal {
   background: url('../../images/EN/PayPal.png') center no-repeat;
+  margin-right: 36px;
 }
 .lm-pay-method .pay-content .PayPal.active {
   background: url('../../images/EN/PayPal-active.png') center no-repeat;
+  margin-right: 36px;
 }
 .lm-pay-method .pay-content .pay-baggage {
   width: 160px;
@@ -342,6 +345,10 @@
   background: #8ec06c;
   transition: background .3s;
   -webkit-transition: background .3s;
+}
+.lm-pay-method .pay-tips {
+  margin-top: 30px;
+  color: #1f2c5c;
 }
 /* 修改日期样式 */
 .daterangepicker.ltr .calendar.left {
@@ -520,7 +527,7 @@
   .lm-pay-method .pay-content {
     margin-top: .2rem;
   }
-  .lm-pay-method .pay-content .AliPay {
+  .lm-pay-method .pay-content .PayPal {
     margin-right: .18rem !important;
   }
   .lm-pay-method .pay-content .AliPay,
@@ -528,8 +535,8 @@
     background-size: 1.2rem .48rem !important;
   }
   .lm-pay-method .pay-content .pay-select > a {
-    width: 1.2rem;
-    height: .48rem;
+    width: 1.32rem;
+    height: .6rem;
   }
   .lm-pay-method .pay-content .pay-baggage {
     width: 100%;

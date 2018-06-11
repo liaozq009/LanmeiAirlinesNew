@@ -21,7 +21,7 @@
   width: 50px;
   height: 40px;
   float: right;
-  background: url('../images/icon-search.png') center no-repeat #42958a;
+  background: url('../images/icon/icon-search.png') center no-repeat #42958a;
   background-size: 22px;
   cursor: pointer;
 }
@@ -45,6 +45,9 @@
   margin-top: 10px;
   font-size: 14px;
   color: #7C7D7F;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .lm-hotSearch-wrap .hotSearch-box > li img {
   transition: all .3s;
