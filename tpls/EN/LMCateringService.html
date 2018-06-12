@@ -9,15 +9,16 @@
 	<!-- 实现响应式的设置 -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Excess baggage purchase</title>
+	<title>Meals on board</title>
 	<!-- 引入图标 -->
 	<link rel="icon" href="../../images/EN/lanmeiLogo.ico">
 	<link rel="stylesheet" type="text/css" href="../../common/EN/fonts/lm-iconfont.css">
 	<link rel="stylesheet" type="text/css" href="../../libs/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../../libs/daterange/daterangepicker.css">
+	<link rel="stylesheet" type="text/css" href="../../libs/lmslick/slick.css">
 	<link rel="stylesheet" type="text/css" href="../../libsEdit/css/lanmeiLibsEdit.css">
 	<link rel="stylesheet" type="text/css" href="../../common/EN/css/Lanmei-common.css">
-	<link rel="stylesheet" type="text/css" href="../../css/EN/LMBaggagePurchase.css">
+	<link rel="stylesheet" type="text/css" href="../../css/EN/LMCateringService.css">
 	<!--[if lt IE 9]>
 	<script src="../../libs/bootstrap/js/html5shiv.min.js"></script>
 	<script src="../../libs/bootstrap/js/respond.min.js"></script>
@@ -178,7 +179,7 @@
 	<!-- 主体内容 -->
 	<section class="lm-section">
 		<div class="lm-title">
-			<h1>Excess baggage</h1>
+			<h1>Meals on board</h1>
 		</div>
 		<div class="lm-content">
 			<div class="flight-num-wrap">
@@ -204,37 +205,122 @@
 				<input type="text" class="js-passport-input" name="" value="" placeholder="Fill in your passport number">
 			</div>
 		</div>
-		<div class="lm-select-baggage">
-			<img src="../../images/EN/baggagePurchase-1.jpg" class="baggagePurchase-1">
-			<img src="../../images/EN/baggagePurchase-2.gif" class="baggagePurchase-2">
-			<img src="../../images/EN/baggagePurchase-3.gif" class="baggagePurchase-3">
-			<img src="../../images/EN/baggagePurchase-4.gif" class="baggagePurchase-4">
-			<p class="baggage-wrap">15 kg free baggage + <input type="number" class="baggage-input js-baggage-input" name="" value="" pattern="[0-9]*" placeholder="" autocomplete="off"> kg excess baggage</p>
-		</div>
-		<div class="lm-baggage-price">
-			<div class="price-result">
-				<p class="totle-price">Total : <span>USD <span class="real-price">--</span></span></p>
-				<label class="agree-clause">
-					<input type="checkbox" class="js-agree-checkbox"> I have read and agree to the <a href="../../menus/EN/experience/LMExcessBaggage.html" target="_blank">"excess baggage clause"</a>
-				</label>
+		<div class="catering-recommend-wrap">
+			<div class="catering-recommend-title">
+				<h2>Curry chicken rice</h2>
+				<div class="catering-num-wrap">
+                    <a href="javascript:;" class="sub-catering js-sub-catering off-sub-operation"></a>
+                    <span class="catering-num js-catering-num">0</span>
+                    <a href="javascript:;" class="add-catering js-add-catering"></a>
+                </div>
 			</div>
-			<a href="javascript:;" class="cal-price js-cal-price">Calculate the price</a>
-		</div>
-		<div class="lm-pay-method">
-			<h3 class="pay-title"><img src="../../images/EN/v-big-line.png">Pleas Select The Pay Method</h3>
-			<div class="pay-content">
-				<div class="pay-select js-pay-select">
-					<input type="hidden" name="" value="" class="js-pay-method">
-					<a href="javascript:;" class="PayPal active js-PayPal" data-pay="paypal"></a>
-					<a href="javascript:;" class="AliPay js-AliPay" data-pay="alipay"></a>
-				</div>
-				<a href="javascript:;" class="pay-baggage js-pay-baggage">Pay</a>
-			</div>
-			<!-- <p class="pay-tips">温馨提示：网上享受更多优惠，由于个人原因将无法退改已购买行李。</p> -->
-			<p class="pay-tips">Tips: Purchasing baggage allowance online enjoys more discounts. 
-Refund and change are not permitted for personal reason.</p>
+			<div class="catering-recommend-img"><img src="../../imgage_demo/catering-recommend.png" alt="recommend-catering"></div>
 		</div>
 	</section>
+
+	<div class="catering-slick-wrap">
+		<div class="catering-slick-bg">
+			<div class="catering-com-wrap catering-slick catering-slick-1">
+				<img src="../../imgage_demo/catering-slick.png" class="catering-img">
+				<span class="catering-tips">Healthy</span>
+				<h2 class="catering-title">Beef rice</h2>
+				<p class="catering-detail">beef, rice, chili, carrots, vegetables</p>
+				<div class="catering-price-wrap">
+					<h3>$ 6.00</h3>
+					<div class="catering-num-wrap">
+	                    <a href="javascript:;" class="sub-catering js-sub-catering off-sub-operation"></a>
+	                    <span class="catering-num js-catering-num">0</span>
+	                    <a href="javascript:;" class="add-catering js-add-catering"></a>
+	                </div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="catering-list-wrap">
+		<div class="catering-com-wrap catering-list">
+			<div class="catering-list-bg">
+				<img src="../../imgage_demo/catering-slick.png" class="catering-img">
+				<span class="catering-tips">Healthy</span>
+				<h2 class="catering-title">Beef rice</h2>
+				<p class="catering-detail">beef, rice, chili, carrots, vegetables</p>
+				<div class="catering-price-wrap">
+					<h3>$ 6.00</h3>
+					<div class="catering-num-wrap">
+	                    <a href="javascript:;" class="sub-catering js-sub-catering off-sub-operation"></a>
+	                    <span class="catering-num js-catering-num">0</span>
+	                    <a href="javascript:;" class="add-catering js-add-catering"></a>
+	                </div>
+				</div>
+			</div>
+		</div>
+		<div class="catering-com-wrap catering-list">
+			<div class="catering-list-bg">
+				<img src="../../imgage_demo/catering-slick.png" class="catering-img">
+				<span class="catering-tips">Healthy</span>
+				<h2 class="catering-title">Beef rice</h2>
+				<p class="catering-detail">beef, rice, chili, carrots, vegetables</p>
+				<div class="catering-price-wrap">
+					<h3>$ 6.00</h3>
+					<div class="catering-num-wrap">
+	                    <a href="javascript:;" class="sub-catering js-sub-catering off-sub-operation"></a>
+	                    <span class="catering-num js-catering-num">0</span>
+	                    <a href="javascript:;" class="add-catering js-add-catering"></a>
+	                </div>
+				</div>
+			</div>
+		</div>
+		<div class="catering-com-wrap catering-list">
+			<div class="catering-list-bg">
+				<img src="../../imgage_demo/catering-slick.png" class="catering-img">
+				<span class="catering-tips">Healthy</span>
+				<h2 class="catering-title">Beef rice</h2>
+				<p class="catering-detail">beef, rice, chili, carrots, vegetables</p>
+				<div class="catering-price-wrap">
+					<h3>$ 6.00</h3>
+					<div class="catering-num-wrap">
+	                    <a href="javascript:;" class="sub-catering js-sub-catering off-sub-operation"></a>
+	                    <span class="catering-num js-catering-num">0</span>
+	                    <a href="javascript:;" class="add-catering js-add-catering"></a>
+	                </div>
+				</div>
+			</div>
+		</div>
+		<div class="catering-com-wrap catering-list">
+			<div class="catering-list-bg">
+				<img src="../../imgage_demo/catering-slick.png" class="catering-img">
+				<span class="catering-tips">Healthy</span>
+				<h2 class="catering-title">Beef rice</h2>
+				<p class="catering-detail">beef, rice, chili, carrots, vegetables</p>
+				<div class="catering-price-wrap">
+					<h3>$ 6.00</h3>
+					<div class="catering-num-wrap">
+	                    <a href="javascript:;" class="sub-catering js-sub-catering off-sub-operation"></a>
+	                    <span class="catering-num js-catering-num">0</span>
+	                    <a href="javascript:;" class="add-catering js-add-catering"></a>
+	                </div>
+				</div>
+			</div>
+		</div>
+		<div class="catering-com-wrap catering-list">
+			<div class="catering-list-bg">
+				<img src="../../imgage_demo/catering-slick.png" class="catering-img">
+				<span class="catering-tips">Healthy</span>
+				<h2 class="catering-title">Beef rice</h2>
+				<p class="catering-detail">beef, rice, chili, carrots, vegetables</p>
+				<div class="catering-price-wrap">
+					<h3>$ 6.00</h3>
+					<div class="catering-num-wrap">
+	                    <a href="javascript:;" class="sub-catering js-sub-catering off-sub-operation"></a>
+	                    <span class="catering-num js-catering-num">0</span>
+	                    <a href="javascript:;" class="add-catering js-add-catering"></a>
+	                </div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="clearBoth-catering"></div>
 
 	<!-- 页脚 -->
 	<footer class="lm-footer"></footer>
@@ -250,6 +336,7 @@ Refund and change are not permitted for personal reason.</p>
 	<script type="text/javascript" src="../../libs/daterange/moment.js"></script>
 	<script type="text/javascript" src="../../libs/daterange/daterangepicker.js"></script>
 	<script type="text/javascript" src="../../libs/auto-complete-mail.js"></script>
+	<script type="text/javascript" src="../../libs/lmslick/slick.min.js"></script>
 	<!-- 公共JS -->
 	<script type="text/javascript" src="../../common/EN/js/head-footer.js"></script>
 	<script type="text/javascript" src="../../common/EN/js/common-data.js"></script>
@@ -258,6 +345,6 @@ Refund and change are not permitted for personal reason.</p>
 	<script type="text/javascript" src="../../common/EN/js/common-daterange.js"></script>
 	<script type="text/javascript" src="../../common/EN/js/Lanmei-common.js"></script>
 	<!-- 业务代码 -->
-	<script type="text/javascript" src="../../js/EN/LMBaggagePurchase.js"></script>
+	<script type="text/javascript" src="../../js/EN/LMCateringService.js"></script>
 </body>
 </html>

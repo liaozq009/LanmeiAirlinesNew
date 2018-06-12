@@ -1,5 +1,5 @@
 
-var LMBaggage = {
+var LMCatering = {
     fNumberData: LMComData.fNumberData,
     init: function () {
         var $dropdownMenu = $('.dropdownMenu-wrap');
@@ -91,5 +91,5 @@ var LMBaggage = {
 };
 
 $(document).ready(function ($) {
-    LMBaggage.init();
+    LMCatering.init();
 });
