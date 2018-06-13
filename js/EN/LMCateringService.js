@@ -44,49 +44,33 @@ var LMCatering = {
             e.stopPropagation();
         });
 
-        // 输入行李
-        var hideImg = function(){
-            $('.lm-select-baggage>img').hide();
-        };
-        var _tick = null;
-        $('.js-baggage-input').on('input',function(event) {
-            //获取输入的关键词
-            this.value=this.value.replace(/^[0]+[0-9]*$/gi,"");
-            this.value=this.value.replace(/\D/g,"");
-            var that = this;
-            if (_tick) clearTimeout(_tick);
-            _tick = setTimeout(function() {
-                var kw = Number($(that).val());
-                if(kw>15){
-                    hideImg();
-                    $('.baggagePurchase-4').show();
-                }else if(kw>10){
-                   hideImg();
-                   $('.baggagePurchase-3').show();
-                }else if(kw>5){
-                   hideImg();
-                   $('.baggagePurchase-2').show();
-                }else{
-                    hideImg();
-                    $('.baggagePurchase-1').show();
-                }
-            }, 1000);
+        // 餐食滑动选择 
+        var $cateringSlick = $(".js-catering-slick");
+        $cateringSlick.slick({
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            variableWidth: true,
+            arrows:false,
+            touchMove:false,
+        });
+        $('.js-catering-prev').click(function(event) {
+            $cateringSlick.slick('slickPrev');
+        });
+        $('.js-catering-next').click(function(event) {
+            $cateringSlick.slick('slickNext');
         });
 
-        // 选择支付方式
-        $('.js-pay-select>a').click(function(event) {
-            $(this).addClass('active').siblings('a').removeClass('active');
-            var dataPay = $(this).attr('data-pay');
-            $('.js-pay-method').val(dataPay);
+        // 展开购物车
+        var $shopMask = $('.js-shopping-mask');
+        $('.js-small-cart').click(function(){
+            // 遮罩显示
+            // $shopMask.show();
+
+            $('.js-big-cart').animate({right:"0"},300);
+            $(this).animate({right:"-90px"},300).children('.small-cart-num').animate({right:"-66px"},800);
         });
 
-        // 计算价格
-        $('.js-cal-price').click(function(event) {
-            var agreeClause = $(".js-agree-checkbox").is(':checked'); //是否同意条款 true为同意，false为不同意
-            if($('.js-passport-input').val()==''){
-                $('.js-passport-input').addClass('active-input').focus();
-            }
-        });
     },
 };
 
