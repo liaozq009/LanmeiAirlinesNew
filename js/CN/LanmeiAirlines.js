@@ -64,7 +64,7 @@ var LanmeiAirlines = {
 				// alert("ie");
 			}else{
 				//alert("not ie");
-				$('.js-cloud-iframe').attr('src','libs/clouds/lm-cloud.html');
+				// $('.js-cloud-iframe').attr('src','libs/clouds/lm-cloud.html');
 			}
 		}else{
 			this.mobileEvent();

@@ -190,13 +190,12 @@
   position: relative;
   width: 100%;
   padding-top: 40px;
-  padding-bottom: 40px;
+  padding-bottom: 80px;
   overflow: hidden;
 }
 .catering-recommend-wrap .catering-recommend-title {
-  position: absolute;
-  top: 50%;
-  margin-top: -70px;
+  width: 540px;
+  margin-top: 200px;
 }
 .catering-recommend-wrap .catering-recommend-title h2 {
   font-size: 60px;
@@ -206,6 +205,10 @@
 }
 .catering-recommend-wrap .catering-recommend-img {
   float: right;
+  width: 860px;
+}
+.catering-recommend-wrap .catering-recommend-img img {
+  width: 100%;
 }
 .catering-num-wrap {
   height: 30px;
@@ -223,6 +226,12 @@
   background: url('../../images/EN/sub-people.png') center no-repeat rgba(31, 44, 92, 0.3);
   background-size: 12px;
 }
+.catering-num-wrap .sub-catering:hover {
+  background: url('../../images/EN/sub-people.png') center no-repeat rgba(31, 44, 92, 0.7);
+  background-size: 12px;
+  transition: all .3s;
+  -webkit-transition: all .3s;
+}
 .catering-num-wrap .add-catering {
   background: url('../../images/EN/add-people.png') center no-repeat rgba(31, 44, 92, 0.3);
   background-size: 12px;
@@ -234,6 +243,7 @@
   -webkit-transition: all .3s;
 }
 .catering-num-wrap .catering-num {
+  width: 18px;
   display: inline-block;
   font-size: 24px;
   color: #1f2c5c;
@@ -412,6 +422,12 @@
 .catering-price-wrap .catering-num-wrap {
   float: right;
 }
+.catering-recommend-title .catering-price-wrap {
+  padding-left: 0;
+}
+.catering-recommend-title .catering-price-wrap h3 {
+  font-size: 36px;
+}
 .catering-tips {
   position: absolute;
   top: 20px;
@@ -432,14 +448,14 @@
 }
 .catering-shopping-cart {
   position: fixed;
-  right: 0px;
-  top: 30%;
+  right: -250px;
+  top: 220px;
   width: 250px;
   background: #fff;
   box-shadow: 0 0 100px 0 rgba(31, 44, 92, 0.1);
   border-radius: 2px;
   overflow-y: auto;
-  z-index: 10;
+  z-index: 9999999;
 }
 .catering-shopping-cart .shopping-title {
   width: 100%;
@@ -504,12 +520,13 @@
   text-align: center;
   color: #fff;
   background: #1f2c5c;
+  cursor: pointer;
 }
 .small-cart {
   position: fixed;
-  top: 360px;
-  right: -90px;
-  z-index: 11;
+  top: 280px;
+  right: 0px;
+  z-index: 99999999;
   width: 90px;
   height: 60px;
   line-height: 60px;
@@ -531,11 +548,11 @@
 }
 .small-cart .small-cart-num {
   position: fixed;
-  top: 360px;
-  right: -66px;
+  top: 280px;
+  right: 66px;
   width: 20px;
   height: 20px;
-  line-height: 20px;
+  line-height: 22px;
   text-align: center;
   background: #d0011b;
   color: #fff;
@@ -546,7 +563,7 @@
   position: fixed;
   top: 0px;
   left: 0;
-  z-index: 98;
+  z-index: 999999;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
@@ -556,7 +573,7 @@
   margin-top: 6px;
 }
 /* 屏幕适配 */
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1600px) {
   .lm-section {
     width: 990px;
   }
@@ -573,6 +590,28 @@
   .lm-content .name-wrap {
     margin-right: 30px;
   }
+  .catering-slick-wrap .catering-slick-container {
+    margin-right: 310px;
+  }
+  .catering-slick-wrap .catering-slick-bg .slick-list.draggable {
+    width: 990px;
+  }
+  .catering-recommend-wrap .catering-recommend-img {
+    float: none;
+    width: 100%;
+  }
+  .catering-recommend-wrap .catering-recommend-title {
+    margin-top: 20px;
+  }
+  .catering-recommend-wrap .catering-recommend-title h2 {
+    margin-bottom: 20px;
+  }
+  .catering-list-wrap {
+    width: 1030px;
+  }
+  .catering-list-wrap .catering-list {
+    width: 343px;
+  }
 }
 @media screen and (max-width: 992px) {
   .lm-section {
@@ -585,6 +624,28 @@
   .lm-content .name-wrap {
     margin-right: 0;
   }
+  .catering-slick-wrap .catering-slick-bg .slick-list.draggable {
+    width: 340px;
+  }
+  .catering-recommend-wrap {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .catering-list-wrap {
+    width: 100%;
+  }
+  .small-cart {
+    top: auto;
+    bottom: 340px;
+  }
+  .small-cart .small-cart-num {
+    top: auto;
+    bottom: 380px;
+  }
+  .catering-shopping-cart {
+    top: auto;
+    bottom: 260px;
+  }
 }
 @media screen and (max-width: 767px) {
   .lm-section {
@@ -592,7 +653,7 @@
     margin-top: 0;
   }
   .lm-title h1 {
-    font-size: .2rem;
+    font-size: .24rem;
   }
   .lm-content {
     margin-top: 0.2rem;
@@ -666,5 +727,71 @@
   }
   .daterangepicker {
     width: 300px;
+  }
+  .catering-recommend-wrap {
+    padding: .2rem 0;
+    padding-bottom: .3rem;
+  }
+  .catering-recommend-wrap .catering-recommend-title {
+    width: 100%;
+    margin-top: .2rem;
+  }
+  .catering-recommend-wrap .catering-recommend-title h2 {
+    font-size: 24px;
+  }
+  .catering-recommend-wrap .catering-recommend-title .catering-price-wrap h3 {
+    font-size: 24px;
+  }
+  .catering-slick-wrap {
+    margin-bottom: .4rem;
+  }
+  .catering-slick-wrap .catering-prev,
+  .catering-slick-wrap .catering-next {
+    display: none;
+  }
+  .catering-slick-wrap .catering-slick-bg .slick-list.draggable {
+    width: 100%;
+    height: 498px;
+    padding-left: 20px;
+  }
+  .catering-slick-wrap .catering-slick-container {
+    margin-right: 20px;
+  }
+  .catering-slick-wrap .catering-slick {
+    width: 300px;
+  }
+  .catering-list-wrap .catering-list {
+    width: 100%;
+    margin-bottom: .2rem;
+  }
+  .catering-price-wrap {
+    padding-left: 20px;
+    padding-right: 40px;
+  }
+  .clearBoth-catering {
+    margin-bottom: 120px;
+  }
+  .small-cart {
+    width: 30px;
+    height: 30px;
+    background-size: 20px;
+    bottom: 250px;
+  }
+  .small-cart .small-cart-num {
+    right: 20px;
+    bottom: 270px;
+    width: 16px;
+    height: 16px;
+    line-height: 18px;
+    font-size: 12px;
+  }
+  .small-cart:hover {
+    background-size: 20px;
+  }
+  .catering-shopping-cart .shopping-content .shopping-list-wrap .delete-catering {
+    display: block;
+  }
+  .catering-shopping-cart {
+    bottom: 100px;
   }
 }

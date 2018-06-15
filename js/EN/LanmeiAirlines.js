@@ -70,7 +70,7 @@ var LanmeiAirlines = {
 				// alert("ie");
 				$('.js-cloud-iframe').remove();
 			}else{
-				$('.js-cloud-iframe').attr('src','libs/clouds/lm-cloud.html');
+				// $('.js-cloud-iframe').attr('src','libs/clouds/lm-cloud.html');
 				// $('#videoSource').prop('src','video/cloud-video.mp4');
 				// 视频
 				// var videoHeight = function(){

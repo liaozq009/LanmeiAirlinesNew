@@ -187,12 +187,11 @@
 	position: relative;
 	width: 100%;
 	padding-top: 40px;
-	padding-bottom: 40px;
+	padding-bottom: 80px;
 	overflow: hidden;
 	.catering-recommend-title{
-		position: absolute;
-		top: 50%;
-		margin-top: -70px;
+		width: 540px;
+		margin-top: 200px;
 		h2{
 			font-size: 60px;
 			color: @purple;
@@ -202,6 +201,8 @@
 	}
 	.catering-recommend-img{
 		float: right;
+		width: 860px;
+		img{width: 100%;}
 	}
 }
 .catering-num-wrap{
@@ -218,6 +219,12 @@
 	.sub-catering{
 		background: url('@{url}sub-people.png') center no-repeat rgba(31,44,92,.3);
 		background-size: 12px;
+		&:hover{
+			background: url('@{url}sub-people.png') center no-repeat rgba(31,44,92,.7);
+			background-size: 12px;
+			transition: all .3s;
+			-webkit-transition: all .3s;
+		}
 	}
 	.add-catering{
 		background: url('@{url}add-people.png') center no-repeat rgba(31,44,92,.3);
@@ -230,6 +237,7 @@
 		}
 	}
 	.catering-num{
+		width: 18px;
 		display: inline-block;
 		font-size: 24px;
 		color: @purple;
@@ -409,6 +417,12 @@
 		float: right;
 	}
 }
+.catering-recommend-title{
+	.catering-price-wrap {
+		padding-left: 0;
+		h3{font-size: 36px;}
+	}
+}
 .catering-tips{
 	position: absolute;
 	top: 20px;
@@ -429,15 +443,14 @@
 }
 .catering-shopping-cart{
 	position: fixed;
-	// right: -250px;
-	right: 0px;
-	top: 30%;
+	right: -250px;
+	top: 220px;
 	width:250px;
 	background:#fff;
 	box-shadow:0 0 100px 0 rgba(31,44,92,0.10);
 	border-radius:2px;
 	overflow-y: auto;
-	z-index: 10;
+	z-index: 9999999;
 	.shopping-title{
 		width: 100%;
 		padding-top: 20px;
@@ -499,14 +512,14 @@
 		text-align: center;
 		color:#fff;
 		background:@purple;
+		cursor: pointer;
 	}
 }
 .small-cart{
 	position: fixed;
-	top: 360px;
-	// right: 0px;
-	right: -90px;
-	z-index: 11;
+	top: 280px;
+	right: 0px;
+	z-index: 99999999;
 	width: 90px;
 	height: 60px;
 	line-height: 60px;
@@ -527,12 +540,11 @@
 	}
 	.small-cart-num{
 		position: fixed;
-		top: 360px;
-		// right: 66px;
-		right: -66px;
+		top: 280px;
+		right: 66px;
 		width: 20px;
 		height: 20px;
-		line-height: 20px;
+		line-height: 22px;
 		text-align: center;
 		background: #d0011b;
 		color: #fff;
@@ -544,7 +556,7 @@
     position: fixed;
     top: 0px;
     left: 0;
-    z-index: 98;
+    z-index: 999999;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.6);
@@ -556,7 +568,7 @@
 }
 
 /* 屏幕适配 */
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1600px) {
 	.lm-section{
 		width: 990px;
 	}
@@ -574,6 +586,24 @@
 			margin-right: 30px;
 		}
 	}
+	.catering-slick-wrap {
+		.catering-slick-container{margin-right: 310px;}
+		.catering-slick-bg .slick-list.draggable{width: 990px;}
+	}
+	.catering-recommend-wrap {
+		.catering-recommend-img{
+			float: none;
+			width: 100%;
+		}
+		.catering-recommend-title{
+			margin-top: 20px;
+			h2{margin-bottom: 20px;}
+		}
+	}
+	.catering-list-wrap{
+		width: 1030px;
+	}
+	.catering-list-wrap .catering-list{width: 343px;}
 }
 @media screen and (max-width: 992px) {
 	.lm-section{
@@ -583,6 +613,28 @@
 		> div{width: 100%;}
 		.flight-num-wrap,.name-wrap{margin-right: 0;}
 	}
+	.catering-slick-wrap .catering-slick-bg .slick-list.draggable{
+		width: 340px;
+	}
+	.catering-recommend-wrap{
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	.catering-list-wrap{
+		width: 100%;
+	}
+	.small-cart{
+		top: auto;
+		bottom: 340px;
+		.small-cart-num{
+			top: auto;
+			bottom: 380px;
+		}
+	}
+	.catering-shopping-cart{
+		top: auto;
+		bottom: 260px;
+	}
 }
 @media screen and (max-width: 767px) {
 	.lm-section{
@@ -590,7 +642,7 @@
 		margin-top: 0;
 	}
 	.lm-title h1{
-		font-size: .2rem;
+		font-size: .24rem;
 	}
 	.lm-content{
 		margin-top: 0.2rem;
@@ -648,4 +700,57 @@
 		.dropdownMenu-wrap .menu-com > li:hover{background: url('@{url}svg/city-icon-active.svg') left center no-repeat;}
 	}
 	.daterangepicker{width: 300px;}
+	.catering-recommend-wrap{
+		padding: .2rem 0;
+		padding-bottom: .3rem;
+		.catering-recommend-title{
+			width: 100%;
+			margin-top: .2rem;
+			h2{font-size: 24px;}
+			.catering-price-wrap h3{
+				font-size: 24px;
+			}
+		}
+	}
+	.catering-slick-wrap {
+		margin-bottom: .4rem;
+		.catering-prev,.catering-next{display: none;}
+		.catering-slick-bg .slick-list.draggable{
+			width: 100%;
+			height: 498px;
+			padding-left: 20px;
+		}
+		.catering-slick-container{margin-right: 20px;}
+		.catering-slick{width: 300px;}
+	}
+	.catering-list-wrap .catering-list{
+		width: 100%;
+		margin-bottom: .2rem;
+	}
+	.catering-price-wrap{
+		padding-left: 20px;
+		padding-right: 40px;
+	}
+	.clearBoth-catering{
+		margin-bottom: 120px;
+	}
+	.small-cart{
+		width: 30px;
+		height: 30px;
+		background-size: 20px;
+		bottom: 250px;
+		.small-cart-num{
+			right: 20px;
+			bottom: 270px;
+			width: 16px;
+			height: 16px;
+			line-height: 18px;
+			font-size: 12px;
+		}
+		&:hover{
+			background-size: 20px;
+		}
+	}
+	.catering-shopping-cart .shopping-content .shopping-list-wrap .delete-catering{display: block;}
+	.catering-shopping-cart{bottom: 100px;}
 }
