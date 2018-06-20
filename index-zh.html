@@ -35,11 +35,20 @@
 			// alert('支持');
 			lmLang = localStorage.getItem("lm-lang");
 		}
+
+		var lm_location = window.location.href.substr(-7,2);
+		// alert(lm_location);
+		var lang_location;
+		if(lm_location == 'zh'){
+			lang_location = 'cn';
+		}else{
+			lang_location = 'en';
+		}
+
 		if((language.slice(0,2)=='en') && lmLang=='cn'){
 			localStorage.removeItem("lm-lang");
 		}
-
-		if((language.slice(0,2)=='en') && (lmLang=='en' || lmLang==null)){
+		if((language.slice(0,2)=='en') && (lmLang=='en' || lmLang==null || lang_location=='en')){
 			location.href="http://192.168.1.19/LanmeiAirlinesNew/index.html";
 		}
 	</script>

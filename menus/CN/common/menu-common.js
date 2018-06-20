@@ -13,7 +13,7 @@ var LanmeiAirlinesCommon = {
 	},
 
 	common:function(){
-		var $header = '<a href="/index_cn.html" class="h-logo-wrap"></a>'+
+		var $header = '<a href="https://lanmeiairlines.com/index_cn.html" class="h-logo-wrap"></a>'+
 						'<div class="h-right">'+
 							'<div class="h-phone js-h-phone">'+
 								'<div class="phone-menu js-phone-menu">'+
@@ -25,8 +25,8 @@ var LanmeiAirlinesCommon = {
 								'<p class="js-choose-lang"></p>'+
 								'<div class="lang-menu js-lang-menu">'+
 									'<h2>选择语言:</h2>'+
-									'<a href="/index.html" class="lang-en" data="en">English</a>'+
-									'<a href="/index_cn.html" class="lang-zh" data="zh">简体中文</a>'+
+									'<a href="https://lanmeiairlines.com/index.html" class="lang-en" data="en">English</a>'+
+									'<a href="https://lanmeiairlines.com/index_cn.html" class="lang-zh" data="zh">简体中文</a>'+
 								'</div>'+
 							'</div>'+
 						'</div>';

@@ -89,44 +89,66 @@ var LMCatering = {
 
         // 点击遮罩
         var winWidth = $(window).width();
-        $shopMask.click(function(event) {
-            $(this).fadeOut();
+        var hideShopping = function(){
             $bigCart.animate({right:"-255px"},300);
             if(winWidth>767){
                 $smallCart.animate({right:"0px"},300).children('.small-cart-num').animate({right:"66px"},800);
             }else{
                 $smallCart.animate({right:"0px"},300).children('.small-cart-num').animate({right:"20px"},800);
             }
-            // $('html,body').removeClass('ovfHiden'); //使网页可滚动
+        };
+        $shopMask.click(function(event) {
+            $(this).fadeOut();
+            hideShopping();
         });
 
         // 加入购物车
         var catering_num = 0;
         var $shopping_con = $('.js-shopping-content');
         var cart_arr = [];
-        $('.js-add-catering').click(function(event) {
+        $('.js-catering-container').on('click','.js-add-catering',function(event) {
             catering_num = $(this).siblings('span').html();
             catering_num++;
-            $(this).siblings('span').html(catering_num);
-            $(this).siblings('a').removeClass('off-sub-operation');
-            var price = $(this).parent().siblings('.js-catering-price').children('span').html();
-            var name = $(this).parents('.catering-price-wrap').siblings('h2').html();
-            var data_name = $(this).parents('.catering-price-wrap').siblings('h2').attr('id');
+            var $parents = $(this).parents('.js-cateringPrice-wrap');
+            $parents.find('.js-catering-num').html(catering_num);
+            $parents.find('.js-sub-catering').removeClass('off-sub-operation');
+            var price = $parents.find('.js-catering-price').children('span').html();
+            var name = $parents.siblings('h2').html();
+            var data_id = $parents.siblings('h2').attr('id');
 
-            var $child = '<div class="shopping-list-wrap '+data_name+'" data-name="'+data_name+'">'+
+            var $child = '<div class="shopping-list-wrap '+data_id+'" data-id="'+data_id+'">'+
                             '<h3 class="shopping-list-title">'+name+'</h3>'+
                             '<p class="shopping-list-content">'+
-                                '$ <span class="shopping-list-price">'+price+'</span> x <span class="shopping-list-num">1</span>'+
-                                '<b class="delete-catering js-delete-catering">×</b>'+
+                                '$ <span class="shopping-list-price">'+price+'</span>'+
                             '</p>'+
+                            '<div class="catering-num-wrap">'+
+                                '<a href="javascript:;" class="sub-catering js-sub-catering"></a>'+
+                                '<span class="catering-num js-catering-num">1</span>'+
+                                '<a href="javascript:;" class="add-catering js-add-catering"></a>'+
+                            '</div>'+
                         '</div>';
-            $shopping_con.append($child);
+
+            var $shopping_list = $shopping_con.children('div');
+           
+            var toggle = 0; //0代表没有相同产品，1代表有相同产品
+            $.each($shopping_list,function(i,v){
+                if($(v).attr('data-id')==data_id){
+                    $('.'+data_id).find('.js-catering-num').html(catering_num);
+                    toggle = 1;
+                    return;
+                }
+            });
+            if(toggle == 0){
+                $shopping_con.append($child);
+            }
 
             // 计算商品数量和价格
             checkout();
-
         });
-        $('.js-sub-catering').click(function(event) {
+        $('.js-cateringPrice-wrap').on('click','.js-sub-catering',function(event) {
+            var $parents = $(this).parents('.js-cateringPrice-wrap');
+            var data_id = $parents.siblings('h2').attr('id');
+
             catering_num = $(this).siblings('span').html();
             if(catering_num>0){
                 catering_num--;
@@ -135,10 +157,49 @@ var LMCatering = {
                 $(this).addClass('off-sub-operation');
                 return;
             }
-            var price = $(this).parent().siblings('.js-catering-price').children('span').html();
-            var name = $(this).parents('.catering-price-wrap').siblings('h2').html();
-            var data_name = $(this).parents('.catering-price-wrap').siblings('h2').attr('id');
-            $('.'+data_name)[0].remove();
+           
+            var $shopping_list = $shopping_con.children('div');
+            
+            var toggle = 0; //0代表没有相同产品，1代表有相同产品
+            $.each($shopping_list,function(i,v){
+                if($(v).attr('data-id')==data_id){
+                    if(catering_num==0){
+                        $('.'+data_id).remove();
+                    }
+                    $('.'+data_id).find('.js-catering-num').html(catering_num);
+                    return;
+                }
+            });
+
+            // 计算商品数量和价格
+            checkout();
+        });
+
+        // 购物车里面加减商品 
+        var shopping_num = 0;
+        $('.js-shopping-content').on('click','.js-add-catering',function(event) {
+            shopping_num = $(this).siblings('span').html();
+            shopping_num++;
+            $(this).siblings('.js-catering-num').html(shopping_num);
+            var data_id = $(this).parents('.shopping-list-wrap').attr('data-id');
+            $(this).siblings('.js-sub-catering').removeClass('off-sub-operation');
+            $('#'+data_id).siblings('.js-cateringPrice-wrap').find('.js-catering-num').html(shopping_num);
+
+            // 计算商品数量和价格
+            checkout();
+        });
+        $('.js-shopping-content').on('click','.js-sub-catering',function(event) {
+            shopping_num = $(this).siblings('span').html();
+            shopping_num--;
+
+            $(this).siblings('.js-catering-num').html(shopping_num);
+            var data_id = $(this).parents('.shopping-list-wrap').attr('data-id');
+            $('#'+data_id).siblings('.js-cateringPrice-wrap').find('.js-catering-num').html(shopping_num);
+
+            if(shopping_num==0){
+                $('.'+data_id).remove();
+                $('#'+data_id).siblings('.js-cateringPrice-wrap').find('.js-sub-catering').addClass('off-sub-operation');
+            }
 
             // 计算商品数量和价格
             checkout();
@@ -149,26 +210,26 @@ var LMCatering = {
             var totle_num = $shopping_con.children('div').length;
             $('.js-cart-num').html(totle_num);
 
-            var $child = $shopping_con.children('div').find('.shopping-list-price');
+            var $child = $shopping_con.children('div');
             var totle_price = 0;
-            $.each($child,function(i,v){
-                totle_price += Number($(v).html());
+            $.each($child,function(i,v){ 
+                totle_price += (Number($(v).find('.shopping-list-price').html()) * Number($(v).find('.js-catering-num').html()) );
             });
             $('.js-shopping-pay span').html(totle_price.toFixed(2));
         };
 
-        // 删除物品
-        $shopping_con.on('click','.js-delete-catering',function(event) {
-            var $wrap = $(this).parents('.shopping-list-wrap');
-            $wrap.remove();
-            var data_name = $wrap.attr('data-name');
+        // 选择支付方式
+        $('.js-pay-select>a').click(function(event) {
+            $(this).addClass('active').siblings('a').removeClass('active');
+            var dataPay = $(this).attr('data-pay');
+            $('.js-pay-method').val(dataPay);
+        });
 
-            var $num = $('#'+data_name).siblings('div').find('.js-catering-num');
-            var curVal = $num.html();
-            $num.html(curVal-1);
-
-            // 计算商品数量和价格
-            checkout();
+        // 支付
+        $('.js-shopping-pay').click(function(event) {
+            $('#payModal').modal();
+            $shopMask.fadeOut();
+            hideShopping();
         });
     },
 };

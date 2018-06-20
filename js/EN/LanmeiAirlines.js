@@ -1,17 +1,16 @@
 
 var LanmeiAirlines = {
-	cityData: ['Bangkok/BKK/Thailand','Changsha/CSX/China','Guangzhou/CAN/China','Hanoi/HAN/Vietnam','HongKong/HKG/HongKong,China','Ho Chi Minh/SGN/Vietnam','Macao/MFM/Macao,China','Nanning/NNG/China','Phnom Penh/PNH/Cambodia','Shijiazhuang/SJW/China','Siem Reap/REP/Cambodia','Sihanoukville/KOS/Cambodia','Singapore/SIN/Singapore','Xi`an/XIY/China'],
+	cityData: LMComData.cityData,
+	fNumberData: LMComData.fNumberData,
 	hotelCityData: ['Hong Phann Guest House','Phkar Chhouk Tep Monireth Hotel','Tt Guest House','Phkar Chhouk Tep 2 Hotel'],
 	carRouteData: ['Phnom Penh International Airport --> Toyoko Inn Phnom Penh','Phnom Penh International Airport -->  Hotel Sofitel Phnom Penh Phokeethra'],
 	carTicketTypeData: ['One-way','Return'],
-	fNumberData: ['LQ315','LQ316','LQ317','LQ318','LQ332','LQ333','LQ502','LQ503','LQ660','LQ661','LQ666','LQ667','LQ670','LQ671','LQ780','LQ781','LQ806','LQ807','LQ916','LQ917','LQ970','LQ971','LQ9302','LQ9303','LQ9508','LQ9509'],
 	indexLiFrom: 0, //定义键盘移动index 
 	indexLiTo: 0,
 	indexLiFlightNum: 0,
 	indexLiRouteFrom: 0,
 	indexLiRouteTo: 0,
 	init:function(){
-		this.storage();
 		this.selectPeople();
 		this.selectHotelRooms();
 		this.banner();
@@ -24,21 +23,6 @@ var LanmeiAirlines = {
 		this.otherEvent();
 		this.isPc();
 		this.isIE();
-	},
-
-	/* storage */
-	storage:function(){
-		$('.js-lang-menu>a,.js-mLang-menu>a').click(function(){
-			var data = $(this).attr('data');
-			
-			if(typeof(Storage)!=="undefined"){
-				if(data=='en'){
-					localStorage.setItem("lm-lang", "en");
-				}else if(data=='zh'){
-					localStorage.setItem("lm-lang", "cn");
-				}
-			}
-		});
 	},
 
 	/* 判断是PC端还是移动端 */
@@ -881,7 +865,7 @@ var LanmeiAirlines = {
 				$('.'+data).append('<li title="'+val+'">'+searchVal+'</li>');
 			});
 			if(srdata.length==0){ 
-				$('.'+data).append('<li>No results match "'+searchText+'"</li>');
+				$('.'+data).append('<li style="width:100%;">No results match "'+searchText+'"</li>');
 			}
 			if(currentVal===''){
 				$('.'+data).empty();
