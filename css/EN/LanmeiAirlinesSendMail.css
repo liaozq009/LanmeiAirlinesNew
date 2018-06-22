@@ -1,0 +1,278 @@
+/* 称谓 */
+.greetings {
+  width: 960px;
+  margin: 0 auto;
+  padding: 30px 10px 50px;
+  font-weight: bold;
+  font-size: 18px;
+  color: #1f2c5c;
+}
+/* 计算机码 */
+.computerCode {
+  position: relative;
+  width: 960px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+.computerCode .bankCode,
+.computerCode .thankInfo {
+  float: left;
+  width: 460px;
+  height: 120px;
+}
+.computerCode .bankCode {
+  position: relative;
+}
+.computerCode .bankCode img {
+  position: absolute;
+  left: 4px;
+  z-index: -1;
+}
+.computerCode .bankCode p {
+  margin-left: 60px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #808080;
+}
+.computerCode .bankCode p span {
+  font-weight: bold;
+  font-size: 18px;
+  color: #1f2c5c;
+  margin-left: 30px;
+}
+.computerCode .bankCode .p1 {
+  margin-top: 22px;
+}
+.computerCode .thankInfo {
+  margin-left: 30px;
+  font-size: 14px;
+  color: #808080;
+  line-height: 30px;
+}
+.computerCode .verticalLine {
+  position: absolute;
+  left: 480px;
+  top: 30px;
+  background: #cccccc;
+  width: 1px;
+  height: 90px;
+}
+/* 限制条件 */
+.limitCondition {
+  width: 960px;
+  margin: 0 auto;
+  padding: 30px 10px 50px;
+}
+.limitCondition h2 {
+  font-weight: bold;
+  font-size: 14px;
+  color: #1f2c5c;
+  line-height: 30px;
+}
+/* 乘客信息 */
+.passengerInfoDetail {
+  width: 960px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+.passengerInfoDetail .passengerInfoDetailTitle {
+  line-height: 36px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #808080;
+}
+.passengerInfoDetail .passengerInfoDetailContent {
+  overflow: hidden;
+}
+.passengerInfoDetail .passengerInfoDetailContent > div {
+  float: left;
+  width: 300px;
+  height: 100px;
+  border-radius: 2px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  background: url(../../images/EN/passengerBg.png) no-repeat;
+}
+.passengerInfoDetail .passengerInfoDetailContent > div .passengerBg {
+  width: 300px;
+  height: 100px;
+  text-align: center;
+  padding-top: 20px;
+}
+.passengerInfoDetail .passengerInfoDetailContent > div .passengerBg h2 {
+  font-weight: bold;
+  font-size: 20px;
+  color: #ffffff;
+}
+.passengerInfoDetail .passengerInfoDetailContent > div .passengerBg p {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #ffffff;
+}
+.passengerInfoDetail .passengerInfoDetailContent > div .passengerBg p span {
+  font-weight: bold;
+  font-size: 18px;
+}
+.passengerInfoDetail .passengerInfoDetailContent .passenger1,
+.passengerInfoDetail .passengerInfoDetailContent .passenger4 {
+  margin-left: 0;
+}
+.passengerInfoDetail .passengerInfoDetailContent .passenger1 .passengerBg {
+  background: rgba(142, 192, 96, 0.7);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#B28EC060, 60, endColorstr=#B28EC060, 60);
+}
+.passengerInfoDetail .passengerInfoDetailContent .passenger2 .passengerBg {
+  background: rgba(73, 163, 116, 0.7);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#B249A374, 74, endColorstr=#B249A374, 74);
+}
+.passengerInfoDetail .passengerInfoDetailContent .passenger3 .passengerBg {
+  background: rgba(0, 144, 140, 0.7);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#B200908C, 8C, endColorstr=#B200908C, 8C);
+}
+.passengerInfoDetail .passengerInfoDetailContent .passenger4 .passengerBg {
+  background: rgba(0, 108, 147, 0.7);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2006C93, 93, endColorstr=#B2006C93, 93);
+}
+.passengerInfoDetail .passengerInfoDetailContent .passenger5 .passengerBg {
+  background: rgba(0, 64, 144, 0.7);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2004090, 90, endColorstr=#B2004090, 90);
+}
+/* 已选择航班 */
+.flightSelectWrapper .flightSelectCommon {
+  margin-bottom: 50px;
+}
+.flightSelectWrapper .flightList1 ul {
+  overflow: hidden;
+}
+.flightSelectWrapper .flightList1 ul li {
+  float: left;
+  width: 20%;
+  text-align: center;
+  font-size: 14px;
+}
+.flightSelectWrapper .flightList1 ul.flightTitle ul li {
+  color: #808080;
+}
+.flightSelectWrapper .flightList1 ul.flightContentCommon {
+  padding-bottom: 10px;
+}
+.flightSelectWrapper .flightList1 ul.flightContentCommon li {
+  font-weight: bold;
+  color: #666666;
+}
+.flightSelectWrapper .flightListCommon {
+  padding: 14px 0 10px !important;
+}
+/* 票价计算结果 */
+.ticketFareWrapper {
+  width: 960px;
+  margin: 0 auto;
+  padding: 0 10px;
+  margin-bottom: 90px;
+}
+.ticketFareWrapper .ticketFareTitle {
+  height: 36px;
+  line-height: 36px;
+  margin-bottom: 30px;
+}
+.ticketFareWrapper .ticketFareTitle > h2 {
+  float: left;
+  font-weight: bold;
+  font-size: 20px;
+  color: #121c3e;
+  text-align: left;
+}
+.ticketFareWrapper .ticketFareTitle > h2 img {
+  margin-right: 20px;
+}
+.ticketFareWrapper .ticketFareContent .priceTitle {
+  overflow: hidden;
+}
+.ticketFareWrapper .ticketFareContent .priceTitle li {
+  float: left;
+  width: 25%;
+  font-size: 14px;
+  color: #808080;
+  text-align: center;
+}
+.ticketFareWrapper .ticketFareContent .priceContent ul {
+  overflow: hidden;
+}
+.ticketFareWrapper .ticketFareContent .priceContent ul li {
+  float: left;
+  width: 25%;
+  font-weight: bold;
+  font-size: 14px;
+  color: #666666;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.ticketFareWrapper .ticketFareContent .priceContent .priceContent3 li {
+  margin-bottom: 0;
+}
+.ticketFareWrapper .ticketFareContent .subtotal,
+.ticketFareWrapper .ticketFareContent .priceTotle {
+  overflow: hidden;
+  padding: 0 30px;
+  margin-bottom: 10px;
+}
+.ticketFareWrapper .ticketFareContent .subtotal li,
+.ticketFareWrapper .ticketFareContent .priceTotle li {
+  float: left;
+  width: 50%;
+  font-weight: bold;
+  font-size: 18px;
+  color: #666666;
+}
+.ticketFareWrapper .ticketFareContent .subtotal .nth-child2,
+.ticketFareWrapper .ticketFareContent .priceTotle .nth-child2 {
+  text-align: right;
+}
+.ticketFareWrapper .ticketFareContent .priceTotle {
+  margin-top: 10px;
+}
+.ticketFareWrapper .ticketFareContent .priceTotle li {
+  font-weight: bold;
+  font-size: 18px;
+  color: #8ec060;
+}
+.ticketFareWrapper .ticketFareContent .priceTotle .nth-child1 {
+  height: 50px;
+  line-height: 70px;
+}
+.ticketFareWrapper .ticketFareContent .priceTotle .nth-child2 {
+  font-size: 36px;
+}
+/* 配置屏幕 针对小屏幕*/
+html {
+  font-size: 100px;
+}
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 50px;
+  }
+}
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 64px;
+  }
+}
+@media screen and (min-width: 992px) {
+  html {
+    font-size: 82px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  html {
+    font-size: 100px;
+  }
+}
+@media (max-width: 980px), (max-device-width: 980px) {
+  .s-type {
+    display: inline-block;
+    width: 2.5rem;
+    height: 1.1rem;
+    line-height: 1.1rem;
+    color: black;
+  }
+}

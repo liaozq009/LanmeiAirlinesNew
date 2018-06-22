@@ -116,6 +116,19 @@ var LMCatering = {
             var name = $parents.siblings('h2').html();
             var data_id = $parents.siblings('h2').attr('id');
 
+            var _sourceImg = $parents.siblings('.catering-img');
+            var _back=function(){};
+            var _target=$(".js-small-cart");
+
+            // ie兼容性判断
+            if (document.all && document.addEventListener && !window.atob) {
+                // alert('IE9');
+            }else if (document.all && document.querySelector && !document.addEventListener) {
+                // alert('IE8');
+            }else{
+                 objectFlyIn(_sourceImg,_target,_back);
+            }
+
             var $child = '<div class="shopping-list-wrap '+data_id+'" data-id="'+data_id+'">'+
                             '<h3 class="shopping-list-title">'+name+'</h3>'+
                             '<p class="shopping-list-content">'+
@@ -145,6 +158,40 @@ var LMCatering = {
             // 计算商品数量和价格
             checkout();
         });
+
+        // 商品飞起来
+        function objectFlyIn(_sourceImg,_target, _back) {
+            var addOffset =_target.offset();
+            var scrollTop = $(window).scrollTop(); //卷去的高度
+            var scrollLeft = $(window).scrollLeft(); //卷去的宽度
+
+            var img = _sourceImg;
+            var flyer = $('<img style="display: block;width: 50px;height: 50px;border-radius: 50%;" src="' + img.attr('src') + '">');
+            var X,Y;
+
+            if(img.offset()){
+                X = img.offset().left - scrollLeft;
+                Y = img.offset().top - scrollTop;
+            }
+            console.log(img.width());
+            flyer.fly({
+                start: {
+                    left: X + img.width() / 2 - 25, //开始位置（必填）
+                    top: Y + img.height() / 2 - 25 //开始位置（必填）
+                },
+                end: {
+                    left: addOffset.left + 10, //结束位置（必填）
+                    top: addOffset.top - scrollTop, //结束位置（必填）
+                    width: 10, //结束时宽度
+                    height: 10 //结束时高度
+                },
+                onEnd: function () { //结束回调
+                    this.destroy(); //移除dom
+                    _back();
+                }
+            });
+        };
+
         $('.js-cateringPrice-wrap').on('click','.js-sub-catering',function(event) {
             var $parents = $(this).parents('.js-cateringPrice-wrap');
             var data_id = $parents.siblings('h2').attr('id');

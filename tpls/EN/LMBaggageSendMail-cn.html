@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+	<meta charset="UTF-8">
+	<!-- 让 Bootstrap 兼容 IE 兼容模型 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- 让 Bootstrap 兼容 国产浏览器的高速模型 -->
+	<meta name="renderer" content="webkit">
+	<!-- 实现响应式的设置 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>LanmeiAirlines</title>
+	<!-- 引入图标 -->
+	<link rel="icon" href="http://lanmeiairlines.com/lanmeiairlines/default/images/CN/lanmeiLogo.ico">
+	<style>
+		* {
+		  scrollbar-arrow-color: #1f2c5c;
+		  /*滚动条滑块按钮的颜色*/
+		  scrollbar-face-color: #8ec060;
+		  /*滚动条整体颜色*/
+		  scrollbar-highlight-color: #8ec060;
+		  /*滚动条阴影*/
+		  scrollbar-shadow-color: none;
+		  /*滚动条轨道颜色*/
+		  scrollbar-track-color: #fff;
+		  box-sizing: border-box;
+		}
+		/* reset.css */
+		body,
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		p,
+		ul,
+		li,
+		input {
+		  margin: 0;
+		  padding: 0;
+		  font-size: 12px;
+		}
+		ul,
+		li {
+		  list-style: none;
+		}
+		a {
+		  color: #666;
+		  text-decoration: none;
+		}
+		a:hover,
+		a:focus {
+		  /*color:#ff0700;*/
+		  text-decoration: none;
+		  outline: none;
+		}
+		input {
+		  border: 0;
+		  outline: none;
+		}
+		img {
+		  vertical-align: middle;
+		  border: none;
+		}
+		input::-ms-clear {
+		  display: none;
+		}
+		.ovfHiden {
+		  overflow: hidden;
+		  height: 100%;
+		}
+		/* project mcins style sheet*/
+		body {
+		  min-width: 320px;
+		  font-size: 12px;
+		}
+		.lanmei-logo{
+			width: 980px;
+			padding-top:15px;
+			margin: 0 auto;
+			padding:  0 30px;
+			text-align: right
+		}
+		/* 称谓 */
+		.greetings {
+		  width: 960px;
+		  margin: 0 auto;
+		  padding: 30px 10px 20px;
+		  font-weight: bold;
+		  font-size: 18px;
+		  color: #1f2c5c;
+		  border-bottom: 2px solid #1f2c5c;
+		}
+		.verticalLine {
+		  width: 100%;
+		  border-bottom: 2px dashed #ccc;
+		  margin-top: 10px;
+		  margin-bottom: 10px;
+		}
+		/* 已选择航班 */
+		.flightSelectWrapper {
+		  width: 960px;
+		  overflow: hidden;
+		  margin: 0 auto;
+		  margin-top: 20px;
+		  padding: 0;
+		}
+		.flightSelectWrapper .flightSelectCommon {
+		  margin-bottom: 16px;
+		  border: none;
+		}
+		.flightSelectWrapper .flightSelectCommon .flightSelectTitle {
+		  background: none;
+		  padding: 0;
+		  height: 22px;
+		}
+		.flightSelectWrapper .flightSelectCommon .flightSelectTitle > h2 {
+		  float: left;
+		  height: 22px;
+		  line-height: 22px;
+		  padding-left: 10px;
+		  font-size: 20px;
+		  font-weight: bold;
+		  color: #1a1a1a;
+		  border-left: 2px solid #8ec060;
+		}
+		.flightSelectWrapper .flightSelectCommon .flightSelectTitle > p {
+			float: right;
+			font-weight: bold;
+			color: #666666;
+		}
+		.flightSelectWrapper .flightList1 ul {
+		  overflow: hidden;
+		}
+		.flightSelectWrapper .flightList1 ul li {
+		  float: left;
+		  width: 20%;
+		  text-align: center;
+		  font-size: 14px;
+		  color: #808080;
+		}
+		.flightSelectWrapper .flightList1 ul.flightTitle ul li {
+		  color: #808080;
+		}
+		.flightSelectWrapper .flightList1 ul.flightContentCommon {
+		  padding-bottom: 10px;
+		}
+		.flightSelectWrapper .flightList1 ul.flightContentCommon li {
+		  font-weight: bold;
+		  color: #666666;
+		}
+		.flightSelectWrapper .flightListCommon {
+		  padding: 20px 0 20px;
+		  height: auto !important;
+		}
+	</style>
+</head>
+<body>
+	<!-- 称谓 -->
+	<div class="greetings">XXX 您好：</div>
+	<!-- 内容 -->
+	<div class="flightSelectWrapper">
+		<div class="flightSelect2 flightSelectCommon">
+			<div class="flightSelectTitle">
+				<h2>逾重行李</h2>
+				<p>订单号：<span>961-456753645</span></p>
+			</div>
+			<div class="flightList1 flightListCommon">
+				<ul class="flightTitle">
+					<li>护照号</li>
+					<li>航班号</li>
+					<li>航班日期</li>
+					<li>购买重量</li>
+					<li>金额</li>
+				</ul>
+				<div class="verticalLine"></div>
+				<ul class="flightContent1 flightContentCommon">
+					<li>675-440245621</li>
+					<li>LQ305</li>
+					<li>2018-06-20</li>
+					<li>25kg</li>
+					<li>CNY 10.00</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="lanmei-logo"><img src="http://lanmeiairlines.com/lanmeiairlines/default/images/EN/lanmeiLogo.png"></div>
+</body>
+</html>

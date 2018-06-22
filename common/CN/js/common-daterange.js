@@ -1,4 +1,3 @@
-
 //检测此前是否已经引入了jquery.js
 if(!window.jQuery){
 	throw new Error("本函数库必须依赖于jQuery");
@@ -95,7 +94,7 @@ if(!window.jQuery){
 		    showDropdowns: false, //下拉选择月份和年份
 		    showWeekNumbers: false, //显示周
 		    autoApply: true, //自动关闭日期
-		    language :'en',
+		    language :'cn',
 		    },function(start, end, label) {//格式化日期显示框  
 		        $(that.container).parent().hide(); //外框隐藏
 		        if (this.singleDatePicker) {

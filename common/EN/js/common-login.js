@@ -39,7 +39,7 @@ var LMComLogin = {
 	    $('.loginBtn,.m-user-btn').click(function(e){
 	        e.preventDefault();
 	        $('#logonModal').modal();
-	        $('html,body').addClass('ovfHiden'); //使网页不可滚动
+	        // $('html,body').addClass('ovfHiden'); //使网页不可滚动
 	    });
 
 	    // 点击注册 

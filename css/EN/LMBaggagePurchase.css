@@ -156,7 +156,7 @@
   position: relative;
 }
 .lm-content .name-wrap input {
-  width: 50%;
+  width: 100%;
   float: left;
 }
 .lm-content .name-wrap .input-line {
