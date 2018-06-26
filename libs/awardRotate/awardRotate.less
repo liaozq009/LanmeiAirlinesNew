@@ -1,0 +1,47 @@
+.lm-turntable-bg {
+  width: 874px;
+  height: 946px;
+  margin: 0 auto;
+  position: relative;
+  background: url("images/EN/lm-turntable-bg.png");
+  .lm-pointer {
+    width: 272px;
+    height: 310px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -136px;
+    margin-top: -155px;
+    z-index: 8;
+    cursor: pointer;
+  }
+  .lm-rotate {
+    width: 680px;
+    height: 680px;
+    position: absolute;
+    left: 98px;
+    bottom: 98px;
+  }
+}
+
+@media screen and (max-width: 992px){
+  .lm-turntable-bg{
+    width: 700px;
+    height: 756px;
+    background-size: 700px 756px;
+    .lm-pointer{
+      width: 218px;
+      height: 248px;
+      margin-left: -109px;
+      margin-top: -124px;
+      img{width: 100%;}
+    }
+    .lm-rotate{
+      width: 544px;
+      height: 544px;
+      left: 78px;
+      bottom: 78px;
+      img{width: 100%;}
+    }
+  }
+}

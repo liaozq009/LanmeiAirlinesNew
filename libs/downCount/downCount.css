@@ -1,0 +1,112 @@
+.lm-activity-tips {
+  position: absolute;
+  top: 100px;
+  right: 80px;
+  color: #fff;
+  text-align: center;
+}
+.lm-activity-tips > span {
+  font-size: 36px;
+}
+.lm-activity-tips .countdown {
+  list-style: none;
+  padding: 0;
+  display: block;
+  text-align: center;
+}
+.lm-activity-tips .countdown li {
+  display: inline-block;
+}
+.lm-activity-tips .countdown-day {
+  width: 50px;
+}
+.lm-activity-tips .activity-day {
+  vertical-align: super;
+  font-size: 26px;
+}
+.lm-activity-tips .countdown li span {
+  font-size: 36px;
+  font-weight: 300;
+  line-height: 80px;
+}
+.lm-activity-tips .countdown li.seperator {
+  font-size: 26px;
+  line-height: 70px;
+  vertical-align: top;
+}
+.lm-activity-tips .countdown li p {
+  color: #a7abb1;
+  font-size: 14px;
+}
+.lm-activity-tips a {
+  color: #76949F;
+  text-decoration: none;
+}
+.lm-activity-tips a:hover {
+  text-decoration: underline;
+}
+.lm-activity-tips .source {
+  width: 405px;
+  margin: 0 auto;
+  background: #4f5861;
+  color: #a7abb1;
+  font-weight: bold;
+  display: block;
+  white-space: pre;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+.lm-activity-tips .btn {
+  background: #f56c4c;
+  margin: 40px auto;
+  padding: 12px;
+  display: block;
+  width: 100px;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: none;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+.lm-activity-tips .btn:hover {
+  text-decoration: none;
+  opacity: .7;
+}
+@media screen and (max-width: 992px) {
+  .lm-activity-tips {
+    top: 10px;
+    right: 10px;
+  }
+  .lm-activity-tips > span {
+    font-size: 14px;
+  }
+  .lm-activity-tips .countdown {
+    text-align: right;
+    margin-top: 6px;
+  }
+  .lm-activity-tips .countdown .activity-day {
+    font-size: 12px;
+    display: block;
+  }
+  .lm-activity-tips .countdown li span {
+    font-size: 14px;
+    line-height: 30px;
+  }
+  .lm-activity-tips .countdown li.seperator {
+    font-size: 14px;
+    line-height: 30px;
+  }
+  .lm-activity-tips .countdown-day {
+    width: 16px;
+  }
+}
+@media screen and (min-width: 767px) and (max-width: 992px) {
+  .lm-activity-tips {
+    top: 80px;
+    right: 30px;
+  }
+}

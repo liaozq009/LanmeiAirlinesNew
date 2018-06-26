@@ -32,26 +32,39 @@
 		}
 
 		var lmLang;
+		
 		if(typeof(Storage)!=="undefined"){
-			// alert('支持');
 			lmLang = localStorage.getItem("lm-lang");
-		}
-
-		var lm_location = window.location.href.substr(-7,2);
-		// alert(lm_location);
-		var lang_location;
-		if(lm_location == 'zh'){
-			lang_location = 'cn';
-			localStorage.setItem("lm-lang", "cn");
-		}else{
-			lang_location = 'en';
-			localStorage.setItem("lm-lang", "en");
 		}
 
 		if((language.slice(0,2)=='zh') && lmLang=='en'){
 			localStorage.removeItem("lm-lang");
 		}
-		if((language.slice(0,2)=='zh') && (lmLang=='cn' || lmLang==null || lang_location=='cn')){
+
+		// 订票页面跳转参数设置
+		function GetRequest() {   
+		   var url = location.search;
+		   var theRequest = {};   
+
+		   if (url.indexOf("?") != -1) { 
+		      var str = url.substr(1);   
+		      strs = str.split("&");   
+		      for(var i = 0; i < strs.length; i ++) {   
+		         theRequest[strs[i].split("=")[0]]=decodeURIComponent(strs[i].split("=")[1]);   
+		      }   
+		   }   
+		   return theRequest.lang;   
+		}
+
+		if(GetRequest() == 'cn'){
+			lmLang='cn';
+		}else if(GetRequest() == 'en'){
+			lmLang='en';
+		}else{
+			lmLang==null
+		}
+
+		if((language.slice(0,2)=='zh') && (lmLang=='cn' || lmLang==null)){
 			// location.href="http://192.168.1.19/LanmeiAirlinesNew/index-zh.html";
 		}
 
@@ -63,6 +76,7 @@
 	<link rel="stylesheet" href="common/EN/fonts/lm-iconfont.css">
 	<link rel="stylesheet" href="libs/daterange/daterangepicker.css">
 	<link rel="stylesheet" href="libs/lmslick/slick.css">
+	<link rel="stylesheet" href="libs/downCount/downCount.css">
 	<link rel="stylesheet" href="common/EN/css/animate.css">
 	<link rel="stylesheet" href="libsEdit/css/lanmeiLibsEdit.css">
 	<link rel="stylesheet" href="common/EN/css/Lanmei-common.css">
@@ -422,6 +436,27 @@
 
 	<!-- 首屏 -->
 	<section class="lm-section-main js-section-main">
+		<div class="lm-activity-tips"> 
+			<span>澜湄周六特惠-放肆嗨！</span>
+			<ul class="countdown">
+				<li class="activity-day">距离活动时间：</li>
+			    <li class="countdown-day"> <span class="days">00</span>
+			        <!-- <p class="days_ref">days</p> -->
+			    </li>
+			    <li class="seperator">:</li>
+			    <li class="countdown-day"> <span class="hours">00</span>
+			        <!-- <p class="hours_ref">hours</p> -->
+			    </li>
+			    <li class="seperator">:</li>
+			    <li class="countdown-day"> <span class="minutes">00</span>
+			        <!-- <p class="minutes_ref">minutes</p> -->
+			    </li>
+			    <li class="seperator">:</li>
+			    <li class="countdown-day"> <span class="seconds">00</span>
+			        <!-- <p class="seconds_ref">seconds</p> -->
+			    </li>
+			</ul>
+		</div>
 		<!-- 机票选择 -->
 		<div class="ticket-content-wrap js-flight-com js-ticket-wrap">
 			<!-- 炫酷白云 -->
@@ -1469,6 +1504,7 @@
 	<script src="libs/lm-nicescroll.min.js"></script>
 	<script src="libs/auto-complete-mail.js"></script>
 	<script src="libs/lmslick/slick.min.js"></script>
+	<script src="libs/downCount/jquery.downCount.js"></script>
 	<script src="libs/daterange/moment.js"></script>
 	<script src="libs/daterange/daterangepicker.js"></script>
 

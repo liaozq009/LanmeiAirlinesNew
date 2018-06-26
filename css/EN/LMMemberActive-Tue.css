@@ -1,0 +1,378 @@
+@charset "utf-8";
+/* 定义变量 */
+@font-face {
+  font-family: CamptonBookBold;
+  src: url(../../common/EN/fonts/Campton/Rene.Bieder_Campton.Bold.otf);
+  font-weight: bold;
+}
+/* 定义颜色变量 */
+/* reset.css */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li,
+input {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+}
+ul,
+li {
+  list-style: none;
+}
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+a {
+  color: #666;
+  text-decoration: none;
+}
+a:hover,
+a:focus {
+  text-decoration: none;
+  outline: none;
+}
+input {
+  border: 0;
+  outline: none;
+}
+img {
+  vertical-align: middle;
+}
+input::-ms-clear {
+  display: none;
+}
+.lanmeiHeader-subpage {
+  height: 200px;
+  background: url('../../images/EN/navbarBg.png') center no-repeat;
+}
+.lanmeiHeader-subpage .lanmeiNav .lanmeiHeadInfo > ul .nth-child1 > div > span {
+  color: #1f2c5c;
+}
+/* 主要代码 */
+body {
+  min-width: 320px;
+  min-height: 760px;
+  font-size: 14px;
+  background: #202C5C;
+}
+.a-wrapper {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+.a-wrapper .a-head {
+  width: 100%;
+}
+.a-wrapper .a-head > img {
+  width: 100%;
+}
+.a-wrapper .a-content {
+  position: relative;
+  width: 100%;
+}
+.a-wrapper .a-content > img {
+  width: 100%;
+}
+.a-wrapper .a-content .a-inner {
+  width: 960px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -480px;
+}
+.a-wrapper .a-content .a-inner > div {
+  margin-top: 40px;
+}
+.a-wrapper .a-content .a-inner .inner-1 {
+  color: #fff;
+  padding-left: 90px;
+  margin-top: 60px;
+}
+.a-wrapper .a-content .a-inner .inner-1 > p {
+  width: 780px;
+}
+.a-wrapper .a-content .a-inner .inner-1 .a-title-p1 {
+  margin-top: 20px;
+  font-size: 36px;
+  font-family: CamptonBookBold;
+  text-align: center;
+}
+.a-wrapper .a-content .a-inner .inner-1 .a-title-p1 span {
+  display: block;
+  color: #FFF033;
+}
+.a-wrapper .a-content .a-inner .inner-1 .a-title-p2 {
+  font-size: 16px;
+  text-align: left;
+  margin-top: 40px;
+}
+.a-wrapper .a-content .a-inner .inner-4 {
+  padding: 0 10px;
+  padding-bottom: 10px;
+  margin-bottom: 100px;
+}
+.a-wrapper .a-content .a-inner .a-rule-title {
+  text-align: center;
+  font-family: CamptonBookBold;
+}
+.a-wrapper .a-content .a-inner .a-rule-title > div {
+  display: inline-block;
+  margin: 0 16px;
+  vertical-align: text-bottom;
+}
+.a-wrapper .a-content .a-inner .a-rule-title > div .p1 {
+  color: #fff;
+  font-size: 30px;
+}
+.a-wrapper .a-content .a-inner .a-rule-title > span {
+  font-size: 56px;
+  color: #FFF135;
+}
+.a-wrapper .a-content .a-inner .a-rule-content {
+  margin-top: 30px;
+}
+.a-wrapper .a-content .a-inner .a-rule-content > img {
+  width: 100%;
+}
+.a-wrapper .a-content .a-inner .a-rule-content p {
+  font-size: 16px;
+  line-height: 38px;
+  color: #fff;
+}
+/* 时钟样式调整 */
+.flip-clock-wrapper {
+  margin: 0;
+  margin-top: 30px;
+}
+.flip-clock-wrapper ul {
+  width: 80px;
+}
+.flip-clock-dot {
+  visibility: hidden;
+  background: #fff;
+}
+.flip-clock-divider .flip-clock-label {
+  color: #fff;
+  font-size: 20px;
+  top: 110px;
+  right: -116px;
+}
+.flip-clock-divider.minutes .flip-clock-label {
+  right: -126px;
+}
+.flip-clock-divider.seconds .flip-clock-label {
+  right: -130px;
+}
+/* 进入页面时的提示框 */
+.activeModal .modal-dialog .modal-content .modal-body {
+  padding: 20px;
+}
+.activeModal .modal-dialog .modal-content .modal-body p {
+  color: #808080;
+  text-align: left;
+  line-height: 28px;
+}
+.activeModal .modal-dialog .modal-content .modal-body p img {
+  margin-right: 10px;
+}
+.activeModal .modal-dialog .modal-content .modal-body p a {
+  font-weight: bold;
+  color: #8ec060;
+  transition: all 0.6s;
+  -webkit-transition: all 0.6s;
+}
+.activeModal .modal-dialog .modal-content .modal-body p a:hover {
+  transition: all 0.6s;
+  -webkit-transition: all 0.6s;
+  color: #4aa374;
+}
+.activeModal .modal-dialog .modal-content .modal-body .p1 {
+  margin-bottom: 14px;
+}
+.activeModal .modal-dialog .modal-content .modal-footer .closeActive {
+  width: 60px;
+  height: 30px;
+  background: #8abb5d;
+  color: #fff;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  transition: all 0.6s;
+  -webkit-transition: all 0.6s;
+}
+.activeModal .modal-dialog .modal-content .modal-footer .closeActive:hover {
+  transition: all 0.6s;
+  -webkit-transition: all 0.6s;
+  background: #1f2c5c;
+}
+.succModal .modal-content,
+.failModal .modal-content {
+  box-shadow: none;
+  overflow: hidden;
+  background: transparent;
+}
+.succModal .modal-content .modal-body,
+.failModal .modal-content .modal-body {
+  position: relative;
+}
+.succModal .modal-content .modal-body img,
+.failModal .modal-content .modal-body img {
+  width: 100%;
+}
+.succModal .modal-content .modal-body p,
+.failModal .modal-content .modal-body p {
+  position: absolute;
+  top: 52%;
+  color: #000;
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+  line-height: 36px;
+}
+.succModal .modal-content .modal-body p .s1,
+.failModal .modal-content .modal-body p .s1 {
+  color: #1f2c5c;
+  font-family: CamptonBookBold;
+}
+.succModal .modal-content .modal-body p .s2,
+.failModal .modal-content .modal-body p .s2 {
+  font-size: 16px;
+}
+.succModal .modal-content .modal-body p .coupon-result,
+.failModal .modal-content .modal-body p .coupon-result {
+  color: #1f2c5c;
+  font-family: CamptonBookBold;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.succModal .modal-content .modal-body .p2,
+.failModal .modal-content .modal-body .p2 {
+  top: 66%;
+}
+.succModal .modal-content .modal-body button,
+.failModal .modal-content .modal-body button {
+  position: absolute;
+  top: 86%;
+  left: 50%;
+  margin-left: -100px;
+  color: #fff;
+  width: 200px;
+  height: 40px;
+  border: none;
+  background: #1f2c5c;
+  font-size: 16px;
+  border-radius: 6px;
+  transition: all 0.6s;
+  -webkit-transition: all 0.6s;
+}
+.succModal .modal-content .modal-body button:hover,
+.failModal .modal-content .modal-body button:hover {
+  background: #8ec060;
+  transition: all 0.6s;
+  -webkit-transition: all 0.6s;
+}
+.failModal .modal-content .modal-body .p2 {
+  top: 62%;
+}
+/* 配置屏幕 针对小屏幕*/
+@media screen and (max-width: 992px) {
+  .lanmeiHeader-subpage {
+    display: none;
+  }
+  .flip-clock-wrapper {
+    width: 780px;
+    margin: 0 auto;
+  }
+  .a-wrapper .a-content .a-inner {
+    width: 100%;
+    height: 240px;
+    left: 0;
+    margin-left: 0;
+  }
+  .a-wrapper .a-content .a-inner .inner-1 {
+    padding: 0 0.1rem;
+    text-align: center;
+  }
+  .a-wrapper .a-content .a-inner .inner-1 .a-title-p1 {
+    font-size: 0.1rem;
+  }
+  .a-wrapper .a-content .a-inner .inner-4 {
+    padding: 0 0.1rem;
+    margin-top: 0.3rem;
+  }
+  .a-wrapper .a-content .a-inner .inner-4 .a-rule-title {
+    margin-bottom: 0.1rem;
+  }
+  .a-wrapper .a-content .a-inner .inner-4 .a-rule-title > span {
+    font-size: 0.38rem;
+  }
+  .a-wrapper .a-content .a-inner .inner-4 .a-rule-title > div .p1 {
+    font-size: 0.14rem;
+    letter-spacing: 0.07rem;
+  }
+  .a-wrapper .a-content .a-inner .inner-4 .a-rule-title > div .p2 {
+    font-size: 0.14rem;
+  }
+}
+@media screen and (max-width: 830px) {
+  .flip-clock-wrapper {
+    width: 100%;
+    margin-top: 0.2rem;
+  }
+  .flip-clock-wrapper ul {
+    height: 0.4rem;
+    width: 9%;
+    margin: 1%;
+  }
+  .flip-clock-wrapper ul li {
+    line-height: 0.4rem;
+  }
+  .flip-clock-wrapper ul li a div div.inn {
+    font-size: 0.36rem;
+  }
+  .flip-clock-divider {
+    width: 4%;
+    height: 0.4rem;
+  }
+  .flip-clock-divider .flip-clock-label {
+    top: 0.56rem;
+    right: -0.64rem;
+  }
+  .flip-clock-divider.minutes .flip-clock-label {
+    right: -0.72rem;
+  }
+  .flip-clock-divider.seconds .flip-clock-label {
+    right: -0.72rem;
+  }
+}
+@media screen and (max-width: 540px) {
+  .flip-clock-divider .flip-clock-label {
+    top: 0.48rem;
+    right: -0.46rem;
+  }
+  .flip-clock-divider.minutes .flip-clock-label {
+    right: -0.5rem;
+  }
+  .flip-clock-divider.seconds .flip-clock-label {
+    right: -0.52rem;
+  }
+}
+@media screen and (max-width: 540px) {
+  .succModal .modal-content .modal-body p {
+    top: 40%;
+    font-size: 0.16rem;
+  }
+  .succModal .modal-content .modal-body p .s1 {
+    font-size: 0.2rem;
+  }
+  .succModal .modal-content .modal-body .p2 {
+    top: 64%;
+  }
+}

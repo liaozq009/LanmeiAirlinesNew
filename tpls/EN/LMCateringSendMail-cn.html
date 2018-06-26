@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+	<meta charset="UTF-8">
+	<!-- 让 Bootstrap 兼容 IE 兼容模型 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- 让 Bootstrap 兼容 国产浏览器的高速模型 -->
+	<meta name="renderer" content="webkit">
+	<!-- 实现响应式的设置 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>LanmeiAirlines</title>
+	<!-- 引入图标 -->
+	<link rel="icon" href="http://lanmeiairlines.com/lanmeiairlines/default/images/CN/lanmeiLogo.ico">
+	<style>
+		* {
+		  scrollbar-arrow-color: #1f2c5c;
+		  /*滚动条滑块按钮的颜色*/
+		  scrollbar-face-color: #8ec060;
+		  /*滚动条整体颜色*/
+		  scrollbar-highlight-color: #8ec060;
+		  /*滚动条阴影*/
+		  scrollbar-shadow-color: none;
+		  /*滚动条轨道颜色*/
+		  scrollbar-track-color: #fff;
+		  box-sizing: border-box;
+		}
+		/* reset.css */
+		body,
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		p,
+		ul,
+		li,
+		input {
+		  margin: 0;
+		  padding: 0;
+		  font-size: 12px;
+		}
+		ul,
+		li {
+		  list-style: none;
+		}
+		a {
+		  color: #666;
+		  text-decoration: none;
+		}
+		a:hover,
+		a:focus {
+		  /*color:#ff0700;*/
+		  text-decoration: none;
+		  outline: none;
+		}
+		input {
+		  border: 0;
+		  outline: none;
+		}
+		img {
+		  vertical-align: middle;
+		  border: none;
+		}
+		input::-ms-clear {
+		  display: none;
+		}
+		.ovfHiden {
+		  overflow: hidden;
+		  height: 100%;
+		}
+		/* project mcins style sheet*/
+		body {
+		  min-width: 320px;
+		  font-size: 12px;
+		}
+		.lm-section{
+			width: 960px;
+			margin: 0 auto;
+		}
+		.lanmei-logo{
+			width: 100%;
+			padding-top:15px;
+			margin: 100px auto 100px;
+			padding:  0 30px;
+			text-align: right
+		}
+		/* 称谓 */
+		.greetings {
+		  width: 100%;
+		  margin: 0 auto;
+		  padding: 30px 10px 20px;
+		  font-weight: bold;
+		  font-size: 18px;
+		  color: #1f2c5c;
+		  border-bottom: 2px solid #1f2c5c;
+		}
+		.verticalLine {
+		  width: 100%;
+		  border-bottom: 2px dashed #ccc;
+		  margin-top: 10px;
+		  margin-bottom: 10px;
+		}
+		/* 计算机码 */
+		.computerCode {
+		  position: relative;
+		  width: 100%;
+		  overflow: hidden;
+		  margin: 0 auto;
+		}
+		.computerCode .bankCode {
+		  position: relative;
+		}
+		.computerCode .bankCode img {
+		  position: absolute;
+		  left: 4px;
+		  z-index: -1;
+		}
+		.computerCode .bankCode p {
+		  margin-bottom: 8px;
+		  font-size: 14px;
+		  color: #808080;
+		}
+		.computerCode .bankCode p span {
+		  font-weight: bold;
+		  font-size: 18px;
+		  color: #1f2c5c;
+		  margin-left: 30px;
+		}
+		.computerCode .bankCode .p1 {
+		  margin-top: 20px;
+		}
+		.computerCode .thankInfo {
+		  font-size: 14px;
+		  color: #808080;
+		  line-height: 30px;
+		}
+		/* 已选择航班 */
+		.flightSelectWrapper {
+		  width: 100%;
+		  overflow: hidden;
+		  margin: 0 auto;
+		  margin-top: 20px;
+		  padding: 0;
+		}
+		.flightSelectWrapper .flightSelectCommon {
+		  margin-bottom: 16px;
+		  border: none;
+		}
+		.flightSelectWrapper .flightSelectCommon .flightSelectTitle {
+		  background: none;
+		  padding: 0;
+		  height: 22px;
+		}
+		.flightSelectWrapper .flightSelectCommon .flightSelectTitle > h2 {
+		  float: left;
+		  height: 22px;
+		  line-height: 22px;
+		  padding-left: 10px;
+		  font-size: 20px;
+		  font-weight: bold;
+		  color: #1a1a1a;
+		  border-left: 2px solid #8ec060;
+		}
+		.flightSelectWrapper .flightSelectCommon .flightSelectTitle > p {
+			float: right;
+			font-weight: bold;
+			color: #666666;
+		}
+		.flightSelectWrapper .flightList1 ul {
+		  overflow: hidden;
+		}
+		.flightSelectWrapper .flightList1 ul li {
+		  float: left;
+		  width: 20%;
+		  text-align: center;
+		  font-size: 14px;
+		  color: #808080;
+		}
+		.flightSelectWrapper .flightList1 ul.flightTitle ul li {
+		  color: #808080;
+		}
+		.flightSelectWrapper .flightList1 ul.flightContentCommon {
+		  padding-bottom: 10px;
+		}
+		.flightSelectWrapper .flightList1 ul.flightContentCommon li {
+		  font-weight: bold;
+		  color: #666;
+		}
+		.flightSelectWrapper .flightListCommon {
+		  padding: 20px 0 20px;
+		  height: auto !important;
+		}
+		/* 已购餐食 */
+		.buy-catering-wrap{
+			margin-top: 100px;
+		}
+		.catering-list-wrap{
+			width: 100%;
+			margin: 0 auto;
+			margin-top: 40px;
+		}
+		.catering-list-wrap .catering-list{
+			float: left;
+			width: 320px;
+			padding-left: 20px;
+			padding-right: 20px;
+			margin-bottom: 40px;
+		}
+		.catering-list-wrap .catering-list-bg{
+			height: 320px;
+			background: #fff;
+			box-shadow:0 0 50px 0 rgba(31,44,92,0.10);
+		}
+		.catering-list-wrap .catering-img{
+			height: 160px;
+			margin-top: 20px;
+			margin-bottom: 10px;
+		}
+		.catering-com-wrap{
+			position: relative;
+			border-radius:2px;
+		}
+		.catering-com-wrap .catering-img{
+			width: 100%;
+		}
+		.catering-com-wrap .catering-title{
+			font-size: 24px;
+			color: #1f2c5c;
+			font-weight: bold;
+			text-align: center;
+			margin-bottom: 10px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+		.catering-price-wrap{
+			margin-top: 20px;
+			padding-left: 40px;
+			padding-right: 40px;
+			overflow: hidden;
+		}
+		.catering-price-wrap >h3{
+			float: left;
+			color: #8ec060;
+			font-size: 24px;
+			height: 30px;
+			line-height: 38px;
+		}
+		.catering-price-wrap .catering-num-wrap{
+			float: right;
+			color: #1f2c5c;
+			font-size: 24px;
+			font-weight: bold;
+			height: 30px;
+			line-height: 38px;
+		}
+		@media screen and (max-width: 992px) {
+			.lm-section{
+				width: 100%;
+				padding: 15px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="lm-section">
+		<!-- 称谓 -->
+		<div class="greetings">XXX 您好：</div>
+
+		<!-- 流水号 -->
+		<div class="computerCode">
+			<div class="bankCode">
+				<p class="p1">订单号 :<span>NH1BGS</span></p>
+				<p class="p2">下单时间 :<span>2018-06-18</span></p>
+			</div>
+		</div>
+
+		<!-- 内容 -->
+		<div class="flightSelectWrapper">
+			<div class="flightSelect2 flightSelectCommon">
+				<div class="flightSelectTitle">
+					<h2>餐食</h2>
+					<p>支付流水号：<span>961-456753645</span></p>
+				</div>
+				<div class="flightList1 flightListCommon">
+					<ul class="flightTitle">
+						<li>护照号</li>
+						<li>航班号</li>
+						<li>航班日期</li>
+						<li>支付时间</li>
+						<li>金额</li>
+					</ul>
+					<div class="verticalLine"></div>
+					<ul class="flightContent1 flightContentCommon">
+						<li>675-440245621</li>
+						<li>LQ305</li>
+						<li>2018-06-20</li>
+						<li>2018-06-18</li>
+						<li>CNY 10.00</li>
+					</ul>
+				</div>
+				<div class="buy-catering-wrap">
+					<div class="flightSelectTitle">
+						<h2>已购餐食</h2>
+					</div>
+					<div class="catering-list-wrap">
+						<div class="catering-com-wrap catering-list">
+							<div class="catering-list-bg">
+								<img src="../../imgage_demo/catering-slick.png" class="catering-img">
+								<h2 class="catering-title" id="js-cateringId-7">Beef rice-7</h2>
+								<div class="catering-price-wrap js-cateringPrice-wrap">
+									<h3 class="catering-price js-catering-price">$ <span>12.00</span></h3>
+									<div class="catering-num-wrap">
+					                    × <span class="catering-num js-catering-num">1</span>
+					                </div>
+								</div>
+							</div>
+						</div>
+						<div class="catering-com-wrap catering-list">
+							<div class="catering-list-bg">
+								<img src="../../imgage_demo/catering-slick.png" class="catering-img">
+								<h2 class="catering-title" id="js-cateringId-7">Beef rice-7</h2>
+								<div class="catering-price-wrap js-cateringPrice-wrap">
+									<h3 class="catering-price js-catering-price">$ <span>12.00</span></h3>
+									<div class="catering-num-wrap">
+					                    × <span class="catering-num js-catering-num">1</span>
+					                </div>
+								</div>
+							</div>
+						</div>
+						<div class="catering-com-wrap catering-list">
+							<div class="catering-list-bg">
+								<img src="../../imgage_demo/catering-slick.png" class="catering-img">
+								<h2 class="catering-title" id="js-cateringId-7">Beef rice-7</h2>
+								<div class="catering-price-wrap js-cateringPrice-wrap">
+									<h3 class="catering-price js-catering-price">$ <span>12.00</span></h3>
+									<div class="catering-num-wrap">
+					                    × <span class="catering-num js-catering-num">1</span>
+					                </div>
+								</div>
+							</div>
+						</div>
+						<div class="catering-com-wrap catering-list">
+							<div class="catering-list-bg">
+								<img src="../../imgage_demo/catering-slick.png" class="catering-img">
+								<h2 class="catering-title" id="js-cateringId-7">Beef rice-7</h2>
+								<div class="catering-price-wrap js-cateringPrice-wrap">
+									<h3 class="catering-price js-catering-price">$ <span>12.00</span></h3>
+									<div class="catering-num-wrap">
+					                    × <span class="catering-num js-catering-num">1</span>
+					                </div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="lanmei-logo"><img src="http://lanmeiairlines.com/lanmeiairlines/default/images/EN/lanmeiLogo.png"></div>
+	</div>
+</body>
+</html>

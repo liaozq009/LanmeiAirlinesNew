@@ -1,4 +1,3 @@
-
 var LanmeiAirlinesCommon = {
 	init:function(){
 		this.getTop();
@@ -15,9 +14,8 @@ var LanmeiAirlinesCommon = {
 
 	/* storage */
 	storage:function(){
-		$('.js-lang-menu>a,.js-mLang-menu>a').click(function(){
+		$('.lm-header').on('click','.js-lang-menu>a,.js-mLang-menu>a',function(){
 			var data = $(this).attr('data');
-
 			if(typeof(Storage)!=="undefined"){
 				if(data=='en'){
 					localStorage.setItem("lm-lang", "en");

@@ -1,0 +1,391 @@
+@charset "utf-8";
+/* 定义变量 */
+@font-face {
+	font-family: CamptonBookBold;
+	src: url(../../common/EN/fonts/Campton/Rene.Bieder_Campton.Bold.otf);
+	font-weight:bold;
+}
+@url:"../../images/EN/";
+/* 定义颜色变量 */
+@green:#8ec060;
+@purple:#1f2c5c;
+@gray:#808080;
+@red:#d0011b;
+@link:#00908c;
+@FBold:CamptonBookBold;
+
+
+/* reset.css */
+body,h1,h2,h3,h4,h5,h6,p,ul,li,input {
+	margin: 0;
+	padding: 0;
+	font-size: 14px;
+}
+ul,li {
+	list-style: none;
+}
+* {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+a {
+	color:#666;
+	text-decoration: none;
+}
+a:hover,
+a:focus {
+	text-decoration:none;
+	outline:none;
+}
+input {
+	border:0;
+	outline: none;
+}
+img {
+	vertical-align:middle;
+}
+input::-ms-clear{display : none; }
+
+.lanmeiHeader-subpage {
+	height: 200px;
+	background: url('@{url}navbarBg.png') center no-repeat;
+}
+.lanmeiHeader-subpage .lanmeiNav .lanmeiHeadInfo > ul .nth-child1 > div > span{
+	color:@purple;
+}
+
+/* 主要代码 */
+body{
+	min-width: 320px;
+	min-height: 760px;
+	font-size: 14px;
+	background: #202C5C;
+}
+
+.a-wrapper{
+	max-width: 1920px;
+	margin: 0 auto;
+	.a-head{
+		width: 100%;
+		// transition:All 1.6s ease-out;
+		// -webkit-transition:All 1.6s ease-out;
+		>img{width: 100%;}
+	}
+	.a-content{
+		position: relative;
+		width: 100%;
+		>img{width: 100%;}
+		.a-inner{
+			width: 960px;
+			position: absolute;
+			top:0;
+			left: 50%;
+			margin-left:-480px;
+			>div{
+				margin-top: 40px;
+			}
+			.inner-1{
+				color:#fff;
+				padding-left: 90px;
+				margin-top: 60px;
+				>p{
+					width: 780px;
+				}
+				.a-title-p1{
+					margin-top: 20px;
+					font-size: 36px;
+					font-family: @FBold;
+					text-align: center;
+					span{
+						display: block;
+						color: #FFF033;
+					}
+				}
+				.a-title-p2{
+					font-size: 16px;
+					text-align: left;
+					margin-top: 40px;
+				}
+			}
+			.inner-2{
+				
+			}
+			.inner-3{
+				
+			}
+			.inner-4{
+				padding:0 10px;
+				padding-bottom: 10px;
+				margin-bottom: 100px;
+			}
+			.a-rule-title{
+				text-align: center;
+				font-family: @FBold;
+				>div{
+					display: inline-block;
+					margin:0 16px;
+					vertical-align: text-bottom;
+					.p1{
+						color:#fff;
+						font-size: 30px;
+					}
+				}
+				>span{
+					font-size: 56px;
+					color:#FFF135;
+				}
+			}
+			.a-rule-content{
+				margin-top: 30px;
+				>img{width: 100%;}
+				p{
+					font-size: 16px;
+					line-height: 38px;
+					color: #fff;
+				}
+			}
+		}
+	}
+}
+/* 时钟样式调整 */
+.flip-clock-wrapper{
+	margin:0;
+	margin-top: 30px;
+	ul{
+		width: 80px;
+	}
+}
+.flip-clock-dot{
+	visibility: hidden;
+	background: #fff;
+}
+.flip-clock-divider .flip-clock-label{
+	color:#fff;
+	font-size: 20px;
+	top:110px;
+	right:-116px;
+}
+.flip-clock-divider.minutes .flip-clock-label{
+	right:-126px;
+}
+.flip-clock-divider.seconds .flip-clock-label{
+	right:-130px;
+}
+
+/* 进入页面时的提示框 */
+.activeModal .modal-dialog .modal-content{
+	.modal-body{
+		padding: 20px;
+		p{
+			color: @gray;
+			text-align: left;
+			line-height: 28px;
+			img{margin-right: 10px;}
+			a{
+				font-weight: bold;
+				color:@green;
+				transition:all 0.6s;
+				-webkit-transition:all 0.6s;
+				&:hover{
+					transition:all 0.6s;
+					-webkit-transition:all 0.6s;
+					color:#4aa374;
+				}
+			}
+		}
+		.p1{margin-bottom: 14px;}
+	}
+	.modal-footer{
+		.closeActive{
+			width: 60px;
+			height: 30px;
+			background: #8abb5d;
+			color: #fff;
+			border-radius: 6px;
+			border: none;
+			outline: none;
+			transition:all 0.6s;
+			-webkit-transition:all 0.6s;
+			&:hover{
+				transition:all 0.6s;
+				-webkit-transition:all 0.6s;
+				background: @purple;
+			}
+		}
+	}
+}
+.succModal,.failModal{
+	.modal-content{
+		box-shadow: none;
+		overflow: hidden;
+		background: transparent;
+		.modal-body{
+			position: relative;
+			img{
+				width: 100%;
+			}
+			p{
+				position: absolute;
+				top: 52%;
+				color: #000;
+				width: 100%;
+				text-align: center;
+				font-size: 20px;
+				line-height: 36px;
+				.s1{
+					color: @purple;
+					font-family: @FBold;
+				}
+				.s2{font-size: 16px;}
+				.coupon-result{
+					color: @purple;
+					font-family: @FBold;
+					margin-left: 10px;
+					margin-right: 10px;
+				}
+			}
+			.p2{top: 66%}
+			button{
+				position: absolute;
+				top: 86%;
+				left: 50%;
+				margin-left: -100px;
+				color: #fff;
+				width: 200px;
+				height: 40px;
+				border: none;
+				background: @purple;
+				font-size: 16px;
+				border-radius: 6px;
+				transition:all 0.6s;
+				-webkit-transition:all 0.6s;
+				&:hover{
+					background: @green;
+					transition:all 0.6s;
+					-webkit-transition:all 0.6s;
+				}
+			}
+		}
+	}
+}
+.failModal{
+	.modal-content{
+		.modal-body{
+			.p2{top:62%;}
+		}
+	}
+}
+
+/* 配置屏幕 针对小屏幕*/
+@media screen and (max-width: 992px){
+	.lanmeiHeader-subpage{display: none;}
+	.flip-clock-wrapper{
+		width: 780px;
+		margin:0 auto;
+	}
+	.a-wrapper{
+		.a-content{
+			.a-inner{
+				width: 100%;
+				height: 240px;
+				left: 0;
+				margin-left: 0;
+				.inner-1{
+					padding:0 0.1rem;
+					text-align: center;
+					.a-title-p1{
+						font-size: 0.1rem;
+					}
+				}
+				.inner-2{
+
+				}
+				.inner-3{
+					
+				}
+				.inner-4{
+					padding:0 0.1rem;
+					margin-top: 0.3rem;
+					.a-rule-title{
+						margin-bottom: 0.1rem;
+						>span{
+							font-size: 0.38rem;
+						}
+						>div{
+							.p1{
+								font-size: 0.14rem;
+								letter-spacing: 0.07rem;
+							}
+							.p2{font-size: 0.14rem;}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 830px){
+	.flip-clock-wrapper{
+		width: 100%;
+		margin-top: 0.2rem;
+		ul{
+			height: 0.4rem;
+			width: 9%;
+			margin:1%;
+			li{
+				line-height: 0.4rem;
+			}
+		}
+	}
+	.flip-clock-wrapper ul li a div div.inn{
+		font-size: 0.36rem;
+	}
+	.flip-clock-divider{
+		width: 4%;
+		height: 0.4rem;
+		.flip-clock-label{
+			// display: none;
+			top: 0.56rem;
+			right:-0.64rem;
+		}
+	}
+	.flip-clock-divider.minutes .flip-clock-label{
+		right:-0.72rem;
+	}
+	.flip-clock-divider.seconds .flip-clock-label{
+		right:-0.72rem;
+	}
+}
+
+@media screen and (max-width: 540px){
+	.flip-clock-divider{
+		.flip-clock-label{
+			top: 0.48rem;
+			right:-0.46rem;
+		}
+	}
+	.flip-clock-divider.minutes .flip-clock-label{
+		right:-0.5rem;
+	}
+	.flip-clock-divider.seconds .flip-clock-label{
+		right:-0.52rem;
+	}
+}
+
+@media screen and (max-width: 540px){
+	.succModal{
+		 .modal-content{
+		 	 .modal-body{
+		 	 	p{
+		 	 		top:40%;
+		 	 		font-size: 0.16rem;
+		 	 		.s1{font-size: 0.2rem;}
+		 	 	}
+		 	 	.p2{
+		 	 		top: 64%;
+		 	 	}
+		 	 }
+		 }
+	}
+}
