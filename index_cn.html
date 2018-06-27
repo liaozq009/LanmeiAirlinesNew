@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cn">
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,52 +18,47 @@
 	<!-- <meta name="x5-fullscreen" content="true"> -->
 
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
-	<meta name="description" content="Be Unique,lanmei Airlines offical website find great deals now&nbsp;to our worldwide destinations.Cambodia,booking flights">
-	<meta name="keywords" content="lanmei airlines,六国,柬埔寨,澜湄航空,机票预订,lanmei,LQ,Fly to Cambodia,Special Ticket,lanmei A320,booking,ticket booking,booking flights">
+	<meta name="description" content="澜湄航空,澜湄官网, 独特,柬埔寨,预订航班,东盟六国,一带一路">
+	<meta name="keywords" content="澜湄航空,官网,六国,柬埔寨,机票预订,lanmei,LQ,便宜机票,澜湄 A320,预订机票">
 	<meta name="baidu-site-verification" content="wL5we2b5k5" />
 	<title>独特的澜湄航空</title>
 
 	<script type="text/javascript">
-		if (navigator.language) {
-			var language = navigator.language;
-		}else {
-			var language = navigator.browserLanguage;
-		}
-		
-		var lmLang;
-		if(typeof(Storage)!=="undefined"){
-			lmLang = localStorage.getItem("lm-lang");
-		}
+		(function(){
+			if (navigator.language) {
+				var language = navigator.language;
+			}else {
+				var language = navigator.browserLanguage;
+			}
+			
+			// 订票页面跳转参数设置
+			function GetRequest() {   
+			   var url = location.search; 
+			   var theRequest = {};   
 
-		if((language.slice(0,2)=='en') && lmLang=='cn'){
-			localStorage.removeItem("lm-lang");
-		}
+			   if (url.indexOf("?") != -1) {   
+			      var str = url.substr(1);   
+			      strs = str.split("&");   
+			      for(var i = 0; i < strs.length; i ++) {   
+			         theRequest[strs[i].split("=")[0]]=decodeURIComponent(strs[i].split("=")[1]);   
+			      }   
+			   }   
+			   return theRequest.lang;   
+			}
 
-		// 订票页面跳转参数设置
-		function GetRequest() {   
-		   var url = location.search; 
-		   var theRequest = {};   
+			var lmLang;
+			if(GetRequest() == 'cn'){
+				lmLang='cn';
+			}else if(GetRequest() == 'en'){
+				lmLang='en';
+			}else{
+				lmLang==null
+			}
 
-		   if (url.indexOf("?") != -1) {   
-		      var str = url.substr(1);   
-		      strs = str.split("&");   
-		      for(var i = 0; i < strs.length; i ++) {   
-		         theRequest[strs[i].split("=")[0]]=decodeURIComponent(strs[i].split("=")[1]);   
-		      }   
-		   }   
-		   return theRequest.lang;   
-		}
-		if(GetRequest() == 'cn'){
-			lmLang='cn';
-		}else if(GetRequest() == 'en'){
-			lmLang='en';
-		}else{
-			lmLang==null
-		}
-
-		if((language.slice(0,2)=='en') && (lmLang=='en' || lmLang==null)){
-			location.href="http://192.168.1.19/LanmeiAirlinesNew/index.html";
-		}
+			if((language.slice(0,2)=='en') && (lmLang=='en' || lmLang==null)){
+				location.href="http://192.168.1.19/LanmeiAirlinesNew/index.html";
+			}
+		})();
 	</script>
 
 	<!-- 引入图标 -->
@@ -72,6 +67,7 @@
 	<link rel="stylesheet" href="common/CN/fonts/lm-iconfont.css">
 	<link rel="stylesheet" href="libs/daterange/daterangepicker.css">
 	<link rel="stylesheet" href="libs/lmslick/slick.css">
+	<link rel="stylesheet" href="libs/downCount/downCount.css">
 	<link rel="stylesheet" href="common/CN/css/animate.css">
 	<link rel="stylesheet" href="libsEdit/css/lanmeiLibsEdit.css">
 	<link rel="stylesheet" href="common/CN/css/Lanmei-common.css">
@@ -412,8 +408,8 @@
 				<div class="h-lang js-mh-lang">
 					<span>Language</span>
 					<div class="lang-menu js-mLang-menu">
-						<a href="index.html" class="lang-en" data="en">English</a>
-						<a href="index-zh.html" class="lang-zh" data="zh">简体中文</a>
+						<a href="http://192.168.1.19/LanmeiAirlinesNew/index.html?lang=en" class="lang-en" data="en">English</a>
+						<a href="http://192.168.1.19/LanmeiAirlinesNew/index_cn.html?lang=cn" class="lang-zh" data="zh">简体中文</a>
 					</div>
 				</div>
 				<div class="customer-service">
@@ -432,6 +428,23 @@
 
 	<!-- 首屏 -->
 	<section class="lm-section-main js-section-main">
+		<div class="lm-activity-tips"> 
+			<span>澜湄周六特惠-放肆嗨！</span>
+			<ul class="countdown js-countdown">
+				<li class="activity-day">距离活动时间：</li>
+			    <li class="countdown-day"> <span class="days">00</span>
+			    </li>
+			    <li class="seperator">:</li>
+			    <li class="countdown-day"> <span class="hours">00</span>
+			    </li>
+			    <li class="seperator">:</li>
+			    <li class="countdown-day"> <span class="minutes">00</span>
+			    </li>
+			    <li class="seperator">:</li>
+			    <li class="countdown-day"> <span class="seconds">00</span>
+			    </li>
+			</ul>
+		</div>
 		<!-- 机票选择 -->
 		<div class="ticket-content-wrap js-flight-com js-ticket-wrap">
 			<!-- 炫酷白云 -->
@@ -441,7 +454,7 @@
 			<!-- 白云上面的内容 -->
 			<div class="content-com-wrap">
 				<div class="content-com-inner">
-					<h1 class="animated fadeInUp">崭新的航空时代<span>来袭!</span></h1>
+					<h1 class="animated fadeInUp">新电商航空时代来袭!</h1>
 				</div>
 			</div>
 			<!-- 航班选择 -->
@@ -458,7 +471,7 @@
 					<input type="hidden" name="language" value="US">
 					<input type="hidden" name="CURRENCY" value="USD">
 					
-					<p class="tips-com animated fadeInUp js-tips-com">What are you waiting for?</p>
+					<p class="tips-com animated fadeInUp js-tips-com">— 独特的澜湄航空</p>
 					<div class="select-way js-select-way">
 						<a href="javascript:;" class="round-trip active" data-way="round">Round trip</a>
 						<a href="javascript:;" class="one-way" data-way="one">One-way</a>
@@ -851,10 +864,10 @@
 		<!-- 左侧航班选择 -->
 		<aside class="lm-aside-flight">
 			<ul class="js-aside-flight">
-				<li class="li-child1"><a href="javascript:;" data-href="ticket-content" class="nth-child1 active js-a-ticket"><span>Ticket</span></a></li>
-				<li class="li-child2"><a href="javascript:;" data-href="hotel-content" class="nth-child2 js-a-hotel"><span>Hotel</span></a></li>
-				<li class="li-child3"><a href="javascript:;" data-href="car-content" class="nth-child3 js-a-car"><span>Car</span></a></li>
-				<li class="li-child4"><a href="javascript:;" data-href="flight-content" class="nth-child4 js-a-flight"><span>Flight Status</span></a></li>
+				<li class="li-child1"><a href="javascript:;" data-href="ticket-content" class="nth-child1 active js-a-ticket"><span>机票</span></a></li>
+				<li class="li-child2"><a href="javascript:;" data-href="hotel-content" class="nth-child2 js-a-hotel"><span>酒店</span></a></li>
+				<li class="li-child3"><a href="javascript:;" data-href="car-content" class="nth-child3 js-a-car"><span>巴士</span></a></li>
+				<li class="li-child4"><a href="javascript:;" data-href="flight-content" class="nth-child4 js-a-flight"><span>航班动态</span></a></li>
 				<li class="li-slide"></li>
 			</ul>
 			<a href="javascript:void(0)" class="flight-up-arrow js-flight-up"></a>
@@ -1402,6 +1415,7 @@
 	<script src="libs/lm-nicescroll.min.js"></script>
 	<script src="libs/auto-complete-mail.js"></script>
 	<script src="libs/lmslick/slick.min.js"></script>
+	<script src="libs/downCount/jquery.downCount.js"></script>
 	<script src="libs/daterange/moment.js"></script>
 	<script src="libs/daterange/daterangepicker.js"></script>
 
@@ -1413,5 +1427,6 @@
 
 	<!-- 业务代码 -->
 	<script src="js/CN/LanmeiAirlines.js"></script>
+	<script src="js/CN/LMActivity.js"></script>
 </body>
 </html>

@@ -59,25 +59,25 @@ $(document).ready(function(){
                 rotateFn('fail' , 0, '谢谢参与！');
                 break;
             case 1:
-                rotateFn('succ' , 45, '100USD');
+                rotateFn('succ' , 45, '650RMB');
                 break;
             case 2:
                 rotateFn('fail' , 90, '谢谢参与！');
                 break;
             case 3:
-                rotateFn('succ' , 135, '50USD');
+                rotateFn('succ' , 135, '325RMB');
                 break;
             case 4:
-                rotateFn('succ' ,180, '40USD');
+                rotateFn('succ' ,180, '260RMB');
                 break;
             case 5:
                 rotateFn('fail', 225, '谢谢参与！');
                 break;
             case 6:
-                rotateFn('succ', 270, '30USD');
+                rotateFn('succ', 270, '195RMB');
                 break;
             case 7:
-                rotateFn('succ', 315, '20USD');
+                rotateFn('succ', 315, '130RMB');
                 break;
         }
 	});
@@ -102,6 +102,7 @@ $(document).ready(function(){
 	var clock = $('.lm-clock').FlipClock({
         clockFace: 'DailyCounter',
         autoStart: false,
+        language: 'chinese',
         callbacks: {
         	stop: function() {
         		// console.log('开始抢购！');

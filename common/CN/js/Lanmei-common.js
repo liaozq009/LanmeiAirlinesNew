@@ -3,7 +3,6 @@ var LanmeiAirlinesCommon = {
 	init:function(){
 		this.getTop();
 		this.otherEvent();
-		this.storage();
 
 		// ie兼容性判断
 		if (document.all && document.querySelector && !document.addEventListener) {
@@ -11,20 +10,6 @@ var LanmeiAirlinesCommon = {
 		}else{
 			this.rem();
 		}
-	},
-
-	/* storage */
-	storage:function(){
-		$('.lm-header').on('click','.js-lang-menu>a,.js-mLang-menu>a',function(){
-			var data = $(this).attr('data');
-			if(typeof(Storage)!=="undefined"){
-				if(data=='en'){
-					localStorage.setItem("lm-lang", "en");
-				}else if(data=='zh'){
-					localStorage.setItem("lm-lang", "cn");
-				}
-			}
-		});
 	},
 
 	/* 置顶按钮 */

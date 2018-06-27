@@ -3638,14 +3638,6 @@ var LanmeiAirlines = {
 			$('.js-lang-menu').hide();
 			$('.js-phone-menu').hide();
 		});
-
-		// 首页倒计时
-		$('.countdown').downCount({
-		    date: '06/30/2018 17:13:00',
-		    offset: +8, //时区偏移值
-		}, function () {
-		    alert('倒计时结束!');
-		});
 	},
 };
 

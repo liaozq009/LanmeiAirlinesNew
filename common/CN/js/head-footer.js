@@ -4,7 +4,7 @@ $(document).ready(function($) {
 					'<span>导航</span>'+
 					'</div>'+
 					'<div class="menu-guide bounce-left">点击这里查看更多服务</div>'+
-					'<a href="http://lanmeiairlines.com/index_cn.html" class="h-logo-wrap"></a>'+
+					'<a href="http://192.168.1.19/LanmeiAirlinesNew/index_cn.html?lang=cn" class="h-logo-wrap"></a>'+
 					'<div class="h-right">'+
 						'<div class="h-phone js-h-phone">'+
 							'<div class="phone-menu js-phone-menu">'+
@@ -35,8 +35,8 @@ $(document).ready(function($) {
 							'<p class="js-choose-lang"></p>'+
 							'<div class="lang-menu js-lang-menu">'+
 								'<h2>选择语言：</h2>'+
-								'<a href="http://lanmeiairlines.com" class="lang-en" data="en">English</a>'+
-								'<a href="http://lanmeiairlines.com/index_cn.html" class="lang-zh" data="zh">简体中文</a>'+
+								'<a href="http://192.168.1.19/LanmeiAirlinesNew/index.html?lang=en" class="lang-en" data="en">English</a>'+
+								'<a href="http://192.168.1.19/LanmeiAirlinesNew/index_cn.html?lang=cn" class="lang-zh" data="zh">简体中文</a>'+
 							'</div>'+
 						'</div>'+
 					'</div>';

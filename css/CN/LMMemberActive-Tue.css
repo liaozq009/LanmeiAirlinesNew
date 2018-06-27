@@ -1,8 +1,8 @@
 @charset "utf-8";
 /* 定义变量 */
 @font-face {
-  font-family: CamptonBookBold;
-  src: url(../../common/EN/fonts/Campton/Rene.Bieder_Campton.Bold.otf);
+  font-family: NotoSansBold;
+  src: url(../../common/CN/fonts/NotoSans/SourceHanSansCN-Bold.otf);
   font-weight: bold;
 }
 /* 定义颜色变量 */
@@ -101,7 +101,7 @@ body {
 .a-wrapper .a-content .a-inner .inner-1 .a-title-p1 {
   margin-top: 20px;
   font-size: 36px;
-  font-family: CamptonBookBold;
+  font-family: NotoSansBold;
   text-align: center;
 }
 .a-wrapper .a-content .a-inner .inner-1 .a-title-p1 span {
@@ -119,7 +119,7 @@ body {
 }
 .a-wrapper .a-content .a-inner .a-rule-title {
   text-align: center;
-  font-family: CamptonBookBold;
+  font-family: NotoSansBold;
 }
 .a-wrapper .a-content .a-inner .a-rule-title > div {
   display: inline-block;
@@ -156,7 +156,7 @@ body {
 .activity-tips-wrap span {
   color: #42958a;
   cursor: pointer;
-  font-family: CamptonBookBold;
+  font-family: NotoSansBold;
 }
 /* 时钟样式调整 */
 .flip-clock-wrapper {
@@ -174,13 +174,13 @@ body {
   color: #fff;
   font-size: 20px;
   top: 110px;
-  right: -116px;
+  right: -100px;
 }
 .flip-clock-divider.minutes .flip-clock-label {
-  right: -126px;
+  right: -100px;
 }
 .flip-clock-divider.seconds .flip-clock-label {
-  right: -130px;
+  right: -100px;
 }
 /* 进入页面时的提示框 */
 .activeModal .modal-dialog .modal-content .modal-body {
@@ -256,7 +256,7 @@ body {
 .failModal .modal-content .modal-body p .s1,
 .activityTipsModal .modal-content .modal-body p .s1 {
   color: #1f2c5c;
-  font-family: CamptonBookBold;
+  font-family: NotoSansBold;
 }
 .succModal .modal-content .modal-body p .s2,
 .failModal .modal-content .modal-body p .s2,
@@ -267,7 +267,7 @@ body {
 .failModal .modal-content .modal-body p .coupon-result,
 .activityTipsModal .modal-content .modal-body p .coupon-result {
   color: #1f2c5c;
-  font-family: CamptonBookBold;
+  font-family: NotoSansBold;
   margin-left: 10px;
   margin-right: 10px;
 }
@@ -313,7 +313,7 @@ body {
   text-align: center;
   font-size: 36px;
   color: #1f2c5c;
-  font-family: CamptonBookBold;
+  font-family: NotoSansBold;
   padding-top: 26px;
 }
 .activityTipsModal .modal-content .modal-body p {
@@ -431,7 +431,7 @@ body {
     right: -0.52rem;
   }
   .succModal .modal-content .modal-body p {
-    top: 40%;
+    top: 48%;
     font-size: 0.14rem;
     line-height: .26rem;
   }
