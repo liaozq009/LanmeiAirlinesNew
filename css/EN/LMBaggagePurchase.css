@@ -19,13 +19,15 @@
   color: #1f2c5c;
   font-family: CamptonBookBold;
 }
-.lm-content {
+.lm-content,
+.lm-select-baggage {
   width: 100%;
   margin-top: 50px;
   padding-left: 20px;
   padding-right: 20px;
 }
-.lm-content > div {
+.lm-content > div,
+.lm-select-baggage > div {
   position: relative;
   float: left;
   width: 660px;
@@ -35,7 +37,8 @@
   box-shadow: 0 0 50px 0 rgba(31, 44, 92, 0.1);
   border-radius: 2px;
 }
-.lm-content > div > input {
+.lm-content > div > input,
+.lm-select-baggage > div > input {
   width: 100%;
   height: 100%;
   font-size: 20px;
@@ -43,32 +46,40 @@
   padding-left: 70px;
   padding-right: 20px;
 }
-.lm-content > div .active-input {
+.lm-content > div .active-input,
+.lm-select-baggage > div .active-input {
   border: 1px solid red;
 }
-.lm-content > div :-moz-placeholder {
+.lm-content > div :-moz-placeholder,
+.lm-select-baggage > div :-moz-placeholder {
   /* Mozilla Firefox 4 to 18 */
   color: rgba(31, 44, 92, 0.3);
   font-size: 20px;
 }
-.lm-content > div ::-moz-placeholder {
+.lm-content > div ::-moz-placeholder,
+.lm-select-baggage > div ::-moz-placeholder {
   /* Mozilla Firefox 19+ */
   color: rgba(31, 44, 92, 0.3);
   font-size: 20px;
 }
-.lm-content > div input:-ms-input-placeholder {
+.lm-content > div input:-ms-input-placeholder,
+.lm-select-baggage > div input:-ms-input-placeholder {
   color: rgba(31, 44, 92, 0.3);
   font-size: 20px;
 }
-.lm-content > div input::-webkit-input-placeholder {
+.lm-content > div input::-webkit-input-placeholder,
+.lm-select-baggage > div input::-webkit-input-placeholder {
   color: rgba(31, 44, 92, 0.3);
   font-size: 20px;
 }
 .lm-content .flight-num-wrap,
-.lm-content .name-wrap {
+.lm-select-baggage .flight-num-wrap,
+.lm-content .name-wrap,
+.lm-select-baggage .name-wrap {
   margin-right: 40px;
 }
-.lm-content .dropdownMenu-wrap {
+.lm-content .dropdownMenu-wrap,
+.lm-select-baggage .dropdownMenu-wrap {
   display: none;
   position: absolute;
   top: 90px;
@@ -77,7 +88,8 @@
   height: 318px;
   box-shadow: 0 0 50px 0 rgba(31, 44, 92, 0.1);
 }
-.lm-content .dropdownMenu-wrap:before {
+.lm-content .dropdownMenu-wrap:before,
+.lm-select-baggage .dropdownMenu-wrap:before {
   position: absolute;
   top: -13px;
   left: 50%;
@@ -94,7 +106,8 @@
   transition: opacity 0.2s ease-out;
   -webkit-transition: opacity 0.2s ease-out;
 }
-.lm-content .dropdownMenu-wrap .menu-com {
+.lm-content .dropdownMenu-wrap .menu-com,
+.lm-select-baggage .dropdownMenu-wrap .menu-com {
   position: absolute;
   top: 0;
   left: 0;
@@ -110,7 +123,8 @@
   border-top: none;
   overflow-y: auto;
 }
-.lm-content .dropdownMenu-wrap .menu-com > li {
+.lm-content .dropdownMenu-wrap .menu-com > li,
+.lm-select-baggage .dropdownMenu-wrap .menu-com > li {
   float: left;
   width: 25%;
   padding-left: 30px;
@@ -124,14 +138,17 @@
   transition: all .3s;
   -webkit-transition: all .3s;
 }
-.lm-content .dropdownMenu-wrap .menu-com > li:hover {
+.lm-content .dropdownMenu-wrap .menu-com > li:hover,
+.lm-select-baggage .dropdownMenu-wrap .menu-com > li:hover {
   color: #8ec060;
   background: url('../../images/EN/city-icon-active.png') left center no-repeat;
 }
-.lm-content .dropdownMenu-wrap .menu-com > li span {
+.lm-content .dropdownMenu-wrap .menu-com > li span,
+.lm-select-baggage .dropdownMenu-wrap .menu-com > li span {
   color: #1f2c5c;
 }
-.lm-content .dropdownMenu-wrap .menu-com > li a {
+.lm-content .dropdownMenu-wrap .menu-com > li a,
+.lm-select-baggage .dropdownMenu-wrap .menu-com > li a {
   display: inline-block;
   width: 100%;
   height: 40px;
@@ -141,25 +158,31 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.lm-content .dropdownMenu-wrap .menu-com > li a:hover {
+.lm-content .dropdownMenu-wrap .menu-com > li a:hover,
+.lm-select-baggage .dropdownMenu-wrap .menu-com > li a:hover {
   background: #8ec060;
   color: #fff;
 }
-.lm-content .dropdownMenu-wrap .menu-com .no-result-match {
+.lm-content .dropdownMenu-wrap .menu-com .no-result-match,
+.lm-select-baggage .dropdownMenu-wrap .menu-com .no-result-match {
   width: 100%;
 }
-.lm-content .dataMenu-wrap {
+.lm-content .dataMenu-wrap,
+.lm-select-baggage .dataMenu-wrap {
   width: 312px;
   height: 279px;
 }
-.lm-content .name-wrap {
+.lm-content .name-wrap,
+.lm-select-baggage .name-wrap {
   position: relative;
 }
-.lm-content .name-wrap input {
+.lm-content .name-wrap input,
+.lm-select-baggage .name-wrap input {
   width: 100%;
   float: left;
 }
-.lm-content .name-wrap .input-line {
+.lm-content .name-wrap .input-line,
+.lm-select-baggage .name-wrap .input-line {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -171,19 +194,24 @@
   background: rgba(31, 44, 92, 0.3);
   border-radius: 1px;
 }
-.lm-content .name-wrap .firstName-input {
+.lm-content .name-wrap .firstName-input,
+.lm-select-baggage .name-wrap .firstName-input {
   padding-left: 20px;
 }
-.lm-content .flight-num-wrap input {
+.lm-content .flight-num-wrap input,
+.lm-select-baggage .flight-num-wrap input {
   background: url('../../images/EN/flight-number.png') 20px center no-repeat;
 }
-.lm-content .date-wrap input {
+.lm-content .date-wrap input,
+.lm-select-baggage .date-wrap input {
   background: url('../../images/EN/date.png') 20px center no-repeat;
 }
-.lm-content .name-wrap .lastName-input {
+.lm-content .name-wrap .lastName-input,
+.lm-select-baggage .name-wrap .lastName-input {
   background: url('../../images/EN/baggageName.png') 20px center no-repeat;
 }
-.lm-content .passport-wrap input {
+.lm-content .passport-wrap input,
+.lm-select-baggage .passport-wrap input {
   background: url('../../images/EN/passport.png') 20px center no-repeat;
 }
 .lm-select-baggage {
@@ -226,6 +254,23 @@
 .lm-select-baggage .baggage-wrap-tips {
   top: 100px;
   font-size: 16px;
+}
+.lm-select-baggage .national-baggage {
+  width: 300px;
+  left: 50%;
+  margin-left: -150px;
+}
+.lm-select-baggage .national-baggage input {
+  padding-left: 20px;
+}
+.lm-select-baggage .national-baggage .dropdownMenu-wrap {
+  width: 300px;
+  height: 170px;
+}
+.lm-select-baggage .national-baggage .dropdownMenu-wrap .menu-com > li {
+  width: 100%;
+  padding-left: 0px;
+  background: none!important;
 }
 .lm-baggage-price {
   margin-top: 20px;
@@ -363,17 +408,22 @@
   .lm-section {
     width: 990px;
   }
-  .lm-content > div {
+  .lm-content > div,
+  .lm-select-baggage > div {
     width: 460px;
   }
-  .lm-content .dropdownMenu-wrap {
+  .lm-content .dropdownMenu-wrap,
+  .lm-select-baggage .dropdownMenu-wrap {
     width: 460px;
   }
-  .lm-content .dataMenu-wrap {
+  .lm-content .dataMenu-wrap,
+  .lm-select-baggage .dataMenu-wrap {
     width: 312px;
   }
   .lm-content .flight-num-wrap,
-  .lm-content .name-wrap {
+  .lm-select-baggage .flight-num-wrap,
+  .lm-content .name-wrap,
+  .lm-select-baggage .name-wrap {
     margin-right: 30px;
   }
   .lm-baggage-price .cal-price {
@@ -387,11 +437,14 @@
   .lm-section {
     width: 100%;
   }
-  .lm-content > div {
+  .lm-content > div,
+  .lm-select-baggage > div {
     width: 100%;
   }
   .lm-content .flight-num-wrap,
-  .lm-content .name-wrap {
+  .lm-select-baggage .flight-num-wrap,
+  .lm-content .name-wrap,
+  .lm-select-baggage .name-wrap {
     margin-right: 0;
   }
 }
@@ -403,74 +456,94 @@
   .lm-title h1 {
     font-size: .2rem;
   }
-  .lm-content {
+  .lm-content,
+  .lm-select-baggage {
     margin-top: 0.2rem;
     padding: 0;
   }
-  .lm-content > div {
+  .lm-content > div,
+  .lm-select-baggage > div {
     height: 50px;
     margin-bottom: 0.2rem;
   }
-  .lm-content > div > input {
+  .lm-content > div > input,
+  .lm-select-baggage > div > input {
     font-size: 16px;
     background-size: 24px !important;
     background-position: 13px center !important;
     padding-left: 50px;
   }
-  .lm-content > div :-moz-placeholder {
+  .lm-content > div :-moz-placeholder,
+  .lm-select-baggage > div :-moz-placeholder {
     /* Mozilla Firefox 4 to 18 */
     font-size: 14px;
   }
-  .lm-content > div ::-moz-placeholder {
+  .lm-content > div ::-moz-placeholder,
+  .lm-select-baggage > div ::-moz-placeholder {
     /* Mozilla Firefox 19+ */
     font-size: 14px;
   }
-  .lm-content > div input:-ms-input-placeholder {
+  .lm-content > div input:-ms-input-placeholder,
+  .lm-select-baggage > div input:-ms-input-placeholder {
     font-size: 14px;
   }
-  .lm-content > div input::-webkit-input-placeholder {
+  .lm-content > div input::-webkit-input-placeholder,
+  .lm-select-baggage > div input::-webkit-input-placeholder {
     font-size: 14px;
   }
-  .lm-content .dropdownMenu-wrap {
+  .lm-content .dropdownMenu-wrap,
+  .lm-select-baggage .dropdownMenu-wrap {
     width: 100%;
     top: 70px;
   }
-  .lm-content .dropdownMenu-wrap .menu-com {
+  .lm-content .dropdownMenu-wrap .menu-com,
+  .lm-select-baggage .dropdownMenu-wrap .menu-com {
     font-size: 14px;
   }
-  .lm-content .dropdownMenu-wrap .menu-com > li {
+  .lm-content .dropdownMenu-wrap .menu-com > li,
+  .lm-select-baggage .dropdownMenu-wrap .menu-com > li {
     width: 50%;
     line-height: 24px;
   }
-  .lm-content .dataMenu-wrap {
+  .lm-content .dataMenu-wrap,
+  .lm-select-baggage .dataMenu-wrap {
     width: 300px;
   }
-  .lm-content .flight-num-wrap input {
+  .lm-content .flight-num-wrap input,
+  .lm-select-baggage .flight-num-wrap input {
     background: url('../../images/EN/svg/flightNum.svg') 20px center no-repeat;
   }
-  .lm-content .date-wrap input {
+  .lm-content .date-wrap input,
+  .lm-select-baggage .date-wrap input {
     background: url('../../images/EN/svg/date.svg') 20px center no-repeat;
   }
-  .lm-content .name-wrap .lastName-input {
+  .lm-content .name-wrap .lastName-input,
+  .lm-select-baggage .name-wrap .lastName-input {
     background: url('../../images/EN/svg/baggageName.svg') 20px center no-repeat;
   }
-  .lm-content .name-wrap .input-line {
+  .lm-content .name-wrap .input-line,
+  .lm-select-baggage .name-wrap .input-line {
     height: 22px;
     margin-top: -11px;
   }
-  .lm-content .name-wrap .lastName-input {
+  .lm-content .name-wrap .lastName-input,
+  .lm-select-baggage .name-wrap .lastName-input {
     padding-right: 10px;
   }
-  .lm-content .name-wrap .firstName-input {
+  .lm-content .name-wrap .firstName-input,
+  .lm-select-baggage .name-wrap .firstName-input {
     padding-left: 10px;
   }
-  .lm-content .passport-wrap input {
+  .lm-content .passport-wrap input,
+  .lm-select-baggage .passport-wrap input {
     background: url('../../images/EN/svg/passport.svg') 20px center no-repeat;
   }
-  .lm-content .dropdownMenu-wrap .menu-com > li {
+  .lm-content .dropdownMenu-wrap .menu-com > li,
+  .lm-select-baggage .dropdownMenu-wrap .menu-com > li {
     background: url('../../images/EN/svg/city-icon.svg') left center no-repeat;
   }
-  .lm-content .dropdownMenu-wrap .menu-com > li:hover {
+  .lm-content .dropdownMenu-wrap .menu-com > li:hover,
+  .lm-select-baggage .dropdownMenu-wrap .menu-com > li:hover {
     background: url('../../images/EN/svg/city-icon-active.svg') left center no-repeat;
   }
   .daterangepicker {

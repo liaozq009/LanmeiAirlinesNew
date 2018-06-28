@@ -7,7 +7,7 @@ var LMBaggage = {
         $.each(this.fNumberData,function(i,val){
             $('.flightMenu').append('<li title="'+val+'">'+val+'</li>');
         });
-        $('.js-flightNum-input').click(function(event) {
+        $('.js-flightNum-input,.js-nationalBaggage-input').click(function(event) {
            event.stopPropagation();
            $dropdownMenu.hide();
            $(this).siblings('.dropdownMenu-wrap').show();
@@ -17,8 +17,9 @@ var LMBaggage = {
        $dropdownMenu.on('click','.menu-com li',function(e){
             var val = $(this).attr('title');
             $(this).parents('.dropdownMenu-wrap').hide().siblings('input').val(val);
-            $('.js-date-input').click(); //自动点击日期控件
-
+            if($(this).parent().attr('data')=='flight-menu'){
+                $('.js-date-input').click(); //自动点击日期控件
+            }
         });
 
         // 模糊匹配

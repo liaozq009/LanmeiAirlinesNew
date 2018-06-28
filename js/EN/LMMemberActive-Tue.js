@@ -97,6 +97,21 @@ $(document).ready(function(){
 	});
 
 	// $('#activityTipsModal').modal();
+	$('#nextOpportunityModal').modal();
+
+	//关闭模态框
+	$('.activityTipsModal-close').click(function(event) {
+		$('#activityTipsModal').modal('hide');
+	});
+	$('.succModal-close').click(function(event) {
+		$('#succModal').modal('hide');
+	});
+	$('.failModal-close').click(function(event) {
+		$('#failModal').modal('hide');
+	});
+	$('.nextOpportunityModal-close').click(function(event) {
+		$('#nextOpportunityModal').modal('hide');
+	});
 
 	/* 倒计时 */
 	var clock = $('.lm-clock').FlipClock({

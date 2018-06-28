@@ -101,14 +101,12 @@
 						<div class="form-group">
 							<input type="text" class="form-control" id="LanmeiUserName" placeholder="Email" autocomplete="off">
 							<ul class="login_on_changes on_changes">
-								<li email="">请选择邮箱类型</li>
-								<li email=""></li>
+								<li email="@gmail.com"></li>
+								<li email="@qq.com"></li>
 								<li email="@sina.com"></li>
 								<li email="@163.com"></li>
-								<li email="@qq.com"></li>
 								<li email="@hotmail.com"></li>
 								<li email="@126.com"></li>
-								<li email="@gmail.com"></li>
 								<li email="@yahoo.com"></li>
 							</ul>
 						</div>
@@ -234,20 +232,33 @@
 	</div>
 
 	<!-- 活动未开始模态框 -->
-	<div class="modal fade activityTipsModal" id="activityTipsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+	<div class="modal fade activityTipsModal activityModal" id="activityTipsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-body">
 					<h2 class="Tips">温馨提示</h2>
 					<p class="activity-tips-wrap">别心急哦！活动还没开始哦！PS: 悄悄告诉你，参与活动要先<span class="js-login-btn">【登陆会员】</span>哦！还没成为澜湄会员？<span class="js-register-btn">【立即注册】</span>吧！</p>
-					<button class="failModal-close">确定</button>
+					<button class="activityTipsModal-close">确定</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 已经抽过奖模态框 -->
+	<div class="modal fade nextOpportunityModal activityModal" id="nextOpportunityModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-body">
+					<h2 class="Tips">温馨提示</h2>
+					<p class="activity-tips-wrap">您今天已抽过奖了哦！<br>下周二再接再厉哟！</p>
+					<button class="nextOpportunityModal-close">确定</button>
 				</div>
 			</div>
 		</div>
 	</div>
 
 	<!-- 领取成功模态框 -->
-	<div class="modal fade succModal" id="succModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+	<div class="modal fade succModal activityModal" id="succModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-body">
@@ -258,8 +269,9 @@
 			</div>
 		</div>
 	</div>
+	
 	<!-- 领取失败模态框 -->
-	<div class="modal fade failModal" id="failModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+	<div class="modal fade failModal activityModal" id="failModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-body">

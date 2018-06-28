@@ -224,26 +224,18 @@ body {
   -webkit-transition: all 0.6s;
   background: #1f2c5c;
 }
-.succModal .modal-content,
-.failModal .modal-content,
-.activityTipsModal .modal-content {
+.activityModal .modal-content {
   box-shadow: none;
   overflow: hidden;
   background: transparent;
 }
-.succModal .modal-content .modal-body,
-.failModal .modal-content .modal-body,
-.activityTipsModal .modal-content .modal-body {
+.activityModal .modal-content .modal-body {
   position: relative;
 }
-.succModal .modal-content .modal-body img,
-.failModal .modal-content .modal-body img,
-.activityTipsModal .modal-content .modal-body img {
+.activityModal .modal-content .modal-body img {
   width: 100%;
 }
-.succModal .modal-content .modal-body p,
-.failModal .modal-content .modal-body p,
-.activityTipsModal .modal-content .modal-body p {
+.activityModal .modal-content .modal-body p {
   position: absolute;
   top: 52%;
   color: #000;
@@ -252,33 +244,23 @@ body {
   font-size: 20px;
   line-height: 36px;
 }
-.succModal .modal-content .modal-body p .s1,
-.failModal .modal-content .modal-body p .s1,
-.activityTipsModal .modal-content .modal-body p .s1 {
+.activityModal .modal-content .modal-body p .s1 {
   color: #1f2c5c;
   font-family: NotoSansBold;
 }
-.succModal .modal-content .modal-body p .s2,
-.failModal .modal-content .modal-body p .s2,
-.activityTipsModal .modal-content .modal-body p .s2 {
+.activityModal .modal-content .modal-body p .s2 {
   font-size: 16px;
 }
-.succModal .modal-content .modal-body p .coupon-result,
-.failModal .modal-content .modal-body p .coupon-result,
-.activityTipsModal .modal-content .modal-body p .coupon-result {
+.activityModal .modal-content .modal-body p .coupon-result {
   color: #1f2c5c;
   font-family: NotoSansBold;
   margin-left: 10px;
   margin-right: 10px;
 }
-.succModal .modal-content .modal-body .p2,
-.failModal .modal-content .modal-body .p2,
-.activityTipsModal .modal-content .modal-body .p2 {
+.activityModal .modal-content .modal-body .p2 {
   top: 66%;
 }
-.succModal .modal-content .modal-body button,
-.failModal .modal-content .modal-body button,
-.activityTipsModal .modal-content .modal-body button {
+.activityModal .modal-content .modal-body button {
   position: absolute;
   top: 86%;
   left: 50%;
@@ -293,9 +275,7 @@ body {
   transition: all 0.6s;
   -webkit-transition: all 0.6s;
 }
-.succModal .modal-content .modal-body button:hover,
-.failModal .modal-content .modal-body button:hover,
-.activityTipsModal .modal-content .modal-body button:hover {
+.activityModal .modal-content .modal-body button:hover {
   background: #8ec060;
   transition: all 0.6s;
   -webkit-transition: all 0.6s;
@@ -303,24 +283,31 @@ body {
 .failModal .modal-content .modal-body .p2 {
   top: 62%;
 }
-.activityTipsModal .modal-content .modal-body {
+.activityTipsModal .modal-content .modal-body,
+.nextOpportunityModal .modal-content .modal-body {
   width: 400px;
   height: 300px;
   border-radius: 2px;
   background: #fff;
 }
-.activityTipsModal .modal-content .modal-body h2 {
+.activityTipsModal .modal-content .modal-body h2,
+.nextOpportunityModal .modal-content .modal-body h2 {
   text-align: center;
   font-size: 36px;
   color: #1f2c5c;
   font-family: NotoSansBold;
   padding-top: 26px;
 }
-.activityTipsModal .modal-content .modal-body p {
+.activityTipsModal .modal-content .modal-body p,
+.nextOpportunityModal .modal-content .modal-body p {
   top: 86px;
 }
-.activityTipsModal .modal-content .modal-body button {
+.activityTipsModal .modal-content .modal-body button,
+.nextOpportunityModal .modal-content .modal-body button {
   top: 80%;
+}
+.nextOpportunityModal .modal-content .modal-body p {
+  top: 110px;
 }
 /* 配置屏幕 针对小屏幕*/
 @media screen and (max-width: 992px) {
@@ -445,22 +432,29 @@ body {
     font-size: 0.14rem;
     line-height: 0.26rem;
   }
-  .activityTipsModal .modal-content .modal-body {
+  .activityTipsModal .modal-content .modal-body,
+  .nextOpportunityModal .modal-content .modal-body {
     width: 100%;
     height: 2.6rem;
     border-radius: 2px;
     background: #fff;
   }
-  .activityTipsModal .modal-content .modal-body h2 {
+  .activityTipsModal .modal-content .modal-body h2,
+  .nextOpportunityModal .modal-content .modal-body h2 {
     font-size: .24rem;
     padding-top: 26px;
   }
-  .activityTipsModal .modal-content .modal-body p {
+  .activityTipsModal .modal-content .modal-body p,
+  .nextOpportunityModal .modal-content .modal-body p {
     top: .7rem;
     font-size: 0.14rem;
     line-height: 0.26rem;
   }
-  .activityTipsModal .modal-content .modal-body button {
+  .activityTipsModal .modal-content .modal-body button,
+  .nextOpportunityModal .modal-content .modal-body button {
     top: 80%;
+  }
+  .nextOpportunityModal .modal-content .modal-body {
+    height: 2rem;
   }
 }

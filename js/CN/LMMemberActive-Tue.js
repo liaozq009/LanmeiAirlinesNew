@@ -41,10 +41,15 @@ $(document).ready(function(){
 	            }else if(result=='fail'){
 	            	$('#failModal').modal();
 	            }
-	            bRotate = !bRotate;
+	            bRotate = !bRotate; //释放点击
 	        }
 	    })
 	};
+
+	// 模态框隐藏后才可以继续抢购
+	// $('#activityTipsModal,#succModal,#failModal,#nextOpportunityModal').on('hidden.bs.modal', function (e) {
+	//   bRotate = !bRotate; //释放点击
+	// })
 
 	$('.lm-pointer').click(function (){
 	    if(bRotate)return;
@@ -97,6 +102,21 @@ $(document).ready(function(){
 	});
 
 	// $('#activityTipsModal').modal();
+	$('#nextOpportunityModal').modal();
+
+	//关闭模态框
+	$('.activityTipsModal-close').click(function(event) {
+		$('#activityTipsModal').modal('hide');
+	});
+	$('.succModal-close').click(function(event) {
+		$('#succModal').modal('hide');
+	});
+	$('.failModal-close').click(function(event) {
+		$('#failModal').modal('hide');
+	});
+	$('.nextOpportunityModal-close').click(function(event) {
+		$('#nextOpportunityModal').modal('hide');
+	});
 
 	/* 倒计时 */
 	var clock = $('.lm-clock').FlipClock({
