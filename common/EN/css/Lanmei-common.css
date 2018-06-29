@@ -150,6 +150,7 @@ body {
   height: 60px;
   margin: 0 auto;
   background: url('../../../images/EN/logo.png') center no-repeat;
+  display: block;
 }
 .lm-header .h-right {
   position: absolute;

@@ -146,6 +146,7 @@ body {
   height: 60px;
   margin: 0 auto;
   background: url('../../../images/CN/logo.png') center no-repeat;
+  display: block;
 }
 .lm-header .h-right {
   position: absolute;

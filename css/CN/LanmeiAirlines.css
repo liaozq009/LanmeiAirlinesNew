@@ -957,6 +957,9 @@ body {
   height: 100%;
   cursor: default;
 }
+.lm-section-banner .slick-item .slick-content .slick-link-pointer {
+  cursor: pointer;
+}
 .lm-section-banner .slick-item .slick-detail p {
   display: inline-block;
   font-size: 18px;

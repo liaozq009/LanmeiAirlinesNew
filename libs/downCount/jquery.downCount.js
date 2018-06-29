@@ -32,6 +32,11 @@
             // get client's current date
             var date = new Date();
 
+            // function getServerDate(){
+            //     return new Date($.ajax({async: false}).getResponseHeader("Date"));
+            // }
+            // var date = getServerDate();
+
             // turn date to utc 得到国际标准时间  
             var utc = date.getTime() + (date.getTimezoneOffset() * 60000);
 

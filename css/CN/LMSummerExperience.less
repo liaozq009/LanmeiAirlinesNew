@@ -1,0 +1,115 @@
+@charset "utf-8";
+/* 定义变量 */
+@font-face {
+	font-family: NotoSansBold;
+	src: url(../../common/CN/fonts/NotoSans/SourceHanSansCN-Bold.otf);
+	font-weight:bold;
+}
+@url:"../../images_demo/activity/";
+/* 定义颜色变量 */
+@green:#8ec060;
+@purple:#1f2c5c;
+@gray:#5c6788;
+@link:#00908c;
+@FBold:NotoSansBold;
+
+body{
+	background: #edf1f0;
+}
+
+.lm-head-img{
+	width: 100%;
+	img{width: 100%;}
+}
+.lm-section-wrap{
+	width: 960px;
+	margin:0 auto 100px;
+}
+.lm-content-outer{
+	margin-top: 60px;
+	h2{
+		font-size: 30px;
+		font-family: @FBold;
+		color: @purple; 
+		line-height: 42px;
+		span{
+			display: inline-block;
+			background: @purple;
+			color: #fff;
+			padding: 8px;
+			margin-right: 10px;
+		}
+	}
+	.h2-center{
+		text-align: center;
+	}
+	h3{
+		font-size: 18px;
+		font-family: @FBold;
+		color: @purple;
+		line-height: 32px;
+		a{color: @purple;}
+	}
+	p{
+		color: @gray;
+		font-size: 18px;
+		line-height: 32px;
+	}
+}
+.lm-content-inner{
+	margin-top: 40px;
+}
+.ver-line{
+	width: 100%;
+	border-bottom: 2px dotted @purple;
+}
+table > thead:first-child > tr:first-child > th{
+	color: @purple;
+	font-size: 18px;
+}
+.table > tbody > tr > td,{
+	color: @gray;
+	font-size: 16px;
+}
+
+@media screen and (max-width: 992px){
+	.lm-section-wrap{
+		width: 100%;
+		padding: 0 20px;
+	}
+	.lm-content-inner{
+		img{width: 100%;}
+	}
+}
+@media screen and (max-width: 767px){
+	.lm-section-wrap{
+		padding: 0 .15rem;
+	}
+	.lm-content-outer{
+		margin-top: .3rem;
+		img{width: 100%;}
+		p{
+			font-size: 0.14rem;
+			line-height: 0.26rem;
+		}
+		h2{
+			font-size: 0.16rem;
+			line-height: 0.3rem;
+			span{padding:0.02rem;}
+		}
+		h3{
+			font-size: 0.14rem;
+			line-height: 0.26rem;
+			word-break:break-all;
+		}
+	}
+	.lm-content-inner{
+		margin-top: .2rem;
+	}
+	table > thead:first-child > tr:first-child > th{
+		font-size: 0.14rem;
+	}
+	.table > tbody > tr > td,{
+		font-size: 0.14rem;
+	}
+}

@@ -378,7 +378,7 @@ body {
   }
   .a-wrapper .a-content .a-inner .inner-1 .a-title-p2 {
     margin-top: .2rem;
-    font-size: .14rem;
+    font-size: 12px;
   }
   .a-wrapper .a-content .a-inner .inner-4 {
     margin-bottom: 30px;
@@ -399,11 +399,16 @@ body {
     margin-top: .1rem;
   }
   .a-wrapper .a-content .a-inner .a-rule-content p {
-    font-size: .12rem;
-    line-height: .26rem;
+    font-size: 12px;
+    line-height: 22px;
+    margin-top: 6px;
   }
   .flip-clock-divider .flip-clock-label {
     display: none;
+  }
+  .activity-tips-wrap {
+    font-size: 12px;
+    line-height: 22px;
   }
 }
 @media screen and (max-width: 540px) {

@@ -1,0 +1,114 @@
+@charset "utf-8";
+/* 定义变量 */
+@font-face {
+  font-family: NotoSansBold;
+  src: url(../../common/CN/fonts/NotoSans/SourceHanSansCN-Bold.otf);
+  font-weight: bold;
+}
+/* 定义颜色变量 */
+body {
+  background: #edf1f0;
+}
+.lm-head-img {
+  width: 100%;
+}
+.lm-head-img img {
+  width: 100%;
+}
+.lm-section-wrap {
+  width: 960px;
+  margin: 0 auto 100px;
+}
+.lm-content-outer {
+  margin-top: 60px;
+}
+.lm-content-outer h2 {
+  font-size: 30px;
+  font-family: NotoSansBold;
+  color: #1f2c5c;
+  line-height: 42px;
+}
+.lm-content-outer h2 span {
+  display: inline-block;
+  background: #1f2c5c;
+  color: #fff;
+  padding: 8px;
+  margin-right: 10px;
+}
+.lm-content-outer .h2-center {
+  text-align: center;
+}
+.lm-content-outer h3 {
+  font-size: 18px;
+  font-family: NotoSansBold;
+  color: #1f2c5c;
+  line-height: 32px;
+}
+.lm-content-outer h3 a {
+  color: #1f2c5c;
+}
+.lm-content-outer p {
+  color: #5c6788;
+  font-size: 18px;
+  line-height: 32px;
+}
+.lm-content-inner {
+  margin-top: 40px;
+}
+.ver-line {
+  width: 100%;
+  border-bottom: 2px dotted #1f2c5c;
+}
+table > thead:first-child > tr:first-child > th {
+  color: #1f2c5c;
+  font-size: 18px;
+}
+.table > tbody > tr > td {
+  color: #5c6788;
+  font-size: 16px;
+}
+@media screen and (max-width: 992px) {
+  .lm-section-wrap {
+    width: 100%;
+    padding: 0 20px;
+  }
+  .lm-content-inner img {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .lm-section-wrap {
+    padding: 0 .15rem;
+  }
+  .lm-content-outer {
+    margin-top: .3rem;
+  }
+  .lm-content-outer img {
+    width: 100%;
+  }
+  .lm-content-outer p {
+    font-size: 0.14rem;
+    line-height: 0.26rem;
+  }
+  .lm-content-outer h2 {
+    font-size: 0.16rem;
+    line-height: 0.3rem;
+  }
+  .lm-content-outer h2 span {
+    padding: 0.02rem;
+  }
+  .lm-content-outer h3 {
+    font-size: 0.14rem;
+    line-height: 0.26rem;
+    word-break: break-all;
+  }
+  .lm-content-inner {
+    margin-top: .2rem;
+  }
+  table > thead:first-child > tr:first-child > th {
+    font-size: 0.14rem;
+  }
+  .table > tbody > tr > td {
+    font-size: 0.14rem;
+  }
+}
