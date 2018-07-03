@@ -221,15 +221,19 @@
 	    font-size: 16px;
 	}
 	.national-baggage{
-		width: 300px;
-		left: 50%;
-	    margin-left: -150px;
+		width: 100%;
+	    background: none;
+	    box-shadow: none;
 	    input{
+	    	width: 300px;
 	    	padding-left: 20px;
+	    	box-shadow: 0 0 50px 0 rgba(31, 44, 92, 0.1); 
 	    }
 	    .dropdownMenu-wrap{
 	    	width: 300px;
 	    	height: 170px;
+	    	left: 50%;
+    	    margin-left: -150px;
 	    	.menu-com > li{
 	    		width: 100%;
 	    		padding-left: 0px;
@@ -424,9 +428,12 @@
 				font-size: 14px;
 			}
 		}
+		.national-baggage{
+			>span{display: block;}
+		}
 		.dropdownMenu-wrap{
 			width: 100%;
-			top: 70px;
+			top: 100px;
 			.menu-com {
 				font-size: 14px;
 				> li{
@@ -453,7 +460,7 @@
 	}
 	.daterangepicker{width: 300px;}
 	.lm-select-baggage {
-		padding-top: .2rem;
+		padding-top: .6rem;
 		.baggage-wrap{
 			font-size: .14rem;
 			top: .2rem;

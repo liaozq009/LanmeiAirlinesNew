@@ -27,7 +27,7 @@ $(document).ready(function($) {
 						'<div class="h-registered">'+
 							'<a href="javascript:;" class="REGISTEREDBtn">'+
 								'<img src="https://lanmeiairlines.com/lanmeiairlines2.0/default/images/EN/registered.png" alt="registered">'+
-								'<span>Registered</span>'+
+								'<span>Sign up</span>'+
 							'</a>'+
 						'</div>'+
 						'<div class="v-line v-line-2"><img src="https://lanmeiairlines.com/lanmeiairlines2.0/default/images/EN/v-line.png" alt="line"></div>'+

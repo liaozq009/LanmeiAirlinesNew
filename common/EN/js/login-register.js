@@ -1,5 +1,142 @@
-var LMComLogin = {
-	/* 登录 */
+
+var LMComLoginReg = {
+	init:function(){
+		this.commonHtml();
+		this.login();
+		this.register();
+	},
+	commonHtml:function(){
+		var $login = '<div class="modal-dialog" role="document">'+
+		        '<div class="modal-content">'+
+		            '<div class="modal-header">'+
+		                '<button type="button" class="close" data-dismiss="modal" aria-label="Close">Close<span aria-hidden="true">&times;</span></button>'+
+		            '</div>'+
+		            '<div class="modal-body">'+
+		                '<h2 class="loginTitle">Login</h2>'+
+		                '<span class="verifyInfo">Account or password error !</span>'+
+		                '<form id="loginForm" method="POST" action="">'+
+		                    '<div class="form-group">'+
+		                        '<input type="text" class="form-control" id="LanmeiUserName" placeholder="Email" autocomplete="off">'+
+		                       ' <ul class="login_on_changes on_changes">'+
+		                            '<li email="@gmail.com"></li>'+
+		                            '<li email="@qq.com"></li>'+
+		                            '<li email="@sina.com"></li>'+
+		                            '<li email="@163.com"></li>'+
+		                            '<li email="@hotmail.com"></li>'+
+		                           	'<li email="@126.com"></li>'+
+		                            '<li email="@yahoo.com"></li>'+
+		                        '</ul>'+
+		                    '</div>'+
+		                    '<div class="form-group">'+
+		                        '<input type="password" class="form-control" id="LanmeiPassword" placeholder="Password" autocomplete="off">'+
+		                    '</div>'+
+		                    '<div class="agree form-group">'+
+		                        '<span class=""></span>'+
+		                        '<p>Remember me next 30 days</p>'+
+		                        '<a href="#" class="forgetBtn">Forget ?</a>'+
+		                    '</div>'+
+		                    '<div class="form-group">'+
+		                        '<button type="button" class="btn userLoginBtn">Login</button>'+
+		                    '</div>'+
+		                '</form>'+
+		            '</div>'+
+		            '<div class="modal-footer">'+
+		                'Still no account ? Immediately <a href="javascript:void(0)" class="regBtn">registered</a>'+
+		            '</div>'+
+		        '</div>'+
+		    '</div>';
+
+		var $register = '<div class="modal-dialog" role="document">'+
+		        '<div class="modal-content">'+
+		            '<div class="modal-header">'+
+		                '<button type="button" class="close" data-dismiss="modal" aria-label="Close">Close<span aria-hidden="true">&times;</span></button>'+
+		            '</div>'+
+		            '<div class="modal-body">'+
+		               ' <form class="registerWrapper" method="POST" action="">'+
+		                    '<h2>Sign up</h2>'+
+		                    '<div class="registerContent">'+
+		                        '<div class="registerInfo">'+
+		                            '<input type="text" name="" value="" id="registerUserName" placeholder="Please enter email address" autocomplete="off">'+
+		                            '<img src="https://lanmeiairlines.com/lanmeiairlines2.0/default/images/EN/register-email.png">'+
+		                           '<p>This email is already in use !</p>'+
+		                            '<ul class="register_on_changes on_changes">'+
+		                                '<li email="@gmail.com"></li>'+
+		                                '<li email="@qq.com"></li>'+
+		                                '<li email="@sina.com"></li>'+
+		                                '<li email="@163.com"></li>'+
+		                                '<li email="@hotmail.com"></li>'+
+		                                '<li email="@126.com"></li>'+
+		                                '<li email="@yahoo.com"></li>'+
+		                            '</ul>'+
+		                        '</div>'+
+		                        '<div class="registerPassword">'+
+		                           ' <input type="password" name="" value="" id="registerPassword" placeholder="Password with 8-16 characters" autocomplete="off">'+
+		                            '<img src="https://lanmeiairlines.com/lanmeiairlines2.0/default/images/EN/register-password.png">'+
+		                            '<p>Password strength : <span><i class="i1"></i><i class="i2"></i><i class="i3"></i><i class="i4"></i><i class="i5"></i><i class="i6"></i></span></p>'+
+		                        '</div>'+
+		                        '<div class="repeatPassword">'+
+		                            '<input type="password" name="" value="" id="repeatPassword" placeholder="Please repeat password" autocomplete="off">'+
+		                            '<img src="https://lanmeiairlines.com/lanmeiairlines2.0/default/images/EN/register-password.png">'+
+		                           ' <p>Passwords don’t match !</p>'+
+		                            '<span>Password must be with 3 or 4 combination with number (0-9), lowercase letter (a-z), uppercase letter (A-Z) or special characters.</span>'+
+		                        '</div>'+
+		                        '<div class="agree">'+
+		                            '<span></span>'+
+		                            '<p>I hereby agree to <a href="#">Lanmeiairlines’ terms and conditions</a></p>'+
+		                        '</div>'+
+		                        '<div class="registerBtn">'+
+		                            '<button id="registerBtn">Register</button>'+
+		                        '</div>'+
+		                    '</div>'+
+		                '</form>'+
+		            '</div>'+
+		        '</div>'+
+		    '</div>';
+
+		var $forgetPassword = '<div class="modal-dialog" role="document">'+
+		        '<div class="modal-content">'+
+		            '<div class="modal-header">'+
+		                '<button type="button" class="close" data-dismiss="modal" aria-label="Close">Close<span aria-hidden="true">&times;</span></button>'+
+		            '</div>'+
+		            '<div class="modal-body">'+
+		                '<h2 class="loginTitle">Forget Password</h2>'+
+		                '<span class="verifyInfo">Account or password error !</span>'+
+		                '<form id="f-loginForm" method="POST" action="">'+
+		                    '<div class="form-group">'+
+		                        '<input type="text" class="form-control" id="f-LanmeiUserName" placeholder="Email" autocomplete="off">'+
+		                        '<ul class="forget_on_changes on_changes">'+
+		                           '<li email="@gmail.com"></li>'+
+		                            '<li email="@qq.com"></li>'+
+		                            '<li email="@sina.com"></li>'+
+		                            '<li email="@163.com"></li>'+
+		                            '<li email="@hotmail.com"></li>'+
+		                            '<li email="@126.com"></li>'+
+		                            '<li email="@yahoo.com"></li>'+
+		                        '</ul>'+
+		                    '</div>'+
+		                    '<div class="form-group">'+
+		                        '<input type="password" class="form-control" id="f-LanmeiPassword" placeholder="Password" autocomplete="off">'+
+		                        '<button type="button" id="f-getPasswordBtn">Get Password</button>'+
+		                    '</div>'+
+		                   ' <div class="agree form-group">'+
+		                        '<p>Please pay attention to the E-mail information</p>'+
+		                    '</div>'+
+		                    '<div class="form-group">'+
+		                       ' <button type="button" class="btn f-userLoginBtn">Login</button>'+
+		                   ' </div>'+
+		                '</form>'+
+		            '</div>'+
+		            '<div class="modal-footer">'+
+		                '<a href="#" class="a_login">Login</a><a href="javascript:void(0)" class="a_registered">Registered</a>'+
+		            '</div>'+
+		        '</div>'+
+		    '</div>';
+
+		$('#logonModal').html($login);
+		$('#registerModal').html($register);
+		$('#forgetModal').html($forgetPassword);
+	},
+
 	login:function(){
 	    var reg1=/^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$/; //邮箱
 	    var reg2=/^(?!^[0-9]+$)(?!^[A-z]+$)(?!^[^A-z0-9]+$)^.{6,16}$/; //密码
@@ -37,7 +174,6 @@ var LMComLogin = {
 	    //保持疑问 开始
 	    // 点击登录
 	    $('.loginBtn,.m-user-btn').click(function(e){
-	    	console.log(222);
 	        e.preventDefault();
 	        $('#logonModal').modal();
 	        // $('html,body').addClass('ovfHiden'); //使网页不可滚动
@@ -460,8 +596,82 @@ var LMComLogin = {
 	        }
 		});
 	},
-};
+
+	register:function(){
+		$("#registerBtn").click(function(){
+			//同意条款
+			var $agree = $('.agree>span');
+			if(!$agree.hasClass("agreeConditions")){
+				$agree.next().next().html("Please read Lanmei service terms!").css('color','#d0011b');
+				return;
+			}else{
+				$agree.next().next().html("Passed validation").css('color','#8ec060');
+			}
+			//email
+			if(!LanmeiAirlinesRegister.userNameVerify($("#registerUserName").val())){
+				return;
+			}
+			//密码
+			var regPwd=/^(?!^[0-9]+$)(?!^[A-z]+$)(?!^[^A-z0-9]+$)^.{8,16}$/; 
+			var $registerPassword = $('#registerPassword');
+			if(regPwd.test($.trim($registerPassword.val()))){
+				$registerPassword.siblings('p').html('Passed validation').css('color','#8ec060');
+			}else{
+				$registerPassword.siblings('p').html('Your input is unqualified. Please input again!').css('color','#d0011b');
+				return;
+			}
+			// 再次输入密码验证
+			var $repeatPassword = $('#repeatPassword');
+			if($.trim($repeatPassword.val()) == $.trim($('#registerPassword').val())){
+				$repeatPassword.siblings('p').html('Passed validation').css('color','#8ec060');
+			}else{
+				$repeatPassword.siblings('p').html('Your input is unqualified. Please input again!').css('color','#d0011b');
+				return;
+			}
+			
+			var registeFlag = false;
+			$.ajax({
+				url: '/register/regSave.jhtml',
+				async: false,
+				type: "POST",
+				data:{"email":$.trim($("#registerUserName").val()),"pwd":$.trim($('#repeatPassword').val())},
+				success:function(data){
+					var code = data.code;
+					//code 0000注册成功，并已经登录; 0001该邮箱已被注册； 0002密码格式不正确
+					if(code == "0000"){
+						registeFlag = true;
+						layer.open({
+							  title: 'Register prompt.',
+							  content: 'Register Successful!',
+							  btn: ['Confirm'],
+							  yes: function(index, layero){
+								  window.location.reload();
+							     layer.close(index);
+							  }
+						});
+					}else if(code == "0001" ){
+						$('#registerUserName').siblings('p').html("The e-mail has been registered. Please input again!").css('color','#d0011b');
+						registeFlag = false;
+					}else if(code == "0002"){
+						$registerPassword.siblings('p').html('The e-mail has been registered. Please input again!').css('color','#d0011b');
+						$repeatPassword.siblings('p').html('The e-mail has been registered. Please input again!').css('color','#d0011b');
+						registeFlag = false;
+					}
+				},
+				error:function(){
+					layer.open({
+						  title: 'Register prompt.'
+						  ,content: 'The server is busy. Please try again later！.'
+					});    
+				}
+			});
+			if(!registeFlag){
+				return;
+			}	
+		});
+	},
+}
 
 $(function() {
-	LMComLogin.login();
+	LMComLoginReg.init();
 });

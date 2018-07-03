@@ -265,7 +265,6 @@ label {
   background: #1f2c5c;
   color: #fff;
   font-size: 18px;
-  font-family: CamptonBookBold;
   transition: all 0.6s;
   -webkit-transition: all 0.6s;
 }
@@ -525,7 +524,6 @@ label {
   width: 340px;
   color: #fff;
   font-size: 18px;
-  font-family: CamptonBookBold;
   transition: all 0.6s;
   -webkit-transition: all 0.6s;
 }
@@ -559,6 +557,6 @@ body .layui-layer-page .layui-layer-content {
 /* 移动端 */
 @media (max-width: 767px) {
   body .layui-layer {
-    width: 90% !important;
+    width: 300px !important;
   }
 }

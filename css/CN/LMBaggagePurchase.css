@@ -256,16 +256,20 @@
   font-size: 16px;
 }
 .lm-select-baggage .national-baggage {
-  width: 300px;
-  left: 50%;
-  margin-left: -150px;
+  width: 100%;
+  background: none;
+  box-shadow: none;
 }
 .lm-select-baggage .national-baggage input {
+  width: 300px;
   padding-left: 20px;
+  box-shadow: 0 0 50px 0 rgba(31, 44, 92, 0.1);
 }
 .lm-select-baggage .national-baggage .dropdownMenu-wrap {
   width: 300px;
   height: 170px;
+  left: 50%;
+  margin-left: -150px;
 }
 .lm-select-baggage .national-baggage .dropdownMenu-wrap .menu-com > li {
   width: 100%;
@@ -491,10 +495,14 @@
   .lm-select-baggage > div input::-webkit-input-placeholder {
     font-size: 14px;
   }
+  .lm-content .national-baggage > span,
+  .lm-select-baggage .national-baggage > span {
+    display: block;
+  }
   .lm-content .dropdownMenu-wrap,
   .lm-select-baggage .dropdownMenu-wrap {
     width: 100%;
-    top: 70px;
+    top: 100px;
   }
   .lm-content .dropdownMenu-wrap .menu-com,
   .lm-select-baggage .dropdownMenu-wrap .menu-com {
@@ -550,7 +558,7 @@
     width: 300px;
   }
   .lm-select-baggage {
-    padding-top: .2rem;
+    padding-top: .6rem;
   }
   .lm-select-baggage .baggage-wrap {
     font-size: .14rem;

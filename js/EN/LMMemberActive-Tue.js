@@ -114,39 +114,49 @@ $(document).ready(function(){
 	});
 
 	/* 倒计时 */
+	var countdownSecond = true;
 	var clock = $('.lm-clock').FlipClock({
         clockFace: 'DailyCounter',
         autoStart: false,
         callbacks: {
         	stop: function() {
         		// console.log('开始抢购！');
+        		if(countdownSecond){
+        			$('.a-title-p2').html('Activity has started:');
+        			ajaxDate('2018/7/3 16:44:00');
+        			countdownSecond = false;
+        		}
         	}
         }
     });
 
-    var currentDate = function () {
-        // get client's current date
-        var date = new Date();
+    function ajaxDate(endTime){
+	    var currentDate = function () {
+	        // get client's current date
+	        var date = new Date();
 
-        // turn date to utc 得到国际标准时间  
-        var utc = date.getTime() + (date.getTimezoneOffset() * 60000);
+	        // turn date to utc 得到国际标准时间  
+	        var utc = date.getTime() + (date.getTimezoneOffset() * 60000);
 
-        // set new Date object 时区的偏移量,后面的8为东八区
-        var new_date = new Date(utc + (3600000*8));
+	        // set new Date object 时区的偏移量,后面的8为东八区
+	        var new_date = new Date(utc + (3600000*8));
 
-        return new_date;
-    };
+	        return new_date;
+	    };
 
-	// var target_date = new Date('2017/11/11 11:11:00').getTime();
-	var target_date = new Date('2018/7/3 20:00:00').getTime();
-	var current_date = currentDate().getTime();
+		// var target_date = new Date('2017/11/11 11:11:00').getTime();
+		var target_date = new Date(endTime).getTime();
+		var current_date = currentDate().getTime();
 
-	 var difference =  Math.floor((target_date - current_date)/1000);
-	 // console.log(difference);
-	 if(difference>0){
-	    clock.setTime(difference);
-	 }
-    clock.setCountdown(true);
-    clock.start();
+		 var difference =  Math.floor((target_date - current_date)/1000);
+		 // console.log(difference);
+		 if(difference>0){
+		    clock.setTime(difference);
+		 }
+	    clock.setCountdown(true);
+	    clock.start();
+    }
+
+    ajaxDate('2018/7/3 16:43:00');
 
 });

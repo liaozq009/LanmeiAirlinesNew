@@ -8,6 +8,7 @@
     $.fn.downCount = function (options, callback) {
         var settings = $.extend({
                 date: null,
+                curDate:null,
                 offset: null
             }, options);
 
@@ -32,11 +33,6 @@
             // get client's current date
             var date = new Date();
 
-            // function getServerDate(){
-            //     return new Date($.ajax({async: false}).getResponseHeader("Date"));
-            // }
-            // var date = getServerDate();
-
             // turn date to utc 得到国际标准时间  
             var utc = date.getTime() + (date.getTimezoneOffset() * 60000);
 
@@ -49,12 +45,16 @@
         /**
          * Main downCount function that calculates everything
          */
+        var target_date = new Date(settings.date); // set target date
+        var current_date = new Date(settings.curDate); // get fixed current date
+        var difference = target_date - current_date;
         function countdown () {
-            var target_date = new Date(settings.date), // set target date
-                current_date = currentDate(); // get fixed current date
+            // var target_date = new Date(settings.date), // set target date
+                // current_date = currentDate(); // get fixed current date
 
             // difference of dates
-            var difference = target_date - current_date;
+            // var difference = target_date - current_date;
+            difference = difference-1000;
 
             // if difference is negative than it's pass the target date
             if (difference < 0) {
