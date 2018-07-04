@@ -77,6 +77,10 @@ body {
   width: 100%;
   border-bottom: 2px dotted #1f2c5c;
 }
+.table {
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
 table > thead:first-child > tr:first-child > th {
   color: #1f2c5c;
   font-size: 18px;
@@ -84,6 +88,7 @@ table > thead:first-child > tr:first-child > th {
 .table > tbody > tr > td {
   color: #5c6788;
   font-size: 16px;
+  font-weight: 600;
 }
 @media screen and (max-width: 992px) {
   .lm-head-img .head-gif-wrap .head-img-gif {

@@ -19,10 +19,139 @@
 	width:100%;
 	height:340px;
 }
+.lm-activity-tips{
+    position: absolute;
+    top: 100px;
+    right: 80px;
+    z-index: 1;
+    color: #fff;
+    text-align: center;
+    >span{font-size: 36px;}
+    .countdown {
+        list-style: none;
+        padding: 0;
+        display: block;
+        text-align: center;
+    }
 
+    .countdown li {
+        display: inline-block;
+    }
+
+    .countdown-day{
+        width: 50px;
+    }
+    
+    .activity-day{
+        vertical-align: super;
+        font-size: 26px;
+        margin-top: 10px;
+    }
+    .countdown li span {
+        font-size: 36px;
+        font-weight: 300;
+        line-height: 80px;
+    }
+
+    .countdown li.seperator {
+        font-size: 26px;
+        line-height: 70px;
+        vertical-align: top;
+    }
+
+    .countdown li p {
+        color: #a7abb1;
+        font-size: 14px;
+    }
+
+    a {
+        display: inline-block;
+        height: 40px;
+        line-height: 40px;
+        font-size: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        background: #1f2c5c;
+        border-radius: 2px;
+        color: #fff;
+        text-decoration: none;
+        transition: background .3s;
+        -webkit-transition: background .3s;
+    }
+
+    a:hover {
+        background: #8ec06c;
+        transition: background .3s;
+        -webkit-transition: background .3s;
+    }
+
+    .source {
+        width: 405px;
+        margin: 0 auto;
+        background: #4f5861;
+        color: #a7abb1;
+        font-weight: bold;
+        display: block;
+        white-space: pre;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+    }
+
+    .btn {
+        background: #f56c4c;
+        margin: 40px auto;
+        padding: 12px;
+        display: block;
+        width: 100px;
+        color: white;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: bold;
+        text-decoration: none;
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        border-radius: 2px;
+    }
+
+    .btn:hover {
+        text-decoration: none;
+        opacity: .7;
+    }
+}
+@media screen and (max-width: 992px){
+    .lm-activity-tips{
+        top: 80px;
+        right: 30px;
+        >span{font-size: 14px;}
+        .countdown{
+            text-align: right;
+            margin-top: 6px;
+            .activity-day{
+                font-size: 12px;
+                display: block;
+            }
+            li span{
+                font-size: 14px;
+                line-height: 30px;
+            }
+            li.seperator{
+                font-size: 14px;
+                line-height: 30px;
+            }
+        }
+        
+        .countdown-day{
+            width: 16px;
+        }
+    }
+}
 /* 手机端 */
 @media (max-width: 767px) {
 	.lm-memberActive-Tue{
 		height:132px;
+	}
+	.lm-activity-tips{
+	   display: none;
 	}
 }

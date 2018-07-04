@@ -124,9 +124,9 @@
 		}
 		.computerCode .bankCode p>span {
 		  font-weight: bold;
-		  font-size: 18px;
+		  font-size: 14px;
 		  color: #1f2c5c;
-		  margin-left: 30px;
+		  margin-left: 10px;
 		}
 		.computerCode .bankCode .p1 {
 		  margin-top: 20px;
@@ -258,9 +258,20 @@
 		}
 		@media screen and (max-width: 992px) {
 			.lm-section{
-				width: 990px;
+				width: 100%;
 				padding: 15px;
 			}
+		}
+		@media screen and (max-width: 767px) {
+			.flightSelectWrapper .flightSelectCommon .flightSelectTitle > h2{float: none;}
+			.flightSelectWrapper .flightSelectCommon .flightSelectTitle > p{float: none;margin-top: 10px;}
+			.flightSelectWrapper .flightListCommon{padding-top: 30px;}
+			.flightList-mobile{
+				display: block;
+			}
+			.flightList1{display: none;}
+			.flightList-mobile p{color:#666;}
+			.flightList-mobile p span{color:#808080;}
 		}
 	</style>
 </head>
@@ -300,6 +311,13 @@
 						<li>2018-06-18</li>
 						<li>CNY 10.00</li>
 					</ul>
+				</div>
+				<div class="flightList-mobile">
+					<p><span>护照号:</span>675-440245621</p>
+					<p><span>航班号:</span>LQ305</p>
+					<p><span>航班日期:</span>2018-06-20</p>
+					<p><span>支付时间:</span>2018-06-18</p>
+					<p><span>金额:</span>CNY 10.00</p>
 				</div>
 				<div class="buy-catering-wrap">
 					<div class="flightSelectTitle">

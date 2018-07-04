@@ -1,6 +1,6 @@
 $(document).ready(function(){
-	var startDate = '07/03/2018 21:00:00';
-	var curDate = '07/03/2018 14:10:00';
+	var startDate = '07/04/2018 09:20:30';
+	var curDate = '07/04/2018 09:20:20';
 	// 首页倒计时
 	$('.js-countdown').downCount({
 	    date: startDate,
@@ -8,7 +8,7 @@ $(document).ready(function(){
 	    offset: +7, //时区偏移值
 	}, function () {
 	     $('.js-countdown li').hide();
-	     $('.js-countdown .activity-day').html('活动已开始！').show();
+	     $('.js-countdown .activity-day').html('活动已开始！<a href="https://lanmeiairlines.com/memberDay/memberActivePage.jhtml?language=CN" target="_blank">马上参与</a>').show();
 	});
 
 	// 周二会员日
