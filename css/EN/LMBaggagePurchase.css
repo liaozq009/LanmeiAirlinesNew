@@ -568,6 +568,9 @@
     width: .5rem;
     height: .3rem;
   }
+  .lm-select-baggage .baggage-wrap-tips {
+    top: 86px;
+  }
   .lm-baggage-price {
     padding: 0;
     padding-bottom: .2rem;

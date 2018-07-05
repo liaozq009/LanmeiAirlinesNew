@@ -12,6 +12,7 @@ body {
 .lm-head-img {
   position: relative;
   width: 100%;
+  min-height: 200px;
 }
 .lm-head-img img {
   width: 100%;
@@ -32,6 +33,9 @@ body {
   top: -50px;
   width: 52%;
   z-index: 1;
+}
+.lm-head-img .head-img-mb {
+  display: none;
 }
 .lm-section-wrap {
   width: 960px;
@@ -103,6 +107,12 @@ table > thead:first-child > tr:first-child > th {
   }
 }
 @media screen and (max-width: 767px) {
+  .lm-head-img .head-img-pc {
+    display: none;
+  }
+  .lm-head-img .head-img-mb {
+    display: block;
+  }
   .lm-head-img .head-gif-wrap .head-img-gif {
     top: -6px;
   }

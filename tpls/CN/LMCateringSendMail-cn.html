@@ -256,6 +256,7 @@
 			height: 30px;
 			line-height: 38px;
 		}
+		.flightList-mobile{display: none;}
 		@media screen and (max-width: 992px) {
 			.lm-section{
 				width: 100%;
@@ -264,14 +265,16 @@
 		}
 		@media screen and (max-width: 767px) {
 			.flightSelectWrapper .flightSelectCommon .flightSelectTitle > h2{float: none;}
-			.flightSelectWrapper .flightSelectCommon .flightSelectTitle > p{float: none;margin-top: 10px;}
+			.flightSelectWrapper .flightSelectCommon .flightSelectTitle > p{float: none;margin-top: 20px;}
 			.flightSelectWrapper .flightListCommon{padding-top: 30px;}
 			.flightList-mobile{
 				display: block;
+				margin-top: 46px;
 			}
 			.flightList1{display: none;}
-			.flightList-mobile p{color:#666;}
-			.flightList-mobile p span{color:#808080;}
+			.flightList-mobile p{color:#666;font-size: 14px;font-weight: bold;line-height: 26px;}
+			.flightList-mobile p span{color:#808080;font-weight: normal;}
+			.flightSelectWrapper,.buy-catering-wrap{margin-top: 30px;}
 		}
 	</style>
 </head>
@@ -313,11 +316,11 @@
 					</ul>
 				</div>
 				<div class="flightList-mobile">
-					<p><span>护照号:</span>675-440245621</p>
-					<p><span>航班号:</span>LQ305</p>
-					<p><span>航班日期:</span>2018-06-20</p>
-					<p><span>支付时间:</span>2018-06-18</p>
-					<p><span>金额:</span>CNY 10.00</p>
+					<p><span>护照号:&nbsp;&nbsp;</span>675-440245621</p>
+					<p><span>航班号:&nbsp;&nbsp;</span>LQ305</p>
+					<p><span>航班日期:&nbsp;&nbsp;</span>2018-06-20</p>
+					<p><span>支付时间:&nbsp;&nbsp;</span>2018-06-18</p>
+					<p><span>金额:&nbsp;&nbsp;</span>CNY 10.00</p>
 				</div>
 				<div class="buy-catering-wrap">
 					<div class="flightSelectTitle">

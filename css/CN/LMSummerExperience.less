@@ -20,6 +20,7 @@ body{
 .lm-head-img{
 	position: relative;
 	width: 100%;
+	min-height: 200px;
 	img{width: 100%;}
 	.head-gif-wrap{
 		width: 30%;
@@ -38,6 +39,7 @@ body{
 		    z-index: 1;
 		}
 	}
+	.head-img-mb{display: none;}
 }
 .lm-section-wrap{
 	width: 960px;
@@ -106,6 +108,10 @@ table > thead:first-child > tr:first-child > th{
 	}
 }
 @media screen and (max-width: 767px){
+	.lm-head-img {
+		.head-img-pc{display: none;}
+		.head-img-mb{display: block;}
+	}
 	.lm-head-img .head-gif-wrap .head-img-gif{top: -6px;}
 	.lm-section-wrap{
 		padding: 0 .15rem;
