@@ -24,7 +24,9 @@ $(document).ready(function(){
 	//     }
 	// });
 
-	var startDate = '07/04/2018 09:20:30';
+	// $('.lm-activity-tips>span').html('Happy Lanmei Saturday !');
+	$('.lm-activity-tips>span').html('Lanmei Member Day!');
+	var startDate = '07/04/2018 09:20:22';
 	var curDate = '07/04/2018 09:20:20';
 	// 首页倒计时
 	$('.js-countdown').downCount({
@@ -33,7 +35,7 @@ $(document).ready(function(){
 	    offset: +7, //时区偏移值
 	}, function () {
 	     $('.js-countdown li').hide();
-	     $('.js-countdown .activity-day').html('Activity has started ! <a href="https://lanmeiairlines.com/memberDay/memberActivePage.jhtml?language=EN" target="_blank">ENTER</a>').show();
+	     $('.js-countdown .activity-day').html('Activity has started ! <a href="http://192.168.1.19/LanmeiAirlinesNew/tpls/EN/LMMemberActive-Tue.html" target="_blank"></a>').show();
 	});
 
 	// 周二会员日

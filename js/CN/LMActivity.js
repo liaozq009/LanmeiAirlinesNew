@@ -1,5 +1,7 @@
 $(document).ready(function(){
-	var startDate = '07/04/2018 09:20:30';
+	$('.lm-activity-tips>span').html('澜湄周二会员日！');
+	// $('.lm-activity-tips>span').html('澜湄周六特惠-放肆嗨！');
+	var startDate = '07/04/2018 09:20:22';
 	var curDate = '07/04/2018 09:20:20';
 	// 首页倒计时
 	$('.js-countdown').downCount({
@@ -8,7 +10,7 @@ $(document).ready(function(){
 	    offset: +7, //时区偏移值
 	}, function () {
 	     $('.js-countdown li').hide();
-	     $('.js-countdown .activity-day').html('活动已开始！<a href="https://lanmeiairlines.com/memberDay/memberActivePage.jhtml?language=CN" target="_blank">马上参与</a>').show();
+	     $('.js-countdown .activity-day').html('活动已开始！<a href="https://lanmeiairlines.com/memberDay/memberActivePage.jhtml?language=CN" target="_blank"></a>').show();
 	});
 
 	// 周二会员日
