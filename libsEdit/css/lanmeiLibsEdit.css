@@ -535,18 +535,27 @@ label {
 /* layer弹出框修改样式 */
 body .layui-layer-title {
   color: #fff;
-  background: #8ec060;
+  background: #1f2c5c;
 }
 body .layui-layer-setwin .layui-layer-close1 {
-  background-position: -187px -40px;
+  background-position: -156px -40px;
 }
 body .layui-layer-setwin a {
   width: 15px;
   height: 15px;
 }
 body .layui-layer-btn .layui-layer-btn0 {
+  border-color: #1f2c5c;
+  background-color: #1f2c5c;
+  transition: all .3s;
+  -webkit-transition: all .3s;
+}
+.layui-layer-btn a:hover {
+  opacity: 1;
   border-color: #8ec060;
   background-color: #8ec060;
+  transition: all .3s;
+  -webkit-transition: all .3s;
 }
 body .layui-layer-page .layui-layer-content {
   padding: 20px;

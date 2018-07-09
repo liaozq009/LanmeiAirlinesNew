@@ -542,18 +542,27 @@ label{
 /* layer弹出框修改样式 */
 body .layui-layer-title{
 	color: #fff;
-	background: @green;
+	background: @purple;
 }
 body .layui-layer-setwin .layui-layer-close1{
-	background-position: -187px -40px;
+	background-position: -156px -40px;
 }
 body .layui-layer-setwin a{
 	width: 15px;
 	height: 15px;
 }
 body .layui-layer-btn .layui-layer-btn0 {
-    border-color: @green;
-    background-color: @green;
+    border-color: @purple;
+    background-color: @purple;
+    transition: all .3s;
+    -webkit-transition: all .3s;
+}
+.layui-layer-btn a:hover{
+	opacity: 1;
+	border-color: @green;
+	background-color: @green;
+	transition: all .3s;
+	-webkit-transition: all .3s;
 }
 body .layui-layer-page .layui-layer-content{
 	padding:20px;
