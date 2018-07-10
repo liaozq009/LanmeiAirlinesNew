@@ -16,6 +16,7 @@
 	<link rel="stylesheet" type="text/css" href="../../../common/CN/fonts/lm-iconfont.css">
 	<link rel="stylesheet" type="text/css" href="../../../common/CN/css/animate.css">
 	<link rel="stylesheet" type="text/css" href="../../../common/CN/css/Lanmei-common.css">
+	<link rel="stylesheet" type="text/css" href="../../../libs/loading/lm-loading.css">
 	<link rel="stylesheet" type="text/css" href="../../../libsEdit/css/lanmeiLibsEdit.css">
 	<link rel="stylesheet" type="text/css" href="../common/menu-common.css">
 	<link rel="stylesheet" type="text/css" href="css/LMContact.css">
@@ -37,11 +38,11 @@
 		<div class="lm-content">
 			<p class="commerce">官网联系方式 </p>
 			<div class="c-2">
-				<input type="text" class="userName" name="userName" value="" placeholder="姓名" maxlength="20">
-				<input type="text" class="email" name="email" value="" placeholder="邮箱" maxlength="35">
-				<input type="text" class="subject" name="subject" value="" placeholder="主题" maxlength="40">
+				<input type="text" class="userName" name="userName" value="" placeholder="姓名" maxlength="20" autocomplete="off">
+				<input type="text" class="email" name="email" value="" placeholder="邮箱" maxlength="35" autocomplete="off">
+				<input type="text" class="subject" name="subject" value="" placeholder="主题" maxlength="40" autocomplete="off">
 				<textarea class="message" placeholder="您要反馈的信息" maxlength="500"></textarea>
-				<button class="submitBtn" onClick="mailsome1()">提交</button>
+				<button class="submitBtn" onClick="mailsome1()"><span>提交</span> <div class="lm-loading-timer" style="top: 5px;left: 16px;display: none;"></button>
 			</div>
 			<div class="c-1">
 				<p class="p1"><img src="images/local-green.png"><span>柬埔寨金边市俄罗斯大道575号</span></p>

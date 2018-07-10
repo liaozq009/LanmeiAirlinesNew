@@ -838,10 +838,10 @@
   height: 60px;
   line-height: 60px;
   text-align: center;
-  background: #8ec060;
+  background: #1f2c5c;
   border-radius: 0 100px 100px 0;
-  -webkit-box-shadow: 0 0 20px 0 rgba(142, 192, 96, 0.8);
-  box-shadow: 0 0 20px 0 rgba(142, 192, 96, 0.8);
+  -webkit-box-shadow: 0 0 20px 0 rgba(31, 44, 92, 0.8);
+  box-shadow: 0 0 20px 0 rgba(31, 44, 92, 0.8);
   cursor: pointer;
   -webkit-transition: all .6s;
   transition: all .6s;
@@ -849,9 +849,9 @@
 .lm-pd-cart .pd-cart-wrapper .pd-cart-view:hover {
   -webkit-transition: all .6s;
   transition: all .6s;
-  background: #1f2c5c;
-  -webkit-box-shadow: 0 10px 10px 0 rgba(31, 44, 92, 0.5);
-  box-shadow: 0 10px 10px 0 rgba(31, 44, 92, 0.5);
+  background: #8ec060;
+  -webkit-box-shadow: 0 10px 10px 0 rgba(142, 192, 96, 0.5);
+  box-shadow: 0 10px 10px 0 rgba(142, 192, 96, 0.5);
 }
 .lm-pd-cart .pd-cart-wrapper .pd-cart-view .pd-cart-select-num {
   position: fixed;

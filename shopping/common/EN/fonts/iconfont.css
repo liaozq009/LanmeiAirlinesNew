@@ -86,6 +86,10 @@
   transition:all 0.5s;
 }
 
+.icon-wb,.icon-facebook{
+  font-size: 26px;
+}
+
 
 .pd-cart-detail .icon-back,.pd-cart-detail .icon-more,.pd-discount-more .icon-back,.pd-discount-more .icon-more,.pd-detail-select .icon-back,.pd-detail-select .icon-more{
   color: #1a1a1a;

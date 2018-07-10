@@ -16,10 +16,12 @@
 
 	<!-- 引入图标 -->
 	<link rel="icon" href="images/EN/lanmeiLogo.ico">
-	<link rel="stylesheet" type="text/css" href="libs/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../libs/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../common/EN/css/Lanmei-common.css">
+	<link rel="stylesheet" type="text/css" href="../libsEdit/css/lanmeiLibsEdit.css">
+	<link rel="stylesheet" type="text/css" href="libsEdit/css/LMShop-libs-edit.css">
 	<link rel="stylesheet" type="text/css" href="libs/slider/LM-hiSlider.css">
 	<link rel="stylesheet" type="text/css" href="libs/swiper/lm-swiper.css">
-	<link rel="stylesheet" type="text/css" href="libsEdit/css/LMShop-libs-edit.css">
 	<link rel="stylesheet" type="text/css" href="common/EN/fonts/iconfont.css">
 	<link rel="stylesheet" type="text/css" href="common/EN/css/LMShop-common.css">
 	<link rel="stylesheet" type="text/css" href="css/EN/LMShop.css">
@@ -44,46 +46,16 @@
 </head>
 <body>
 	<!-- 页面顶部 -->
-	<header class="lm-header">
-		<nav class="lanmeiNav">
-			<div class="lanmeiLogo">
-				<a class="navbar-brand" href="../index.html""><img src="images/EN/lanmeiLogo.png"></a>
-			</div>
-			<div class="lanmeiHeadInfo">
-				<ul class="">
-					<li>
-						<img src="images/EN/phone.png">
-						<span>+855 23881865（CAMBODIA）</span>
-					</li>
-					<li><a href="javascript:void(0)" class="btn loginBtn">LOGIN</a></li>
-					<li><a href="javascript:void(0)" class="btn REGISTEREDBtn">REGISTERED</a></li>
-				</ul>
-			</div>
-			<a href="#" class="mobile-menu"><img src="images/EN/mobile-menu.png"></a>
-			<a href="#" class="mobile-user"><img src="images/EN/mobile-user.png" class="m-user-btn"></a>
-		</nav>
+	<header class="lm-header lm-sub-header lm-subLogin-header"></header>
 
-		<!-- 菜单选择 -->
-		<div class="LMCompanyInfo">
-			<ul>
-				<li class="nth-child1">
-					<a href="#PLANTOTRAVEL">PLAN TO TRAVEL</a>
-				</li>
-				<li class="nth-child2">
-					<a href="#LANMEIMEMBERVS">LANMEI MEMBER CENTER</a>
-				</li>
-				<li class="nth-child3">
-					<a href="#LANMEICOMMUNITY">LANMEI COMMUNITY</a>
-				</li>
-				<li class="nth-child5">
-					<a href="#DUTYFERR">LANMEI DUTY FREE</a>
-				</li>
-				<li class="nth-child6">
-					<a href="#ABOUTUS">ABOUT US</a>
-				</li>
-			</ul>
-		</div>
-	</header>
+	<!-- 登录模态框 -->
+	<div class="modal fade" id="logonModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"></div>
+
+	<!-- 注册模态框 -->
+	<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"></div>
+
+	<!-- 忘记密码模态框 -->
+	<div class="modal fade" id="forgetModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"></div>
 
 	<!-- 轮播 -->
 	<ul class="LM-hiSlider hiSlider">
@@ -1186,81 +1158,25 @@
 	<div class="shopping-mask"></div>
 
 	<!-- 页脚 -->
-	<div class="lm-footer">
-		<div class="footerBg">
-			<div class="HelpfulInformation">
-				<p>Helpful Information</p>
-				<div class="languageSelectBox">
-					<span>Choose Your Language</span>
-					<div class="languageBox">
-						<a href="javascript:void(0)" class="languageSelect" style="border-color: transparent;">
-							<!-- <img src="images/EN/selectUSA.png"> -->
-							<span>English</span>
-							<!-- <span>简体中文</span> -->
-						</a>
-						<b class="ENbottomLine"></b>
-						<ul class="languageDownMenu">
-							<li class="nth-child2"><a href="index-zh.html"><span>China</span></a></li>
-							<li class="nth-child3"><a href="index.html"><span>English</span></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="contactUs">
-				<div class="nth-child1"><img src="images/EN/email.png"><span>lm-ec@lanmeiairlines.com</span></div>
-				<div class="nth-child2">
-					<span>FOLLOW</span>
-					<a href="https://www.facebook.com/lanmeiairlines/">
-						<i class="iconfont icon-facebook"></i>
-					</a>
-					<a href="#"><i class="iconfont icon-in"></i></a>
-					<a href="#"><i class="iconfont icon-inst"></i></a>
-					<a href="#"><i class="iconfont icon-youtube"></i></a>
-					<a href="#"><i class="iconfont icon-googleplus"></i></a>
-					<a href="http://weibo.com/lanmeiair"><i class="iconfont icon-wb"></i></a>
-					<a href="#"><i class="iconfont icon-tuite"></i></a>
-				</div>
-			</div>
-		    <div class="location">
-				<img src="images/EN/location.png"><a href="https://www.google.com.kh/maps/place/Lanmei+Airlines/@11.5637415,104.8830989,17z/data=!3m1!4b1!4m5!3m4!1s0x310951a3c5cdaf97:0x77359b117b2ff068!8m2!3d11.5637363!4d104.8852876" target="_Blank">No.575 D&E, Russian Federation Boulevard, Phnom Penh, Cambodia</a>
-			</div>
-			<div class="mobile-contactUs" style="display: none;">
-				<a href="https://www.facebook.com/lanmeiairlines/">
-					<i class="iconfont icon-facebook"></i>
-				</a>
-				<a href="#"><i class="iconfont icon-in"></i></a>
-				<a href="#"><i class="iconfont icon-inst"></i></a>
-				<a href="#"><i class="iconfont icon-youtube"></i></a>
-				<a href="#"><i class="iconfont icon-googleplus"></i></a>
-				<a href="http://weibo.com/lanmeiair"><i class="iconfont icon-wb"></i></a>
-				<a href="#"><i class="iconfont icon-tuite"></i></a>
-			</div>
-			<div class="LanmeiAirlinesBerhad">
-				<a href="index.html"><img src="images/EN/lanmeiFooterLogo.png"></a>
-				<div>
-					<p class="p1">Terms of Use | Privacy Policy | Cookies</p>
-					<p class="p2">© Copyright 2017 Lanmei Airlines. All Rights Reserved. ICP: Guangdong Province <a href="http://www.miitbeian.gov.cn" target="_Blank" rel=“nofollow”>ICP-17005494-1</a></p>
-				</div>
-			</div>
-		</div>
-	</div>
+	<footer class="lm-footer"></footer>
 
 	<!-- 回到顶部 -->
-	<div class="lm-toTop">
-		<!-- <img src="images/EN/ToTop-icon.png" class="img01"> -->
-		<img src="images/EN/ToTop-icon-active.png" class="img02">
-		<p>UP</p>
-	</div>
+	<div class="BackToTop"></div>
 
 	<!-- 第三方库-->
-	<script type="text/javascript" src="libs/jQuery/jquery-1.11.3.js"></script>
-	<script type="text/javascript" src="libs/layer/layer.js"></script>
-	<script type="text/javascript" src="libs/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../libs/jQuery/jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="../libs/jQuery/jquery.cookie.js"></script>
+	<script type="text/javascript" src="../libs/layer/layer.js"></script>
+	<script type="text/javascript" src="../libs/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../libs/auto-complete-mail.js"></script>
 	<script type="text/javascript" src="libs/slider/LM-hiSlider.js"></script>
 	<script type="text/javascript" src="libs/shopfly/shop-fly.js"></script>
 	<script type="text/javascript" src="libs/swiper/lm-swiper.min.js"></script>
 	<script type="text/javascript" src="libs/fastclick-master/fastclick.js"></script>
 	<!-- 公共JS -->
+	<script type="text/javascript" src="../common/EN/js/head-footer.js"></script>
+	<script type="text/javascript" src="../common/EN/js/Lanmei-common.js"></script>
+	<script type="text/javascript" src="../common/EN/js/login-register.js"></script>
 	<script type="text/javascript" src="common/EN/js/LMShop-common.js"></script>
 	<!-- 业务代码 -->
 	<script type="text/javascript" src="js/EN/LMShop.js"></script>

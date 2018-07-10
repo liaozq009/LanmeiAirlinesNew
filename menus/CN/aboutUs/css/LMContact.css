@@ -106,6 +106,9 @@
   outline: none;
   border: none;
 }
+.lm-section .lm-content .c-2 .submitBtn span {
+  color: #fff;
+}
 .lm-section .lm-content .c-2 .submitBtn:hover {
   background: #8ec060;
 }

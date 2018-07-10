@@ -24,7 +24,6 @@
 
 .hiSlider-btn-prev{
     position: absolute;
-    z-index: 99;
     top: 50%;
     left: 160px;
     height: 250px;
@@ -41,7 +40,6 @@
 }
 .hiSlider-btn-next{
     position: absolute;
-    z-index: 99;
     top: 50%;
     right: 160px;
     height: 250px;

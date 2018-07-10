@@ -28,12 +28,3 @@
   width: 30px;
   height: 4px;
 }
-/* layer样式 */
-body .layui-layer-btn .layui-layer-btn0 {
-  border-color: #8ec060;
-  background-color: #8ec060;
-}
-body .layui-layer-title {
-  background-color: #8ec060;
-  color: #fff;
-}

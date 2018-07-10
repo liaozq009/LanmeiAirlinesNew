@@ -2,6 +2,7 @@
 var LMBaggage = {
     fNumberData: LMComData.fNumberData,
     init: function () {
+
         var $dropdownMenu = $('.dropdownMenu-wrap');
         // 航班号
         $.each(this.fNumberData,function(i,val){

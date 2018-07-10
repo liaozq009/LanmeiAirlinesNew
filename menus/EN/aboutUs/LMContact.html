@@ -16,6 +16,7 @@
 	<link rel="stylesheet" type="text/css" href="../../../common/EN/fonts/lm-iconfont.css">
 	<link rel="stylesheet" type="text/css" href="../../../common/EN/css/animate.css">
 	<link rel="stylesheet" type="text/css" href="../../../common/EN/css/Lanmei-common.css">
+	<link rel="stylesheet" type="text/css" href="../../../libs/loading/lm-loading.css">
 	<link rel="stylesheet" type="text/css" href="../../../libsEdit/css/lanmeiLibsEdit.css">
 	<link rel="stylesheet" type="text/css" href="../common/menu-common.css">
 	<link rel="stylesheet" type="text/css" href="css/LMContact.css">
@@ -39,11 +40,12 @@
 		<div class="lm-content">
 			<h2 class="commerce">Website Contact</h2>
 			<div class="c-2">
-				<input type="text" class="userName" name="userName" value="" placeholder="Your Name" maxlength="50">
-				<input type="text" class="email" name="email" value="" placeholder="Your Email" maxlength="50">
-				<input type="text" class="subject" name="subject" value="" placeholder="subject" maxlength="50">
+				<input type="text" class="userName" name="userName" value="" placeholder="Your Name" maxlength="50" autocomplete="off">
+				<input type="text" class="email" name="email" value="" placeholder="Your Email" maxlength="50" autocomplete="off">
+				<input type="text" class="subject" name="subject" value="" placeholder="subject" maxlength="50" autocomplete="off">
 				<textarea class="message" placeholder="Your Feedback" maxlength="500"></textarea>
-				<button class="submitBtn" onClick="mailsome1()">Submit</button>
+				<!-- <button class="submitBtn" onClick="mailsome1()">Submit</button> -->
+				<button class="submitBtn" onClick="mailsome1()"><span>Submit</span> <div class="lm-loading-timer" style="top: 5px;left: 16px;display: none;"></div></button>
 			</div>
 			<div class="c-1">
 				<p class="p1"><img src="images/local-green.png"><span>No.575 D&E, Russian Federation Boulevard, Phnom Penh, Cambodia</span></p>
