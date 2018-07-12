@@ -4,6 +4,7 @@ var LMShopCommon = {
 		this.navbarSilder();
 		this.getTop();
 		this.pdModelSlider();
+		this.pdSliderEvent();
 		this.pdDeatil();
 		this.otherEvent();
 	},
@@ -47,16 +48,12 @@ var LMShopCommon = {
 
 	/* 商品尺寸选择滚动 */
 	pdModelSlider:function(){
-
+		
 		var that = this;
-		var pdSlider2 = function(ulBox,prev,next,id){
-
-			that.fastClick($(next));
-			that.fastClick($(prev));
-			that.fastClick($(ulBox+' ul li'));
-
+		var pdSlider2 = function(ulBox,id){
 			// 初始化大容器ul宽度
 			var $ul = $(ulBox+'>ul');
+			console.log($ul);
 			$.each($ul,function(i,v){
 				if(id=='width'){
 					$(v).width($(v).children('li').length * $(v).children('li').width()); //ul宽度
@@ -66,7 +63,17 @@ var LMShopCommon = {
 
 				$(v).children('.n2').addClass('active');  // 默认激活
 			});
+		};
 
+		pdSlider2('.img-small-select-box','height'); //放大镜的小图切换
+		
+		pdSlider2('.pd-model-main','width'); //商品类型切换
+	},
+
+	pdSliderEvent:function(){
+		var that = this;
+		
+		var pdSliderEvent = function(ulBox,prev,next,id){
 			// 大小图src切换
 			var imgSrc = function($li){
 				var src = $li.children('img').attr('src');
@@ -164,10 +171,10 @@ var LMShopCommon = {
 					// page++;
 				}
 			});
-		};
+		}
 
-		pdSlider2('.img-small-select-box','.pd-img-large-lf .prev-img','.pd-img-large-lf .next-img','height'); //放大镜的小图切换
-		pdSlider2('.pd-model-main','.pd-silder-select .prev-arrow-model','.pd-silder-select .next-arrow-model','width'); //商品类型切换
+		pdSliderEvent('.img-small-select-box','.pd-img-large-lf .prev-img','.pd-img-large-lf .next-img','height'); //放大镜的小图切换
+		pdSliderEvent('.pd-model-main','.pd-silder-select .prev-arrow-model','.pd-silder-select .next-arrow-model','width'); //商品类型切换
 
 		// 商品点击后
 		$('.pd-cart-detail-wrapper').on('click','.img-small-select li',function(){

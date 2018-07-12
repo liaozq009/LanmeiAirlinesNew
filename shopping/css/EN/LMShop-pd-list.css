@@ -82,10 +82,11 @@
 .lm-container .pd-list-wrap .pd-list-inner > li .pd-img {
   width: 100%;
   height: 220px;
+  padding: 10px;
 }
 .lm-container .pd-list-wrap .pd-list-inner > li .pd-img img {
   width: 100%;
-  height: 220px;
+  height: 100%;
 }
 .lm-container .pd-list-wrap .pd-list-inner > li .pd-slider-title {
   height: 53px;

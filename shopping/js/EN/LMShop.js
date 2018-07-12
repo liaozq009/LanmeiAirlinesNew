@@ -372,6 +372,27 @@ var LMShop = {
 			}
 		});
 
+		//选择收获地址
+		function initAddress(){
+			$('.address-edit-btn,.address-edit-btn-OK,.pd-cart-address-detail,.pd-cart-address-1 .pd-address-perInfo,.pd-cart-address-add,.pd-cart-address-edit').hide();
+			$('.pd-cart-address-1').show();
+			$('.pd-cart-address-1 .pd-address-detail').html('No.575 D&E, Russian Federation Boulevard, Phnom Penh, Cambodia');
+		}
+		initAddress();
+		$('.pd-select-address .dropdown-menu a').on('click', function(e) {
+			e.preventDefault();
+			$('.pd-select-address .btn .s1').html($(this).text());
+			var data = $(this).attr('data-country');
+			switch (data) {
+				case 'Cambodia':
+					initAddress();
+					break;
+				case 'China':
+					$('.address-edit-btn').show();
+					break;
+			}
+		});
+
 		// 编辑地址
 		var addressEdit = true;
 		$('.pd-cart-address-title .address-edit-btn').click(function(e){
