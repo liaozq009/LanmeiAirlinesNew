@@ -49,44 +49,42 @@
   height: 50px;
   margin: 0 auto;
   padding-top: 50px;
-  background-image: -webkit-gradient(linear, left top, right top, from(#8ec060), to(#1f2c5c));
-  background-image: linear-gradient(90deg, #8ec060 0%, #1f2c5c 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1, startColorstr="#8ec060", endColorstr="#1f2c5c");
+  background: #fff;
   -webkit-box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.3);
   box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.3);
-  border-radius: 100px;
+  border-radius: 2px;
 }
 .lm-container .pd-container .pd-inner .pd-search img {
   position: absolute;
   top: 13px;
-  left: 44px;
+  left: 20px;
   cursor: pointer;
 }
 .lm-container .pd-container .pd-inner .pd-search input {
   position: absolute;
-  top: 9px;
-  left: 84px;
+  top: 12px;
+  left: 60px;
   width: 90px;
   height: 30px;
   font-size: 20px;
-  color: #fff;
+  color: #808080;
   background: transparent;
 }
 .lm-container .pd-container .pd-inner .pd-search ::-webkit-input-placeholder {
   /* WebKit browsers */
-  color: #fff;
+  color: #ccc;
 }
 .lm-container .pd-container .pd-inner .pd-search :-moz-placeholder {
   /* Mozilla Firefox 4 to 18 */
-  color: #fff;
+  color: #ccc;
 }
 .lm-container .pd-container .pd-inner .pd-search ::-moz-placeholder {
   /* Mozilla Firefox 19+ */
-  color: #fff;
+  color: #ccc;
 }
 .lm-container .pd-container .pd-inner .pd-search :-ms-input-placeholder {
   /* Internet Explorer 10+ */
-  color: #fff;
+  color: #ccc;
 }
 .lm-container .pd-container .pd-inner .pd-title {
   font-weight: bold;
@@ -120,7 +118,7 @@
 .lm-container .pd-container .pd-inner .pd-detail .pd-detail-right > h2 a {
   font-size: 30px;
   font-weight: bold;
-  color: #ffffff;
+  color: #fff;
 }
 .lm-container .pd-container .pd-inner .pd-detail .pd-detail-right .pd-price {
   margin-top: 30px;
@@ -129,7 +127,7 @@
 .lm-container .pd-container .pd-inner .pd-detail .pd-detail-right .pd-price .old-price {
   text-decoration: line-through;
   font-size: 20px;
-  color: #ccc;
+  color: #808080;
 }
 .lm-container .pd-container .pd-inner .pd-detail .pd-detail-right .pd-price .new-price {
   font-size: 30px;
@@ -163,10 +161,12 @@
   outline: none;
   font-size: 14px;
   color: #fff;
-  background: #8ec060;
-  -webkit-box-shadow: 0 10px 10px 0 rgba(142, 192, 96, 0.5);
-  box-shadow: 0 10px 10px 0 rgba(142, 192, 96, 0.5);
-  border-radius: 100px;
+  background: #42958a;
+  background: -webkit-linear-gradient(left, #42958a 0%, #1f2c5c 100%);
+  background: -o-linear-gradient(right, #42958a 0%, #1f2c5c 100%);
+  background: -moz-linear-gradient(right, #42958a 0%, #1f2c5c 100%);
+  background: linear-gradient(to right, #42958a 0%, #1f2c5c 100%);
+  border-radius: 2px;
   margin-top: 10px;
 }
 .lm-container .pd-slider {
@@ -191,6 +191,18 @@
 .lm-container .pd-slider .pd-slider-title .pd-slider-more a {
   font-size: 14px;
   color: #fff;
+  transition: color .3s;
+  -webkit-transition: color .3s;
+}
+.lm-container .pd-slider .pd-slider-title .pd-slider-more a:hover {
+  color: #8ec060;
+  transition: color .3s;
+  -webkit-transition: color .3s;
+}
+.lm-container .pd-slider .pd-slider-title .pd-slider-more a:hover i {
+  color: #8ec060;
+  transition: color .3s;
+  -webkit-transition: color .3s;
 }
 .lm-container .pd-slider .pd-slider-main {
   width: 100%;
@@ -228,6 +240,14 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   padding: 0 10px;
+  transition: color .3s;
+  -webkit-transition: color .3s;
+}
+.lm-container .pd-slider .pd-slider-main .pd-slider-large > ul > li .pd-slider-title > a:hover,
+.lm-container .pd-slider .pd-slider-main .pd-slider-large > ul > li .pd-slider-title > p:hover {
+  color: #8ec060;
+  transition: color .3s;
+  -webkit-transition: color .3s;
 }
 .lm-container .pd-slider .pd-slider-main .pd-slider-large > ul > li .pd-slider-title > a {
   display: inline-block;
@@ -250,7 +270,7 @@
 }
 .lm-container .pd-slider .pd-slider-main .pd-slider-large > ul > li .pd-slider-cart .pd-slider-price .old-price {
   font-size: 14px;
-  color: #cccccc;
+  color: #ccc;
   text-decoration: line-through;
   margin-left: 12px;
 }
@@ -260,9 +280,9 @@
   height: 60px;
   line-height: 60px;
   text-align: center;
-  background: #8ec060;
-  -webkit-box-shadow: 0 0 20px 0 rgba(142, 192, 96, 0.8);
-  box-shadow: 0 0 20px 0 rgba(142, 192, 96, 0.8);
+  background: #1f2c5c;
+  -webkit-box-shadow: 0 0 20px 0 rgba(31, 44, 92, 0.8);
+  box-shadow: 0 0 20px 0 rgba(31, 44, 92, 0.8);
   cursor: pointer;
 }
 .lm-container .pd-slider .pd-slider-main .pd-slider-large > ul > li .pd-slider-cart .pd-detail-select {
@@ -348,10 +368,8 @@
   font-size: 14px;
   color: #fff;
   font-weight: bold;
-  background: #8ec060;
-  -webkit-box-shadow: 0 10px 20px 0 rgba(142, 192, 96, 0.5);
-  box-shadow: 0 10px 20px 0 rgba(142, 192, 96, 0.5);
-  border-radius: 100px;
+  background: #1f2c5c;
+  border-radius: 2px;
 }
 .lm-container .pd-slider .pd-slider-main .pd-slider-large > ul > li .pd-slider-cart .pd-detail-select .pd-add-cart .pd-detail-smallImg {
   float: left;
@@ -373,6 +391,7 @@
   top: 4px;
   display: inline-block;
   width: 20px;
+  text-align: center;
   font-size: 18px;
   margin: 0 28px;
 }
@@ -380,6 +399,7 @@
   display: inline-block;
   width: 20px;
   height: 20px;
+  vertical-align: middle;
 }
 .lm-container .pd-slider .pd-slider-main .pd-slider-large > ul > li .pd-slider-cart .pd-detail-select .pd-model-num .pd-num-change a i {
   cursor: pointer;
@@ -622,19 +642,23 @@
 }
 /* PC端增加hover事件 */
 @media screen and (min-width: 1100px) {
+  .pd-detail-right > h2 a {
+    transition: color .3s;
+    -webkit-transition: color .3s;
+  }
   .pd-detail-right > h2 a:hover {
     color: #8ec060 !important;
+    transition: color .3s;
+    -webkit-transition: color .3s;
   }
   .pd-add-cart-rt button {
     -webkit-transition: all 1s;
     transition: all 1s;
   }
   .pd-add-cart-rt button:hover {
+    background: #8ec060 !important;
     -webkit-transition: all 1s;
     transition: all 1s;
-    background: #1f2c5c !important;
-    -webkit-box-shadow: 0 10px 10px 0 rgba(31, 44, 92, 0.5) !important;
-    box-shadow: 0 10px 10px 0 rgba(31, 44, 92, 0.5) !important;
   }
   .pd-add-cart-img {
     -webkit-transition: all 1s;
@@ -643,9 +667,9 @@
   .pd-add-cart-img:hover {
     -webkit-transition: all 1s;
     transition: all 1s;
-    background: #1f2c5c !important;
-    -webkit-box-shadow: 0 10px 20px 0 rgba(31, 44, 92, 0.5) !important;
-    box-shadow: 0 10px 20px 0 rgba(31, 44, 92, 0.5) !important;
+    background: #8ec060 !important;
+    -webkit-box-shadow: 0 10px 20px 0 rgba(142, 192, 96, 0.5) !important;
+    box-shadow: 0 10px 20px 0 rgba(142, 192, 96, 0.5) !important;
   }
 }
 @media screen and (max-width: 992px), (max-device-width: 992px) {
@@ -750,59 +774,6 @@
   }
   .hiSlider-wrap .hiSlider-pages .active {
     background: #8ec060;
-  }
-  .m-nav-menu {
-    position: fixed;
-    top: 0px;
-    left: -100%;
-    z-index: 99;
-    width: 80%;
-    height: 100%;
-    background: #fff;
-  }
-  .m-nav-menu .m-nav-menu-close {
-    height: 0.44rem;
-    line-height: 0.44rem;
-    padding-left: 0.18rem;
-    border-bottom: 1px solid #8ec060;
-  }
-  .m-nav-menu .m-nav-menu-close i {
-    font-size: 0.16rem;
-  }
-  .m-nav-menu .m-nav-list li {
-    height: 0.4rem;
-    line-height: 0.4rem;
-    padding-left: 0.3rem;
-  }
-  .m-nav-menu .m-nav-list li a {
-    font-size: 0.12rem;
-    color: #1f2c5c;
-  }
-  .m-nav-menu .m-nav-list li .icon-cart {
-    font-size: 0.16rem;
-    margin-right: 0.1rem;
-  }
-  .m-nav-menu .m-nav-list li .pd-cart-select-num {
-    float: right;
-    width: 0.2rem;
-    height: 0.2rem;
-    line-height: 0.2rem;
-    text-align: center;
-    background: #d0011b;
-    color: #fff;
-    font-size: 0.12rem;
-    border-radius: 100%;
-    margin-top: 0.12rem;
-    margin-right: 0.3rem;
-  }
-  .m-nav-mask {
-    position: fixed;
-    top: 0px;
-    left: 0;
-    z-index: 98;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
   }
   .lm-container {
     width: 100%;
@@ -1013,7 +984,7 @@
   }
   .lm-container .m-swiper-container .m-swiper-wrapper .m-swiper-slide .pd-slider-cart .pd-slider-price .old-price {
     font-size: 0.1rem;
-    color: #cccccc;
+    color: #808080;
     text-decoration: line-through;
     margin-left: 0.04rem;
   }

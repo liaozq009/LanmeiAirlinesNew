@@ -53,7 +53,6 @@ var LMShopCommon = {
 		var pdSlider2 = function(ulBox,id){
 			// 初始化大容器ul宽度
 			var $ul = $(ulBox+'>ul');
-			console.log($ul);
 			$.each($ul,function(i,v){
 				if(id=='width'){
 					$(v).width($(v).children('li').length * $(v).children('li').width()); //ul宽度

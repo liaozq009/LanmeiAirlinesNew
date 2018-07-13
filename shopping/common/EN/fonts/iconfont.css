@@ -1,72 +1,114 @@
-
-@font-face {font-family: "iconfont";
-  src: url('iconfont.eot?t=1499913357038'); /* IE9*/
-  src: url('iconfont.eot?t=1499913357038#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('iconfont.woff?t=1499913357038') format('woff'), /* chrome, firefox */
-  url('iconfont.ttf?t=1499913357038') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
-  url('iconfont.svg?t=1499913357038#iconfont') format('svg'); /* iOS 4.1- */
+@font-face {
+  font-family: 'icomoon';
+  src:  url('icomoon.eot?ic112i');
+  src:  url('icomoon.eot?ic112i#iefix') format('embedded-opentype'),
+    url('icomoon.ttf?ic112i') format('truetype'),
+    url('icomoon.woff?ic112i') format('woff'),
+    url('icomoon.svg?ic112i#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 
-.iconfont {
-  font-family:"iconfont" !important;
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
   font-size:16px;
-  font-style:normal;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  display: inline-block;
 }
 
-
-.icon-back:before { content: "\e697"; }
-
-.icon-close:before { content: "\e69a"; }
-
-.icon-less:before { content: "\e6a5"; }
-
-.icon-moreunfold:before { content: "\e6a6"; }
-
-.icon-more:before { content: "\e6a7"; }
-
-.icon-refresh:before { content: "\e6aa"; }
-
-.icon-search:before { content: "\e6ac"; }
-
-.icon-feijizhizao:before { content: "\e617"; }
-
-.icon-jiahao:before { content: "\e63b"; }
-
-.icon-googleplus:before { content: "\e721"; }
-
-.icon-fangxiang-copy:before { content: "\e60f"; }
-
-.icon-dianhua:before { content: "\e6c4"; }
-
-.icon-tuite:before { content: "\e601"; }
-
-.icon-youtube:before { content: "\e6ae"; }
-
-.icon-inst:before { content: "\e656"; }
-
-.icon-xiangshang:before { content: "\e650"; }
-
-.icon-xiangshang-copy:before { content: "\e651"; }
-
-.icon-xiangshang-copy-copy:before { content: "\e652"; }
-
-.icon-xiangshang-copy-copy-copy:before { content: "\e653"; }
-
-.icon-gouwuche:before { content: "\e664"; }
-
-.icon-wb:before { content: "\e602"; }
-
-.icon-facebook:before { content: "\e606"; }
-
-.icon-in:before { content: "\e64b"; }
-
-.icon-fangxiang-copy1:before { content: "\e502"; }
-
-.icon-jianhao:before { content: "\e607"; }
-
+.icon-email:before {
+  content: "\e903";
+}
+.icon-local:before {
+  content: "\e902";
+}
+.icon-x:before {
+  content: "\78";
+}
+.icon-back:before {
+  content: "\e697";
+}
+.icon-close:before {
+  content: "\e69a";
+}
+.icon-less:before {
+  content: "\e6a5";
+}
+.icon-moreunfold:before {
+  content: "\e6a6";
+}
+.icon-more:before {
+  content: "\e6a7";
+}
+.icon-refresh:before {
+  content: "\e6aa";
+}
+.icon-search:before {
+  content: "\e6ac";
+}
+.icon-feijizhizao:before {
+  content: "\e617";
+}
+.icon-jiahao:before {
+  content: "\e63b";
+}
+.icon-googleplus:before {
+  content: "\e721";
+}
+.icon-fangxiang-copy:before {
+  content: "\e60f";
+}
+.icon-dianhua:before {
+  content: "\e6c4";
+}
+.icon-tuite:before {
+  content: "\e601";
+}
+.icon-youtube:before {
+  content: "\e6ae";
+}
+.icon-inst:before {
+  content: "\e656";
+}
+.icon-xiangshang:before {
+  content: "\e650";
+}
+.icon-xiangshang-copy:before {
+  content: "\e651";
+}
+.icon-xiangshang-copy-copy:before {
+  content: "\e652";
+}
+.icon-xiangshang-copy-copy-copy:before {
+  content: "\e653";
+}
+.icon-gouwuche:before {
+  content: "\e664";
+}
+.icon-wb:before {
+  content: "\e602";
+}
+.icon-facebook:before {
+  content: "\e606";
+}
+.icon-in:before {
+  content: "\e64b";
+}
+.icon-fangxiang-copy1:before {
+  content: "\e502";
+}
+.icon-jianhao:before {
+  content: "\e607";
+}
 
 /* add css */
 .icon-back,.icon-more{
@@ -89,6 +131,18 @@
 .icon-wb,.icon-facebook{
   font-size: 26px;
 }
+
+.icon-local{
+  font-size: 16px;
+  display: inline-block;
+  vertical-align: top;
+}
+.icon-email{
+  font-size: 20px;
+  display: inline-block;
+  vertical-align: top;
+}
+
 
 
 .pd-cart-detail .icon-back,.pd-cart-detail .icon-more,.pd-discount-more .icon-back,.pd-discount-more .icon-more,.pd-detail-select .icon-back,.pd-detail-select .icon-more{
@@ -144,4 +198,3 @@
     color:#8ec060;
   }
 }
-
