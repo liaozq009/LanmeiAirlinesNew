@@ -184,7 +184,11 @@ var LMShop = {
 				$lmPdCart.animate({left:"-"+sildeWidth},300);
 				$pdCartTitle.animate({left:"-"+sildeWidth},300);
 				$pdCartPriceBox.animate({left:"-"+sildeWidth},300,function(){
-					$('.lm-pd-cart .pd-cart-view').animate({left:"0px"},300).children('.pd-cart-select-num').animate({left:"66px"},800);
+					if(winWidth>767){
+						$('.lm-pd-cart .pd-cart-view').animate({left:"0px"},300).children('.pd-cart-select-num').animate({left:"66px"},800);
+					}else{
+						$('.lm-pd-cart .pd-cart-view').animate({left:"0px"},300).children('.pd-cart-select-num').animate({left:"36px"},800);
+					}
 				});
 				// 商品详情和地址页面隐藏
 				$('.pd-cart-detail-wrapper>div,.pd-cart-pay-wrapper').hide('slow');
@@ -198,7 +202,12 @@ var LMShop = {
 			$shopMask.show();
 
 			pdBoxSlider();
-			$(this).animate({left:"-90px"},300).children('.pd-cart-select-num').animate({left:"-66px"},800);
+
+			if(winWidth>767){
+				$(this).animate({left:"-90px"},300).children('.pd-cart-select-num').animate({left:"-66px"},800);
+			}else{
+				$(this).animate({left:"-90px"},300).children('.pd-cart-select-num').animate({left:"-36px"},800);
+			}
 		});
 
 		// 点击加入购物车
@@ -484,6 +493,16 @@ var LMShop = {
 		$('.address-cancel').click(function(){ //取消
 			addHide();
 		});
+
+		// 选择支付方式
+		$('.pd-cart-ok').click(function(){
+			$('#payModal').modal();
+		});
+		$('.js-pay-select>a').click(function(event) {
+		    $(this).addClass('active').siblings('a').removeClass('active');
+		    var dataPay = $(this).attr('data-pay');
+		    $('.js-pay-method').val(dataPay);
+		});
 	},
 
 	/* 点击支付 */
@@ -514,7 +533,7 @@ var LMShop = {
 		this.fastClick($('.pd-search input'));
 		$('.pd-search input').click(function(event) {
 			$(this).parent().animate({width: '60%'}, 'slow');
-			$(this).animate({width: '46%'}, 'slow');
+			$(this).animate({width: '80%'}, 'slow');
 		});
 	},
 

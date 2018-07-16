@@ -524,9 +524,9 @@
   font-size: 14px;
   color: #fff;
   font-weight: bold;
-  background: #8ec060;
-  -webkit-box-shadow: 0 10px 20px 0 rgba(142, 192, 96, 0.5);
-  box-shadow: 0 10px 20px 0 rgba(142, 192, 96, 0.5);
+  background: #1f2c5c;
+  -webkit-box-shadow: 0 10px 20px 0 rgba(31, 44, 92, 0.5);
+  box-shadow: 0 10px 20px 0 rgba(31, 44, 92, 0.5);
   border-radius: 2px;
   transition: all .3s;
   -webkit-transition: all .3s;
@@ -1061,6 +1061,64 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
 }
+.pay-content {
+  margin-top: 30px;
+  padding: 0 10px 20px;
+  overflow: hidden;
+}
+.pay-content .pay-select {
+  float: left;
+  width: 100%;
+  text-align: center;
+}
+.pay-content .pay-select > a {
+  display: inline-block;
+  width: 176px;
+  height: 80px;
+}
+.pay-content .AliPay {
+  background: url('../../../../images/EN/AliPay.png') center no-repeat;
+  background-size: 176px;
+}
+.pay-content .AliPay.active {
+  background: url('../../../../images/EN/AliPay-active.png') center no-repeat;
+  background-size: 176px;
+}
+.pay-content .PayPal {
+  background: url('../../../../images/EN/PayPal.png') center no-repeat;
+  margin-right: 10px;
+  background-size: 176px;
+}
+.pay-content .PayPal.active {
+  background: url('../../../../images/EN/PayPal-active.png') center no-repeat;
+  margin-right: 10px;
+  background-size: 176px;
+}
+.pay-content .pay-catering {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  float: right;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 20px;
+  color: #fff;
+  border-radius: 2px;
+  background: #1f2c5c;
+  transition: background .3s;
+  -webkit-transition: background .3s;
+}
+.pay-content .pay-catering:hover {
+  background: #8ec060;
+  transition: background .3s;
+  -webkit-transition: background .3s;
+}
+#payModal .modal-dialog .modal-content .modal-body .loginTitle {
+  font-size: 24px;
+}
+#payModal {
+  z-index: 999999999;
+}
 /* 移动端新增代码 */
 .mobile-menu,
 .mobile-user {
@@ -1121,8 +1179,9 @@
     display: block;
     position: absolute;
     left: 0.15rem;
-    top: 0;
+    top: .1rem;
     font-size: 0.16rem;
+    font-weight: normal;
   }
   .lm-pd-cart .pd-cart-wrapper .pd-cart-title .pd-cart-details {
     position: absolute;
@@ -1170,7 +1229,7 @@
     display: block;
     position: absolute;
     left: 0.15rem;
-    top: 0;
+    top: .1rem;
     font-size: 0.16rem;
   }
   .lm-pd-cart .pd-cart-detail-wrapper .pd-cart-detail .pd-img-large {
@@ -1218,7 +1277,9 @@
     margin: 0 20px;
   }
   .lm-pd-cart .pd-cart-detail-wrapper .pd-cart-detail .pd-add-cart {
+    position: relative;
     margin-top: 0.14rem;
+    overflow: hidden;
   }
   .lm-pd-cart .pd-cart-detail-wrapper .pd-cart-detail .pd-add-cart .pd-price {
     padding: 0 0.16rem;
@@ -1231,7 +1292,7 @@
     font-size: 0.15rem;
   }
   .lm-pd-cart .pd-cart-detail-wrapper .pd-cart-detail .pd-add-cart .pd-add-cart-lf {
-    margin-top: 0.14rem;
+    margin-top: 0.2rem;
     margin-left: 0;
   }
   .lm-pd-cart .pd-cart-detail-wrapper .pd-cart-detail .pd-add-cart .pd-add-cart-lf p {
@@ -1239,7 +1300,7 @@
     font-size: 0.1rem;
   }
   .lm-pd-cart .pd-cart-detail-wrapper .pd-cart-detail .pd-add-cart .pd-add-cart-rt {
-    position: fixed;
+    position: relative;
     bottom: 0;
     margin-left: 0;
     width: 100%;
@@ -1251,5 +1312,59 @@
     margin-top: 20px;
     border-radius: 0;
     font-size: 0.14rem;
+  }
+  .lm-pd-cart .pd-cart-pay-wrapper {
+    left: 0;
+    width: 100%;
+  }
+  .lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-way {
+    left: 0;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-inner .pd-cart-pay-address .pd-cart-address-inner .pd-cart-address-detail {
+    height: auto;
+  }
+  .lm-pd-cart .pd-cart-pay-wrapper {
+    padding: .1rem;
+  }
+  .lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-inner .pd-cart-pay-address {
+    padding: 0;
+  }
+  .lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-inner .pd-cart-pay-address .pd-cart-address-more {
+    width: 100%;
+    margin-left: 0;
+  }
+  .lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-way {
+    padding-left: .1rem;
+  }
+  .lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-way .pd-cart-ok {
+    margin-right: .1rem;
+  }
+  .lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-title .pd-close {
+    right: 0;
+  }
+  .lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-title {
+    margin-bottom: 30px;
+  }
+  .lm-pd-cart .pd-cart-wrapper .pd-cart-title {
+    height: 40px;
+    line-height: 40px;
+  }
+  .lm-pd-cart .pd-cart-wrapper .pd-cart-view {
+    width: 45px;
+    height: 30px;
+    line-height: 30px;
+  }
+  .lm-pd-cart .pd-cart-wrapper .pd-cart-view img {
+    width: 18px;
+  }
+  .lm-pd-cart .pd-cart-wrapper .pd-cart-view .pd-cart-select-num {
+    left: 36px;
+    width: 16px;
+    height: 16px;
+    line-height: 18px;
+    font-size: 12px;
   }
 }

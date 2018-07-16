@@ -680,75 +680,6 @@
   ::-webkit-scrollbar-track {
     width: 0px;
   }
-  .pd-cart-view {
-    display: none;
-  }
-  .lm-header {
-    width: 100%;
-    height: 0.8rem;
-    background: url("../../images/EN/navbarBg768.png") center no-repeat;
-    background-size: 100% 100%;
-  }
-  .lm-header .lanmeiNav {
-    position: relative;
-    width: 100%;
-    height: 0.44rem;
-    border: none;
-    padding: 0 0.1rem;
-  }
-  .lm-header .lanmeiNav .lanmeiHeadInfo {
-    display: none;
-  }
-  .lm-header .lanmeiNav .lanmeiLogo {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-left: -0.55rem;
-    margin-top: -0.15rem;
-    width: 1.1rem;
-    height: 0.42rem;
-    line-height: 0.42rem;
-    float: none;
-  }
-  .lm-header .lanmeiNav .lanmeiLogo .navbar-brand {
-    height: 0.42rem;
-    padding: 0;
-  }
-  .lm-header .lanmeiNav .lanmeiLogo .navbar-brand img {
-    width: 1.1rem;
-  }
-  .lm-header .lanmeiNav .mobile-menu,
-  .lm-header .lanmeiNav .mobile-user {
-    width: 0.3rem;
-    height: 0.3rem;
-    margin-top: 0.1rem;
-    display: block;
-  }
-  .lm-header .lanmeiNav .mobile-menu img {
-    width: 0.2rem;
-  }
-  .lm-header .lanmeiNav .mobile-user img {
-    width: 0.3rem;
-  }
-  .lm-header .LMCompanyInfo {
-    display: none;
-  }
-  .lm-header .sliderInfo {
-    width: 100%;
-    height: 30px;
-    line-height: 30px;
-    margin-top: 16px;
-  }
-  .lm-header .sliderInfo ul.line {
-    width: 180px;
-  }
-  .lm-header .sliderInfo ul.line li {
-    text-indent: 2px;
-    font-size: 14px;
-  }
-  .lm-header .sliderInfo > p {
-    font-size: 14px;
-  }
   .LM-hiSlider .m-banner {
     display: block;
   }
@@ -809,6 +740,7 @@
     width: 1rem;
     height: 0.26rem;
     padding-top: 0;
+    margin-top: .2rem;
   }
   .lm-container .pd-container .pd-inner .pd-search img {
     width: 0.12rem;
@@ -823,11 +755,11 @@
     font-size: 0.1rem;
   }
   .lm-container .pd-container .pd-inner .pd-title {
-    margin-top: 0.2rem;
+    margin-top: 0.3rem;
     font-size: 0.15rem;
   }
   .lm-container .pd-container .pd-inner .pd-detail {
-    margin-top: .2rem;
+    margin-top: .2rem !important;
   }
   .lm-container .pd-container .pd-inner .pd-detail .pd-detail-left {
     width: 100%;
@@ -837,21 +769,16 @@
     width: 100%;
     text-align: center;
   }
-  .lm-container .pd-container .pd-inner .pd-detail .pd-detail-left a img {
-    width: 100%;
-  }
   .lm-container .pd-container .pd-inner .pd-detail .pd-detail-right {
     width: 100%;
   }
   .lm-container .pd-container .pd-inner .pd-detail .pd-detail-right .pd-detail-title,
   .lm-container .pd-container .pd-inner .pd-detail .pd-detail-right .pd-price {
     text-align: center !important;
+    margin-top: .1rem;
   }
   .lm-container .pd-container .pd-inner .pd-detail .pd-detail-right .pd-detail-title a {
     font-size: 0.14rem;
-  }
-  .lm-container .pd-container .pd-inner .pd-detail .pd-detail-right .pd-price {
-    margin-top: 0.2rem;
   }
   .lm-container .pd-container .pd-inner .pd-detail .pd-detail-right .pd-price .old-price {
     font-size: 0.1rem;
@@ -860,7 +787,7 @@
     font-size: 0.13rem;
   }
   .lm-container .pd-container .pd-inner .pd-detail .pd-detail-right .pd-silder-select {
-    margin-top: 0.2rem;
+    margin-top: 0.1rem;
     text-align: left;
   }
   .lm-container .pd-container .pd-inner .pd-detail .pd-detail-right .pd-silder-select .m-model-title {
@@ -885,13 +812,11 @@
     font-size: 0.1rem;
   }
   .lm-container .pd-container .pd-inner .pd-detail .pd-detail-right .pd-add-cart {
-    margin-top: 0.2rem;
-    height: 0.62rem;
+    margin-top: 0.1rem;
   }
   .lm-container .pd-container .pd-inner .pd-detail .pd-detail-right .pd-add-cart .pd-add-cart-rt {
     float: left;
-    width: 50%;
-    text-align: right;
+    text-align: left;
     margin-left: 0;
     padding-right: 0.05rem;
   }
@@ -901,10 +826,10 @@
   }
   .lm-container .pd-container .pd-inner .pd-detail .pd-detail-right .pd-add-cart .pd-add-cart-lf {
     float: left;
-    width: 50%;
     text-align: left;
     margin-left: 0 !important;
     padding-left: 0.05rem;
+    margin-top: .1rem;
   }
   .lm-container .pd-container .pd-inner .pd-detail .pd-detail-right .pd-add-cart .pd-add-cart-lf p {
     font-size: 0.01rem;
@@ -928,7 +853,7 @@
     display: block;
     width: 100%;
     height: 2.5rem;
-    padding: 0.2rem 0.1rem;
+    padding: 0.3rem 0.1rem;
   }
   .lm-container .m-swiper-container .m-swiper-wrapper .m-swiper-slide {
     width: 1.4rem !important;
@@ -983,8 +908,9 @@
     margin-left: 0.06rem;
   }
   .lm-container .m-swiper-container .m-swiper-wrapper .m-swiper-slide .pd-slider-cart .pd-slider-price .old-price {
+    display: none;
     font-size: 0.1rem;
-    color: #808080;
+    color: #ccc;
     text-decoration: line-through;
     margin-left: 0.04rem;
   }
@@ -1105,87 +1031,22 @@
     color: #1a1a1a;
     margin-left: 6px;
   }
-  .lm-footer {
-    width: 100%;
-    height: 240px;
+}
+@media screen and (max-width: 767px) {
+  .lm-container .pd-container .pd-inner .pd-detail .pd-detail-left a img {
+    width: 290px;
+    height: 178px;
   }
-  .lm-footer .footerBg {
-    height: 240px;
-  }
-  .lm-footer .footerBg .HelpfulInformation {
-    width: 100%;
-    height: 40px;
-    line-height: 40px;
-  }
-  .lm-footer .footerBg .HelpfulInformation p {
-    font-size: 16px;
-  }
-  .lm-footer .footerBg .HelpfulInformation .languageSelectBox {
-    display: none;
-  }
-  .lm-footer .footerBg .contactUs {
-    width: 100%;
+  .lm-container .m-swiper-container {
     height: auto;
-    overflow: hidden;
-    padding: 10px;
   }
-  .lm-footer .footerBg .contactUs .nth-child1 span {
-    font-size: 12px;
-    margin-left: 10px;
-  }
-  .lm-footer .footerBg .contactUs .nth-child1 img {
-    width: 13px;
-  }
-  .lm-footer .footerBg .contactUs > .nth-child2 {
-    display: none;
-  }
-  .lm-footer .footerBg .location {
-    width: 100%;
-    overflow: hidden;
-    padding-top: 0;
-  }
-  .lm-footer .footerBg .location img {
-    float: left;
-    width: 13px;
-  }
-  .lm-footer .footerBg .location a {
-    float: left;
-    display: inline-block;
-    width: 80%;
-    margin-left: 10px;
-    font-size: 12px;
-  }
-  .lm-footer .footerBg .mobile-contactUs {
-    display: block!important;
-    width: 100%;
-    padding-left: 10px;
-    height: 28px;
-  }
-  .lm-footer .footerBg .mobile-contactUs a {
-    color: #fff;
-  }
-  .lm-footer .footerBg .mobile-contactUs a i {
-    font-size: 22px;
-    margin-right: 16px;
-  }
-  .lm-footer .footerBg .LanmeiAirlinesBerhad {
-    width: 100%;
-    padding: 0;
+  .lm-container .m-swiper-container .pd-slider-more {
     margin-top: 10px;
   }
-  .lm-footer .footerBg .LanmeiAirlinesBerhad > a {
-    display: none;
+  .lm-container .pd-container .pd-inner .pd-search img {
+    left: .1rem;
   }
-  .lm-footer .footerBg .LanmeiAirlinesBerhad > div {
-    margin-left: 10px;
-  }
-  .lm-footer .footerBg .LanmeiAirlinesBerhad > div .p1 {
-    font-size: 12px;
-    padding: 0;
-  }
-  .lm-footer .footerBg .LanmeiAirlinesBerhad > div .p2 {
-    font-size: 12px;
-    padding: 0;
-    padding-top: 10px;
+  .lm-container .pd-container .pd-inner .pd-search input {
+    left: .3rem;
   }
 }
