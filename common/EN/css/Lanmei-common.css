@@ -964,8 +964,8 @@ body {
     font-size: 14px;
   }
   .modal .modal-dialog .modal-content .modal-header .close span {
-    top: -2px;
-    font-size: 24px;
+    top: 0;
+    font-size: 16px;
   }
   .modal .modal-dialog .modal-content .modal-body .loginTitle {
     font-size: 18px;

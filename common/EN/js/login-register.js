@@ -31,8 +31,8 @@ var LMComLoginReg = {
 		                        '<input type="password" class="form-control" id="LanmeiPassword" placeholder="Password" autocomplete="off">'+
 		                    '</div>'+
 		                    '<div class="agree form-group">'+
-		                        '<span class=""></span>'+
-		                        '<p>Remember me next 30 days</p>'+
+		                        '<span class="" style="display:none;"></span>'+
+		                        '<p style="display:none;">Remember me next 30 days</p>'+
 		                        '<a href="#" class="forgetBtn">Forget ?</a>'+
 		                    '</div>'+
 		                    '<div class="form-group">'+
@@ -41,7 +41,7 @@ var LMComLoginReg = {
 		                '</form>'+
 		            '</div>'+
 		            '<div class="modal-footer">'+
-		                'Still no account ? Immediately <a href="javascript:void(0)" class="regBtn">registered</a>'+
+		                '<a href="javascript:void(0)" class="regBtn">Sign up Now !</a>'+
 		            '</div>'+
 		        '</div>'+
 		    '</div>';
@@ -57,7 +57,6 @@ var LMComLoginReg = {
 		                    '<div class="registerContent">'+
 		                        '<div class="registerInfo">'+
 		                            '<input type="text" name="" value="" id="registerUserName" placeholder="Please enter email address" autocomplete="off">'+
-		                            '<img src="https://lanmeiairlines.com/lanmeiairlines2.0/default/images/EN/register-email.png">'+
 		                           '<p>This email is already in use !</p>'+
 		                            '<ul class="register_on_changes on_changes">'+
 		                                '<li email="@gmail.com"></li>'+
@@ -71,24 +70,25 @@ var LMComLoginReg = {
 		                        '</div>'+
 		                        '<div class="registerPassword">'+
 		                           ' <input type="password" name="" value="" id="registerPassword" placeholder="Password with 8-16 characters" autocomplete="off">'+
-		                            '<img src="https://lanmeiairlines.com/lanmeiairlines2.0/default/images/EN/register-password.png">'+
 		                            '<p>Password strength : <span><i class="i1"></i><i class="i2"></i><i class="i3"></i><i class="i4"></i><i class="i5"></i><i class="i6"></i></span></p>'+
 		                        '</div>'+
 		                        '<div class="repeatPassword">'+
 		                            '<input type="password" name="" value="" id="repeatPassword" placeholder="Please repeat password" autocomplete="off">'+
-		                            '<img src="https://lanmeiairlines.com/lanmeiairlines2.0/default/images/EN/register-password.png">'+
 		                           ' <p>Passwords don’t match !</p>'+
 		                            '<span>Password must be with 3 or 4 combination with number (0-9), lowercase letter (a-z), uppercase letter (A-Z) or special characters.</span>'+
 		                        '</div>'+
 		                        '<div class="agree">'+
 		                            '<span></span>'+
-		                            '<p>I hereby agree to <a href="#">Lanmeiairlines’ terms and conditions</a></p>'+
+		                            '<p>I hereby agree to <a href="https://lanmeiairlines.com/lanmeiairlines2.0/default/menus/EN/aboutUs/LMPrivacy.html" target="_blank">Lanmeiairlines’ terms and conditions</a></p>'+
 		                        '</div>'+
 		                        '<div class="registerBtn">'+
-		                            '<button id="registerBtn">Register</button>'+
+		                            '<button id="registerBtn">Sign up</button>'+
 		                        '</div>'+
 		                    '</div>'+
 		                '</form>'+
+		            '</div>'+
+		            '<div class="modal-footer">'+
+		                '<a href="javascript:void(0)" class="reg-loginBtn">Login Now !</a>'+
 		            '</div>'+
 		        '</div>'+
 		    '</div>';
@@ -127,7 +127,7 @@ var LMComLoginReg = {
 		                '</form>'+
 		            '</div>'+
 		            '<div class="modal-footer">'+
-		                '<a href="#" class="a_login">Login</a><a href="javascript:void(0)" class="a_registered">Registered</a>'+
+		                '<a href="#" class="a_login">Login</a><a href="javascript:void(0)" class="a_registered">Sign up</a>'+
 		            '</div>'+
 		        '</div>'+
 		    '</div>';
@@ -175,7 +175,9 @@ var LMComLoginReg = {
 	    // 点击登录
 	    $('.loginBtn,.m-user-btn').click(function(e){
 	        e.preventDefault();
-	        $('#logonModal').modal();
+	        if(null == $.cookie("lanmei_username") && undefined == $.cookie("lanmei_username")){
+	        	$('#logonModal').modal();
+	        }
 	        // $('html,body').addClass('ovfHiden'); //使网页不可滚动
 	    });
 
@@ -185,7 +187,6 @@ var LMComLoginReg = {
 	        $('#registerModal').modal();
 	    });
 
-	    //保持疑问结束
 	    // 记住密码
 	    $('.agree span').click(function(){
 	        $(this).toggleClass('active');
@@ -245,6 +246,12 @@ var LMComLoginReg = {
 	    $('.regBtn').click(function(e){
 	        $('#logonModal').modal('hide');
 	        $('#registerModal').modal('show');
+	    });
+
+	    // 在注册页面中登录
+	    $('.reg-loginBtn').click(function(e){
+	        $('#registerModal').modal('hide');
+	        $('#logonModal').modal('show');
 	    });
 
 	    /* 注册 */
@@ -372,10 +379,9 @@ var LMComLoginReg = {
 	    //登录或注册以后用户名显示，并且把注册按钮内容更改为注销
 	    if(null != $.cookie("lanmei_username") && undefined != $.cookie("lanmei_username")){
 	        //$("#loginAndLoginoutBtn span").html($.cookie("lanmei_username")).attr('title',$.cookie("lanmei_username"));
-	        $("#loginAndLoginoutBtn span").html($.cookie("lanmei_username"));
-	        console.log($.cookie("user_avatar"));
-	        $("#loginAndLoginoutBtn .head-portrait").css('background-image','url('+$.cookie("user_avatar")+')');
-	        $("#registerAndAccountBtn span").html("LOGOUT"); //改为注销
+	        $(".loginBtn span").html($.cookie("lanmei_username"));
+	        $(".loginBtn .head-portrait").css('background-image','url('+$.cookie("user_avatar")+')');
+	        $(".REGISTEREDBtn span").html("LOGOUT"); //改为注销
 	        $(".h-login").addClass("success-h-login");
 	        var winWidth = $(window).width();
 	        if(winWidth>993){
@@ -385,9 +391,9 @@ var LMComLoginReg = {
 	            });
 	        }
 	    }else if(null != $.cookie("lanmei_nickname") && undefined != $.cookie("lanmei_nickname")){
-	        $("#loginAndLoginoutBtn span").html($.cookie("lanmei_nickname"));
-	        $("#loginAndLoginoutBtn img").attr('src','/lanmeiairlines/default/images/EN/login-icon.png');
-	        $("#registerAndAccountBtn span").html("LOGOUT"); //改为注销
+	        $(".loginBtn span").html($.cookie("lanmei_nickname"));
+	        $(".loginBtn img").attr('src','/lanmeiairlines/default/images/EN/login-icon.png');
+	        $(".REGISTEREDBtn span").html("LOGOUT"); //改为注销
 	        
 	        var winWidth = $(window).width();
 	        if(winWidth>993){
@@ -553,7 +559,7 @@ var LMComLoginReg = {
 	    });
 	    
 	    //注册和注销
-	    $("#registerAndAccountBtn,.lm-logout").click(function(){
+	    $(".REGISTEREDBtn,.lm-logout").click(function(){
 	        var lanmeiUsername = $.cookie("lanmei_username");
 	        //未登录时候跳转到注册页面，登录以后跳转到个人中心
 	        if(null == lanmeiUsername || undefined == lanmeiUsername || "" == lanmeiUsername){
@@ -598,17 +604,24 @@ var LMComLoginReg = {
 	},
 
 	register:function(){
-		$("#registerBtn").click(function(){
-			//同意条款
-			var $agree = $('.agree>span');
-			if(!$agree.hasClass("agreeConditions")){
-				$agree.next().next().html("Please read Lanmei service terms!").css('color','#d0011b');
-				return;
+		//正则验证
+		 function userNameVerify(val){
+			var tips = $('#registerUserName').siblings('p');
+			var reg1=/^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$/; //邮箱
+			tips.addClass('visible');
+			if(reg1.test(val)){
+				tips.html('Passed validation');
+				tips.css('color','#8ec060');
+				return true;
 			}else{
-				$agree.next().next().html("Passed validation").css('color','#8ec060');
+				tips.html("Your input is unqualified. Please input again!");
+				tips.css('color','#d0011b');
+				return false;
 			}
+		};
+		$("#registerBtn").click(function(){
 			//email
-			if(!LanmeiAirlinesRegister.userNameVerify($("#registerUserName").val())){
+			if(!userNameVerify($("#registerUserName").val())){
 				return;
 			}
 			//密码
@@ -620,12 +633,27 @@ var LMComLoginReg = {
 				$registerPassword.siblings('p').html('Your input is unqualified. Please input again!').css('color','#d0011b');
 				return;
 			}
+
 			// 再次输入密码验证
 			var $repeatPassword = $('#repeatPassword');
 			if($.trim($repeatPassword.val()) == $.trim($('#registerPassword').val())){
 				$repeatPassword.siblings('p').html('Passed validation').css('color','#8ec060');
 			}else{
 				$repeatPassword.siblings('p').html('Your input is unqualified. Please input again!').css('color','#d0011b');
+				return;
+			}
+
+			//同意条款
+			var $agree = $('.registerContent .agree>span');
+			if(!$agree.hasClass("active")){
+				layer.open({
+					  title: 'Tips',
+					  content: 'Please read Lanmei service terms!',
+					  btn: ['OK'],
+					  yes: function(index, layero){
+					     layer.close(index);
+					  }
+				});
 				return;
 			}
 			

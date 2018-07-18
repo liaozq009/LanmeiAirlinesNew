@@ -9,11 +9,15 @@ var LMShopPdList = {
 
 	/* 其他事件 */
 	addEvent:function(){
+		var winWidth = $(window).width();
 		// 商品列表最左边的元素margin-left:0
-		$('.pd-list-inner li:nth-child(4n+1)').css('margin-left','0');
 
-		// 商品列表详情页最后两个靠左
-		$('.pd-list-inner li:nth-child(4n+3) .pd-detail-select,.pd-list-inner li:nth-child(4n+4) .pd-detail-select').css('cssText','right:66px');
+		if(winWidth>992){
+			$('.pd-list-inner li:nth-child(4n+1)').css('margin-left','0');
+
+			// 商品列表详情页最后两个靠左
+			$('.pd-list-inner li:nth-child(4n+3) .pd-detail-select,.pd-list-inner li:nth-child(4n+4) .pd-detail-select').css('cssText','right:66px');
+		}
 
 		//分页调用
 		$(".p-comment-page").createPage({

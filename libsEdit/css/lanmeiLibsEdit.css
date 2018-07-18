@@ -93,9 +93,9 @@ label {
 }
 .modal .modal-dialog .modal-content .modal-header .close span {
   margin-left: 10px;
-  font-size: 30px;
+  font-size: 20px;
   position: absolute;
-  top: -5px;
+  top: 0;
 }
 .modal .modal-dialog .modal-content .modal-body {
   padding: 0;
@@ -117,6 +117,8 @@ label {
   text-align: center;
   color: #d0011b;
   margin-top: 8px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .modal .modal-dialog .modal-content .modal-body .visible {
   visibility: visible;
@@ -187,8 +189,20 @@ label {
   box-shadow: none;
   border-color: #8ec060 !important;
 }
+.modal .modal-dialog .modal-content .modal-body form #LanmeiUserName,
+.modal .modal-dialog .modal-content .modal-body form #registerUserName {
+  padding-left: 50px;
+  background: url('../../images/EN/register-email.png') 15px no-repeat rgba(31, 44, 92, 0.04);
+}
 .modal .modal-dialog .modal-content .modal-body form #LanmeiPassword {
   margin-top: 20px;
+  padding-left: 50px;
+  background: url('../../images/EN/register-password.png') 15px no-repeat rgba(31, 44, 92, 0.04);
+}
+.modal .modal-dialog .modal-content .modal-body form #registerPassword,
+.modal .modal-dialog .modal-content .modal-body form #repeatPassword {
+  padding-left: 50px;
+  background: url('../../images/EN/register-password.png') 15px no-repeat rgba(31, 44, 92, 0.04);
 }
 .modal .modal-dialog .modal-content .modal-body form #f-LanmeiPassword {
   margin-top: 30px;
@@ -203,6 +217,13 @@ label {
   font-size: 14px;
   border: none;
   margin-left: 10px;
+  transition: all 0.6s;
+  -webkit-transition: all 0.6s;
+}
+.modal .modal-dialog .modal-content .modal-body form #f-getPasswordBtn:hover {
+  background: #8ec060;
+  transition: all 0.6s;
+  -webkit-transition: all 0.6s;
 }
 .modal .modal-dialog .modal-content .modal-body form .getPwActive {
   background: #1f2c5c;
@@ -240,13 +261,16 @@ label {
   line-height: 25px;
 }
 .modal .modal-dialog .modal-content .modal-body form .agree a {
+  display: inline-block;
+  height: 25px;
+  line-height: 25px;
   float: right;
   color: rgba(31, 44, 92, 0.7);
   transition: all 0.6s;
   -webkit-transition: all 0.6s;
 }
 .modal .modal-dialog .modal-content .modal-body form .agree a:hover {
-  color: #4aa374;
+  color: #8ec060;
   transition: all 0.6s;
   -webkit-transition: all 0.6s;
 }
@@ -340,7 +364,7 @@ label {
 .modal .modal-dialog .modal-content .modal-footer .a_registered {
   float: right;
   font-size: 14px;
-  color: #4aa374;
+  color: #1f2c5c;
 }
 /* 注册模态框 */
 .registerWrapper {
@@ -394,8 +418,6 @@ label {
   border: 1px solid #cccccc;
   border-radius: 2px;
   width: 338px;
-  padding-left: 60px !important;
-  padding-right: 10px !important;
 }
 .registerWrapper .registerContent .registerInfo input:focus,
 .registerWrapper .registerContent .registerPassword input:focus,

@@ -102,11 +102,15 @@ $(document).ready(function(){
 	});
 
 	// $('#activityTipsModal').modal();
-	$('#nextOpportunityModal').modal();
+	// $('#nextOpportunityModal').modal();
+	$('#activityLoginModal').modal();
 
 	//关闭模态框
 	$('.activityTipsModal-close').click(function(event) {
 		$('#activityTipsModal').modal('hide');
+	});
+	$('.activityLoginModal-close').click(function(event) {
+		$('#activityLoginModal').modal('hide');
 	});
 	$('.succModal-close').click(function(event) {
 		$('#succModal').modal('hide');

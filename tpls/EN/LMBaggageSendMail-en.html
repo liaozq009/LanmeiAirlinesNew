@@ -41,35 +41,6 @@
 		  padding: 0;
 		  font-size: 12px;
 		}
-		ul,
-		li {
-		  list-style: none;
-		}
-		a {
-		  color: #666;
-		  text-decoration: none;
-		}
-		a:hover,
-		a:focus {
-		  /*color:#ff0700;*/
-		  text-decoration: none;
-		  outline: none;
-		}
-		input {
-		  border: 0;
-		  outline: none;
-		}
-		img {
-		  vertical-align: middle;
-		  border: none;
-		}
-		input::-ms-clear {
-		  display: none;
-		}
-		.ovfHiden {
-		  overflow: hidden;
-		  height: 100%;
-		}
 		/* project mcins style sheet*/
 		body {
 		  min-width: 320px;
@@ -82,109 +53,86 @@
 			padding:  0 30px;
 			text-align: right
 		}
-		/* 称谓 */
-		.greetings {
-		  width: 960px;
-		  margin: 0 auto;
-		  padding: 30px 10px 20px;
-		  font-weight: bold;
-		  font-size: 18px;
-		  color: #1f2c5c;
-		  border-bottom: 2px solid #1f2c5c;
-		}
-		.verticalLine {
+		.lm-table-wrap{width: 960px;margin: 30px auto 20px;}
+		.lm-table-wrap .table-dear{font-weight: bold;font-size: 18px;color: #1f2c5c;}
+		.lm-table-wrap .table-dear th{text-align: left;border-bottom: 2px solid #1f2c5c;padding-bottom: 20px;}
+		.lm-table-wrap .table-title th{padding-top: 20px;}
+		.lm-table-wrap .table-title th h2{border-left: 2px solid #8ec060;color: #1a1a1a;font-weight: bold;font-size: 20px;float: left;padding-left: 10px;}
+		.lm-table-wrap .table-title th p{text-align: right;height: 26px;line-height: 26px;color: #1a1a1a;}
+		.lm-table-wrap .table-content>th{padding-top: 20px;padding-bottom:20px;}
+		.lm-table-wrap .table-logo th{text-align: right;padding-top:20px;}
+		.lm-mail-table {
 		  width: 100%;
-		  border-bottom: 2px dashed #ccc;
-		  margin-top: 10px;
-		  margin-bottom: 10px;
-		}
-		/* 已选择航班 */
-		.flightSelectWrapper {
-		  width: 960px;
-		  overflow: hidden;
-		  margin: 0 auto;
-		  margin-top: 20px;
-		  padding: 0;
-		}
-		.flightSelectWrapper .flightSelectCommon {
-		  margin-bottom: 16px;
-		  border: none;
-		}
-		.flightSelectWrapper .flightSelectCommon .flightSelectTitle {
-		  background: none;
-		  padding: 0;
-		  height: 22px;
-		}
-		.flightSelectWrapper .flightSelectCommon .flightSelectTitle > h2 {
-		  float: left;
-		  height: 22px;
-		  line-height: 22px;
-		  padding-left: 10px;
-		  font-size: 20px;
-		  font-weight: bold;
-		  color: #1a1a1a;
-		  border-left: 2px solid #8ec060;
-		}
-		.flightSelectWrapper .flightSelectCommon .flightSelectTitle > p {
-			float: right;
-			font-weight: bold;
-			color: #666666;
-		}
-		.flightSelectWrapper .flightList1 ul {
-		  overflow: hidden;
-		}
-		.flightSelectWrapper .flightList1 ul li {
-		  float: left;
-		  width: 20%;
+		  max-width: 100%;
 		  text-align: center;
-		  font-size: 14px;
-		  color: #808080;
 		}
-		.flightSelectWrapper .flightList1 ul.flightTitle ul li {
-		  color: #808080;
+		.lm-mail-table thead tr th{
+			padding: 8px;
+			border-bottom: 1px dashed #ddd;
+			color: #666666;
+			font-size: 14px;
 		}
-		.flightSelectWrapper .flightList1 ul.flightContentCommon {
-		  padding-bottom: 10px;
+		.lm-mail-table tbody tr td{
+			padding: 8px;
+			color: #808080;
+			font-size: 14px;
 		}
-		.flightSelectWrapper .flightList1 ul.flightContentCommon li {
-		  font-weight: bold;
-		  color: #666666;
-		}
-		.flightSelectWrapper .flightListCommon {
-		  padding: 20px 0 20px;
-		  height: auto !important;
+		.table-tips th p{
+			text-align: left;
+			color: #808080;
+			margin-top:6px;
 		}
 	</style>
 </head>
 <body>
-	<!-- 称谓 -->
-	<div class="greetings">Dear XXX：</div>
-	<!-- 内容 -->
-	<div class="flightSelectWrapper">
-		<div class="flightSelect2 flightSelectCommon">
-			<div class="flightSelectTitle">
-				<h2>Excess Baggage</h2>
-				<p>Order Number: <span>961-456753645</span></p>
-			</div>
-			<div class="flightList1 flightListCommon">
-				<ul class="flightTitle">
-					<li>Passport NO.</li>
-					<li>Flight NO.</li>
-					<li>Flight Date</li>
-					<li>Weight</li>
-					<li>Amount</li>
-				</ul>
-				<div class="verticalLine"></div>
-				<ul class="flightContent1 flightContentCommon">
-					<li>675-440245621</li>
-					<li>LQ305</li>
-					<li>2018-06-20</li>
-					<li>25kg</li>
-					<li>$ 10.00</li>
-				</ul>
-			</div>
-		</div>
-	</div>
-	<div class="lanmei-logo"><img src="http://lanmeiairlines.com/lanmeiairlines/default/images/EN/lanmeiLogo.png"></div>
+	<table class="lm-table-wrap">
+		<tbody>
+			<tr class="table-dear">
+				<th>Dear XXX：</th>
+			</tr>
+			<tr class="table-title">
+				<th><h2>Excess Baggage</h2><p>Order Number: <span>961-456753645</span></p></th>
+			</tr>
+			<tr class="table-content">
+				<th>
+					<table class="lm-mail-table">
+						<thead>
+							<tr>
+								<th>Passport NO.</th>
+								<th>Flight NO.</th>
+								<th>Flight Date</th>
+								<th>Weight</th>
+								<th>Amount</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>675-440245621</td>
+								<td>LQ305</td>
+								<td>2018-06-20</td>
+								<td>25kg</td>
+								<td>$ 10.00</td>
+							</tr>
+						</tbody>					
+					</table>
+				</th>
+			</tr>
+			<tr class="table-tips">
+				<th><p>Tips:</p></th>
+			</tr>
+			<tr class="table-tips">
+				<th><p>1.Please show the effective email to staff while checking-in at airport counter.</p></th>
+			</tr>
+			<tr class="table-tips">
+				<th><p>2.Each passenger can only purchase baggage service once for one flight online. If needed, please purchase baggage service again at airport counter.</p></th>
+			</tr>
+			<tr class="table-tips">
+				<th><p>3.Baggage pre-purchasing service is only opened to passengers who book tickets on the official website of Lanmei Airlines. </p></th>
+			</tr>
+			<tr>
+				<th style="width: 140px;height: 80px;background: url('http://lanmeiairlines.com/lanmeiairlines/default/images/EN/lanmeiLogo.png') right no-repeat;"></th>
+			</tr>
+		</tbody>
+	</table>
 </body>
 </html>

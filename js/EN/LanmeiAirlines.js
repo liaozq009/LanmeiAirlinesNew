@@ -2709,7 +2709,7 @@ var LanmeiAirlines = {
 			$('.js-adult-add').click(function(){
 				var childNum = $(this).parents('.js-s-adult').siblings('.js-s-child').find('.child-num').html();//获取小孩人数
 				var adultNum = $(this).siblings('span').html();;//获取成人人数
-				if(parseInt(childNum)+parseInt(adultNum)<5){
+				if(parseInt(childNum)+parseInt(adultNum)<8){
 					adultNum++;
 					$(this).siblings('span').html(adultNum);
 					$adultResult.html(adultNum); //动态赋值
@@ -2736,7 +2736,7 @@ var LanmeiAirlines = {
 			$('.js-child-add').click(function(){
 				var adultNum = $(this).parents('.js-s-child').siblings('.js-s-adult').find('.adult-num').html();//获取小孩人数
 				var childNum = $(this).siblings('span').html();;//获取成人人数
-				if(parseInt(childNum)+parseInt(adultNum)<5){
+				if(parseInt(childNum)+parseInt(adultNum)<8){
 					childNum++;
 					$(this).siblings('span').html(childNum);
 					$childResult.html(childNum); //动态赋值

@@ -258,6 +258,7 @@
   width: 20px;
   font-size: 18px;
   margin: 0 28px;
+  text-align: center;
 }
 .lm-container .pd-list-wrap .pd-list-inner > li .pd-slider-cart .pd-detail-select .pd-model-num .pd-num-change a {
   display: inline-block;
@@ -301,4 +302,85 @@
 .lm-container .p-comment-page .disabled {
   color: #ccc;
   margin: 0 15px;
+}
+@media screen and (max-width: 992px) {
+  .pd-select-wrap {
+    display: none;
+  }
+  .lm-container {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .lm-container .pd-search-wrap .pd-search-input {
+    width: 90%;
+    margin-right: 0;
+  }
+}
+@media screen and (max-width: 767px) {
+  .lm-container {
+    margin-bottom: 60px;
+  }
+  .lm-container .pd-list-wrap {
+    margin-top: 30px;
+  }
+  .lm-container .pd-list-wrap .pd-list-inner > li {
+    width: 100%;
+    margin-left: 0;
+  }
+  .lm-container .pd-list-wrap .pd-list-inner > li .pd-slider-cart .pd-detail-select {
+    width: 100%;
+    height: auto;
+    right: 0;
+    padding: 10px;
+    padding-top: 20px;
+  }
+  .lm-container .pd-list-wrap .pd-list-inner > li .pd-slider-cart .pd-detail-select .pd-add-cart .pd-add-cart-rt {
+    margin-left: 10px;
+  }
+  .lm-container .pd-list-wrap .pd-list-inner > li .pd-slider-cart .pd-detail-select .pd-add-cart .pd-add-cart-rt button {
+    width: 40px;
+    border-radius: 2px;
+  }
+  .lm-container .pd-list-wrap .pd-list-inner > li .pd-slider-cart .pd-detail-select .pd-model-num {
+    font-size: 14px;
+  }
+  .lm-container .pd-list-wrap .pd-list-inner > li .pd-slider-cart .pd-detail-select .pd-price .new-price {
+    font-size: 24px;
+  }
+  .lm-container .pd-list-wrap .pd-list-inner > li .pd-slider-cart .pd-detail-select .pd-price .old-price {
+    font-size: 16px;
+  }
+  .lm-container .pd-search-wrap .pd-search-input {
+    width: 80%;
+  }
+  .lm-container .p-comment-page {
+    font-size: 12px;
+    padding: 30px 0 30px;
+  }
+  .lm-container .p-comment-page > a {
+    margin: 0 6px;
+    font-size: 12px;
+  }
+  .lm-container .p-comment-page .disabled,
+  .lm-container .p-comment-page .nextPage,
+  .lm-container .p-comment-page .prevPage {
+    font-size: 12px;
+    margin: 0 6px;
+  }
+  .lm-container .p-comment-page .current {
+    font-size: 12px;
+  }
+  .pd-silder-select {
+    font-size: 14px;
+  }
+  .pd-silder-select > span {
+    width: 56px;
+  }
+  .pd-silder-select .pd-model-main {
+    width: 150px;
+  }
+  .pd-silder-select .pd-model-main .pd-model-large li {
+    width: 80px;
+  }
 }
