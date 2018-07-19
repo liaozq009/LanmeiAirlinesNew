@@ -971,6 +971,7 @@
 }
 .lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-way .pd-cart-freight-way {
   float: left;
+  margin-top: 24px;
 }
 .lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-way .pd-cart-freight-way .freight-way {
   font-size: 14px;
@@ -1025,6 +1026,10 @@
 }
 .lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-way .pd-cart-freight-way .pd-cart-use-coupons .pd-cart-select-coupons .select-coupons-menu li:hover {
   color: #8ec060;
+}
+.lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-way .pd-cart-pay-method {
+  margin-left: 20px;
+  margin-top: 32px;
 }
 .lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-way .pd-cart-ok {
   float: right;

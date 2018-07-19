@@ -231,10 +231,19 @@
   font-size: 14px;
   color: #fff;
   font-weight: bold;
+  background: #1f2c5c;
+  -webkit-box-shadow: 0 10px 20px 0 rgba(31, 44, 92, 0.5);
+  box-shadow: 0 10px 20px 0 rgba(31, 44, 92, 0.5);
+  border-radius: 2px;
+  transition: all .3s;
+  -webkit-transition: all .3s;
+}
+.lm-container .pd-list-wrap .pd-list-inner > li .pd-slider-cart .pd-detail-select .pd-add-cart .pd-add-cart-rt button:hover {
   background: #8ec060;
   -webkit-box-shadow: 0 10px 20px 0 rgba(142, 192, 96, 0.5);
   box-shadow: 0 10px 20px 0 rgba(142, 192, 96, 0.5);
-  border-radius: 100px;
+  transition: all .3s;
+  -webkit-transition: all .3s;
 }
 .lm-container .pd-list-wrap .pd-list-inner > li .pd-slider-cart .pd-detail-select .pd-add-cart .pd-detail-smallImg {
   float: left;

@@ -315,7 +315,7 @@
   transition: color .3s;
   -webkit-transition: color .3s;
 }
-.lm-pd-cart .pd-cart-wrapper .pd-cart-view {
+.lm-pd-cart .pd-cart-wrapper .pd-cart-view img {
   margin-top: 15px;
 }
 .lm-subLogin-header .h-right .v-line {

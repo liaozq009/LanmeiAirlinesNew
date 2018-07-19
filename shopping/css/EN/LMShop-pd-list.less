@@ -227,10 +227,19 @@
 									font-size: 14px;
 									color:#fff;
 									font-weight: bold;
-									background:#8ec060;
-									-webkit-box-shadow:0 10px 20px 0 rgba(142,192,96,0.50);
-									box-shadow:0 10px 20px 0 rgba(142,192,96,0.50);
-									border-radius:100px;
+									background:@purple;
+									-webkit-box-shadow:0 10px 20px 0 rgba(31, 44, 92,0.50);
+									box-shadow:0 10px 20px 0 rgba(31, 44, 92,0.50);
+									border-radius:2px;
+									transition: all .3s;
+									-webkit-transition: all .3s;
+									&:hover{
+										background:@green;
+										-webkit-box-shadow:0 10px 20px 0 rgba(142,192,96,0.50);
+										box-shadow:0 10px 20px 0 rgba(142,192,96,0.50);
+										transition: all .3s;
+										-webkit-transition: all .3s;
+									}
 								}
 							}
 							.pd-detail-smallImg{
