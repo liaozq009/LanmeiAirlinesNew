@@ -43,6 +43,11 @@
   float: left;
   width: 50%;
 }
+.lm-slider-info-wrap .pd-slider-info .pd-price-select .pd-price-select-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 .lm-slider-info-wrap .pd-slider-info .pd-price-select .pd-price-select-title a {
   font-size: 30px;
   font-weight: bold;
@@ -192,10 +197,13 @@
 .lm-container .pd-show-tab .pd-show-tab-comment {
   margin-left: 180px;
 }
-.lm-container .pd-shop-comments {
+.lm-container .pd-container-wrap {
   width: 790px;
-  min-height: 600px;
   margin: 0 auto;
+  min-height: 600px;
+}
+.lm-container .pd-shop-comments {
+  width: 100%;
 }
 .lm-container .pd-shop-comments .pd-shop-comments-detail {
   width: 100%;
@@ -304,6 +312,9 @@
   font-size: 18px;
   margin: 0 15px;
 }
+.lm-container .pd-container-wrap {
+  color: #fff;
+}
 .pd-silder-select > a i {
   color: #1a1a1a;
   font-weight: bold;
@@ -324,18 +335,24 @@
 .m-pd-add-cart-inner {
   display: none;
 }
+.pd-model-select-inner .pd-add-cart-inner {
+  display: none;
+}
 @media screen and (max-width: 992px) {
   .carousel-wrap {
     width: 100%;
-  }
-  .poster-main {
-    width: 100%;
     overflow: hidden;
+  }
+  .carousel-wrap .poster-main {
+    width: 100% !important;
   }
   .lm-container .pd-show-tab {
     width: 100%;
   }
   .lm-container .pd-shop-comments {
+    width: 100%;
+  }
+  .lm-container .shop-comments-details-bigImgs img {
     width: 100%;
   }
   .lm-slider-info-wrap {
@@ -350,9 +367,25 @@
   .lm-slider-info-wrap .pd-slider-info .pd-price-select {
     width: 100%;
   }
+  .lm-slider-info-wrap .pd-slider-info .pd-price-select .pd-model-num .pd-inventory-num {
+    display: none;
+  }
+  .lm-slider-info-wrap .pd-slider-info .pd-price-select .pd-add-cart-inner {
+    display: none;
+  }
   .lm-slider-info-wrap .pd-slider-info .pd-model-select-inner {
-    padding-top: 30px;
-    padding-bottom: 0;
+    width: 100%;
+    padding-top: 0;
+    padding-bottom: 30px;
+  }
+  .lm-slider-info-wrap .pd-slider-info .pd-model-select-inner .pd-freight-way {
+    display: none;
+  }
+  .lm-slider-info-wrap .pd-slider-info .pd-model-select-inner .pd-add-cart-inner {
+    display: block;
+  }
+  .lm-slider-info-wrap .pd-slider-info .pd-model-select-inner .add-cart-btn {
+    margin-top: 0.1rem;
   }
 }
 @media screen and (max-width: 767px) {
@@ -362,32 +395,29 @@
     margin-top: .2rem;
   }
   .lm-slider-info-wrap .pd-slider-info .pd-model-select-inner {
+    width: 100%;
     padding-top: 0;
-  }
-  .lm-slider-info-wrap .pd-slider-info .pd-model-select-inner .pd-freight-way {
-    display: none;
+    padding-bottom: 0;
   }
   .lm-slider-info-wrap .pd-slider-info .pd-model-select-inner .pd-silder-select {
     margin-top: .1rem;
-  }
-  .lm-slider-info-wrap .pd-slider-info .pd-price-select .pd-add-cart-inner {
-    display: none;
+    font-size: 16px;
   }
   .lm-slider-info-wrap .pd-slider-info .pd-price-select .pd-price-select-title a {
-    font-size: .18rem;
+    font-size: 18px;
   }
   .lm-slider-info-wrap .pd-slider-info .pd-price-select .pd-price {
     margin-top: 10px;
   }
   .lm-slider-info-wrap .pd-slider-info .pd-price-select .pd-price .new-price {
-    font-size: .16rem;
+    font-size: 16px;
   }
   .lm-slider-info-wrap .pd-slider-info .pd-price-select .pd-price .old-price {
-    font-size: .14rem;
+    font-size: 12px;
   }
   .lm-slider-info-wrap .pd-slider-info .pd-price-select .pd-model-num {
     margin-top: .1rem;
-    font-size: .16rem;
+    font-size: 16px;
   }
   .lm-slider-info-wrap .pd-slider-info .pd-add-cart-inner {
     margin-top: .1rem;
@@ -403,10 +433,27 @@
     padding-bottom: 20px;
   }
   .lm-container .pd-show-tab > a {
-    font-size: .18rem;
+    font-size: 18px;
   }
   .lm-container .pd-show-tab .pd-show-tab-comment {
     margin-left: 30px;
+  }
+  .lm-container .pd-shop-comments .pd-shop-comments-detail {
+    padding: 20px 10px;
+  }
+  .lm-container .pd-shop-comments .shop-comments-details-pages {
+    font-size: 14px;
+    margin-top: 20px;
+    padding: 0 10px 50px;
+  }
+  .lm-container .pd-shop-comments .shop-comments-details-pages > a {
+    font-size: 14px;
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+  .lm-container .pd-shop-comments .shop-comments-details-pages .current {
+    margin-left: 6px;
+    margin-right: 6px;
   }
   .m-pd-add-cart-inner {
     display: block;

@@ -225,6 +225,10 @@ body {
   background: url('../../imgage_demo/ticket-bg.jpg') center no-repeat;
   background-size: cover;
 }
+.ticketHotel-bg {
+  background: url('../../imgage_demo/ticketHotel-bg.jpg') center no-repeat;
+  background-size: cover;
+}
 .hotel-bg {
   background: url('../../imgage_demo/hotel-bg.jpg') center no-repeat;
   background-size: cover;
@@ -907,7 +911,8 @@ body {
 /* 酒店预订 */
 .hotel-content-wrap,
 .car-content-wrap,
-.fStatus-content-wrap {
+.fStatus-content-wrap,
+.ticketHotel-content-wrap {
   display: none;
   height: 100%;
 }

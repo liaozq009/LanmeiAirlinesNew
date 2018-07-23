@@ -9,11 +9,6 @@ var LMShopCommon = {
 		this.otherEvent();
 	},
 
-	/* 解决移动端延迟300ms问题 */
-	fastClick:function(dom){
-		FastClick.attach(dom[0]);
-	},
-
 	/* 导航菜单切换 */
 	navbarSilder:function(){
 		$('.LMCompanyInfo>ul>li').mouseover(function(e){
@@ -209,8 +204,6 @@ var LMShopCommon = {
 		});
 
 		// 产品数量增减
-		this.fastClick($('.cart-add-num'));
-		this.fastClick($('.cart-subtract-num'));
 		var pdNum = function(){
 			$('.cart-add-num').click(function(e){
 				$(this).siblings('span').html(parseInt($(this).siblings('span').html())+1);

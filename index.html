@@ -617,6 +617,135 @@
 			</div>
 		</div>
 
+		<!-- 机+酒选择 -->
+		<div class="ticketHotel-content-wrap js-flight-com js-ticketHotel-wrap">
+			<!-- 背景 -->
+			<div class="ticketHotel-bg bg-com js-ticketHotel-bg"></div>
+			<!-- 背景上面的内容 -->
+			<div class="content-com-wrap">
+				<div class="content-com-inner">
+					<h1 class="animated fadeInUp">Best ticket,hotel <br>package!</h1>
+				</div>
+			</div>
+			<!-- 航班选择 -->
+			<div class="ticketHotel-content flight-com js-ticketHotel-content">
+				<form id="air-ticketHotel-form" action="" method="POST" target="_blank">
+					<input type="hidden" name="tripType" id="tripType" value="OW">
+					<input type="hidden" name="orgcity" id="orgcity" value="PNH">
+					<input type="hidden" name="dstcity" id="dstcity" value="REP">
+					<input type="hidden" name="takeoffDate" id="takeoffDate" value="">
+					<input type="hidden" name="returnDate" id="returnDate" value="">
+					<input type="hidden" name="adultCount" id="adultCount" value="">
+					<input type="hidden" name="childCount" id="childCount" value="">
+					<input type="hidden" name="infantCount" id="infantCount" value="">
+					<input type="hidden" name="language" value="US">
+					<input type="hidden" name="CURRENCY" value="USD">
+					
+					<p class="tips-com animated fadeInUp js-tips-com">Heart is not as good as action!</p>
+					<div class="select-way js-selectTh-way animated fadeInUp">
+						<a href="javascript:;" class="round-trip active" data-way="round">Round trip</a>
+						<a href="javascript:;" class="one-way" data-way="one">One-way</a>
+					</div>
+					<div class="select-air-time select-air-com">
+						<div class="from-com js-ticketHotel-from animated fadeInUp">
+							<input type="text" class="t-from-input js-thFrom-input" data="js-thFrom-menu" placeholder="From" autocomplete="off">
+							<span class="m-city-from js-m-thFcity">Phnom Penh/PNH</span>
+							<i class="local-change js-ticketHotel-change animated fadeInUp"></i>
+						</div>
+						<i class="local-change m-local-change js-mTicketHotel-change animated fadeInUp"></i>
+						<div class="to-com js-ticketHotel-to">
+							<input type="text" class="t-to-input js-thTo-input" data="js-thTo-menu" placeholder="To" autocomplete="off">
+							<!-- 改到这里 -->
+							<span class="m-city-to js-m-thTcity">Siem Reap/Cambodia</span>
+						</div>
+						<div class="date-com js-ticket-date">
+							<span class="date-result js-date-result" id="js-mDate-result"></span>
+						</div>
+						<div class="people-com js-ticket-people">
+							<div class="t-people-result hidden-infant">
+								<p class="p-adult js-p-adult">x <span>1</span></p>
+								<p class="p-child js-p-child">x <span>0</span></p>
+								<p class="p-infant js-p-infant">x <span>0</span></p>
+							</div>
+						</div>
+					</div>
+					<div class="search-flight-wrap js-search-ticket">
+						<a href="javascript:;" class="flight-cancel js-ticket-cancel">Cancel</a>
+						<a href="javascript:;" class="flight-search js-ticket-search">Search</a>
+					</div>
+				</form>
+				<!-- 下拉选择菜单 -->
+				<div class="popup-container js-popup-container">
+					<div class="popup-title-wrap">
+						<p class="popup-title js-popup-title">Select origin</p>
+						<p class="popup-close js-popup-close"></p>
+						<input type="text" name="" class="city-search js-city-search" value="" data="js-from-menu" placeholder="Search">
+					</div>
+					<div class="popup-box js-popup-box">
+						<div class="popup-content popup-inactive js-popup-content">
+							<!-- 出发地目的地选择 -->
+							<div class="popup-airport-from popup-airport js-airport-from">
+								<h2>Origin Airport :</h2>
+								<ul class="flight-list-wrap js-from-menu">
+									
+								</ul>
+							</div>
+							<div class="popup-airport-to popup-airport js-airport-to">
+								<h2>Destination Airport :</h2>
+								<ul class="flight-list-wrap js-to-menu">
+
+								</ul>
+							</div>
+							<!-- 日期选择 -->
+							<div class="popup-date js-popup-date">
+								
+							</div>
+							<!-- 人数选择 -->
+							<div class="popup-people js-popup-people">
+								<p class="people-title">Number of passengers :</p>
+								<div class="select-people-container">
+									<div class="s-adult s-people-com js-s-adult">
+										<div class="people-prompt">
+											<p class="p1">Adult</p>
+											<p class="p2 adult-tip">( 12+ )</p>
+										</div>
+										<div class="people-number">
+											<a href="javascript:;" class="sub-people off-sub-operation js-adult-sub"></a>
+											<span class="adult-num">1</span>
+											<a href="javascript:;" class="add-people js-adult-add"></a>
+										</div>
+									</div>
+									<div class="s-child s-people-com js-s-child">
+										<div class="people-prompt">
+											<p class="p1">Child</p>
+											<p class="p2 child-tip">(2-11)</p>
+										</div>
+										<div class="people-number disable">
+											<a href="javascript:;" class="sub-people off-sub-operation js-child-sub"></a>
+											<span class="child-num">0</span>
+											<a href="javascript:;" class="add-people js-child-add"></a>
+										</div>
+									</div>
+									<div class="s-infant s-people-com">
+										<div class="people-prompt">
+											<p class="p1"><img src="images/EN/infant-icon.png">Infant</p>
+											<p class="p2 infant-tip">( < 2 )</p>
+										</div>
+										<div class="people-number disable">
+											<a href="javascript:;" class="sub-people off-sub-operation js-infant-sub"></a>
+											<span class="infant-num">0</span>
+											<a href="javascript:;" class="add-people js-infant-add"></a>
+										</div>
+									</div>
+								</div>
+								<div class="m-select-people"><a href="javascript:;" class="js-mSelect-people">SAVE</a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<!-- 租车选择 -->
 		<div class="car-content-wrap js-flight-com js-car-wrap">
 			<!-- 背景 -->

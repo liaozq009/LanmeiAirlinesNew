@@ -35,6 +35,9 @@
 				float: left;
 				border-bottom:2px solid transparent;
 				cursor: pointer;
+				overflow: hidden;
+			    text-overflow: ellipsis;
+			    white-space: nowrap;
 			}
 			.active{
 				border-color: @green;
@@ -600,6 +603,7 @@
 		}
 		.pd-cart-pay-inner{
 			height: 100%;
+			padding-bottom: 100px;
 			overflow-x: hidden;
 			overflow-y: auto;
 			.pd-cart-pay-address{
@@ -697,7 +701,7 @@
 							display: none;
 							span{margin-left: 12px;}
 							.add-address-name,.add-address-phone{
-								width:250px;
+								width:48%;
 								height:30px;
 								line-height: 30px;
 								font-size:14px;
@@ -705,9 +709,9 @@
 								padding:0 20px;
 								border:1px solid #ccc;
 								border-radius:2px;
-								margin-left: 10px;
 								margin-top: 20px;
 							}
+							.add-address-phone{margin-left: 3%;}
 							.add-address-info{
 								width: 100%;
 								height: 90px;
@@ -727,7 +731,7 @@
 						margin-bottom: 20px;
 						span{margin-left: 12px;}
 						.edit-address-name,.edit-address-phone{
-							width:250px;
+							width:48%;
 							height:30px;
 							line-height: 30px;
 							font-size:14px;
@@ -735,9 +739,9 @@
 							padding:0 20px;
 							border:1px solid #ccc;
 							border-radius:2px;
-							margin-left: 10px;
 							margin-top: 20px;
 						}
+						.edit-address-phone{margin-left: 3%;}
 						.edit-address-info{
 							width: 100%;
 							height: 90px;
@@ -783,12 +787,20 @@
 						}
 					}
 					.pd-cart-address-detail{
+						position: relative;
 						display: none;
 						width: 100%;
 						height: 118px;
 						border-radius:2px;
 						padding:20px;
 						cursor: pointer;
+						.icon-address-delete{
+							position: absolute;
+							top: 10px;
+						    right: 10px;
+						    font-weight: bold;
+						    color: #F44336;
+						}
 						.pd-address-perInfo{
 							font-size: 14px;
 							color:@gray;
@@ -1079,6 +1091,10 @@
 	z-index: 999999999;
 }
 
+.btn{
+	border-radius: 2px;
+}
+
 /* 移动端新增代码 */
 .mobile-menu,.mobile-user{
 	display: inline-block;
@@ -1109,6 +1125,7 @@
 @media screen and (max-width: 992px), (max-device-width: 992px) {
 	.lm-pd-cart{
 		width: 100%;
+		box-shadow: none;
 		.pd-cart-wrapper{
 			.pd-cart-title{
 				width: 100%;
@@ -1261,6 +1278,17 @@
 			.pd-cart-pay-way{
 				left: 0;
 				width: 100%;
+				.pd-cart-freight-way{
+					float: none;
+					margin-top: 18px;
+				}
+				.pd-cart-pay-method{
+					margin-top: 6px;
+					margin-left: 0;
+				}
+				.pd-cart-ok{
+					margin-top: -18px;
+				}
 			}
 		}
 	}
@@ -1271,10 +1299,29 @@
 	.lm-pd-cart .pd-cart-pay-wrapper{padding: .1rem;}
 	.lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-inner .pd-cart-pay-address{padding: 0;}
 	.lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-inner .pd-cart-pay-address .pd-cart-address-more{width: 100%;margin-left: 0;}
+	.lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-inner .pd-cart-pay-address .pd-cart-address-title{height: 68px;}
+	.lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-inner .pd-cart-pay-address .pd-cart-address-title .pd-select-address{margin-left: 0;}
 	.lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-way{padding-left: .1rem;}
 	.lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-way .pd-cart-ok{margin-right: .1rem;}
 	.lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-title .pd-close{right: 0;}
 	.lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-title{margin-bottom: 30px;}
+	.lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-inner .pd-cart-pay-address .pd-cart-address-inner .pd-cart-address-add .address-add-inner .add-address-name, 
+	.lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-inner .pd-cart-pay-address .pd-cart-address-inner .pd-cart-address-add .address-add-inner .add-address-phone{
+		width: 100%;
+		margin-left: 0;
+	}
+	.lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-inner .pd-cart-pay-address .pd-cart-address-inner .pd-cart-address-edit .edit-address-name, 
+	.lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-inner .pd-cart-pay-address .pd-cart-address-inner .pd-cart-address-edit .edit-address-phone{
+		width: 100%;
+		margin-left: 0;
+	}
+	.lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-inner .pd-cart-pay-address .pd-cart-address-inner .pd-cart-address-add .pd-cart-address-complete .address-complete, 
+	.lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-inner .pd-cart-pay-address .pd-cart-address-inner .pd-cart-address-add .pd-cart-address-complete .address-cancel{
+		width: 48%;
+	}
+	.lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-inner .pd-cart-pay-address .pd-cart-address-inner .pd-cart-address-add .pd-cart-address-complete .address-cancel{
+		margin-left: 4%;
+	}
 	.lm-pd-cart .pd-cart-wrapper .pd-cart-title{
 		height: 40px;
 		line-height: 40px;
@@ -1283,7 +1330,7 @@
 		width: 45px;
 		height: 30px;
 		line-height: 30px;
-		img{width: 18px;}
+		img{width: 18px;margin-top: 6px;}
 		.pd-cart-select-num{
 			left: 36px;
 			width: 16px;

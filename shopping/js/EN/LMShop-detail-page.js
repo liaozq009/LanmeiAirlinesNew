@@ -37,6 +37,14 @@ var LMShopDetailPage = {
 
 		// 轮播
 		 Carousel.init($('.carousel'));
+
+		 //评论和详情切换
+		 $('.pd-show-tab>a').click(function(e) {
+		 	e.preventDefault();
+		 	$(this).addClass('active').siblings('a').removeClass('active');
+		 	var id = $(this).attr('data');
+		 	$('.'+id).show().siblings('div').hide();
+		 });
 	},
 };
 

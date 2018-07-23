@@ -32,11 +32,6 @@ var LMShop = {
 		}
 	},
 
-	/* 解决移动端延迟300ms问题 */
-	fastClick:function(dom){
-		FastClick.attach(dom[0]);
-	},
-
 	/* 商品滚动 */
 	pdSlider:function(){
 		//计算有几个ul
@@ -82,7 +77,6 @@ var LMShop = {
 	discountSelect:function(){
 		$('.pd-sales-list-1').find('.pd-sales-img1').hide().siblings('.pd-sales-img2').show();
 
-		this.fastClick($('.pd-sales-list img'));
 		$('.pd-sales-list img').click(function(){
 			$('.pd-sales-img1').hide();
 			$('.pd-sales-img2').show();
@@ -152,7 +146,7 @@ var LMShop = {
 		var sildeWidth;
 		var winWidth = $(window).width();
 		winWidth>350 ? sildeWidth='100%' : sildeWidth=350;
-
+		console.log(winWidth);
 		$('.lm-pd-cart,.pd-cart-title,.pd-cart-price-box').css('left',-winWidth); //初始化购物车位置
 		// $(window).resize(function(){
 		// 	$('.lm-pd-cart,.pd-cart-title,.pd-cart-price-box').css('left',-winWidth); //初始化购物车位置
@@ -530,7 +524,6 @@ var LMShop = {
 		});
 
 		// 搜索框缩放
-		this.fastClick($('.pd-search input'));
 		$('.pd-search input').click(function(event) {
 			$(this).parent().animate({width: '60%'}, 'slow');
 			$(this).animate({width: '80%'}, 'slow');

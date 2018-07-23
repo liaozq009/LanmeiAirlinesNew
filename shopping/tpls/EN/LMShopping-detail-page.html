@@ -47,7 +47,7 @@
 		<div class='poster-main carousel' data-setting='{
 		         "width":960,
 	             "height":400,
-	             "posterWidth":332,
+	             "posterWidth":400,
 	             "posterHeight":400,
 	             "verticalAlign":"middle",
 	             "autoPlay":false,
@@ -59,6 +59,8 @@
 			<ul class='poster-list'>
 				<li class="list-item"><a href="#"><img src="../../images/EN/pd-detail-img1.png" alt=""></a></li>
 				<li class="list-item"><a href="#"><img src="../../images/EN/pd-detail-img2.png" alt=""></a></li>
+				<li class="list-item"><a href="#"><img src="../../images/EN/pd-detail-img3.png" alt=""></a></li>
+				<li class="list-item"><a href="#"><img src="../../images/EN/pd-detail-img3.png" alt=""></a></li>
 				<li class="list-item"><a href="#"><img src="../../images/EN/pd-detail-img3.png" alt=""></a></li>
 			</ul>
 			<div class='poster-btn poster-next-btn'></div>
@@ -128,6 +130,12 @@
 					</div>
 					<a href="javascript:void(0)" class="next-arrow-model"><i class="iconfont icon-more"></i></a>
 				</div>
+				<div class="pd-add-cart-inner">
+					<div class="pd-inventory-num">
+						In stock Inventory : <span>1000</span>+
+					</div> 
+					<button class="add-cart-btn">Add to cart</button>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -135,33 +143,36 @@
 	<!-- 主体内容 -->
 	<section class="lm-container">
 		<div class="pd-show-tab">
-			<a href="#" class="pd-show-tab-detail">Details <b></b></a>
-			<a href="pd-shop-comments" class="pd-show-tab-comment active">Comments <b></b></a>
+			<a href="javascript:;" data="pd-shop-detail" class="pd-show-tab-detail">Details <b></b></a>
+			<a href="javascript:;" data="pd-shop-comments" class="pd-show-tab-comment active">Comments <b></b></a>
 		</div>
-		<div class="pd-shop-comments">
-			<div class="pd-shop-comments-detail shop-comments-detail-1">
-				<div class="shop-comments-detail-title">
-					<div class="shop-comments-detail-head"><img src="../../images/EN/PersonalCenter-icon.png"></div>
-					<div class="shop-comments-detail-name">
-						<h2>Myrtie Clark</h2>
-						<p class="shop-comments-detail-model"><span class="shop-color">orange</span><span class="shop-model">500ml</span></p>
+		<div class="pd-container-wrap">
+			<div class="pd-shop-detail">pd-shop-detail</div>
+			<div class="pd-shop-comments">
+				<div class="pd-shop-comments-detail shop-comments-detail-1">
+					<div class="shop-comments-detail-title">
+						<div class="shop-comments-detail-head"><img src="../../images/EN/PersonalCenter-icon.png"></div>
+						<div class="shop-comments-detail-name">
+							<h2>Myrtie Clark</h2>
+							<p class="shop-comments-detail-model"><span class="shop-color">orange</span><span class="shop-model">500ml</span></p>
+						</div>
+						<div class="shop-comments-detail-time">2017.05.17</div>
 					</div>
-					<div class="shop-comments-detail-time">2017.05.17</div>
+					<div class="shop-comments-details-content">
+						Because I like running, bought before and after four or five headphones, don’t feel very good, this time a lot better than the baby than I intend to buy, according to the ever buy a bluetooth headset is about 150 yuan, and the 200 yuan less than have, really value.Look pretty small headphones, the bass effect is very good.Send the fingertips of the gyro is also very good, boring to play or relaxing hee hee.Products, the result is right also.All five points, recommended a bluetooth headset!The seller service attitude is very good, answer questions patiently
+					</div>
+					<div class="shop-comments-details-imgs">
+						<img src="../../images/EN/comments-img1.png">
+						<img src="../../images/EN/comments-img2.png">
+						<img src="../../images/EN/comments-img3.png">
+						<div class="shop-comments-details-bigImgs"><img src="../../images/EN/comments-big-img1.png"></div>
+					</div>
+					<div class="shop-comments-details-answer">
+						Lanmei official customer service : <span>Thank you very much for your affirmation to us, your support is our motivation should be continued.</span>
+					</div>
 				</div>
-				<div class="shop-comments-details-content">
-					Because I like running, bought before and after four or five headphones, don’t feel very good, this time a lot better than the baby than I intend to buy, according to the ever buy a bluetooth headset is about 150 yuan, and the 200 yuan less than have, really value.Look pretty small headphones, the bass effect is very good.Send the fingertips of the gyro is also very good, boring to play or relaxing hee hee.Products, the result is right also.All five points, recommended a bluetooth headset!The seller service attitude is very good, answer questions patiently
-				</div>
-				<div class="shop-comments-details-imgs">
-					<img src="../../images/EN/comments-img1.png">
-					<img src="../../images/EN/comments-img2.png">
-					<img src="../../images/EN/comments-img3.png">
-					<div class="shop-comments-details-bigImgs"><img src="../../images/EN/comments-big-img1.png"></div>
-				</div>
-				<div class="shop-comments-details-answer">
-					Lanmei official customer service : <span>Thank you very much for your affirmation to us, your support is our motivation should be continued.</span>
-				</div>
+				<div class="shop-comments-details-pages"></div>
 			</div>
-			<div class="shop-comments-details-pages"></div>
 		</div>
 	</section>
 
@@ -571,7 +582,9 @@
 	<script type="text/javascript" src="../../libs/jQuery/jquery-1.11.3.js"></script>
 	<script type="text/javascript" src="../../../libs/jQuery/jquery.cookie.js"></script>
 	<script type="text/javascript" src="../../libs/layer/layer.js"></script>
-	<script type="text/javascript" src="../../libs/fastclick-master/fastclick.js"></script>
+	<script type="text/javascript" src="../../libs/slider/LM-hiSlider.js"></script>
+	<script type="text/javascript" src="../../libs/swiper/lm-swiper.min.js"></script>
+	<!-- <script type="text/javascript" src="../../libs/fastclick-master/fastclick.js"></script> -->
 	<script type="text/javascript" src="../../libs/bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="../../../libs/auto-complete-mail.js"></script>
 	<script type="text/javascript" src="../../libs/shopfly/shop-fly.js"></script>
@@ -583,6 +596,7 @@
 	<script type="text/javascript" src="../../../common/EN/js/login-register.js"></script>
 	<script type="text/javascript" src="../../common/EN/js/LMShop-common.js"></script>
 	<!-- 业务代码 -->
+	<script type="text/javascript" src="../../js/EN/LMShop.js"></script>
 	<script type="text/javascript" src="../../js/EN/LMShop-detail-page.js"></script>
 
 </body>
