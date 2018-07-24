@@ -110,6 +110,11 @@
 					>h2{
 						text-align: right;
 						a{
+							display: block;
+							width: 100%;
+							overflow: hidden;
+						    text-overflow: ellipsis;
+						    white-space: nowrap;
 							font-size:30px;
 							font-weight: bold;
 							color:#fff;
@@ -209,6 +214,7 @@
 			margin-top: 30px;
 			.pd-slider-large{
 				>ul{
+					width: 940px;
 					float: left;
 					overflow: hidden;
 					>li{
@@ -296,8 +302,12 @@
 									overflow: hidden;
 									h2{
 										float: left;
+										width: 90%;
 										font-size:18px;
 										color: @purple;
+										overflow: hidden;
+									    text-overflow: ellipsis;
+									    white-space: nowrap;
 									}
 									.pd-close{
 										float: right;
@@ -335,6 +345,7 @@
 										color:@gray;
 										text-align: left;
 										margin-top: 20px;
+										margin-left: 20px;
 										p{
 											font-size:14px;
 											color: @gray;

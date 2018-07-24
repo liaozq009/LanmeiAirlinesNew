@@ -156,6 +156,9 @@
 .lm-pd-cart .pd-cart-wrapper .pd-cart-box .pd-cart-select .pd-info > h2 {
   font-size: 14px;
   color: #1f2c5c;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .lm-pd-cart .pd-cart-wrapper .pd-cart-box .pd-cart-select .pd-info > .pd-info-param {
   color: #808080;
@@ -655,7 +658,6 @@
   margin-bottom: 20px;
 }
 .lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-inner .pd-cart-pay-address .pd-cart-address-inner .pd-cart-address-add {
-  display: none;
   width: 100%;
   padding-top: 10px;
 }
@@ -751,7 +753,6 @@
   padding: 10px 20px;
 }
 .lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-inner .pd-cart-pay-address .pd-cart-address-inner .pd-cart-address-edit {
-  display: none;
   margin-bottom: 20px;
 }
 .lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-inner .pd-cart-pay-address .pd-cart-address-inner .pd-cart-address-edit span {

@@ -116,6 +116,11 @@
   text-align: right;
 }
 .lm-container .pd-container .pd-inner .pd-detail .pd-detail-right > h2 a {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   font-size: 30px;
   font-weight: bold;
   color: #fff;
@@ -211,6 +216,7 @@
   margin-top: 30px;
 }
 .lm-container .pd-slider .pd-slider-main .pd-slider-large > ul {
+  width: 940px;
   float: left;
   overflow: hidden;
 }
@@ -305,8 +311,12 @@
 }
 .lm-container .pd-slider .pd-slider-main .pd-slider-large > ul > li .pd-slider-cart .pd-detail-select .pd-detail-title h2 {
   float: left;
+  width: 90%;
   font-size: 18px;
   color: #1f2c5c;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .lm-container .pd-slider .pd-slider-main .pd-slider-large > ul > li .pd-slider-cart .pd-detail-select .pd-detail-title .pd-close {
   float: right;
@@ -348,6 +358,7 @@
   color: #808080;
   text-align: left;
   margin-top: 20px;
+  margin-left: 20px;
 }
 .lm-container .pd-slider .pd-slider-main .pd-slider-large > ul > li .pd-slider-cart .pd-detail-select .pd-add-cart .pd-add-cart-lf p {
   font-size: 14px;

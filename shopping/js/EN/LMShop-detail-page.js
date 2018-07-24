@@ -45,6 +45,7 @@ var LMShopDetailPage = {
 		 	var id = $(this).attr('data');
 		 	$('.'+id).show().siblings('div').hide();
 		 });
+		 $('.pd-shop-detail').hide();
 	},
 };
 
