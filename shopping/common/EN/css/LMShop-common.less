@@ -9,6 +9,17 @@
 @red:#d0011b;
 @link:#4aa374;
 
+/* 引入字体 */
+@font-face {
+	font-family: NotoSans;
+	src: url(../../../../common/CN/fonts/NotoSans/SourceHanSansCN-Regular.otf);
+}
+
+body{
+	// font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: NotoSans;
+}
+
 /* 定义公共样式 */
 .pd-silder-select{
 	font-size: 18px;
@@ -212,7 +223,7 @@
 				width: 230px;
 				float: left;
 				padding-top: 10px;
-				.pd-checkAll{vertical-align: top;}
+				.pd-checkAll{vertical-align: text-bottom;}
 				label{
 					font-size:14px;
 					color:#1a1a1a;
@@ -287,7 +298,7 @@
 				left: 66px;
 				width:20px;
 				height:20px;
-				line-height: 24px;
+				line-height: 20px;
 				text-align: center;
 				background:@red;
 				color:#fff;
@@ -316,12 +327,16 @@
 					float: left;
 					width: 96%;
 					text-align: center;
-					font-size:18px;
+					font-size:16px;
 					color: @purple;
 				}
 				.pd-close{
+					display: block;
 					float: right;
 					cursor: pointer;
+					font-size: 20px;
+					font-weight: bold;
+					color: #1f2c5c;
 				}
 			}
 			.pd-img-large{
@@ -507,7 +522,7 @@
 				}
 				.pd-add-cart-rt{
 					float: left;
-					margin-left: 40px;
+					margin-left: 110px;
 					margin-top: 14px;
 					button{
 						width:120px;
@@ -541,6 +556,7 @@
 						color:#ccc;
 					}
 					.new-price{
+						font-weight: bold;
 						font-size:30px;
 						color: @green;
 					}
@@ -559,6 +575,7 @@
 						top: 4px;
 						display: inline-block;
 						width: 20px;
+						text-align: center;
 						font-size: 18px;
 						margin:0 28px;
 					}
@@ -599,9 +616,12 @@
 			}
 			.pd-close{
 				position: absolute;
-				top: 0px;
-				right: -10px;
-				cursor: pointer;
+			    top: 0px;
+			    right: 0;
+			    cursor: pointer;
+			    font-size: 20px;
+			    font-weight: bold;
+			    color: #1f2c5c;
 			}
 		}
 		.pd-cart-pay-inner{
@@ -713,6 +733,22 @@
 								border-radius:2px;
 								margin-top: 20px;
 							}
+							:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+								color:#ccc; 
+							}
+
+							::-moz-placeholder { /* Mozilla Firefox 19+ */
+								color:#ccc;
+							}
+
+							input:-ms-input-placeholder{
+								color:#ccc;
+							}
+
+							input::-webkit-input-placeholder{
+								color:#ccc;
+							}
+							.add-address-info::-webkit-input-placeholder{color:#ccc;}
 							.add-address-phone{margin-left: 3%;}
 							.add-address-info{
 								width: 100%;
@@ -742,6 +778,22 @@
 							border-radius:2px;
 							margin-top: 20px;
 						}
+						:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+							color:#ccc; 
+						}
+
+						::-moz-placeholder { /* Mozilla Firefox 19+ */
+							color:#ccc;
+						}
+
+						input:-ms-input-placeholder{
+							color:#ccc;
+						}
+
+						input::-webkit-input-placeholder{
+							color:#ccc;
+						}
+						.edit-address-info::-webkit-input-placeholder{color:#ccc;}
 						.edit-address-phone{margin-left: 3%;}
 						.edit-address-info{
 							width: 100%;
@@ -795,6 +847,7 @@
 						border-radius:2px;
 						padding:20px;
 						cursor: pointer;
+						.address-china-wrap{margin-top: 20px;}
 						.icon-address-delete{
 							position: absolute;
 							top: 10px;
@@ -878,12 +931,16 @@
 						}
 					}
 					.pd-info{
+						width: 60%;
 						float: left;
 						cursor: pointer;
 						>h2{
 							font-size: 14px;
 							color: @purple;
 							margin-top: 10px;
+							overflow: hidden;
+						    text-overflow: ellipsis;
+						    white-space: nowrap;
 						}
 						>.pd-info-param{
 							color: #ccc;
@@ -1095,6 +1152,13 @@
 .btn{
 	border-radius: 2px;
 }
+.address-tips{
+	display: none;
+	color: #1a1a1a;
+	padding-top: 10px;
+	i{margin-right: 10px;margin-top:10px;vertical-align: inherit;}
+	a{color: #1a1a1a;}
+}
 
 /* 移动端新增代码 */
 .mobile-menu,.mobile-user{
@@ -1135,9 +1199,9 @@
 					display: block;
 					position: absolute;
 					left: 0.15rem;
-					top: .1rem;
-					font-size: 0.16rem;
-					font-weight: normal;
+					top: 10px;
+					font-size: 20px;
+					z-index: 1;
 				}
 				.pd-cart-details{
 					position: absolute;
@@ -1147,6 +1211,9 @@
 				}
 				h2{
 					width: 100%;
+					position: absolute;
+					height: 40px;
+					line-height: 40px;
 					text-align: center;
 					margin-left: 0;
 					font-size: 0.15rem;
@@ -1178,10 +1245,15 @@
 				overflow-y: scroll;
 				.pd-detail-title{
 					height: 0.44rem;
-					line-height: 0.44rem;
+				    line-height: 0.44rem;
+				    padding-left: 50px;
+				    font-size: .16rem;
 					h2{
 						height: 0.44rem;
 						line-height: 0.44rem;
+						overflow: hidden;
+						text-overflow: ellipsis;
+						white-space: nowrap;
 					}
 					img{display: none;}
 					i{
@@ -1233,7 +1305,7 @@
 					margin-top: 0.14rem;
 					.pd-num-change{
 						span{
-							font-weight: 0.12rem;
+							font-size: 14px;
 							margin:0 20px;
 						}
 					}
@@ -1241,6 +1313,7 @@
 				.pd-add-cart{
 					position: relative;
 					margin-top: 0.14rem;
+					padding-right: 0;
 					overflow: hidden;
 					.pd-price{
 						padding: 0 0.16rem;
@@ -1298,13 +1371,15 @@
 @media screen and (max-width: 767px){
 	.lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-inner .pd-cart-pay-address .pd-cart-address-inner .pd-cart-address-detail{height: auto;}
 	.lm-pd-cart .pd-cart-pay-wrapper{padding: .1rem;}
+	.lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-inner{padding-bottom: 130px;}
 	.lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-inner .pd-cart-pay-address{padding: 0;}
 	.lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-inner .pd-cart-pay-address .pd-cart-address-more{width: 100%;margin-left: 0;}
 	.lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-inner .pd-cart-pay-address .pd-cart-address-title{height: 68px;}
-	.lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-inner .pd-cart-pay-address .pd-cart-address-title .pd-select-address{margin-left: 0;}
+	.lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-inner .pd-cart-pay-address .pd-cart-address-title h2{float: none;}
+	.lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-inner .pd-cart-pay-address .pd-cart-address-title .pd-select-address{margin-left: 0;float: none;}
 	.lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-way{padding-left: .1rem;}
 	.lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-way .pd-cart-ok{margin-right: .1rem;}
-	.lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-title .pd-close{right: 0;}
+	.pd-close{right: 0;}
 	.lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-title{margin-bottom: 30px;}
 	.lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-inner .pd-cart-pay-address .pd-cart-address-inner .pd-cart-address-add .address-add-inner .add-address-name, 
 	.lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-inner .pd-cart-pay-address .pd-cart-address-inner .pd-cart-address-add .address-add-inner .add-address-phone{
@@ -1331,7 +1406,7 @@
 		width: 45px;
 		height: 30px;
 		line-height: 30px;
-		img{width: 18px;margin-top: 6px;}
+		img{width: 18px;}
 		.pd-cart-select-num{
 			left: 36px;
 			width: 16px;
@@ -1339,5 +1414,9 @@
 		    line-height: 18px;
 		    font-size: 12px;
 		}
+	}
+	#payModal .modal-dialog .modal-content .modal-body .loginTitle{
+		padding: 0 10px;
+	    margin-top: 20px;
 	}
 }

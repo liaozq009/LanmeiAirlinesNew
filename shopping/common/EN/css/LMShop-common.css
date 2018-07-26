@@ -1,6 +1,14 @@
 @charset "utf-8";
 /* project.css */
 /* 定义变量 */
+/* 引入字体 */
+@font-face {
+  font-family: NotoSans;
+  src: url(../../../../common/CN/fonts/NotoSans/SourceHanSansCN-Regular.otf);
+}
+body {
+  font-family: NotoSans;
+}
 /* 定义公共样式 */
 .pd-silder-select {
   font-size: 18px;
@@ -216,7 +224,7 @@
   padding-top: 10px;
 }
 .lm-pd-cart .pd-cart-wrapper .pd-cart-price-box .pd-price-totle .pd-checkAll {
-  vertical-align: top;
+  vertical-align: text-bottom;
 }
 .lm-pd-cart .pd-cart-wrapper .pd-cart-price-box .pd-price-totle label {
   font-size: 14px;
@@ -289,7 +297,7 @@
   left: 66px;
   width: 20px;
   height: 20px;
-  line-height: 24px;
+  line-height: 20px;
   text-align: center;
   background: #d0011b;
   color: #fff;
@@ -316,12 +324,16 @@
   float: left;
   width: 96%;
   text-align: center;
-  font-size: 18px;
+  font-size: 16px;
   color: #1f2c5c;
 }
 .lm-pd-cart .pd-cart-detail-wrapper .pd-cart-detail .pd-detail-title .pd-close {
+  display: block;
   float: right;
   cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  color: #1f2c5c;
 }
 .lm-pd-cart .pd-cart-detail-wrapper .pd-cart-detail .pd-img-large {
   position: relative;
@@ -519,7 +531,7 @@
 }
 .lm-pd-cart .pd-cart-detail-wrapper .pd-cart-detail .pd-add-cart .pd-add-cart-rt {
   float: left;
-  margin-left: 40px;
+  margin-left: 110px;
   margin-top: 14px;
 }
 .lm-pd-cart .pd-cart-detail-wrapper .pd-cart-detail .pd-add-cart .pd-add-cart-rt button {
@@ -554,6 +566,7 @@
   color: #ccc;
 }
 .lm-pd-cart .pd-cart-detail-wrapper .pd-cart-detail .pd-add-cart .pd-price .new-price {
+  font-weight: bold;
   font-size: 30px;
   color: #8ec060;
 }
@@ -572,6 +585,7 @@
   top: 4px;
   display: inline-block;
   width: 20px;
+  text-align: center;
   font-size: 18px;
   margin: 0 28px;
 }
@@ -616,8 +630,11 @@
 .lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-title .pd-close {
   position: absolute;
   top: 0px;
-  right: -10px;
+  right: 0;
   cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  color: #1f2c5c;
 }
 .lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-inner {
   height: 100%;
@@ -737,6 +754,23 @@
   border-radius: 2px;
   margin-top: 20px;
 }
+.lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-inner .pd-cart-pay-address .pd-cart-address-inner .pd-cart-address-add .address-add-inner :-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #ccc;
+}
+.lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-inner .pd-cart-pay-address .pd-cart-address-inner .pd-cart-address-add .address-add-inner ::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #ccc;
+}
+.lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-inner .pd-cart-pay-address .pd-cart-address-inner .pd-cart-address-add .address-add-inner input:-ms-input-placeholder {
+  color: #ccc;
+}
+.lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-inner .pd-cart-pay-address .pd-cart-address-inner .pd-cart-address-add .address-add-inner input::-webkit-input-placeholder {
+  color: #ccc;
+}
+.lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-inner .pd-cart-pay-address .pd-cart-address-inner .pd-cart-address-add .address-add-inner .add-address-info::-webkit-input-placeholder {
+  color: #ccc;
+}
 .lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-inner .pd-cart-pay-address .pd-cart-address-inner .pd-cart-address-add .address-add-inner .add-address-phone {
   margin-left: 3%;
 }
@@ -769,6 +803,23 @@
   border: 1px solid #ccc;
   border-radius: 2px;
   margin-top: 20px;
+}
+.lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-inner .pd-cart-pay-address .pd-cart-address-inner .pd-cart-address-edit :-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #ccc;
+}
+.lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-inner .pd-cart-pay-address .pd-cart-address-inner .pd-cart-address-edit ::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #ccc;
+}
+.lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-inner .pd-cart-pay-address .pd-cart-address-inner .pd-cart-address-edit input:-ms-input-placeholder {
+  color: #ccc;
+}
+.lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-inner .pd-cart-pay-address .pd-cart-address-inner .pd-cart-address-edit input::-webkit-input-placeholder {
+  color: #ccc;
+}
+.lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-inner .pd-cart-pay-address .pd-cart-address-inner .pd-cart-address-edit .edit-address-info::-webkit-input-placeholder {
+  color: #ccc;
 }
 .lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-inner .pd-cart-pay-address .pd-cart-address-inner .pd-cart-address-edit .edit-address-phone {
   margin-left: 3%;
@@ -824,6 +875,9 @@
   border-radius: 2px;
   padding: 20px;
   cursor: pointer;
+}
+.lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-inner .pd-cart-pay-address .pd-cart-address-inner .pd-cart-address-detail .address-china-wrap {
+  margin-top: 20px;
 }
 .lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-inner .pd-cart-pay-address .pd-cart-address-inner .pd-cart-address-detail .icon-address-delete {
   position: absolute;
@@ -909,6 +963,7 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#7F1F2C5C", endColorstr="#7F1F2C5C");
 }
 .lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-inner .pd-cart-list-content .pd-cart-select .pd-info {
+  width: 60%;
   float: left;
   cursor: pointer;
 }
@@ -916,6 +971,9 @@
   font-size: 14px;
   color: #1f2c5c;
   margin-top: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-inner .pd-cart-list-content .pd-cart-select .pd-info > .pd-info-param {
   color: #ccc;
@@ -1144,6 +1202,19 @@
 .btn {
   border-radius: 2px;
 }
+.address-tips {
+  display: none;
+  color: #1a1a1a;
+  padding-top: 10px;
+}
+.address-tips i {
+  margin-right: 10px;
+  margin-top: 10px;
+  vertical-align: inherit;
+}
+.address-tips a {
+  color: #1a1a1a;
+}
 /* 移动端新增代码 */
 .mobile-menu,
 .mobile-user {
@@ -1205,9 +1276,9 @@
     display: block;
     position: absolute;
     left: 0.15rem;
-    top: .1rem;
-    font-size: 0.16rem;
-    font-weight: normal;
+    top: 10px;
+    font-size: 20px;
+    z-index: 1;
   }
   .lm-pd-cart .pd-cart-wrapper .pd-cart-title .pd-cart-details {
     position: absolute;
@@ -1217,6 +1288,9 @@
   }
   .lm-pd-cart .pd-cart-wrapper .pd-cart-title h2 {
     width: 100%;
+    position: absolute;
+    height: 40px;
+    line-height: 40px;
     text-align: center;
     margin-left: 0;
     font-size: 0.15rem;
@@ -1243,10 +1317,15 @@
   .lm-pd-cart .pd-cart-detail-wrapper .pd-cart-detail .pd-detail-title {
     height: 0.44rem;
     line-height: 0.44rem;
+    padding-left: 50px;
+    font-size: .16rem;
   }
   .lm-pd-cart .pd-cart-detail-wrapper .pd-cart-detail .pd-detail-title h2 {
     height: 0.44rem;
     line-height: 0.44rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   .lm-pd-cart .pd-cart-detail-wrapper .pd-cart-detail .pd-detail-title img {
     display: none;
@@ -1299,12 +1378,13 @@
     margin-top: 0.14rem;
   }
   .lm-pd-cart .pd-cart-detail-wrapper .pd-cart-detail .pd-model-num .pd-num-change span {
-    font-weight: 0.12rem;
+    font-size: 14px;
     margin: 0 20px;
   }
   .lm-pd-cart .pd-cart-detail-wrapper .pd-cart-detail .pd-add-cart {
     position: relative;
     margin-top: 0.14rem;
+    padding-right: 0;
     overflow: hidden;
   }
   .lm-pd-cart .pd-cart-detail-wrapper .pd-cart-detail .pd-add-cart .pd-price {
@@ -1366,6 +1446,9 @@
   .lm-pd-cart .pd-cart-pay-wrapper {
     padding: .1rem;
   }
+  .lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-inner {
+    padding-bottom: 130px;
+  }
   .lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-inner .pd-cart-pay-address {
     padding: 0;
   }
@@ -1376,8 +1459,12 @@
   .lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-inner .pd-cart-pay-address .pd-cart-address-title {
     height: 68px;
   }
+  .lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-inner .pd-cart-pay-address .pd-cart-address-title h2 {
+    float: none;
+  }
   .lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-inner .pd-cart-pay-address .pd-cart-address-title .pd-select-address {
     margin-left: 0;
+    float: none;
   }
   .lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-way {
     padding-left: .1rem;
@@ -1385,7 +1472,7 @@
   .lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-way .pd-cart-ok {
     margin-right: .1rem;
   }
-  .lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-title .pd-close {
+  .pd-close {
     right: 0;
   }
   .lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-title {
@@ -1419,7 +1506,6 @@
   }
   .lm-pd-cart .pd-cart-wrapper .pd-cart-view img {
     width: 18px;
-    margin-top: 6px;
   }
   .lm-pd-cart .pd-cart-wrapper .pd-cart-view .pd-cart-select-num {
     left: 36px;
@@ -1427,5 +1513,9 @@
     height: 16px;
     line-height: 18px;
     font-size: 12px;
+  }
+  #payModal .modal-dialog .modal-content .modal-body .loginTitle {
+    padding: 0 10px;
+    margin-top: 20px;
   }
 }

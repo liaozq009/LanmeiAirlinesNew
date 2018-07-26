@@ -35,9 +35,6 @@ var LMShopDetailPage = {
 		    }
 		});
 
-		// 轮播
-		 Carousel.init($('.carousel'));
-
 		 //评论和详情切换
 		 $('.pd-show-tab>a').click(function(e) {
 		 	e.preventDefault();
@@ -46,6 +43,30 @@ var LMShopDetailPage = {
 		 	$('.'+id).show().siblings('div').hide();
 		 });
 		 $('.pd-shop-detail').hide();
+
+		function IsPC() {
+		 	var userAgentInfo = navigator.userAgent;
+		 	var Agents = ["Android", "iPhone","SymbianOS", "Windows Phone"];
+		 	var flag = true;
+		 	for (var v = 0; v < Agents.length; v++) {
+		 		if (userAgentInfo.indexOf(Agents[v]) > 0) {
+		 			flag = false;
+		 			break;
+		 		}
+		 	}
+		 	return flag;
+		}
+
+		if(IsPC()){ //pc
+		 	// 轮播
+		 	Carousel.init($('.carousel'));
+		}else{ //手机
+		 	var swiper = new Swiper('.m-carousel-wrap', {
+		 		pagination: '.swiper-pagination',
+		 		paginationClickable: true,
+		 		freeMode: false
+		 	});
+		}
 	},
 };
 

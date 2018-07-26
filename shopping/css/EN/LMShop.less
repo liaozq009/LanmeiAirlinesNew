@@ -98,15 +98,15 @@
 				margin-top: 60px;
 				.pd-detail-left{
 					float: left;
-					width:490px;
+					width:400px;
 					a img{
-						width: 490px;
-						height: 300px;
+						width: 400px;
+						height: 400px;
 					}
 				}
 				.pd-detail-right{
 					float: right;
-					width:430px;
+					width:510px;
 					>h2{
 						text-align: right;
 						a{
@@ -225,7 +225,7 @@
 						background: #fff;
 						.pd-img{
 							width: 100%;
-							height: 323px;
+							height: 300px;
 							padding: 10px;
 							img{
 								width: 100%;
@@ -235,11 +235,10 @@
 						.pd-slider-title{
 							height: 55px;
 							>a,>p{
+								height: 50px;
 								font-size: 18px;
 								color:@purple;
 								overflow: hidden;
-								text-overflow: ellipsis;
-								white-space: nowrap;
 								padding:0 10px;
 								transition: color .3s;
 								-webkit-transition: color .3s;
@@ -257,6 +256,7 @@
 						.pd-slider-cart{
 							position: relative;
 							height: 60px;
+							margin-top: 23px;
 							.pd-slider-price{
 								float: left;
 								height: 60px;
@@ -310,8 +310,12 @@
 									    white-space: nowrap;
 									}
 									.pd-close{
+										display: block;
 										float: right;
 										cursor: pointer;
+										font-size: 20px;
+										font-weight: bold;
+										color: #1f2c5c;
 									}
 								}
 								.pd-price{
@@ -427,11 +431,11 @@
 				margin-top:50px !important;
 				.pd-detail-left{
 					float: right !important;
-					width:490px;
+					width:400px;
 				}
 				.pd-detail-right{
 					float: left !important;
-					width: 430px;
+					width: 510px;
 					>h2{text-align: left;}
 					.pd-price{
 						text-align: left !important;
@@ -700,8 +704,8 @@
 				dl{
 					width: 33.33%;
 					dd{
-						margin-top:0.1rem !important;
-						font-size: 0.1rem;
+						margin-top:0.12rem !important;
+						font-size: 0.12rem;
 					}
 					img{width: 0.2rem;}
 				}
@@ -727,12 +731,12 @@
 						height: 0.26rem;
 						top:0;
 						left:0.44rem;
-						font-size: 0.1rem;
+						font-size: 0.12rem;
 					}
 				}
 				.pd-title{
 					margin-top: 0.3rem;
-					font-size: 0.15rem;
+					font-size: 0.16rem;
 				}
 				.pd-detail{
 					margin-top: .2rem !important;
@@ -751,11 +755,11 @@
 							a{font-size: 0.14rem;}
 						}
 						.pd-price{
-							.old-price{font-size: 0.1rem;}
-							.new-price{font-size: 0.13rem;}
+							.old-price{font-size: 0.12rem;}
+							.new-price{font-size: 0.14rem;}
 						}
 						.pd-silder-select{
-							margin-top: 0.1rem;
+							margin-top: 0.12rem;
 							text-align: left;
 							.m-model-title{
 								display: inline-block;
@@ -774,13 +778,13 @@
 								width: 64%;
 								.pd-model-large{
 									li{
-										font-size: 0.1rem;
+										font-size: 0.12rem;
 									}
 								}
 							}
 						}
 						.pd-add-cart{
-							margin-top: 0.1rem;
+							margin-top: 0.12rem;
 							.pd-add-cart-rt{
 								float: left;
 								text-align: left;
@@ -797,7 +801,7 @@
 								margin-left: 0 !important;
 								padding-left: 0.05rem;
 								margin-top: .1rem;
-								p{font-size: 0.01rem;}
+								p{font-size: 0.12rem;}
 							}
 						}
 					}
@@ -821,49 +825,48 @@
 			display: block;
 			width: 100%;
 			height: 2.5rem;
-			padding: 0.3rem 0.1rem;
+			padding: 0.3rem 0.12rem;
 			.m-swiper-wrapper{
 				.m-swiper-slide{
 					width: 1.4rem !important;
-					height: 2rem;
 					text-align: center;
 					background: #fff;
 					margin-bottom: 6px;
 					.pd-img{
 						width: 1.4rem !important;
-						height: 1.2rem;
+						height: 1.4rem;
 						a{
 							img{
 								width: 100%;
-								height: 1.2rem;
+								height: 100%;
 							}
 						}
 					}
 					.pd-slider-title{
-						height: 0.39rem;
+						height: 0.36rem;
+						margin-top: 0.06rem;
 						a{
+							height: .36rem;
 							display: inline-block;
 							width: 100%;
-							font-size: 0.1rem;
+							font-size: 0.12rem;
 							color: #1f2c5c;
 							overflow: hidden;
-							text-overflow: ellipsis;
-							white-space: nowrap;
-							padding: 0 0.1rem;
+							padding: 0 0.12rem;
 						}
 						p{
-							font-size: 0.1rem;
+							font-size: 0.12rem;
 							color: #1f2c5c;
 							overflow: hidden;
 							text-overflow: ellipsis;
 							white-space: nowrap;
-							padding: 0 0.1rem;
+							padding: 0 0.12rem;
 						}
 					}
 					.pd-slider-cart{
 						position: relative;
 						height: 0.3rem;
-						margin-top: 0.11rem;
+						margin-top: 0.06rem;
 						.pd-slider-price{
 							float: left;
 							height: 0.3rem;
@@ -876,7 +879,7 @@
 							}
 							.old-price{
 								display: none;
-								font-size: 0.1rem;
+								font-size: 0.12rem;
 								color: #ccc;
 								text-decoration: line-through;
 								margin-left: 0.04rem;
@@ -917,7 +920,7 @@
 			>dl{
 				margin-left: 0 !important;
 				width: 50% !important;
-				margin-bottom: 0.1rem;
+				margin-bottom: 0.12rem;
 				dt{
 					img{
 						width: 0.75rem;
@@ -928,14 +931,14 @@
 					}
 				}
 				dd{
-					margin-top: 0.1rem;
+					margin-top: 0.12rem;
 					font-size: 0.12rem;
 				}
 			}
 		}
 		.pd-sales-rule{
 			width: 100%;
-			margin: 0.1rem 0 0.2rem;
+			margin: 0.12rem 0 0.2rem;
 			h2{
 				width: 100%;
 				text-align: center;
@@ -945,7 +948,7 @@
 			p{
 				width: 100%;
 				text-align: left;
-				font-size: 0.1rem;
+				font-size: 0.12rem;
 			}
 		}
 		.pd-sales-discount{
@@ -977,8 +980,8 @@
 						text-shadow: 0 0 4px rgba(0, 0, 0, 0.16);
 					}
 					p{
-						font-size: 0.1rem;
-						margin-top: 0.1rem;
+						font-size: 0.12rem;
+						margin-top: 0.12rem;
 						font-weight: bold;
 						color: #fff;
 						text-shadow: 0 0 4px rgba(0, 0, 0, 0.16);

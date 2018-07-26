@@ -19,7 +19,7 @@ var LanmeiAirlinesCommon = {
 			if (_tick) clearTimeout(_tick);
 			_tick = setTimeout(function() {
 				var winWidth = $(window).width();
-				if(winWidth>=1200){
+				// if(winWidth>=1200){
 					$(window).scrollTop()>300 ? $('.BackToTop').fadeIn('slow') : $('.BackToTop').fadeOut('slow');
 					
 					getBottom = $(document).height() - $(window).height() - $(window).scrollTop();
@@ -28,7 +28,7 @@ var LanmeiAirlinesCommon = {
 					}else{
 						$('.BackToTop').css('bottom',70);
 					}
-				}
+				// }
 			}, 100);
 		});
 
