@@ -642,7 +642,7 @@
 					<input type="hidden" name="CURRENCY" value="USD">
 					
 					<p class="tips-com animated fadeInUp js-tips-com">Heart is not as good as action!</p>
-					<div class="select-way js-selectTh-way animated fadeInUp">
+					<div class="select-way js-thSelect-way animated fadeInUp">
 						<a href="javascript:;" class="round-trip active" data-way="round">Round trip</a>
 						<a href="javascript:;" class="one-way" data-way="one">One-way</a>
 					</div>
@@ -655,17 +655,16 @@
 						<i class="local-change m-local-change js-mTicketHotel-change animated fadeInUp"></i>
 						<div class="to-com js-ticketHotel-to">
 							<input type="text" class="t-to-input js-thTo-input" data="js-thTo-menu" placeholder="To" autocomplete="off">
-							<!-- 改到这里 -->
 							<span class="m-city-to js-m-thTcity">Siem Reap/Cambodia</span>
 						</div>
-						<div class="date-com js-ticket-date">
-							<span class="date-result js-date-result" id="js-mDate-result"></span>
+						<div class="date-com js-ticketHotel-date">
+							<span class="date-result js-thDate-result" id="js-thMDate-result"></span>
 						</div>
-						<div class="people-com js-ticket-people">
-							<div class="t-people-result hidden-infant">
-								<p class="p-adult js-p-adult">x <span>1</span></p>
-								<p class="p-child js-p-child">x <span>0</span></p>
-								<p class="p-infant js-p-infant">x <span>0</span></p>
+						<div class="people-com js-ticketHotel-people">
+							<div class="t-people-result">
+								<p class="p-hotelRooms js-p-ticketHotelRooms">x <span>1</span></p>
+								<p class="p-hotelAdult js-p-ticketHotelAdult">x <span>2</span></p>
+								<p class="p-hotelChild js-p-ticketHotelChild">x <span>0</span></p>
 							</div>
 						</div>
 					</div>
@@ -679,66 +678,134 @@
 					<div class="popup-title-wrap">
 						<p class="popup-title js-popup-title">Select origin</p>
 						<p class="popup-close js-popup-close"></p>
-						<input type="text" name="" class="city-search js-city-search" value="" data="js-from-menu" placeholder="Search">
+						<input type="text" name="" class="city-search js-thCity-search" value="" data="js-thFrom-menu" placeholder="Search">
 					</div>
-					<div class="popup-box js-popup-box">
-						<div class="popup-content popup-inactive js-popup-content">
+					<div class="popup-box js-thPopup-box">
+						<div class="popup-content popup-inactive js-thPopup-content">
 							<!-- 出发地目的地选择 -->
-							<div class="popup-airport-from popup-airport js-airport-from">
+							<div class="popup-airport-from popup-airport js-thAirport-from">
 								<h2>Origin Airport :</h2>
-								<ul class="flight-list-wrap js-from-menu">
+								<ul class="flight-list-wrap js-thFrom-menu">
 									
 								</ul>
 							</div>
-							<div class="popup-airport-to popup-airport js-airport-to">
+							<div class="popup-airport-to popup-airport js-thAirport-to">
 								<h2>Destination Airport :</h2>
-								<ul class="flight-list-wrap js-to-menu">
+								<ul class="flight-list-wrap js-thTo-menu">
 
 								</ul>
 							</div>
 							<!-- 日期选择 -->
-							<div class="popup-date js-popup-date">
+							<div class="popup-date js-thPopup-date">
 								
 							</div>
 							<!-- 人数选择 -->
-							<div class="popup-people js-popup-people">
-								<p class="people-title">Number of passengers :</p>
-								<div class="select-people-container">
-									<div class="s-adult s-people-com js-s-adult">
-										<div class="people-prompt">
-											<p class="p1">Adult</p>
-											<p class="p2 adult-tip">( 12+ )</p>
+							<div class="hotel-popus-people popup-people js-ticketHotelPopup-people">
+								<p class="people-title js-thRooms-title">Room and number of choices :</p>
+								<div class="select-people-container js-thRooms-container">
+									<div class="s-room-1 s-room-com s-people-com animated fadeInUp" id="js-thRoom1-inner">
+										<p class="rooms-title">Room 1</p>
+										<div class="adult-rooms-content rooms-content-com js-thAdultRooms-content">
+											<div class="hotel-people-prompt people-prompt">
+												<p class="p1">Adult</p>
+											</div>
+											<div class="hotel-people-number people-number">
+												<a href="javascript:;" class="sub-people off-sub-operation js-ticketHotelAdult-sub"></a>
+												<span class="adult-num js-ticketHotelAdult-num">2</span>
+												<a href="javascript:;" class="add-people js-ticketHotelAdult-add"></a>
+											</div>
 										</div>
-										<div class="people-number">
-											<a href="javascript:;" class="sub-people off-sub-operation js-adult-sub"></a>
-											<span class="adult-num">1</span>
-											<a href="javascript:;" class="add-people js-adult-add"></a>
+										<div class="child-rooms-content rooms-content-com js-thChildRooms-content">
+											<div class="hotel-people-prompt people-prompt">
+												<p class="p1">Child</p>
+											</div>
+											<div class="hotel-people-number people-number disable">
+												<a href="javascript:;" class="sub-people off-sub-operation js-ticketHotelChild-sub"></a>
+												<span class="child-num js-ticketHotelChild-num">0</span>
+												<a href="javascript:;" class="add-people js-ticketHotelChild-add"></a>
+											</div>
 										</div>
-									</div>
-									<div class="s-child s-people-com js-s-child">
-										<div class="people-prompt">
-											<p class="p1">Child</p>
-											<p class="p2 child-tip">(2-11)</p>
+										<div class="age-rooms-com rooms-content-com animated fadeInUp js-thAge-1">
+											<div class="hotel-people-prompt people-prompt">
+												<p class="p1">Age/1</p>
+											</div>
+											<div class="hotel-age-wrap people-number">
+												<span class="age-result js-thAge-result">1</span>
+												<div class="age-menu-box js-thAge-box">
+													<ul class="hotel-age-menu js-thAge-menu">
+														<li title="Age < 1 year old">&lt; 1</li>
+														<li>2</li>
+														<li>3</li>
+														<li>4</li>
+														<li>5</li>
+														<li>6</li>
+														<li>7</li>
+														<li>8</li>
+														<li>9</li>
+														<li>10</li>
+														<li>11</li>
+														<li>12</li>
+													</ul>
+												</div>
+											</div>
 										</div>
-										<div class="people-number disable">
-											<a href="javascript:;" class="sub-people off-sub-operation js-child-sub"></a>
-											<span class="child-num">0</span>
-											<a href="javascript:;" class="add-people js-child-add"></a>
+										<div class="age-rooms-com rooms-content-com animated fadeInUp js-thAge-2">
+											<div class="hotel-people-prompt people-prompt">
+												<p class="p1">Age/2</p>
+											</div>
+											<div class="hotel-age-wrap people-number">
+												<span class="age-result js-thAge-result">1</span>
+												<div class="age-menu-box js-thAge-box">
+													<ul class="hotel-age-menu js-thAge-menu">
+														<li title="Age < 1 year old">&lt; 1</li>
+														<li>2</li>
+														<li>3</li>
+														<li>4</li>
+														<li>5</li>
+														<li>6</li>
+														<li>7</li>
+														<li>8</li>
+														<li>9</li>
+														<li>10</li>
+														<li>11</li>
+														<li>12</li>
+													</ul>
+												</div>
+											</div>
 										</div>
-									</div>
-									<div class="s-infant s-people-com">
-										<div class="people-prompt">
-											<p class="p1"><img src="images/EN/infant-icon.png">Infant</p>
-											<p class="p2 infant-tip">( < 2 )</p>
-										</div>
-										<div class="people-number disable">
-											<a href="javascript:;" class="sub-people off-sub-operation js-infant-sub"></a>
-											<span class="infant-num">0</span>
-											<a href="javascript:;" class="add-people js-infant-add"></a>
+										<div class="age-rooms-com rooms-content-com animated fadeInUp js-thAge-3">
+											<div class="hotel-people-prompt people-prompt">
+												<p class="p1">Age/3</p>
+											</div>
+											<div class="hotel-age-wrap people-number">
+												<span class="age-result js-thAge-result">1</span>
+												<div class="age-menu-box js-thAge-box">
+													<ul class="hotel-age-menu js-thAge-menu">
+														<li title="Age < 1 year old">&lt; 1</li>
+														<li>2</li>
+														<li>3</li>
+														<li>4</li>
+														<li>5</li>
+														<li>6</li>
+														<li>7</li>
+														<li>8</li>
+														<li>9</li>
+														<li>10</li>
+														<li>11</li>
+														<li>12</li>
+													</ul>
+												</div>
+											</div>
 										</div>
 									</div>
 								</div>
-								<div class="m-select-people"><a href="javascript:;" class="js-mSelect-people">SAVE</a></div>
+								<div class="add-rooms-wrap">
+									<div class="add-rooms-content js-add-thRoomsTab">
+										<p class="" data-room="js-thRoom1-inner"><span>Room 1</span><b>×</b></p>
+									</div>
+									<p class="add-rooms-btn js-add-thRooms">Add</p>
+								</div>
+								<div class="m-select-rooms"><a href="javascript:;" class="js-thMSelect-rooms">SAVE</a></div>
 							</div>
 						</div>
 					</div>
@@ -929,8 +996,9 @@
 			<ul class="js-aside-flight">
 				<li class="li-child1"><a href="javascript:;" data-href="ticket-content" class="nth-child1 active js-a-ticket"><span>Ticket</span></a></li>
 				<li class="li-child2"><a href="javascript:;" data-href="hotel-content" class="nth-child2 js-a-hotel"><span>Hotel</span></a></li>
-				<li class="li-child3"><a href="javascript:;" data-href="car-content" class="nth-child3 js-a-car"><span>Car</span></a></li>
-				<li class="li-child4"><a href="javascript:;" data-href="flight-content" class="nth-child4 js-a-flight"><span>Flight Status</span></a></li>
+				<li class="li-child3"><a href="javascript:;" data-href="ticketHotel-content" class="nth-child3 js-a-ticketHotel"><span>Flight+Hotel</span></a></li>
+				<li class="li-child4"><a href="javascript:;" data-href="car-content" class="nth-child4 js-a-car"><span>Car</span></a></li>
+				<li class="li-child5"><a href="javascript:;" data-href="flight-content" class="nth-child5 js-a-flight"><span>Flight Status</span></a></li>
 				<li class="li-slide"></li>
 			</ul>
 			<!-- <a href="javascript:void(0)" class="flight-up-arrow js-flight-up"></a>

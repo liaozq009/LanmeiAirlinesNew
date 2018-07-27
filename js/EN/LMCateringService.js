@@ -278,6 +278,17 @@ var LMCatering = {
             $shopMask.fadeOut();
             hideShopping();
         });
+
+        $('.js-catering-img').click(function(event) {
+            var data = $(this).attr('data');
+            layer.open({
+                area: ['auto', 'auto'],
+                type: 1,
+                shadeClose: true,
+                title: false, //不显示标题
+                content: '餐食成分...'
+            });
+        });
     },
 };
 

@@ -227,13 +227,18 @@
 		</div>
 		<!-- 商品推荐 -->
 		<div class="catering-recommend-wrap js-catering-container">
-			<div class="catering-recommend-img"><img src="../../imgage_demo/catering-recommend.png" alt="recommend-catering"></div>
+			<div class="buy-catering-tips">
+				<p>温馨提示：</p>
+				<p>1、只支持在官网购买机票的乘客购买预定餐食服务。</p>
+				<p>2、乘坐航班起飞前24小时，购买预定餐食服务。</p>
+			</div>
+			<div class="catering-recommend-img"><img src="../../imgage_demo/catering-recommend.png" alt="recommend-catering" class="js-catering-img" data="catering-id-0"></div>
 			<div class="catering-recommend-title">
-				<img src="../../imgage_demo/catering-recommend.png" class="catering-img" style="display: none;">
+				<img src="../../imgage_demo/catering-recommend.png" class="catering-img js-catering-img" style="display: none;">
 				<!-- 注意：data-name是必填，并且不能一样，区分每个商品 -->
 				<h2 id="js-cateringId-1">Curry chicken rice</h2>
 				<div class="catering-price-wrap js-cateringPrice-wrap">
-					<h3 class="catering-price js-catering-price">$ <span>8.00</span></h3>
+					<h3 class="catering-price js-catering-price"><span>$8.00</span><span class="old-price">$88.00</span></h3>
 					<div class="catering-num-wrap">
 	                    <a href="javascript:;" class="sub-catering js-sub-catering off-sub-operation" tabindex="0"></a>
 	                    <span class="catering-num js-catering-num">0</span>
@@ -251,12 +256,12 @@
 		<div class="catering-slick-bg js-catering-slick js-catering-container">
 			<div class="catering-slick-container">
 				<div class="catering-com-wrap catering-slick catering-slick-1">
-					<img src="../../imgage_demo/catering-slick.png" class="catering-img">
+					<img src="../../imgage_demo/catering-slick.png" class="catering-img js-catering-img" data="catering-id-1">
 					<span class="catering-tips">Healthy</span>
 					<h2 class="catering-title" id="js-cateringId-2">Beef rice-2</h2>
 					<p class="catering-detail">beef, rice, chili, carrots, vegetables</p>
 					<div class="catering-price-wrap js-cateringPrice-wrap">
-						<h3 class="catering-price js-catering-price">$ <span>31.02</span></h3>
+						<h3 class="catering-price js-catering-price"><span>$31.02</span><span class="old-price">$88.00</span></h3>
 						<div class="catering-num-wrap">
 		                    <a href="javascript:;" class="sub-catering js-sub-catering off-sub-operation"></a>
 		                    <span class="catering-num js-catering-num">0</span>
@@ -267,12 +272,12 @@
 			</div>
 			<div class="catering-slick-container">
 				<div class="catering-com-wrap catering-slick catering-slick-1">
-					<img src="../../imgage_demo/catering-slick.png" class="catering-img">
+					<img src="../../imgage_demo/catering-slick.png" class="catering-img js-catering-img" data="catering-id-2">
 					<span class="catering-tips">Healthy</span>
 					<h2 class="catering-title" id="js-cateringId-3">Beef rice-3</h2>
 					<p class="catering-detail">beef, rice, chili, carrots, vegetables</p>
 					<div class="catering-price-wrap js-cateringPrice-wrap">
-						<h3 class="catering-price js-catering-price">$ <span>28.00</span></h3>
+						<h3 class="catering-price js-catering-price"><span>$ 28.00</span></h3>
 						<div class="catering-num-wrap">
 		                    <a href="javascript:;" class="sub-catering js-sub-catering off-sub-operation"></a>
 		                    <span class="catering-num js-catering-num">0</span>
@@ -283,7 +288,7 @@
 			</div>
 			<div class="catering-slick-container">
 				<div class="catering-com-wrap catering-slick catering-slick-1">
-					<img src="../../imgage_demo/catering-slick.png" class="catering-img">
+					<img src="../../imgage_demo/catering-slick.png" class="catering-img js-catering-img" data="catering-id-3">
 					<span class="catering-tips">Healthy</span>
 					<h2 class="catering-title" id="js-cateringId-4">Beef rice-4</h2>
 					<p class="catering-detail">beef, rice, chili, carrots, vegetables</p>
@@ -299,7 +304,7 @@
 			</div>
 			<div class="catering-slick-container">
 				<div class="catering-com-wrap catering-slick catering-slick-1">
-					<img src="../../imgage_demo/catering-slick.png" class="catering-img">
+					<img src="../../imgage_demo/catering-slick.png" class="catering-img js-catering-img">
 					<span class="catering-tips">Healthy</span>
 					<h2 class="catering-title" id="js-cateringId-5">Beef rice-5</h2>
 					<p class="catering-detail">beef, rice, chili, carrots, vegetables</p>
@@ -315,7 +320,7 @@
 			</div>
 			<div class="catering-slick-container">
 				<div class="catering-com-wrap catering-slick catering-slick-1">
-					<img src="../../imgage_demo/catering-slick.png" class="catering-img">
+					<img src="../../imgage_demo/catering-slick.png" class="catering-img js-catering-img">
 					<span class="catering-tips">Healthy</span>
 					<h2 class="catering-title" id="js-cateringId-6">Beef rice-6</h2>
 					<p class="catering-detail">beef, rice, chili, carrots, vegetables</p>
@@ -336,12 +341,12 @@
 	<div class="catering-list-wrap js-catering-container">
 		<div class="catering-com-wrap catering-list">
 			<div class="catering-list-bg">
-				<img src="../../imgage_demo/catering-slick.png" class="catering-img">
+				<img src="../../imgage_demo/catering-slick.png" class="catering-img js-catering-img">
 				<span class="catering-tips">Healthy</span>
 				<h2 class="catering-title" id="js-cateringId-7">Beef rice-7</h2>
 				<p class="catering-detail">beef, rice, chili, carrots, vegetables</p>
 				<div class="catering-price-wrap js-cateringPrice-wrap">
-					<h3 class="catering-price js-catering-price">$ <span>12.00</span></h3>
+					<h3 class="catering-price js-catering-price"><span>$12.00</span><span class="old-price">$88.00</span></h3>
 					<div class="catering-num-wrap">
 	                    <a href="javascript:;" class="sub-catering js-sub-catering off-sub-operation"></a>
 	                    <span class="catering-num js-catering-num">0</span>
@@ -352,7 +357,7 @@
 		</div>
 		<div class="catering-com-wrap catering-list">
 			<div class="catering-list-bg">
-				<img src="../../imgage_demo/catering-slick.png" class="catering-img">
+				<img src="../../imgage_demo/catering-slick.png" class="catering-img js-catering-img">
 				<span class="catering-tips">Healthy</span>
 				<h2 class="catering-title" id="js-cateringId-8">Beef rice-8</h2>
 				<p class="catering-detail">beef, rice, chili, carrots, vegetables</p>
@@ -368,7 +373,7 @@
 		</div>
 		<div class="catering-com-wrap catering-list">
 			<div class="catering-list-bg">
-				<img src="../../imgage_demo/catering-slick.png" class="catering-img">
+				<img src="../../imgage_demo/catering-slick.png" class="catering-img js-catering-img">
 				<span class="catering-tips">Healthy</span>
 				<h2 class="catering-title" id="js-cateringId-9">Beef rice-9</h2>
 				<p class="catering-detail">beef, rice, chili, carrots, vegetables</p>
@@ -384,7 +389,7 @@
 		</div>
 		<div class="catering-com-wrap catering-list">
 			<div class="catering-list-bg">
-				<img src="../../imgage_demo/catering-slick.png" class="catering-img">
+				<img src="../../imgage_demo/catering-slick.png" class="catering-img js-catering-img">
 				<span class="catering-tips">Healthy</span>
 				<h2 class="catering-title" id="js-cateringId-10">Beef rice-10</h2>
 				<p class="catering-detail">beef, rice, chili, carrots, vegetables</p>
@@ -400,7 +405,7 @@
 		</div>
 		<div class="catering-com-wrap catering-list">
 			<div class="catering-list-bg">
-				<img src="../../imgage_demo/catering-slick.png" class="catering-img">
+				<img src="../../imgage_demo/catering-slick.png" class="catering-img js-catering-img">
 				<span class="catering-tips">Healthy</span>
 				<h2 class="catering-title" id="js-cateringId-11">Beef rice-11</h2>
 				<p class="catering-detail">beef, rice, chili, carrots, vegetables</p>
@@ -418,7 +423,7 @@
 
 	<!-- 购物车 -->
 	<div class="catering-shopping-cart js-big-cart">
-		<h2 class="shopping-title">Selected products</h2>
+		<h2 class="shopping-title">Shopping Cart</h2>
 		<div class="shopping-content js-shopping-content">
 			
 		</div>

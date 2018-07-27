@@ -192,6 +192,14 @@
   padding-bottom: 80px;
   overflow: hidden;
 }
+.catering-recommend-wrap .buy-catering-tips {
+  position: absolute;
+  width: 540px;
+  color: #1f2c5c;
+  font-family: CamptonBookBold;
+  font-size: 16px;
+  line-height: 30px;
+}
 .catering-recommend-wrap .catering-recommend-title {
   width: 540px;
   margin-top: 200px;
@@ -201,13 +209,20 @@
   color: #1f2c5c;
   font-family: CamptonBookBold;
   margin-bottom: 40px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  white-space: normal !important;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
 }
 .catering-recommend-wrap .catering-recommend-title > img {
   width: 860px;
 }
 .catering-recommend-wrap .catering-recommend-img {
   float: right;
-  width: 860px;
+  width: 760px;
 }
 .catering-recommend-wrap .catering-recommend-img img {
   width: 100%;
@@ -251,8 +266,8 @@
   text-align: center;
   color: #1f2c5c;
   font-family: CamptonBookBold;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
   vertical-align: text-bottom;
 }
 .catering-num-wrap .off-sub-operation {
@@ -264,6 +279,7 @@
 }
 .catering-com-wrap .catering-img {
   width: 100%;
+  cursor: pointer;
 }
 .catering-com-wrap .catering-title {
   font-size: 24px;
@@ -286,13 +302,13 @@
 .catering-slick-wrap {
   position: relative;
   width: 100%;
-  height: 498px;
+  height: 458px;
   margin-bottom: 80px;
   background: url('../../imgage_demo/catering-slick-bg.jpg');
 }
 .catering-slick-wrap .catering-slick-bg {
   width: 100%;
-  height: 498px;
+  height: 458px;
   background: rgba(31, 44, 92, 0.3);
 }
 .catering-slick-wrap .catering-slick-bg .slick-list.draggable {
@@ -305,10 +321,12 @@
 }
 .catering-slick-wrap .catering-slick {
   width: 340px;
-  height: 388px;
+  height: 348px;
   margin: 0 auto;
   margin-top: 55px;
-  padding-top: 40px;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
   box-shadow: 0 0 50px 0 #1f2c5c;
   background: #fff;
 }
@@ -320,7 +338,7 @@
   position: absolute;
   left: 0;
   width: 142px;
-  height: 498px;
+  height: 458px;
   font-size: 16px;
   color: #fff;
   cursor: pointer;
@@ -355,7 +373,7 @@
   position: absolute;
   right: 0;
   width: 142px;
-  height: 498px;
+  height: 458px;
   font-size: 16px;
   color: #fff;
   cursor: pointer;
@@ -401,6 +419,8 @@
 }
 .catering-list-wrap .catering-list .catering-list-bg {
   height: 320px;
+  padding-left: 20px;
+  padding-right: 20px;
   background: #fff;
   box-shadow: 0 0 50px 0 rgba(31, 44, 92, 0.1);
 }
@@ -411,9 +431,6 @@
 }
 .catering-price-wrap {
   margin-top: 20px;
-  padding-left: 40px;
-  padding-right: 40px;
-  overflow: hidden;
 }
 .catering-price-wrap > h3 {
   float: left;
@@ -421,6 +438,12 @@
   font-size: 24px;
   height: 30px;
   line-height: 38px;
+}
+.catering-price-wrap > h3 .old-price {
+  text-decoration: line-through;
+  font-size: 12px;
+  color: #ccc;
+  margin-left: 6px;
 }
 .catering-price-wrap .catering-num-wrap {
   float: right;
@@ -431,10 +454,14 @@
 .catering-recommend-title .catering-price-wrap h3 {
   font-size: 36px;
 }
+.catering-recommend-title .catering-price-wrap h3 .old-price {
+  font-size: 18px;
+  margin-left: 10px;
+}
 .catering-tips {
   position: absolute;
   top: 20px;
-  left: 20px;
+  left: 0;
   width: 80px;
   height: 30px;
   line-height: 30px;
@@ -445,6 +472,9 @@
   background-image: -o-linear-gradient(left, #00928d 0%, #b4ec80 100%);
   background-image: -moz-linear-gradient(left, #00928d 0%, #b4ec80 100%);
   background-image: linear-gradient(to left, #00928d 0%, #b4ec80 100%);
+}
+.catering-list-bg .catering-tips {
+  left: 20px;
 }
 .clearBoth-catering {
   clear: both;
@@ -670,12 +700,17 @@
   .catering-slick-wrap .catering-slick-bg .slick-list.draggable {
     width: 990px;
   }
+  .catering-recommend-wrap .buy-catering-tips {
+    width: 50%;
+    padding-right: 40px;
+  }
   .catering-recommend-wrap .catering-recommend-img {
-    float: none;
-    width: 100%;
+    width: 50%;
   }
   .catering-recommend-wrap .catering-recommend-title {
-    margin-top: 20px;
+    width: 50%;
+    padding-right: 40px;
+    margin-top: 160px;
   }
   .catering-recommend-wrap .catering-recommend-title h2 {
     margin-bottom: 20px;
@@ -707,6 +742,13 @@
   .catering-recommend-wrap {
     padding-left: 20px;
     padding-right: 20px;
+  }
+  .catering-recommend-wrap .catering-recommend-title h2 {
+    font-size: 36px;
+  }
+  .catering-recommend-wrap .buy-catering-tips {
+    font-size: 14px;
+    line-height: 26px;
   }
   .catering-list-wrap {
     width: 100%;
@@ -809,6 +851,10 @@
     padding: .2rem 0;
     padding-bottom: .3rem;
   }
+  .catering-recommend-wrap .catering-recommend-img {
+    float: none;
+    width: 100%;
+  }
   .catering-recommend-wrap .catering-recommend-title {
     width: 100%;
     margin-top: .2rem;
@@ -818,6 +864,16 @@
   }
   .catering-recommend-wrap .catering-recommend-title .catering-price-wrap h3 {
     font-size: 24px;
+  }
+  .catering-recommend-wrap .catering-recommend-title .catering-price-wrap h3 .old-price {
+    font-size: 12px;
+  }
+  .catering-recommend-wrap .buy-catering-tips {
+    position: static;
+    width: 100%;
+    padding-right: 0;
+    font-size: 12px;
+    margin-bottom: 20px;
   }
   .catering-slick-wrap {
     margin-bottom: .4rem;
@@ -838,12 +894,66 @@
     width: 300px;
   }
   .catering-list-wrap .catering-list {
-    width: 100%;
-    margin-bottom: .2rem;
+    width: 49%;
+    padding: 0;
+    margin-bottom: 2%;
   }
-  .catering-price-wrap {
-    padding-left: 20px;
-    padding-right: 40px;
+  .catering-list-wrap .catering-list .catering-list-bg {
+    height: auto;
+    padding: 0;
+    text-align: center;
+  }
+  .catering-list-wrap .catering-list .catering-list-bg .catering-img {
+    width: 156px;
+    height: 110px;
+    margin-top: 0;
+  }
+  .catering-list-wrap .catering-list .catering-list-bg .catering-tips {
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 26px;
+    line-height: 26px;
+    font-size: 12px;
+  }
+  .catering-list-wrap .catering-list .catering-list-bg .catering-title {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 14px;
+  }
+  .catering-list-wrap .catering-list .catering-list-bg .catering-detail {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .catering-list-wrap .catering-list .catering-list-bg .catering-price-wrap {
+    margin-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    overflow: hidden;
+  }
+  .catering-list-wrap .catering-list .catering-list-bg .catering-price-wrap h3 {
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .catering-list-wrap .catering-list .catering-list-bg .catering-price-wrap h3 .old-price {
+    display: block;
+    font-size: 10px;
+  }
+  .catering-list-wrap .catering-list .catering-list-bg .catering-price-wrap .catering-num-wrap {
+    line-height: 30px;
+  }
+  .catering-list-wrap .catering-list .catering-list-bg .catering-price-wrap .catering-num-wrap > a {
+    width: 20px;
+    height: 20px;
+  }
+  .catering-list-wrap .catering-list .catering-list-bg .catering-price-wrap .catering-num-wrap .catering-num {
+    margin-left: 4px;
+    margin-right: 4px;
+    font-size: 16px;
+  }
+  .catering-list-wrap .catering-list:nth-child(even) {
+    margin-left: 2%;
   }
   .clearBoth-catering {
     margin-bottom: 120px;
