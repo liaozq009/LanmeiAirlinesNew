@@ -25,155 +25,21 @@
 <![endif]-->
 </head>
 <body>
+	<!-- 页面loading -->
+	<div class="lm-loading"><img src="../../images/EN/construction.gif" alt="loading"></div>
 	<!-- 页面顶部 -->
 	<header class="lm-header lm-sub-header lm-subLogin-header"></header>
 
 	<!-- 登录模态框 -->
 	<div class="modal fade" id="logonModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">Close<span aria-hidden="true">&times;</span></button>
-				</div>
-				<div class="modal-body">
-					<h2 class="loginTitle">Login</h2>
-					<span class="verifyInfo">Account or password error !</span>
-					<form id="loginForm" method="POST" action="">
-						<div class="form-group">
-							<input type="text" class="form-control" id="LanmeiUserName" placeholder="Email">
-							<ul class="login_on_changes on_changes">
-								<li email="@gmail.com"></li>
-								<li email="@qq.com"></li>
-								<li email="@sina.com"></li>
-								<li email="@163.com"></li>
-								<li email="@hotmail.com"></li>
-								<li email="@126.com"></li>
-								<li email="@yahoo.com"></li>
-							</ul>
-						</div>
-						<div class="form-group">
-							<input type="password" class="form-control" id="LanmeiPassword" placeholder="Password">
-						</div>
-						<div class="agree form-group">
-							<span class=""></span>
-							<p>Remember me next 30 days</p>
-							<a href="#" class="forgetBtn">Forget ?</a>
-						</div>
-						<div class="form-group">
-							<button type="button" class="btn userLoginBtn">Login</button>
-						</div>
-						<!-- <div class="loginOther">
-							<p>Login With</p>
-							<button  type="button" class="btn Facebook">Facebook</button>
-							<button class="btn Wechat">Wechat</button>
-						</div> -->
-					</form>
-				</div>
-				<div class="modal-footer">
-					Still no account ? Immediately <a href="javascript:void(0)" class="regBtn">registered</a>
-				</div>
-			</div>
-		</div>
 	</div>
 
 	<!-- 注册模态框 -->
 	<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">Close<span aria-hidden="true">&times;</span></button>
-				</div>
-				<div class="modal-body">
-					<!-- <h2 class="loginTitle">Registered</h2>
-						<span class="verifyInfo">Account or password error !</span> -->
-						<form class="registerWrapper" method="POST" action="">
-							<h2>Sign up</h2>
-							<!-- <p>There have been accounts ? <a href="#" data-toggle="modal" data-target="#logonModal">Login</a></p> -->
-							<img src="../../images/EN/verticalTitleLine.png">
-							<div class="registerContent">
-								<div class="registerInfo">
-									<input type="text" name="" value="" id="registerUserName" placeholder="Please enter email address">
-									<img src="../../images/EN/register-email.png">
-									<p>This email is already in use !</p>
-									<ul class="register_on_changes on_changes">
-										<li email="@gmail.com"></li>
-										<li email="@qq.com"></li>
-										<li email="@sina.com"></li>
-										<li email="@163.com"></li>
-										<li email="@hotmail.com"></li>
-										<li email="@126.com"></li>
-										<li email="@yahoo.com"></li>
-									</ul>
-								</div>
-								<div class="registerPassword">
-									<input type="password" name="" value="" id="registerPassword" placeholder="Password with 8-16 characters">
-									<img src="../../images/EN/register-password.png">
-									<p>Password strength : <span><i class="i1"></i><i class="i2"></i><i class="i3"></i><i class="i4"></i><i class="i5"></i><i class="i6"></i></span></p>
-								</div>
-								<div class="repeatPassword">
-									<input type="password" name="" value="" id="repeatPassword" placeholder="Please repeat password">
-									<img src="../../images/EN/register-password.png">
-									<p>Passwords don’t match !</p>
-									<span>
-										Password must be with 3 or 4 combination with 
-										number (0-9), lowercase letter (a-z), uppercase 
-										letter (A-Z) or special characters.
-									</span>
-								</div>
-								<div class="agree">
-									<span></span>
-									<p>I hereby agree to    <a href="#">Lanmeiairlines’ terms and conditions</a></p>
-								</div>
-								<div class="registerBtn">
-									<button id="registerBtn">Register</button>
-								</div>
-							</div>
-						</form>
-				</div>
-			</div>
-		</div>
 	</div>
 
 	<!-- 忘记密码模态框 -->
 	<div class="modal fade" id="forgetModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">Close<span aria-hidden="true">&times;</span></button>
-				</div>
-				<div class="modal-body">
-					<h2 class="loginTitle">Forget Password</h2>
-					<span class="verifyInfo">Account or password error !</span>
-					<form id="f-loginForm" method="POST" action="">
-						<div class="form-group">
-							<input type="text" class="form-control" id="f-LanmeiUserName" placeholder="Email">
-							<ul class="forget_on_changes on_changes">
-								<li email="@gmail.com"></li>
-								<li email="@qq.com"></li>
-								<li email="@sina.com"></li>
-								<li email="@163.com"></li>
-								<li email="@hotmail.com"></li>
-								<li email="@126.com"></li>
-								<li email="@yahoo.com"></li>
-							</ul>
-						</div>
-						<div class="form-group">
-							<input type="password" class="form-control" id="f-LanmeiPassword" placeholder="Password">
-							<button type="button" id="f-getPasswordBtn">Get Password</button>
-						</div>
-						<div class="agree form-group">
-							<p>Please pay attention to the E-mail information</p>
-						</div>
-						<div class="form-group">
-							<button type="button" class="btn f-userLoginBtn">Login</button>
-						</div>
-					</form>
-				</div>
-				<div class="modal-footer">
-					<a href="javascript:;" class="a_login">Login</a><a href="javascript:;" class="a_registered">Registered</a>
-				</div>
-			</div>
-		</div>
 	</div>
 
 	<!-- 选择支付方式模态框 -->
@@ -225,20 +91,22 @@
 				<input type="text" class="js-passport-input" name="" value="" placeholder="Fill in your passport number">
 			</div>
 		</div>
+		<div class="buy-catering-tips">
+			<p>Tips：</p >
+			<p>1. Pre-purchasing service of in-flight meals is only opened to passengers who book tickets on the official website of Lanmei Airlines. </p >
+			<p>2. Please purchase in-flight meals 24 hours before flight departure.</p >
+			<p>3. Purchasing in-flight meals online enjoys more discounts. Refund and change are not permitted for personal reason.</p >
+			<p>4. Alipay supports payment in RMB. Paypal supports payment with Master Card and Visa Card.</p >
+		</div>
 		<!-- 商品推荐 -->
 		<div class="catering-recommend-wrap js-catering-container">
-			<div class="buy-catering-tips">
-				<p>温馨提示：</p>
-				<p>1、只支持在官网购买机票的乘客购买预定餐食服务。</p>
-				<p>2、乘坐航班起飞前24小时，购买预定餐食服务。</p>
-			</div>
 			<div class="catering-recommend-img"><img src="../../imgage_demo/catering-recommend.png" alt="recommend-catering" class="js-catering-img" data="catering-id-0"></div>
 			<div class="catering-recommend-title">
 				<img src="../../imgage_demo/catering-recommend.png" class="catering-img js-catering-img" style="display: none;">
 				<!-- 注意：data-name是必填，并且不能一样，区分每个商品 -->
 				<h2 id="js-cateringId-1">Curry chicken rice</h2>
 				<div class="catering-price-wrap js-cateringPrice-wrap">
-					<h3 class="catering-price js-catering-price"><span>$8.00</span><span class="old-price">$88.00</span></h3>
+					<h3 class="catering-price js-catering-price">$<span>8.00</span><span class="old-price">$88.00</span></h3>
 					<div class="catering-num-wrap">
 	                    <a href="javascript:;" class="sub-catering js-sub-catering off-sub-operation" tabindex="0"></a>
 	                    <span class="catering-num js-catering-num">0</span>
@@ -261,13 +129,14 @@
 					<h2 class="catering-title" id="js-cateringId-2">Beef rice-2</h2>
 					<p class="catering-detail">beef, rice, chili, carrots, vegetables</p>
 					<div class="catering-price-wrap js-cateringPrice-wrap">
-						<h3 class="catering-price js-catering-price"><span>$31.02</span><span class="old-price">$88.00</span></h3>
+						<h3 class="catering-price js-catering-price">$<span>31.02</span><span class="old-price">$88.00</span></h3>
 						<div class="catering-num-wrap">
 		                    <a href="javascript:;" class="sub-catering js-sub-catering off-sub-operation"></a>
 		                    <span class="catering-num js-catering-num">0</span>
 		                    <a href="javascript:;" class="add-catering js-add-catering"></a>
 		                </div>
 					</div>
+					<div class="sell-out-mask" style="display: block;"><img src="../../images/resource/sell-out-en.png"></div>
 				</div>
 			</div>
 			<div class="catering-slick-container">
@@ -346,13 +215,14 @@
 				<h2 class="catering-title" id="js-cateringId-7">Beef rice-7</h2>
 				<p class="catering-detail">beef, rice, chili, carrots, vegetables</p>
 				<div class="catering-price-wrap js-cateringPrice-wrap">
-					<h3 class="catering-price js-catering-price"><span>$12.00</span><span class="old-price">$88.00</span></h3>
+					<h3 class="catering-price js-catering-price">$<span>12.00</span><span class="old-price">$88.00</span></h3>
 					<div class="catering-num-wrap">
 	                    <a href="javascript:;" class="sub-catering js-sub-catering off-sub-operation"></a>
 	                    <span class="catering-num js-catering-num">0</span>
 	                    <a href="javascript:;" class="add-catering js-add-catering"></a>
 	                </div>
 				</div>
+				<div class="sell-out-mask sell-out-list" style="display: block;"><img src="../../images/resource/sell-out-en.png"></div>
 			</div>
 		</div>
 		<div class="catering-com-wrap catering-list">
@@ -423,7 +293,7 @@
 
 	<!-- 购物车 -->
 	<div class="catering-shopping-cart js-big-cart">
-		<h2 class="shopping-title">Shopping Cart</h2>
+		<h2 class="shopping-title">Purchasing List</h2>
 		<div class="shopping-content js-shopping-content">
 			
 		</div>
@@ -459,7 +329,7 @@
 	<script type="text/javascript" src="../../common/EN/js/head-footer.js"></script>
 	<script type="text/javascript" src="../../common/EN/js/common-data.js"></script>
 	<script type="text/javascript" src="../../common/EN/js/common-autoComplete.js"></script>
-	<script type="text/javascript" src="../../common/EN/js/common-login.js"></script>
+	<script type="text/javascript" src="../../common/EN/js/login-register.js"></script>
 	<script type="text/javascript" src="../../common/EN/js/common-daterange.js"></script>
 	<script type="text/javascript" src="../../common/EN/js/Lanmei-common.js"></script>
 	<!-- 业务代码 -->

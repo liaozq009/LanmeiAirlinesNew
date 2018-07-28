@@ -282,11 +282,11 @@ var LMCatering = {
         $('.js-catering-img').click(function(event) {
             var data = $(this).attr('data');
             layer.open({
-                area: ['auto', 'auto'],
+                area: ['680px', '300px'],
                 type: 1,
                 shadeClose: true,
                 title: false, //不显示标题
-                content: '餐食成分...'
+                content: '<h2 style="color:#1f2c5c;font-size:24px;">餐食详情</h2><p style="text-align: left;color: #808080;line-height:30px;font-size:16px;margin-top:10px;overflow-y:auto;">餐食。。。</p>'
             });
         });
     },
@@ -294,4 +294,5 @@ var LMCatering = {
 
 $(document).ready(function ($) {
     LMCatering.init();
+    $('.lm-loading').fadeOut('slow');
 });

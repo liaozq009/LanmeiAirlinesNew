@@ -48,7 +48,7 @@
 		height:60px;
 		margin-bottom: 40px;
 		background:#fff;
-		box-shadow:0 0 50px 0 rgba(31,44,92,0.10);
+		box-shadow:0 0 50px 0 rgba(31,44,92,0.2);
 		border-radius:2px;
 		>input{
 			width: 100%;
@@ -182,20 +182,22 @@
 	.name-wrap .lastName-input{background: url('@{url}baggageName.png') 20px center no-repeat;}
 	.passport-wrap input{background: url('@{url}passport.png') 20px center no-repeat;}
 }
+.buy-catering-tips{
+	width: 100%;
+    color: @purple;
+    font-family: @FBold;
+    font-size: 16px;
+    line-height: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    clear: both;
+}
 .catering-recommend-wrap{
 	position: relative;
 	width: 100%;
 	padding-top: 40px;
 	padding-bottom: 80px;
 	overflow: hidden;
-	.buy-catering-tips{
-		position: absolute;
-		width: 540px;
-	    color: @purple;
-	    font-family: @FBold;
-	    font-size: 16px;
-	    line-height: 30px;
-	}
 	.catering-recommend-title{
 		width: 540px;
 		margin-top: 200px;
@@ -413,7 +415,7 @@
 			padding-left: 20px;
 			padding-right: 20px;
 			background: #fff;
-			box-shadow:0 0 50px 0 rgba(31,44,92,0.10);
+			box-shadow:0 0 50px 0 rgba(31,44,92,0.2);
 		}
 		.catering-img{
 			height: 160px;
@@ -440,6 +442,20 @@
 	.catering-num-wrap{
 		float: right;
 	}
+}
+.sell-out-mask{
+	display: none;
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    img{width: 100%;height: 208px;}
+}
+.sell-out-list{
+	padding-left: 20px;
+	padding-right: 20px;
+	img{height: 180px;}
 }
 .catering-recommend-title{
 	.catering-price-wrap {
@@ -487,10 +503,10 @@
 	z-index: 9999999;
 	.shopping-title{
 		width: 100%;
-		padding-top: 20px;
-		padding-bottom: 20px;
+		padding-top: 16px;
+		padding-bottom: 16px;
 		font-family:@FBold;
-		font-size:20px;
+		font-size:18px;
 		color:@purple;
 		text-align:center;
 		border-bottom: 1px solid rgba(31,44,92,.1);
@@ -502,8 +518,11 @@
 			position: relative;
 			padding: 10px 20px 0;
 			.shopping-list-title{
-				font-size: 18px;
+				font-size: 16px;
 				color: @purple;
+				overflow: hidden;
+			    text-overflow: ellipsis;
+			    white-space: nowrap;
 			}
 			.shopping-list-content{
 				position: relative;
@@ -552,9 +571,9 @@
 	}
 	.shopping-pay{
 		width:100%;
-		height:60px;
-		line-height: 60px;
-		font-size:18px;
+		height:52px;
+		line-height: 52px;
+		font-size:16px;
 		text-align: center;
 		color:#fff;
 		background:@purple;
@@ -682,10 +701,6 @@
 		.catering-slick-bg .slick-list.draggable{width: 990px;}
 	}
 	.catering-recommend-wrap {
-		.buy-catering-tips{
-			width: 50%;
-			padding-right: 40px;
-		}
 		.catering-recommend-img{
 			width: 50%;
 		}
@@ -713,6 +728,10 @@
 	.catering-slick-wrap .catering-slick-bg .slick-list.draggable{
 		width: 340px;
 	}
+	.buy-catering-tips{
+		font-size: 14px;
+		line-height: 26px;
+	}
 	.catering-recommend-wrap{
 		padding-left: 20px;
 		padding-right: 20px;
@@ -720,10 +739,6 @@
 			h2{
 				font-size: 36px;
 			}
-		}
-		.buy-catering-tips{
-			font-size: 14px;
-			line-height: 26px;
 		}
 	}
 	.catering-list-wrap{
@@ -806,6 +821,12 @@
 		.dropdownMenu-wrap .menu-com > li:hover{background: url('@{url}svg/city-icon-active.svg') left center no-repeat;}
 	}
 	.daterangepicker{width: 300px;}
+	.buy-catering-tips{
+		padding-right: 0;
+		padding-left: 0;
+		font-size: 12px;
+		margin-bottom: 20px;
+	}
 	.catering-recommend-wrap{
 		padding: .2rem 0;
 		padding-bottom: .3rem;
@@ -821,13 +842,6 @@
 				font-size: 24px;
 				.old-price{font-size: 12px;}
 			}
-		}
-		.buy-catering-tips{
-			position: static;
-			width: 100%;
-			padding-right: 0;
-			font-size: 12px;
-			margin-bottom: 20px;
 		}
 	}
 	.catering-slick-wrap {
@@ -925,4 +939,9 @@
 	}
 	.catering-shopping-cart .shopping-content .shopping-list-wrap .delete-catering{display: block;}
 	.catering-shopping-cart{bottom: 100px;}
+	.sell-out-list{
+		padding-left: 0;
+		padding-right: 0;
+		img{height: 110px;}
+	}
 }
