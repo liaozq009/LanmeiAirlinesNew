@@ -301,7 +301,7 @@ body{
 	left: 28px;
 	z-index: 9;
 	width: 110px;
-	height: 400px;
+	height: 500px;
 	border-radius: 2px;
 	background: #fff;
 	>ul{
@@ -349,10 +349,14 @@ body{
 			.active{background: url('@{url}hotel-icon-active.png') center 30% no-repeat;}
 		}
 		.li-child3{
+			a{background: url('@{url}ticketHotel-icon.png') center 30% no-repeat;}
+			.active{background: url('@{url}ticketHotel-icon-active.png') center 30% no-repeat;}
+		}
+		.li-child4{
 			a{background: url('@{url}car-icon.png') center 30% no-repeat;}
 			.active{background: url('@{url}car-icon-active.png') center 30% no-repeat;}
 		}
-		.li-child4{
+		.li-child5{
 			a{background: url('@{url}flight-icon.png') center 30% no-repeat;}
 			.active{background: url('@{url}flight-icon-active.png') center 30% no-repeat;}
 		}
@@ -2889,7 +2893,7 @@ body{
 			width: 750px !important;
 		}
 	}
-	.hotel-popup-content,.hotel-content .popup-box{
+	.hotel-popup-content,.hotel-content .popup-box,.th-popup-content{
 		left: 0 !important;
 	}
 	.popup-content .hotel-popus-people .age-rooms-com{
@@ -2997,6 +3001,10 @@ body{
 	}
 	.hotel-bg{
 		background: url('@{url2}hotel-bg-mobile.jpg') center no-repeat;
+		background-size: cover;
+	}
+	.ticketHotel-bg{
+		background: url('@{url2}ticketHotel-bg-mobile.jpg') center no-repeat;
 		background-size: cover;
 	}
 	.car-bg{
@@ -3529,7 +3537,7 @@ body{
 			overflow: hidden;
 			background: #fff;
 			>li{
-				width: 25%;
+				width: 20%;
 				height: 60px;
 				float: left;
 				>a{
@@ -3538,18 +3546,24 @@ body{
 					span{top: 40px;}
 				}
 			}
-			.li-child1,.li-child2,.li-child3,.li-child4{
-				a{background-size:30px 30px !important;}
+			.li-child1,.li-child2,.li-child3,.li-child4,.li-child5{
+				a{background-size:30px 30px !important;font-size: 10px;}
+			}
+			.li-child5 a span{
+				display: block;
+				width: 50px;
 			}
 			.li-slide{display: none;}
 			.li-child1 a{background: url('@{url}svg/ticket-icon.svg') center 30% no-repeat;}
 			.li-child1 .active{background: url('@{url}svg/ticket-icon-active.svg') center 30% no-repeat;}
 			.li-child2 a{background: url('@{url}svg/hotel-icon.svg') center 30% no-repeat;}
 			.li-child2 .active{background: url('@{url}svg/hotel-icon-active.svg') center 30% no-repeat;}
-			.li-child3 a{background: url('@{url}svg/car-icon.svg') center 30% no-repeat;}
-			.li-child3 .active{background: url('@{url}svg/car-icon-active.svg') center 30% no-repeat;}
-			.li-child4 a{background: url('@{url}svg/flight-icon.svg') center 30% no-repeat;}
-			.li-child4 .active{background: url('@{url}svg/flight-icon-active.svg') center 30% no-repeat;}
+			.li-child3 a{background: url('@{url}svg/ticketHotel-icon.svg') center 30% no-repeat;}
+			.li-child3 .active{background: url('@{url}svg/ticketHotel-icon-active.svg') center 30% no-repeat;}
+			.li-child4 a{background: url('@{url}svg/car-icon.svg') center 30% no-repeat;}
+			.li-child4 .active{background: url('@{url}svg/car-icon-active.svg') center 30% no-repeat;}
+			.li-child5 a{background: url('@{url}svg/flight-icon.svg') center 30% no-repeat;}
+			.li-child5 .active{background: url('@{url}svg/flight-icon-active.svg') center 30% no-repeat;}
 		}
 	}
 	.popup-title-wrap{

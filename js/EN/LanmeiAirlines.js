@@ -13,6 +13,7 @@ var LanmeiAirlines = {
 	init:function(){
 		this.selectPeople();
 		this.selectHotelRooms();
+		this.selectThRooms();
 		this.banner();
 		this.selectCoupons();
 		this.lowestFares();
@@ -368,11 +369,21 @@ var LanmeiAirlines = {
 			$loader.fadeOut();
 		};
 
+		var ticketHotelShow = function(){
+			$('.js-a-ticketHotel').addClass('active');
+			$('.js-flight-com').hide();
+			$('.js-ticketHotel-wrap').show();
+			animate(230);
+			$blurImg.fadeOut();
+			$('.blur-img-ticketHotel').fadeIn();
+			$loader.fadeOut();
+		};
+
 		var carShow = function(){
 			$('.js-a-car').addClass('active');
 			$('.js-flight-com').hide();
 			$('.js-car-wrap').show();
-			animate(230);
+			animate(330);
 			$blurImg.fadeOut();
 			$('.blur-img-car').fadeIn();
 			$loader.fadeOut();
@@ -382,7 +393,7 @@ var LanmeiAirlines = {
 			$('.js-a-flight').addClass('active');
 			$('.js-flight-com').hide();
 			$('.js-fStatus-wrap').show();
-			animate(330);
+			animate(430);
 			$blurImg.fadeOut();
 			$('.blur-img-flight').fadeIn();
 			$loader.fadeOut();
@@ -401,6 +412,9 @@ var LanmeiAirlines = {
 				case "hotel-content":
 					hotelShow();
 				break;
+				case "ticketHotel-content":
+					ticketHotelShow();
+				break;
 				case "car-content":
 					carShow();
 				break;
@@ -416,6 +430,9 @@ var LanmeiAirlines = {
 				break;
 				case "hotel-content":
 				that.hotelSelect();
+				break;
+				case "ticketHotel-content":
+					that.ticketHotelSelect();
 				break;
 				case "car-content":
 				that.carSelect();
@@ -496,6 +513,10 @@ var LanmeiAirlines = {
 				$('.js-hotel-wrap').show();
 				$loader.fadeOut();
 				break;
+				case "ticketHotel-content":
+				$('.js-ticketHotel-wrap').show();
+				$loader.fadeOut();
+				break;
 				case "car-content":
 				$('.js-car-wrap').show();
 				$loader.fadeOut();
@@ -513,6 +534,9 @@ var LanmeiAirlines = {
 				break;
 				case "hotel-content":
 				that.mHotelSelect();
+				break;
+				case "ticketHotel-content":
+				that.mTicketHotelSelect();
 				break;
 				case "car-content":
 				that.mCarSelect();
@@ -604,10 +628,15 @@ var LanmeiAirlines = {
 
 				// 操作外层box移动
 				var moveBox = function(){
-					if(showTotleDay){ //酒店
+					if(showTotleDay || id=='.js-thDate-result'){ //酒店
 						if(winWidth>1200){
 							box.css('left',610);
-							that.changeWidth();
+							if(id=='.js-thDate-result'){
+								that.changeWidth('ticketHotel');
+							}else{
+								that.changeWidth('hotel');
+							}
+							
 							setTimeout(function(){
 								box.addClass('hotelPeople-popup-box'); //移动before小箭头
 							},600);
@@ -827,22 +856,10 @@ var LanmeiAirlines = {
 			var currenData;
 			var data = $(this).attr('data');
 
-			switch (data) {
-				case 'js-from-menu':
-					currenData=that.cityData
-					break;
-				case 'js-routeFrom-menu':
-					currenData=that.cityData
-					break;
-				case 'js-to-menu':
-					currenData=that.cityData
-					break;
-				case 'js-routeTo-menu':
-					currenData=that.cityData
-					break;
-				case 'js-fNumber-menu':
-					currenData=that.fNumberData
-					break;
+			if(data=='js-fNumber-menu'){
+				currenData=that.fNumberData
+			}else{
+				currenData=that.cityData
 			}
 
 			var currentVal = searchText.toLowerCase();
@@ -887,6 +904,15 @@ var LanmeiAirlines = {
 		var $toInput = $('.js-to-input'); //机票目的地
 		var $toMenuSub = $('.js-to-menu'); //目的地下拉菜单
 
+		// 机+酒
+		var $thFromInput = $('.js-thFrom-input'); 
+		var $thToInput = $('.js-thTo-input'); 
+		var $thBox = $('.js-thPopup-box'); 
+		var $thFromBox = $('.js-thAirport-from'); 
+		var $thToBox = $('.js-thAirport-to'); 
+		var $thDateBox = $('.js-thPopup-date'); 
+		var $thToMenuSub = $('.js-thTo-menu'); 
+
 		var $routeFromInput = $('.js-routeFrom-input'); //航班动态出发地
 		var $routeToInput = $('.js-routeTo-input'); //航班动态查询目的地
 		var $fStatusBox = $('.js-fStatusPopup-box'); //航班动态c3动画最外层
@@ -898,8 +924,6 @@ var LanmeiAirlines = {
 		/* 设置目的地下拉的值 */
 		var toCityVal = function(text){
 			var tocityArr = that.cityData;
-			// var tocityArr = that.cityData.slice(0);
-			// tocityArr.remove(text);
 			$toMenuSub.empty();
 			$.each(tocityArr,function(i,val){
 				$toMenuSub.append('<li title="'+val+'">'+val+'</li>');
@@ -907,10 +931,17 @@ var LanmeiAirlines = {
 			$('.js-to-menu>li:first').addClass('active');		
 		};
 
+		var thToCityVal = function(text){
+			var tocityArr = that.cityData;
+			$thToMenuSub.empty();
+			$.each(tocityArr,function(i,val){
+				$thToMenuSub.append('<li title="'+val+'">'+val+'</li>');
+			});	
+			$('.js-thTo-menu>li:first').addClass('active');		
+		};
+
 		var routeToCityVal = function(text){
 			var tocityArr = that.cityData;
-			// var tocityArr = that.cityData.slice(0);
-			// tocityArr.remove(text);
 			$routeToMenuSub.empty();
 			$.each(tocityArr,function(i,val){
 				$routeToMenuSub.append('<li title="'+val+'">'+val+'</li>');
@@ -1017,6 +1048,35 @@ var LanmeiAirlines = {
 						$routeToBox.slideUp(function(){ //航班动态目的地隐藏
 							$('.js-routeDate-result').click(); //日期展示
 							$routeDateBox.slideDown(); //酒店日期显示
+						}); 
+					}else if(input=='.js-thFrom-input'){
+						$thFromInput.val(text2[0]+'/'+text2[1]).attr('data-city',text1); //出发地赋值
+						thToCityVal(text1); //下拉菜单赋值筛选
+
+						if(winWidth>1200){
+							$thBox.css('left',350);
+						}else if(winWidth<=1200){
+							$thBox.css({'top':-90,'left':350});
+						}
+
+						$thToInput.focus();
+						$('.js-thTo-menu>li:first').addClass('active');
+
+						$thFromBox.slideUp(function(){ //酒店出发地隐藏
+							$thToBox.slideDown(); //酒店日期显示
+						}); 
+
+					}else if(input=='.js-thTo-input'){
+						$thToInput.val(text2[0]+'/'+text2[1]).attr('data-city',text1);
+
+						if(winWidth>1200){
+							$thBox.css('left',700);
+						}else if(winWidth<=1200){
+							$thBox.css({'top':-10,'left':0});
+						}
+						$thToBox.slideUp(function(){ //航班动态目的地隐藏
+							$('.js-thDate-result').click(); //日期展示
+							$thDateBox.slideDown(); //酒店日期显示
 						}); 
 					}
 				}
@@ -1537,14 +1597,13 @@ var LanmeiAirlines = {
 				}else if(winWidth<=1200){
 					$hotelBox.css({'top':-90,'left':0});
 				}
-				$('.js-hotelPopup-content').css('left',0); //防止位移偏差
+				$hotelContent.css({'left':0,'z-index':'1'}); //防止位移偏差 覆盖cancel按钮
 				hotelPopupShow(); //增加c3动画
 				$hotelBox.removeClass('hotelPeople-popup-box'); //移动before小箭头
 
 				$hotelFromBox.show();
 				$hotelDateBox.hide(); $hotelPeopleBox.hide();
 
-				$hotelContent.css('z-index','1'); //覆盖cancel按钮
 				if(hotelZoomShow){
 					$hotelZoom.addClass('animated fadeInUp').css('visibility','visible');
 					hotelZoomShow = false; //重新点击出发地时再次显示目的地、日期、人数的动画
@@ -1562,10 +1621,9 @@ var LanmeiAirlines = {
 			}else if(winWidth<=1200){
 				$hotelBox.css({'top':-10,'left':0});
 			}
-			$('.js-hotelPopup-content').css('left',0); //防止位移偏差
+			$hotelContent.css({'left':0,'z-index':'1'}); //防止位移偏差 覆盖cancel按钮
 			hotelPopupShow(); //增加c3动画
 			$hotelBox.removeClass('hotelPeople-popup-box'); //移动before小箭头
-			$hotelContent.css('z-index','1'); //覆盖cancel按钮
 			$hotelDateBox.show();
 			$hotelFromBox.hide(); $hotelPeopleBox.hide();
 		});
@@ -1578,8 +1636,9 @@ var LanmeiAirlines = {
 			}else if(winWidth<=1200){
 				$hotelBox.css({'top':-10,'left':-90});
 			}
-			$that.changeWidth();
+			
 			hotelPopupShow(); //增加c3动画
+			$that.changeWidth('hotel');
 			$hotelBox.addClass('hotelPeople-popup-box'); //移动before小箭头
 			$hotelContent.css('z-index','1'); //覆盖cancel按钮
 			$hotelPeopleBox.show();
@@ -1745,7 +1804,6 @@ var LanmeiAirlines = {
 			setTimeout(function(){
 				$searchInput.focus();
 			},600);
-			
 		});
 
 		// 酒店选择 
@@ -1806,6 +1864,474 @@ var LanmeiAirlines = {
 		            $('.js-hotelFrom-menu').html(str);
 		        }
 		    });
+		});
+	},
+
+	/* 机+酒选择 */
+	ticketHotelSelect:function(){
+		/* 最外层div */
+		var $mask = $('.js-ticket-mask'); //遮罩层
+		var $mask2 = $('.js-ticket-mask2'); //遮罩层2
+		var $box = $('.js-thPopup-box'); //c3动画最外层
+		var $content = $('.js-thPopup-content'); //c3动画内容
+		
+		// 输入框
+		var $fromInput = $('.js-thFrom-input'); //机票出发地
+		var $toInput = $('.js-thTo-input'); //机票目的地
+		var $date = $('.js-thDate-result'); //机票日期
+		var $people = $('.js-ticketHotel-people'); //机票人数
+
+		// 下拉菜单
+		var $fromMenuSub = $('.js-thFrom-menu'); //机票出发地下拉菜单
+		var $toMenuSub = $('.js-thTo-menu'); //目的地下拉菜单
+		var $ticketChange = $('.js-ticketHotel-change'); //切换机票出发地和目的地
+
+		// 下拉菜单外层
+		var $fromBox = $('.js-thAirport-from'); //出发地外层
+		var $toBox = $('.js-thAirport-to'); //目的地外层
+		var $dateBox = $('.js-thPopup-date'); //日期外层
+		var $peopleBox = $('.js-ticketHotelPopup-people'); //人数选择外层
+		
+		/* 切换状态 */
+		var $selectWay = $('.js-thSelect-way'); //选择单程往返
+		
+		/* 第一个div，点击后展示其他div */
+		var $ticketFrom = $('.js-ticketHotel-from'); //出发地div
+		var $zoom = $('.js-ticketHotel-to,.js-ticketHotel-date,.js-ticketHotel-people,.js-ticketHotel-cancel,.js-ticketHotel-search');
+		
+		/* c3动画 */
+		var popupShow = function(){
+			$mask.fadeIn(); //显示遮罩层
+			$mask2.fadeIn(); //显示遮罩层
+			$ticketChange.show(); //显示出发地和目的地切换
+			$box.addClass('popup-box-before'); //展示小箭头
+			$content.removeClass('popup-inactive').addClass('popup-active'); 
+		};
+		var popupHide = function(){
+			$content.removeClass('popup-active').addClass('popup-inactive'); 
+			$box.removeClass('popup-box-before'); //隐藏小箭头
+		};
+		
+		/* 日期选择 */
+		var that = this;
+		this.dateSelect(false,'.js-thDate-result','.js-thPopup-date',false,$box,$dateBox,$peopleBox,'Choose your departure date :','Choose your return date :');
+		
+		/* 单程往返切换 */
+		$('.js-thSelect-way>a').click(function(event) {
+			event.stopPropagation();
+			$(this).addClass('active').siblings('a').removeClass('active');
+			var data = $(this).attr('data-way');
+			switch (data) {
+				case 'round':
+					that.dateSelect(false,'.js-thDate-result','.js-thPopup-date',false,$box,$dateBox,$peopleBox,'Choose your departure date :','Choose your return date :');
+					$('.js-thDate-result').click(); //日期展示
+					$('#th-tripType').val('RT');
+					break;
+				case 'one':
+					that.dateSelect(true,'.js-thDate-result','.js-thPopup-date',false,$box,$dateBox,$peopleBox,'Choose your departure date :','Choose your return date :');
+					$('.js-thDate-result').click(); //日期展示
+					$('#th-tripType').val('OW');
+					break;
+				}
+			});
+
+		/* 出发地和目的地切换 */
+		$ticketChange.click(function(event) {
+			var fVal = $fromInput.val();
+			var tVal = $toInput.val();
+			$fromInput.val(tVal);
+			$toInput.val(fVal);
+		});
+
+		/* 获取屏幕尺寸 */
+		var winWidth = $(window).width();
+
+		/* 设置出发地下拉的值 */
+		var fromCityVal = function(text){ 
+			var fromcityArr = that.cityData;
+			// var fromcityArr = that.cityData.slice(0);
+			// fromcityArr.remove(text);
+			$fromMenuSub.empty();
+			$.each(fromcityArr,function(i,val){
+				$fromMenuSub.append('<li title="'+val+'">'+val+'</li>');
+			});
+			$('.js-thFrom-menu>li:first').addClass('active');
+		};
+
+		/* 设置目的地下拉的值 */
+		var toCityVal = function(text){
+			var tocityArr = that.cityData;
+			// var tocityArr = that.cityData.slice(0);
+			// tocityArr.remove(text);
+			$toMenuSub.empty();
+			$.each(tocityArr,function(i,val){
+				$toMenuSub.append('<li title="'+val+'">'+val+'</li>');
+			});	
+			$('.js-thTo-menu>li:first').addClass('active');		
+		};
+
+		/* 点击机票出发地 */
+		var zoomShow = true;
+		var oneClick = true;
+		$fromInput.click(function(){
+			if(oneClick){ //防止点击取消后，快速点击出发地产生的bug
+				fromCityVal($toInput.attr('data-city')); //下拉菜单赋值
+				
+				if(winWidth>1200){
+					$box.css('left',0);
+				}else if(winWidth<=1200){
+					$box.css({'top':-88,'left':0});
+				}
+				popupShow(); //增加c3动画
+				$box.removeClass('hotelPeople-popup-box'); //移动before小箭头
+				$fromBox.show();
+				$toBox.hide(); $dateBox.hide(); $peopleBox.hide();
+
+				$content.css({'left':0,'z-index':'1'}); //防止位移偏差 覆盖cancel按钮
+
+				if(zoomShow){
+					$selectWay.css({'height':'auto','margin-top':'40px'}); //展示单程往返
+					$zoom.addClass('animated fadeInUp').css('visibility','visible');
+					zoomShow = false; //重新点击出发地时再次显示目的地、日期、人数的动画
+					setTimeout(function(){
+						$zoom.removeClass('animated fadeInUp');
+					}, 2200);
+				}
+			}
+		});
+
+		/* 点击机票目的地 */
+		$toInput.click(function(e){
+			toCityVal($fromInput.attr('data-city')); //下拉菜单赋值
+
+			if(winWidth>1200){
+				$box.css('left',350);
+			}else if(winWidth<=1200){
+				$box.css({'top':-88,'left':350});
+			}
+			popupShow(); //增加c3动画
+			$box.removeClass('hotelPeople-popup-box'); //移动before小箭头
+			$content.css({'left':0,'z-index':'1'}); //防止位移偏差 覆盖cancel按钮
+			$toBox.show();
+			$fromBox.hide(); $dateBox.hide(); $peopleBox.hide();
+		});
+
+		/* 点击机票日期 */
+		$date.click(function(event) {
+			if(winWidth>1200){
+				$box.css('left',700);
+			}else if(winWidth<=1200){
+				$box.css({'top':-10,'left':0});
+			}
+			popupShow(); //增加c3动画
+			$box.removeClass('hotelPeople-popup-box'); //移动before小箭头
+			$content.css({'left':0,'z-index':'1'}); //防止位移偏差 覆盖cancel按钮
+			$dateBox.show();
+			$fromBox.hide(); $toBox.hide(); $peopleBox.hide();
+		});
+
+		/* 点击酒店人数 */
+		var $that = this;
+		$people.click(function(event) {
+			if(winWidth>1200){
+				$box.css('left',610);
+			}else if(winWidth<=1200){
+				$box.css({'top':-10,'left':-90});
+			}
+			popupShow(); //增加c3动画
+			$that.changeWidth('ticketHotel');
+			$box.addClass('hotelPeople-popup-box'); //移动before小箭头
+			$content.css('z-index','1'); //覆盖cancel按钮
+			$peopleBox.show();
+			$fromBox.hide(); $toBox.hide(); $dateBox.hide();
+		});
+
+		/* 点击取消 */
+		var cancel = function(){
+			oneClick = false; //防止快速点击出发地
+
+			$zoom.addClass('animated fadeOutDown');
+
+			$selectWay.css({'height':'0','margin-top':'0'}); //隐藏单程往返
+
+			$mask.fadeOut(); //隐藏遮罩层
+			$mask2.fadeOut(); //隐藏遮罩层
+
+			popupHide(); //隐藏弹出内容层
+			$ticketChange.hide(); //隐藏出发地和目的地切换
+
+			zoomShow = true; //重新点击出发地时再次显示目的地、日期、人数的动画
+
+			$box.css('left',0); //下拉框归零
+			setTimeout(function(){
+				$zoom.removeClass('animated fadeOutDown');
+
+				// $selectWay.removeClass('animated fadeOutDown');
+
+				$zoom.css('visibility','hidden');
+
+		      oneClick = true; //可以继续点击出发地
+		    }, 2200);
+		};
+
+		/* 点击遮罩层 */
+		$mask.click(function(){
+			cancel();
+		});
+		$mask2.click(function(){
+			popupHide(); //隐藏弹出内容层
+			$(this).fadeOut();
+		});
+		$('.js-thSelect-way,.js-tips-com').click(function(event) {
+			popupHide(); //隐藏弹出内容层
+			$mask2.fadeOut();
+		});
+
+		/* 点击取消 */
+		$('.js-ticketHotel-cancel').click(function(){
+			cancel();
+		});
+
+		/* 删除数组中某个元素 */
+		Array.prototype.indexOf = function (val) {
+			for(var i = 0; i < this.length; i++){
+				if(this[i] == val){return i;}
+			}
+			return -1;
+		};
+		Array.prototype.remove = function (val) {
+			var index = this.indexOf(val);
+			if(index > -1){this.splice(index,1);}
+		};
+
+		/* 机票出发地选择 */
+		$fromMenuSub.on('click','>li',function(){
+			var text1 = $(this).attr('title');
+			var text2 = text1.split('/');
+			$fromInput.val(text2[0]+'/'+text2[1]).attr('data-city',text1); //出发地赋值
+			toCityVal(text1); //下拉菜单赋值筛选
+
+			if(winWidth>1200){
+				$box.css('left',350);
+			}else if(winWidth<=1200){
+				$box.css({'top':-88,'left':350});
+			}
+
+			$toInput.focus();
+			$('.js-thTo-menu>li:first').addClass('active');
+
+			$fromBox.slideUp(function(){ //出发地隐藏
+				$toBox.slideDown(); //目的地显示
+			}); 
+		});
+
+		/* 机票目的地选择 */
+		$toMenuSub.on('click','>li',function(){
+			var text1 = $(this).attr('title');
+			var text2 = text1.split('/');
+			$toInput.val(text2[0]+'/'+text2[1]).attr('data-city',text1);
+			if(winWidth>1200){
+				$box.css('left',700);
+			}else if(winWidth<=1200){
+				$box.css({'top':-10,'left':0});
+			}
+			$toBox.slideUp(function(){ //出发地隐藏
+				$date.click(); //日期展示
+				$dateBox.slideDown(); //目的地显示
+			}); 
+		});
+
+		// 模糊匹配
+		this.autoComplete('.js-thFrom-input');
+		this.autoComplete('.js-thTo-input');
+
+		// 键盘事件
+		this.keyEvent('.js-thFrom-input','.js-thFrom-menu',that.indexLiFrom);
+		this.keyEvent('.js-thTo-input','.js-thTo-menu',that.indexLiTo); 
+
+		/* 机票搜索 --- 按钮点击 */
+		$('.js-ticketHotel-search').click(function () {
+		    var adultNum = $('.js-p-ticketHotelAdult').text();
+		    var childNum = $('.js-p-ticketHotelChild').text();
+		    var roomNum = $('.js-p-ticketHotelRooms').text();
+		    var startDate = $date.attr('data-start');
+		    var endDate = $date.attr('data-end');
+		    var orgCity = ($fromInput.val()).substring(($fromInput.val()).indexOf('/') + 1);
+		    var dstCity = ($toInput.val()).substring(($toInput.val()).indexOf('/') + 1);
+		    $('#th-adultCount').val(adultNum);
+		    $('#th-childCount').val(childNum);
+		    $('#th-roomCount').val(roomNum);
+		    $('#th-takeoffDate').val(startDate);
+		    $('#th-returnDate').val(endDate);
+		    $('#th-orgcity').val(orgCity);
+		    $('#th-dstcity').val(dstCity);
+		    $('#air-ticketHotel-form').submit();
+		});
+	},
+
+	/* 移动端机+酒选择 */
+	mTicketHotelSelect:function(){
+		var that = this;
+
+		// 最外层容器
+		var $container = $('.js-popup-container');
+		var $box = $('.js-thPopup-box');
+
+		// 关闭容器按钮
+		var $close = $('.js-thPopup-close');
+
+		// 出发地和目的地外层
+		var $cityFrom = $('.js-ticketHotel-from');
+		var $cityTo = $('.js-ticketHotel-to');
+
+		// 输入框
+		var $fromInput = $('.js-thFrom-input'); //机票出发地
+		var $fromSpan = $('.js-m-thFcity');
+		var $toInput = $('.js-thTo-input'); //机票目的地
+		var $toSpan = $('.js-m-thTcity');
+		var $date = $('.js-thDate-result'); //机票日期
+		var $hotelPeople = $('.js-ticketHotel-people'); //机票人数
+		var $popupDiv = $('.js-thPopup-content>div');
+
+		var $searchInput = $('.js-thCity-search'); //模糊搜索框
+		var $searchTitle = $('.js-thPopup-title'); //标题
+
+		// 下拉菜单
+		var $fromMenuSub = $('.js-thFrom-menu'); //机票出发地下拉菜单
+		var $toMenuSub = $('.js-thTo-menu'); //目的地下拉菜单
+		var $ticketChange = $('.js-ticketHotel-change'); //切换机票出发地和目的地
+
+		var winHeight = $(window).height();
+
+		var hideContainer = function(){
+			$container.removeClass('is-show');
+			$('html,body').removeClass('ovfHiden'); //使网页可滚动
+		};
+		var ovfHiden = function(){
+			$('html,body').addClass('ovfHiden'); //使网页不可滚动
+		};
+
+		// 关闭弹出框
+		$close.click(function(event) {
+			hideContainer();
+		});
+
+		// 点击出发地
+		$cityFrom.click(function(event) {
+			$fromMenuSub.empty();
+			$popupDiv.hide(); //初始化隐藏出发地、目的地、日期、人数
+			$('.js-thAirport-from').show();
+			var toVal = $toInput.attr('data-city'); //获取目的地的值进行过滤
+			$.each(that.cityData,function(i,val){
+				$fromMenuSub.append('<li title="'+val+'">'+val+'</li>');
+			});
+			$fromMenuSub.children('li:contains('+toVal+')').remove(); //过滤
+
+			ovfHiden(); //使网页不可滚动
+			$box.height(winHeight-108);
+			$searchInput.show().attr('data','js-thFrom-menu').val('');
+			$searchTitle.html('Select origin');
+
+			$container.addClass('is-show');
+		});
+
+		// 机票出发地选择 
+		$fromMenuSub.on('click','>li',function(){
+			var text1 = $(this).attr('title');
+			var text2 = text1.split('/');
+			$fromInput.val(text2[1]).attr('data-city',text1).parent().addClass('m-city-result');
+			$fromSpan.text(text2[0]+'/'+text2[2]);
+			hideContainer();
+		});
+
+		// 点击目的地
+		$cityTo.click(function(event) {
+			$toMenuSub.empty();
+			$popupDiv.hide(); //初始化隐藏出发地、目的地、日期、人数
+			$('.js-thAirport-to').show();
+			var fromVal = $fromInput.attr('data-city'); //获取出发地的值进行过滤
+			$.each(that.cityData,function(i,val){
+				$toMenuSub.append('<li title="'+val+'">'+val+'</li>');
+			});
+
+			$toMenuSub.children('li:contains('+fromVal+')').remove(); //过滤
+
+			ovfHiden(); //使网页不可滚动
+			$box.height(winHeight-108);
+			$searchInput.show().attr('data','js-thTo-menu').val('');
+			$searchTitle.html('Select destination');
+
+			$container.addClass('is-show');
+		});
+
+		// 机票目的地选择 
+		$toMenuSub.on('click','>li',function(){
+			var text1 = $(this).attr('title');
+			var text2 = text1.split('/');
+			$toInput.val(text2[1]).attr('data-city',text1).parent().addClass('m-city-result');
+			$toSpan.text(text2[0]+'/'+text2[2]);
+			hideContainer();
+		});
+
+		// 出发地和目的地切换
+		$('.js-mTicketHotel-change').click(function(event) {
+			var fVal = $fromInput.val();
+			var fSpan = $fromSpan.text();
+			var tVal = $toInput.val();
+			var tSpan = $toSpan.text();
+			$fromInput.val(tVal); $fromSpan.text(tSpan);
+			$toInput.val(fVal); $toSpan.text(fSpan);
+		});
+
+		// 模糊匹配
+		this.autoComplete('.js-thCity-search');
+
+		// 日期选择
+		this.mDateSelect(false,'.js-thDate-result','.js-thPopup-date',false);
+		$date.click(function(event) {
+			$popupDiv.hide(); //初始化隐藏出发地、目的地、日期、人数
+			$('.js-thPopup-date').show();
+
+			ovfHiden(); //使网页不可滚动
+
+			$searchInput.hide();
+			$searchTitle.text('Select dates');
+			$box.height(winHeight-58);
+
+			$container.addClass('is-show');
+		});
+
+		// 单程往返切换 
+		$('.js-thSelect-way>a').click(function(event) {
+			event.stopPropagation();
+			$(this).addClass('active').siblings('a').removeClass('active');
+			var data = $(this).attr('data-way');
+			switch (data) {
+				case 'round':
+					that.mDateSelect(false,'.js-thDate-result','.js-thPopup-date',false);
+					break;
+					case 'one':
+					that.mDateSelect(true,'.js-thDate-result','.js-thPopup-date',false);
+					break;
+				}
+			});
+
+		// 房间选择
+		$hotelPeople.click(function(event) {
+			$popupDiv.hide(); //初始化隐藏出发地、目的地、日期、人数
+			$('.js-ticketHotelPopup-people').show();
+
+			ovfHiden(); //使网页不可滚动
+
+			$searchInput.hide();
+			$searchTitle.text('Select rooms');
+			$box.height(winHeight-58);
+
+			$container.addClass('is-show');
+		});
+		//房间保存
+		$('.js-thMSelect-rooms').click(function(event) {
+			hideContainer();
 		});
 	},
 
@@ -2665,13 +3191,23 @@ var LanmeiAirlines = {
 	},
 
 	/* 改变酒店选择人数 */
-	changeWidth:function(){
+	changeWidth:function(parame){
 		// 动态改变酒店房间外层div的宽度和left
-		var $hotelContent = $('.js-hotelPopup-content');
-		var $hotelPeople = $('.js-hotelPopup-people');
+		var $hotelContent;
+		var $hotelPeople;
+		var childArray;
+		if(parame=='ticketHotel'){
+			$hotelContent = $('.js-thPopup-content');
+			$hotelPeople = $('.js-ticketHotelPopup-people');
+			childArray = $('.js-ticketHotelChild-num');
+		}else{
+			$hotelContent = $('.js-hotelPopup-content');
+			$hotelPeople = $('.js-hotelPopup-people');
+			childArray = $('.js-hotelChild-num');
+		}
+		
 		var changeWidth = function(){
 			var changeArray = [];
-			var childArray = $('.js-hotelChild-num');
 			$.each(childArray,function(idx,val){
 				changeArray.push($(val).html());
 			});
@@ -2978,7 +3514,7 @@ var LanmeiAirlines = {
 			$(this).parent('p').remove();
 
 			// 动态修改房间最外层宽度和left
-			$that.changeWidth();
+			$that.changeWidth('hotel');
 
 			// 动态修改房间数值
 			$('.js-rooms-container>div:first').attr('id','js-room1-inner'); //第一个
@@ -3038,7 +3574,7 @@ var LanmeiAirlines = {
 				var $age3 = that.parents('.js-childRooms-content').siblings('.js-age-3');
 
 				// 动态修改房间最外层宽度和left
-				$that.changeWidth();
+				$that.changeWidth('hotel');
 
 				// 显示隐藏
 				if(childNum==0){
@@ -3102,6 +3638,308 @@ var LanmeiAirlines = {
 				
 				var spanVal = 0;
 				var spanArray = $('.js-hotelChild-num');
+				$.each(spanArray,function(idx, val) {
+					spanVal+=Number($(val).html());
+				});
+				$childResult.html(spanVal); 
+
+				// 动态增减年龄
+				var that = $(this);
+				changeAge(that,childNum);
+			});
+		};
+
+		adult();
+		child();
+	},
+
+	/* 机票+酒店房间和人数选择 */
+	selectThRooms:function(){
+		/* 年龄选择 */
+		var $that = this;
+		var $thPopup = $('.js-ticketHotelPopup-people');
+		$thPopup.on('click','.js-thAge-result',function(e){
+			e.stopPropagation();
+			$('.js-thAge-box').hide();
+			$(this).siblings('.js-thAge-box').show();
+		});
+		$thPopup.on('click','.js-thAge-menu>li',function(){
+			var text = $(this).html();
+			$(this).parents('.js-thAge-box').siblings('span').html(text);
+		});
+		$('html').click(function(event) {
+			$('.js-thAge-box').slideUp();
+		});
+
+		/* 增减房间数 */
+		var $adultResult = $('.js-p-ticketHotelAdult>span');
+		var $childResult = $('.js-p-ticketHotelChild>span');
+		var $roomsResult = $('.js-p-ticketHotelRooms>span');
+		// 增加房间
+		var roomsNum = 1;
+		$('.js-add-thRooms').click(function(event) {
+			if(roomsNum<=2){
+				roomsNum++;
+				var $roomStr = '<div class="s-room-'+roomsNum+' s-room-com s-people-com animated fadeInUp" id="js-thRoom'+roomsNum+'-inner">'+
+				'<p class="rooms-title js-thRooms-title">Room '+roomsNum+'</p>'+
+				'<div class="adult-rooms-content rooms-content-com js-thAdultRooms-content">'+
+				'<div class="hotel-people-prompt people-prompt">'+
+				'<p class="p1">Adult</p>'+
+				'</div>'+
+				'<div class="hotel-people-number people-number">'+
+				'<a href="javascript:;" class="sub-people off-sub-operation js-ticketHotelAdult-sub"></a>'+
+				'<span class="adult-num js-ticketHotelAdult-num">2</span>'+
+				'<a href="javascript:;" class="add-people js-ticketHotelAdult-add"></a>'+
+				'</div>'+
+				'</div>'+
+				'<div class="child-rooms-content rooms-content-com js-thChildRooms-content">'+
+				'<div class="hotel-people-prompt people-prompt">'+
+				'<p class="p1">Child</p>'+
+				'</div>'+
+				'<div class="hotel-people-number people-number disable">'+
+				'<a href="javascript:;" class="sub-people off-sub-operation js-ticketHotelChild-sub"></a>'+
+				'<span class="adult-num js-ticketHotelChild-num">0</span>'+
+				'<a href="javascript:;" class="add-people js-ticketHotelChild-add"></a>'+
+				'</div>'+
+				'</div>'+
+				'<div class="age-rooms-com rooms-content-com animated fadeInUp js-thAge-1">'+
+				'<div class="hotel-people-prompt people-prompt">'+
+				'<p class="p1">Age/1</p>'+
+				'</div>'+
+				'<div class="hotel-age-wrap people-number">'+
+				'<span class="age-result js-thAge-result">1</span>'+
+				'<div class="age-menu-box js-thAge-box">'+
+				'<ul class="hotel-age-menu js-thAge-menu">'+
+				'<li title="Age < 1 year old">&lt; 1</li>'+
+				'<li>2</li>'+
+				'<li>3</li>'+
+				'<li>4</li>'+
+				'<li>5</li>'+
+				'<li>6</li>'+
+				'<li>7</li>'+
+				'<li>8</li>'+
+				'<li>9</li>'+
+				'<li>10</li>'+
+				'<li>11</li>'+
+				'<li>12</li>'+
+				'</ul>'+
+				'</div>'+
+				'</div>'+
+				'</div>'+
+				'<div class="age-rooms-com rooms-content-com animated fadeInUp js-thAge-2">'+
+				'<div class="hotel-people-prompt people-prompt">'+
+				'<p class="p1">Age/2</p>'+
+				'</div>'+
+				'<div class="hotel-age-wrap people-number">'+
+				'<span class="age-result js-thAge-result">1</span>'+
+				'<div class="age-menu-box js-thAge-box">'+
+				'<ul class="hotel-age-menu js-thAge-menu">'+
+				'<li title="Age < 1 year old">&lt; 1</li>'+
+				'<li>2</li>'+
+				'<li>3</li>'+
+				'<li>4</li>'+
+				'<li>5</li>'+
+				'<li>6</li>'+
+				'<li>7</li>'+
+				'<li>8</li>'+
+				'<li>9</li>'+
+				'<li>10</li>'+
+				'<li>11</li>'+
+				'<li>12</li>'+
+				'</ul>'+
+				'</div>'+
+				'</div>'+
+				'</div>'+
+				'<div class="age-rooms-com rooms-content-com animated fadeInUp js-thAge-3">'+
+				'<div class="hotel-people-prompt people-prompt">'+
+				'<p class="p1">Age/3</p>'+
+				'</div>'+
+				'<div class="hotel-age-wrap people-number">'+
+				'<span class="age-result js-thAge-result">1</span>'+
+				'<div class="age-menu-box js-thAge-box">'+
+				'<ul class="hotel-age-menu js-thAge-menu">'+
+				'<li title="Age < 1 year old">&lt; 1</li>'+
+				'<li>2</li>'+
+				'<li>3</li>'+
+				'<li>4</li>'+
+				'<li>5</li>'+
+				'<li>6</li>'+
+				'<li>7</li>'+
+				'<li>8</li>'+
+				'<li>9</li>'+
+				'<li>10</li>'+
+				'<li>11</li>'+
+				'<li>12</li>'+
+				'</ul>'+
+				'</div>'+
+				'</div>'+
+				'</div>'+
+				'</div>';
+
+				var $roomTab = '<p class="" data-room="js-thRoom'+roomsNum+'-inner"><span>Room '+roomsNum+'</span><b>×</b></p>';
+
+				$('.js-thRooms-container').append($roomStr);
+				$('.js-add-thRoomsTab').append($roomTab);
+
+				var adultNum = $adultResult.html();
+				$adultResult.html(Number(adultNum)+2);
+
+				var roomsTotletNum = $roomsResult.html();
+				roomsTotletNum++;
+				$roomsResult.html(roomsTotletNum);
+			}
+		});
+		
+		// 删减房间
+		$('.js-add-thRoomsTab').on('click','b',function(){
+			roomsNum--;
+			var id = $(this).parent('p').attr('data-room');
+
+			// 动态修改成人人数统计值
+			var adultNum = $adultResult.html();
+			var html = $('#'+id).find('.js-ticketHotelAdult-num').html();
+			adultNum-=Number(html);
+			$adultResult.html(adultNum);
+
+			// 动态修改小孩人数统计值
+			var childNum = $childResult.html();
+			var html = $('#'+id).find('.js-ticketHotelChild-num').html();
+			childNum-=Number(html);
+			$childResult.html(childNum);
+
+			// 动态修改房间数统计值
+			var roomsTotletNum = $roomsResult.html();
+			roomsTotletNum--;
+			$roomsResult.html(roomsTotletNum);
+
+			$('#'+id).remove();
+			$(this).parent('p').remove();
+
+			// 动态修改房间最外层宽度和left
+			$that.changeWidth('ticketHotel');
+
+			// 动态修改房间数值
+			$('.js-thRooms-container>div:first').attr('id','js-thRoom1-inner'); //第一个
+			$('.js-thRooms-container>div:first').children('.js-thRooms-title').html('Room 1'); //第一个
+			$('.js-thRooms-container>div').eq(1).attr('id','js-thRoom2-inner'); //第二个
+			$('.js-thRooms-container>div').eq(1).children('.js-thRooms-title').html('Room 2'); //第二个
+
+			$('.js-add-thRoomsTab>p:first').attr('data-room','js-thRoom1-inner'); //第一个tab
+			$('.js-add-thRoomsTab>p:first').children('span').html('Room 1'); //第一个tab的值
+			$('.js-add-thRoomsTab>p').eq(1).attr('data-room','js-thRoom2-inner'); //第二个tab
+			$('.js-add-thRoomsTab>p').eq(1).children('span').html('Room 2'); //第二个tab的值
+		});
+
+		/* 增减人数 */
+		// 成人
+		var adult = function(){
+			$thPopup.on('click','.js-ticketHotelAdult-add',function(e){
+				var adultNum = $(this).siblings('span').html();
+				adultNum++;
+				$(this).siblings('span').html(adultNum);
+
+				adultNum==3 && $(this).siblings('.sub-people').removeClass('off-sub-operation');
+				
+				//动态赋值
+				var spanVal = 0;
+				var spanArray = $('.js-ticketHotelAdult-num');
+				$.each(spanArray,function(idx, val) {
+					spanVal+=Number($(val).html());
+				});
+				$adultResult.html(spanVal); 
+			});
+			$thPopup.on('click','.js-ticketHotelAdult-sub',function(e){
+				var adultNum = $(this).siblings('span').html();
+				adultNum--;
+				if(adultNum<3){
+					adultNum=2;
+					$(this).addClass('off-sub-operation');
+				}
+				$(this).siblings('span').html(adultNum);
+				
+				//动态赋值
+				var spanVal = 0;
+				var spanArray = $('.js-ticketHotelAdult-num');
+				$.each(spanArray,function(idx, val) {
+					spanVal+=Number($(val).html());
+				});
+				$adultResult.html(spanVal); 
+			});
+		};
+
+		// 小孩
+		var child = function(){
+			// 动态增减年龄
+			var changeAge = function(that,childNum){
+				var $age1 = that.parents('.js-thChildRooms-content').siblings('.js-thAge-1');
+				var $age2 = that.parents('.js-thChildRooms-content').siblings('.js-thAge-2');
+				var $age3 = that.parents('.js-thChildRooms-content').siblings('.js-thAge-3');
+
+				// 动态修改房间最外层宽度和left
+				$that.changeWidth('ticketHotel');
+
+				// 显示隐藏
+				if(childNum==0){
+					$age1.hide();$age2.hide();$age3.hide();
+				}
+				if(childNum==1){
+					$age2.hide();$age3.hide();
+					setTimeout(function(){
+						$age1.show();
+					},200);
+				}
+				if(childNum==2){
+					$age3.hide();
+					setTimeout(function(){
+						$age1.show();$age2.show();
+					},200);
+				}
+				if(childNum==3){
+					setTimeout(function(){
+						$age1.show();$age2.show();$age3.show();
+					},200);
+				}
+			};
+
+			$thPopup.on('click','.js-ticketHotelChild-add',function(e){
+				var childNum = $(this).siblings('span').html();
+				childNum++;
+				
+				if(childNum==1){
+					$(this).siblings('.sub-people').removeClass('off-sub-operation');
+					$(this).parent().removeClass('disable');
+				}
+				if(childNum>2){
+					childNum=3
+					$(this).addClass('off-add-operation');
+				}
+				$(this).siblings('span').html(childNum);
+
+				//动态赋值
+				var spanVal = 0;
+				var spanArray = $('.js-ticketHotelChild-num');
+				$.each(spanArray,function(idx, val) {
+					spanVal+=Number($(val).html());
+				});
+				$childResult.html(spanVal); 
+
+				// 动态增减年龄
+				var that = $(this);
+				changeAge(that,childNum);
+			});
+			$thPopup.on('click','.js-ticketHotelChild-sub',function(e){
+				var childNum = $(this).siblings('span').html();
+				childNum--;
+				if(childNum<1){
+					childNum=0;
+					$(this).addClass('off-sub-operation');
+					$(this).parent().addClass('disable');
+				}
+				$(this).siblings('.add-people').removeClass('off-add-operation');
+				$(this).siblings('span').html(childNum);
+				
+				var spanVal = 0;
+				var spanArray = $('.js-ticketHotelChild-num');
 				$.each(spanArray,function(idx, val) {
 					spanVal+=Number($(val).html());
 				});

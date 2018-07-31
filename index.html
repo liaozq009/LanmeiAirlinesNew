@@ -630,14 +630,14 @@
 			<!-- 航班选择 -->
 			<div class="ticketHotel-content flight-com js-ticketHotel-content">
 				<form id="air-ticketHotel-form" action="" method="POST" target="_blank">
-					<input type="hidden" name="tripType" id="tripType" value="OW">
-					<input type="hidden" name="orgcity" id="orgcity" value="PNH">
-					<input type="hidden" name="dstcity" id="dstcity" value="REP">
-					<input type="hidden" name="takeoffDate" id="takeoffDate" value="">
-					<input type="hidden" name="returnDate" id="returnDate" value="">
-					<input type="hidden" name="adultCount" id="adultCount" value="">
-					<input type="hidden" name="childCount" id="childCount" value="">
-					<input type="hidden" name="infantCount" id="infantCount" value="">
+					<input type="hidden" name="tripType" id="th-tripType" value="OW">
+					<input type="hidden" name="orgcity" id="th-orgcity" value="PNH">
+					<input type="hidden" name="dstcity" id="th-dstcity" value="REP">
+					<input type="hidden" name="takeoffDate" id="th-takeoffDate" value="">
+					<input type="hidden" name="returnDate" id="th-returnDate" value="">
+					<input type="hidden" name="adultCount" id="th-adultCount" value="">
+					<input type="hidden" name="childCount" id="th-childCount" value="">
+					<input type="hidden" name="roomCount" id="th-roomCount" value="">
 					<input type="hidden" name="language" value="US">
 					<input type="hidden" name="CURRENCY" value="USD">
 					
@@ -668,20 +668,20 @@
 							</div>
 						</div>
 					</div>
-					<div class="search-flight-wrap js-search-ticket">
-						<a href="javascript:;" class="flight-cancel js-ticket-cancel">Cancel</a>
-						<a href="javascript:;" class="flight-search js-ticket-search">Search</a>
+					<div class="search-flight-wrap js-search-ticketHotel">
+						<a href="javascript:;" class="flight-cancel js-ticketHotel-cancel">Cancel</a>
+						<a href="javascript:;" class="flight-search js-ticketHotel-search">Search</a>
 					</div>
 				</form>
 				<!-- 下拉选择菜单 -->
 				<div class="popup-container js-popup-container">
 					<div class="popup-title-wrap">
-						<p class="popup-title js-popup-title">Select origin</p>
-						<p class="popup-close js-popup-close"></p>
+						<p class="popup-title js-thPopup-title">Select origin</p>
+						<p class="popup-close js-thPopup-close"></p>
 						<input type="text" name="" class="city-search js-thCity-search" value="" data="js-thFrom-menu" placeholder="Search">
 					</div>
 					<div class="popup-box js-thPopup-box">
-						<div class="popup-content popup-inactive js-thPopup-content">
+						<div class="popup-content th-popup-content popup-inactive js-thPopup-content">
 							<!-- 出发地目的地选择 -->
 							<div class="popup-airport-from popup-airport js-thAirport-from">
 								<h2>Origin Airport :</h2>
@@ -998,7 +998,7 @@
 				<li class="li-child2"><a href="javascript:;" data-href="hotel-content" class="nth-child2 js-a-hotel"><span>Hotel</span></a></li>
 				<li class="li-child3"><a href="javascript:;" data-href="ticketHotel-content" class="nth-child3 js-a-ticketHotel"><span>Flight+Hotel</span></a></li>
 				<li class="li-child4"><a href="javascript:;" data-href="car-content" class="nth-child4 js-a-car"><span>Car</span></a></li>
-				<li class="li-child5"><a href="javascript:;" data-href="flight-content" class="nth-child5 js-a-flight"><span>Flight Status</span></a></li>
+				<li class="li-child5"><a href="javascript:;" data-href="flight-content" class="nth-child5 js-a-flight"><span>Flight info</span></a></li>
 				<li class="li-slide"></li>
 			</ul>
 			<!-- <a href="javascript:void(0)" class="flight-up-arrow js-flight-up"></a>
@@ -1009,8 +1009,9 @@
 		<aside class="lm-aside-blur js-aside-blur">
 			<img src="imgage_demo/blur-01.jpg" alt="blur" class="blur-img-ticket blur-img">
 			<img src="imgage_demo/blur-02.jpg" alt="blur" class="blur-img-hotel blur-img">
-			<img src="imgage_demo/blur-03.jpg" alt="blur" class="blur-img-car blur-img">
-			<img src="imgage_demo/blur-04.jpg" alt="blur" class="blur-img-flight blur-img">
+			<img src="imgage_demo/blur-03.jpg" alt="blur" class="blur-img-ticketHotel blur-img">
+			<img src="imgage_demo/blur-04.jpg" alt="blur" class="blur-img-car blur-img">
+			<img src="imgage_demo/blur-05.jpg" alt="blur" class="blur-img-flight blur-img">
 		</aside>
 
 		<!-- 右侧二维码 -->

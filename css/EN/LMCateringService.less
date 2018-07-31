@@ -280,12 +280,12 @@
 		color: @purple;
 		font-family: @FBold;
 		text-align: center;
-		margin-bottom: 10px;
 		overflow: hidden;
 		text-overflow: ellipsis;
 		white-space: nowrap;
 	}
 	.catering-detail{
+		display: none;
 		font-size: 14px;
 		.purpleRgb(.4);
 		text-align: center;
@@ -411,21 +411,22 @@
 		padding-right: 20px;
 		margin-bottom: 40px;
 		.catering-list-bg{
-			height: 320px;
 			padding-left: 20px;
 			padding-right: 20px;
+			padding-bottom: 20px;
 			background: #fff;
 			box-shadow:0 0 50px 0 rgba(31,44,92,0.2);
 		}
 		.catering-img{
 			height: 160px;
 			margin-top: 20px;
-			margin-bottom: 10px;
+			margin-bottom: 20px;
 		}
 	}
 }
 .catering-price-wrap{
 	margin-top: 20px;
+	overflow: hidden;
 	>h3{
 		float: left;
 		color: @green;
@@ -863,10 +864,12 @@
 			height: auto;
 			padding: 0;
 			text-align: center;
+			box-shadow: 0 0 50px 0 rgba(31, 44, 92, 0.1);
 			.catering-img{
 				width: 156px;
 				height: 110px;
 				margin-top: 0;
+				margin-bottom: 10px;
 			}
 			.catering-tips{
 				top: 0;

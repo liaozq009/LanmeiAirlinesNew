@@ -265,7 +265,7 @@ label {
   height: 25px;
   line-height: 25px;
   float: right;
-  color: rgba(31, 44, 92, 0.7);
+  color: #4aa374;
   transition: all 0.6s;
   -webkit-transition: all 0.6s;
 }
@@ -348,7 +348,7 @@ label {
   padding-bottom: 30px;
 }
 .modal .modal-dialog .modal-content .modal-footer a {
-  color: #1f2c5c;
+  color: #4aa374;
   transition: all 0.6s;
   -webkit-transition: all 0.6s;
 }
@@ -364,7 +364,6 @@ label {
 .modal .modal-dialog .modal-content .modal-footer .a_registered {
   float: right;
   font-size: 14px;
-  color: #1f2c5c;
 }
 /* 注册模态框 */
 .registerWrapper {
