@@ -1,0 +1,100 @@
+@charset "utf-8";
+@font-face {
+  font-family: CamptonBookBold;
+  src: url(../../common/EN/fonts/Campton/Rene.Bieder_Campton.Bold.otf);
+  font-weight: bold;
+}
+/* 定义变量 */
+.vis-hidden {
+  visibility: hidden;
+}
+.vis-visible {
+  visibility: visible;
+}
+.lm-section {
+  position: relative;
+  background: url('../../images/resource/ticketHotle-bg.jpg') center no-repeat;
+}
+.lm-section-main {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  width: 1210px;
+  margin-left: -605px;
+}
+.main-data-title {
+  text-align: center;
+}
+.main-data-title > div {
+  display: inline-block;
+}
+.main-data-title > div .three-code {
+  height: 80px;
+  font-size: 64px;
+  color: #fff;
+  font-family: CamptonBookBold;
+}
+.main-data-title > div .city-com {
+  position: relative;
+  width: 200px;
+}
+.main-data-title > div .city-com a {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  font-size: 18px;
+  color: #fff;
+  text-align: center;
+  text-decoration: underline;
+  color: rgba(255, 255, 255, 0.7);
+}
+.main-data-title > div .city-com input {
+  width: 160px;
+  height: 30px;
+  background: transparent;
+  color: #fff;
+  font-size: 18px;
+  visibility: hidden;
+}
+.main-data-title .stroke-type-wrap {
+  width: 210px;
+  vertical-align: top;
+  padding-top: 10px;
+  overflow: hidden;
+}
+.main-data-title .stroke-type-wrap .select-way {
+  overflow: hidden;
+  margin-top: 10px;
+}
+.main-data-title .stroke-type-wrap .select-way a {
+  display: inline-block;
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  font-size: 14px;
+  color: rgba(31, 44, 92, 0.5);
+  background: #fff;
+  box-shadow: 0 0 50px 0 rgba(31, 44, 92, 0.1);
+  border-radius: 2px;
+  transition: all .3s;
+  -webkit-transition: all .3s;
+}
+.main-data-title .stroke-type-wrap .select-way a:hover {
+  color: #fff;
+  background: #8ec06c;
+  transition: all .3s;
+  -webkit-transition: all .3s;
+}
+.main-data-title .stroke-type-wrap .select-way .round-trip {
+  float: left;
+}
+.main-data-title .stroke-type-wrap .select-way .one-way {
+  float: right;
+}
+.main-data-title .stroke-type-wrap .select-way .active {
+  color: #fff;
+  background: #8ec06c;
+  transition: all .3s;
+  -webkit-transition: all .3s;
+}

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- 让 Bootstrap 兼容 IE 兼容模型 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- 让 Bootstrap 兼容 国产浏览器的高速模型 -->
+	<meta name="renderer" content="webkit">
+	<!-- 实现响应式的设置 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Flight+Hotel</title>
+	<!-- 引入图标 -->
+	<link rel="icon" href="../../images/EN/lanmeiLogo.ico">
+	<link rel="stylesheet" type="text/css" href="../../libs/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../../libs/daterange/daterangepicker.css">
+	<link rel="stylesheet" type="text/css" href="../../common/EN/fonts/lm-iconfont.css">
+	<link rel="stylesheet" type="text/css" href="../../libsEdit/css/lanmeiLibsEdit.css">
+	<link rel="stylesheet" type="text/css" href="../../common/EN/css/Lanmei-common.css">
+	<link rel="stylesheet" type="text/css" href="../../css/EN/LMFlightHotel.css">
+	<!--[if lt IE 9]>
+	<script src="../../libs/bootstrap/js/html5shiv.min.js"></script>
+	<script src="../../libs/bootstrap/js/respond.min.js"></script>
+<![endif]-->
+</head>
+<body>
+	<!-- 页面顶部 -->
+	<header class="lm-header lm-sub-header">
+		
+	</header>
+
+	<!-- 主体内容 -->
+	<section class="lm-section js-lm-section">
+		<div class="lm-section-main">
+			<div class="main-data-wrap">
+				<form>
+					<div class="main-data-title">
+						<div class="from-city-wrap">
+							<p class="three-code">CAN</p>
+							<div class="from-city city-com">
+								<a href="javascript:;" class="js-from-city">Guangzhou</a>
+								<input type="text" class="js-from-input" placeholder="From" autocomplete="off">
+								<div class="cityMenu-wrap">
+									<ul class="fromcityMenu menu-com">
+										
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="stroke-type-wrap">
+							<p class="flight-img"><img src="../../images/resource/flight-img-arrow.png"></p>
+							<div class="select-way js-select-way">
+								<a href="javascript:;" class="round-trip active" data-way="round">Round trip</a>
+								<a href="javascript:;" class="one-way" data-way="one">One-way</a>
+							</div>
+						</div>
+						<div class="to-city-wrap">
+							<p class="three-code">PNH</p>
+							<div class="to-city city-com">
+								<a href="javascript:;" class="js-to-city">Phnom Penh</a>
+								<input type="text" class="js-to-input" placeholder="To" autocomplete="off">
+								<div class="cityMenu-wrap">
+									<ul class="tocityMenu menu-com">
+										
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="main-data-content">
+						
+					</div>
+				</form>
+			</div>
+			<div class="main-result-wrap"></div>
+		</div>
+
+		<!-- 选择机票信息 -->
+		<div class="changeSearch" style="display: none;">
+			<div class="changeSearchTitle">
+				<h2>
+					<img src="../../images/EN/leftTitleLine.png">
+					Change the search
+				</h2>
+			</div>
+			<div class="selectWay">
+				<a href="#" class="OneWay nth-child1 active" data-way="b-route">By route</a>
+				<a href="#" class="RoundTrip" data-way="f-num">By flight number</a>
+			</div>
+			<div class="selectAir selectAirCommon">
+				<div class="local_timeSelect">
+					<div class="localSelectStart autoClick">
+						<p><img src="../../images/EN/city-from.png"><span>Origin</span></p>
+						<input type="text" class="fromcityinput inputDown Autocomplete" id="fromcity" data="fromcityMenu" value="" placeholder="" autocomplete="off">
+						<span class="clear">X</span>
+						<i class="img01" id="localChangeImg"></i>
+						<div class="cityMenu-wrap">
+							<ul class="fromcityMenu menu-com" data="from-menu">
+								
+							</ul>
+						</div>
+					</div>
+					<div class="localSelectEnd autoClick autoFocus">
+						<p><img src="../../images/EN/city-to.png"><span>Destination</span></p>
+						<input type="text" class="tocityinput inputDown Autocomplete" id="tocity" data="tocityMenu" value="" placeholder="" autocomplete="off">
+						<div class="cityMenu-wrap">
+							<ul class="tocityMenu menu-com" data="to-menu">
+								
+							</ul>
+						</div>
+					</div>
+					<div class="flightSelectStart autoClick autoFocus">
+						<p><img src="../../images/EN/flight-number.png"><span>Flight Number</span></p>
+						<input type="text" class="fromcityinput inputDown" id="f-num-select" data="flightMenu" value="" placeholder="" autocomplete="off">
+						<div class="cityMenu-wrap">
+							<ul class="flightMenu menu-com" data="flight-menu">
+								
+							</ul>
+						</div>
+					</div>
+					<div class="timeSelectStart">
+						<p><img src="../../images/EN/date.png"><span>Departure Date</span></p>
+						<input type="text" class="inputDown" id="f-timeFrom" name="from" value="" placeholder="" readonly>
+						<div class="cityMenu-wrap dataMenu-wrap">
+							<div class="flightStatusDate-container js-flightStatusDate-container"></div>
+						</div>
+					</div>
+					<a href="#" class="f-search-btn" id="clickSeekTwo">SEARCH</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- 页脚 -->
+	<footer class="lm-footer">
+		
+	</footer>
+
+	<!-- 回到顶部 -->
+	<div class="BackToTop">
+		
+	</div>
+
+	<!-- 第三方库-->
+	<script type="text/javascript" src="../../libs/jQuery/jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="../../libs/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../../libs/layer/layer.js"></script>
+	<script type="text/javascript" src="../../libs/daterange/moment.js"></script>
+	<script type="text/javascript" src="../../libs/daterange/daterangepicker.js"></script>
+	<!-- 公共JS -->
+	<script type="text/javascript" src="../../common/EN/js/head-footer.js"></script>
+	<script type="text/javascript" src="../../common/EN/js/common-autoComplete.js"></script>
+	<script type="text/javascript" src="../../common/EN/js/common-daterange.js"></script>
+	<script type="text/javascript" src="../../common/EN/js/common-data.js"></script>
+	<script type="text/javascript" src="../../common/EN/js/Lanmei-common.js"></script>
+	<!-- 业务代码 -->
+	<script type="text/javascript" src="../../js/EN/LMFlightHotel.js"></script>
+</body>
+</html>

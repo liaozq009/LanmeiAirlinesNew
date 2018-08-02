@@ -48,6 +48,7 @@ var lmMenuCom = {
 		$('.a-search-flight').click(function(event) {
 			event.preventDefault();
 			window.open('http://b2c.lanmeiairlines.com/lqWeb/reservation/AVQuery.do?orgcity=PNH&dstcity=CAN&language=US&CURRENCY=USD&tripType=OW&takeoffDate='+startTime+'&cabinType=ECONOMY&adultCount=1&childCount=0&returnDate=');
+			// window.location.href = 'http://b2c.lanmeiairlines.com/lqWeb/reservation/AVQuery.do?orgcity=PNH&dstcity=CAN&language=US&CURRENCY=USD&tripType=OW&takeoffDate='+startTime+'&cabinType=ECONOMY&adultCount=1&childCount=0&returnDate=';
 		});
 	},
 };

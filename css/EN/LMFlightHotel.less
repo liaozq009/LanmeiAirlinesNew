@@ -1,0 +1,131 @@
+@charset "utf-8";
+
+@font-face {
+	font-family: CamptonBookBold;
+	src: url(../../common/EN/fonts/Campton/Rene.Bieder_Campton.Bold.otf);
+	font-weight:bold;
+}
+
+/* 定义变量 */
+@url:"../../images/resource/";
+@purple:#1f2c5c;
+@green:#8ec06c;
+@link:#42958a;
+@FBold:CamptonBookBold;
+
+.greenRgb(@opacity){
+	color: rgba(142,192,96,@opacity);
+}
+.purpleRgb(@opacity){
+	color: rgba(31,44,92,@opacity);
+}
+.blackRgb(@opacity){
+	color: rgba(0,0,0,@opacity);
+}
+.blackBgRgb(@opacity){
+	background: rgba(0,0,0,@opacity);
+}
+.whiteRgb(@opacity){
+	color: rgba(255,255,255,@opacity);
+}
+.whiteBgRgb(@opacity){
+	background: rgba(255,255,255,@opacity);
+}
+.purpleBgRgb(@opacity){
+	background: rgba(31,44,92,@opacity);
+}
+
+.vis-hidden{
+	visibility: hidden;
+}
+.vis-visible{
+	visibility: visible;
+}
+
+.lm-section{
+	position: relative;
+	background: url('@{url}ticketHotle-bg.jpg') center no-repeat;
+}
+.lm-section-main{
+	position: absolute;
+	top: 30px;
+	left: 50%;
+	width: 1210px;
+	margin-left: -605px;
+}
+.main-data-title{
+	text-align: center;
+	>div{
+		display: inline-block;
+		.three-code{
+			height: 80px;
+			font-size: 64px;
+			color: #fff;
+			font-family: @FBold;
+		}
+		.city-com{
+			position: relative;
+			width: 200px;
+			a{
+				position: absolute;
+				left: 0;
+				width: 100%;
+				font-size: 18px;
+				color: #fff;
+				text-align: center;
+				text-decoration: underline;
+				.whiteRgb(.7);
+			}
+			input{
+				width: 160px;
+				height: 30px;
+				background: transparent;
+			    color: #fff;
+			    font-size: 18px;
+			    visibility: hidden;
+			}
+		}
+	}
+	.stroke-type-wrap{
+		width: 210px;
+		vertical-align: top;
+	    padding-top: 10px;
+	    overflow: hidden;
+	    .select-way{
+	    	overflow: hidden;
+	    	margin-top: 10px;
+	    	a{
+	    		display: inline-block;
+	    		width:100px;
+	    		height:30px;
+	    		line-height: 30px;
+	    		text-align: center;
+	    		font-size: 14px;
+	    		.purpleRgb(.5);
+	    		background:#fff;
+	    		box-shadow:0 0 50px 0 rgba(31,44,92,0.10);
+	    		border-radius:2px;
+	    		transition: all .3s;
+	    		-webkit-transition: all .3s;
+	    		&:hover{
+	    			color: #fff;
+	    			background:@green;
+	    			transition: all .3s;
+	    			-webkit-transition: all .3s;
+	    		}
+	    	}
+	    	.round-trip{float: left;}
+	    	.one-way{float: right;}
+	    	.active{
+	    		color: #fff;
+	    		background:@green;
+	    		transition: all .3s;
+	    		-webkit-transition: all .3s;
+	    	}
+	    }
+	}
+}
+
+@media screen and (max-width: 767px) {
+	
+}

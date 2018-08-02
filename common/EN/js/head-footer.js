@@ -9,7 +9,7 @@ $(document).ready(function($) {
 						'<div class="h-phone js-h-phone">'+
 							'<div class="phone-menu js-phone-menu">'+
 								'<h2>Hotline:</h2>'+
-								'<p class="p1">+855 23981800</p>'+
+								'<p class="p1">+855 23981363</p>'+
 							'</div>'+
 						'</div>'+
 						'<div class="v-line"><img src="https://lanmeiairlines.com/lanmeiairlines2.0/default/images/EN/v-line.png" alt="line"></div>'+

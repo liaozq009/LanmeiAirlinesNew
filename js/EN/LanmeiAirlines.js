@@ -1365,21 +1365,45 @@ var LanmeiAirlines = {
 
 		/* 机票搜索 --- 按钮点击 */
 		$('.js-ticket-search').click(function () {
+			var tripType = $('#tripType').val();
+			var orgcity = $('#orgcity').val();
+			var dstcity = $('#dstcity').val();
+			var takeoffDate = $('#takeoffDate').val();
+			var returnDate = $('#returnDate').val();
+
 		    var adultNum = $('.js-ticket-content .js-p-adult>span').text();
 		    var childNum = $('.js-ticket-content .js-p-child>span').text();
 		    var infantNum = $('.js-ticket-content .js-p-infant>span').text();
+
 		    var startDate = $('.js-date-result').attr('data-start');
 		    var endDate = $('.js-date-result').attr('data-end');
 		    var orgCity = ($('.js-from-input').val()).substring(($('.js-from-input').val()).indexOf('/') + 1);
 		    var dstCity = ($('.js-to-input').val()).substring(($('.js-to-input').val()).indexOf('/') + 1);
-		    $('#adultCount').val(adultNum)
-		    $('#childCount').val(childNum)
-		    $('#infantCount').val(infantNum)
+
+		    $('#adultCount').val(adultNum);
+		    $('#childCount').val(childNum);
+		    $('#infantCount').val(infantNum);
+
 		    $('#takeoffDate').val(startDate);
 		    $('#returnDate').val(endDate);
+
 		    $('#orgcity').val(orgCity);
 		    $('#dstcity').val(dstCity);
-		    $('#air-ticket-form').submit();
+		    // console.log(adultNum);
+		    var data = {tripType:tripType,cabinType:'ECONOMY',orgcity:orgCity,dstcity:dstCity,takeoffDate:takeoffDate,returnDate:returnDate,adultCount:adultNum,childCount:childNum,language:'CN',CURRENCY:'CNY'};
+		    // $('#air-ticket-form').submit(); 
+		    // window.open('http://b2c.lanmeiairlines.com/lqWeb/reservation/AVQuery.do?tripType=RT&cabinType=ECONOMY&orgcity=CAN&dstcity=PNH&takeoffDate=2018-8-02&returnDate=2018-8-03&adultCount=1&childCount=0&language=CN&CURRENCY=CNY');
+		    $.ajax({
+                url:"http://b2c.lanmeiairlines.com/lqWeb/reservation/AVQuery.do",
+                type:"get",
+                data:data,
+                success:function(data){
+                    
+                },
+                error:function(e){
+                    
+                }
+            });
 		});
 	},
 
