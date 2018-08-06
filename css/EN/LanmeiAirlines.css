@@ -925,14 +925,6 @@ body {
 .ticket-content-wrap {
   height: 100%;
 }
-.range-change-date {
-  font-family: CamptonBookBold;
-  text-align: center;
-  clear: both;
-  padding-top: 7px;
-  padding-bottom: 12px;
-  color: rgba(0, 0, 0, 0.8);
-}
 .lm-section-banner {
   width: 100%;
   margin-top: -60px;

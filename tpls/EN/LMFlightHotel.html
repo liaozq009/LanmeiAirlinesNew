@@ -12,9 +12,10 @@
 	<title>Flight+Hotel</title>
 	<!-- 引入图标 -->
 	<link rel="icon" href="../../images/EN/lanmeiLogo.ico">
+	<link rel="stylesheet" type="text/css" href="../../common/EN/fonts/lm-iconfont.css">
+	<link rel="stylesheet" type="text/css" href="../../common/EN/css/animate.css">
 	<link rel="stylesheet" type="text/css" href="../../libs/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../../libs/daterange/daterangepicker.css">
-	<link rel="stylesheet" type="text/css" href="../../common/EN/fonts/lm-iconfont.css">
 	<link rel="stylesheet" type="text/css" href="../../libsEdit/css/lanmeiLibsEdit.css">
 	<link rel="stylesheet" type="text/css" href="../../common/EN/css/Lanmei-common.css">
 	<link rel="stylesheet" type="text/css" href="../../css/EN/LMFlightHotel.css">
@@ -25,9 +26,7 @@
 </head>
 <body>
 	<!-- 页面顶部 -->
-	<header class="lm-header lm-sub-header">
-		
-	</header>
+	<header class="lm-header lm-sub-header"></header>
 
 	<!-- 主体内容 -->
 	<section class="lm-section js-lm-section">
@@ -39,9 +38,9 @@
 							<p class="three-code">CAN</p>
 							<div class="from-city city-com">
 								<a href="javascript:;" class="js-from-city">Guangzhou</a>
-								<input type="text" class="js-from-input" placeholder="From" autocomplete="off">
-								<div class="cityMenu-wrap">
-									<ul class="fromcityMenu menu-com">
+								<input type="text" class="js-from-input" data="fromcityMenu" data-city="CAN" placeholder="From" autocomplete="off">
+								<div class="cityMenu-wrap frome-cityMenu-wrap">
+									<ul class="fromcityMenu menu-com js-fromcityMenu">
 										
 									</ul>
 								</div>
@@ -58,9 +57,9 @@
 							<p class="three-code">PNH</p>
 							<div class="to-city city-com">
 								<a href="javascript:;" class="js-to-city">Phnom Penh</a>
-								<input type="text" class="js-to-input" placeholder="To" autocomplete="off">
-								<div class="cityMenu-wrap">
-									<ul class="tocityMenu menu-com">
+								<input type="text" class="js-to-input" data="tocityMenu" data-city="PNH" placeholder="To" autocomplete="off">
+								<div class="cityMenu-wrap to-cityMenu-wrap">
+									<ul class="tocityMenu menu-com js-tocityMenu">
 										
 									</ul>
 								</div>
@@ -68,78 +67,161 @@
 						</div>
 					</div>
 					<div class="main-data-content">
-						
+						<div class="date-com">
+							<span class="date-result js-date-result" data-start="2018-8-04" data-end="2018-8-05" placeholder="">4 Aug - 5 Aug</span>
+							<div class="cityMenu-wrap dataMenu-wrap js-dataMenu-wrap">
+								<div class="date-container js-date-container"></div>
+							</div>
+						</div>
+						<div class="date-com">
+							<input type="text" class="hotel-date-result js-hotelDate-result" data-start="2018-8-04" data-end="2018-8-05" placeholder="Check-in" readonly autocomplete="off">
+							<p class="hotel-day">1</p>
+							<div class="cityMenu-wrap hotel-dataMenu-wrap js-hotelDataMenu-wrap">
+								<div class="date-container js-hotelDate-container"></div>
+							</div>
+						</div>
+						<div class="data-people date-com">
+							<div class="t-people-result js-people-result">
+								<p class="p-hotelRooms js-p-hotelRooms">x <span>0</span></p>
+								<p class="p-hotelAdult js-p-hotelAdult">x <span>0</span></p>
+								<p class="p-hotelChild js-p-hotelChild">x <span>0</span></p>
+							</div>
+							<div class="cityMenu-wrap people-cityMenu-wrap">
+								<div class="hotel-popus-people popup-people js-ticketHotelPopup-people">
+									<p class="people-title js-thRooms-title">Room and number of choices :</p>
+									<div class="select-people-container js-thRooms-container">
+									</div>
+									<div class="add-rooms-wrap">
+										<div class="add-rooms-content js-add-thRoomsTab">
+											
+										</div>
+										<p class="add-rooms-btn js-add-thRooms">Add</p>
+									</div>
+									<div class="m-select-rooms"><a href="javascript:;" class="js-thMSelect-rooms">SAVE</a></div>
+								</div>
+							</div>
+						</div>
+						<a href="javascript:;" class="search-btn js-search-btn">SEARCH</a>
 					</div>
+					<div class="clear-both"></div>
 				</form>
 			</div>
-			<div class="main-result-wrap"></div>
-		</div>
-
-		<!-- 选择机票信息 -->
-		<div class="changeSearch" style="display: none;">
-			<div class="changeSearchTitle">
-				<h2>
-					<img src="../../images/EN/leftTitleLine.png">
-					Change the search
-				</h2>
-			</div>
-			<div class="selectWay">
-				<a href="#" class="OneWay nth-child1 active" data-way="b-route">By route</a>
-				<a href="#" class="RoundTrip" data-way="f-num">By flight number</a>
-			</div>
-			<div class="selectAir selectAirCommon">
-				<div class="local_timeSelect">
-					<div class="localSelectStart autoClick">
-						<p><img src="../../images/EN/city-from.png"><span>Origin</span></p>
-						<input type="text" class="fromcityinput inputDown Autocomplete" id="fromcity" data="fromcityMenu" value="" placeholder="" autocomplete="off">
-						<span class="clear">X</span>
-						<i class="img01" id="localChangeImg"></i>
-						<div class="cityMenu-wrap">
-							<ul class="fromcityMenu menu-com" data="from-menu">
-								
-							</ul>
+			<div class="main-result-wrap">
+				<div class="main-flight-wrap" style="display: none;">
+					<p class="main-flight-title">TICKETS</p>
+					<p class="main-flight-img"><img src="../../images/resource/ticketHotel-aircraft.png"></p>
+					<p class="main-flight-rules"><span>!</span><a href="javascript:;">Return and change rules</a></p>
+					<div class="main-flight-content">
+						<div class="flight-tips">
+							<p class="p1">The flight is an overnight flight, </p>
+							<p class="p2">please pay attention to your hotel check-in date, please refer to the hotel check-in instructions.</p>
+						</div>
+						<div class="flight-info-wrap">
+							<div class="flight-info-inner">
+								<div class="flight-info flight-info-1">
+									<p class="p1">14 Nov.</p>
+									<div>
+										<p class="p2"><span class="time">05:10</span></p>
+										<p class="p3">Guangzhou Baiyun International Airport Terminal T1</p>
+									</div>
+								</div>
+								<div class="flight-num"><span>LQ909</span><img src="../../images/resource/ticketHotel-line.png"></div>
+								<div class="flight-info flight-info-2">
+									<div>
+										<p class="p2"><span class="time">07:10</span><span class="one-day">+1</span></p>
+										<p class="p3">Phnom Penh International Airport</p>
+									</div>
+									<p class="p1 space-num-green"><img src="../../images/resource/icon-space.png"> <span>&gt;9</span></p>
+								</div>
+							</div>
+							<div class="flight-info-inner">
+								<div class="flight-info flight-info-1">
+									<p class="p1">15 Nov.</p>
+									<div>
+										<p class="p2"><span class="time">22:20</span></p>
+										<p class="p3">Phnom Penh International Airport</p>
+									</div>
+								</div>
+								<div class="flight-num"><span>LQ908</span><img src="../../images/resource/ticketHotel-line.png"></div>
+								<div class="flight-info flight-info-2">
+									<div>
+										<p class="p2"><span class="time">02:20</span><span class="one-day">+1</span></p>
+										<p class="p3">Guangzhou Baiyun International Airport Terminal T1</p>
+									</div>
+									<p class="p1 space-num-red"><img src="../../images/resource/icon-space.png"> <span>&gt;2</span></p>
+								</div>
+							</div>
 						</div>
 					</div>
-					<div class="localSelectEnd autoClick autoFocus">
-						<p><img src="../../images/EN/city-to.png"><span>Destination</span></p>
-						<input type="text" class="tocityinput inputDown Autocomplete" id="tocity" data="tocityMenu" value="" placeholder="" autocomplete="off">
-						<div class="cityMenu-wrap">
-							<ul class="tocityMenu menu-com" data="to-menu">
-								
-							</ul>
+					<a href="javascript:;" class="flight-next js-flight-next">Next<i class="iconfont icon-right-arrow2"></i></a>
+				</div>
+				<div class="main-hotel-wrap">
+					<p class="main-flight-title">HOTEL</p>
+					<div class="main-hotel-result">
+						<img src="../../images/resource/ticketHotel-hotel.png">
+						<div class="hotel-pay-wrap"></div>
+					</div>
+					<div class="main-hotel-content">
+						<div class="hotel-content-inner">
+							<div class="hotel-info-wrap">
+								<img src="../../images/resource/hotel-img-1.jpg" class="hotel-img">
+								<div class="hotel-info">
+									<a href="javascript:;" class="hotel-title" target="_blank">Mandarin Hotel Managed By Centre Point</a>
+									<div class="hotel-stars-wrap">
+										<div class="hotel-stars">
+											<img src="../../images/resource/hotel-stars.png" class="stars-1" alt="">
+											<img src="../../images/resource/hotel-stars.png" class="stars-2" alt="">
+											<img src="../../images/resource/hotel-stars.png" class="stars-3" alt="">
+											<img src="../../images/resource/hotel-stars.png" class="stars-4" alt="">
+											<img src="../../images/resource/hotel-stars.png" class="stars-5" alt="">
+											<img src="../../images/resource/hotel-stars-more.png" class="stars-more" alt="">
+										</div>
+										<p class="hotel-popular">Popular promotions</p>
+									</div>
+									<p class="hotel-country">Republic of Bashkortostan Russia</p>
+									<p class="hotel-address">Gogolya 155 Pribrezhny District Sterlitamak</p>
+								</div>
+							</div>
+							<div class="hotel-roomType-wrap">
+								<ul class="room-type-title">
+									<li>Room type</li>
+									<li>Policy</li>
+									<li>Spread</li>
+								</ul>
+								<div class="room-type-content">
+									<ul>
+										<li>Double Bed/Double Standard with Breakfast</li>
+										<li>Regression rule</li>
+										<li>$ 0</li>
+									</ul>
+									<ul>
+										<li>Double or twin club</li>
+										<li>Regression rule</li>
+										<li>- $ 40</li>
+									</ul>
+									<ul>
+										<li>Executive room, 2 twin beds, business lounge access</li>
+										<li>Regression rule</li>
+										<li>+ $ 130</li>
+									</ul>
+								</div>
+							</div>
+							<div class="hotel-viewOther-wrap">
+								<p>9 people booked the hotel in the past 48 hours</p>
+								<a href="javascript:;">View other room types</a>
+							</div>
 						</div>
 					</div>
-					<div class="flightSelectStart autoClick autoFocus">
-						<p><img src="../../images/EN/flight-number.png"><span>Flight Number</span></p>
-						<input type="text" class="fromcityinput inputDown" id="f-num-select" data="flightMenu" value="" placeholder="" autocomplete="off">
-						<div class="cityMenu-wrap">
-							<ul class="flightMenu menu-com" data="flight-menu">
-								
-							</ul>
-						</div>
-					</div>
-					<div class="timeSelectStart">
-						<p><img src="../../images/EN/date.png"><span>Departure Date</span></p>
-						<input type="text" class="inputDown" id="f-timeFrom" name="from" value="" placeholder="" readonly>
-						<div class="cityMenu-wrap dataMenu-wrap">
-							<div class="flightStatusDate-container js-flightStatusDate-container"></div>
-						</div>
-					</div>
-					<a href="#" class="f-search-btn" id="clickSeekTwo">SEARCH</a>
 				</div>
 			</div>
 		</div>
 	</section>
 
 	<!-- 页脚 -->
-	<footer class="lm-footer">
-		
-	</footer>
+	<footer class="lm-footer"></footer>
 
 	<!-- 回到顶部 -->
-	<div class="BackToTop">
-		
-	</div>
+	<div class="BackToTop"></div>
 
 	<!-- 第三方库-->
 	<script type="text/javascript" src="../../libs/jQuery/jquery-1.11.3.js"></script>

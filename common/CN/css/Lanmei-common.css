@@ -648,6 +648,14 @@ body {
 .ie8 .icon-local::before {
   color: #fff;
 }
+.range-change-date {
+  font-family: NotoSansBold;
+  text-align: center;
+  clear: both;
+  padding-top: 7px;
+  padding-bottom: 12px;
+  color: rgba(0, 0, 0, 0.8);
+}
 /* 移动端新增代码 */
 @media screen and (max-width: 1200px) {
   .lm-header .h-logo {

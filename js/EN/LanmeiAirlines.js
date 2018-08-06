@@ -1143,7 +1143,7 @@ var LanmeiAirlines = {
 			var data = $(this).attr('data-way');
 			switch (data) {
 				case 'round':
-				that.dateSelect(false,'.js-date-result','.js-popup-date',false,$box,$dateBox,$peopleBox,'Choose your departure date :','Choose your return date :');
+					that.dateSelect(false,'.js-date-result','.js-popup-date',false,$box,$dateBox,$peopleBox,'Choose your departure date :','Choose your return date :');
 					$('.js-date-result').click(); //日期展示
 					$('#tripType').val('RT');
 					break;
@@ -1151,9 +1151,9 @@ var LanmeiAirlines = {
 					that.dateSelect(true,'.js-date-result','.js-popup-date',false,$box,$dateBox,$peopleBox,'Choose your departure date :','Choose your return date :');
 					$('.js-date-result').click(); //日期展示
 					$('#tripType').val('OW');
-					break;
-				}
-			});
+				break;
+			}
+		});
 
 		/* 出发地和目的地切换 */
 		$ticketChange.click(function(event) {

@@ -10,19 +10,23 @@ if(!window.jQuery){
 	//默认配置项
 	var defaults = {
 		single : true,
+		canlendarSingle: true,
 		todaySelect:true,
+		showTotleDay: false,
 	};
 	//插件类
-	function Plugin(element,options){
+	function Plugin(element,options,callback){
 		//拿到dom元素，获得对应jq对象，要$(element)
 		this.element = $(element);
 		//覆盖默认配置项
 		this.options = $.extend({},defaults,options);
-		
-		this.single = options.single;
-		this.todaySelect = options.todaySelect;
-		this.container = options.container;
 
+		this.single = this.options.single;
+		this.canlendarSingle = this.options.canlendarSingle;
+		this.todaySelect = this.options.todaySelect;
+		this.showTotleDay = this.options.showTotleDay;
+		this.container = this.options.container;
+		this.callback = callback;
 		//调用初始函数
 		this.init();
 	}
@@ -91,14 +95,18 @@ if(!window.jQuery){
 		    minDate: minDate,
 		    // maxDate:'2018-06-02',
 		    singleDatePicker: that.single, //单日期
-		    singleDatePicker_2: true, //单日期单日历
-		    outsideClickHide: true, //点击空白隐藏日期控件
+		    singleDatePicker_2: that.canlendarSingle, //单日期单日历
+		    showTotleDay:that.showTotleDay, //是否展示已选择入住天数
+		    outsideClickHide: false, //点击空白隐藏日期控件
 		    showDateTitle: false,
 		    showDropdowns: false, //下拉选择月份和年份
 		    showWeekNumbers: false, //显示周
 		    autoApply: true, //自动关闭日期
 		    language :'en',
-		    },function(start, end, label) {//格式化日期显示框  
+		    },function(start, end, label) {//格式化日期显示框
+		    	if (that.callback && typeof that.callback === 'function') {
+		    		that.callback();
+		    	}
 		        $(that.container).parent().hide(); //外框隐藏
 		        if (this.singleDatePicker) {
 		            that.element.html(start.format('D MMM'));
@@ -115,14 +123,15 @@ if(!window.jQuery){
 	};
 	
 	//fn就是prototype
-	$.fn[pluginName] = function(options){
+	$.fn[pluginName] = function(options,callback){
 		//each表示对多个元素调用，用return 是为了返回this，进行链式调用
 		return this.each(function(){
 			//判断有没有插件名字 如果你不愿意加if 直接new就好了
-			if(!$.data(this,'plugin_'+pluginName)){
-				//生成插件类实例。
-				$.data(this,'plugin_'+pluginName,new Plugin(this,options));
-			}
+			new Plugin(this,options,callback)
+			// if(!$.data(this,'plugin_'+pluginName)){
+			// 	//生成插件类实例。
+			// 	$.data(this,'plugin_'+pluginName,new Plugin(this,options,callback));
+			// }
 		});
 	};
 })(jQuery,window,document);

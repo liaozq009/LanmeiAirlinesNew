@@ -77,6 +77,10 @@ var LMComLoginReg = {
 		                           ' <p>Passwords don’t match !</p>'+
 		                            '<span>Password must be with 3 or 4 combination with number (0-9), lowercase letter (a-z), uppercase letter (A-Z) or special characters.</span>'+
 		                        '</div>'+
+		                        '<div class="getVerCode">'+
+		                            '<input type="text" name="" value="" id="getVerCode-input" placeholder="Security Code" autocomplete="off">'+
+		                           	'<button type="button" id="getVerCode-btn">Get Security Code</button>'+
+		                        '</div>'+
 		                        '<div class="agree">'+
 		                            '<span></span>'+
 		                            '<p>I hereby agree to <a href="https://lanmeiairlines.com/lanmeiairlines2.0/default/menus/EN/aboutUs/LMPrivacy.html" target="_blank">Lanmeiairlines’ terms and conditions</a></p>'+

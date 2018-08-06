@@ -76,6 +76,10 @@ var LMComLoginReg = {
 		                            '<p>密码不匹配！</p>'+
 		                            '<span>密码为不少于8为数的两种字符结合，数字（0-9），小写字母，大写字母（A-Z）字母（a-z）或特殊字符</span>'+
 		                        '</div>'+
+		                        '<div class="getVerCode">'+
+		                            '<input type="text" name="" value="" id="getVerCode-input" placeholder="验证码" autocomplete="off">'+
+		                           	'<button type="button" id="getVerCode-btn">获取验证码</button>'+
+		                        '</div>'+
 		                        '<div class="agree">'+
 		                            '<span></span>'+
 		                            '<p>我同意 <a href="https://lanmeiairlines.com/lanmeiairlines2.0/default/menus/CN/aboutUs/LMPrivacy.html" target="_blank">澜湄航空的条款和条件</a></p>'+
