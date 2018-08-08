@@ -139,10 +139,12 @@ var lmFlightHotel = {
             switch (data) {
                 case 'round':
                     ticketDate(false);
+                    $('.js-dataMenu-wrap').hide();
                     // $('#tripType').val('RT');
                 break;
                 case 'one':
                     ticketDate(true);
+                    $('.js-dataMenu-wrap').hide();
                     // $('#tripType').val('OW');
                 break;
             }
@@ -204,8 +206,7 @@ var lmFlightHotel = {
             e.stopPropagation();
             $(this).hide().siblings('a').show();
             $(this).parent('.hotel-viewOther-wrap').siblings('.hotel-roomType-wrap').children('.js-rooms-type').removeClass('room-type-slideDown');
-            $(this).parent('.hotel-viewOther-wrap').siblings('.hotel-roomType-wrap').find('.room-type-content>ul').slideUp();
-            $(this).parent('.hotel-viewOther-wrap').siblings('.hotel-roomType-wrap').find('.room-type-content>ul.active').slideDown();
+            $(this).parent('.hotel-viewOther-wrap').siblings('.hotel-roomType-wrap').find('.room-type-content>ul').not('.active').slideUp();
         });
 
         $('.js-hotel-content').on('click','.js-content-inner',function(event) {
@@ -252,7 +253,7 @@ var lmFlightHotel = {
         });
         $thPopup.on('click','.js-thAge-menu>li',function(){
             var text = $(this).html();
-            $(this).parents('.js-thAge-box').siblings('span').html(text);
+            $(this).parents('.js-thAge-box').slideUp().siblings('span').html(text);
         });
         $('html').click(function(event) {
             $('.js-thAge-box').slideUp();
@@ -262,6 +263,7 @@ var lmFlightHotel = {
         var $adultResult = $('.js-p-hotelAdult>span');
         var $childResult = $('.js-p-hotelChild>span');
         var $roomsResult = $('.js-p-hotelRooms>span');
+        $childResult.text(0);
         // 增加房间
         var roomsNum = 1;
         $('.js-add-thRooms').click(function(event) {
@@ -273,100 +275,51 @@ var lmFlightHotel = {
 
         function roomsStr(roomsNum){
             var $roomStr = '<div class="s-room-'+roomsNum+' s-room-com s-people-com animated fadeInUp" id="js-thRoom'+roomsNum+'-inner">'+
-            '<p class="rooms-title js-thRooms-title">Room '+roomsNum+'</p>'+
-            '<div class="adult-rooms-content rooms-content-com js-thAdultRooms-content">'+
-            '<div class="hotel-people-prompt people-prompt">'+
-            '<p class="p1">Adult</p>'+
-            '</div>'+
-            '<div class="hotel-people-number people-number">'+
-            '<a href="javascript:;" class="sub-people off-sub-operation js-ticketHotelAdult-sub"></a>'+
-            '<span class="adult-num js-ticketHotelAdult-num">2</span>'+
-            '<a href="javascript:;" class="add-people js-ticketHotelAdult-add"></a>'+
-            '</div>'+
-            '</div>'+
-            '<div class="child-rooms-content rooms-content-com js-thChildRooms-content">'+
-            '<div class="hotel-people-prompt people-prompt">'+
-            '<p class="p1">Child</p>'+
-            '</div>'+
-            '<div class="hotel-people-number people-number disable">'+
-            '<a href="javascript:;" class="sub-people off-sub-operation js-ticketHotelChild-sub"></a>'+
-            '<span class="adult-num js-ticketHotelChild-num">0</span>'+
-            '<a href="javascript:;" class="add-people js-ticketHotelChild-add"></a>'+
-            '</div>'+
-            '</div>'+
-            '<div class="age-rooms-com rooms-content-com animated fadeInUp js-thAge-1">'+
-            '<div class="hotel-people-prompt people-prompt">'+
-            '<p class="p1">Age/1</p>'+
-            '</div>'+
-            '<div class="hotel-age-wrap people-number">'+
-            '<span class="age-result js-thAge-result">1</span>'+
-            '<div class="age-menu-box js-thAge-box">'+
-            '<ul class="hotel-age-menu js-thAge-menu">'+
-            '<li title="Age < 1 year old">&lt; 1</li>'+
-            '<li>2</li>'+
-            '<li>3</li>'+
-            '<li>4</li>'+
-            '<li>5</li>'+
-            '<li>6</li>'+
-            '<li>7</li>'+
-            '<li>8</li>'+
-            '<li>9</li>'+
-            '<li>10</li>'+
-            '<li>11</li>'+
-            '<li>12</li>'+
-            '</ul>'+
-            '</div>'+
-            '</div>'+
-            '</div>'+
-            '<div class="age-rooms-com rooms-content-com animated fadeInUp js-thAge-2">'+
-            '<div class="hotel-people-prompt people-prompt">'+
-            '<p class="p1">Age/2</p>'+
-            '</div>'+
-            '<div class="hotel-age-wrap people-number">'+
-            '<span class="age-result js-thAge-result">1</span>'+
-            '<div class="age-menu-box js-thAge-box">'+
-            '<ul class="hotel-age-menu js-thAge-menu">'+
-            '<li title="Age < 1 year old">&lt; 1</li>'+
-            '<li>2</li>'+
-            '<li>3</li>'+
-            '<li>4</li>'+
-            '<li>5</li>'+
-            '<li>6</li>'+
-            '<li>7</li>'+
-            '<li>8</li>'+
-            '<li>9</li>'+
-            '<li>10</li>'+
-            '<li>11</li>'+
-            '<li>12</li>'+
-            '</ul>'+
-            '</div>'+
-            '</div>'+
-            '</div>'+
-            '<div class="age-rooms-com rooms-content-com animated fadeInUp js-thAge-3">'+
-            '<div class="hotel-people-prompt people-prompt">'+
-            '<p class="p1">Age/3</p>'+
-            '</div>'+
-            '<div class="hotel-age-wrap people-number">'+
-            '<span class="age-result js-thAge-result">1</span>'+
-            '<div class="age-menu-box js-thAge-box">'+
-            '<ul class="hotel-age-menu js-thAge-menu">'+
-            '<li title="Age < 1 year old">&lt; 1</li>'+
-            '<li>2</li>'+
-            '<li>3</li>'+
-            '<li>4</li>'+
-            '<li>5</li>'+
-            '<li>6</li>'+
-            '<li>7</li>'+
-            '<li>8</li>'+
-            '<li>9</li>'+
-            '<li>10</li>'+
-            '<li>11</li>'+
-            '<li>12</li>'+
-            '</ul>'+
-            '</div>'+
-            '</div>'+
-            '</div>'+
-            '</div>';
+                                '<p class="rooms-title js-thRooms-title">Room '+roomsNum+'</p>'+
+                                '<div class="adult-rooms-content rooms-content-com js-thAdultRooms-content">'+
+                                    '<div class="hotel-people-prompt people-prompt">'+
+                                        '<p class="p1">Adult</p>'+
+                                    '</div>'+
+                                    '<div class="hotel-people-number people-number">'+
+                                        '<a href="javascript:;" class="sub-people off-sub-operation js-ticketHotelAdult-sub"></a>'+
+                                        '<span class="adult-num js-ticketHotelAdult-num">1</span>'+
+                                        '<a href="javascript:;" class="add-people js-ticketHotelAdult-add"></a>'+
+                                    '</div>'+
+                                '</div>'+
+                                '<div class="child-rooms-content rooms-content-com js-thChildRooms-content">'+
+                                    '<div class="hotel-people-prompt people-prompt">'+
+                                        '<p class="p1">Child</p>'+
+                                    '</div>'+
+                                    '<div class="hotel-people-number people-number disable">'+
+                                        '<a href="javascript:;" class="sub-people off-sub-operation js-ticketHotelChild-sub"></a>'+
+                                        '<span class="adult-num js-ticketHotelChild-num">0</span>'+
+                                        '<a href="javascript:;" class="add-people js-ticketHotelChild-add"></a>'+
+                                    '</div>'+
+                                '</div>'+
+                                '<div class="age-rooms-com rooms-content-com animated fadeInUp js-thAge-1">'+
+                                    '<div class="hotel-people-prompt people-prompt">'+
+                                        '<p class="p1">Age/1</p>'+
+                                    '</div>'+
+                                    '<div class="hotel-age-wrap people-number">'+
+                                        '<span class="age-result js-thAge-result">1</span>'+
+                                    '<div class="age-menu-box js-thAge-box">'+
+                                        '<ul class="hotel-age-menu js-thAge-menu">'+
+                                            '<li title="Age < 1 year old">&lt; 1</li>'+
+                                            '<li>2</li>'+
+                                            '<li>3</li>'+
+                                            '<li>4</li>'+
+                                            '<li>5</li>'+
+                                            '<li>6</li>'+
+                                            '<li>7</li>'+
+                                            '<li>8</li>'+
+                                            '<li>9</li>'+
+                                            '<li>10</li>'+
+                                            '<li>11</li>'+
+                                            '<li>12</li>'+
+                                        '</ul>'+
+                                    '</div>'+
+                                '</div>'+
+                            '</div>';
 
             var $roomTab = '<p class="" data-room="js-thRoom'+roomsNum+'-inner"><span>Room '+roomsNum+'</span><b>×</b></p>';
 
@@ -374,7 +327,7 @@ var lmFlightHotel = {
             $('.js-add-thRoomsTab').append($roomTab);
 
             var adultNum = $adultResult.html();
-            $adultResult.html(Number(adultNum)+2);
+            $adultResult.html(Number(adultNum)+1);
 
             var roomsTotletNum = $roomsResult.html();
             roomsTotletNum++;
@@ -407,8 +360,9 @@ var lmFlightHotel = {
             $('#'+id).remove();
             $(this).parent('p').remove();
 
-            // 动态修改房间最外层宽度和left
-            // $that.changeWidth('ticketHotel');
+            if(Number($childResult.text())==0){
+                $('.js-ticketHotelPopup-people').css('width',750);
+            }
 
             // 动态修改房间数值
             $('.js-thRooms-container>div:first').attr('id','js-thRoom1-inner'); //第一个
@@ -428,10 +382,13 @@ var lmFlightHotel = {
             $thPopup.on('click','.js-ticketHotelAdult-add',function(e){
                 var adultNum = $(this).siblings('span').html();
                 adultNum++;
+                $(this).siblings('.sub-people').removeClass('off-sub-operation');
+                adultNum==2 && $(this).addClass('off-add-operation');
+                if(adultNum>2){
+                    return;
+                };
                 $(this).siblings('span').html(adultNum);
 
-                adultNum==3 && $(this).siblings('.sub-people').removeClass('off-sub-operation');
-                
                 //动态赋值
                 var spanVal = 0;
                 var spanArray = $('.js-ticketHotelAdult-num');
@@ -443,9 +400,10 @@ var lmFlightHotel = {
             $thPopup.on('click','.js-ticketHotelAdult-sub',function(e){
                 var adultNum = $(this).siblings('span').html();
                 adultNum--;
-                if(adultNum<3){
-                    adultNum=2;
-                    $(this).addClass('off-sub-operation');
+                $(this).siblings('.add-people').removeClass('off-add-operation');
+                adultNum==1 && $(this).addClass('off-sub-operation');
+                if(adultNum<=1){
+                   return;
                 }
                 $(this).siblings('span').html(adultNum);
                 
@@ -464,47 +422,24 @@ var lmFlightHotel = {
             // 动态增减年龄
             var changeAge = function(that,childNum){
                 var $age1 = that.parents('.js-thChildRooms-content').siblings('.js-thAge-1');
-                var $age2 = that.parents('.js-thChildRooms-content').siblings('.js-thAge-2');
-                var $age3 = that.parents('.js-thChildRooms-content').siblings('.js-thAge-3');
-
-                // 动态修改房间最外层宽度和left
-                // $that.changeWidth('ticketHotel');
-
-                // 显示隐藏
-                if(childNum==0){
-                    $age1.hide();$age2.hide();$age3.hide();
-                }
-                if(childNum==1){
-                    $age2.hide();$age3.hide();
-                    setTimeout(function(){
-                        $age1.show();
-                    },200);
-                }
-                if(childNum==2){
-                    $age3.hide();
-                    setTimeout(function(){
-                        $age1.show();$age2.show();
-                    },200);
-                }
-                if(childNum==3){
-                    setTimeout(function(){
-                        $age1.show();$age2.show();$age3.show();
-                    },200);
-                }
+                $age1.show();
             };
 
             $thPopup.on('click','.js-ticketHotelChild-add',function(e){
                 var childNum = $(this).siblings('span').html();
                 childNum++;
-                
+                $(this).siblings('.sub-people').removeClass('off-sub-operation');
+
                 if(childNum==1){
+                    $(this).addClass('off-add-operation');
                     $(this).siblings('.sub-people').removeClass('off-sub-operation');
                     $(this).parent().removeClass('disable');
+                    $('.js-ticketHotelPopup-people').css('width',950);
                 }
-                if(childNum>2){
-                    childNum=3
-                    $(this).addClass('off-add-operation');
-                }
+                if(childNum>1){
+                    return;
+                };
+                
                 $(this).siblings('span').html(childNum);
 
                 //动态赋值
@@ -516,9 +451,12 @@ var lmFlightHotel = {
                 $childResult.html(spanVal); 
 
                 // 动态增减年龄
-                var that = $(this);
-                changeAge(that,childNum);
+                var that = this;
+                setTimeout(function(){
+                    $(that).parents('.js-thChildRooms-content').siblings('.js-thAge-1').show();
+                },500);
             });
+
             $thPopup.on('click','.js-ticketHotelChild-sub',function(e){
                 var childNum = $(this).siblings('span').html();
                 childNum--;
@@ -537,9 +475,12 @@ var lmFlightHotel = {
                 });
                 $childResult.html(spanVal); 
 
+                if(Number($childResult.text())==0){
+                    $('.js-ticketHotelPopup-people').css('width',750);
+                }
+
                 // 动态增减年龄
-                var that = $(this);
-                changeAge(that,childNum);
+                $(this).parents('.js-thChildRooms-content').siblings('.js-thAge-1').hide();
             });
         };
 

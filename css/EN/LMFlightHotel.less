@@ -41,28 +41,27 @@
 	background: rgba(31,44,92,@opacity);
 }
 
-.vis-hidden{
+.hidden{
 	visibility: hidden;
 }
-.vis-visible{
+.visible{
 	visibility: visible;
 }
 .clear-both{
 	clear: both;
 }
-
+body{
+	background: url('@{url}ticketHotle-bg.jpg') center no-repeat;
+	background-repeat:no-repeat;
+	background-attachment:fixed;
+}
 .lm-section{
 	position: relative;
-	height: 1020px;
-	background: url('@{url}ticketHotle-bg.jpg') center no-repeat;
 	overflow: hidden;
 }
 .lm-section-main{
-	position: absolute;
-	top: 30px;
-	left: 50%;
 	width: 1210px;
-	margin-left: -605px;
+	margin: 30px auto 150px;
 }
 .main-data-wrap{
 	.city-com{
@@ -72,7 +71,7 @@
 			position: absolute;
 			left: 0;
 			width: 100%;
-			font-size: 18px;
+			font-size: 20px;
 			color: #fff;
 			text-align: center;
 			text-decoration: underline;
@@ -83,7 +82,7 @@
 			height: 30px;
 			background: transparent;
 		    color: #fff;
-		    font-size: 18px;
+		    font-size: 20px;
 		    visibility: hidden;
 		}
 	}
@@ -130,7 +129,7 @@
 		display: inline-block;
 		.three-code{
 			height: 80px;
-			font-size: 64px;
+			font-size: 56px;
 			color: #fff;
 			font-family: @FBold;
 		}
@@ -338,22 +337,26 @@
 	position: relative;
 	width:1210px;
 	max-height:374px;
-	margin-top: 224px;
+	margin-top: 160px;
 	background:#fff;
 	border-radius:2px;
 	.main-flight-title{
 		position: absolute;
-	    top: -190px;
+	    top: -140px;
 	    left: -190px;
 	    font-weight: bold;
-	    font-size: 230px;
+	    font-size: 180px;
 	    color: #fff;
 	    opacity: 0.3;
 	}
 	.main-flight-img{
 		position: absolute;
-	    top: -210px;
+	    top: -170px;
 	    left: -80px;
+	    img{
+	    	width: 600px;
+	    	height: 354px;
+	    }
 	}
 	.main-flight-rules{
 		position: absolute;
@@ -502,15 +505,15 @@
 	.main-flight-title{
 		position: absolute;
 	    top: 0;
-	    left: -190px;
+	    left: -120px;
 	    font-weight: bold;
-	    font-size: 230px;
+	    font-size: 180px;
 	    color: #fff;
 	    opacity: 0.3;
 	}
 	.flight-previous{
 		position: absolute;
-		bottom: 100px;
+		top: 580px;
 		left: -80px;
 		width:160px;
 		height:60px;
@@ -539,9 +542,13 @@
 		float: left;
 		position: relative;
 		width: 470px;
+		>img{
+			width: 470px;
+			height: 500px;
+		}
 		.hotel-pay-wrap{
 			position: absolute;
-		    bottom: 80px;
+		    bottom: 60px;
 		    width: 100%;
 		    padding-left: 30px;
 		    padding-right: 30px;
@@ -597,11 +604,7 @@
 	}
 	.main-hotel-content{
 		width: 700px;
-		height: 740px;
-		padding-bottom: 120px;
 	    float: right;
-	    overflow-y: auto;
-	    overflow-x: hidden;
 		.hotel-content-inner{
 			width:700px;
 			min-height:266px;
@@ -826,6 +829,13 @@
 				color:#00908c;
 				font-size: 12px;
 				text-decoration: underline;
+				transition: color .3s;
+				-webkit-transition: color .3s;
+				&:hover{
+					color: @green;
+					transition: color .3s;
+					-webkit-transition: color .3s;
+				}
 
 			}
 			.close-room{display: none;}
@@ -1069,8 +1079,6 @@
 			}
 		}
 		.age-rooms-com{
-			margin-top: 10px;
-			margin-bottom: 20px;
 			.hotel-people-prompt{
 				.p1{
 					width: 76px;

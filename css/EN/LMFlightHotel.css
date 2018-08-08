@@ -5,27 +5,27 @@
   font-weight: bold;
 }
 /* 定义变量 */
-.vis-hidden {
+.hidden {
   visibility: hidden;
 }
-.vis-visible {
+.visible {
   visibility: visible;
 }
 .clear-both {
   clear: both;
 }
+body {
+  background: url('../../images/resource/ticketHotle-bg.jpg') center no-repeat;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
 .lm-section {
   position: relative;
-  height: 1020px;
-  background: url('../../images/resource/ticketHotle-bg.jpg') center no-repeat;
   overflow: hidden;
 }
 .lm-section-main {
-  position: absolute;
-  top: 30px;
-  left: 50%;
   width: 1210px;
-  margin-left: -605px;
+  margin: 30px auto 150px;
 }
 .main-data-wrap .city-com {
   position: relative;
@@ -35,7 +35,7 @@
   position: absolute;
   left: 0;
   width: 100%;
-  font-size: 18px;
+  font-size: 20px;
   color: #fff;
   text-align: center;
   text-decoration: underline;
@@ -46,7 +46,7 @@
   height: 30px;
   background: transparent;
   color: #fff;
-  font-size: 18px;
+  font-size: 20px;
   visibility: hidden;
 }
 .main-data-wrap .cityMenu-wrap {
@@ -95,7 +95,7 @@
 }
 .main-data-title > div .three-code {
   height: 80px;
-  font-size: 64px;
+  font-size: 56px;
   color: #fff;
   font-family: CamptonBookBold;
 }
@@ -304,23 +304,27 @@
   position: relative;
   width: 1210px;
   max-height: 374px;
-  margin-top: 224px;
+  margin-top: 160px;
   background: #fff;
   border-radius: 2px;
 }
 .main-flight-wrap .main-flight-title {
   position: absolute;
-  top: -190px;
+  top: -140px;
   left: -190px;
   font-weight: bold;
-  font-size: 230px;
+  font-size: 180px;
   color: #fff;
   opacity: 0.3;
 }
 .main-flight-wrap .main-flight-img {
   position: absolute;
-  top: -210px;
+  top: -170px;
   left: -80px;
+}
+.main-flight-wrap .main-flight-img img {
+  width: 600px;
+  height: 354px;
 }
 .main-flight-wrap .main-flight-rules {
   position: absolute;
@@ -469,15 +473,15 @@
 .main-hotel-wrap .main-flight-title {
   position: absolute;
   top: 0;
-  left: -190px;
+  left: -120px;
   font-weight: bold;
-  font-size: 230px;
+  font-size: 180px;
   color: #fff;
   opacity: 0.3;
 }
 .main-hotel-wrap .flight-previous {
   position: absolute;
-  bottom: 100px;
+  top: 580px;
   left: -80px;
   width: 160px;
   height: 60px;
@@ -507,9 +511,13 @@
   position: relative;
   width: 470px;
 }
+.main-hotel-wrap .main-hotel-result > img {
+  width: 470px;
+  height: 500px;
+}
 .main-hotel-wrap .main-hotel-result .hotel-pay-wrap {
   position: absolute;
-  bottom: 80px;
+  bottom: 60px;
   width: 100%;
   padding-left: 30px;
   padding-right: 30px;
@@ -564,11 +572,7 @@
 }
 .main-hotel-wrap .main-hotel-content {
   width: 700px;
-  height: 740px;
-  padding-bottom: 120px;
   float: right;
-  overflow-y: auto;
-  overflow-x: hidden;
 }
 .main-hotel-wrap .main-hotel-content .hotel-content-inner {
   width: 700px;
@@ -804,6 +808,13 @@
   color: #00908c;
   font-size: 12px;
   text-decoration: underline;
+  transition: color .3s;
+  -webkit-transition: color .3s;
+}
+.main-hotel-wrap .main-hotel-content .hotel-viewOther-wrap a:hover {
+  color: #8ec06c;
+  transition: color .3s;
+  -webkit-transition: color .3s;
 }
 .main-hotel-wrap .main-hotel-content .hotel-viewOther-wrap .close-room {
   display: none;
@@ -1032,10 +1043,6 @@
 .data-people .hotel-popus-people .child-rooms-content .hotel-people-prompt .p1 {
   width: 110px;
   background: url('../../images/EN/child-icon.png') 10px center no-repeat rgba(31, 44, 92, 0.04);
-}
-.data-people .hotel-popus-people .age-rooms-com {
-  margin-top: 10px;
-  margin-bottom: 20px;
 }
 .data-people .hotel-popus-people .age-rooms-com .hotel-people-prompt .p1 {
   width: 76px;
