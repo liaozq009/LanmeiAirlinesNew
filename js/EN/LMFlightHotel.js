@@ -5,6 +5,8 @@ var lmFlightHotel = {
     winHeight: $(window).height(),
     init: function () {
         this.initVal();
+        this.ticketSelect();
+        this.hotelSelect();
         this.thSelect();
         this.selectThRooms();
         this.addEvend();
@@ -12,11 +14,6 @@ var lmFlightHotel = {
 
     /* 赋值 */
     initVal:function(){
-        // 出发地
-        $.each(this.cityData,function(i,val){
-            $('.fromcityMenu,.tocityMenu').append('<li title="'+val+'">'+val+'</li>');
-        });
-
         // 模糊匹配
         $('.js-from-input,.js-to-input').autoComplete();
 
@@ -34,28 +31,41 @@ var lmFlightHotel = {
         });
     },
 
-    /* 机票酒店选择 */
-    thSelect:function(){
+    /* 机票选择 */
+    ticketSelect:function(){
+        var that = this;
+        function cityFn(){
+            $('.fromcityMenu,.tocityMenu').empty();
+            $.each(that.cityData,function(i,val){
+                $('.fromcityMenu,.tocityMenu').append('<li title="'+val+'">'+val+'</li>');
+            });
+        };
+        cityFn();
+
         var $dropdownMenu = $('.cityMenu-wrap');
 
         $('html').click(function(event) {
             $dropdownMenu.hide();
             $('.js-from-city,.js-to-city').css('visibility','visible');
             $('.js-from-input,.js-to-input').css('visibility','hidden');
+            cityFn();
         });
         $dropdownMenu.click(function(e) {
             e.stopPropagation();
+        });
+        $('.js-from-input,.js-to-input').click(function(e) {
+           e.stopPropagation();
         });
 
         //出发地和目的地选择
         var cityFlag1 = true;
         var cityFlag2 = true;
         $('.js-from-city,.js-to-city').click(function(event) {
+            event.stopPropagation();event.preventDefault();
             if(!cityFlag1){return};
             cityFlag1 = false;
             cityFlag2 = false;
 
-            event.stopPropagation();
             $dropdownMenu.hide();
             $(this).siblings('.cityMenu-wrap').show();
 
@@ -160,6 +170,43 @@ var lmFlightHotel = {
                $(that).siblings('.cityMenu-wrap').removeClass('moveInUp');
                hotelFlag = true;
             }, 500);
+        });
+    },
+
+    /* 酒店选择 */
+    hotelSelect:function(){
+        var $rooms = $('.js-rooms-type');
+        var $view = $('.js-view-room');
+        var $close = $('.js-close-room');
+        var $roomsUl = $('.js-rooms-type>ul');
+        $roomsUl.click(function(event) {
+            $(this).parent().removeClass('room-type-slideDown');
+            $(this).slideDown().addClass('active').siblings('ul').slideUp().removeClass('active');
+            $(this).parents('.hotel-roomType-wrap').siblings('.hotel-viewOther-wrap').children('.js-view-room').show();
+            $(this).parents('.hotel-roomType-wrap').siblings('.hotel-viewOther-wrap').children('.js-close-room').hide();
+        });
+        $view.click(function(event) {
+            $(this).hide().siblings('a').show();
+            $(this).parent('.hotel-viewOther-wrap').siblings('.hotel-roomType-wrap').children('.js-rooms-type').addClass('room-type-slideDown');
+            $(this).parent('.hotel-viewOther-wrap').siblings('.hotel-roomType-wrap').find('.room-type-content>ul').slideDown();
+        });
+        $close.click(function(event) {
+            $(this).hide().siblings('a').show();
+            $(this).parent('.hotel-viewOther-wrap').siblings('.hotel-roomType-wrap').children('.js-rooms-type').removeClass('room-type-slideDown');
+            $(this).parent('.hotel-viewOther-wrap').siblings('.hotel-roomType-wrap').find('.room-type-content>ul').slideUp();
+        });
+    },
+
+    /* 机票和酒店切换 */
+    thSelect:function(){
+        // var flag = true;
+        $('.js-flight-next').click(function(){
+            $('.js-flight-wrap').hide();
+            $('.js-hotel-wrap').show();
+        });
+        $('.js-flight-previous').click(function(event) {
+            $('.js-flight-wrap').show();
+            $('.js-hotel-wrap').hide();
         });
     },
 

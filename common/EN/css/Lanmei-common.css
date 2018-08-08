@@ -1005,6 +1005,15 @@ body {
   .modal .modal-dialog .modal-content .modal-body form .agree span {
     margin-top: 1px;
   }
+  .modal .modal-dialog .modal-content .modal-body form .getVerCode input {
+    width: 40%;
+  }
+  .modal .modal-dialog .modal-content .modal-body form .getVerCode button {
+    width: 48%;
+    margin-left: 2%;
+    height: 40px;
+    line-height: 40px;
+  }
   .modal .modal-dialog .modal-content .modal-body .registerWrapper > h2 {
     font-size: 18px;
     margin-top: 10px;

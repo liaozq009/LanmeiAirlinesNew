@@ -14,6 +14,9 @@
 .clear-both {
   clear: both;
 }
+.lm-footer {
+  display: none;
+}
 .lm-section {
   position: relative;
   background: url('../../images/resource/ticketHotle-bg.jpg') center no-repeat;
@@ -304,7 +307,6 @@
   margin-top: 224px;
   background: #fff;
   border-radius: 2px;
-  overflow-y: auto;
 }
 .main-flight-wrap .main-flight-title {
   position: absolute;
@@ -459,8 +461,10 @@
   -webkit-transition: background 0.3s;
 }
 .main-hotel-wrap {
+  display: none;
   position: relative;
   width: 1210px;
+  padding-top: 50px;
 }
 .main-hotel-wrap .main-flight-title {
   position: absolute;
@@ -471,13 +475,99 @@
   color: #fff;
   opacity: 0.3;
 }
+.main-hotel-wrap .flight-previous {
+  position: absolute;
+  bottom: 0px;
+  left: -80px;
+  width: 160px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  color: #fff;
+  font-size: 18px;
+  background: #1f2c5c;
+  border-radius: 2px;
+  transition: background 0.3s;
+  -webkit-transition: background 0.3s;
+}
+.main-hotel-wrap .flight-previous i {
+  margin-right: 10px;
+  margin-top: 16px;
+}
+.main-hotel-wrap .flight-previous:hover {
+  background: #8ec06c;
+  transition: background 0.3s;
+  -webkit-transition: background 0.3s;
+}
+.main-hotel-wrap .main-hotel-inner {
+  overflow: hidden;
+}
 .main-hotel-wrap .main-hotel-result {
+  float: left;
   position: relative;
   width: 470px;
 }
+.main-hotel-wrap .main-hotel-result .hotel-pay-wrap {
+  position: absolute;
+  bottom: 80px;
+  width: 100%;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.main-hotel-wrap .main-hotel-result .hotel-info-tips {
+  float: left;
+  width: 200px;
+}
+.main-hotel-wrap .main-hotel-result .hotel-info-tips h2 {
+  font-size: 18px;
+  color: #1f2c5c;
+}
+.main-hotel-wrap .main-hotel-result .hotel-info-tips p {
+  margin-top: 6px;
+  font-size: 14px;
+  color: rgba(31, 44, 92, 0.5);
+}
+.main-hotel-wrap .main-hotel-result .ticket-hotel-price {
+  float: right;
+  font-size: 36px;
+  font-family: CamptonBookBold;
+  color: #8ec06c;
+  background: linear-gradient(-45deg, #00928D 0%, #B4EC80 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.main-hotel-wrap .main-hotel-result .ticket-hotel-pay {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  margin-top: 30px;
+  text-align: center;
+  font-size: 18px;
+  color: #fff;
+  background: #1f2c5c;
+  border-radius: 2px;
+  border: none;
+  outline: none;
+  transition: background .3s;
+  -webkit-transition: background .3s;
+}
+.main-hotel-wrap .main-hotel-result .ticket-hotel-pay:hover {
+  background: #8ec06c;
+  transition: background .3s;
+  -webkit-transition: background .3s;
+}
+.main-hotel-wrap .main-hotel-result .ticket-hotel-pay .circle-arrow-img {
+  position: absolute;
+  right: 30px;
+  top: 15px;
+}
 .main-hotel-wrap .main-hotel-content {
   width: 700px;
+  height: 630px;
   float: right;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 .main-hotel-wrap .main-hotel-content .hotel-content-inner {
   width: 700px;
@@ -486,6 +576,197 @@
   padding: 20px 10px;
   background: #fff;
   border-radius: 2px;
+}
+.main-hotel-wrap .main-hotel-content .hotel-info-wrap {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.main-hotel-wrap .main-hotel-content .hotel-info-wrap .hotel-img {
+  float: left;
+  width: 114px;
+  height: 114px;
+}
+.main-hotel-wrap .main-hotel-content .hotel-info-wrap .hotel-info {
+  margin-left: 134px;
+}
+.main-hotel-wrap .main-hotel-content .hotel-info-wrap .hotel-info .hotel-title {
+  display: block;
+  width: 100%;
+  font-size: 18px;
+  font-family: CamptonBookBold;
+  color: #00908c;
+  text-decoration: underline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.main-hotel-wrap .main-hotel-content .hotel-info-wrap .hotel-info .hotel-stars-wrap {
+  position: relative;
+  margin-top: 10px;
+  overflow: hidden;
+}
+.main-hotel-wrap .main-hotel-content .hotel-info-wrap .hotel-info .hotel-stars-wrap .hotel-stars {
+  float: left;
+}
+.main-hotel-wrap .main-hotel-content .hotel-info-wrap .hotel-info .hotel-stars-wrap .hotel-stars img {
+  margin-right: 20px;
+}
+.main-hotel-wrap .main-hotel-content .hotel-info-wrap .hotel-info .hotel-stars-wrap .hotel-popular {
+  float: right;
+  width: 140px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  color: #fff;
+  border-radius: 2px;
+  font-size: 12px;
+  background: #f85050;
+  background-image: linear-gradient(135deg, #fcaa9b 0%, #f85050 100%);
+}
+.main-hotel-wrap .main-hotel-content .hotel-info-wrap .hotel-info .hotel-country {
+  margin-top: 20px;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.main-hotel-wrap .main-hotel-content .hotel-info-wrap .hotel-info .hotel-address {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.main-hotel-wrap .main-hotel-content .hotel-roomType-wrap {
+  margin-top: 20px;
+}
+.main-hotel-wrap .main-hotel-content .hotel-roomType-wrap .room-type-title {
+  width: 680px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background: rgba(31, 44, 92, 0.04);
+}
+.main-hotel-wrap .main-hotel-content .hotel-roomType-wrap .room-type-title li {
+  float: left;
+  font-size: 14px;
+  color: rgba(31, 44, 92, 0.5);
+}
+.main-hotel-wrap .main-hotel-content .hotel-roomType-wrap .room-type-title .n1 {
+  width: 60%;
+}
+.main-hotel-wrap .main-hotel-content .hotel-roomType-wrap .room-type-title .n2,
+.main-hotel-wrap .main-hotel-content .hotel-roomType-wrap .room-type-title .n3 {
+  width: 20%;
+}
+.main-hotel-wrap .main-hotel-content .hotel-roomType-wrap .room-type-content > ul {
+  display: none;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-bottom: 1px solid rgba(31, 44, 92, 0.1);
+  cursor: pointer;
+}
+.main-hotel-wrap .main-hotel-content .hotel-roomType-wrap .room-type-content > ul > li {
+  float: left;
+  position: relative;
+}
+.main-hotel-wrap .main-hotel-content .hotel-roomType-wrap .room-type-content > ul > li .details-menu {
+  display: none;
+  position: absolute;
+  top: 46px;
+  z-index: 1;
+  width: 220px;
+  border-radius: 2px;
+  background: #fff;
+  padding: 10px;
+  text-align: left;
+  box-shadow: 0 0 50px 0 rgba(31, 44, 92, 0.2);
+}
+.main-hotel-wrap .main-hotel-content .hotel-roomType-wrap .room-type-content > ul > li .details-menu p {
+  color: #1f2c5c;
+  font-size: 14px;
+  line-height: 26px;
+}
+.main-hotel-wrap .main-hotel-content .hotel-roomType-wrap .room-type-content > ul > li .details-menu:before {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  margin-left: -14px;
+  z-index: 9;
+  filter: alpha(opacity=0);
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+  border-bottom: 14px solid #fff;
+}
+.main-hotel-wrap .main-hotel-content .hotel-roomType-wrap .room-type-content > ul > li a {
+  font-size: 14px;
+  color: #1f2c5c;
+  text-decoration: underline;
+}
+.main-hotel-wrap .main-hotel-content .hotel-roomType-wrap .room-type-content > ul > li a:hover + .details-menu {
+  display: block;
+}
+.main-hotel-wrap .main-hotel-content .hotel-roomType-wrap .room-type-content > ul .n1 {
+  width: 60%;
+}
+.main-hotel-wrap .main-hotel-content .hotel-roomType-wrap .room-type-content > ul .n1 .details-menu {
+  left: 90px;
+}
+.main-hotel-wrap .main-hotel-content .hotel-roomType-wrap .room-type-content > ul .n2 {
+  width: 20%;
+}
+.main-hotel-wrap .main-hotel-content .hotel-roomType-wrap .room-type-content > ul .n2 a {
+  color: #00908c;
+}
+.main-hotel-wrap .main-hotel-content .hotel-roomType-wrap .room-type-content > ul .n2 .details-menu {
+  left: -40px;
+}
+.main-hotel-wrap .main-hotel-content .hotel-roomType-wrap .room-type-content > ul .n3 {
+  width: 20%;
+}
+.main-hotel-wrap .main-hotel-content .hotel-roomType-wrap .room-type-content .active {
+  display: block !important;
+}
+.main-hotel-wrap .main-hotel-content .hotel-roomType-wrap .room-type-slideDown ul:hover {
+  background: #8ec06c;
+}
+.main-hotel-wrap .main-hotel-content .hotel-roomType-wrap .room-type-slideDown ul:hover .n1 a,
+.main-hotel-wrap .main-hotel-content .hotel-roomType-wrap .room-type-slideDown ul:hover .n3 {
+  color: #fff;
+}
+.main-hotel-wrap .main-hotel-content .hotel-roomType-wrap .room-type-slideDown .active {
+  background: #8ec06c;
+}
+.main-hotel-wrap .main-hotel-content .hotel-roomType-wrap .room-type-slideDown .active .n1 a,
+.main-hotel-wrap .main-hotel-content .hotel-roomType-wrap .room-type-slideDown .active .n3 {
+  color: #fff;
+}
+.main-hotel-wrap .main-hotel-content .hotel-viewOther-wrap {
+  overflow: hidden;
+  margin-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.main-hotel-wrap .main-hotel-content .hotel-viewOther-wrap p {
+  float: left;
+  font-size: 12px;
+  color: #ff8989;
+}
+.main-hotel-wrap .main-hotel-content .hotel-viewOther-wrap a {
+  float: right;
+  color: #00908c;
+  font-size: 12px;
+  text-decoration: underline;
+}
+.main-hotel-wrap .main-hotel-content .hotel-viewOther-wrap .close-room {
+  display: none;
 }
 .daterangepicker.ltr .calendar.left,
 .daterangepicker.ltr .calendar.right {
