@@ -187,21 +187,33 @@ var lmFlightHotel = {
         var $view = $('.js-view-room');
         var $close = $('.js-close-room');
         var $roomsUl = $('.js-rooms-type>ul');
-        $roomsUl.click(function(event) {
+        $roomsUl.click(function(e) {
+            e.stopPropagation();
             $(this).parent().removeClass('room-type-slideDown');
             $(this).slideDown().addClass('active').siblings('ul').slideUp().removeClass('active');
             $(this).parents('.hotel-roomType-wrap').siblings('.hotel-viewOther-wrap').children('.js-view-room').show();
             $(this).parents('.hotel-roomType-wrap').siblings('.hotel-viewOther-wrap').children('.js-close-room').hide();
         });
-        $view.click(function(event) {
+        $view.click(function(e) {
+            e.stopPropagation();
             $(this).hide().siblings('a').show();
             $(this).parent('.hotel-viewOther-wrap').siblings('.hotel-roomType-wrap').children('.js-rooms-type').addClass('room-type-slideDown');
             $(this).parent('.hotel-viewOther-wrap').siblings('.hotel-roomType-wrap').find('.room-type-content>ul').slideDown();
         });
-        $close.click(function(event) {
+        $close.click(function(e) {
+            e.stopPropagation();
             $(this).hide().siblings('a').show();
             $(this).parent('.hotel-viewOther-wrap').siblings('.hotel-roomType-wrap').children('.js-rooms-type').removeClass('room-type-slideDown');
             $(this).parent('.hotel-viewOther-wrap').siblings('.hotel-roomType-wrap').find('.room-type-content>ul').slideUp();
+            $(this).parent('.hotel-viewOther-wrap').siblings('.hotel-roomType-wrap').find('.room-type-content>ul.active').slideDown();
+        });
+
+        $('.js-hotel-content').on('click','.js-content-inner',function(event) {
+            $(this).addClass('hotel-select-active').siblings('.hotel-content-inner').removeClass('hotel-select-active');
+        });
+
+        $('.js-hotel-title').click(function(e) {
+            e.stopPropagation();
         });
     },
 
