@@ -14,12 +14,11 @@
 .clear-both {
   clear: both;
 }
-.lm-footer {
-  display: none;
-}
 .lm-section {
   position: relative;
+  height: 1020px;
   background: url('../../images/resource/ticketHotle-bg.jpg') center no-repeat;
+  overflow: hidden;
 }
 .lm-section-main {
   position: absolute;
@@ -437,8 +436,8 @@
 }
 .main-flight-wrap .flight-next {
   position: absolute;
-  bottom: -80px;
-  right: -80px;
+  bottom: -90px;
+  right: -90px;
   width: 160px;
   height: 60px;
   line-height: 60px;
@@ -477,7 +476,7 @@
 }
 .main-hotel-wrap .flight-previous {
   position: absolute;
-  bottom: 0px;
+  bottom: -10px;
   left: -80px;
   width: 160px;
   height: 60px;
@@ -1114,4 +1113,21 @@
   color: rgba(31, 44, 92, 0.7);
   transition: all .3s;
   -webkit-transition: all .3s;
+}
+@media screen and (max-width: 1440px) {
+  .main-flight-wrap .flight-next {
+    right: 0;
+  }
+  .main-hotel-wrap .flight-previous {
+    left: 0;
+  }
+  .lm-section {
+    height: 700px;
+  }
+  .lm-section-main {
+    -webkit-transform: scale(0.7);
+    transform: scale(0.7);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+  }
 }

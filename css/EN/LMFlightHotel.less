@@ -51,13 +51,11 @@
 	clear: both;
 }
 
-.lm-footer{
-	display: none;
-}
-
 .lm-section{
 	position: relative;
+	height: 1020px;
 	background: url('@{url}ticketHotle-bg.jpg') center no-repeat;
+	overflow: hidden;
 }
 .lm-section-main{
 	position: absolute;
@@ -471,8 +469,8 @@
 	}
 	.flight-next{
 		position: absolute;
-		bottom: -80px;
-		right: -80px;
+		bottom: -90px;
+		right: -90px;
 		width:160px;
 		height:60px;
 		line-height: 60px;
@@ -511,7 +509,7 @@
 	}
 	.flight-previous{
 		position: absolute;
-		bottom: 0px;
+		bottom: -10px;
 		left: -80px;
 		width:160px;
 		height:60px;
@@ -1152,6 +1150,14 @@
 	}
 }
 
-@media screen and (max-width: 767px) {
-	
+@media screen and (max-width: 1440px) {
+	.main-flight-wrap .flight-next{right: 0;}
+	.main-hotel-wrap .flight-previous{left: 0;}
+	.lm-section{height: 700px;}
+	.lm-section-main{
+		-webkit-transform: scale(0.7); 
+		transform: scale(0.7); 
+		-webkit-transform-origin: top;
+		transform-origin: top;
+	}
 }

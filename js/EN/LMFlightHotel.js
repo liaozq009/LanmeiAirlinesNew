@@ -40,15 +40,17 @@ var lmFlightHotel = {
                 $('.fromcityMenu,.tocityMenu').append('<li title="'+val+'">'+val+'</li>');
             });
         };
-        cityFn();
+
+        function cityVisble(){
+            $('.js-from-city,.js-to-city').css('visibility','visible');
+            $('.js-from-input,.js-to-input').css('visibility','hidden');
+        };
 
         var $dropdownMenu = $('.cityMenu-wrap');
 
         $('html').click(function(event) {
             $dropdownMenu.hide();
-            $('.js-from-city,.js-to-city').css('visibility','visible');
-            $('.js-from-input,.js-to-input').css('visibility','hidden');
-            cityFn();
+            cityVisble();
         });
         $dropdownMenu.click(function(e) {
             e.stopPropagation();
@@ -66,11 +68,14 @@ var lmFlightHotel = {
             cityFlag1 = false;
             cityFlag2 = false;
 
+            cityFn();
+
             $dropdownMenu.hide();
             $(this).siblings('.cityMenu-wrap').show();
 
             var that = this;
             var val = $(this).text();
+            $(this).parents('.city-wrap-com').siblings('.city-wrap-com').find('.city-com>input').css('visibility','hidden').siblings('a').css('visibility','visible');
             $(this).addClass('animated2 moveOutLeft').css('visibility','hidden').siblings('.cityMenu-wrap').addClass('animated2 moveInUp').show();
             $(this).siblings('input').addClass('animated2 moveInRight').css('visibility','visible').focus().val(val);
             setTimeout(function(){
@@ -102,6 +107,7 @@ var lmFlightHotel = {
             $box.hide();
             $box.siblings('input').addClass('moveOutLeft').css('visibility','hidden').val(text2[0]+'/'+text2[1]).attr('data-city',text2[1]); 
             $box.siblings('a').addClass('moveInRight').css('visibility','visible').text(text2[0]);
+            $(this).parents('.city-com').siblings('.three-code').text(text2[1]);
             setTimeout(function(){
                $box.siblings('input').removeClass('moveOutLeft');
                $box.siblings('a').show().removeClass('moveInRight');
@@ -148,6 +154,7 @@ var lmFlightHotel = {
             if(!dateFlag){return};
             dateFlag = false;
             event.stopPropagation();
+            cityVisble();
             $dropdownMenu.hide();
             $(this).siblings('.cityMenu-wrap').addClass('animated2 moveInUp').show();
             var that = this;
@@ -163,6 +170,7 @@ var lmFlightHotel = {
             if(!hotelFlag){return};
             hotelFlag = false;
             event.stopPropagation();
+            cityVisble();
             $dropdownMenu.hide();
             $(this).siblings('.cityMenu-wrap').addClass('animated2 moveInUp').show();
             var that = this;
@@ -199,14 +207,24 @@ var lmFlightHotel = {
 
     /* 机票和酒店切换 */
     thSelect:function(){
-        // var flag = true;
+        var flag = true;
         $('.js-flight-next').click(function(){
-            $('.js-flight-wrap').hide();
-            $('.js-hotel-wrap').show();
+            if(!flag){return};
+            flag = false;
+            $('.js-flight-wrap').removeClass('bounceInLeft').addClass('animated bounceOutLeft');
+            setTimeout(function(){
+                $('.js-hotel-wrap').show().removeClass('bounceOutRight').addClass('animated bounceInRight');
+                $('.js-flight-wrap').hide();
+                flag = true;
+            }, 1000);
         });
-        $('.js-flight-previous').click(function(event) {
-            $('.js-flight-wrap').show();
-            $('.js-hotel-wrap').hide();
+        $('.js-hotel-previous').click(function(event) {
+            $('.js-hotel-wrap').removeClass('bounceInRight').addClass('animated bounceOutRight');
+            setTimeout(function(){
+                $('.js-flight-wrap').show().removeClass('bounceOutLeft').addClass('animated bounceInLeft');
+                $('.js-hotel-wrap').hide();
+                flag = true;
+            }, 1000);
         });
     },
 
@@ -519,7 +537,7 @@ var lmFlightHotel = {
 
     /* 其他事件 */
     addEvend: function () {
-        $('.js-lm-section').height(this.winHeight-60);
+        // $('.js-lm-section').height(this.winHeight-60);
     },
 };
 
