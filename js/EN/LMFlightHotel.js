@@ -23,6 +23,7 @@ var lmFlightHotel = {
             canlendarSingle:false,
             todaySelect:false,
             showTotleDay:true,
+            outClickHide: false,
             container:'.js-hotelDate-container',
         },function(){
             setTimeout(function(){
@@ -122,6 +123,7 @@ var lmFlightHotel = {
                 single:single,
                 canlendarSingle:false,
                 todaySelect:true,
+                outClickHide: false,
                 container:'.js-date-container',
             },function(){
                 setTimeout(function(){
@@ -248,14 +250,13 @@ var lmFlightHotel = {
         var $thPopup = $('.js-ticketHotelPopup-people');
         $thPopup.on('click','.js-thAge-result',function(e){
             e.stopPropagation();
-            $('.js-thAge-box').hide();
             $(this).siblings('.js-thAge-box').show();
         });
         $thPopup.on('click','.js-thAge-menu>li',function(){
             var text = $(this).html();
-            $(this).parents('.js-thAge-box').slideUp().siblings('span').html(text);
+            $(this).parents('.js-thAge-box').siblings('span').html(text);
         });
-        $('html').click(function(event) {
+        $thPopup.click(function(event) {
             $('.js-thAge-box').slideUp();
         });
 
@@ -269,7 +270,7 @@ var lmFlightHotel = {
         $('.js-add-thRooms').click(function(event) {
             if(roomsNum<=2){
                 roomsNum++;
-               roomsStr(roomsNum);
+                roomsStr(roomsNum);
             }
         });
 
