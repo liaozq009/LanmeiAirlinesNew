@@ -1,0 +1,112 @@
+@charset "utf-8";
+/* 定义变量 */
+@font-face {
+	font-family: NotoSansBold;
+	src: url(../../common/CN/fonts/NotoSans/SourceHanSansCN-Bold.otf);
+	font-weight:bold;
+}
+@url:"../../images/activity/freeTicket/";
+/* 定义颜色变量 */
+@green:#8ec060;
+@purple:#1f2c5c;
+@gray:#5c6788;
+@link:#00908c;
+@FBold:NotoSansBold;
+
+.lm-section-wrap{
+	height: 1690px;
+	background: url('@{url}free-ticket-bg.jpg') top center no-repeat;
+	.lm-section-inner{
+		width: 960px;
+		margin: 0 auto;
+	}
+	.title-1{
+		margin-top: 60px;
+		margin-bottom: 40px;
+		font-size: 36px;
+		font-family: @FBold;
+		color: @purple;
+		text-align: center;
+	}
+	.title-2{
+		margin-top: 40px;
+		margin-bottom: 40px;
+		font-size: 24px;
+		font-family: @FBold;
+		color: @purple;
+	}
+	.title-3{
+		margin-top: 20px;
+		font-size: 16px;
+		color: @purple;
+		line-height: 26px;
+		opacity: 0.5;
+		filter:alpha(opacity=50);
+	}
+	.title-routes{
+		margin-top: 400px;
+	}
+	.title-rule{
+		opacity: 1;
+		filter:alpha(opacity=100);
+	}
+}
+
+.table{
+	margin-bottom: 30px;
+}
+table > thead:first-child > tr:first-child > th{
+	color: @purple;
+	font-size: 18px;
+}
+.table > tbody > tr > td,{
+	color: @gray;
+	font-size: 16px;
+	font-weight: 600;
+}
+
+@media screen and (max-width: 992px){
+	.lm-section-wrap {
+		height: auto;
+		padding-bottom: 60px;
+		.lm-section-inner{
+			width: 100%;
+			padding-left: 15px;
+			padding-right: 15px;
+			.head-img-title{width: 100%;}
+		}
+	}
+}
+@media screen and (max-width: 767px){
+	.lm-section-wrap {
+		background-size: cover;
+		.title-1{
+			font-size: 16px;
+			margin-top: 30px;
+			margin-bottom: 20px;
+		}
+		.title-2{
+			font-size: 14px;
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+		.title-3{
+			font-size: 12px;
+			margin-top: 10px;
+			line-height: 20px;
+		}
+		.title-routes{
+			margin-top: 40px;
+		}
+		.lm-section-inner .head-img-title{
+			margin-top: 20px;
+		}
+	}
+
+	table > thead:first-child > tr:first-child > th{
+		font-size: 12px;
+	}
+	.table > tbody > tr > td,{
+		font-size: 12px;
+	}
+}

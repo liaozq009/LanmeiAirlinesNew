@@ -1,0 +1,104 @@
+@charset "utf-8";
+/* 定义变量 */
+@font-face {
+  font-family: NotoSansBold;
+  src: url(../../common/CN/fonts/NotoSans/SourceHanSansCN-Bold.otf);
+  font-weight: bold;
+}
+/* 定义颜色变量 */
+.lm-section-wrap {
+  height: 1690px;
+  background: url('../../images/activity/freeTicket/free-ticket-bg.jpg') top center no-repeat;
+}
+.lm-section-wrap .lm-section-inner {
+  width: 960px;
+  margin: 0 auto;
+}
+.lm-section-wrap .title-1 {
+  margin-top: 60px;
+  margin-bottom: 40px;
+  font-size: 36px;
+  font-family: NotoSansBold;
+  color: #1f2c5c;
+  text-align: center;
+}
+.lm-section-wrap .title-2 {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-size: 24px;
+  font-family: NotoSansBold;
+  color: #1f2c5c;
+}
+.lm-section-wrap .title-3 {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #1f2c5c;
+  line-height: 26px;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+.lm-section-wrap .title-routes {
+  margin-top: 400px;
+}
+.lm-section-wrap .title-rule {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+.table {
+  margin-bottom: 30px;
+}
+table > thead:first-child > tr:first-child > th {
+  color: #1f2c5c;
+  font-size: 18px;
+}
+.table > tbody > tr > td {
+  color: #5c6788;
+  font-size: 16px;
+  font-weight: 600;
+}
+@media screen and (max-width: 992px) {
+  .lm-section-wrap {
+    height: auto;
+    padding-bottom: 60px;
+  }
+  .lm-section-wrap .lm-section-inner {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .lm-section-wrap .lm-section-inner .head-img-title {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .lm-section-wrap {
+    background-size: cover;
+  }
+  .lm-section-wrap .title-1 {
+    font-size: 16px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+  .lm-section-wrap .title-2 {
+    font-size: 14px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .lm-section-wrap .title-3 {
+    font-size: 12px;
+    margin-top: 10px;
+    line-height: 20px;
+  }
+  .lm-section-wrap .title-routes {
+    margin-top: 40px;
+  }
+  .lm-section-wrap .lm-section-inner .head-img-title {
+    margin-top: 20px;
+  }
+  table > thead:first-child > tr:first-child > th {
+    font-size: 12px;
+  }
+  .table > tbody > tr > td {
+    font-size: 12px;
+  }
+}
