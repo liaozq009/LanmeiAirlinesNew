@@ -1,24 +1,33 @@
 @charset "utf-8";
 /* 定义变量 */
 @font-face {
-  font-family: NotoSansBold;
-  src: url(../../common/CN/fonts/NotoSans/SourceHanSansCN-Bold.otf);
+  font-family: CamptonBold;
+  src: url(../../common/EN/fonts/Campton/Rene.Bieder_Campton.Bold.otf);
   font-weight: bold;
 }
 /* 定义颜色变量 */
 .lm-section-wrap {
-  height: 1690px;
-  background: url('../../images/activity/freeTicket/free-ticket-bg.jpg') top center no-repeat;
+  position: relative;
+}
+.lm-section-wrap .free-ticket-bg {
+  width: 100%;
+}
+.lm-section-wrap .head-img-wrap {
+  width: 100%;
+  text-align: center;
 }
 .lm-section-wrap .lm-section-inner {
+  position: absolute;
   width: 960px;
-  margin: 0 auto;
+  top: 0;
+  left: 50%;
+  margin-left: -480px;
 }
 .lm-section-wrap .title-1 {
   margin-top: 60px;
   margin-bottom: 40px;
   font-size: 36px;
-  font-family: NotoSansBold;
+  font-family: CamptonBold;
   color: #1f2c5c;
   text-align: center;
 }
@@ -26,7 +35,7 @@
   margin-top: 40px;
   margin-bottom: 40px;
   font-size: 24px;
-  font-family: NotoSansBold;
+  font-family: CamptonBold;
   color: #1f2c5c;
 }
 .lm-section-wrap .title-3 {
@@ -56,13 +65,35 @@ table > thead:first-child > tr:first-child > th {
   font-size: 16px;
   font-weight: 600;
 }
+@media screen and (max-width: 1800px) {
+  .lm-section-wrap .title-routes {
+    margin-top: 200px;
+  }
+}
+@media screen and (max-width: 1440px) {
+  .lm-section-wrap .title-routes {
+    margin-top: 100px;
+  }
+}
+@media screen and (max-width: 1300px) {
+  .lm-section-wrap .title-routes {
+    margin-top: 60px;
+  }
+}
 @media screen and (max-width: 992px) {
   .lm-section-wrap {
     height: auto;
+    background: url('../../images/activity/freeTicket/free-ticket-bg.jpg') top center no-repeat;
     padding-bottom: 60px;
   }
+  .lm-section-wrap .free-ticket-bg {
+    display: none;
+  }
   .lm-section-wrap .lm-section-inner {
+    position: static;
     width: 100%;
+    left: 0;
+    margin-left: 0;
     padding-left: 15px;
     padding-right: 15px;
   }

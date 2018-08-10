@@ -904,7 +904,8 @@ body {
 /* 酒店预订 */
 .hotel-content-wrap,
 .car-content-wrap,
-.fStatus-content-wrap {
+.fStatus-content-wrap,
+.ticketHotel-content-wrap {
   display: none;
   height: 100%;
 }

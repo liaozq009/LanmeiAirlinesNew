@@ -7,12 +7,21 @@
 }
 /* 定义颜色变量 */
 .lm-section-wrap {
-  height: 1690px;
-  background: url('../../images/activity/freeTicket/free-ticket-bg.jpg') top center no-repeat;
+  position: relative;
+}
+.lm-section-wrap .free-ticket-bg {
+  width: 100%;
+}
+.lm-section-wrap .head-img-wrap {
+  width: 100%;
+  text-align: center;
 }
 .lm-section-wrap .lm-section-inner {
+  position: absolute;
   width: 960px;
-  margin: 0 auto;
+  top: 0;
+  left: 50%;
+  margin-left: -480px;
 }
 .lm-section-wrap .title-1 {
   margin-top: 60px;
@@ -56,13 +65,35 @@ table > thead:first-child > tr:first-child > th {
   font-size: 16px;
   font-weight: 600;
 }
+@media screen and (max-width: 1800px) {
+  .lm-section-wrap .title-routes {
+    margin-top: 200px;
+  }
+}
+@media screen and (max-width: 1440px) {
+  .lm-section-wrap .title-routes {
+    margin-top: 100px;
+  }
+}
+@media screen and (max-width: 1300px) {
+  .lm-section-wrap .title-routes {
+    margin-top: 60px;
+  }
+}
 @media screen and (max-width: 992px) {
   .lm-section-wrap {
     height: auto;
+    background: url('../../images/activity/freeTicket/free-ticket-bg.jpg') top center no-repeat;
     padding-bottom: 60px;
   }
+  .lm-section-wrap .free-ticket-bg {
+    display: none;
+  }
   .lm-section-wrap .lm-section-inner {
+    position: static;
     width: 100%;
+    left: 0;
+    margin-left: 0;
     padding-left: 15px;
     padding-right: 15px;
   }
