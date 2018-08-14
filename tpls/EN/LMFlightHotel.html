@@ -19,10 +19,29 @@
 	<link rel="stylesheet" type="text/css" href="../../libsEdit/css/lanmeiLibsEdit.css">
 	<link rel="stylesheet" type="text/css" href="../../common/EN/css/Lanmei-common.css">
 	<link rel="stylesheet" type="text/css" href="../../css/EN/LMFlightHotel.css">
+
+	<!--[if IE 8]>
+		<html class="ie8 lte_ie9" lang="en">
+	<![endif]-->
+
 	<!--[if lt IE 9]>
-	<script src="../../libs/bootstrap/js/html5shiv.min.js"></script>
-	<script src="../../libs/bootstrap/js/respond.min.js"></script>
-<![endif]-->
+		<script src="../../libs/bootstrap/js/html5shiv.min.js"></script>
+		<script src="../../libs/bootstrap/js/respond.min.js"></script>
+		<html class="lte_ie9" lang="en">
+	<![endif]-->
+
+	<!--[if !IE]><!-->
+	    <script>
+	        // 针对IE10
+	        if (/*@cc_on!@*/false) {
+	            document.documentElement.className += ' ie' + document.documentMode;
+	        }
+	        // 针对IE11及非IE浏览器，
+	        if (/*@cc_on!@*/true) {
+	            document.documentElement.className += ' ie' + document.documentMode;
+	        }
+	    </script>
+	<!--<![endif]-->
 </head>
 <body>
 	<!-- 页面顶部 -->
@@ -31,9 +50,16 @@
 	<!-- 主体内容 -->
 	<section class="lm-section js-lm-section">
 		<div class="lm-section-main">
+			<div class="mobile-mask js-mobile-mask"></div>
 			<div class="main-data-wrap">
 				<form>
 					<div class="main-data-title">
+						<div class="stroke-type-wrap mobile-stroke-type">
+							<div class="select-way js-select-way">
+								<a href="javascript:;" class="round-trip active" data-way="round">Round trip</a>
+								<a href="javascript:;" class="one-way" data-way="one">One-way</a>
+							</div>
+						</div>
 						<div class="from-city-wrap city-wrap-com">
 							<p class="three-code">CAN</p>
 							<div class="from-city city-com">
@@ -46,7 +72,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="stroke-type-wrap">
+						<div class="stroke-type-wrap pc-stroke-type">
 							<p class="flight-img"><img src="../../images/resource/flight-img-arrow.png"></p>
 							<div class="select-way js-select-way">
 								<a href="javascript:;" class="round-trip active" data-way="round">Round trip</a>

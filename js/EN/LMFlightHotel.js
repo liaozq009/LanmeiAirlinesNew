@@ -2,34 +2,46 @@
 var lmFlightHotel = {
     cityData: LMComData.cityData,
     fNumberData: LMComData.fNumberData,
-    winHeight: $(window).height(),
+    winWidth: $(window).width(),
     init: function () {
         this.initVal();
-        this.ticketSelect();
         this.hotelSelect();
         this.thSelect();
         this.selectThRooms();
+        this.isPc();
         this.addEvend();
+    },
+
+    /* 判断是PC端还是移动端 */
+    isPc:function(){
+        // 判断手机端或者PC端
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = ["Android", "iPhone","SymbianOS", "Windows Phone"];
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+
+        var flag = IsPC(); //true为PC端，false为手机端
+
+        if(flag){
+            this.ticketSelect();
+           
+        }else{
+            this.mobileEvent();
+        }
     },
 
     /* 赋值 */
     initVal:function(){
         // 模糊匹配
         $('.js-from-input,.js-to-input').autoComplete();
-
-        //酒店日期选择
-        $('.js-hotelDate-result').simpleDate({
-            single:false,
-            canlendarSingle:false,
-            todaySelect:false,
-            showTotleDay:true,
-            outClickHide: false,
-            container:'.js-hotelDate-container',
-        },function(){
-            setTimeout(function(){
-                $('.js-people-result').click();
-            },510);
-        });
     },
 
     /* 机票选择 */
@@ -49,7 +61,7 @@ var lmFlightHotel = {
 
         var $dropdownMenu = $('.cityMenu-wrap');
 
-        $('html').click(function(event) {
+        $('body').click(function(event) {
             $dropdownMenu.hide();
             cityVisble();
         });
@@ -117,7 +129,21 @@ var lmFlightHotel = {
             }, 500);
         });
 
-        // 日期选择
+        //酒店日期选择
+        $('.js-hotelDate-result').simpleDate({
+            single:false,
+            canlendarSingle:false,
+            todaySelect:false,
+            showTotleDay:true,
+            outClickHide: false,
+            container:'.js-hotelDate-container',
+        },function(){
+            setTimeout(function(){
+                $('.js-people-result').click();
+            },510);
+        });
+
+        // 航班日期选择
         function ticketDate(single){
             $('.js-date-result').simpleDate({
                 single:single,
@@ -168,7 +194,7 @@ var lmFlightHotel = {
             }, 500);
         });
 
-        // 酒店日期选择
+        // 酒店人数选择
         var hotelFlag = true;
         $('.js-people-result').click(function(event) {
             if(!hotelFlag){return};
@@ -489,9 +515,137 @@ var lmFlightHotel = {
         child();
     },
 
+    /* 移动端事件 */
+    mobileEvent:function(){
+        var that = this;
+        var $dropdownMenu = $('.cityMenu-wrap');
+        var $mask = $('.js-mobile-mask');
+
+        function ovfHiden(){
+            $mask.fadeIn();
+            $dropdownMenu.hide();
+            $('html,body').addClass('ovfHiden'); //使网页不可滚动
+        };
+
+        function remOvfHiden(){
+            $mask.fadeOut();
+            $('html,body').removeClass('ovfHiden'); //使网页可滚动
+            $dropdownMenu.hide();
+            $('.js-from-input,.js-to-input').removeClass('zIndex');
+        };
+
+        function cityFn(){
+            $('.fromcityMenu,.tocityMenu').empty();
+            $.each(that.cityData,function(i,val){
+                $('.fromcityMenu,.tocityMenu').append('<li title="'+val+'">'+val+'</li>');
+            });
+        };
+
+        $mask.click(function(e) {
+            remOvfHiden();
+        });
+        
+        var cityFlag1 = true;
+        var cityFlag2 = true;
+        $('.js-from-input,.js-to-input').click(function(event) {
+            event.stopPropagation();
+            if(!cityFlag1){return};
+            cityFlag1 = false;
+            cityFlag2 = false;
+
+            ovfHiden();
+            cityFn();
+
+            var that = this;
+            $(this).addClass('zIndex').siblings('.cityMenu-wrap').addClass('animated2 moveInUp').show();
+            setTimeout(function(){
+                $(that).siblings('.cityMenu-wrap').removeClass('moveInUp');
+                cityFlag1 = true;
+                cityFlag2 = true;
+            }, 500);
+        });
+
+        $('.js-fromcityMenu,.js-tocityMenu').on('click','>li',function(){
+            if(!cityFlag2){return};
+            cityFlag1 = false;
+            cityFlag2 = false;
+
+            remOvfHiden();
+
+            if($(this).parent('ul').hasClass('js-fromcityMenu')){
+                setTimeout(function(){
+                    $('.js-to-input').click();
+                },510);
+            }else{
+                setTimeout(function(){
+                    $('.js-date-result').click();
+                },510);
+            }
+
+            var text1 = $(this).attr('title');
+            var text2 = text1.split('/');
+            var $box = $(this).parents('.cityMenu-wrap');
+            $box.hide();
+            $box.siblings('input').val(text2[0]+'/'+text2[1]).attr('data-city',text2[1]); 
+            setTimeout(function(){
+               $box.siblings('input').removeClass('moveOutLeft');
+               cityFlag1 = true;
+               cityFlag2 = true;
+            }, 500);
+        });
+
+        //酒店日期选择
+        $('.js-hotelDate-result').simpleDate({
+            single:true,
+            canlendarSingle:true,
+            todaySelect:false,
+            showTotleDay:true,
+            outClickHide: false,
+            container:'.js-hotelDate-container',
+        },function(){
+            setTimeout(function(){
+                $('.js-people-result').click();
+            },510);
+        });
+
+        // 航班日期选择
+        function ticketDate(single){
+            $('.js-date-result').simpleDate({
+                single:single,
+                canlendarSingle:true,
+                todaySelect:true,
+                outClickHide: false,
+                container:'.js-date-container',
+            },function(){
+                setTimeout(function(){
+                    $('.js-hotelDate-result').click();
+                },510);
+            });
+        };
+        ticketDate(false);
+
+        // 航班日期选择
+        var dateFlag = true;
+        $('.js-date-result,.js-hotelDate-result').click(function(event) {
+            if(!dateFlag){return};
+            dateFlag = false;
+            event.stopPropagation();
+            ovfHiden();
+            $(this).siblings('.cityMenu-wrap').addClass('animated2 moveInUp').show();
+            var that = this;
+            setTimeout(function(){
+               $(that).siblings('.cityMenu-wrap').removeClass('moveInUp');
+               dateFlag = true;
+            }, 500);
+        });
+
+    },
+
     /* 其他事件 */
     addEvend: function () {
-        // $('.js-lm-section').height(this.winHeight-60);
+        if(this.winWidth<992){
+            $('.js-from-input,.js-to-input').attr('readonly',true);
+        }
     },
 };
 

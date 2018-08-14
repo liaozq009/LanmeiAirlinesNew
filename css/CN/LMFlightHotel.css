@@ -1,7 +1,7 @@
 @charset "utf-8";
 @font-face {
-  font-family: CamptonBookBold;
-  src: url(../../common/EN/fonts/Campton/Rene.Bieder_Campton.Bold.otf);
+  font-family: NotoSansBold;
+  src: url(../../common/CN/fonts/NotoSans/SourceHanSansCN-Bold.otf);
   font-weight: bold;
 }
 /* 定义变量 */
@@ -103,7 +103,7 @@ body:before {
   height: 80px;
   font-size: 56px;
   color: #fff;
-  font-family: CamptonBookBold;
+  font-family: NotoSansBold;
 }
 .main-data-title > div .to-cityMenu-wrap {
   left: -166px;
@@ -133,7 +133,7 @@ body:before {
   padding-left: 30px;
   padding-right: 10px;
   margin-bottom: 10px;
-  background: url('../../images/EN/city-icon.png') left center no-repeat;
+  background: url('../../images/CN/city-icon.png') left center no-repeat;
   cursor: pointer;
   text-align: left;
   overflow: hidden;
@@ -147,13 +147,13 @@ body:before {
 }
 .main-data-title > div .menu-com > li:hover {
   color: #8ec06c;
-  background: url('../../images/EN/city-icon-active.png') left center no-repeat;
+  background: url('../../images/CN/city-icon-active.png') left center no-repeat;
   transition: all .3s;
   -webkit-transition: all .3s;
 }
 .main-data-title > div .menu-com .active {
   color: #8ec06c;
-  background: url('../../images/EN/city-icon-active.png') left center no-repeat;
+  background: url('../../images/CN/city-icon-active.png') left center no-repeat;
 }
 .main-data-title .stroke-type-wrap {
   width: 210px;
@@ -221,7 +221,7 @@ body:before {
   font-size: 20px;
   color: #1f2c5c;
   border-radius: 2px;
-  background: url('../../images/EN/date.png') 20px no-repeat #fff;
+  background: url('../../images/CN/date.png') 20px no-repeat #fff;
   cursor: pointer;
 }
 .main-data-content > div .date-container {
@@ -241,7 +241,7 @@ body:before {
   color: #fff;
   text-align: right;
   padding-right: 6px;
-  background: url('../../images/EN/hotel-day.png') center no-repeat;
+  background: url('../../images/CN/hotel-day.png') center no-repeat;
 }
 .main-data-content > div :-moz-placeholder {
   color: rgba(31, 44, 92, 0.3);
@@ -277,16 +277,16 @@ body:before {
 }
 .main-data-content .data-people .t-people-result .p-hotelRooms {
   padding-left: 30px;
-  background: url('../../images/EN/rooms.png') 0 center no-repeat;
+  background: url('../../images/CN/rooms.png') 0 center no-repeat;
 }
 .main-data-content .data-people .t-people-result .p-hotelAdult {
   width: 80px;
   margin-left: 20px;
   margin-right: 20px;
-  background: url('../../images/EN/adult.png') 0 center no-repeat;
+  background: url('../../images/CN/adult.png') 0 center no-repeat;
 }
 .main-data-content .data-people .t-people-result .p-hotelChild {
-  background: url('../../images/EN/child.png') 0 center no-repeat;
+  background: url('../../images/CN/child.png') 0 center no-repeat;
 }
 .main-data-content .search-btn {
   float: left;
@@ -393,7 +393,7 @@ body:before {
   font-size: 36px;
 }
 .main-flight-wrap .main-flight-content .flight-info-inner .flight-info .p2 .time {
-  font-family: CamptonBookBold;
+  font-family: NotoSansBold;
 }
 .main-flight-wrap .main-flight-content .flight-info-inner .flight-info .p3 {
   font-size: 14px;
@@ -409,7 +409,7 @@ body:before {
   width: 80%;
 }
 .main-flight-wrap .main-flight-content .flight-info-inner .flight-info-1 .p1 {
-  font-family: CamptonBookBold;
+  font-family: NotoSansBold;
 }
 .main-flight-wrap .main-flight-content .flight-info-inner .flight-info-2 .p1 {
   float: right;
@@ -544,7 +544,7 @@ body:before {
 .main-hotel-wrap .main-hotel-result .ticket-hotel-price {
   float: right;
   font-size: 36px;
-  font-family: CamptonBookBold;
+  font-family: NotoSansBold;
   color: #8ec06c;
   background: linear-gradient(-45deg, #00928D 0%, #B4EC80 100%);
   -webkit-background-clip: text;
@@ -635,7 +635,7 @@ body:before {
   display: block;
   width: 100%;
   font-size: 18px;
-  font-family: CamptonBookBold;
+  font-family: NotoSansBold;
   color: #00908c;
   text-decoration: underline;
   overflow: hidden;
@@ -853,7 +853,7 @@ body:before {
 .data-people .popup-people .people-title {
   padding-bottom: 10px;
   font-size: 20px;
-  font-family: CamptonBookBold;
+  font-family: NotoSansBold;
   color: rgba(31, 44, 92, 0.8);
 }
 .data-people .popup-people .s-people-com {
@@ -863,16 +863,16 @@ body:before {
   padding-right: 10px;
 }
 .data-people .popup-people .s-adult .people-prompt .p1 {
-  background: url('../../images/EN/adult-icon.png') left center no-repeat;
+  background: url('../../images/CN/adult-icon.png') left center no-repeat;
 }
 .data-people .popup-people .s-child .people-prompt .p1 {
-  background: url('../../images/EN/child-icon.png') left center no-repeat;
+  background: url('../../images/CN/child-icon.png') left center no-repeat;
 }
 .data-people .popup-people .s-infant {
   display: none;
 }
 .data-people .popup-people .s-infant .people-prompt .p1 {
-  background: url('../../images/EN/infant-icon.png') left center no-repeat;
+  background: url('../../images/CN/infant-icon.png') left center no-repeat;
 }
 .data-people .popup-people .people-prompt {
   float: left;
@@ -892,7 +892,7 @@ body:before {
   color: rgba(0, 0, 0, 0.3);
   cursor: pointer;
   text-align: right;
-  background: url('../../images/EN/prompt-icon.png') 9px center no-repeat;
+  background: url('../../images/CN/prompt-icon.png') 9px center no-repeat;
 }
 .data-people .popup-people .people-number {
   float: right;
@@ -919,76 +919,76 @@ body:before {
 }
 .data-people .popup-people .people-number .add-people {
   float: right;
-  background: url('../../images/EN/add-people.png') center no-repeat rgba(255, 255, 255, 0.3);
+  background: url('../../images/CN/add-people.png') center no-repeat rgba(255, 255, 255, 0.3);
 }
 .data-people .popup-people .people-number .add-people:hover {
-  background: url('../../images/EN/add-people.png') center no-repeat rgba(255, 255, 255, 0.7);
+  background: url('../../images/CN/add-people.png') center no-repeat rgba(255, 255, 255, 0.7);
   transition: all .3s;
   -webkit-transition: all .3s;
 }
 .data-people .popup-people .people-number .sub-people {
   float: left;
-  background: url('../../images/EN/sub-people.png') center no-repeat rgba(255, 255, 255, 0.3);
+  background: url('../../images/CN/sub-people.png') center no-repeat rgba(255, 255, 255, 0.3);
 }
 .data-people .popup-people .people-number .sub-people:hover {
-  background: url('../../images/EN/sub-people.png') center no-repeat rgba(255, 255, 255, 0.7);
+  background: url('../../images/CN/sub-people.png') center no-repeat rgba(255, 255, 255, 0.7);
   transition: all .3s;
   -webkit-transition: all .3s;
 }
 .data-people .popup-people .people-number .off-sub-operation {
-  background: url('../../images/EN/sub-people.png') center no-repeat rgba(255, 255, 255, 0.1);
+  background: url('../../images/CN/sub-people.png') center no-repeat rgba(255, 255, 255, 0.1);
   cursor: not-allowed;
 }
 .data-people .popup-people .people-number .off-sub-operation:hover {
-  background: url('../../images/EN/sub-people.png') center no-repeat rgba(255, 255, 255, 0.1);
+  background: url('../../images/CN/sub-people.png') center no-repeat rgba(255, 255, 255, 0.1);
 }
 .data-people .popup-people .people-number .off-add-operation {
-  background: url('../../images/EN/add-people.png') center no-repeat rgba(255, 255, 255, 0.1);
+  background: url('../../images/CN/add-people.png') center no-repeat rgba(255, 255, 255, 0.1);
   cursor: not-allowed;
 }
 .data-people .popup-people .people-number .off-add-operation:hover {
-  background: url('../../images/EN/add-people.png') center no-repeat rgba(255, 255, 255, 0.1);
+  background: url('../../images/CN/add-people.png') center no-repeat rgba(255, 255, 255, 0.1);
 }
 .data-people .popup-people .people-number > span {
-  font-family: CamptonBookBold;
+  font-family: NotoSansBold;
   font-size: 24px;
   color: #fff;
 }
 .data-people .popup-people .disable {
-  background: url('../../images/EN/add-people.png') center no-repeat rgba(31, 44, 92, 0.04);
+  background: url('../../images/CN/add-people.png') center no-repeat rgba(31, 44, 92, 0.04);
 }
 .data-people .popup-people .disable > span {
   color: #1f2c5c;
 }
 .data-people .popup-people .disable .add-people {
-  background: url('../../images/EN/add-people.png') center no-repeat rgba(31, 44, 92, 0.3);
+  background: url('../../images/CN/add-people.png') center no-repeat rgba(31, 44, 92, 0.3);
 }
 .data-people .popup-people .disable .add-people:hover {
-  background: url('../../images/EN/add-people.png') center no-repeat rgba(31, 44, 92, 0.7);
+  background: url('../../images/CN/add-people.png') center no-repeat rgba(31, 44, 92, 0.7);
   transition: all .3s;
   -webkit-transition: all .3s;
 }
 .data-people .popup-people .disable .sub-people {
-  background: url('../../images/EN/sub-people.png') center no-repeat rgba(31, 44, 92, 0.3);
+  background: url('../../images/CN/sub-people.png') center no-repeat rgba(31, 44, 92, 0.3);
 }
 .data-people .popup-people .disable .sub-people:hover {
-  background: url('../../images/EN/sub-people.png') center no-repeat rgba(31, 44, 92, 0.7);
+  background: url('../../images/CN/sub-people.png') center no-repeat rgba(31, 44, 92, 0.7);
   transition: all .3s;
   -webkit-transition: all .3s;
 }
 .data-people .popup-people .disable .off-sub-operation {
-  background: url('../../images/EN/sub-people.png') center no-repeat rgba(31, 44, 92, 0.1);
+  background: url('../../images/CN/sub-people.png') center no-repeat rgba(31, 44, 92, 0.1);
   cursor: not-allowed;
 }
 .data-people .popup-people .disable .off-sub-operation:hover {
-  background: url('../../images/EN/sub-people.png') center no-repeat rgba(31, 44, 92, 0.1);
+  background: url('../../images/CN/sub-people.png') center no-repeat rgba(31, 44, 92, 0.1);
 }
 .data-people .popup-people .disable .off-add-operation {
-  background: url('../../images/EN/add-people.png') center no-repeat rgba(31, 44, 92, 0.1);
+  background: url('../../images/CN/add-people.png') center no-repeat rgba(31, 44, 92, 0.1);
   cursor: not-allowed;
 }
 .data-people .popup-people .disable .off-add-operation:hover {
-  background: url('../../images/EN/add-people.png') center no-repeat rgba(31, 44, 92, 0.1);
+  background: url('../../images/CN/add-people.png') center no-repeat rgba(31, 44, 92, 0.1);
 }
 .data-people .hotel-popus-people {
   width: 750px;
@@ -1025,7 +1025,7 @@ body:before {
   color: rgba(0, 0, 0, 0.7);
   font-size: 20px;
   padding-left: 30px;
-  background: url('../../images/EN/rooms-icon.png') left center no-repeat;
+  background: url('../../images/CN/rooms-icon.png') left center no-repeat;
 }
 .data-people .hotel-popus-people .rooms-content-com {
   float: left;
@@ -1045,11 +1045,11 @@ body:before {
 }
 .data-people .hotel-popus-people .adult-rooms-content .hotel-people-prompt .p1 {
   width: 110px;
-  background: url('../../images/EN/adult-icon.png') 10px center no-repeat rgba(31, 44, 92, 0.04);
+  background: url('../../images/CN/adult-icon.png') 10px center no-repeat rgba(31, 44, 92, 0.04);
 }
 .data-people .hotel-popus-people .child-rooms-content .hotel-people-prompt .p1 {
   width: 110px;
-  background: url('../../images/EN/child-icon.png') 10px center no-repeat rgba(31, 44, 92, 0.04);
+  background: url('../../images/CN/child-icon.png') 10px center no-repeat rgba(31, 44, 92, 0.04);
 }
 .data-people .hotel-popus-people .age-rooms-com .hotel-people-prompt .p1 {
   width: 76px;
@@ -1077,7 +1077,7 @@ body:before {
   padding-right: 20px;
   margin-left: 20px;
   border-radius: 2px;
-  background: url('../../images/EN/menu-down-arrow.png') 90% center no-repeat rgba(31, 44, 92, 0.3);
+  background: url('../../images/CN/menu-down-arrow.png') 90% center no-repeat rgba(31, 44, 92, 0.3);
   cursor: pointer;
 }
 .data-people .hotel-popus-people .hotel-age-wrap .age-menu-box {
@@ -1138,7 +1138,7 @@ body:before {
   box-shadow: 0 0 20px 0 rgba(31, 44, 92, 0.1);
   -webkit-box-shadow: 0 0 20px 0 rgba(31, 44, 92, 0.1);
   border-radius: 2px;
-  background: url('../../images/EN/rooms-icon.png') 20px center no-repeat #fff;
+  background: url('../../images/CN/rooms-icon.png') 20px center no-repeat #fff;
 }
 .data-people .hotel-popus-people .add-rooms-wrap p b {
   position: absolute;
@@ -1159,7 +1159,7 @@ body:before {
 }
 .data-people .hotel-popus-people .add-rooms-wrap .add-rooms-btn {
   color: rgba(31, 44, 92, 0.3);
-  background: url('../../images/EN/add-rooms.png') 20px center no-repeat #fff;
+  background: url('../../images/CN/add-rooms.png') 20px center no-repeat #fff;
   cursor: pointer;
   transition: all .3s;
   -webkit-transition: all .3s;
@@ -1177,20 +1177,20 @@ body:before {
   background: none;
 }
 .ie8 .data-people .hotel-popus-people .adult-rooms-content .hotel-people-prompt .p1 {
-  background: url('../../images/EN/adult-icon.png') 10px center no-repeat;
+  background: url('../../images/CN/adult-icon.png') 10px center no-repeat;
 }
 .ie8 .data-people .hotel-popus-people .child-rooms-content .hotel-people-prompt .p1 {
-  background: url('../../images/EN/child-icon.png') 10px center no-repeat;
+  background: url('../../images/CN/child-icon.png') 10px center no-repeat;
 }
 .ie8 .data-people .popup-people .people-number .off-sub-operation,
 .ie8 .data-people .popup-people .people-number .sub-people {
-  background: url('../../images/EN/sub-people.png') center no-repeat #E0E2E9;
+  background: url('../../images/CN/sub-people.png') center no-repeat #E0E2E9;
 }
 .ie8 .data-people .popup-people .people-number .add-people {
-  background: url('../../images/EN/add-people.png') center no-repeat #B5B9CA;
+  background: url('../../images/CN/add-people.png') center no-repeat #B5B9CA;
 }
 .ie8 .data-people .hotel-popus-people .hotel-age-wrap .age-result {
-  background: url('../../images/EN/menu-down-arrow.png') 90% center no-repeat #B5B9CA;
+  background: url('../../images/CN/menu-down-arrow.png') 90% center no-repeat #B5B9CA;
 }
 .ie8 .data-people .hotel-popus-people .hotel-age-wrap .hotel-age-menu > li:hover {
   background: #646D8D;
@@ -1219,11 +1219,6 @@ body:before {
     transform-origin: top;
     margin-bottom: 0;
   }
-  .main-hotel-wrap .main-hotel-content {
-    max-height: 1200px;
-    overflow-y: auto;
-    overflow-x: hidden;
-  }
 }
 @media screen and (max-width: 1200px) {
   .lm-section-main {
@@ -1234,191 +1229,7 @@ body:before {
     margin-bottom: 0;
     margin-left: -220px;
   }
-  .lm-section {
-    height: 722px;
-  }
-  .main-hotel-wrap .main-hotel-content {
-    max-height: 820px;
-  }
   body {
     cursor: pointer;
-  }
-}
-.main-data-title .mobile-stroke-type {
-  display: none;
-}
-@media screen and (max-width: 767px) {
-  body:before {
-    background: url('../../images/resource/ticketHotle-bg-mobile.jpg') center no-repeat;
-  }
-  .lm-section-main {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    -webkit-transform-origin: top;
-    transform-origin: top;
-    margin-bottom: 0;
-    margin-left: 0;
-  }
-  .lm-section-main {
-    width: 100%;
-    margin-top: 20px;
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-  .main-data-title {
-    margin-bottom: 10px;
-  }
-  .main-data-title > div {
-    width: 100%;
-    margin-top: 10px;
-  }
-  .main-data-title > div .three-code {
-    display: none;
-  }
-  .main-data-title > div .menu-com {
-    max-height: 254px;
-    overflow-y: auto;
-  }
-  .main-data-title > div .menu-com > li {
-    width: 100%;
-    background: url('../../images/EN/svg/city-icon.svg') left center no-repeat;
-  }
-  .main-data-title > div .menu-com > li:hover {
-    background: url('../../images/EN/svg/city-icon-active.svg') left center no-repeat;
-  }
-  .main-data-title > div .to-cityMenu-wrap {
-    left: 0;
-  }
-  .main-data-title > div .to-cityMenu-wrap:before {
-    left: 50%;
-    margin-left: -14px;
-  }
-  .main-data-title .stroke-type-wrap {
-    width: 100%;
-    padding-top: 0;
-  }
-  .main-data-title .stroke-type-wrap .flight-img {
-    display: none;
-  }
-  .main-data-title .stroke-type-wrap .select-way {
-    text-align: left;
-    margin-top: 0;
-  }
-  .main-data-title .stroke-type-wrap .select-way a {
-    height: 30px;
-    line-height: 30px;
-    font-size: 12px;
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-  .main-data-title .stroke-type-wrap .select-way .round-trip,
-  .main-data-title .stroke-type-wrap .select-way .one-way {
-    float: none;
-    margin-right: 8px;
-  }
-  .main-data-title .pc-stroke-type {
-    display: none;
-  }
-  .main-data-title .mobile-stroke-type {
-    display: block;
-  }
-  .main-data-wrap .city-com {
-    width: 100%;
-  }
-  .main-data-wrap .city-com a {
-    display: none;
-  }
-  .main-data-wrap .city-com input {
-    visibility: visible !important;
-    width: 100%;
-    height: 50px;
-    padding-left: 70px;
-    font-size: 20px;
-    color: #1f2c5c;
-    border-radius: 2px;
-    visibility: visible;
-    background: #fff;
-  }
-  .main-data-wrap .city-com :-moz-placeholder {
-    /* Mozilla Firefox 4 to 18 */
-    color: rgba(31, 44, 92, 0.3);
-    font-size: 20px;
-  }
-  .main-data-wrap .city-com ::-moz-placeholder {
-    /* Mozilla Firefox 19+ */
-    color: rgba(31, 44, 92, 0.3);
-    font-size: 20px;
-  }
-  .main-data-wrap .city-com input:-ms-input-placeholder {
-    color: rgba(31, 44, 92, 0.3);
-    font-size: 20px;
-  }
-  .main-data-wrap .city-com input::-webkit-input-placeholder {
-    color: rgba(31, 44, 92, 0.3);
-    font-size: 20px;
-  }
-  .main-data-wrap .from-city input {
-    background: url('../../images/EN/svg/city-from.svg') 20px no-repeat #fff;
-  }
-  .main-data-wrap .to-city input {
-    background: url('../../images/EN/svg/city-to.svg') 20px no-repeat #fff;
-  }
-  .main-data-wrap .cityMenu-wrap {
-    width: 100%;
-    top: 74px;
-    left: 0;
-    z-index: 9;
-  }
-  .main-data-wrap .dataMenu-wrap {
-    left: -5px;
-    top: -60px;
-  }
-  .main-data-wrap .dataMenu-wrap:before {
-    display: none;
-  }
-  .main-data-content > div {
-    width: 100%;
-    height: 50px;
-    margin-right: 0;
-    margin-bottom: 10px;
-  }
-  .main-data-content > div .date-result {
-    background: url('../../images/EN/svg/date.svg') 20px no-repeat #fff;
-  }
-  .main-data-content > div .hotel-date-result {
-    background: url('../../images/EN/svg/date.svg') 20px no-repeat #fff;
-  }
-  .main-data-content .data-people .t-people-result {
-    line-height: 50px;
-  }
-  .main-data-content .data-people .t-people-result .p-hotelAdult {
-    margin-left: 15px;
-    margin-right: 15px;
-  }
-  .main-data-content .search-btn {
-    float: none;
-    clear: both;
-    width: 100%;
-    height: 50px;
-    line-height: 50px;
-  }
-  .mobile-mask {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 9;
-    opacity: .5;
-    filter: alpha(opacity=50);
-    background: #000;
-  }
-  .zIndex {
-    position: relative;
-    z-index: 9;
-  }
-  .daterangepicker {
-    width: 300px;
   }
 }

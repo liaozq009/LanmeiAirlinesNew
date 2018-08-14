@@ -398,14 +398,13 @@
         } else if (this.autoApply) {
             this.container.find('.applyBtn, .cancelBtn').addClass('hide');
         }
-
+        if(this.singleDatePicker_2){ //单日历
+            this.container.find('.calendar.right').hide();
+        }
         if (this.singleDatePicker) {
             this.container.addClass('single');
             this.container.find('.calendar.left').addClass('single');
             this.container.find('.calendar.left').show();
-           if(this.singleDatePicker_2){ //单日期单日历
-               this.container.find('.calendar.right').hide();
-           }
             this.container.find('.daterangepicker_input input, .daterangepicker_input > i').hide();
             if (this.timePicker) {
                 this.container.find('.ranges ul').hide();

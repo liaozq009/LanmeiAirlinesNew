@@ -1,6 +1,8 @@
 
 var LanmeiAirlines = {
 	cityData: LMComData.cityData,
+	thFromCityData: LMThData.thFromCityData,
+	thToCityData: LMThData.thToCityData,
 	fNumberData: LMComData.fNumberData,
 	hotelCityData: ['Hong Phann Guest House','Phkar Chhouk Tep Monireth Hotel','Tt Guest House','Phkar Chhouk Tep 2 Hotel'],
 	carRouteData: ['Phnom Penh International Airport --> Toyoko Inn Phnom Penh','Phnom Penh International Airport -->  Hotel Sofitel Phnom Penh Phokeethra'],
@@ -859,7 +861,13 @@ var LanmeiAirlines = {
 			if(data=='js-fNumber-menu'){
 				currenData=that.fNumberData
 			}else{
-				currenData=that.cityData
+				currenData=that.cityData;
+				if(id=='.js-thFrom-input'){
+					currenData = that.thFromCityData;
+				}
+				if(id=='.js-thTo-input'){
+					currenData = that.thToCityData;
+				}
 			}
 
 			var currentVal = searchText.toLowerCase();
@@ -932,7 +940,7 @@ var LanmeiAirlines = {
 		};
 
 		var thToCityVal = function(text){
-			var tocityArr = that.cityData;
+			var tocityArr = that.thToCityData;
 			$thToMenuSub.empty();
 			$.each(tocityArr,function(i,val){
 				$thToMenuSub.append('<li title="'+val+'">'+val+'</li>');
@@ -1972,9 +1980,7 @@ var LanmeiAirlines = {
 
 		/* 设置出发地下拉的值 */
 		var fromCityVal = function(text){ 
-			var fromcityArr = that.cityData;
-			// var fromcityArr = that.cityData.slice(0);
-			// fromcityArr.remove(text);
+			var fromcityArr = that.thFromCityData;
 			$fromMenuSub.empty();
 			$.each(fromcityArr,function(i,val){
 				$fromMenuSub.append('<li title="'+val+'">'+val+'</li>');
@@ -1984,9 +1990,7 @@ var LanmeiAirlines = {
 
 		/* 设置目的地下拉的值 */
 		var toCityVal = function(text){
-			var tocityArr = that.cityData;
-			// var tocityArr = that.cityData.slice(0);
-			// tocityArr.remove(text);
+			var tocityArr = that.thToCityData;
 			$toMenuSub.empty();
 			$.each(tocityArr,function(i,val){
 				$toMenuSub.append('<li title="'+val+'">'+val+'</li>');
@@ -2246,7 +2250,7 @@ var LanmeiAirlines = {
 			$popupDiv.hide(); //初始化隐藏出发地、目的地、日期、人数
 			$('.js-thAirport-from').show();
 			var toVal = $toInput.attr('data-city'); //获取目的地的值进行过滤
-			$.each(that.cityData,function(i,val){
+			$.each(that.thFromCityData,function(i,val){
 				$fromMenuSub.append('<li title="'+val+'">'+val+'</li>');
 			});
 			$fromMenuSub.children('li:contains('+toVal+')').remove(); //过滤
@@ -2274,7 +2278,7 @@ var LanmeiAirlines = {
 			$popupDiv.hide(); //初始化隐藏出发地、目的地、日期、人数
 			$('.js-thAirport-to').show();
 			var fromVal = $fromInput.attr('data-city'); //获取出发地的值进行过滤
-			$.each(that.cityData,function(i,val){
+			$.each(that.thToCityData,function(i,val){
 				$toMenuSub.append('<li title="'+val+'">'+val+'</li>');
 			});
 
