@@ -531,7 +531,6 @@ var lmFlightHotel = {
             $mask.fadeOut();
             $('html,body').removeClass('ovfHiden'); //使网页可滚动
             $dropdownMenu.hide();
-            $('.js-from-input,.js-to-input').removeClass('zIndex');
         };
 
         function cityFn(){
@@ -557,7 +556,7 @@ var lmFlightHotel = {
             cityFn();
 
             var that = this;
-            $(this).addClass('zIndex').siblings('.cityMenu-wrap').addClass('animated2 moveInUp').show();
+            $(this).siblings('.cityMenu-wrap').addClass('animated2 moveInUp').show();
             setTimeout(function(){
                 $(that).siblings('.cityMenu-wrap').removeClass('moveInUp');
                 cityFlag1 = true;
@@ -594,15 +593,33 @@ var lmFlightHotel = {
             }, 500);
         });
 
+        // 单程往返切换
+        $('.js-select-way>a').click(function(event) {
+            event.stopPropagation();
+            $(this).addClass('active').siblings('a').removeClass('active');
+            var data = $(this).attr('data-way');
+            switch (data) {
+                case 'round':
+                    ticketDate(false);
+                    $('#tripType').val('RT');
+                break;
+                case 'one':
+                    ticketDate(true);
+                    $('#tripType').val('OW');
+                break;
+            }
+        });
+
         //酒店日期选择
         $('.js-hotelDate-result').simpleDate({
-            single:true,
+            single:false,
             canlendarSingle:true,
             todaySelect:false,
             showTotleDay:true,
             outClickHide: false,
             container:'.js-hotelDate-container',
         },function(){
+            remOvfHiden();
             setTimeout(function(){
                 $('.js-people-result').click();
             },510);
@@ -617,6 +634,7 @@ var lmFlightHotel = {
                 outClickHide: false,
                 container:'.js-date-container',
             },function(){
+                remOvfHiden();
                 setTimeout(function(){
                     $('.js-hotelDate-result').click();
                 },510);
@@ -636,6 +654,21 @@ var lmFlightHotel = {
             setTimeout(function(){
                $(that).siblings('.cityMenu-wrap').removeClass('moveInUp');
                dateFlag = true;
+            }, 500);
+        });
+
+        // 酒店人数选择
+        var hotelFlag = true;
+        $('.js-people-result').click(function(event) {
+            if(!hotelFlag){return};
+            hotelFlag = false;
+            event.stopPropagation();
+            ovfHiden();
+            $(this).siblings('.cityMenu-wrap').addClass('animated2 moveInUp').show();
+            var that = this;
+            setTimeout(function(){
+               $(that).siblings('.cityMenu-wrap').removeClass('moveInUp');
+               hotelFlag = true;
             }, 500);
         });
 

@@ -1278,9 +1278,6 @@ body:before {
 
 .main-data-title .mobile-stroke-type{display: none;}
 @media screen and (max-width: 767px) {
-	body:before{
-		background: url('@{url}ticketHotle-bg-mobile.jpg') center no-repeat;
-	}
 	.lm-section-main{
 		-webkit-transform: scale(1); 
 		transform: scale(1); 
@@ -1292,6 +1289,7 @@ body:before {
 	.lm-section-main{
 		width: 100%;
 		margin-top: 20px;
+		margin-bottom: 60px;
 		padding-left: 15px;
 		padding-right: 15px;
 	}
@@ -1302,7 +1300,7 @@ body:before {
 			margin-top: 10px;
 			.three-code{display: none;}
 			.menu-com {
-				max-height: 254px;
+				max-height: 300px;
 			    overflow-y: auto;
 				> li{
 					width: 100%;
@@ -1314,10 +1312,7 @@ body:before {
 			}
 			.to-cityMenu-wrap{
 				left: 0;
-				&:before{
-					left: 50%;
-					margin-left: -14px;
-				}
+				top: 0;
 			}
 		}
 		.stroke-type-wrap{
@@ -1386,14 +1381,59 @@ body:before {
 		}
 		.cityMenu-wrap{
 			width: 100%;
-			top: 74px;
+			top: 60px;
 			left: 0;
 			z-index: 9;
+			&:before{display: none;}
 		}
 		.dataMenu-wrap{
-			left: -5px;
-			top: -60px;
-			&:before{display: none;}
+			width: 300px;
+		    left: 50%;
+		    top: -60px;
+		    margin-left: -150px;
+		}
+		.hotel-dataMenu-wrap{
+			left: 50%;
+			margin-left: -150px;
+			top: -120px;
+		}
+		.people-cityMenu-wrap{
+			top: -180px;
+			.hotel-popus-people{
+				width: 100% !important;
+				height: 300px;
+				overflow-y: auto;
+				padding: 10px;
+				.rooms-content-com {
+					margin-left: 0;
+					margin-bottom: 10px;
+					.hotel-people-number{width: 160px;}
+				}
+				.s-room-1{margin-top: 0;}
+				.add-rooms-wrap {
+					padding-top: 10px;
+					p{
+						width: 80px;
+						font-size: 16px;
+						padding-left: 10px;
+						padding-right: 10px;
+						margin-right: 10px;
+					}
+					.add-rooms-content{
+						p{background: none;}
+					}
+					.add-rooms-btn{
+						width: 100%;
+						text-align: center;
+					    color: rgba(31, 44, 92, 0.3);
+					    font-size: 20px;
+					    padding-left: 30px;
+					    margin-right: 0;
+					    margin-top: 10px;
+					    background-position-x: 40%; 
+					}
+				}
+			}
 		}
 	}
 	.main-data-content {
@@ -1408,12 +1448,22 @@ body:before {
 		    .hotel-date-result{
 		    	background: url('@{url2}svg/date.svg') 20px no-repeat #fff;
 		    }
+		    .hotel-day{
+		    	background: url('@{url2}svg/hotel-day.svg') center no-repeat;
+		    }
 		}
 		.data-people .t-people-result{
 			line-height: 50px;
 			.p-hotelAdult{
 				margin-left: 15px;
 				margin-right: 15px;
+				background: url('@{url2}svg/adult.svg') 0 center no-repeat;
+			}
+			.p-hotelRooms{
+				background: url('@{url2}svg/rooms.svg') 0 center no-repeat;
+			}
+			.p-hotelChild{
+				background: url('@{url2}svg/child.svg') 0 center no-repeat;
 			}
 		}
 		.search-btn{
@@ -1436,9 +1486,192 @@ body:before {
 	    filter: alpha(opacity=50);
 	    background: #000;
 	}
-	.zIndex{
-		position: relative;
-		z-index: 9;
-	}
 	.daterangepicker{width: 300px;}
+	.lm-section{height: auto;}
+	.main-flight-wrap {
+		width: 100%;
+		margin-top: 40px;
+		.main-flight-title,.main-flight-img{display: none;}
+		.main-flight-content{
+			padding: 10px;
+			.flight-tips{display: none;}
+			.flight-info-wrap{
+				padding-top: 10px;
+			}
+			.flight-info-inner {
+				height: auto;
+				overflow: hidden;
+				padding-bottom: 10px;
+			    margin-bottom: 20px;
+				.flight-info {
+					width: 45%;
+					.p1{display: none;}
+					.p2{font-size: 20px;}
+					.p3{font-size: 12px;}
+					>div{width: 100%;}
+					.one-day{font-size: 12px;}
+				}
+				.flight-info-2{
+					float: right;
+					.p1{display: none;}
+				}
+				.flight-num{
+					top: 20px;
+					width: 60px;
+					margin-left: -30px;
+					font-size: 12px;
+					img{width: 100%;}
+				}
+			}
+		}
+		.main-flight-rules {
+			top: -20px;
+		    right: 17px;
+		    height: 16px;
+			font-size: 12px;
+			span{
+				width: 14px;
+				height: 14px;
+			}
+			a{
+				font-size: 12px;
+			}
+		}
+		.flight-next{display: none;}
+	}
+	.mobile-flight-info{
+		margin-bottom: 10px;
+		overflow: hidden;
+		p{
+			float: left;
+			color: #1f2c5c;
+		    font-size: 12px;
+		}
+		.line{
+			margin-left: 3px;
+			margin-right: 3px;
+		}
+		.from-date,.to-date{
+			margin-left: 10px;
+		}
+	}
+	.pc-right-arrow{display: none;}
+	.mobile-right-arrow{display: block;}
+	.main-hotel-wrap{
+		display: block;
+		width: 100%;
+	    padding-top: 30px;
+	    .main-flight-title{display: none;}
+	    .flight-previous{display: none;}
+	    .main-hotel-content{
+	    	width: 100%;
+	    	max-height: none;
+	    	.hotel-content-inner{
+	    		width: 100%;
+	    		min-height: auto;
+	    	}
+	    	.hotel-info-wrap{
+	    		padding: 0;
+	    		.hotel-img{
+	    			width: 60px;
+	    			height: 60px;
+	    		}
+	    		.hotel-info{
+	    			margin-left: 70px;
+	    			.hotel-title{
+	    				font-size: 14px;
+	    			}
+	    			.hotel-stars-wrap {
+	    				display: none;
+	    				.hotel-stars img{
+	    				    width: 16px;
+		    				margin-right: 10px;
+		    			}
+		    			.hotel-popular{display: none;}
+	    			}
+	    			.hotel-country{
+	    				font-size: 12px;
+	    				margin-top: 10px;
+	    			}
+	    		}
+	    	}
+	    	.hotel-roomType-wrap{
+	    		margin-top: 10px;
+	    		.room-type-title {
+	    			width: 100%;
+	    			height: 26px;
+    			    line-height: 26px;
+	    			li{
+	    				font-size: 12px;
+	    				overflow: hidden;
+    				    text-overflow: ellipsis;
+    				    white-space: nowrap;
+	    			}
+	    		}
+	    		.room-type-content {
+	    			> ul{
+	    				height: 30px;
+	    				line-height: 30px;
+	    				li{
+	    					a{
+	    						display: block;
+	    						font-size: 12px;
+		    					padding-left: 6px;
+	    					    padding-right: 6px;
+		    					overflow: hidden;
+	    					    text-overflow: ellipsis;
+	    					    white-space: nowrap;
+	    					}
+	    				}
+	    			}
+	    		}
+	    	}
+	    	.hotel-viewOther-wrap p{display: none;}
+	    }
+	}
+	.pc-hotel-result{display: none;}
+	.lm-footer{display: none;}
+	.mobile-hotel-result{
+		width: 100%;
+		display: block;
+		position: fixed;
+		bottom: 0;
+		background: #fff;
+		box-shadow: 0 0 50px 0 rgba(31, 44, 92, 0.6);
+	    -webkit-box-shadow: 0 0 50px 0 rgba(31, 44, 92, 0.6);
+	    .hotel-info-tips{
+	    	display: none;
+	    	h2{
+	    		font-size: 14px;
+	    		color: @purple;
+	    	}
+	    	p{
+	    		margin-top: 6px;
+    		    font-size: 12px;
+    		    color: rgba(31, 44, 92, 0.5);
+	    	}
+	    }
+	    .ticket-hotel-price{
+	    	float: left;
+	    	height: 50px;
+	    	line-height: 50px;
+	    	font-size: 20px;
+	    	font-family: @FBold;
+    	    color: #8ec06c;
+    	    background: linear-gradient(-45deg, #00928D 0%, #B4EC80 100%);
+    	    -webkit-background-clip: text;
+    	    -webkit-text-fill-color: transparent;
+	    }
+	    .ticket-hotel-pay{
+	    	float: right;
+	    	height: 50px;
+    	    width: 120px;
+	    	background: @purple;
+	    	color: #fff;
+	    	font-size: 20px;
+	    	border:none;
+	    	outline: none;
+	    	img{margin-left: 10px;}
+	    }
+	}
 }
