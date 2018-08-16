@@ -275,6 +275,7 @@
   font-size: 18px;
   margin: 0 28px;
   text-align: center;
+  vertical-align: text-bottom;
 }
 .lm-container .pd-list-wrap .pd-list-inner > li .pd-slider-cart .pd-detail-select .pd-model-num .pd-num-change a {
   display: inline-block;

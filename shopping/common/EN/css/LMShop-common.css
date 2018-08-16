@@ -2,12 +2,8 @@
 /* project.css */
 /* 定义变量 */
 /* 引入字体 */
-@font-face {
-  font-family: NotoSans;
-  src: url(../../../../common/CN/fonts/NotoSans/SourceHanSansCN-Regular.otf);
-}
 body {
-  font-family: NotoSans;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 /* 定义公共样式 */
 .pd-silder-select {
@@ -102,7 +98,7 @@ body {
 .lm-pd-cart .pd-cart-wrapper .pd-cart-box {
   width: 100%;
   height: 100%;
-  padding: 66px 0 80px;
+  padding: 40px 0 70px;
   overflow-x: hidden;
   overflow-y: auto;
 }
@@ -211,7 +207,7 @@ body {
   bottom: 0;
   left: -350px;
   width: 350px;
-  height: 80px;
+  height: 70px;
   overflow: hidden;
   background: #ffffff;
   -webkit-box-shadow: 0 -4px 10px 0 rgba(0, 0, 0, 0.1);
@@ -253,8 +249,8 @@ body {
 .lm-pd-cart .pd-cart-wrapper .pd-cart-price-box .pd-pay {
   float: right;
   width: 100px;
-  height: 80px;
-  line-height: 80px;
+  height: 70px;
+  line-height: 70px;
   text-align: center;
   font-size: 20px;
   color: #fff;
@@ -326,6 +322,9 @@ body {
   text-align: center;
   font-size: 16px;
   color: #1f2c5c;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .lm-pd-cart .pd-cart-detail-wrapper .pd-cart-detail .pd-detail-title .pd-close {
   display: block;
@@ -1482,6 +1481,18 @@ body {
   .lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-inner .pd-cart-pay-address .pd-cart-address-inner .pd-cart-address-add .address-add-inner .add-address-phone {
     width: 100%;
     margin-left: 0;
+  }
+  .lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-inner .pd-cart-list-content .pd-cart-select .pd-info {
+    width: 1.2rem;
+  }
+  .lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-inner .pd-cart-list-content .pd-cart-select .pd-price-box {
+    margin-right: 0;
+  }
+  .lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-inner .pd-cart-list-content .pd-cart-select .pd-price-box .pd-price {
+    font-size: 14px;
+  }
+  .lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-inner .pd-cart-list-content .pd-cart-select .pd-price-box .pd-number {
+    font-size: 12px;
   }
   .lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-inner .pd-cart-pay-address .pd-cart-address-inner .pd-cart-address-edit .edit-address-name,
   .lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-inner .pd-cart-pay-address .pd-cart-address-inner .pd-cart-address-edit .edit-address-phone {
