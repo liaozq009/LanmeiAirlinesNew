@@ -79,7 +79,8 @@ var LMComLoginReg = {
 		                        '</div>'+
 		                        '<div class="getVerCode">'+
 		                            '<input type="text" name="" value="" id="getVerCode-input" placeholder="Security Code" autocomplete="off">'+
-		                           	'<button type="button" id="getVerCode-btn">Get Security Code</button>'+
+		                           	// '<button type="button" id="getVerCode-btn">Get Security Code</button>'+
+		                           	'<img src="./images/resource/call.jpg" id="getVerCode-img" alt="验证码" style="cursor:pointer;">'+
 		                        '</div>'+
 		                        '<div class="agree">'+
 		                            '<span></span>'+

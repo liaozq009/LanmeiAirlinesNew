@@ -520,17 +520,20 @@ var lmFlightHotel = {
         var that = this;
         var $dropdownMenu = $('.cityMenu-wrap');
         var $mask = $('.js-mobile-mask');
+        var $result = $('.mobile-hotel-result');
 
         function ovfHiden(){
-            $mask.fadeIn();
+            $mask.show();
             $dropdownMenu.hide();
+            $result.css('opacity','0');
             $('html,body').addClass('ovfHiden'); //使网页不可滚动
         };
 
         function remOvfHiden(){
-            $mask.fadeOut();
+            $mask.hide();
             $('html,body').removeClass('ovfHiden'); //使网页可滚动
             $dropdownMenu.hide();
+            $result.css('opacity','1');
         };
 
         function cityFn(){
@@ -540,7 +543,7 @@ var lmFlightHotel = {
             });
         };
 
-        $mask.click(function(e) {
+        $('.js-mobileMask-close').click(function(e) {
             remOvfHiden();
         });
         
@@ -556,9 +559,8 @@ var lmFlightHotel = {
             cityFn();
 
             var that = this;
-            $(this).siblings('.cityMenu-wrap').addClass('animated2 moveInUp').show();
+            $(this).siblings('.cityMenu-wrap').show();
             setTimeout(function(){
-                $(that).siblings('.cityMenu-wrap').removeClass('moveInUp');
                 cityFlag1 = true;
                 cityFlag2 = true;
             }, 500);
@@ -587,7 +589,6 @@ var lmFlightHotel = {
             $box.hide();
             $box.siblings('input').val(text2[0]+'/'+text2[1]).attr('data-city',text2[1]); 
             setTimeout(function(){
-               $box.siblings('input').removeClass('moveOutLeft');
                cityFlag1 = true;
                cityFlag2 = true;
             }, 500);
@@ -649,10 +650,9 @@ var lmFlightHotel = {
             dateFlag = false;
             event.stopPropagation();
             ovfHiden();
-            $(this).siblings('.cityMenu-wrap').addClass('animated2 moveInUp').show();
+            $(this).siblings('.cityMenu-wrap').show();
             var that = this;
             setTimeout(function(){
-               $(that).siblings('.cityMenu-wrap').removeClass('moveInUp');
                dateFlag = true;
             }, 500);
         });
@@ -664,10 +664,9 @@ var lmFlightHotel = {
             hotelFlag = false;
             event.stopPropagation();
             ovfHiden();
-            $(this).siblings('.cityMenu-wrap').addClass('animated2 moveInUp').show();
+            $(this).siblings('.cityMenu-wrap').show();
             var that = this;
             setTimeout(function(){
-               $(that).siblings('.cityMenu-wrap').removeClass('moveInUp');
                hotelFlag = true;
             }, 500);
         });

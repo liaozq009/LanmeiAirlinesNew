@@ -98,7 +98,7 @@ body {
 .lm-pd-cart .pd-cart-wrapper .pd-cart-box {
   width: 100%;
   height: 100%;
-  padding: 40px 0 70px;
+  padding: 70px 0 70px;
   overflow-x: hidden;
   overflow-y: auto;
 }
@@ -440,7 +440,7 @@ body {
 .lm-pd-cart .pd-cart-detail-wrapper .pd-cart-detail .pd-silder-select {
   text-align: left;
   color: #1a1a1a;
-  font-weight: 100;
+  font-weight: 400;
   margin-top: 14px;
 }
 .lm-pd-cart .pd-cart-detail-wrapper .pd-cart-detail .pd-silder-select > span {
@@ -1062,7 +1062,7 @@ body {
   vertical-align: top;
 }
 .lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-way .pd-cart-freight-way .pd-cart-use-coupons label {
-  font-weight: 100;
+  font-weight: 400;
   margin-left: 10px;
 }
 .lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-way .pd-cart-freight-way .pd-cart-use-coupons .pd-cart-select-coupons {
@@ -1444,6 +1444,9 @@ body {
   }
   .lm-pd-cart .pd-cart-pay-wrapper {
     padding: .1rem;
+  }
+  .lm-pd-cart .pd-cart-wrapper .pd-cart-box {
+    padding-top: 50px;
   }
   .lm-pd-cart .pd-cart-pay-wrapper .pd-cart-pay-inner {
     padding-bottom: 130px;

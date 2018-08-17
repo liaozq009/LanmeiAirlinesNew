@@ -1292,7 +1292,7 @@ body:before {
   }
   .main-data-title > div .to-cityMenu-wrap {
     left: 0;
-    top: 0;
+    top: -60px;
   }
   .main-data-title .stroke-type-wrap {
     width: 100%;
@@ -1366,7 +1366,8 @@ body:before {
   }
   .main-data-wrap .cityMenu-wrap {
     width: 100%;
-    top: 60px;
+    height: 300px;
+    top: 0;
     left: 0;
     z-index: 9;
   }
@@ -1376,16 +1377,16 @@ body:before {
   .main-data-wrap .dataMenu-wrap {
     width: 300px;
     left: 50%;
-    top: -60px;
+    top: -120px;
     margin-left: -150px;
   }
   .main-data-wrap .hotel-dataMenu-wrap {
     left: 50%;
     margin-left: -150px;
-    top: -120px;
+    top: -180px;
   }
   .main-data-wrap .people-cityMenu-wrap {
-    top: -180px;
+    top: -240px;
   }
   .main-data-wrap .people-cityMenu-wrap .hotel-popus-people {
     width: 100% !important;
@@ -1470,9 +1471,18 @@ body:before {
     right: 0;
     bottom: 0;
     z-index: 9;
-    opacity: .5;
-    filter: alpha(opacity=50);
-    background: #000;
+    background: rgba(0, 0, 0, 0.8);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F000000, 0, endColorstr=#7F000000, 0);
+  }
+  .mobile-mask p {
+    position: absolute;
+    left: 50%;
+    top: 360px;
+    margin-left: -10px;
+    width: 20px;
+    height: 20px;
+    z-index: 10;
+    background: url('../../images/EN/svg/close-menu.svg') center no-repeat;
   }
   .daterangepicker {
     width: 300px;
@@ -1575,6 +1585,9 @@ body:before {
   .mobile-right-arrow {
     display: block;
   }
+  .mobile-flight-info {
+    display: block;
+  }
   .main-hotel-wrap {
     display: block;
     width: 100%;
@@ -1648,6 +1661,16 @@ body:before {
     text-overflow: ellipsis;
     white-space: nowrap;
   }
+  .main-hotel-wrap .main-hotel-content .hotel-roomType-wrap .room-type-content > ul li .details-menu p {
+    font-size: 12px;
+    line-height: 22px;
+  }
+  .main-hotel-wrap .main-hotel-content .hotel-roomType-wrap .room-type-content > ul .n1 .details-menu {
+    left: -10px;
+  }
+  .main-hotel-wrap .main-hotel-content .hotel-roomType-wrap .room-type-content > ul .n2 .details-menu {
+    left: -88px;
+  }
   .main-hotel-wrap .main-hotel-content .hotel-viewOther-wrap p {
     display: none;
   }
@@ -1658,7 +1681,7 @@ body:before {
     display: none;
   }
   .range-change-date {
-    display: none;
+    display: none !important;
   }
   .mobile-hotel-result {
     width: 100%;

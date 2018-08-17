@@ -87,7 +87,7 @@
 }
 label{
 	margin-bottom: 0;
-	font-weight: 100;
+	font-weight: 400;
 }
 .arrowBox{
 	width: 270px;
@@ -115,7 +115,7 @@ label{
 					color: #fff;
 					opacity: 1;
 					font-size:18px;
-					font-weight: 100;
+					font-weight: 400;
 					text-shadow: none; 
 					top: -3px;
 					right: 30px;
@@ -359,6 +359,8 @@ label{
 					}
 					.getVerCode{
 						margin-bottom: 20px;
+						text-align: left;
+					    margin-left: 30px;
 						input{
 							width: 180px;
 						}
@@ -613,4 +615,7 @@ body .layui-layer-page .layui-layer-content{
 /* 移动端 */
 @media (max-width: 767px) {
 	body .layui-layer{width: 300px !important;}
+	.modal .modal-dialog .modal-content .modal-body form .getVerCode{
+		margin-left: 5%;
+	}
 }
