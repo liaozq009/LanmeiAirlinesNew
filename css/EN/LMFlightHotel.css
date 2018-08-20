@@ -221,14 +221,17 @@ body:before {
   font-size: 20px;
   color: #1f2c5c;
   border-radius: 2px;
-  background: url('../../images/EN/date.png') 20px no-repeat #fff;
   cursor: pointer;
+}
+.main-data-content > div .date-result {
+  background: url('../../images/EN/ticket-date.png') 20px no-repeat #fff;
 }
 .main-data-content > div .date-container {
   width: 588px;
 }
 .main-data-content > div .hotel-date-result {
   padding-right: 50px;
+  background: url('../../images/EN/hotel-date.png') 20px no-repeat #fff;
 }
 .main-data-content > div .hotel-day {
   position: absolute;
@@ -1205,6 +1208,41 @@ body:before {
 .ie8 .main-hotel-wrap .main-hotel-content .hotel-select-active .hotel-roomType-wrap .room-type-title {
   background: #ccc;
 }
+.passengerInfoModal .modal-dialog {
+  width: 600px;
+}
+.passengerInfoModal .pas-title {
+  color: #1f2c5c;
+  font-family: CamptonBookBold;
+  font-size: 22px;
+  text-align: center;
+  margin-top: 20px;
+}
+.passengerInfoModal .pas-info-inner {
+  padding: 10px 10px 10px 20px;
+}
+.passengerInfoModal .pas-info-inner .pas-num {
+  font-size: 18px;
+  font-family: CamptonBookBold;
+  color: rgba(31, 44, 92, 0.8);
+  margin-bottom: 15px;
+}
+.passengerInfoModal .pas-info-box {
+  overflow: hidden;
+}
+.passengerInfoModal .pas-info-box .form-group {
+  width: 50%;
+  float: left;
+  padding-right: 10px;
+}
+.passengerInfoModal .pas-info-box .form-group input {
+  display: block;
+  width: 100%;
+  border: 1px solid #ccc;
+  height: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
 @media screen and (max-width: 1440px) {
   .main-flight-wrap .flight-next {
     right: 0;
@@ -1434,10 +1472,10 @@ body:before {
     margin-bottom: 10px;
   }
   .main-data-content > div .date-result {
-    background: url('../../images/EN/svg/date.svg') 20px no-repeat #fff;
+    background: url('../../images/EN/svg/ticket-date.svg') 20px no-repeat #fff;
   }
   .main-data-content > div .hotel-date-result {
-    background: url('../../images/EN/svg/date.svg') 20px no-repeat #fff;
+    background: url('../../images/EN/svg/hotel-date.svg') 20px no-repeat #fff;
   }
   .main-data-content > div .hotel-day {
     background: url('../../images/EN/svg/hotel-day.svg') center no-repeat;

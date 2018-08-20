@@ -484,6 +484,7 @@ body {
   margin-top: 15px;
   padding-left: 30px;
   font-size: 14px;
+  font-family: NotoSansBold;
   background: -webkit-linear-gradient(left, #42958a 0%, #1f2c5c 100%);
   background: -o-linear-gradient(right, #42958a 0%, #1f2c5c 100%);
   background: -moz-linear-gradient(right, #42958a 0%, #1f2c5c 100%);
@@ -528,11 +529,13 @@ body {
   filter: alpha(opacity=70);
   color: #000;
   margin-left: 10px;
+  font-family: NotoSansBold;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 .lm-important > ul > li > a {
+  font-family: NotoSansBold;
   opacity: 0.7;
   filter: alpha(opacity=70);
   color: #000;
@@ -915,7 +918,7 @@ body {
 .lm-section-banner {
   width: 100%;
   margin-top: -60px;
-  margin-bottom: 100px;
+  margin-bottom: 60px;
   overflow: hidden;
 }
 .lm-section-banner .slick-item {
@@ -987,9 +990,9 @@ body {
 .section-content-title {
   position: relative;
   height: 130px;
-  line-height: 116px;
+  line-height: 120px;
   margin-bottom: 30px;
-  font-size: 70px;
+  font-size: 56px;
   font-family: NotoSansBold;
   color: rgba(31, 44, 92, 0.1);
   text-align: center;
@@ -1004,7 +1007,7 @@ body {
 }
 .lm-section-coupons {
   position: relative;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 .lm-section-coupons .coupons-anchor {
   width: 100%;
@@ -1123,7 +1126,8 @@ body {
   background: url('../../images/CN/flight-loader.gif') center no-repeat rgba(255, 255, 255, 0.6);
 }
 .lm-section-fares {
-  margin-bottom: 70px;
+  display: none;
+  margin-bottom: 30px;
 }
 .lm-section-fares .fares-item {
   margin-left: 50px;
@@ -1225,7 +1229,7 @@ body {
 .lm-section-service {
   width: 100%;
   height: 300px;
-  margin-bottom: 100px;
+  margin-bottom: 60px;
   background: url('../../images/CN/lanmeiService-bg.jpg') center no-repeat;
   background-size: cover;
   background-position: 50% -660px;
@@ -1281,7 +1285,7 @@ body {
 }
 .lm-section-travel {
   display: none;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
 }
 .lm-section-travel .travel-content .slick-list {
   padding-left: 120px;
@@ -1386,7 +1390,7 @@ body {
   -webkit-transition: all .3s;
 }
 .lm-section-hotel {
-  margin-bottom: 100px;
+  margin-bottom: 60px;
 }
 .lm-section-hotel .comfortHotel-item {
   width: 960px;
@@ -1570,7 +1574,7 @@ body {
   -webkit-transition: all .3s;
 }
 .lm-section-news {
-  margin-bottom: 200px;
+  margin-bottom: 160px;
 }
 .lm-section-news .news-wrap {
   position: relative;
@@ -2029,21 +2033,25 @@ body {
   .lm-section-banner,
   .lm-section-service,
   .lm-section-hotel {
-    margin-bottom: 80px;
+    margin-bottom: 40px;
   }
   .lm-section-coupons {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
   }
   .lm-section-fares {
-    margin-bottom: 50px;
+    margin-bottom: 10px;
+  }
+  .lm-section-travel {
+    margin-bottom: 10px;
   }
   .lm-section-news {
-    margin-bottom: 160px;
+    margin-bottom: 120px;
   }
   .section-content-title {
-    font-size: 62px;
-    height: 104px;
-    line-height: 94px;
+    font-size: 46px;
+    height: 70px;
+    line-height: 60px;
+    margin-bottom: 20px;
   }
   .section-content-title > h2 {
     font-size: 20px;

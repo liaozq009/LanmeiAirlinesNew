@@ -248,14 +248,17 @@ body:before {
 			font-size: 20px;
 			color: @purple;
 			border-radius: 2px;
-			background: url('@{url2}date.png') 20px no-repeat #fff;
 			cursor: pointer;
+		}
+		.date-result{
+			background: url('@{url2}ticket-date.png') 20px no-repeat #fff;
 		}
 		.date-container{
 			width: 588px;
 		}
 		.hotel-date-result{
 			padding-right: 50px;
+			background: url('@{url2}hotel-date.png') 20px no-repeat #fff;
 		}
 		.hotel-day{
 			position: absolute;
@@ -1241,6 +1244,44 @@ body:before {
 	.main-hotel-wrap .main-hotel-content .hotel-select-active .hotel-roomType-wrap .room-type-title{background: #ccc;}
 }
 
+.passengerInfoModal{
+	.modal-dialog{
+		width: 600px;
+	}
+	.pas-title{
+	    color: @purple;
+	    font-family: @FBold;
+	    font-size: 22px;
+	    text-align: center;
+	    margin-top: 20px;
+	}
+	.pas-info-inner{
+		padding: 10px 10px 10px 20px;
+		.pas-num{
+			font-size: 18px;
+			font-family: @FBold;
+			.purpleRgb(0.8);
+			margin-bottom: 15px;
+		}
+	}
+	.pas-info-box{
+		overflow: hidden;
+		.form-group{
+			width: 50%;
+			float: left;
+			padding-right: 10px;
+			input{
+				display: block;
+				width: 100%;
+			    border: 1px solid #ccc;
+			    height: 30px;
+			    padding-left: 10px;
+			    padding-right: 10px;
+			}
+		}
+	}
+}
+
 @media screen and (max-width: 1440px) {
 	.main-flight-wrap .flight-next{right: 0;}
 	.main-hotel-wrap .flight-previous{left: 0;}
@@ -1446,10 +1487,10 @@ body:before {
 			margin-right: 0;
 		    margin-bottom: 10px;
 		    .date-result{
-		    	background: url('@{url2}svg/date.svg') 20px no-repeat #fff;
+		    	background: url('@{url2}svg/ticket-date.svg') 20px no-repeat #fff;
 		    }
 		    .hotel-date-result{
-		    	background: url('@{url2}svg/date.svg') 20px no-repeat #fff;
+		    	background: url('@{url2}svg/hotel-date.svg') 20px no-repeat #fff;
 		    }
 		    .hotel-day{
 		    	background: url('@{url2}svg/hotel-day.svg') center no-repeat;

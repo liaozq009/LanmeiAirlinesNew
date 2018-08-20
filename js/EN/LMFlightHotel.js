@@ -670,7 +670,6 @@ var lmFlightHotel = {
                hotelFlag = true;
             }, 500);
         });
-
     },
 
     /* 其他事件 */
@@ -678,6 +677,10 @@ var lmFlightHotel = {
         if(this.winWidth<992){
             $('.js-from-input,.js-to-input').attr('readonly',true);
         }
+
+        $('.js-ticketHotel-pay').click(function(event) {
+            $('#passengerInfoModal').modal();
+        });
     },
 };
 
