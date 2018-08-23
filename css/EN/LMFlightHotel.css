@@ -837,7 +837,7 @@ body:before {
 }
 .data-people .people-cityMenu-wrap {
   display: none;
-  width: 750px;
+  width: 340px;
   left: auto;
   right: 0;
   top: 90px;
@@ -864,6 +864,11 @@ body:before {
   margin-top: 10px;
   padding-left: 10px;
   padding-right: 10px;
+}
+.data-people .popup-people .s-rooms .people-prompt .p1 {
+  height: 50px;
+  line-height: 50px;
+  background: url('../../images/EN/rooms-icon.png') left center no-repeat;
 }
 .data-people .popup-people .s-adult .people-prompt .p1 {
   background: url('../../images/EN/adult-icon.png') left center no-repeat;
@@ -994,7 +999,6 @@ body:before {
   background: url('../../images/EN/add-people.png') center no-repeat rgba(31, 44, 92, 0.1);
 }
 .data-people .hotel-popus-people {
-  width: 750px;
   height: auto;
   padding: 20px;
   background: #fff;
@@ -1172,6 +1176,42 @@ body:before {
   transition: all .3s;
   -webkit-transition: all .3s;
 }
+.data-people .th-popus-people {
+  width: 340px;
+}
+.data-people .th-popus-people .people-number {
+  width: 160px;
+}
+.data-people .th-popus-people .child-age-container {
+  display: none;
+  width: 100%;
+}
+.data-people .th-popus-people .child-age-title {
+  margin-top: 20px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 16px;
+}
+.data-people .th-popus-people .age-rooms-com {
+  display: block;
+  margin-left: 10px;
+  margin-top: 10px;
+  height: 45px;
+}
+.data-people .th-popus-people .hotel-age-wrap {
+  width: 78px;
+}
+.data-people .th-popus-people .hotel-age-wrap .age-result {
+  margin-left: 0;
+}
+.data-people .th-popus-people .hotel-age-wrap .age-menu-box {
+  left: 0;
+  top: -178px;
+  z-index: 9;
+}
+.data-people .th-popus-people .m-select-people {
+  display: none;
+}
 /* ie兼容性 */
 .ie11 .main-hotel-wrap .main-hotel-result .ticket-hotel-price {
   background: none;
@@ -1207,41 +1247,6 @@ body:before {
 }
 .ie8 .main-hotel-wrap .main-hotel-content .hotel-select-active .hotel-roomType-wrap .room-type-title {
   background: #ccc;
-}
-.passengerInfoModal .modal-dialog {
-  width: 600px;
-}
-.passengerInfoModal .pas-title {
-  color: #1f2c5c;
-  font-family: CamptonBookBold;
-  font-size: 22px;
-  text-align: center;
-  margin-top: 20px;
-}
-.passengerInfoModal .pas-info-inner {
-  padding: 10px 10px 10px 20px;
-}
-.passengerInfoModal .pas-info-inner .pas-num {
-  font-size: 18px;
-  font-family: CamptonBookBold;
-  color: rgba(31, 44, 92, 0.8);
-  margin-bottom: 15px;
-}
-.passengerInfoModal .pas-info-box {
-  overflow: hidden;
-}
-.passengerInfoModal .pas-info-box .form-group {
-  width: 50%;
-  float: left;
-  padding-right: 10px;
-}
-.passengerInfoModal .pas-info-box .form-group input {
-  display: block;
-  width: 100%;
-  border: 1px solid #ccc;
-  height: 30px;
-  padding-left: 10px;
-  padding-right: 10px;
 }
 @media screen and (max-width: 1440px) {
   .main-flight-wrap .flight-next {
@@ -1433,7 +1438,6 @@ body:before {
     padding: 10px;
   }
   .main-data-wrap .people-cityMenu-wrap .hotel-popus-people .rooms-content-com {
-    margin-left: 0;
     margin-bottom: 10px;
   }
   .main-data-wrap .people-cityMenu-wrap .hotel-popus-people .rooms-content-com .hotel-people-number {

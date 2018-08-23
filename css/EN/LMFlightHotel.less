@@ -860,7 +860,7 @@ body:before {
 	.m-select-rooms{display: none;}
 	.people-cityMenu-wrap{
 		display: none;
-		width: 750px;
+		width: 340px;
 		left: auto;
 		right: 0;
 		top: 90px;
@@ -886,6 +886,15 @@ body:before {
 			margin-top: 10px;
 			padding-left: 10px;
 			padding-right: 10px;
+		}
+		.s-rooms{
+			.people-prompt{
+				.p1{
+					height: 50px;
+				    line-height: 50px;
+					background: url('@{url2}rooms-icon.png') left center no-repeat;
+				}
+			}
 		}
 		.s-adult{
 			.people-prompt{
@@ -1019,7 +1028,6 @@ body:before {
 		}
 	}
 	.hotel-popus-people{
-		width: 750px;
 		height: auto;
 		padding:20px;
 		background: #fff;
@@ -1209,6 +1217,38 @@ body:before {
 			}
 		}
 	}
+	.th-popus-people{
+		width: 340px;
+		.people-number{
+			width: 160px;
+		}
+		.child-age-container{
+			display: none;
+			width: 100%;
+		}
+		.child-age-title{
+			margin-top: 20px;
+		    text-align: center;
+		    color: rgba(0, 0, 0, 0.7);
+		    font-size: 16px;
+		}
+		.age-rooms-com{
+			display: block;
+			margin-left: 10px;
+		    margin-top: 10px;
+		    height: 45px;
+		}
+		.hotel-age-wrap {
+			width: 78px;
+			.age-result{margin-left: 0;}
+			.age-menu-box{
+				left: 0;
+				top: -178px;
+				z-index: 9;
+			}
+		}
+		.m-select-people{display: none;}
+	}
 }
 
 /* ie兼容性 */
@@ -1242,44 +1282,6 @@ body:before {
 		color: #fff;
 	}
 	.main-hotel-wrap .main-hotel-content .hotel-select-active .hotel-roomType-wrap .room-type-title{background: #ccc;}
-}
-
-.passengerInfoModal{
-	.modal-dialog{
-		width: 600px;
-	}
-	.pas-title{
-	    color: @purple;
-	    font-family: @FBold;
-	    font-size: 22px;
-	    text-align: center;
-	    margin-top: 20px;
-	}
-	.pas-info-inner{
-		padding: 10px 10px 10px 20px;
-		.pas-num{
-			font-size: 18px;
-			font-family: @FBold;
-			.purpleRgb(0.8);
-			margin-bottom: 15px;
-		}
-	}
-	.pas-info-box{
-		overflow: hidden;
-		.form-group{
-			width: 50%;
-			float: left;
-			padding-right: 10px;
-			input{
-				display: block;
-				width: 100%;
-			    border: 1px solid #ccc;
-			    height: 30px;
-			    padding-left: 10px;
-			    padding-right: 10px;
-			}
-		}
-	}
 }
 
 @media screen and (max-width: 1440px) {
@@ -1449,7 +1451,6 @@ body:before {
 				overflow-y: auto;
 				padding: 10px;
 				.rooms-content-com {
-					margin-left: 0;
 					margin-bottom: 10px;
 					.hotel-people-number{width: 160px;}
 				}

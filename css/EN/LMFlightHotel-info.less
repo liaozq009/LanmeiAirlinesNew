@@ -1,0 +1,74 @@
+@charset "utf-8";
+
+@font-face {
+	font-family: CamptonBookBold;
+	src: url(../../common/EN/fonts/Campton/Rene.Bieder_Campton.Bold.otf);
+	font-weight:bold;
+}
+
+/* 定义变量 */
+@url:"../../images/resource/";
+@url2:"../../images/EN/";
+@purple:#1f2c5c;
+@green:#8ec06c;
+@link:#42958a;
+@FBold:CamptonBookBold;
+
+@webkit-linear:-webkit-linear-gradient(left, #42958a 0%, #1f2c5c 100%);
+@o-linear:-o-linear-gradient(right, #42958a 0%, #1f2c5c 100%);
+@moz-linear:-moz-linear-gradient(right, #42958a 0%, #1f2c5c 100%);
+@linear:linear-gradient(to right, #42958a 0%, #1f2c5c 100%);
+
+.greenRgb(@opacity){
+	color: rgba(142,192,96,@opacity);
+}
+.purpleRgb(@opacity){
+	color: rgba(31,44,92,@opacity);
+}
+.blackRgb(@opacity){
+	color: rgba(0,0,0,@opacity);
+}
+.blackBgRgb(@opacity){
+	background: rgba(0,0,0,@opacity);
+}
+.whiteRgb(@opacity){
+	color: rgba(255,255,255,@opacity);
+}
+.whiteBgRgb(@opacity){
+	background: rgba(255,255,255,@opacity);
+}
+.purpleBgRgb(@opacity){
+	background: rgba(31,44,92,@opacity);
+}
+
+.hidden{
+	visibility: hidden;
+}
+.visible{
+	visibility: visible;
+}
+.clear-both{
+	clear: both;
+}
+
+.lm-section{
+	width: 1200px;
+	margin: 30px auto 30px;
+}
+input{
+	border:1px solid #ccc;
+}
+
+/* ie兼容性 */
+.ie11{
+	
+}
+.ie10{
+	
+}
+.ie8{
+	
+}
+@media screen and (max-width: 767px) {
+
+}

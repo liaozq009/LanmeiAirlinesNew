@@ -344,13 +344,13 @@
 					</div>
 					<div class="select-air-time select-air-com">
 						<div class="from-com js-ticket-from animated fadeInUp">
-							<input type="text" class="t-from-input js-from-input" data="js-from-menu" placeholder="From" autocomplete="off">
+							<input type="text" class="t-from-input js-from-input" value="Phnom Penh/PNH" data="js-from-menu" placeholder="From" autocomplete="off">
 							<span class="m-city-from js-m-Fcity">Phnom Penh/PNH</span>
 							<i class="local-change js-ticket-change animated fadeInUp"></i>
 						</div>
 						<i class="local-change m-local-change js-mTicket-change animated fadeInUp"></i>
 						<div class="to-com js-ticket-to">
-							<input type="text" class="t-to-input js-to-input" data="js-to-menu" placeholder="To" autocomplete="off">
+							<input type="text" class="t-to-input js-to-input" value="Siem Reap/Cambodia" data="js-to-menu" placeholder="To" autocomplete="off">
 							<span class="m-city-to js-m-Tcity">Siem Reap/Cambodia</span>
 						</div>
 						<div class="date-com js-ticket-date">
@@ -700,18 +700,47 @@
 								
 							</div>
 							<!-- 人数选择 -->
-							<div class="hotel-popus-people popup-people js-ticketHotelPopup-people">
-								<p class="people-title js-thRooms-title">Room and number of choices :</p>
-								<div class="select-people-container js-thRooms-container">
-									
-								</div>
-								<div class="add-rooms-wrap">
-									<div class="add-rooms-content js-add-thRoomsTab">
-										
+							<div class="popup-people hotel-popus-people th-popus-people js-ticketHotelPopup-people">
+								<p class="people-title">Room and number of choices :</p>
+								<div class="select-people-container js-thPeople-container">
+									<div class="s-rooms s-people-com js-s-thRoom">
+										<div class="people-prompt people-rooms-prompt">
+											<p class="p1">Rooms</p>
+											<!-- <p class="p2 thRooms-tip">( 12+ )</p> -->
+										</div>
+										<div class="people-number">
+											<a href="javascript:;" class="sub-people off-sub-operation js-thRooms-sub"></a>
+											<span class="rooms-num">1</span>
+											<a href="javascript:;" class="add-people js-thRooms-add"></a>
+										</div>
 									</div>
-									<p class="add-rooms-btn js-add-thRooms">Add</p>
+									<div class="s-adult s-people-com js-s-thAdult">
+										<div class="people-prompt people-rooms-prompt">
+											<p class="p1">Adult</p>
+											<p class="p2 thAdult-tip">( 12+ )</p>
+										</div>
+										<div class="people-number">
+											<a href="javascript:;" class="sub-people off-sub-operation js-thAdult-sub"></a>
+											<span class="adult-num">1</span>
+											<a href="javascript:;" class="add-people js-thAdult-add"></a>
+										</div>
+									</div>
+									<div class="s-child s-people-com js-s-thChild">
+										<div class="people-prompt people-rooms-prompt">
+											<p class="p1">Child</p>
+											<p class="p2 thChild-tip">(2-11)</p>
+										</div>
+										<div class="people-number disable">
+											<a href="javascript:;" class="sub-people off-sub-operation js-thChild-sub"></a>
+											<span class="child-num">0</span>
+											<a href="javascript:;" class="add-people js-thChild-add"></a>
+										</div>
+									</div>
+									<div class="child-age-container js-child-container">
+										<p class="child-age-title js-childAge-title">Age of children</p>
+									</div>
 								</div>
-								<div class="m-select-rooms"><a href="javascript:;" class="js-thMSelect-rooms">SAVE</a></div>
+								<div class="m-select-people"><a href="javascript:;" class="js-mThSelect-people">SAVE</a></div>
 							</div>
 						</div>
 					</div>

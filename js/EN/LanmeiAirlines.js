@@ -14,8 +14,8 @@ var LanmeiAirlines = {
 	indexLiRouteTo: 0,
 	init:function(){
 		this.selectPeople();
+		this.selectThPeople();
 		this.selectHotelRooms();
-		this.selectThRooms();
 		this.banner();
 		this.selectCoupons();
 		this.lowestFares();
@@ -630,7 +630,7 @@ var LanmeiAirlines = {
 
 				// 操作外层box移动
 				var moveBox = function(){
-					if(showTotleDay || id=='.js-thDate-result'){ //酒店
+					if(showTotleDay){ //酒店
 						if(winWidth>1200){
 							box.css('left',610);
 							if(id=='.js-thDate-result'){
@@ -647,6 +647,12 @@ var LanmeiAirlines = {
 							setTimeout(function(){
 								box.addClass('hotelPeople-popup-box'); //移动before小箭头
 							},600);
+						}
+					}else if(id=='.js-thDate-result'){
+						if(winWidth>1200){
+							box.css('left',1020);
+						}else if(winWidth<=1200){
+							box.css({'top':-10,'left':320});
 						}
 					}else{
 						if(peopleBox!=='0'){
@@ -1004,7 +1010,7 @@ var LanmeiAirlines = {
 						}else if(winWidth<=1200){
 							$box.css({'top':-88,'left':350});
 						}
-						$toInput.focus();
+						$toInput.select();
 						$('.js-to-menu>li:first').addClass('active');
 
 						$fromBox.slideUp(function(){ //出发地隐藏
@@ -1204,7 +1210,7 @@ var LanmeiAirlines = {
 		$fromInput.click(function(){
 			if(oneClick){ //防止点击取消后，快速点击出发地产生的bug
 				fromCityVal($toInput.attr('data-city')); //下拉菜单赋值
-
+				$(this).select();
 				if(winWidth>1200){
 					$box.css('left',0);
 				}else if(winWidth<=1200){
@@ -1230,7 +1236,7 @@ var LanmeiAirlines = {
 		/* 点击机票目的地 */
 		$toInput.click(function(e){
 			toCityVal($fromInput.attr('data-city')); //下拉菜单赋值
-
+			$(this).select();
 			if(winWidth>1200){
 				$box.css('left',350);
 			}else if(winWidth<=1200){
@@ -1339,7 +1345,7 @@ var LanmeiAirlines = {
 				$box.css({'top':-88,'left':350});
 			}
 
-			$toInput.focus();
+			$toInput.select();
 			$('.js-to-menu>li:first').addClass('active');
 
 			$fromBox.slideUp(function(){ //出发地隐藏
@@ -1923,6 +1929,7 @@ var LanmeiAirlines = {
 		var $toBox = $('.js-thAirport-to'); //目的地外层
 		var $dateBox = $('.js-thPopup-date'); //日期外层
 		var $peopleBox = $('.js-ticketHotelPopup-people'); //人数选择外层
+		var $popupContent = $('.popup-content');
 		
 		/* 切换状态 */
 		var $selectWay = $('.js-thSelect-way'); //选择单程往返
@@ -2062,14 +2069,12 @@ var LanmeiAirlines = {
 		var $that = this;
 		$people.click(function(event) {
 			if(winWidth>1200){
-				$box.css('left',610);
+				$box.css('left',1020);
 			}else if(winWidth<=1200){
-				$box.css({'top':-10,'left':-90});
+				$box.css({'top':-10,'left':320});
 			}
 			popupShow(); //增加c3动画
-			$that.changeWidth('ticketHotel');
-			$box.addClass('hotelPeople-popup-box'); //移动before小箭头
-			$content.css('z-index','1'); //覆盖cancel按钮
+			$popupContent.css('z-index','1'); //覆盖cancel按钮
 			$peopleBox.show();
 			$fromBox.hide(); $toBox.hide(); $dateBox.hide();
 		});
@@ -2357,8 +2362,8 @@ var LanmeiAirlines = {
 
 			$container.addClass('is-show');
 		});
-		//房间保存
-		$('.js-thMSelect-rooms').click(function(event) {
+		//房间保存 
+		$('.js-mThSelect-people').click(function(event) {
 			hideContainer();
 		});
 	},
@@ -2811,6 +2816,7 @@ var LanmeiAirlines = {
 		/* 点击航班动态 按地址查询 出发地 */
 		$routeFromInput.click(function(){
 			fromCityVal($routeToInput.attr('data-city')); //下拉菜单赋值
+			$(this).select();
 			if(winWidth>1200){
 				$fStatusBox.css('left',0);
 			}else if(winWidth<=1200){
@@ -2825,7 +2831,7 @@ var LanmeiAirlines = {
 		/* 点击航班动态 按地址查询 目的地 */
 		$routeToInput.click(function(){
 			toCityVal($routeFromInput.attr('data-city')); //下拉菜单赋值
-
+			$(this).select();
 			if(winWidth>1200){
 				$fStatusBox.css('left',350);
 			}else if(winWidth<=1200){
@@ -2952,8 +2958,8 @@ var LanmeiAirlines = {
 				$fStatusBox.css({'top':-90,'left':350});
 			}
 
-			$routeToInput.focus();
-			$('.js-to-menu>li:first').addClass('active');
+			$routeToInput.select();
+			$('.js-routeTo-menu>li:first').addClass('active');
 
 			$routeFromBox.slideUp(function(){ //酒店出发地隐藏
 				$routeToBox.slideDown(); //酒店日期显示
@@ -3380,6 +3386,168 @@ var LanmeiAirlines = {
 		tipFn('.infant-tip','Passengers 7 days old up to those who have not reached their 2nd birthday travel with infant status.',showInfantTip);
 	},
 
+	/* 机票+酒店人数选择 */
+	selectThPeople:function(){
+		var $roomResult = $('.js-p-ticketHotelRooms>span');
+		var $adultResult = $('.js-p-ticketHotelAdult>span');
+		var $childResult = $('.js-p-ticketHotelChild>span');
+
+		$roomResult.html(1);
+		$adultResult.html(1);
+		$childResult.html(0);
+
+		var $peopleCon = $('.js-child-container');
+		$('.js-child-container').on('click','.js-thAge-result',function(e){
+			e.stopPropagation();
+			$('.js-thAge-box').hide();
+			$(this).siblings('.js-thAge-box').show();
+		});
+		$peopleCon.on('click','.js-thAge-menu>li',function(){
+			var text = $(this).html();
+			$(this).parents('.js-thAge-box').siblings('span').html(text);
+		});
+		$('html').click(function(event) {
+			$('.js-thAge-box').hide();
+		});
+
+		// 房间
+		var rooms = function(){
+			$('.js-thRooms-add').click(function(){
+				$(this).siblings('.sub-people').removeClass('off-sub-operation');
+				var roomNum = $(this).siblings('span').html();
+				if(parseInt(roomNum)<4){
+					roomNum++;
+					$(this).siblings('span').html(roomNum);
+					$roomResult.html(roomNum); //动态赋值
+					roomNum==4 && $(this).addClass('off-add-operation');
+				}
+			});
+
+			$('.js-thRooms-sub').click(function(){
+				$(this).siblings('.add-people').removeClass('off-add-operation');
+				var roomNum = $(this).siblings('span').html();
+				if(roomNum>1){
+					roomNum--;
+					$(this).siblings('span').html(roomNum);
+					$roomResult.html(roomNum); //动态赋值
+					roomNum==1 && $(this).addClass('off-sub-operation');
+				}
+			});
+		};
+
+		// 成人
+		var adult = function(){
+			$('.js-thAdult-add').click(function(){
+				$(this).siblings('.sub-people').removeClass('off-sub-operation');
+				var childNum = $(this).parents('.js-s-thAdult').siblings('.js-s-thChild').find('.child-num').html();//获取小孩人数
+				var adultNum = $(this).siblings('span').html();;//获取成人人数
+				if(parseInt(childNum)+parseInt(adultNum)<8){
+					adultNum++;
+					$(this).siblings('span').html(adultNum);
+					$adultResult.html(adultNum); //动态赋值
+					// adultNum==2 && $(this).addClass('off-add-operation');
+				}
+			});
+			$('.js-thAdult-sub').click(function(){
+				$(this).siblings('.add-people').removeClass('off-add-operation');
+				var adultNum = $(this).siblings('span').html();;//获取成人人数
+				if(adultNum>2){
+					adultNum--;
+					$(this).siblings('span').html(adultNum);
+					$adultResult.html(adultNum); //动态赋值
+					// adultNum==1 && $(this).addClass('off-sub-operation');
+				}
+			});
+		};
+
+		var ageStr = '<div class="age-rooms-com rooms-content-com js-thAge-1">'+
+                        '<div class="hotel-age-wrap people-number">'+
+                            '<span class="age-result js-thAge-result">1</span>'+
+                        '<div class="age-menu-box js-thAge-box">'+
+                            '<ul class="hotel-age-menu js-thAge-menu">'+
+                                '<li title="Age < 1 year old">&lt; 1</li>'+
+                                '<li>2</li>'+
+                                '<li>3</li>'+
+                                '<li>4</li>'+
+                                '<li>5</li>'+
+                                '<li>6</li>'+
+                                '<li>7</li>'+
+                                '<li>8</li>'+
+                                '<li>9</li>'+
+                                '<li>10</li>'+
+                                '<li>11</li>'+
+                                '<li>12</li>'+
+                            '</ul>'+
+                        '</div>'+
+                    '</div>';
+
+		// 小孩
+		var child = function(){
+			$('.js-thChild-add').click(function(){
+				$(this).siblings('.sub-people').removeClass('off-sub-operation');
+				var adultNum = $(this).parents('.js-s-thChild').siblings('.js-s-thAdult').find('.adult-num').html();//获取小孩人数
+				var childNum = $(this).siblings('span').html();;//获取成人人数
+				if(parseInt(childNum)+parseInt(adultNum)<8){
+					childNum++;
+					$peopleCon.css('display','inline-block');
+					$(this).siblings('span').html(childNum);
+					$childResult.html(childNum); //动态赋值
+					$peopleCon.append(ageStr);
+				}else{
+					// $(this).addClass('off-add-operation');
+				}
+
+				if(childNum==1){
+					// $(this).siblings('.sub-people').removeClass('off-sub-operation');
+					$(this).parent().removeClass('disable');
+				}
+			});
+			$('.js-thChild-sub').click(function(){
+				$(this).siblings('.add-people').removeClass('off-add-operation');
+				var childNum = $(this).siblings('span').html();;//获取成人人数
+				childNum--;
+				$('.js-child-container>div:last-child').remove();
+				if(childNum<1){
+					childNum=0;
+					$peopleCon.css('display','none');
+					// $(this).addClass('off-sub-operation');
+					$(this).parent().addClass('disable');
+				}
+				$(this).siblings('span').html(childNum);
+				$childResult.html(childNum); //动态赋值
+			});
+		};
+
+		rooms();
+		adult();
+		child();
+
+		/* 人数提示 */
+		var showAdultTip = 0;
+		var showChildTip = 0;
+		var showInfantTip = 0;
+		var screenWidth = window.screen.width;
+		var tipFn = function(className,content,showTip){
+			$(className).mouseenter(function(event) {
+				if(screenWidth>767){
+					showTip = layer.tips(content, className,{
+						tips: [2, '#8ec060'],
+						time: 0
+					});
+				}else{
+					showTip = layer.tips(content, className,{
+						tips: [3, '#8ec060'],
+						time: 0
+					});
+				}
+			}).mouseleave(function(event) {
+				layer.close(showTip);
+			});
+		};
+		tipFn('.thAdult-tip','Adult',showAdultTip);
+		tipFn('.thChild-tip','Passengers who have not reached their 12th birthday by the date of the last flight are considered child passengers Children 7 years old and older can travel alone with the consent of their parents.',showChildTip);
+	},
+
 	/* 酒店房间和人数选择 */
 	selectHotelRooms:function(){
 		/* 年龄选择 */
@@ -3666,313 +3834,6 @@ var LanmeiAirlines = {
 				
 				var spanVal = 0;
 				var spanArray = $('.js-hotelChild-num');
-				$.each(spanArray,function(idx, val) {
-					spanVal+=Number($(val).html());
-				});
-				$childResult.html(spanVal); 
-
-				// 动态增减年龄
-				var that = $(this);
-				changeAge(that,childNum);
-			});
-		};
-
-		adult();
-		child();
-	},
-
-	/* 机票+酒店房间和人数选择 */
-	selectThRooms:function(){
-		/* 年龄选择 */
-		var $that = this;
-		var $thPopup = $('.js-ticketHotelPopup-people');
-		$thPopup.on('click','.js-thAge-result',function(e){
-			e.stopPropagation();
-			$('.js-thAge-box').hide();
-			$(this).siblings('.js-thAge-box').show();
-		});
-		$thPopup.on('click','.js-thAge-menu>li',function(){
-			var text = $(this).html();
-			$(this).parents('.js-thAge-box').siblings('span').html(text);
-		});
-		$('html').click(function(event) {
-			$('.js-thAge-box').slideUp();
-		});
-
-		/* 增减房间数 */
-		var $adultResult = $('.js-p-ticketHotelAdult>span');
-		var $childResult = $('.js-p-ticketHotelChild>span');
-		var $roomsResult = $('.js-p-ticketHotelRooms>span');
-		// 增加房间
-		var roomsNum = 1;
-		$('.js-add-thRooms').click(function(event) {
-			if(roomsNum<=2){
-				roomsNum++;
-				roomsStr(roomsNum);
-			}
-		});
-
-		function roomsStr(roomsNum){
-		 	var $roomStr = '<div class="s-room-'+roomsNum+' s-room-com s-people-com animated fadeInUp" id="js-thRoom'+roomsNum+'-inner">'+
-		 	'<p class="rooms-title js-thRooms-title">Room '+roomsNum+'</p>'+
-		 	'<div class="adult-rooms-content rooms-content-com js-thAdultRooms-content">'+
-		 	'<div class="hotel-people-prompt people-prompt">'+
-		 	'<p class="p1">Adult</p>'+
-		 	'</div>'+
-		 	'<div class="hotel-people-number people-number">'+
-		 	'<a href="javascript:;" class="sub-people off-sub-operation js-ticketHotelAdult-sub"></a>'+
-		 	'<span class="adult-num js-ticketHotelAdult-num">2</span>'+
-		 	'<a href="javascript:;" class="add-people js-ticketHotelAdult-add"></a>'+
-		 	'</div>'+
-		 	'</div>'+
-		 	'<div class="child-rooms-content rooms-content-com js-thChildRooms-content">'+
-		 	'<div class="hotel-people-prompt people-prompt">'+
-		 	'<p class="p1">Child</p>'+
-		 	'</div>'+
-		 	'<div class="hotel-people-number people-number disable">'+
-		 	'<a href="javascript:;" class="sub-people off-sub-operation js-ticketHotelChild-sub"></a>'+
-		 	'<span class="adult-num js-ticketHotelChild-num">0</span>'+
-		 	'<a href="javascript:;" class="add-people js-ticketHotelChild-add"></a>'+
-		 	'</div>'+
-		 	'</div>'+
-		 	'<div class="age-rooms-com rooms-content-com animated fadeInUp js-thAge-1">'+
-		 	'<div class="hotel-people-prompt people-prompt">'+
-		 	'<p class="p1">Age/1</p>'+
-		 	'</div>'+
-		 	'<div class="hotel-age-wrap people-number">'+
-		 	'<span class="age-result js-thAge-result">1</span>'+
-		 	'<div class="age-menu-box js-thAge-box">'+
-		 	'<ul class="hotel-age-menu js-thAge-menu">'+
-		 	'<li title="Age < 1 year old">&lt; 1</li>'+
-		 	'<li>2</li>'+
-		 	'<li>3</li>'+
-		 	'<li>4</li>'+
-		 	'<li>5</li>'+
-		 	'<li>6</li>'+
-		 	'<li>7</li>'+
-		 	'<li>8</li>'+
-		 	'<li>9</li>'+
-		 	'<li>10</li>'+
-		 	'<li>11</li>'+
-		 	'<li>12</li>'+
-		 	'</ul>'+
-		 	'</div>'+
-		 	'</div>'+
-		 	'</div>'+
-		 	'<div class="age-rooms-com rooms-content-com animated fadeInUp js-thAge-2">'+
-		 	'<div class="hotel-people-prompt people-prompt">'+
-		 	'<p class="p1">Age/2</p>'+
-		 	'</div>'+
-		 	'<div class="hotel-age-wrap people-number">'+
-		 	'<span class="age-result js-thAge-result">1</span>'+
-		 	'<div class="age-menu-box js-thAge-box">'+
-		 	'<ul class="hotel-age-menu js-thAge-menu">'+
-		 	'<li title="Age < 1 year old">&lt; 1</li>'+
-		 	'<li>2</li>'+
-		 	'<li>3</li>'+
-		 	'<li>4</li>'+
-		 	'<li>5</li>'+
-		 	'<li>6</li>'+
-		 	'<li>7</li>'+
-		 	'<li>8</li>'+
-		 	'<li>9</li>'+
-		 	'<li>10</li>'+
-		 	'<li>11</li>'+
-		 	'<li>12</li>'+
-		 	'</ul>'+
-		 	'</div>'+
-		 	'</div>'+
-		 	'</div>'+
-		 	'<div class="age-rooms-com rooms-content-com animated fadeInUp js-thAge-3">'+
-		 	'<div class="hotel-people-prompt people-prompt">'+
-		 	'<p class="p1">Age/3</p>'+
-		 	'</div>'+
-		 	'<div class="hotel-age-wrap people-number">'+
-		 	'<span class="age-result js-thAge-result">1</span>'+
-		 	'<div class="age-menu-box js-thAge-box">'+
-		 	'<ul class="hotel-age-menu js-thAge-menu">'+
-		 	'<li title="Age < 1 year old">&lt; 1</li>'+
-		 	'<li>2</li>'+
-		 	'<li>3</li>'+
-		 	'<li>4</li>'+
-		 	'<li>5</li>'+
-		 	'<li>6</li>'+
-		 	'<li>7</li>'+
-		 	'<li>8</li>'+
-		 	'<li>9</li>'+
-		 	'<li>10</li>'+
-		 	'<li>11</li>'+
-		 	'<li>12</li>'+
-		 	'</ul>'+
-		 	'</div>'+
-		 	'</div>'+
-		 	'</div>'+
-		 	'</div>';
-
-		 	var $roomTab = '<p class="" data-room="js-thRoom'+roomsNum+'-inner"><span>Room '+roomsNum+'</span><b>×</b></p>';
-
-		 	$('.js-thRooms-container').append($roomStr);
-		 	$('.js-add-thRoomsTab').append($roomTab);
-
-		 	var adultNum = $adultResult.html();
-		 	$adultResult.html(Number(adultNum)+2);
-
-		 	var roomsTotletNum = $roomsResult.html();
-		 	roomsTotletNum++;
-		 	$roomsResult.html(roomsTotletNum);
-		};
-		roomsStr(1);
-		
-		// 删减房间
-		$('.js-add-thRoomsTab').on('click','b',function(){
-			roomsNum--;
-			var id = $(this).parent('p').attr('data-room');
-
-			// 动态修改成人人数统计值
-			var adultNum = $adultResult.html();
-			var html = $('#'+id).find('.js-ticketHotelAdult-num').html();
-			adultNum-=Number(html);
-			$adultResult.html(adultNum);
-
-			// 动态修改小孩人数统计值
-			var childNum = $childResult.html();
-			var html = $('#'+id).find('.js-ticketHotelChild-num').html();
-			childNum-=Number(html);
-			$childResult.html(childNum);
-
-			// 动态修改房间数统计值
-			var roomsTotletNum = $roomsResult.html();
-			roomsTotletNum--;
-			$roomsResult.html(roomsTotletNum);
-
-			$('#'+id).remove();
-			$(this).parent('p').remove();
-
-			// 动态修改房间最外层宽度和left
-			$that.changeWidth('ticketHotel');
-
-			// 动态修改房间数值
-			$('.js-thRooms-container>div:first').attr('id','js-thRoom1-inner'); //第一个
-			$('.js-thRooms-container>div:first').children('.js-thRooms-title').html('Room 1'); //第一个
-			$('.js-thRooms-container>div').eq(1).attr('id','js-thRoom2-inner'); //第二个
-			$('.js-thRooms-container>div').eq(1).children('.js-thRooms-title').html('Room 2'); //第二个
-
-			$('.js-add-thRoomsTab>p:first').attr('data-room','js-thRoom1-inner'); //第一个tab
-			$('.js-add-thRoomsTab>p:first').children('span').html('Room 1'); //第一个tab的值
-			$('.js-add-thRoomsTab>p').eq(1).attr('data-room','js-thRoom2-inner'); //第二个tab
-			$('.js-add-thRoomsTab>p').eq(1).children('span').html('Room 2'); //第二个tab的值
-		});
-
-		/* 增减人数 */
-		// 成人
-		var adult = function(){
-			$thPopup.on('click','.js-ticketHotelAdult-add',function(e){
-				var adultNum = $(this).siblings('span').html();
-				adultNum++;
-				$(this).siblings('span').html(adultNum);
-
-				adultNum==3 && $(this).siblings('.sub-people').removeClass('off-sub-operation');
-				
-				//动态赋值
-				var spanVal = 0;
-				var spanArray = $('.js-ticketHotelAdult-num');
-				$.each(spanArray,function(idx, val) {
-					spanVal+=Number($(val).html());
-				});
-				$adultResult.html(spanVal); 
-			});
-			$thPopup.on('click','.js-ticketHotelAdult-sub',function(e){
-				var adultNum = $(this).siblings('span').html();
-				adultNum--;
-				if(adultNum<3){
-					adultNum=2;
-					$(this).addClass('off-sub-operation');
-				}
-				$(this).siblings('span').html(adultNum);
-				
-				//动态赋值
-				var spanVal = 0;
-				var spanArray = $('.js-ticketHotelAdult-num');
-				$.each(spanArray,function(idx, val) {
-					spanVal+=Number($(val).html());
-				});
-				$adultResult.html(spanVal); 
-			});
-		};
-
-		// 小孩
-		var child = function(){
-			// 动态增减年龄
-			var changeAge = function(that,childNum){
-				var $age1 = that.parents('.js-thChildRooms-content').siblings('.js-thAge-1');
-				var $age2 = that.parents('.js-thChildRooms-content').siblings('.js-thAge-2');
-				var $age3 = that.parents('.js-thChildRooms-content').siblings('.js-thAge-3');
-
-				// 动态修改房间最外层宽度和left
-				$that.changeWidth('ticketHotel');
-
-				// 显示隐藏
-				if(childNum==0){
-					$age1.hide();$age2.hide();$age3.hide();
-				}
-				if(childNum==1){
-					$age2.hide();$age3.hide();
-					setTimeout(function(){
-						$age1.show();
-					},200);
-				}
-				if(childNum==2){
-					$age3.hide();
-					setTimeout(function(){
-						$age1.show();$age2.show();
-					},200);
-				}
-				if(childNum==3){
-					setTimeout(function(){
-						$age1.show();$age2.show();$age3.show();
-					},200);
-				}
-			};
-
-			$thPopup.on('click','.js-ticketHotelChild-add',function(e){
-				var childNum = $(this).siblings('span').html();
-				childNum++;
-				
-				if(childNum==1){
-					$(this).siblings('.sub-people').removeClass('off-sub-operation');
-					$(this).parent().removeClass('disable');
-				}
-				if(childNum>2){
-					childNum=3
-					$(this).addClass('off-add-operation');
-				}
-				$(this).siblings('span').html(childNum);
-
-				//动态赋值
-				var spanVal = 0;
-				var spanArray = $('.js-ticketHotelChild-num');
-				$.each(spanArray,function(idx, val) {
-					spanVal+=Number($(val).html());
-				});
-				$childResult.html(spanVal); 
-
-				// 动态增减年龄
-				var that = $(this);
-				changeAge(that,childNum);
-			});
-			$thPopup.on('click','.js-ticketHotelChild-sub',function(e){
-				var childNum = $(this).siblings('span').html();
-				childNum--;
-				if(childNum<1){
-					childNum=0;
-					$(this).addClass('off-sub-operation');
-					$(this).parent().addClass('disable');
-				}
-				$(this).siblings('.add-people').removeClass('off-add-operation');
-				$(this).siblings('span').html(childNum);
-				
-				var spanVal = 0;
-				var spanArray = $('.js-ticketHotelChild-num');
 				$.each(spanArray,function(idx, val) {
 					spanVal+=Number($(val).html());
 				});

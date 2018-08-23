@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- 让 Bootstrap 兼容 IE 兼容模型 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- 让 Bootstrap 兼容 国产浏览器的高速模型 -->
+	<meta name="renderer" content="webkit">
+	<!-- 实现响应式的设置 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Flight+Hotel</title>
+	<!-- 引入图标 -->
+	<link rel="icon" href="../../images/EN/lanmeiLogo.ico">
+	<link rel="stylesheet" type="text/css" href="../../common/EN/fonts/lm-iconfont.css">
+	<link rel="stylesheet" type="text/css" href="../../common/EN/css/animate.css">
+	<link rel="stylesheet" type="text/css" href="../../libs/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../../libsEdit/css/lanmeiLibsEdit.css">
+	<link rel="stylesheet" type="text/css" href="../../common/EN/css/Lanmei-common.css">
+	<link rel="stylesheet" type="text/css" href="../../css/EN/LMFlightHotel-info.css">
+
+	<!--[if IE 8]>
+		<html class="ie8 lte_ie9" lang="en">
+	<![endif]-->
+
+	<!--[if lt IE 9]>
+		<script src="../../libs/bootstrap/js/html5shiv.min.js"></script>
+		<script src="../../libs/bootstrap/js/respond.min.js"></script>
+		<html class="lte_ie9" lang="en">
+	<![endif]-->
+
+	<!--[if !IE]><!-->
+	    <script>
+	        // 针对IE10
+	        if (/*@cc_on!@*/false) {
+	            document.documentElement.className += ' ie' + document.documentMode;
+	        }
+	        // 针对IE11及非IE浏览器，
+	        if (/*@cc_on!@*/true) {
+	            document.documentElement.className += ' ie' + document.documentMode;
+	        }
+	    </script>
+	<!--<![endif]-->
+</head>
+<body>
+	<!-- 页面顶部 -->
+	<header class="lm-header lm-sub-header"></header>
+
+	<!-- 主体内容 -->
+	<section class="lm-section">
+		<div class="ticket-info-wrap">
+			<h2 class="info-title">机票</h2>
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>航班号</th>
+						<th>航段</th>
+						<th>规则</th>
+						<th>起飞时间</th>
+						<th>到达时间</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>LQ909</td>
+						<td>广州(白云国际机场T1航站楼) - 金边(金边国际机场)</td>
+						<td>退改签</td>
+						<td>2018-08-22 05:10</td>
+						<td>2018-08-22 07:10</td>
+					</tr>
+					<tr>
+						<td>LQ908</td>
+						<td> 金边(金边国际机场) - 广州(白云国际机场T1航站楼)</td>
+						<td>退改签</td>
+						<td>2018-08-23 22:20</td>
+						<td>2018-08-23 02:20</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="hotel-info-wrap">
+			<h2 class="info-title">酒店</h2>
+			<table class="table table-hover">
+				<tbody>
+					<tr>
+						<td>入住城市：广州</td>
+						<td>入住时间：2018-08-22</td>
+						<td>离店日期：2018-08-24</td>
+					</tr>
+					<tr>
+						<td>酒店：城市便捷酒店</td>
+						<td>房型：标准房</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="total-price-wrap">
+			<div class="people-num">
+				<span>2房间</span>
+				<span>2成人</span>
+				<span>0儿童</span>
+				<span>0婴儿</span>
+			</div>
+			<div class="total-price">
+				<p class="p1">机票+酒店套餐总价：<span>¥4106</span></p>
+				<p class="p2">总价包含机票（含机建燃油费、税费）、酒店及其他服务（保险等）费</p>
+			</div>
+		</div>
+		<div class="passenger-info-wrap">
+			<h2 class="info-title">旅客信息</h2>
+			<div class="passenger-info-box">
+				<div class="passenger-info-inner">
+					<p class="pas-num">乘客1</p>
+					<div class="pas-info-box">
+						<div class="form-group">
+						    <input type="text" name="" value="" class="" placeholder="姓名">
+						</div>
+						<div class="form-group">
+						    <input type="text" name="" value="" class="" placeholder="性别" readonly>
+							
+						</div>
+						<div class="form-group">
+						    <input type="text" name="" value="" class="" placeholder="出生日期">
+						</div>
+						<div class="form-group">
+						    <input type="text" name="" value="" class="" placeholder="护照号">
+						</div>
+						<div class="form-group">
+						    <input type="text" name="" value="" class="" placeholder="护照有效期">
+						</div>
+						<div class="form-group">
+						    <input type="text" name="" value="" class="" placeholder="邮箱">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="contacts-info-wrap">
+			<h2 class="info-title">联系人信息</h2>
+			<div class="form-group">
+				<label>姓名</label>
+				<input type="text" name="" value="" class="" placeholder="姓名">
+			</div>
+			<div class="form-group">
+				<label>国家或地区区号</label>
+				<input type="text" name="" value="" class="" placeholder="请选择">
+			</div>
+			<div class="form-group">
+				<label>手机号</label>
+				<input type="text" name="" value="" class="" placeholder="手机号">
+			</div>
+			<div class="form-group">
+				<label>邮箱</label>
+				<input type="text" name="" value="" class="" placeholder="邮箱">
+			</div>
+		</div>
+		<div class="hotel-invoice-wrap">
+			<h2 class="info-title">发票信息</h2>
+		</div>
+		<div class="package-result-wrap">
+			<div class="people-num">
+				<span>2房间</span>
+				<span>2成人</span>
+				<span>0儿童</span>
+				<span>0婴儿</span>
+			</div>
+			<div class="total-price">
+				<p class="p1">总价：<span>¥4106</span></p>
+			</div>
+			<button>下一步</button>
+		</div>
+	</section>
+
+	<!-- 页脚 -->
+	<footer class="lm-footer"></footer>
+
+	<!-- 回到顶部 -->
+	<div class="BackToTop"></div>
+
+	<!-- 第三方库-->
+	<script type="text/javascript" src="../../libs/jQuery/jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="../../libs/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../../libs/layer/layer.js"></script>
+	<!-- 公共JS -->
+	<script type="text/javascript" src="../../common/EN/js/head-footer.js"></script>
+	<script type="text/javascript" src="../../common/EN/js/Lanmei-common.js"></script>
+	<!-- 业务代码 -->
+	<script type="text/javascript" src="../../js/EN/LMFlightHotel-info.js"></script>
+</body>
+</html>

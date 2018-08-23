@@ -108,21 +108,51 @@
 						</div>
 						<div class="data-people date-com">
 							<div class="t-people-result js-people-result">
-								<p class="p-hotelRooms js-p-hotelRooms">x <span></span></p>
-								<p class="p-hotelAdult js-p-hotelAdult">x <span></span></p>
-								<p class="p-hotelChild js-p-hotelChild">x <span></span></p>
+								<p class="p-hotelRooms js-p-ticketHotelRooms">x <span></span></p>
+								<p class="p-hotelAdult js-p-ticketHotelAdult">x <span></span></p>
+								<p class="p-hotelChild js-p-ticketHotelChild">x <span></span></p>
 							</div>
 							<div class="cityMenu-wrap people-cityMenu-wrap">
-								<div class="hotel-popus-people popup-people js-ticketHotelPopup-people">
-									<div class="select-people-container js-thRooms-container">
-									</div>
-									<div class="add-rooms-wrap">
-										<div class="add-rooms-content js-add-thRoomsTab">
-											
+								<div class="popup-people hotel-popus-people th-popus-people js-ticketHotelPopup-people">
+									<div class="select-people-container js-thPeople-container">
+										<div class="s-rooms s-people-com js-s-thRoom">
+											<div class="people-prompt people-rooms-prompt">
+												<p class="p1">Rooms</p>
+												<!-- <p class="p2 thRooms-tip">( 12+ )</p> -->
+											</div>
+											<div class="people-number">
+												<a href="javascript:;" class="sub-people off-sub-operation js-thRooms-sub"></a>
+												<span class="rooms-num">1</span>
+												<a href="javascript:;" class="add-people js-thRooms-add"></a>
+											</div>
 										</div>
-										<p class="add-rooms-btn js-add-thRooms">Add</p>
+										<div class="s-adult s-people-com js-s-thAdult">
+											<div class="people-prompt people-rooms-prompt">
+												<p class="p1">Adult</p>
+												<p class="p2 thAdult-tip">( 12+ )</p>
+											</div>
+											<div class="people-number">
+												<a href="javascript:;" class="sub-people off-sub-operation js-thAdult-sub"></a>
+												<span class="adult-num">1</span>
+												<a href="javascript:;" class="add-people js-thAdult-add"></a>
+											</div>
+										</div>
+										<div class="s-child s-people-com js-s-thChild">
+											<div class="people-prompt people-rooms-prompt">
+												<p class="p1">Child</p>
+												<p class="p2 thChild-tip">(2-11)</p>
+											</div>
+											<div class="people-number disable">
+												<a href="javascript:;" class="sub-people off-sub-operation js-thChild-sub"></a>
+												<span class="child-num">0</span>
+												<a href="javascript:;" class="add-people js-thChild-add"></a>
+											</div>
+										</div>
+										<div class="child-age-container js-child-container">
+											<p class="child-age-title js-childAge-title">Age of children</p>
+										</div>
 									</div>
-									<div class="m-select-rooms"><a href="javascript:;" class="js-thMSelect-rooms">SAVE</a></div>
+									<div class="m-select-people"><a href="javascript:;" class="js-mThSelect-people">SAVE</a></div>
 								</div>
 							</div>
 						</div>
@@ -423,68 +453,6 @@
 			<button class="ticket-hotel-pay">Pay <img src="../../images/resource/circle-arrow-right.png" class="circle-arrow-img"></button>
 		</div>
 	</section>
-
-	<!-- 乘客信息模态框 -->
-	<div class="modal fade passengerInfoModal" id="passengerInfoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">Close<span aria-hidden="true">×</span></button>
-				</div>
-				<div class="modal-body">
-					<h2 class="pas-title">乘客信息</h2>
-					<div class="pas-info-wrap">
-						<div class="pas-info-inner">
-							<p class="pas-num">乘客1</p>
-							<div class="pas-info-box">
-								<div class="form-group">
-								    <input type="text" name="" value="" class="" placeholder="姓名">
-								</div>
-								<div class="form-group">
-								    <input type="text" name="" value="" class="" placeholder="性别">
-								</div>
-								<div class="form-group">
-								    <input type="text" name="" value="" class="" placeholder="出生日期">
-								</div>
-								<div class="form-group">
-								    <input type="text" name="" value="" class="" placeholder="护照号">
-								</div>
-								<div class="form-group">
-								    <input type="text" name="" value="" class="" placeholder="护照有效期">
-								</div>
-								<div class="form-group">
-								    <input type="text" name="" value="" class="" placeholder="邮箱">
-								</div>
-							</div>
-						</div>
-						<div class="pas-info-inner">
-							<p class="pas-num">乘客2</p>
-							<div class="pas-info-box">
-								<div class="form-group">
-								    <input type="text" name="" value="" class="" placeholder="姓名">
-								</div>
-								<div class="form-group">
-								    <input type="text" name="" value="" class="" placeholder="性别">
-								</div>
-								<div class="form-group">
-								    <input type="text" name="" value="" class="" placeholder="出生日期">
-								</div>
-								<div class="form-group">
-								    <input type="text" name="" value="" class="" placeholder="护照号">
-								</div>
-								<div class="form-group">
-								    <input type="text" name="" value="" class="" placeholder="护照有效期">
-								</div>
-								<div class="form-group">
-								    <input type="text" name="" value="" class="" placeholder="邮箱">
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
 
 	<!-- 页脚 -->
 	<footer class="lm-footer"></footer>

@@ -1038,7 +1038,7 @@ var LanmeiAirlines = {
 			$.each(tocityArr,function(i,val){
 				$toMenuSub.append('<li title="'+val+'">'+val+'</li>');
 			});
-			$toInput.focus();
+			$toInput.select();
 			$('.js-to-menu>li:first').addClass('active');
 			keyDown('.js-to-input','.js-to-menu',that.indexLiTo); //绑定键盘事件
 

@@ -2500,8 +2500,7 @@ body{
 		.popup-people{
 			display: none;
 			width: 410px;
-			height: 264px;
-			height: 210px;
+			height: auto;
 			padding: 20px 20px 30px;
 			.people-title{
 				padding-bottom: 10px;
@@ -2514,6 +2513,15 @@ body{
 				margin-top: 10px;
 				padding-left: 10px;
 				padding-right: 10px;
+			}
+			.s-rooms{
+				.people-prompt{
+					.p1{
+						height: 50px;
+					    line-height: 50px;
+						background: url('@{url}rooms-icon.png') left center no-repeat;
+					}
+				}
 			}
 			.s-adult{
 				.people-prompt{
@@ -2550,6 +2558,12 @@ body{
 					cursor: pointer;
 					text-align: right;
 					background: url('@{url}prompt-icon.png') 9px center no-repeat;
+				}
+			}
+			.people-rooms-prompt{
+				.p1{
+					padding-left: 40px;
+					text-align: left;
 				}
 			}
 			.people-number{
@@ -2823,6 +2837,38 @@ body{
 				}
 			}
 		}
+		.th-popus-people{
+			width: 340px;
+			.people-number{
+				width: 160px;
+			}
+			.child-age-container{
+				display: none;
+				width: 100%;
+			}
+			.child-age-title{
+				display: none;
+				margin-top: 20px;
+			    text-align: center;
+			    color: rgba(0, 0, 0, 0.7);
+			    font-size: 16px;
+			}
+			.age-rooms-com{
+				display: block;
+				margin-left: 10px;
+			    margin-top: 10px;
+			    height: 45px;
+			}
+			.hotel-age-wrap {
+				width: 78px;
+				.age-result{margin-left: 0;}
+				.age-menu-box{
+					left: 0;
+					top: -178px;
+					z-index: 9;
+				}
+			}
+		}
 		.popup-fNum-from{
 			.flight-list-wrap{
 				>li{
@@ -2888,6 +2934,7 @@ body{
 		.hotel-popus-people{
 			width: 750px !important;
 		}
+		.th-popus-people{width: 340px !important;}
 	}
 	.hotel-popup-content,.hotel-content .popup-box,.th-popup-content{
 		left: 0 !important;
@@ -2895,6 +2942,9 @@ body{
 	.popup-content .hotel-popus-people .age-rooms-com{
 		margin-top: 10px;
 		margin-bottom: 20px;
+	}
+	.popup-content .th-popus-people .age-rooms-com{
+		margin-bottom: 0;
 	}
 	.popup-content .hotel-popus-people .add-rooms-wrap{
 		clear: both;
@@ -3679,6 +3729,11 @@ body{
 				height: 50px;
 				margin-top: 20px;
 			}
+			.s-rooms{
+				.people-prompt{
+					.p1{background: url('@{url}svg/rooms-icon.svg') left center no-repeat;}
+				}
+			}
 			.s-adult{
 				.people-prompt{
 					.p1{background: url('@{url}svg/adult-icon.svg') left center no-repeat;}
@@ -4030,6 +4085,29 @@ body{
 					font-size: 20px;
 					background: @linear;
 				}
+			}
+		}
+		.th-popus-people{
+			.people-prompt{width: 80px;}
+			.s-rooms .people-prompt{
+				height: 50px;
+				line-height: 50px;
+			}
+			.age-rooms-com{
+				display: block;
+				height: 34px;
+				margin-top: 20px;
+			}
+			.child-age-title{
+				display: none;
+				margin-top: 20px;
+			    text-align: center;
+			    color: rgba(0, 0, 0, 0.7);
+			    font-size: 16px;
+			}
+			.hotel-age-wrap .age-menu-box{
+				left: 2px;
+				z-index: 9;
 			}
 		}
 	}
