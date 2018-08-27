@@ -22,9 +22,12 @@
   margin-top: 40px;
   margin-bottom: 30px;
   font-size: 30px;
-  color: #1f2c5c;
+  color: #131c3e;
   font-family: NotoSansBold;
   text-align: center;
+}
+.info-title img {
+  margin-right: 20px;
 }
 .total-price-wrap {
   color: #5c6788;
@@ -112,51 +115,68 @@
   transition: background .3s;
   -webkit-transition: background .3s;
 }
-.package-result-wrap {
-  height: 50px;
-  margin-top: 60px;
-  overflow: hidden;
-  color: #1f2c5c;
-  font-size: 16px;
+.lm-pay-method {
+  margin-top: 40px;
+  margin-bottom: 120px;
 }
-.package-result-wrap .people-num {
-  float: left;
-  height: 50px;
-  line-height: 50px;
-  font-size: 18px;
+.lm-pay-method .pay-title {
+  font-size: 30px;
   font-family: NotoSansBold;
-}
-.package-result-wrap .people-num span {
-  margin-right: 10px;
-}
-.package-result-wrap .next-step {
-  float: right;
-  height: 50px;
-  line-height: 50px;
-  width: 200px;
-  margin-left: 30px;
-  background: #1f2c5c;
-  color: #fff;
-  font-size: 20px;
+  color: #131c3e;
   text-align: center;
-  border: none;
-  outline: none;
+  margin-bottom: 20px;
+}
+.lm-pay-method .pay-title img {
+  margin-right: 20px;
+}
+.lm-pay-method .pay-content {
+  margin-top: 30px;
+  overflow: hidden;
+}
+.lm-pay-method .pay-content .pay-select {
+  float: left;
+}
+.lm-pay-method .pay-content .pay-select > a {
+  display: inline-block;
+  width: 220px;
+  height: 100px;
+}
+.lm-pay-method .pay-content .AliPay {
+  background: url('../../images/CN/AliPay.png') center no-repeat;
+}
+.lm-pay-method .pay-content .AliPay.active {
+  background: url('../../images/CN/AliPay-active.png') center no-repeat;
+}
+.lm-pay-method .pay-content .PayPal {
+  background: url('../../images/CN/PayPal.png') center no-repeat;
+  margin-right: 36px;
+}
+.lm-pay-method .pay-content .PayPal.active {
+  background: url('../../images/CN/PayPal-active.png') center no-repeat;
+  margin-right: 36px;
+}
+.lm-pay-method .pay-content .pay-baggage {
+  width: 160px;
+  height: 60px;
+  line-height: 60px;
+  float: right;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 20px;
+  color: #fff;
   border-radius: 2px;
+  background: #1f2c5c;
   transition: background .3s;
   -webkit-transition: background .3s;
 }
-.package-result-wrap .next-step:hover {
+.lm-pay-method .pay-content .pay-baggage:hover {
   background: #8ec06c;
   transition: background .3s;
   -webkit-transition: background .3s;
 }
-.package-result-wrap .total-price {
-  float: right;
-}
-.package-result-wrap .total-price .p1 span {
-  color: #8ec06c;
-  font-size: 36px;
-  font-family: NotoSansBold;
+.lm-pay-method .pay-tips {
+  margin-top: 30px;
+  color: #1f2c5c;
 }
 .book-tips-wrap {
   margin-top: 60px;

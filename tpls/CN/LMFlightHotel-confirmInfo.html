@@ -49,7 +49,7 @@
 	<!-- 主体内容 -->
 	<section class="lm-section">
 		<div class="ticket-info-wrap">
-			<h2 class="info-title">【 机票 】</h2>
+			<h2 class="info-title">机票</h2>
 			<table class="table table-hover">
 				<thead>
 					<tr>
@@ -79,7 +79,7 @@
 			</table>
 		</div>
 		<div class="hotel-info-wrap">
-			<h2 class="info-title">【 酒店 】</h2>
+			<h2 class="info-title">酒店</h2>
 			<table class="table table-hover">
 				<tbody>
 					<tr>
@@ -107,7 +107,7 @@
 			</div>
 		</div>
 		<div class="contacts-info-wrap">
-			<h2 class="info-title">【 联系人信息 】</h2>
+			<h2 class="info-title">联系人信息</h2>
 			<div class="form-group form-group-name">
 				<label>姓名:</label>
 				<input type="text" name="" value="廖章泉" class="" placeholder="姓名" readonly>
@@ -124,8 +124,16 @@
 				<a href="javascript:;" class="js-pas-edit">编辑</a>
 			</div>
 		</div>
-		<div class="package-result-wrap">
-			<button class="next-step js-pay">支付</button>
+		<div class="lm-pay-method">
+			<h2 class="pay-title">选择支付方式</h2>
+			<div class="pay-content">
+				<div class="pay-select js-pay-select">
+					<input type="hidden" name="" value="paypal" class="js-pay-method">
+					<a href="javascript:;" class="PayPal js-PayPal active" data-pay="paypal"></a>
+					<a href="javascript:;" class="AliPay js-AliPay" data-pay="alipay"></a>
+				</div>
+				<a href="javascript:;" class="pay-baggage js-pay-package">支付</a>
+			</div>
 		</div>
 		<!-- <div class="book-tips-wrap">
 			<h3>温馨提示：</h3>

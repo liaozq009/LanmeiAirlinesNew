@@ -60,9 +60,10 @@
 	margin-top: 40px;
 	margin-bottom: 30px;
 	font-size: 30px;
-	color: @purple;
+	color:#131c3e;
 	font-family: @FBold;
 	text-align: center;
+	img{margin-right: 20px;}
 }
 .total-price-wrap{
 	color: @gray;
@@ -147,50 +148,55 @@
 		}
 	}
 }
-.package-result-wrap{
-	height: 50px;
-	margin-top: 60px;
-	overflow: hidden;
-	color: @purple;
-	font-size: 16px;
-	.people-num{
-		float: left;
-		height: 50px;
-		line-height: 50px;
-		font-size: 18px;
+.lm-pay-method{
+	margin-top: 40px;
+	margin-bottom: 120px;
+	.pay-title{
+		font-size:30px;
 		font-family: @FBold;
-		span{margin-right: 10px;}
-	}
-	.next-step{
-		float: right;
-		height: 50px;
-		line-height: 50px;
-		width: 200px;
-		margin-left: 30px;
-		background: @purple;
-		color: #fff;
-		font-size: 20px;
+		color:#131c3e;
 		text-align: center;
-		border:none;
-		outline: none;
-		border-radius: 2px;
-		transition: background .3s;
-		-webkit-transition: background .3s;
-		&:hover{
-			background: @green;
-			transition: background .3s;
-			-webkit-transition: background .3s;
-		}
+		margin-bottom: 20px;
+		img{margin-right: 20px;}
 	}
-	.total-price{
-		float: right;
-		.p1{
-			span{
-				color: @green;
-			    font-size: 36px;
-			    font-family: @FBold;
+	.pay-content{
+		margin-top: 30px;
+		overflow: hidden;
+		.pay-select{
+			float: left;
+			>a{
+				display: inline-block;
+				width: 220px;
+				height: 100px;
 			}
 		}
+		.AliPay{background: url('@{url2}AliPay.png') center no-repeat;}
+		.AliPay.active{background: url('@{url2}AliPay-active.png') center no-repeat;}
+		.PayPal{background: url('@{url2}PayPal.png') center no-repeat;margin-right: 36px;}
+		.PayPal.active{background: url('@{url2}PayPal-active.png') center no-repeat;margin-right: 36px;}
+		.pay-baggage{
+			width:160px;
+			height:60px;
+			line-height: 60px;
+			float: right;
+			margin-top: 10px;
+			text-align: center;
+			font-size: 20px;
+			color: #fff;
+			border-radius:2px;
+			background:@purple;
+			transition: background .3s;
+			-webkit-transition: background .3s;
+			&:hover{
+				background: @green;
+				transition: background .3s;
+				-webkit-transition: background .3s;
+			}
+		}
+	}
+	.pay-tips{
+		margin-top: 30px;
+		color: @purple;
 	}
 }
 .book-tips-wrap{

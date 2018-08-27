@@ -28,6 +28,9 @@ body {
 .lm-section-wrap .lm-section-inner {
   width: 100%;
 }
+.lm-section-wrap .lm-section-inner .head-img-wrap {
+  text-align: center;
+}
 .lm-section-wrap .lm-bus-inner {
   margin-top: 400px;
 }

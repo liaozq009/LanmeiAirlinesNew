@@ -44,6 +44,13 @@ var lmFlightHotel = {
             $(this).attr('class','js-pas-edit').html('编辑');
             $(this).parent('.form-group').siblings('.form-group').find('input').removeClass('input-edit').attr('readonly',true);
         });
+
+        // 选择支付方式
+        $('.js-pay-select>a').click(function(event) {
+            $(this).addClass('active').siblings('a').removeClass('active');
+            var dataPay = $(this).attr('data-pay');
+            $('.js-pay-method').val(dataPay);
+        });
     },
 };
 
