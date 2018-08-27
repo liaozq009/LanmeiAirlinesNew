@@ -133,6 +133,8 @@ var lmFlightHotel = {
         $('.js-hotelDate-result').simpleDate({
             single:false,
             canlendarSingle:false,
+            // startTimeVal:'2018-08-27',
+            // endTimeVal:'2018-08-30',
             todaySelect:false,
             showTotleDay:true,
             outClickHide: false,
@@ -148,6 +150,8 @@ var lmFlightHotel = {
             $('.js-date-result').simpleDate({
                 single:single,
                 canlendarSingle:false,
+                // startTimeVal:'2018-08-28',
+                // endTimeVal:'2018-08-29',
                 todaySelect:true,
                 outClickHide: false,
                 container:'.js-date-container',
@@ -280,6 +284,32 @@ var lmFlightHotel = {
         $childResult.html(0);
 
         var $peopleCon = $('.js-child-container');
+
+        function childAge(num){
+            var ageStr = '<div class="age-rooms-com rooms-content-com js-thAge-1">'+
+                '<div class="hotel-age-wrap people-number">'+
+                '<span class="age-result js-thAge-result">'+num+'</span>'+
+                '<div class="age-menu-box js-thAge-box">'+
+                '<ul class="hotel-age-menu js-thAge-menu">'+
+                '<li title="Age < 1 year old">&lt; 1</li>'+
+                '<li>2</li>'+
+                '<li>3</li>'+
+                '<li>4</li>'+
+                '<li>5</li>'+
+                '<li>6</li>'+
+                '<li>7</li>'+
+                '<li>8</li>'+
+                '<li>9</li>'+
+                '<li>10</li>'+
+                '<li>11</li>'+
+                '<li>12</li>'+
+                '</ul>'+
+                '</div>'+
+                '</div>';
+
+            $peopleCon.append(ageStr);
+        };
+
         $('.js-child-container').on('click','.js-thAge-result',function(e){
             e.stopPropagation();
             $('.js-thAge-box').hide();
@@ -344,27 +374,6 @@ var lmFlightHotel = {
             });
         };
 
-        var ageStr = '<div class="age-rooms-com rooms-content-com js-thAge-1">'+
-                        '<div class="hotel-age-wrap people-number">'+
-                            '<span class="age-result js-thAge-result">1</span>'+
-                        '<div class="age-menu-box js-thAge-box">'+
-                            '<ul class="hotel-age-menu js-thAge-menu">'+
-                                '<li title="Age < 1 year old">&lt; 1</li>'+
-                                '<li>2</li>'+
-                                '<li>3</li>'+
-                                '<li>4</li>'+
-                                '<li>5</li>'+
-                                '<li>6</li>'+
-                                '<li>7</li>'+
-                                '<li>8</li>'+
-                                '<li>9</li>'+
-                                '<li>10</li>'+
-                                '<li>11</li>'+
-                                '<li>12</li>'+
-                            '</ul>'+
-                        '</div>'+
-                    '</div>';
-
         // 小孩
         var child = function(){
             $('.js-thChild-add').click(function(){
@@ -376,7 +385,7 @@ var lmFlightHotel = {
                     $peopleCon.css('display','inline-block');
                     $(this).siblings('span').html(childNum);
                     $childResult.html(childNum); //动态赋值
-                    $peopleCon.append(ageStr);
+                    childAge(1);
                 }else{
                     // $(this).addClass('off-add-operation');
                 }

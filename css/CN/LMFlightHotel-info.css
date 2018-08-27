@@ -1,0 +1,217 @@
+@charset "utf-8";
+@font-face {
+  font-family: NotoSansBold;
+  src: url(../../common/CN/fonts/NotoSans/SourceHanSansCN-Bold.otf);
+  font-weight: bold;
+}
+/* 定义变量 */
+.hidden {
+  visibility: hidden;
+}
+.visible {
+  visibility: visible;
+}
+.clear-both {
+  clear: both;
+}
+.lm-section {
+  width: 1200px;
+  margin: 60px auto 60px;
+}
+.info-title {
+  margin-top: 40px;
+  margin-bottom: 30px;
+  font-size: 30px;
+  color: #1f2c5c;
+  font-family: NotoSansBold;
+  text-align: center;
+}
+.total-price-wrap {
+  color: #5c6788;
+  overflow: hidden;
+}
+.total-price-wrap .people-num {
+  float: left;
+  height: 62px;
+  line-height: 62px;
+  font-size: 16px;
+}
+.total-price-wrap .people-num span {
+  margin-right: 10px;
+}
+.total-price-wrap .total-price {
+  float: right;
+}
+.total-price-wrap .total-price .p1 {
+  text-align: right;
+}
+.total-price-wrap .total-price .p1 span {
+  color: #8ec06c;
+  font-size: 30px;
+  font-family: NotoSansBold;
+}
+.total-price-wrap .total-price .p2 {
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+}
+.passenger-info-inner .pas-num {
+  font-size: 16px;
+  color: #1f2c5c;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+.passenger-info-inner .pas-info-box {
+  display: inline-block;
+}
+.passenger-info-inner .pas-info-box input,
+.passenger-info-inner .pas-info-box button {
+  border: 1px solid #dddddd;
+  height: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #1f2c5c;
+  border-radius: 2px;
+}
+.passenger-info-inner .pas-info-box :-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: rgba(31, 44, 92, 0.3);
+  font-size: 14px;
+}
+.passenger-info-inner .pas-info-box ::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: rgba(31, 44, 92, 0.3);
+  font-size: 14px;
+}
+.passenger-info-inner .pas-info-box input:-ms-input-placeholder {
+  color: rgba(31, 44, 92, 0.3);
+  font-size: 14px;
+}
+.passenger-info-inner .pas-info-box input::-webkit-input-placeholder {
+  color: rgba(31, 44, 92, 0.3);
+  font-size: 14px;
+}
+.passenger-info-inner .pas-info-box .form-group {
+  position: relative;
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 0;
+}
+.passenger-info-inner .pas-info-box .form-group-sex input {
+  width: 120px;
+}
+.passenger-info-inner .pas-info-box .form-group-birthday input {
+  width: 120px;
+}
+.passenger-info-inner .pas-info-box .form-group-validity input {
+  width: 120px;
+}
+.contacts-info-wrap {
+  width: 100%;
+  display: inline-block;
+}
+.contacts-info-wrap .form-group {
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 0;
+}
+.contacts-info-wrap .form-group label {
+  display: block;
+  font-size: 16px;
+  color: #1f2c5c;
+  margin-bottom: 10px;
+}
+.contacts-info-wrap .form-group input {
+  border: 1px solid #dddddd;
+  height: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #1f2c5c;
+}
+.contacts-info-wrap .form-group :-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: rgba(31, 44, 92, 0.3);
+  font-size: 14px;
+}
+.contacts-info-wrap .form-group ::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: rgba(31, 44, 92, 0.3);
+  font-size: 14px;
+}
+.contacts-info-wrap .form-group input:-ms-input-placeholder {
+  color: rgba(31, 44, 92, 0.3);
+  font-size: 14px;
+}
+.contacts-info-wrap .form-group input::-webkit-input-placeholder {
+  color: rgba(31, 44, 92, 0.3);
+  font-size: 14px;
+}
+.package-result-wrap {
+  height: 50px;
+  margin-top: 60px;
+  overflow: hidden;
+  color: #1f2c5c;
+  font-size: 16px;
+}
+.package-result-wrap .people-num {
+  float: left;
+  height: 50px;
+  line-height: 50px;
+  font-size: 18px;
+  font-family: NotoSansBold;
+}
+.package-result-wrap .people-num span {
+  margin-right: 10px;
+}
+.package-result-wrap .next-step {
+  float: right;
+  height: 50px;
+  line-height: 50px;
+  width: 200px;
+  margin-left: 30px;
+  background: #1f2c5c;
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  transition: background .3s;
+  -webkit-transition: background .3s;
+}
+.package-result-wrap .next-step:hover {
+  background: #8ec06c;
+  transition: background .3s;
+  -webkit-transition: background .3s;
+}
+.package-result-wrap .total-price {
+  float: right;
+}
+.package-result-wrap .total-price .p1 span {
+  color: #8ec06c;
+  font-size: 36px;
+  font-family: NotoSansBold;
+}
+.book-tips-wrap {
+  margin-top: 60px;
+  color: #5c6788;
+  font-size: 14px;
+}
+.book-tips-wrap h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.book-tips-wrap p {
+  line-height: 26px;
+}
+table > thead:first-child > tr:first-child > th {
+  color: #1f2c5c;
+  font-size: 18px;
+}
+.table > tbody > tr > td {
+  color: #5c6788;
+  font-size: 14px;
+}
+.table > tbody > tr > td a {
+  color: #42958a;
+}
+/* ie兼容性 */

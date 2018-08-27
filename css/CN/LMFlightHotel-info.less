@@ -1,0 +1,261 @@
+@charset "utf-8";
+
+@font-face {
+	font-family: NotoSansBold;
+	src: url(../../common/CN/fonts/NotoSans/SourceHanSansCN-Bold.otf);
+	font-weight:bold;
+}
+
+/* 定义变量 */
+@url:"../../images/resource/";
+@url2:"../../images/CN/";
+@purple:#1f2c5c;
+@green:#8ec06c;
+@link:#42958a;
+@gray:#5c6788;
+@FBold:NotoSansBold;
+
+@webkit-linear:-webkit-linear-gradient(left, #42958a 0%, #1f2c5c 100%);
+@o-linear:-o-linear-gradient(right, #42958a 0%, #1f2c5c 100%);
+@moz-linear:-moz-linear-gradient(right, #42958a 0%, #1f2c5c 100%);
+@linear:linear-gradient(to right, #42958a 0%, #1f2c5c 100%);
+
+.greenRgb(@opacity){
+	color: rgba(142,192,96,@opacity);
+}
+.purpleRgb(@opacity){
+	color: rgba(31,44,92,@opacity);
+}
+.blackRgb(@opacity){
+	color: rgba(0,0,0,@opacity);
+}
+.blackBgRgb(@opacity){
+	background: rgba(0,0,0,@opacity);
+}
+.whiteRgb(@opacity){
+	color: rgba(255,255,255,@opacity);
+}
+.whiteBgRgb(@opacity){
+	background: rgba(255,255,255,@opacity);
+}
+.purpleBgRgb(@opacity){
+	background: rgba(31,44,92,@opacity);
+}
+
+.hidden{
+	visibility: hidden;
+}
+.visible{
+	visibility: visible;
+}
+.clear-both{
+	clear: both;
+}
+
+.lm-section{
+	width: 1200px;
+	margin: 60px auto 60px;
+}
+.info-title{
+	margin-top: 40px;
+	margin-bottom: 30px;
+	font-size: 30px;
+	color: @purple;
+	font-family: @FBold;
+	text-align: center;
+}
+.total-price-wrap{
+	color: @gray;
+	overflow: hidden;
+	.people-num{
+		float: left;
+		height: 62px;
+		line-height: 62px;
+		font-size: 16px;
+		span{margin-right: 10px;}
+	}
+	.total-price{
+		float: right;
+		.p1{
+			text-align: right;
+			span{
+				color: @green;
+				font-size: 30px;
+				font-family: @FBold;
+			}
+		}
+		.p2{
+			opacity: 0.6;
+			filter:alpha(opacity=60);
+		}
+	}
+}
+.passenger-info-inner{
+	.pas-num{
+		font-size: 16px;
+		color: @purple;
+		margin-bottom: 10px;
+		margin-top: 20px;
+	}
+	.pas-info-box{
+		display: inline-block;
+		input,button{
+			border:1px solid rgb(221, 221, 221);
+			height: 30px;
+			padding-left: 10px;
+			padding-right: 10px;
+			color: @purple;
+			border-radius: 2px;
+		}
+		:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+			.purpleRgb(.3);font-size: 14px; 
+		}
+
+		::-moz-placeholder { /* Mozilla Firefox 19+ */
+			.purpleRgb(.3);font-size: 14px;
+		}
+
+		input:-ms-input-placeholder{
+			.purpleRgb(.3);font-size: 14px;
+		}
+
+		input::-webkit-input-placeholder{
+			.purpleRgb(.3);font-size: 14px;
+		}
+		.form-group{
+			position: relative;
+			float: left;
+			margin-right: 20px;
+			margin-bottom: 0;
+		}
+		.form-group-sex{
+			input{
+				width: 120px;
+			}
+		}
+		.form-group-birthday{
+			input{width: 120px;}
+		}
+		.form-group-validity{
+			input{width: 120px;}
+		}
+	}
+}
+.contacts-info-wrap{
+	width: 100%;
+	display: inline-block;
+	.form-group{
+		float: left;
+		margin-right: 20px;
+		margin-bottom: 0;
+		label{
+			display: block;
+			font-size: 16px;
+			color: @purple;
+			margin-bottom: 10px;
+		}
+		input{
+			border:1px solid rgb(221, 221, 221);
+			height: 30px;
+			padding-left: 10px;
+			padding-right: 10px;
+			color: @purple;
+		}
+		:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+			.purpleRgb(.3);font-size: 14px; 
+		}
+
+		::-moz-placeholder { /* Mozilla Firefox 19+ */
+			.purpleRgb(.3);font-size: 14px;
+		}
+
+		input:-ms-input-placeholder{
+			.purpleRgb(.3);font-size: 14px;
+		}
+
+		input::-webkit-input-placeholder{
+			.purpleRgb(.3);font-size: 14px;
+		}
+	}
+}
+.package-result-wrap{
+	height: 50px;
+	margin-top: 60px;
+	overflow: hidden;
+	color: @purple;
+	font-size: 16px;
+	.people-num{
+		float: left;
+		height: 50px;
+		line-height: 50px;
+		font-size: 18px;
+		font-family: @FBold;
+		span{margin-right: 10px;}
+	}
+	.next-step{
+		float: right;
+		height: 50px;
+		line-height: 50px;
+		width: 200px;
+		margin-left: 30px;
+		background: @purple;
+		color: #fff;
+		font-size: 20px;
+		text-align: center;
+		border:none;
+		outline: none;
+		border-radius: 2px;
+		transition: background .3s;
+		-webkit-transition: background .3s;
+		&:hover{
+			background: @green;
+			transition: background .3s;
+			-webkit-transition: background .3s;
+		}
+	}
+	.total-price{
+		float: right;
+		.p1{
+			span{
+				color: @green;
+			    font-size: 36px;
+			    font-family: @FBold;
+			}
+		}
+	}
+}
+.book-tips-wrap{
+	margin-top: 60px;
+	color: @gray;
+	font-size: 14px;
+	h3{
+		font-size: 16px;
+		margin-bottom: 10px;
+	}
+	p{
+		line-height: 26px;
+	}
+}
+table > thead:first-child > tr:first-child > th{
+	color: @purple;
+	font-size: 18px;
+}
+.table > tbody > tr > td,{
+	color: @gray;
+	font-size: 14px;
+	a{color: @link;}
+}
+
+/* ie兼容性 */
+.ie11{
+	
+}
+.ie10{
+	
+}
+.ie8{
+	
+}
+@media screen and (max-width: 767px) {
+
+}

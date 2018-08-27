@@ -12,6 +12,8 @@ if(!window.jQuery){
 		single : true,
 		canlendarSingle: true,
 		todaySelect:true,
+		startTimeVal:'',
+		endTimeVal:'',
 		showTotleDay: false,
 		outClickHide: true,
 	};
@@ -25,6 +27,8 @@ if(!window.jQuery){
 		this.single = this.options.single;
 		this.canlendarSingle = this.options.canlendarSingle;
 		this.todaySelect = this.options.todaySelect;
+		this.startTimeVal = this.options.startTimeVal;
+		this.endTimeVal = this.options.endTimeVal;
 		this.showTotleDay = this.options.showTotleDay;
 		this.outClickHide = this.options.outClickHide;
 		this.container = this.options.container;
@@ -65,12 +69,18 @@ if(!window.jQuery){
 		var today = new Date();
 		var todayTime = formatDate(today.getDate()) + ' ' + formatMonth((today.getMonth() + 1));
 		var startTimeStr = new Date(today.getTime() + 86400000 * 1);
-		// var dateTime = $('#f_time').val();
-		// var startTimeStr = new Date(new Date(dateTime).getTime()); 
-		var startTimeInit =  startTimeStr.getFullYear()+ '-' +(startTimeStr.getMonth() + 1)+ '-' + formatDate(startTimeStr.getDate());
-		var startTime = formatDate(startTimeStr.getDate()) + ' ' + formatMonth((startTimeStr.getMonth() + 1));
 		var endTimeStr = new Date(today.getTime() + 86400000 * 2);
+		var startTimeInit =  startTimeStr.getFullYear()+ '-' +(startTimeStr.getMonth() + 1)+ '-' + formatDate(startTimeStr.getDate());
 		var endTimeInit =  endTimeStr.getFullYear()+ '-' +(endTimeStr.getMonth() + 1)+ '-' + formatDate(endTimeStr.getDate());
+
+		if(this.startTimeVal != ''){
+			startTimeStr = new Date(new Date(this.startTimeVal).getTime());
+		}
+		if(this.endTimeVal != ''){
+			endTimeStr = new Date(new Date(this.endTimeVal).getTime());
+		}
+
+		var startTime = formatDate(startTimeStr.getDate()) + ' ' + formatMonth((startTimeStr.getMonth() + 1));
 		var endTime = formatDate(endTimeStr.getDate()) + ' ' + formatMonth((endTimeStr.getMonth() + 1));
 		var maxTime = formatDate(today.getDate()) + ' ' + formatMonth((today.getMonth() + 1));
 
@@ -87,7 +97,7 @@ if(!window.jQuery){
 		if(!this.todaySelect){
 			minDate=startTime;
 		}
-		
+
 		var that = this;
 		this.element.daterangepicker({
 		    parentEl:that.container,

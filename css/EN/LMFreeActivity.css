@@ -1,0 +1,299 @@
+@charset "utf-8";
+/* 定义变量 */
+@font-face {
+  font-family: CamptonBold;
+  src: url(../../common/EN/fonts/Campton/Rene.Bieder_Campton.Bold.otf);
+  font-weight: bold;
+}
+/* 定义颜色变量 */
+body {
+  background: #fff;
+}
+.lm-head-img {
+  position: relative;
+}
+.lm-head-img .head-img-bg {
+  width: 100%;
+}
+.lm-head-img .m-head-img-bg {
+  display: none;
+}
+.lm-section-wrap {
+  position: absolute;
+  top: 960px;
+  left: 50%;
+  width: 960px;
+  margin-left: -480px;
+}
+.lm-section-wrap .lm-section-inner {
+  width: 100%;
+}
+.lm-section-wrap .lm-bus-inner {
+  margin-top: 400px;
+}
+.lm-section-wrap .title-1 {
+  margin-top: 60px;
+  margin-bottom: 40px;
+  font-size: 36px;
+  font-family: CamptonBold;
+  color: #1f2c5c;
+  text-align: center;
+}
+.lm-section-wrap .title-2 {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-size: 24px;
+  font-family: CamptonBold;
+  color: #1f2c5c;
+}
+.lm-section-wrap .title-3 {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #1f2c5c;
+  line-height: 26px;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+.lm-section-wrap .title-routes {
+  margin-top: 260px;
+}
+.lm-section-wrap .title-rule {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+.lm-section-wrap .bus-title {
+  margin-top: 400px;
+}
+.lm-section-wrap .time-wrap {
+  width: 100%;
+  height: 90px;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  text-align: center;
+}
+.lm-section-wrap .time-wrap > img {
+  display: inline-block;
+  vertical-align: sub;
+}
+.lm-section-wrap .time-wrap > p {
+  display: inline-block;
+  width: 2px;
+  height: 60px;
+  margin-left: 50px;
+  margin-right: 50px;
+  background: #1f2c5c;
+  vertical-align: super;
+}
+.lm-section-wrap .time-wrap > div {
+  display: inline-block;
+  text-align: left;
+}
+.lm-section-wrap .time-wrap > div p {
+  font-size: 18px;
+  color: #1f2c5c;
+  line-height: 30px;
+}
+.lm-footer-img {
+  margin-top: 700px;
+}
+.lm-footer-img img {
+  width: 100%;
+}
+.table {
+  margin-bottom: 30px;
+}
+table > thead:first-child > tr:first-child > th {
+  color: #1f2c5c;
+  font-size: 18px;
+}
+.table > tbody > tr > td {
+  color: #5c6788;
+  font-size: 16px;
+  font-weight: 600;
+}
+@media screen and (max-width: 1600px) {
+  .lm-section-wrap {
+    top: 760px;
+  }
+  .lm-section-wrap .title-routes {
+    margin-top: 120px;
+  }
+  .lm-section-wrap .lm-bus-inner {
+    margin-top: 240px;
+  }
+  .lm-section-wrap .bus-title {
+    margin-top: 260px;
+  }
+  .lm-footer-img {
+    margin-top: 900px;
+  }
+}
+@media screen and (max-width: 1500px) {
+  .lm-section-wrap {
+    top: 700px;
+  }
+  .lm-section-wrap .lm-bus-inner {
+    margin-top: 110px;
+  }
+  .lm-section-wrap .bus-title {
+    margin-top: 220px;
+  }
+  .lm-footer-img {
+    margin-top: 1000px;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .lm-section-wrap {
+    top: 640px;
+  }
+  .lm-section-wrap .lm-bus-inner {
+    margin-top: 60px;
+  }
+  .lm-section-wrap .bus-title {
+    margin-top: 200px;
+  }
+  .lm-footer-img {
+    margin-top: 1000px;
+  }
+}
+@media screen and (max-width: 1300px) {
+  .lm-footer-img {
+    margin-top: 1200px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .lm-head-img .head-img-title {
+    top: 40px;
+    width: 400px;
+    margin-left: -200px;
+  }
+  .lm-section-wrap {
+    width: 100%;
+    top: 400px;
+    left: 0;
+    margin-left: 0;
+  }
+  .lm-section-wrap .head-img-wrap {
+    text-align: center;
+  }
+  .lm-section-wrap .head-img-wrap img {
+    width: 60%;
+  }
+  .lm-section-wrap .title-routes,
+  .lm-section-wrap .title-1 {
+    margin-top: 40px;
+    margin-bottom: 30px;
+  }
+  .lm-section-wrap .lm-section-inner {
+    top: -120px;
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+  }
+  .lm-section-wrap .lm-bus-inner {
+    margin-top: -60px;
+  }
+  .lm-section-wrap .lm-bus-inner .title-1 {
+    margin-top: 80px;
+  }
+  .lm-section-wrap .lm-bus-inner > img {
+    width: 100%;
+  }
+  .lm-footer-img {
+    margin-top: 1000px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .lm-head-img .head-img-bg {
+    display: none;
+  }
+  .lm-head-img .m-head-img-bg {
+    width: 100%;
+    display: none;
+  }
+  .lm-head-img .head-img-title {
+    top: 30px;
+    width: 160px;
+    margin-left: -80px;
+  }
+  .lm-footer-img {
+    display: none;
+  }
+  .lm-section-wrap .lm-section-inner {
+    padding-bottom: 30px;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  .lm-section-wrap .lm-ticket-inner {
+    background: url('../../images/activity/freeActivity/free-ticket-bg.jpg') center top no-repeat;
+    background-size: 100%;
+  }
+  .lm-section-wrap .lm-bus-inner {
+    margin-top: 0;
+    background: url('../../images/activity/freeActivity/head-img-moblie.jpg') center top no-repeat;
+    background-size: 100%;
+  }
+  .lm-section-wrap .lm-bus-inner .title-1 {
+    margin-top: 40px;
+  }
+  .lm-section-wrap .lm-bus-inner .bus-title {
+    margin-top: 80px;
+  }
+  .lm-section-wrap {
+    position: relative;
+    padding-bottom: 20px;
+    top: 0;
+  }
+  .lm-section-wrap .head-img-wrap {
+    padding-top: 20px;
+  }
+  .lm-section-wrap .title-1 {
+    font-size: 16px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .lm-section-wrap .title-2 {
+    font-size: 14px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .lm-section-wrap .title-3 {
+    font-size: 12px;
+    margin-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    line-height: 20px;
+  }
+  .lm-section-wrap .title-routes {
+    margin-top: 80px;
+  }
+  .lm-section-wrap .time-wrap {
+    height: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+  .lm-section-wrap .time-wrap > img {
+    width: 40px;
+    height: 40px;
+    vertical-align: initial;
+  }
+  .lm-section-wrap .time-wrap > p {
+    height: 30px;
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+  .lm-section-wrap .time-wrap > div p {
+    font-size: 12px;
+    line-height: 18px;
+  }
+  table > thead:first-child > tr:first-child > th {
+    font-size: 12px;
+  }
+  .table > tbody > tr > td {
+    font-size: 12px;
+  }
+}
