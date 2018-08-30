@@ -49,66 +49,61 @@
 
 	<!-- 主体内容 -->
 	<section class="lm-section">
+		<div class="lm-title">
+			<h1>机票和酒店信息</h1>
+		</div>
 		<div class="ticket-info-wrap">
-			<h2 class="info-title">机票</h2>
-			<table class="table table-hover">
-				<thead>
-					<tr>
-						<th>航班号</th>
-						<th>航段</th>
-						<th>规则</th>
-						<th>起飞时间</th>
-						<th>到达时间</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>LQ909</td>
-						<td>广州(白云国际机场T1航站楼) - 金边(金边国际机场)</td>
-						<td><a href="javascript:;">退改签</a></td>
-						<td>2018-08-22 05:10</td>
-						<td>2018-08-22 07:10</td>
-					</tr>
-					<tr>
-						<td>LQ908</td>
-						<td> 金边(金边国际机场) - 广州(白云国际机场T1航站楼)</td>
-						<td><a href="javascript:;">退改签</a></td>
-						<td>2018-08-23 22:20</td>
-						<td>2018-08-23 02:20</td>
-					</tr>
-				</tbody>
-			</table>
+			<h2 class="info-title"><img src="../../images/EN/v-big-line.png">机票信息</h2>
+			<div class="flight-table-wrap">
+				<table class="table flight-table table-hover">
+					<thead>
+						<tr>
+							<th>航班号</th>
+							<th>航段</th>
+							<th>起飞时间</th>
+							<th>到达时间</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>LQ909</td>
+							<td>广州(白云国际机场T1航站楼) - 金边(金边国际机场)</td>
+							<td><a href="javascript:;">退改签</a></td>
+							<td>2018-08-22 05:10</td>
+							<td>2018-08-22 07:10</td>
+						</tr>
+						<tr>
+							<td>LQ908</td>
+							<td>金边(金边国际机场) - 广州(白云国际机场T1航站楼)</td>
+							<td><a href="javascript:;">退改签</a></td>
+							<td>2018-08-23 22:20</td>
+							<td>2018-08-23 02:20</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 		</div>
 		<div class="hotel-info-wrap">
-			<h2 class="info-title">酒店</h2>
-			<table class="table table-hover">
-				<tbody>
-					<tr>
-						<td>入住城市：广州</td>
-						<td>入住时间：2018-08-22</td>
-						<td>离店日期：2018-08-24</td>
-					</tr>
-					<tr>
-						<td>酒店：城市便捷酒店</td>
-						<td>房型：标准房</td>
-						<td></td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-		<div class="total-price-wrap">
-			<div class="people-num">
-				<span>2房间</span>
-				<span>2成人</span>
-				<span>0儿童</span>
-			</div>
-			<div class="total-price">
-				<p class="p1">机票+酒店套餐总价：<span>¥4106</span></p>
-				<p class="p2">总价包含机票（含机建燃油费、税费）、酒店及其他服务（保险等）费</p>
+			<h2 class="info-title"><img src="../../images/EN/v-big-line.png">酒店信息</h2>
+			<div class="hotel-table-wrap">
+				<table class="table hotel-table table-hover">
+					<tbody>
+						<tr>
+							<td><span>酒店：</span>城市便捷酒店</td>
+							<td><span>房型：</span>标准房</td>
+							<td><span>位置：</span><a href="javascript:;">广州市海珠区</a></td>
+						</tr>
+						<tr>
+							<td><span>入住城市：</span>广州</td>
+							<td><span>入住时间：</span>2018-08-22</td>
+							<td><span>离店日期：</span>2018-08-24</td>
+						</tr>
+					</tbody>
+				</table>
 			</div>
 		</div>
 		<div class="passenger-info-wrap">
-			<h2 class="info-title">旅客信息</h2>
+			<h2 class="info-title"><img src="../../images/EN/v-big-line.png">旅客信息</h2>
 			<div class="passenger-info-box">
 				<div class="passenger-info-inner">
 					<p class="pas-num">乘机人1(成人)</p>
@@ -117,15 +112,26 @@
 						    <input type="text" name="" value="" class="" placeholder="姓名*">
 						</div>
 						<div class="form-group form-group-sex">
-						    <input type="text" class="js-dropdown-toggle" name="" value="" class="" placeholder="性别*" readonly>
+						    <input type="text" class="js-sex-input" name="" value="" class="" placeholder="性别*" readonly>
 							<ul class="dropdown-menu js-dropdown-menu">
 								<li><a href="javascript:;">先生</a></li>
 								<li role="separator" class="divider"></li>
 								<li><a href="javascript:;">女士</a></li>
-							</ul>							
+							</ul>
 						</div>
 						<div class="form-group form-group-birthday">
 						    <input type="text" class="js-birthday" name="" value="" placeholder="出生日期*" readonly>
+						</div>
+						<div class="form-group form-group-nationality">
+						    <input type="text" class="js-nation-input" name="" value="" class="" placeholder="国籍*">
+						    <ul class="dropdown-menu js-dropdown-menu">
+						    	<li><a href="javascript:;">中国</a></li>
+						    	<li><a href="javascript:;">柬埔寨</a></li>
+						    	<li><a href="javascript:;">泰国</a></li>
+						    	<li><a href="javascript:;">越南</a></li>
+						    	<li><a href="javascript:;">新加坡</a></li>
+						    	<li><a href="javascript:;">马来西亚</a></li>
+						    </ul>
 						</div>
 						<div class="form-group form-group-passport">
 						    <input type="text" name="" value="" class="" placeholder="护照号*">
@@ -145,7 +151,7 @@
 						    <input type="text" name="" value="" class="" placeholder="姓名*">
 						</div>
 						<div class="form-group form-group-sex">
-						    <input type="text" class="js-dropdown-toggle" name="" value="" class="" placeholder="性别*" readonly>
+						    <input type="text" class="js-sex-input" name="" value="" class="" placeholder="性别*" readonly>
 							<ul class="dropdown-menu js-dropdown-menu">
 								<li><a href="javascript:;">先生</a></li>
 								<li role="separator" class="divider"></li>
@@ -154,6 +160,17 @@
 						</div>
 						<div class="form-group form-group-birthday">
 						    <input type="text" class="js-birthday" name="" value="" placeholder="出生日期*" readonly>
+						</div>
+						<div class="form-group form-group-nationality">
+						    <input type="text" class="js-nation-input" name="" value="" class="" placeholder="国籍*">
+						    <ul class="dropdown-menu js-dropdown-menu">
+						    	<li><a href="javascript:;">中国</a></li>
+						    	<li><a href="javascript:;">柬埔寨</a></li>
+						    	<li><a href="javascript:;">泰国</a></li>
+						    	<li><a href="javascript:;">越南</a></li>
+						    	<li><a href="javascript:;">新加坡</a></li>
+						    	<li><a href="javascript:;">马来西亚</a></li>
+						    </ul>
 						</div>
 						<div class="form-group form-group-passport">
 						    <input type="text" name="" value="" class="" placeholder="护照号*">
@@ -169,14 +186,25 @@
 			</div>
 		</div>
 		<div class="contacts-info-wrap">
-			<h2 class="info-title">联系人信息</h2>
+			<h2 class="info-title"><img src="../../images/EN/v-big-line.png">联系人信息</h2>
 			<div class="form-group form-group-name">
 				<label>姓名*</label>
 				<input type="text" name="" value="" class="" placeholder="姓名">
 			</div>
 			<div class="form-group form-group-areaCode">
 				<label>国家或地区区号*</label>
-				<input type="text" name="" value="" class="" placeholder="请选择">
+				<input type="text" class="js-code-input" name="" value="" class="" placeholder="请选择">
+				<ul class="dropdown-menu js-dropdown-menu">
+					<li><a href="javascript:;">+866</a></li>
+					<li><a href="javascript:;">+867</a></li>
+					<li><a href="javascript:;">+868</a></li>
+					<li><a href="javascript:;">+869</a></li>
+					<li><a href="javascript:;">+861</a></li>
+					<li><a href="javascript:;">+862</a></li>
+					<li><a href="javascript:;">+863</a></li>
+					<li><a href="javascript:;">+864</a></li>
+					<li><a href="javascript:;">+865</a></li>
+				</ul>
 			</div>
 			<div class="form-group form-group-phone">
 				<label>手机号*</label>
@@ -192,13 +220,23 @@
 		</div> -->
 		<div class="package-result-wrap">
 			<div class="people-num">
-				<span>2房间</span>
-				<span>2成人</span>
-				<span>0儿童</span>
+				<p class="p1">住房信息：</p>
+				<p class="p2"><span>2房间</span><span>2成人</span><span>0儿童</span></p>
 			</div>
-			<button class="next-step">下一步</button>
 			<div class="total-price">
-				<p class="p1">总价：<span>¥4106</span></p>
+				<p class="p1">机票+酒店套餐总价：<span>¥4106</span></p>
+				<p class="p2">总价包含机票（含机建燃油费、税费）、酒店及其他服务（保险等）费</p>
+			</div>
+		</div>
+		<div class="lm-pay-method">
+			<h2 class="pay-title"><img src="../../images/EN/v-big-line.png">选择支付方式</h2>
+			<div class="pay-content">
+				<div class="pay-select js-pay-select">
+					<input type="hidden" name="" value="paypal" class="js-pay-method">
+					<a href="javascript:;" class="PayPal js-PayPal active" data-pay="paypal"></a>
+					<a href="javascript:;" class="AliPay js-AliPay" data-pay="alipay"></a>
+				</div>
+				<a href="javascript:;" class="pay-baggage js-pay-package">支付</a>
 			</div>
 		</div>
 		<div class="book-tips-wrap">

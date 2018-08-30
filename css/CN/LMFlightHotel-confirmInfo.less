@@ -67,12 +67,15 @@
 }
 .total-price-wrap{
 	color: @gray;
+	margin-top: 40px;
 	overflow: hidden;
 	.people-num{
 		float: left;
 		height: 62px;
 		line-height: 62px;
-		font-size: 16px;
+		font-size: 18px;
+		font-family: @FBold;
+		color: @purple;
 		span{margin-right: 10px;}
 	}
 	.total-price{
@@ -211,6 +214,9 @@
 		line-height: 26px;
 	}
 }
+.table{
+	margin-bottom: 0;
+}
 table > thead:first-child > tr:first-child > th{
 	color: @purple;
 	font-size: 18px;
@@ -230,6 +236,17 @@ table > thead:first-child > tr:first-child > th{
 }
 .ie8{
 	
+}
+@media screen and (max-width: 1200px) {
+	.lm-section{
+		width: 100%;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	.ticket-info-wrap,
+	.hotel-info-wrap{
+		display: none;
+	}
 }
 @media screen and (max-width: 767px) {
 

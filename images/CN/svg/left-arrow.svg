@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>左按钮</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="首页" transform="translate(-150.000000, -4487.000000)">
+            <g id="动态" transform="translate(120.000000, 4314.000000)">
+                <g id="翻页" transform="translate(30.000000, 173.000000)">
+                    <g id="左按钮">
+                        <rect id="Rectangle-95-Copy" fill="#000000" opacity="0.699999988" x="0" y="0" width="24" height="24" rx="4"></rect>
+                        <path d="M9.98113541,12.0031275 C9.94473478,11.8779029 9.95759838,11.738168 10.0277654,11.6166352 L13.1257208,6.25081897 C13.2620645,6.0146648 13.5689279,5.93657809 13.7958498,6.06759152 C14.0296081,6.20255197 14.1076757,6.5049631 13.9722346,6.73955397 L10.9350314,12.0001442 L13.9722346,17.2607345 C14.1085783,17.4968887 14.0227717,17.8016835 13.7958498,17.9326969 C13.5620914,18.0676574 13.2611619,17.9840604 13.1257208,17.7494695 L10.0277654,12.3836533 C9.95863975,12.2639242 9.94661661,12.1265515 9.98113541,12.0031275 Z" id="z-copy-3" fill="#FFFFFF"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

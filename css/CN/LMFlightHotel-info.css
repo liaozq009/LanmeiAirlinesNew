@@ -21,38 +21,21 @@
 .info-title {
   margin-top: 40px;
   margin-bottom: 30px;
-  font-size: 30px;
+  font-size: 24px;
   color: #131c3e;
   font-family: NotoSansBold;
+}
+.info-title img {
+  margin-right: 20px;
+}
+.lm-title {
+  width: 100%;
   text-align: center;
 }
-.total-price-wrap {
-  color: #5c6788;
-  overflow: hidden;
-}
-.total-price-wrap .people-num {
-  float: left;
-  height: 62px;
-  line-height: 62px;
-  font-size: 16px;
-}
-.total-price-wrap .people-num span {
-  margin-right: 10px;
-}
-.total-price-wrap .total-price {
-  float: right;
-}
-.total-price-wrap .total-price .p1 {
-  text-align: right;
-}
-.total-price-wrap .total-price .p1 span {
-  color: #8ec06c;
-  font-size: 30px;
+.lm-title h1 {
+  font-size: 36px;
+  color: #1f2c5c;
   font-family: NotoSansBold;
-}
-.total-price-wrap .total-price .p2 {
-  opacity: 0.6;
-  filter: alpha(opacity=60);
 }
 .passenger-info-inner .pas-num {
   font-size: 16px;
@@ -65,9 +48,8 @@
 }
 .passenger-info-inner .pas-info-box input,
 .passenger-info-inner .pas-info-box button {
-  border: 1px solid #dddddd;
-  height: 30px;
-  padding-left: 10px;
+  height: 100%;
+  padding-left: 40px;
   padding-right: 10px;
   color: #1f2c5c;
   border-radius: 2px;
@@ -75,41 +57,75 @@
 .passenger-info-inner .pas-info-box :-moz-placeholder {
   /* Mozilla Firefox 4 to 18 */
   color: rgba(31, 44, 92, 0.3);
-  font-size: 14px;
+  font-size: 16px;
 }
 .passenger-info-inner .pas-info-box ::-moz-placeholder {
   /* Mozilla Firefox 19+ */
   color: rgba(31, 44, 92, 0.3);
-  font-size: 14px;
+  font-size: 16px;
 }
 .passenger-info-inner .pas-info-box input:-ms-input-placeholder {
   color: rgba(31, 44, 92, 0.3);
-  font-size: 14px;
+  font-size: 16px;
 }
 .passenger-info-inner .pas-info-box input::-webkit-input-placeholder {
   color: rgba(31, 44, 92, 0.3);
-  font-size: 14px;
+  font-size: 16px;
 }
 .passenger-info-inner .pas-info-box .form-group {
   position: relative;
   float: left;
   margin-right: 20px;
   margin-bottom: 0;
+  height: 50px;
+  background: #fff;
+  box-shadow: 0 0 50px 0 rgba(31, 44, 92, 0.1);
+  border-radius: 2px;
+}
+.passenger-info-inner .pas-info-box .form-group-name input {
+  background: url('../../images/CN/baggageName.png') 8px center no-repeat;
 }
 .passenger-info-inner .pas-info-box .form-group-sex input {
-  width: 120px;
+  background: url('../../images/CN/icon-sex.png') 8px center no-repeat;
 }
 .passenger-info-inner .pas-info-box .form-group-birthday input {
-  width: 120px;
+  background: url('../../images/CN/date.png') 8px center no-repeat;
+}
+.passenger-info-inner .pas-info-box .form-group-passport input {
+  width: 388px;
+  background: url('../../images/CN/passport.png') 8px center no-repeat;
 }
 .passenger-info-inner .pas-info-box .form-group-validity input {
-  width: 120px;
+  width: 386px;
+  background: url('../../images/CN/date.png') 8px center no-repeat;
+}
+.passenger-info-inner .pas-info-box .form-group-email input {
+  width: 386px;
+  background: url('../../images/CN/ticket-email.png') 8px center no-repeat;
+}
+.passenger-info-inner .pas-info-box .form-group-nationality {
+  margin-right: 0;
+}
+.passenger-info-inner .pas-info-box .form-group-nationality input {
+  background: url('../../images/CN/icon-national.png') 8px center no-repeat;
+}
+.passenger-info-inner .pas-info-box .form-group {
+  position: relative;
+  margin-top: 10px;
+}
+.passenger-info-inner .pas-info-box .form-group input {
+  width: 285px;
+  font-size: 16px;
+  background-size: 24px;
 }
 .contacts-info-wrap {
   width: 100%;
   display: inline-block;
+  border-bottom: 2px dashed rgba(31, 44, 92, 0.2);
+  padding-bottom: 50px;
 }
 .contacts-info-wrap .form-group {
+  position: relative;
   float: left;
   margin-right: 20px;
   margin-bottom: 0;
@@ -121,78 +137,153 @@
   margin-bottom: 10px;
 }
 .contacts-info-wrap .form-group input {
-  border: 1px solid #dddddd;
-  height: 30px;
-  padding-left: 10px;
+  width: 285px;
+  height: 50px;
+  font-size: 16px;
+  padding-left: 40px;
   padding-right: 10px;
   color: #1f2c5c;
+  border-radius: 2px;
+  box-shadow: 0 0 50px 0 rgba(31, 44, 92, 0.1);
+  background: #fff;
 }
 .contacts-info-wrap .form-group :-moz-placeholder {
   /* Mozilla Firefox 4 to 18 */
   color: rgba(31, 44, 92, 0.3);
-  font-size: 14px;
+  font-size: 16px;
 }
 .contacts-info-wrap .form-group ::-moz-placeholder {
   /* Mozilla Firefox 19+ */
   color: rgba(31, 44, 92, 0.3);
-  font-size: 14px;
+  font-size: 16px;
 }
 .contacts-info-wrap .form-group input:-ms-input-placeholder {
   color: rgba(31, 44, 92, 0.3);
-  font-size: 14px;
+  font-size: 16px;
 }
 .contacts-info-wrap .form-group input::-webkit-input-placeholder {
   color: rgba(31, 44, 92, 0.3);
-  font-size: 14px;
+  font-size: 16px;
+}
+.contacts-info-wrap .form-group-name input {
+  background: url('../../images/CN/baggageName.png') 8px center no-repeat;
+}
+.contacts-info-wrap .form-group-areaCode input {
+  background: url('../../images/CN/icon-areaCode.png') 8px center no-repeat;
+}
+.contacts-info-wrap .form-group-phone input {
+  background: url('../../images/CN/ticket-phone.png') 8px center no-repeat;
+}
+.contacts-info-wrap .form-group-email {
+  margin-right: 0;
+}
+.contacts-info-wrap .form-group-email input {
+  background: url('../../images/CN/ticket-email.png') 8px center no-repeat;
+}
+.contacts-info-wrap .form-group input {
+  background-size: 24px;
 }
 .package-result-wrap {
-  height: 50px;
-  margin-top: 60px;
+  height: 80px;
+  margin-top: 40px;
   overflow: hidden;
   color: #1f2c5c;
   font-size: 16px;
 }
 .package-result-wrap .people-num {
   float: left;
-  height: 50px;
-  line-height: 50px;
-  font-size: 18px;
+  line-height: 36px;
+  font-size: 16px;
+}
+.package-result-wrap .people-num .p1 {
+  margin-top: 10px;
   font-family: NotoSansBold;
 }
-.package-result-wrap .people-num span {
+.package-result-wrap .people-num .p2 {
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+}
+.package-result-wrap .people-num .p2 span {
   margin-right: 10px;
-}
-.package-result-wrap .next-step {
-  float: right;
-  height: 50px;
-  line-height: 50px;
-  width: 200px;
-  margin-left: 30px;
-  background: #1f2c5c;
-  color: #fff;
-  font-size: 20px;
-  text-align: center;
-  border: none;
-  outline: none;
-  border-radius: 2px;
-  transition: background .3s;
-  -webkit-transition: background .3s;
-}
-.package-result-wrap .next-step:hover {
-  background: #8ec06c;
-  transition: background .3s;
-  -webkit-transition: background .3s;
 }
 .package-result-wrap .total-price {
   float: right;
+}
+.package-result-wrap .total-price .p1 {
+  text-align: right;
 }
 .package-result-wrap .total-price .p1 span {
   color: #8ec06c;
   font-size: 36px;
   font-family: NotoSansBold;
 }
+.package-result-wrap .total-price .p2 {
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+}
+.lm-pay-method {
+  margin-top: 40px;
+}
+.lm-pay-method .pay-title {
+  font-size: 26px;
+  font-family: NotoSansBold;
+  color: #131c3e;
+  margin-bottom: 20px;
+}
+.lm-pay-method .pay-title img {
+  margin-right: 20px;
+}
+.lm-pay-method .pay-content {
+  margin-top: 30px;
+  overflow: hidden;
+}
+.lm-pay-method .pay-content .pay-select {
+  float: left;
+}
+.lm-pay-method .pay-content .pay-select > a {
+  display: inline-block;
+  width: 220px;
+  height: 100px;
+}
+.lm-pay-method .pay-content .AliPay {
+  background: url('../../images/CN/AliPay.png') center no-repeat;
+}
+.lm-pay-method .pay-content .AliPay.active {
+  background: url('../../images/CN/AliPay-active.png') center no-repeat;
+}
+.lm-pay-method .pay-content .PayPal {
+  background: url('../../images/CN/PayPal.png') center no-repeat;
+  margin-right: 36px;
+}
+.lm-pay-method .pay-content .PayPal.active {
+  background: url('../../images/CN/PayPal-active.png') center no-repeat;
+  margin-right: 36px;
+}
+.lm-pay-method .pay-content .pay-baggage {
+  width: 160px;
+  height: 60px;
+  line-height: 60px;
+  float: right;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 20px;
+  color: #fff;
+  border-radius: 2px;
+  background: #1f2c5c;
+  transition: background .3s;
+  -webkit-transition: background .3s;
+}
+.lm-pay-method .pay-content .pay-baggage:hover {
+  background: #8ec06c;
+  transition: background .3s;
+  -webkit-transition: background .3s;
+}
+.lm-pay-method .pay-tips {
+  margin-top: 30px;
+  color: #1f2c5c;
+}
 .book-tips-wrap {
-  margin-top: 60px;
+  margin-top: 40px;
   color: #5c6788;
   font-size: 14px;
 }
@@ -202,6 +293,9 @@
 }
 .book-tips-wrap p {
   line-height: 26px;
+}
+.table {
+  margin-bottom: 0;
 }
 table > thead:first-child > tr:first-child > th {
   color: #1f2c5c;
@@ -214,4 +308,270 @@ table > thead:first-child > tr:first-child > th {
 .table > tbody > tr > td a {
   color: #42958a;
 }
+.dropdown-menu {
+  width: 100%;
+  max-height: 200px;
+  min-width: auto;
+  overflow-y: auto;
+  border: none;
+}
+.dropdown-menu > li > a {
+  color: #1f2c5c;
+}
 /* ie兼容性 */
+@media screen and (max-width: 1200px) {
+  .lm-section {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .passenger-info-inner .pas-info-box .form-group {
+    width: 49%;
+    margin-right: 2%;
+    margin-top: 2%;
+  }
+  .passenger-info-inner .pas-info-box .form-group:nth-child(even) {
+    margin-right: 0;
+  }
+  .contacts-info-wrap .form-group {
+    width: 49%;
+    margin-right: 2%;
+    margin-bottom: 2%;
+  }
+  .contacts-info-wrap .form-group input {
+    width: 100%;
+  }
+  .contacts-info-wrap .form-group:nth-child(odd) {
+    margin-right: 0;
+  }
+}
+@media screen and (max-width: 767px) {
+  .lm-section {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 30px 10px 30px;
+  }
+  .lm-section h1 {
+    font-size: .2rem;
+  }
+  .info-title {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  .info-title img {
+    height: 26px;
+    margin-right: 14px;
+  }
+  .flight-table-wrap {
+    width: 100%;
+    overflow: auto;
+  }
+  .flight-table-wrap .flight-table {
+    width: 660px;
+  }
+  .flight-table-wrap .flight-table thead:first-child > tr:first-child > th,
+  .flight-table-wrap .flight-table tbody > tr > td {
+    font-size: 12px;
+  }
+  .hotel-table-wrap {
+    width: 100%;
+    overflow: auto;
+  }
+  .hotel-table-wrap .hotel-table {
+    width: 660px;
+  }
+  .hotel-table-wrap .hotel-table tbody > tr > td {
+    font-size: 12px;
+  }
+  .passenger-info-inner .pas-num {
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-size: 14px;
+  }
+  .passenger-info-inner .pas-info-box .form-group {
+    width: 100%;
+    height: 40px;
+    margin-right: 0;
+    margin-top: 10px;
+  }
+  .passenger-info-inner .pas-info-box .form-group input {
+    width: 100%;
+    font-size: 12px;
+  }
+  .passenger-info-inner .pas-info-box .form-group :-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    font-size: 12px;
+  }
+  .passenger-info-inner .pas-info-box .form-group ::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    font-size: 12px;
+  }
+  .passenger-info-inner .pas-info-box .form-group input:-ms-input-placeholder {
+    font-size: 12px;
+  }
+  .passenger-info-inner .pas-info-box .form-group input::-webkit-input-placeholder {
+    font-size: 12px;
+  }
+  .passenger-info-inner .pas-info-box .form-group-name input {
+    background: url('../../images/CN/svg/baggageName.svg') 8px center no-repeat;
+  }
+  .passenger-info-inner .pas-info-box .form-group-sex input {
+    background: url('../../images/CN/svg/icon-sex.svg') 8px center no-repeat;
+  }
+  .passenger-info-inner .pas-info-box .form-group-birthday input {
+    background: url('../../images/CN/svg/date.svg') 8px center no-repeat;
+  }
+  .passenger-info-inner .pas-info-box .form-group-passport input {
+    width: 388px;
+    background: url('../../images/CN/svg/passport.svg') 8px center no-repeat;
+  }
+  .passenger-info-inner .pas-info-box .form-group-validity input {
+    width: 386px;
+    background: url('../../images/CN/svg/date.svg') 8px center no-repeat;
+  }
+  .passenger-info-inner .pas-info-box .form-group-email input {
+    width: 386px;
+    background: url('../../images/CN/svg/ticket-email.svg') 8px center no-repeat;
+  }
+  .passenger-info-inner .pas-info-box .form-group-nationality {
+    margin-right: 0;
+  }
+  .passenger-info-inner .pas-info-box .form-group-nationality input {
+    background: url('../../images/CN/svg/icon-national.svg') 8px center no-repeat;
+  }
+  .passenger-info-inner .pas-info-box .form-group input {
+    background-size: 24px;
+  }
+  .contacts-info-wrap {
+    padding-bottom: 20px;
+  }
+  .contacts-info-wrap .form-group {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  .contacts-info-wrap .form-group:last-child {
+    margin-bottom: 0;
+  }
+  .contacts-info-wrap .form-group input {
+    width: 100%;
+    height: 40px;
+    font-size: 12px;
+  }
+  .contacts-info-wrap .form-group :-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    font-size: 12px;
+  }
+  .contacts-info-wrap .form-group ::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    font-size: 12px;
+  }
+  .contacts-info-wrap .form-group input:-ms-input-placeholder {
+    font-size: 12px;
+  }
+  .contacts-info-wrap .form-group input::-webkit-input-placeholder {
+    font-size: 12px;
+  }
+  .contacts-info-wrap .form-group label {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  .contacts-info-wrap .form-group-name input {
+    background: url('../../images/CN/svg/baggageName.svg') 8px center no-repeat;
+  }
+  .contacts-info-wrap .form-group-areaCode input {
+    background: url('../../images/CN/svg/icon-areaCode.svg') 8px center no-repeat;
+  }
+  .contacts-info-wrap .form-group-phone input {
+    background: url('../../images/CN/svg/ticket-phone.svg') 8px center no-repeat;
+  }
+  .contacts-info-wrap .form-group-email {
+    margin-right: 0;
+  }
+  .contacts-info-wrap .form-group-email input {
+    background: url('../../images/CN/svg/ticket-email.svg') 8px center no-repeat;
+  }
+  .contacts-info-wrap .form-group input {
+    background-size: 24px;
+  }
+  .package-result-wrap {
+    height: auto;
+    margin-top: 20px;
+  }
+  .package-result-wrap .people-num {
+    font-size: 14px;
+    float: none;
+    height: auto;
+    line-height: normal;
+    margin-bottom: 10px;
+  }
+  .package-result-wrap .people-num .p1 {
+    margin-top: 0;
+  }
+  .package-result-wrap .total-price {
+    float: left;
+  }
+  .package-result-wrap .total-price .p1 {
+    font-size: 14px;
+    text-align: left;
+  }
+  .package-result-wrap .total-price .p1 span {
+    font-size: 24px;
+  }
+  .package-result-wrap .total-price .p2 {
+    font-size: 12px;
+  }
+  .package-result-wrap .next-step {
+    width: 130px;
+    height: 36px;
+    line-height: 36px;
+    font-size: 20px;
+    margin-left: 0;
+  }
+  .lm-pay-method {
+    margin-top: 20px;
+  }
+  .lm-pay-method .pay-title {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  .lm-pay-method .pay-title img {
+    height: 26px;
+    margin-right: 14px;
+  }
+  .lm-pay-method .pay-content {
+    margin-top: 0;
+  }
+  .lm-pay-method .pay-content .pay-select a {
+    width: 140px;
+    height: 60px;
+  }
+  .lm-pay-method .pay-content .PayPal,
+  .lm-pay-method .pay-content .PayPal.active {
+    margin-right: 10px;
+  }
+  .lm-pay-method .pay-content .PayPal,
+  .lm-pay-method .pay-content .AliPay {
+    background-size: 140px;
+  }
+  .lm-pay-method .pay-content .PayPal.active,
+  .lm-pay-method .pay-content .AliPay.active {
+    background-size: 140px;
+  }
+  .lm-pay-method .pay-content .pay-baggage {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+  }
+  .book-tips-wrap {
+    margin-top: 30px;
+    font-size: 12px;
+  }
+  .book-tips-wrap h3 {
+    font-size: 14px;
+  }
+  .book-tips-wrap p {
+    line-height: 22px;
+  }
+}

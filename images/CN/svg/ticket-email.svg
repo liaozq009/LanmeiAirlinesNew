@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="20px" viewBox="0 0 30 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>Shape Copy</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#42958A" offset="0%"></stop>
+            <stop stop-color="#1F2C5C" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="个人页面-机票订单查询" transform="translate(-1035.000000, -561.000000)" fill="url(#linearGradient-1)">
+            <g id="机票订单-copy" transform="translate(730.000000, 471.000000)">
+                <g id="机票">
+                    <g id="ticket" transform="translate(305.000000, 88.000000)">
+                        <path d="M15.001943,12.9178016 L0,7.47647099 L0,21.3982947 C0,21.7291507 0.279825838,22 0.623711902,22 L29.3774808,22 C29.7214053,22 30,21.7291507 30,21.3982947 L30,7.47647099 L15.001943,12.9178016 Z M29.3774808,2 L0.623711902,2 C0.279825838,2 0,2.27077482 0,2.60166805 L0,4.69900032 L15.001943,10.1402564 L29.9999615,4.6989631 L29.9999615,2.60163083 C29.9999615,2.27077482 29.7214053,2 29.3774808,2 Z" id="Shape-Copy"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

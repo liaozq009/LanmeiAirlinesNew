@@ -16,6 +16,7 @@
 	<link rel="stylesheet" type="text/css" href="../../common/EN/css/animate.css">
 	<link rel="stylesheet" type="text/css" href="../../libs/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../../libs/daterange/daterangepicker.css">
+	<link rel="stylesheet" type="text/css" href="../../libs/viewer/viewer.min.css">
 	<link rel="stylesheet" type="text/css" href="../../libsEdit/css/lanmeiLibsEdit.css">
 	<link rel="stylesheet" type="text/css" href="../../common/EN/css/Lanmei-common.css">
 	<link rel="stylesheet" type="text/css" href="../../css/EN/LMFlightHotel.css">
@@ -170,7 +171,7 @@
 						<div class="flight-tips">
 							<p class="p1">1. 起降时间均为当地时间； </p>
 							<p class="p2">2. 如果航班是夜间航班，请注意您的酒店入住时间；</p>
-							<p class="p2">3. 机票和酒店资源为实时动态资源，价格会实时变动，请以订单实际支付金额为准。</p>
+							<p class="p3">3. 机票和酒店资源为实时动态资源，价格会实时变动，请以订单实际支付金额为准。</p>
 						</div>
 						<div class="flight-info-wrap">
 							<div class="flight-info-inner">
@@ -243,7 +244,7 @@
 									<p>The price per person includes airfare + hotel + tax</p>
 								</div>
 								<p class="ticket-hotel-price">$ 7632</p>
-								<button class="ticket-hotel-pay js-ticketHotel-pay">Pay <img src="../../images/resource/circle-arrow-right.png" class="circle-arrow-img"></button>
+								<button class="ticket-hotel-pay js-ticketHotel-pay">Next <img src="../../images/resource/circle-arrow-right.png" class="circle-arrow-img"></button>
 							</div>
 						</div>
 						<div class="main-hotel-content js-hotel-content">
@@ -455,6 +456,69 @@
 		</div>
 	</section>
 
+	<!-- 酒店详情弹出框 -->
+	<div class="modal fade hotel-modal" id="hotelModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				</div>
+				<div class="modal-body">
+					<div class="hotel-title-wrap">
+						<div class="hotel-title">
+							<h2>Mandarin Hotel Managed By Centre Point</h2>
+							<div class="hotel-stars">
+								<img src="../../images/resource/hotel-stars.png" class="stars-1" alt="">
+								<img src="../../images/resource/hotel-stars.png" class="stars-2" alt="">
+								<img src="../../images/resource/hotel-stars.png" class="stars-3" alt="">
+								<img src="../../images/resource/hotel-stars.png" class="stars-4" alt="">
+								<img src="../../images/resource/hotel-stars.png" class="stars-5" alt="">
+								<img src="../../images/resource/hotel-stars-more.png" class="stars-more" alt="">
+							</div>
+						</div>
+						<div class="hotel-address">
+							<p class="p1"><span>Address :</span>Republic of Bashkortostan Russia Gogolya 155 Pribrezhny District Sterlitamak</p>
+							<p class="p2"><span>Contact :</span>+855 23981363</p>
+						</div>
+					</div>
+					<div class="hotel-img-wrap">
+						<ul class="js-hotelImg-wrap">
+							<li class="li-com n1"><img data-original="../../imgage_demo/hotel-detail-1.png" src="../../imgage_demo/hotel-detail-1.png" alt=""></li>
+							<li class="li-com n2"><img data-original="../../imgage_demo/hotel-detail-2.png" src="../../imgage_demo/hotel-detail-2.png" alt=""></li>
+							<li class="li-com n3"><img data-original="../../imgage_demo/hotel-detail-3.png" src="../../imgage_demo/hotel-detail-3.png" alt=""></li>
+							<li class="li-com n4"><img data-original="../../imgage_demo/hotel-detail-4.png" src="../../imgage_demo/hotel-detail-4.png" alt=""></li>
+							<li class="li-com n5"><span class="mask">More 45 photos</span><img data-original="../../imgage_demo/hotel-detail-4.png" src="../../imgage_demo/hotel-detail-4.png" alt=""></li>
+						</ul>
+					</div>
+					<div class="hotel-map-wrap">
+						<div class="hotel-map" id="hotelMap"></div>
+					</div>
+					<div class="hotel-detail-wrap">
+						<h2>Hotel details</h2>
+						<div class="hotel-content">
+							<div class="hotel-inner">
+								<h3>Hotel facilities</h3>
+								<p>Wireless Broadband Internet Common Area Air Conditioning 24 Hour Reception Reception Buffet Breakfast Hotel Safe Currency Exchange Facilities Café Shop Salon Garden Golf Course Bar Theatre / Concert Hall Seminar Room Restaurant Non-smoking Area Laundry Service Medical Service Bicycle Storage Bicycle Rental Bicycle / Mountain Bike Kids Club Sun Lounger Hot Tub Sauna Tennis Massage SPA Physiotherapy Gym</p>
+							</div>
+							<div class="hotel-inner">
+								<h3>Hotel Introduction</h3>
+								<p>Wireless Broadband Internet Common Area Air Conditioning 24 Hour Reception Reception Buffet Breakfast Hotel Safe Currency Exchange Facilities Café Shop Salon Garden Golf Course Bar Theatre / Concert Hall Seminar Room Restaurant Non-smoking Area Laundry Service Medical Service Bicycle Storage Bicycle Rental Bicycle / Mountain Bike Kids Club Sun Lounger Hot Tub Sauna Tennis Massage SPA Physiotherapy Gym</p>
+							</div>
+							<div class="hotel-inner">
+								<h3>Hotel facilities</h3>
+								<p>Wireless Broadband Internet Common Area Air Conditioning 24 Hour Reception Reception Buffet Breakfast Hotel Safe Currency Exchange Facilities Café Shop Salon Garden Golf Course Bar Theatre / Concert Hall Seminar Room Restaurant Non-smoking Area Laundry Service Medical Service Bicycle Storage Bicycle Rental Bicycle / Mountain Bike Kids Club Sun Lounger Hot Tub Sauna Tennis Massage SPA Physiotherapy Gym</p>
+							</div>
+							<div class="hotel-inner">
+								<h3>Hotel Introduction</h3>
+								<p>Wireless Broadband Internet Common Area Air Conditioning 24 Hour Reception Reception Buffet Breakfast Hotel Safe Currency Exchange Facilities Café Shop Salon Garden Golf Course Bar Theatre / Concert Hall Seminar Room Restaurant Non-smoking Area Laundry Service Medical Service Bicycle Storage Bicycle Rental Bicycle / Mountain Bike Kids Club Sun Lounger Hot Tub Sauna Tennis Massage SPA Physiotherapy Gym</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<!-- 页脚 -->
 	<footer class="lm-footer"></footer>
 
@@ -467,6 +531,7 @@
 	<script type="text/javascript" src="../../libs/layer/layer.js"></script>
 	<script type="text/javascript" src="../../libs/daterange/moment.js"></script>
 	<script type="text/javascript" src="../../libs/daterange/daterangepicker.js"></script>
+	<script type="text/javascript" src="../../libs/viewer/viewer-jquery.min.js"></script>
 	<!-- 公共JS -->
 	<script type="text/javascript" src="../../common/EN/js/head-footer.js"></script>
 	<script type="text/javascript" src="../../common/EN/js/common-autoComplete.js"></script>
@@ -475,5 +540,8 @@
 	<script type="text/javascript" src="../../common/EN/js/Lanmei-common.js"></script>
 	<!-- 业务代码 -->
 	<script type="text/javascript" src="../../js/EN/LMFlightHotel.js"></script>
+	<!-- google -->
+	<script src="http://ditu.google.cn/maps/api/js?sensor=false&libraries=geometry"></script>
+	<script type="text/javascript" src="../../js/EN/LMGoogleJS.js"></script>
 </body>
 </html>

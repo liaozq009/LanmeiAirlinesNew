@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="24px" viewBox="0 0 30 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>名字</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#42958A" offset="0%"></stop>
+            <stop stop-color="#1F2C5C" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="逾重行李" transform="translate(-300.000000, -330.000000)" fill="url(#linearGradient-1)">
+            <g id="填写信息栏" transform="translate(280.000000, 212.000000)">
+                <g id="姓名" transform="translate(0.000000, 100.000000)">
+                    <path d="M20,42 C20,38.6862915 26.7157288,36 35,36 C43.2842712,36 50,38.6862915 50,42 L20,42 Z M35,34 C30.581722,34 27,30.418278 27,26 C27,21.581722 30.581722,18 35,18 C39.418278,18 43,21.581722 43,26 C43,30.418278 39.418278,34 35,34 Z" id="名字"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

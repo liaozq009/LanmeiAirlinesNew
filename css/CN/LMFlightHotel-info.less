@@ -59,36 +59,19 @@
 .info-title{
 	margin-top: 40px;
 	margin-bottom: 30px;
-	font-size: 30px;
+	font-size: 24px;
 	color:#131c3e;
 	font-family: @FBold;
-	text-align: center;
+	img{margin-right: 20px;}
 }
-.total-price-wrap{
-	color: @gray;
-	overflow: hidden;
-	.people-num{
-		float: left;
-		height: 62px;
-		line-height: 62px;
-		font-size: 16px;
-		span{margin-right: 10px;}
-	}
-	.total-price{
-		float: right;
-		.p1{
-			text-align: right;
-			span{
-				color: @green;
-				font-size: 30px;
-				font-family: @FBold;
-			}
-		}
-		.p2{
-			opacity: 0.6;
-			filter:alpha(opacity=60);
-		}
-	}
+.lm-title{
+	width: 100%;
+    text-align: center;
+    h1{
+    	font-size: 36px;
+	    color: @purple;
+	    font-family: @FBold;
+    }
 }
 .passenger-info-inner{
 	.pas-num{
@@ -100,51 +83,94 @@
 	.pas-info-box{
 		display: inline-block;
 		input,button{
-			border:1px solid rgb(221, 221, 221);
-			height: 30px;
-			padding-left: 10px;
+			height: 100%;
+			padding-left: 40px;
 			padding-right: 10px;
 			color: @purple;
 			border-radius: 2px;
 		}
 		:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-			.purpleRgb(.3);font-size: 14px; 
+			.purpleRgb(.3);font-size: 16px; 
 		}
 
 		::-moz-placeholder { /* Mozilla Firefox 19+ */
-			.purpleRgb(.3);font-size: 14px;
+			.purpleRgb(.3);font-size: 16px;
 		}
 
 		input:-ms-input-placeholder{
-			.purpleRgb(.3);font-size: 14px;
+			.purpleRgb(.3);font-size: 16px;
 		}
 
 		input::-webkit-input-placeholder{
-			.purpleRgb(.3);font-size: 14px;
+			.purpleRgb(.3);font-size: 16px;
 		}
 		.form-group{
 			position: relative;
 			float: left;
 			margin-right: 20px;
 			margin-bottom: 0;
+			height:50px;
+			background:#fff;
+			box-shadow:0 0 50px 0 rgba(31,44,92,0.10);
+			border-radius:2px;
+		}
+		.form-group-name{
+			input{
+				background: url('@{url2}baggageName.png') 8px center no-repeat;
+			}
 		}
 		.form-group-sex{
 			input{
-				width: 120px;
+				background: url('@{url2}icon-sex.png') 8px center no-repeat;
 			}
 		}
 		.form-group-birthday{
-			input{width: 120px;}
+			input{
+				background: url('@{url2}date.png') 8px center no-repeat;
+			}
+		}
+		.form-group-passport{
+			input{
+				width: 388px;
+				background: url('@{url2}passport.png') 8px center no-repeat;
+			}
 		}
 		.form-group-validity{
-			input{width: 120px;}
+			input{
+				width: 386px;
+				background: url('@{url2}date.png') 8px center no-repeat;
+			}
+		}
+		.form-group-email{
+			input{
+				width: 386px;
+				background: url('@{url2}ticket-email.png') 8px center no-repeat;
+			}
+		}
+		.form-group-nationality{
+			margin-right: 0;
+			input{
+				background: url('@{url2}icon-national.png') 8px center no-repeat;
+			}
+		}
+		.form-group{
+			position: relative;
+			margin-top: 10px;
+			input{
+				width: 285px;
+				font-size: 16px;
+				background-size: 24px;
+			}
 		}
 	}
 }
 .contacts-info-wrap{
 	width: 100%;
 	display: inline-block;
+	border-bottom: 2px dashed rgba(31, 44, 92, 0.2);
+    padding-bottom: 50px;
 	.form-group{
+		position: relative;
 		float: left;
 		margin-right: 20px;
 		margin-bottom: 0;
@@ -155,77 +181,144 @@
 			margin-bottom: 10px;
 		}
 		input{
-			border:1px solid rgb(221, 221, 221);
-			height: 30px;
-			padding-left: 10px;
+			width: 285px;
+			height: 50px;
+			font-size: 16px;
+			padding-left: 40px;
 			padding-right: 10px;
 			color: @purple;
+			border-radius: 2px;
+		    box-shadow: 0 0 50px 0 rgba(31, 44, 92, 0.1);
+			background: #fff;
 		}
 		:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-			.purpleRgb(.3);font-size: 14px; 
+			.purpleRgb(.3);font-size: 16px; 
 		}
 
 		::-moz-placeholder { /* Mozilla Firefox 19+ */
-			.purpleRgb(.3);font-size: 14px;
+			.purpleRgb(.3);font-size: 16px;
 		}
 
 		input:-ms-input-placeholder{
-			.purpleRgb(.3);font-size: 14px;
+			.purpleRgb(.3);font-size: 16px;
 		}
 
 		input::-webkit-input-placeholder{
-			.purpleRgb(.3);font-size: 14px;
+			.purpleRgb(.3);font-size: 16px;
 		}
+	}
+	.form-group-name{
+		input{
+			background: url('@{url2}baggageName.png') 8px center no-repeat;
+		}
+	}
+	.form-group-areaCode{
+		input{
+			background: url('@{url2}icon-areaCode.png') 8px center no-repeat;
+		}
+	}
+	.form-group-phone{
+		input{
+			background: url('@{url2}ticket-phone.png') 8px center no-repeat;
+		}
+	}
+	.form-group-email{
+		margin-right: 0;
+		input{
+			background: url('@{url2}ticket-email.png') 8px center no-repeat;
+		}
+	}
+	.form-group{
+		input{background-size: 24px;}
 	}
 }
 .package-result-wrap{
-	height: 50px;
-	margin-top: 60px;
+	height: 80px;
+	margin-top: 40px;
 	overflow: hidden;
 	color: @purple;
 	font-size: 16px;
 	.people-num{
 		float: left;
-		height: 50px;
-		line-height: 50px;
-		font-size: 18px;
-		font-family: @FBold;
-		span{margin-right: 10px;}
-	}
-	.next-step{
-		float: right;
-		height: 50px;
-		line-height: 50px;
-		width: 200px;
-		margin-left: 30px;
-		background: @purple;
-		color: #fff;
-		font-size: 20px;
-		text-align: center;
-		border:none;
-		outline: none;
-		border-radius: 2px;
-		transition: background .3s;
-		-webkit-transition: background .3s;
-		&:hover{
-			background: @green;
-			transition: background .3s;
-			-webkit-transition: background .3s;
+		line-height: 36px;
+		font-size: 16px;
+		.p1{
+			margin-top: 10px;
+			font-family: @FBold;
+		}
+		.p2{
+			opacity: 0.6;
+			filter:alpha(opacity=60);
+			span{margin-right: 10px;}
 		}
 	}
 	.total-price{
 		float: right;
 		.p1{
+			text-align: right;
 			span{
 				color: @green;
 			    font-size: 36px;
 			    font-family: @FBold;
 			}
 		}
+		.p2{
+			opacity: 0.6;
+			filter:alpha(opacity=60);
+		}
+	}
+}
+.lm-pay-method{
+	margin-top: 40px;
+	.pay-title{
+		font-size:26px;
+		font-family: @FBold;
+		color:#131c3e;
+		margin-bottom: 20px;
+		img{margin-right: 20px;}
+	}
+	.pay-content{
+		margin-top: 30px;
+		overflow: hidden;
+		.pay-select{
+			float: left;
+			>a{
+				display: inline-block;
+				width: 220px;
+				height: 100px;
+			}
+		}
+		.AliPay{background: url('@{url2}AliPay.png') center no-repeat;}
+		.AliPay.active{background: url('@{url2}AliPay-active.png') center no-repeat;}
+		.PayPal{background: url('@{url2}PayPal.png') center no-repeat;margin-right: 36px;}
+		.PayPal.active{background: url('@{url2}PayPal-active.png') center no-repeat;margin-right: 36px;}
+		.pay-baggage{
+			width:160px;
+			height:60px;
+			line-height: 60px;
+			float: right;
+			margin-top: 10px;
+			text-align: center;
+			font-size: 20px;
+			color: #fff;
+			border-radius:2px;
+			background:@purple;
+			transition: background .3s;
+			-webkit-transition: background .3s;
+			&:hover{
+				background: @green;
+				transition: background .3s;
+				-webkit-transition: background .3s;
+			}
+		}
+	}
+	.pay-tips{
+		margin-top: 30px;
+		color: @purple;
 	}
 }
 .book-tips-wrap{
-	margin-top: 60px;
+	margin-top: 40px;
 	color: @gray;
 	font-size: 14px;
 	h3{
@@ -236,14 +329,25 @@
 		line-height: 26px;
 	}
 }
+.table{
+	margin-bottom: 0;
+}
 table > thead:first-child > tr:first-child > th{
 	color: @purple;
 	font-size: 18px;
 }
-.table > tbody > tr > td,{
+.table > tbody > tr > td{
 	color: @gray;
 	font-size: 14px;
 	a{color: @link;}
+}
+.dropdown-menu{
+	width: 100%;
+	max-height: 200px;
+	min-width: auto;
+    overflow-y: auto;
+	border:none;
+	> li > a{color: @purple;}
 }
 
 /* ie兼容性 */
@@ -256,6 +360,262 @@ table > thead:first-child > tr:first-child > th{
 .ie8{
 	
 }
+@media screen and (max-width: 1200px) {
+	.lm-section{
+		width: 100%;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	.passenger-info-inner{
+		.pas-info-box{
+			.form-group{
+				width: 49%;
+				margin-right: 2%;
+				margin-top: 2%;
+				&:nth-child(even){margin-right: 0;}
+			}
+		}
+	}
+	.contacts-info-wrap .form-group{
+		width: 49%;
+		margin-right: 2%;
+		margin-bottom: 2%;
+		input{width: 100%;}
+		&:nth-child(odd){margin-right: 0;}
+	}
+}
 @media screen and (max-width: 767px) {
+	.lm-section{
+		margin-top: 0;
+		margin-bottom: 0;
+		padding: 30px 10px 30px;
+		h1{font-size: .2rem;}
+	}
+	.info-title{
+		margin-top: 20px;
+		margin-bottom: 10px;
+		font-size: 16px;
+		img{
+			height: 26px;
+			margin-right: 14px;
+		}
+	}
+	.flight-table-wrap{
+		width: 100%;
+		overflow: auto;
+		.flight-table{
+			width: 660px;
+			thead:first-child > tr:first-child > th,
+			tbody > tr > td{font-size: 12px;}
+		}
+	}
+	.hotel-table-wrap{
+		width: 100%;
+		overflow: auto;
+		.hotel-table{
+			width: 660px;
+			tbody > tr > td{font-size: 12px;}
+		}
+	}
+	.passenger-info-inner {
+		.pas-num{
+			margin-top: 10px;
+			margin-bottom: 0;
+			font-size: 14px;
+		}
+		.pas-info-box{
+			.form-group{
+				width: 100%;
+				height: 40px;
+				margin-right: 0;
+				margin-top: 10px;
+				input{
+					width: 100%;
+					font-size: 12px;
+				}
+				:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+					font-size: 12px; 
+				}
 
+				::-moz-placeholder { /* Mozilla Firefox 19+ */
+					font-size: 12px;
+				}
+
+				input:-ms-input-placeholder{
+					font-size: 12px;
+				}
+
+				input::-webkit-input-placeholder{
+					font-size: 12px;
+				}
+			}
+			.form-group-name{
+				input{
+					background: url('@{url2}svg/baggageName.svg') 8px center no-repeat;
+				}
+			}
+			.form-group-sex{
+				input{
+					background: url('@{url2}svg/icon-sex.svg') 8px center no-repeat;
+				}
+			}
+			.form-group-birthday{
+				input{
+					background: url('@{url2}svg/date.svg') 8px center no-repeat;
+				}
+			}
+			.form-group-passport{
+				input{
+					width: 388px;
+					background: url('@{url2}svg/passport.svg') 8px center no-repeat;
+				}
+			}
+			.form-group-validity{
+				input{
+					width: 386px;
+					background: url('@{url2}svg/date.svg') 8px center no-repeat;
+				}
+			}
+			.form-group-email{
+				input{
+					width: 386px;
+					background: url('@{url2}svg/ticket-email.svg') 8px center no-repeat;
+				}
+			}
+			.form-group-nationality{
+				margin-right: 0;
+				input{
+					background: url('@{url2}svg/icon-national.svg') 8px center no-repeat;
+				}
+			}
+			.form-group{
+				input{
+					background-size: 24px;
+				}
+			}
+		}
+	}
+	.contacts-info-wrap {
+		padding-bottom: 20px;
+		.form-group{
+			width: 100%;
+			margin-right: 0;
+			margin-bottom: 10px;
+			&:last-child{margin-bottom: 0;}
+			input{
+				width: 100%;
+				height: 40px;
+				font-size: 12px;
+			}
+			:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+				font-size: 12px; 
+			}
+
+			::-moz-placeholder { /* Mozilla Firefox 19+ */
+				font-size: 12px;
+			}
+
+			input:-ms-input-placeholder{
+				font-size: 12px;
+			}
+
+			input::-webkit-input-placeholder{
+				font-size: 12px;
+			}
+			label{
+				font-size: 14px;
+				margin-bottom: 10px;
+			}
+		}
+		.form-group-name{
+			input{
+				background: url('@{url2}svg/baggageName.svg') 8px center no-repeat;
+			}
+		}
+		.form-group-areaCode{
+			input{
+				background: url('@{url2}svg/icon-areaCode.svg') 8px center no-repeat;
+			}
+		}
+		.form-group-phone{
+			input{
+				background: url('@{url2}svg/ticket-phone.svg') 8px center no-repeat;
+			}
+		}
+		.form-group-email{
+			margin-right: 0;
+			input{
+				background: url('@{url2}svg/ticket-email.svg') 8px center no-repeat;
+			}
+		}
+		.form-group{
+			input{background-size: 24px;}
+		}
+	}
+	.package-result-wrap{
+		height: auto;
+		margin-top: 20px;
+		.people-num{
+			font-size: 14px;
+			float: none;
+			height: auto;
+			line-height: normal;
+			margin-bottom: 10px;
+			.p1{margin-top: 0;}
+		}
+		.total-price{
+			float: left;
+			.p1 {
+				font-size: 14px;
+				text-align: left;
+				span{font-size: 24px;}
+			}
+			.p2{font-size: 12px;}
+		}
+		.next-step{
+			width: 130px;
+			height: 36px;
+			line-height: 36px;
+			font-size: 20px;
+			margin-left: 0;
+		}
+	}
+	.lm-pay-method{
+		margin-top: 20px;
+		.pay-title{
+			font-size: 16px;
+			margin-bottom: 10px;
+			img{
+				height: 26px;
+				margin-right: 14px;
+			}
+		}
+		.pay-content{
+			margin-top: 0;
+			.pay-select{
+				a{
+					width: 140px;
+				    height: 60px;
+				}
+			}
+			.PayPal,.PayPal.active{
+				margin-right: 10px;
+			}
+			.PayPal,.AliPay{
+				background-size: 140px;
+			}
+			.PayPal.active,.AliPay.active{background-size: 140px;}
+			.pay-baggage{
+				width: 100%;
+				height: 40px;
+				line-height: 40px;
+			}
+		}
+	}
+	.book-tips-wrap{
+		margin-top: 30px;
+		font-size: 12px;
+		h3{font-size: 14px;}
+		p{line-height: 22px;}
+	}
 }

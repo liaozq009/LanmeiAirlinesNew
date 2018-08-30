@@ -55,13 +55,23 @@ var lmFlightHotel = {
             zIndex: 3000,
         });
 
-        //性别选择
-        $('.js-dropdown-toggle').click(function(event) {
+        //下拉选择
+        $('.js-sex-input,.js-nation-input,.js-code-input').click(function(e) {
+            e.stopPropagation();
             $(this).siblings('.js-dropdown-menu').show();
         });
         $('.js-dropdown-menu>li>a').click(function(e) {
-            e.stopPropagation();
-            $(this).parents('.js-dropdown-menu').hide().siblings('input').val($(this).html());
+            $(this).parents('.js-dropdown-menu').siblings('input').val($(this).html());
+        });
+        $('html').click(function(event) {
+            $('.js-dropdown-menu').hide();
+        });
+
+        // 选择支付方式
+        $('.js-pay-select>a').click(function(event) {
+            $(this).addClass('active').siblings('a').removeClass('active');
+            var dataPay = $(this).attr('data-pay');
+            $('.js-pay-method').val(dataPay);
         });
     },
 };

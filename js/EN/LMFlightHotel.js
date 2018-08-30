@@ -8,6 +8,7 @@ var lmFlightHotel = {
         this.hotelSelect();
         this.thSelect();
         this.selectThPeople();
+        this.hotelModal();
         this.isPc();
         this.addEvend();
     },
@@ -246,7 +247,7 @@ var lmFlightHotel = {
         });
 
         $('.js-hotel-title').click(function(e) {
-            e.stopPropagation();
+            // e.stopPropagation();
         });
     },
 
@@ -439,6 +440,24 @@ var lmFlightHotel = {
         };
         tipFn('.thAdult-tip','Adult',showAdultTip);
         tipFn('.thChild-tip','Passengers who have not reached their 12th birthday by the date of the last flight are considered child passengers Children 7 years old and older can travel alone with the consent of their parents.',showChildTip);
+    },
+
+    /* 酒店模态框 */
+    hotelModal:function(){
+        // 酒店详情弹出模态框
+        $('.js-hotel-content').on('click','.js-hotel-title',function(e){
+            e.preventDefault();e.stopPropagation();
+            $('#hotelModal').modal();
+        });
+
+        // 酒店图片展示
+        $('.js-hotelImg-wrap').viewer({
+            url: 'data-original',
+            title:false,
+            tooltip:false,
+            rotatable:false,
+            scalable:false,
+        });
     },
 
     /* 移动端事件 */

@@ -31,13 +31,16 @@
 }
 .total-price-wrap {
   color: #5c6788;
+  margin-top: 40px;
   overflow: hidden;
 }
 .total-price-wrap .people-num {
   float: left;
   height: 62px;
   line-height: 62px;
-  font-size: 16px;
+  font-size: 18px;
+  font-family: NotoSansBold;
+  color: #1f2c5c;
 }
 .total-price-wrap .people-num span {
   margin-right: 10px;
@@ -190,6 +193,9 @@
 .book-tips-wrap p {
   line-height: 26px;
 }
+.table {
+  margin-bottom: 0;
+}
 table > thead:first-child > tr:first-child > th {
   color: #1f2c5c;
   font-size: 18px;
@@ -202,3 +208,14 @@ table > thead:first-child > tr:first-child > th {
   color: #42958a;
 }
 /* ie兼容性 */
+@media screen and (max-width: 1200px) {
+  .lm-section {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .ticket-info-wrap,
+  .hotel-info-wrap {
+    display: none;
+  }
+}
