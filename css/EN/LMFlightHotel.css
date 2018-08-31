@@ -1220,6 +1220,9 @@ body:before {
   display: none;
 }
 .hotel-modal .modal-dialog {
+  width: 100%;
+}
+.hotel-modal .modal-dialog .modal-content {
   width: 900px;
 }
 .hotel-modal .modal-dialog .modal-content .modal-header {
