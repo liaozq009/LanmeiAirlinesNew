@@ -4,7 +4,6 @@ var map;
 var markers = [];
 
 function initMap() {
-	console.log(333);
 	/* 初始化map */
 	map = new google.maps.Map(document.getElementById('hotelMap'), {
 		zoom:7,
