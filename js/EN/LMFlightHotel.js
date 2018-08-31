@@ -457,6 +457,7 @@ var lmFlightHotel = {
             tooltip:false,
             rotatable:false,
             scalable:false,
+            zoomable:false,
         });
     },
 

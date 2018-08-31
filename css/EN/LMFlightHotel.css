@@ -1221,6 +1221,7 @@ body:before {
 }
 .hotel-modal .modal-dialog {
   width: 100%;
+  height: 100%;
 }
 .hotel-modal .modal-dialog .modal-content {
   width: 900px;
@@ -1379,6 +1380,10 @@ body:before {
   font-size: 14px;
   color: rgba(31, 44, 92, 0.7);
 }
+.hotel-modal .viewer-navbar {
+  position: fixed;
+  bottom: 52px;
+}
 .hotel-modal .viewer-toolbar {
   position: fixed;
   top: 50%;
@@ -1412,6 +1417,18 @@ body:before {
 .hotel-modal .viewer-list > li {
   width: 100px;
   height: 75px;
+}
+.hotel-modal .viewer-button {
+  top: -20px;
+  right: 0;
+  background: url('../../images/EN/close-menu.png') center no-repeat;
+}
+.hotel-modal .viewer-close:before {
+  background: none;
+  width: 80px;
+  height: 80px;
+  bottom: 0;
+  left: 0;
 }
 /* ie兼容性 */
 .ie11 .main-hotel-wrap .main-hotel-result .ticket-hotel-price {
@@ -1485,6 +1502,66 @@ body:before {
     max-height: 820px;
   }
   body {
+    cursor: pointer;
+  }
+  .hotel-modal .modal-dialog .modal-content {
+    width: 700px;
+  }
+  .hotel-modal .modal-dialog .modal-content .modal-body {
+    height: 740px;
+  }
+  .hotel-modal .hotel-title-wrap .hotel-title > h2 {
+    font-size: 20px;
+    max-width: 370px;
+  }
+  .hotel-modal .hotel-title-wrap .hotel-title .hotel-stars {
+    margin-left: 20px;
+  }
+  .hotel-modal .hotel-title-wrap .hotel-title .hotel-stars img {
+    margin-left: 10px;
+    width: 16px;
+  }
+  .hotel-modal .hotel-title-wrap .hotel-address .p1 {
+    max-width: 420px;
+  }
+  .hotel-modal .hotel-img-wrap {
+    height: 161px;
+  }
+  .hotel-modal .hotel-img-wrap > ul {
+    height: 161px;
+  }
+  .hotel-modal .hotel-img-wrap .n1 {
+    width: 254px;
+    height: 161px;
+  }
+  .hotel-modal .hotel-img-wrap .n2 {
+    width: 184px;
+    height: 59px;
+  }
+  .hotel-modal .hotel-img-wrap .n3 {
+    float: right;
+    width: 180px;
+    height: 87px;
+  }
+  .hotel-modal .hotel-img-wrap .n4 {
+    width: 180px;
+    height: 87px;
+  }
+  .hotel-modal .hotel-img-wrap .n5 {
+    position: relative;
+    float: right;
+    width: 184px;
+    height: 59px;
+  }
+  .hotel-modal .hotel-img-wrap .n5 .mask {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    line-height: 59px;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    background: rgba(31, 44, 92, 0.7);
     cursor: pointer;
   }
 }
@@ -1971,5 +2048,111 @@ body:before {
   }
   .mobile-hotel-result .ticket-hotel-pay img {
     margin-left: 10px;
+  }
+  .hotel-modal {
+    padding-left: 0;
+  }
+  .hotel-modal .modal-dialog {
+    margin-top: 10px;
+  }
+  .hotel-modal .modal-dialog .modal-content {
+    width: 305px;
+  }
+  .hotel-modal .modal-dialog .modal-content .modal-header {
+    padding: 6px 8px 26px;
+  }
+  .hotel-modal .modal-dialog .modal-content .modal-body {
+    height: 520px;
+  }
+  .hotel-modal .hotel-title-wrap {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .hotel-modal .hotel-title-wrap .hotel-title > h2 {
+    font-size: 16px;
+    max-width: 250px;
+  }
+  .hotel-modal .hotel-title-wrap .hotel-title .hotel-stars {
+    margin-left: 0;
+  }
+  .hotel-modal .hotel-title-wrap .hotel-title .hotel-stars img {
+    margin-left: 0;
+    margin-right: 10px;
+    width: 14px;
+  }
+  .hotel-modal .hotel-title-wrap .hotel-address {
+    font-size: 12px;
+  }
+  .hotel-modal .hotel-title-wrap .hotel-address .p1 {
+    max-width: 250px;
+  }
+  .hotel-modal .hotel-title-wrap .hotel-address .p2 {
+    margin-left: 0;
+  }
+  .hotel-modal .hotel-img-wrap {
+    height: 104px;
+    margin-top: 10px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .hotel-modal .hotel-img-wrap > ul {
+    height: 104px;
+  }
+  .hotel-modal .hotel-img-wrap .n1 {
+    width: 138px;
+    height: 104px;
+  }
+  .hotel-modal .hotel-img-wrap .n2 {
+    width: 138px;
+    height: 104px;
+    margin-left: 7px;
+  }
+  .hotel-modal .hotel-map-wrap {
+    height: 104px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .hotel-modal .hotel-map-wrap .hotel-map {
+    height: 100%;
+  }
+  .hotel-modal .hotel-detail-wrap {
+    margin-top: 10px;
+  }
+  .hotel-modal .hotel-detail-wrap > h2 {
+    height: 26px;
+    line-height: 26px;
+    padding-left: 0;
+    font-size: 14px;
+  }
+  .hotel-modal .hotel-detail-wrap .hotel-content {
+    height: 166px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .hotel-modal .hotel-detail-wrap .hotel-inner > h3 {
+    font-size: 12px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .hotel-modal .hotel-detail-wrap .hotel-inner > p {
+    font-size: 12px;
+  }
+  .hotel-modal .viewer-toolbar {
+    margin-top: -38px;
+  }
+  .hotel-modal .viewer-toolbar > li {
+    width: 30px;
+    height: 70px;
+  }
+  .hotel-modal .viewer-toolbar > li:before {
+    height: 70px;
+    width: 30px;
+  }
+  .hotel-modal .viewer-toolbar .viewer-prev:before,
+  .hotel-modal .viewer-toolbar .viewer-next:before {
+    background-size: 10px;
+  }
+  .hotel-modal .viewer-button {
+    background: url('../../images/EN/svg/close-menu.svg') center no-repeat;
   }
 }

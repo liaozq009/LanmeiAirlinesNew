@@ -66,7 +66,7 @@ if(!window.jQuery){
 		};
 
 		var today = new Date();
-		var todayTime = formatMonth((today.getMonth() + 1)) + '-' + formatDate(today.getDate());
+		var todayTime = formatDate(today.getDate()) + ' ' + formatMonth((today.getMonth() + 1));
 		var startTimeStr = new Date(today.getTime() + 86400000 * 1);
 		var endTimeStr = new Date(today.getTime() + 86400000 * 2);
 		var startTimeInit =  startTimeStr.getFullYear()+ '-' +(startTimeStr.getMonth() + 1)+ '-' + formatDate(startTimeStr.getDate());
@@ -78,10 +78,10 @@ if(!window.jQuery){
 		if(this.endTimeVal != ''){
 			endTimeStr = new Date(new Date(this.endTimeVal).getTime());
 		}
-		
-		var startTime = formatMonth((startTimeStr.getMonth() + 1)) + '-' + formatDate(startTimeStr.getDate());
-		var endTime = formatMonth((endTimeStr.getMonth() + 1)) + '-' + formatDate(endTimeStr.getDate());
-		var maxTime = formatMonth((today.getMonth() + 1)) + '-' + formatDate(today.getDate());
+
+		var startTime = formatDate(startTimeStr.getDate()) + ' ' + formatMonth((startTimeStr.getMonth() + 1));
+		var endTime = formatDate(endTimeStr.getDate()) + ' ' + formatMonth((endTimeStr.getMonth() + 1));
+		var maxTime = formatDate(today.getDate()) + ' ' + formatMonth((today.getMonth() + 1));
 
 		// 初始化日期的值
 		if (this.single) {
@@ -118,7 +118,6 @@ if(!window.jQuery){
 		    	if (that.callback && typeof that.callback === 'function') {
 		    		that.callback();
 		    	}
-
 		        $(that.container).parent().hide(); //外框隐藏
 		        if (this.singleDatePicker) {
 		            that.element.html(start.format('MM-DD'));
@@ -135,7 +134,7 @@ if(!window.jQuery){
 	};
 	
 	//fn就是prototype
-	$.fn[pluginName] = function(options){
+	$.fn[pluginName] = function(options,callback){
 		//each表示对多个元素调用，用return 是为了返回this，进行链式调用
 		return this.each(function(){
 			//判断有没有插件名字 如果你不愿意加if 直接new就好了
