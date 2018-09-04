@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+	<meta charset="UTF-8">
+	<!-- 让 Bootstrap 兼容 IE 兼容模型 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- 让 Bootstrap 兼容 国产浏览器的高速模型 -->
+	<meta name="renderer" content="webkit">
+	<!-- 实现响应式的设置 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>网上值机</title>
+	<!-- 引入图标 -->
+	<link rel="icon" href="../../images/CN/lanmeiLogo.ico">
+	<link rel="stylesheet" type="text/css" href="../../common/CN/fonts/lm-iconfont.css">
+	<link rel="stylesheet" type="text/css" href="../../libs/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../../libs/daterange/daterangepicker.css">
+	<link rel="stylesheet" type="text/css" href="../../libsEdit/css/lanmeiLibsEdit.css">
+	<link rel="stylesheet" type="text/css" href="../../common/CN/css/Lanmei-common.css">
+	<link rel="stylesheet" type="text/css" href="../../css/CN/LMOnlineCheckIn.css">
+	<!--[if lt IE 9]>
+	<script src="../../libs/bootstrap/js/html5shiv.min.js"></script>
+	<script src="../../libs/bootstrap/js/respond.min.js"></script>
+<![endif]-->
+</head>
+<body>
+	<!-- 页面顶部 -->
+	<header class="lm-header lm-sub-header lm-subLogin-header"></header>
+
+	<!-- 登录模态框 -->
+	<div class="modal fade" id="logonModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"></div>
+
+	<!-- 注册模态框 -->
+	<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"></div>
+
+	<!-- 忘记密码模态框 -->
+	<div class="modal fade" id="forgetModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"></div>
+
+	<!-- 主体内容 -->
+	<section class="lm-section">
+		
+		<div class="lm-title">
+			<h1>网上值机</h1>
+		</div>
+		<div class="lm-content">
+			<div class="flight-num-wrap">
+				<input type="text" class="js-flightNum-input" data="flightMenu" name="" value="" placeholder="What is your flight number ?">
+				<div class="dropdownMenu-wrap">
+					<ul class="flightMenu menu-com" data="flight-menu">
+						
+					</ul>
+				</div>
+			</div>
+			<div class="date-wrap">
+				<input type="text" class="js-date-input" name="" value="" placeholder="Choose your flight date" readonly>
+				<div class="dropdownMenu-wrap dataMenu-wrap">
+					<div class="flightDate-container js-flightDate-container"></div>
+				</div>
+			</div>
+			<div class="name-wrap">
+				<input type="text" class="lastName-input js-lastName-input" name="" value="" placeholder="Last name/First name">
+			</div>
+			<div class="passport-wrap">
+				<input type="text" class="js-passport-input" name="" value="" placeholder="Fill in your passport number">
+			</div>
+		</div>
+	</section>
+
+	<!-- 页脚 -->
+	<footer class="lm-footer"></footer>
+
+	<!-- 回到顶部 -->
+	<div class="BackToTop"></div>
+
+	<!-- 第三方库-->
+	<script type="text/javascript" src="../../libs/jQuery/jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="../../libs/jQuery/jquery.cookie.js"></script>
+	<script type="text/javascript" src="../../libs/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../../libs/layer/layer.js"></script>
+	<script type="text/javascript" src="../../libs/daterange/moment.js"></script>
+	<script type="text/javascript" src="../../libs/daterange/daterangepicker.js"></script>
+	<script type="text/javascript" src="../../libs/auto-complete-mail.js"></script>
+	<!-- 公共JS -->
+	<script type="text/javascript" src="../../common/CN/js/head-footer.js"></script>
+	<script type="text/javascript" src="../../common/CN/js/login-register.js"></script>
+	<script type="text/javascript" src="../../common/CN/js/common-data.js"></script>
+	<script type="text/javascript" src="../../common/CN/js/common-autoComplete.js"></script>
+	<script type="text/javascript" src="../../common/CN/js/common-login.js"></script>
+	<script type="text/javascript" src="../../common/CN/js/common-daterange.js"></script>
+	<script type="text/javascript" src="../../common/CN/js/Lanmei-common.js"></script>
+	<!-- 业务代码 -->
+	<script type="text/javascript" src="../../js/CN/LMBaggagePurchase.js"></script>
+</body>
+</html>

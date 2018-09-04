@@ -35,6 +35,10 @@ var LMComLoginReg = {
 		                        '<p style="display:none;">Remember me next 30 days</p>'+
 		                        '<a href="#" class="forgetBtn">Forget ?</a>'+
 		                    '</div>'+
+		                    '<div class="getVerCode getVerCode-login">'+
+		                        '<input type="text" name="" value="" id="getVerCode-input" placeholder="Security Code" autocomplete="off">'+
+		                       	'<img src="./images/resource/call.jpg" id="getVerCode-img" alt="验证码" style="cursor:pointer;">'+
+		                    '</div>'+
 		                    '<div class="form-group">'+
 		                        '<button type="button" class="btn userLoginBtn">Login</button>'+
 		                    '</div>'+
@@ -320,60 +324,68 @@ var LMComLoginReg = {
 	        e.preventDefault();
 	    });
 
-	    //登录模态框中点击登录
-	    $(".userLoginBtn").click(function(){
-	        var email = $.trim($("#LanmeiUserName").val());
-	        var pwd  = $.trim($("#LanmeiPassword").val());
-	        //邮箱
-	        var tips = $('.verifyInfo');
-	        tips.addClass("visible");
-	        tips.html("");
-	        if(email == "" || pwd == ""){
-	            tips.html("Your input is unqualified. Please input again!");
-	            tips.css('color','#d0011b');
-	            return;
-	        }
-	        
-	        var regEmail=/^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$/; 
-	        if(!regEmail.test(email)){
-	            tips.html("Enter unqualified. Please input again!");
-	            tips.css('color','#d0011b');
-	            return;
-	        }
-	        //密码
-	        var regPwd=/^(?!^[0-9]+$)(?!^[A-z]+$)(?!^[^A-z0-9]+$)^.{6,16}$/; 
-	        if(!regPwd.test(pwd)){
-	            tips.html("Enter unqualified. Please input again!");
-	            tips.css('color','#d0011b');
-	            return;
-	        }
-	        
-	        var remberFlag = 0;
-	        if($(".form-group span").eq(0).hasClass("active")){
-	            remberFlag = 1;
-	        }
-	        $.ajax({
-	            url: '/login/loginSubmit.jhtml',
-	            async: false,
-	            type: "POST",
-	            data:{"email":email,"pwd":pwd},
-	            success:function(data){
-	                var code = data.code;
-	                //code 0000登录成功; 0001 、0004服务器异常； 0002、0003用户名或者密码不正确
-	                if(code == "0000"){
-	                    window.location.reload();
-	                }else if(code == "0001" || code == "0004"){
-	                    $('.verifyInfo').addClass('visible').html("The user name or password is incorrect!").css('color','#d0011b');
-	                }else if(code == "0002" || code == "0003"){
-	                    $('.verifyInfo').addClass('visible').html("The user is abnormal!").css('color','#d0011b');
-	                }
-	            },
-	            error:function(){
-	                $('.verifyInfo').addClass('visible').html("The server is abnormal!").css('color','#d0011b');  
-	            }
-	        });
+	    var loginCode = false;
+	    $('.loginBtn').click(function(){
+	    	loginCode = true;
 	    });
-	    
+	    $('#LanmeiUserName').one('click',function(){
+	    	if(!loginCode){return}
+	    	//登录模态框中点击登录
+	    	$(".userLoginBtn").click(function(){
+	    		alert('点击登录');
+	    	    var email = $.trim($("#LanmeiUserName").val());
+	    	    var pwd  = $.trim($("#LanmeiPassword").val());
+	    	    //邮箱
+	    	    var tips = $('.verifyInfo');
+	    	    tips.addClass("visible");
+	    	    tips.html("");
+	    	    if(email == "" || pwd == ""){
+	    	        tips.html("Your input is unqualified. Please input again!");
+	    	        tips.css('color','#d0011b');
+	    	        return;
+	    	    }
+	    	    
+	    	    var regEmail=/^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$/; 
+	    	    if(!regEmail.test(email)){
+	    	        tips.html("Enter unqualified. Please input again!");
+	    	        tips.css('color','#d0011b');
+	    	        return;
+	    	    }
+	    	    //密码
+	    	    var regPwd=/^(?!^[0-9]+$)(?!^[A-z]+$)(?!^[^A-z0-9]+$)^.{6,16}$/; 
+	    	    if(!regPwd.test(pwd)){
+	    	        tips.html("Enter unqualified. Please input again!");
+	    	        tips.css('color','#d0011b');
+	    	        return;
+	    	    }
+	    	    
+	    	    var remberFlag = 0;
+	    	    if($(".form-group span").eq(0).hasClass("active")){
+	    	        remberFlag = 1;
+	    	    }
+	    	    $.ajax({
+	    	        url: '/login/loginSubmit.jhtml',
+	    	        async: false,
+	    	        type: "POST",
+	    	        data:{"email":email,"pwd":pwd},
+	    	        success:function(data){
+	    	            var code = data.code;
+	    	            //code 0000登录成功; 0001 、0004服务器异常； 0002、0003用户名或者密码不正确
+	    	            if(code == "0000"){
+	    	                window.location.reload();
+	    	            }else if(code == "0001" || code == "0004"){
+	    	                $('.verifyInfo').addClass('visible').html("The user name or password is incorrect!").css('color','#d0011b');
+	    	            }else if(code == "0002" || code == "0003"){
+	    	                $('.verifyInfo').addClass('visible').html("The user is abnormal!").css('color','#d0011b');
+	    	            }
+	    	        },
+	    	        error:function(){
+	    	            $('.verifyInfo').addClass('visible').html("The server is abnormal!").css('color','#d0011b');  
+	    	        }
+	    	    });
+	    	});
+	    });
+
 	    //按回车键自动登录
 	    $('#LanmeiPassword').keydown(function(e){
 	        if(e.keyCode==13){
@@ -624,83 +636,92 @@ var LMComLoginReg = {
 				return false;
 			}
 		};
-		$("#registerBtn").click(function(){
-			//email
-			if(!userNameVerify($("#registerUserName").val())){
-				return;
-			}
-			//密码
-			var regPwd=/^(?!^[0-9]+$)(?!^[A-z]+$)(?!^[^A-z0-9]+$)^.{8,16}$/; 
-			var $registerPassword = $('#registerPassword');
-			if(regPwd.test($.trim($registerPassword.val()))){
-				$registerPassword.siblings('p').html('Passed validation').css('color','#8ec060');
-			}else{
-				$registerPassword.siblings('p').html('Your input is unqualified. Please input again!').css('color','#d0011b');
-				return;
-			}
 
-			// 再次输入密码验证
-			var $repeatPassword = $('#repeatPassword');
-			if($.trim($repeatPassword.val()) == $.trim($('#registerPassword').val())){
-				$repeatPassword.siblings('p').html('Passed validation').css('color','#8ec060');
-			}else{
-				$repeatPassword.siblings('p').html('Your input is unqualified. Please input again!').css('color','#d0011b');
-				return;
-			}
-
-			//同意条款
-			var $agree = $('.registerContent .agree>span');
-			if(!$agree.hasClass("active")){
-				layer.open({
-					  title: 'Tips',
-					  content: 'Please read Lanmei service terms!',
-					  btn: ['OK'],
-					  yes: function(index, layero){
-					     layer.close(index);
-					  }
-				});
-				return;
-			}
-			
-			var registeFlag = false;
-			$.ajax({
-				url: '/register/regSave.jhtml',
-				async: false,
-				type: "POST",
-				data:{"email":$.trim($("#registerUserName").val()),"pwd":$.trim($('#repeatPassword').val())},
-				success:function(data){
-					var code = data.code;
-					//code 0000注册成功，并已经登录; 0001该邮箱已被注册； 0002密码格式不正确
-					if(code == "0000"){
-						registeFlag = true;
-						layer.open({
-							  title: 'Register prompt.',
-							  content: 'Register Successful!',
-							  btn: ['Confirm'],
-							  yes: function(index, layero){
-								  window.location.reload();
-							     layer.close(index);
-							  }
-						});
-					}else if(code == "0001" ){
-						$('#registerUserName').siblings('p').html("The e-mail has been registered. Please input again!").css('color','#d0011b');
-						registeFlag = false;
-					}else if(code == "0002"){
-						$registerPassword.siblings('p').html('The e-mail has been registered. Please input again!').css('color','#d0011b');
-						$repeatPassword.siblings('p').html('The e-mail has been registered. Please input again!').css('color','#d0011b');
-						registeFlag = false;
-					}
-				},
-				error:function(){
-					layer.open({
-						  title: 'Register prompt.'
-						  ,content: 'The server is busy. Please try again later！.'
-					});    
+		var loginCode = false;
+		$('.REGISTEREDBtn').click(function(){
+			loginCode = true;
+		});
+		$('#registerUserName').one('click',function(){
+			if(!loginCode){return}
+			$("#registerBtn").click(function(){
+				alert('可以注册');
+				//email
+				if(!userNameVerify($("#registerUserName").val())){
+					return;
 				}
+				//密码
+				var regPwd=/^(?!^[0-9]+$)(?!^[A-z]+$)(?!^[^A-z0-9]+$)^.{8,16}$/; 
+				var $registerPassword = $('#registerPassword');
+				if(regPwd.test($.trim($registerPassword.val()))){
+					$registerPassword.siblings('p').html('Passed validation').css('color','#8ec060');
+				}else{
+					$registerPassword.siblings('p').html('Your input is unqualified. Please input again!').css('color','#d0011b');
+					return;
+				}
+
+				// 再次输入密码验证
+				var $repeatPassword = $('#repeatPassword');
+				if($.trim($repeatPassword.val()) == $.trim($('#registerPassword').val())){
+					$repeatPassword.siblings('p').html('Passed validation').css('color','#8ec060');
+				}else{
+					$repeatPassword.siblings('p').html('Your input is unqualified. Please input again!').css('color','#d0011b');
+					return;
+				}
+
+				//同意条款
+				var $agree = $('.registerContent .agree>span');
+				if(!$agree.hasClass("active")){
+					layer.open({
+						  title: 'Tips',
+						  content: 'Please read Lanmei service terms!',
+						  btn: ['OK'],
+						  yes: function(index, layero){
+						     layer.close(index);
+						  }
+					});
+					return;
+				}
+				
+				var registeFlag = false;
+				$.ajax({
+					url: '/register/regSave.jhtml',
+					async: false,
+					type: "POST",
+					data:{"email":$.trim($("#registerUserName").val()),"pwd":$.trim($('#repeatPassword').val())},
+					success:function(data){
+						var code = data.code;
+						//code 0000注册成功，并已经登录; 0001该邮箱已被注册； 0002密码格式不正确
+						if(code == "0000"){
+							registeFlag = true;
+							layer.open({
+								  title: 'Register prompt.',
+								  content: 'Register Successful!',
+								  btn: ['Confirm'],
+								  yes: function(index, layero){
+									  window.location.reload();
+								     layer.close(index);
+								  }
+							});
+						}else if(code == "0001" ){
+							$('#registerUserName').siblings('p').html("The e-mail has been registered. Please input again!").css('color','#d0011b');
+							registeFlag = false;
+						}else if(code == "0002"){
+							$registerPassword.siblings('p').html('The e-mail has been registered. Please input again!').css('color','#d0011b');
+							$repeatPassword.siblings('p').html('The e-mail has been registered. Please input again!').css('color','#d0011b');
+							registeFlag = false;
+						}
+					},
+					error:function(){
+						layer.open({
+							  title: 'Register prompt.'
+							  ,content: 'The server is busy. Please try again later！.'
+						});    
+					}
+				});
+				if(!registeFlag){
+					return;
+				}	
 			});
-			if(!registeFlag){
-				return;
-			}	
 		});
 	},
 }

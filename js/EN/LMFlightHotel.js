@@ -134,8 +134,8 @@ var lmFlightHotel = {
         $('.js-hotelDate-result').simpleDate({
             single:false,
             canlendarSingle:false,
-            // startTimeVal:'2018-08-27',
-            // endTimeVal:'2018-08-30',
+            // startTimeVal:'2018-09-27',
+            // endTimeVal:'2018-09-30',
             todaySelect:false,
             showTotleDay:true,
             outClickHide: false,
@@ -325,27 +325,37 @@ var lmFlightHotel = {
             $('.js-thAge-box').hide();
         });
 
+        // 动态改变房间数
+        var resultNum;
+        function changeRooms(adultNum,childNum){
+            var totalNum = Math.ceil((parseInt(childNum)+parseInt(adultNum))/3);
+            var singleNum = Math.ceil(parseInt(adultNum)/2);
+            totalNum > singleNum ? resultNum=totalNum : resultNum=singleNum;
+            $('.js-s-thRoom .rooms-num').html(resultNum);
+        };
+
         // 房间
         var rooms = function(){
             $('.js-thRooms-add').click(function(){
                 $(this).siblings('.sub-people').removeClass('off-sub-operation');
                 var roomNum = $(this).siblings('span').html();
-                if(parseInt(roomNum)<4){
+                if(parseInt(roomNum)<8){
                     roomNum++;
                     $(this).siblings('span').html(roomNum);
                     $roomResult.html(roomNum); //动态赋值
-                    roomNum==4 && $(this).addClass('off-add-operation');
+                    roomNum==8 && $(this).addClass('off-add-operation');
                 }
             });
 
             $('.js-thRooms-sub').click(function(){
                 $(this).siblings('.add-people').removeClass('off-add-operation');
                 var roomNum = $(this).siblings('span').html();
-                if(roomNum>1){
+
+                if(roomNum>resultNum){
                     roomNum--;
                     $(this).siblings('span').html(roomNum);
                     $roomResult.html(roomNum); //动态赋值
-                    roomNum==1 && $(this).addClass('off-sub-operation');
+                    roomNum==resultNum && $(this).addClass('off-sub-operation');
                 }
             });
         };
@@ -356,21 +366,35 @@ var lmFlightHotel = {
                 $(this).siblings('.sub-people').removeClass('off-sub-operation');
                 var childNum = $(this).parents('.js-s-thAdult').siblings('.js-s-thChild').find('.child-num').html();//获取小孩人数
                 var adultNum = $(this).siblings('span').html();;//获取成人人数
+
                 if(parseInt(childNum)+parseInt(adultNum)<8){
                     adultNum++;
                     $(this).siblings('span').html(adultNum);
                     $adultResult.html(adultNum); //动态赋值
                     // adultNum==2 && $(this).addClass('off-add-operation');
+
+                    // 动态修改房间数
+                   changeRooms(adultNum,childNum);
                 }
             });
             $('.js-thAdult-sub').click(function(){
                 $(this).siblings('.add-people').removeClass('off-add-operation');
+                $(this).parents('.js-s-thAdult').siblings('.js-s-thChild').find('.child-num').html(0);//小孩人数归0
+                $(this).parents('.js-s-thAdult').siblings('.js-s-thChild').find('.people-number').addClass('disable');
+                $peopleCon.css('display','none');
+                $('.js-child-container>div').remove();
+
                 var adultNum = $(this).siblings('span').html();;//获取成人人数
-                if(adultNum>2){
+                var childNum = $(this).parents('.js-s-thAdult').siblings('.js-s-thChild').find('.child-num').html();
+
+                if(adultNum>1){
                     adultNum--;
                     $(this).siblings('span').html(adultNum);
                     $adultResult.html(adultNum); //动态赋值
                     // adultNum==1 && $(this).addClass('off-sub-operation');
+
+                    // 动态修改房间数
+                    changeRooms(adultNum,childNum);
                 }
             });
         };
@@ -379,14 +403,18 @@ var lmFlightHotel = {
         var child = function(){
             $('.js-thChild-add').click(function(){
                 $(this).siblings('.sub-people').removeClass('off-sub-operation');
-                var adultNum = $(this).parents('.js-s-thChild').siblings('.js-s-thAdult').find('.adult-num').html();//获取小孩人数
+                var adultNum = $(this).parents('.js-s-thChild').siblings('.js-s-thAdult').find('.adult-num').html();
                 var childNum = $(this).siblings('span').html();;//获取成人人数
-                if(parseInt(childNum)+parseInt(adultNum)<8){
+                // if(parseInt(childNum)+parseInt(adultNum)<8){
+                if(parseInt(childNum)<parseInt(adultNum)*2 && parseInt(childNum)+parseInt(adultNum)<8){
                     childNum++;
                     $peopleCon.css('display','inline-block');
                     $(this).siblings('span').html(childNum);
                     $childResult.html(childNum); //动态赋值
                     childAge(1);
+
+                    // 动态修改房间数
+                    changeRooms(adultNum,childNum);
                 }else{
                     // $(this).addClass('off-add-operation');
                 }
@@ -399,6 +427,7 @@ var lmFlightHotel = {
             $('.js-thChild-sub').click(function(){
                 $(this).siblings('.add-people').removeClass('off-add-operation');
                 var childNum = $(this).siblings('span').html();;//获取成人人数
+                var adultNum = $(this).parents('.js-s-thChild').siblings('.js-s-thAdult').find('.adult-num').html();
                 childNum--;
                 $('.js-child-container>div:last-child').remove();
                 if(childNum<1){
@@ -409,6 +438,9 @@ var lmFlightHotel = {
                 }
                 $(this).siblings('span').html(childNum);
                 $childResult.html(childNum); //动态赋值
+
+                // 动态修改房间数
+                changeRooms(adultNum,childNum);
             });
         };
 
@@ -444,10 +476,28 @@ var lmFlightHotel = {
 
     /* 酒店模态框 */
     hotelModal:function(){
+        // 谷歌地图
+        function initMap(lat,lng){
+            var coordinate = {lat: lat, lng: lng};
+            var mapProp = {
+                center: coordinate,
+                zoom:8,
+                mapTypeId:google.maps.MapTypeId.ROADMAP
+            };
+            var map=new google.maps.Map(document.getElementById("hotelMap"), mapProp);
+
+            // 添加标记
+            var marker = new google.maps.Marker({
+                position: coordinate,
+                map: map
+            });
+
+        };
         // 酒店详情弹出模态框
         $('.js-hotel-content').on('click','.js-hotel-title',function(e){
             e.preventDefault();e.stopPropagation();
             $('#hotelModal').modal();
+            initMap(39.91,116.39);
         });
 
         // 酒店图片展示

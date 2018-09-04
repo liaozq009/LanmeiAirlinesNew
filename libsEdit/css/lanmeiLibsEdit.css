@@ -368,6 +368,10 @@ label {
 .modal .modal-dialog .modal-content .modal-body form .getVerCode > p {
   color: #d0011b;
 }
+.modal .modal-dialog .modal-content .modal-body form .getVerCode-login {
+  margin-top: 20px;
+  margin-bottom: 0;
+}
 .modal .modal-dialog .modal-content .modal-footer {
   width: 100%;
   overflow: hidden;
@@ -621,5 +625,9 @@ body .layui-layer-page .layui-layer-content {
   }
   .modal .modal-dialog .modal-content .modal-body form .getVerCode {
     margin-left: 5%;
+  }
+  .modal .modal-dialog .modal-content .modal-body form .getVerCode-login {
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 }

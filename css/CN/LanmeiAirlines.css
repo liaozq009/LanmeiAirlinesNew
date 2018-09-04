@@ -217,6 +217,10 @@ body {
   background: url('../../imgage_demo/ticket-bg.jpg') center no-repeat;
   background-size: cover;
 }
+.ticketHotel-bg {
+  background: url('../../imgage_demo/ticketHotel-bg.jpg') center no-repeat;
+  background-size: cover;
+}
 .hotel-bg {
   background: url('../../imgage_demo/hotel-bg.jpg') center no-repeat;
   background-size: cover;
@@ -2581,7 +2585,7 @@ body {
   .popup-content .popup-people .s-rooms .people-prompt .p1 {
     height: 50px;
     line-height: 50px;
-    background: url('../../images/CN/rooms-icon.png') left center no-repeat;
+    background: url('../../images/CN/rooms-icon.png') 4px center no-repeat;
   }
   .popup-content .popup-people .s-adult .people-prompt .p1 {
     background: url('../../images/CN/adult-icon.png') left center no-repeat;

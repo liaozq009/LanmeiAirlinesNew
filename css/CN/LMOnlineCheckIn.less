@@ -1,0 +1,287 @@
+@charset "utf-8";
+
+@font-face {
+	font-family: NotoSansBold;
+	src: url(../../common/CN/fonts/NotoSans/SourceHanSansCN-Bold.otf);
+	font-weight:bold;
+}
+
+/* 定义变量 */
+@url:"../../images/EN/";
+@purple:#1f2c5c;
+@green:#8ec06c;
+@link:#42958a;
+@FBold:NotoSansBold;
+
+.purpleRgb(@opacity){
+	color: rgba(31,44,92,@opacity);
+}
+
+.purpleBgRgb(@opacity){
+	background: rgba(31,44,92,@opacity);
+}
+
+.lm-section{
+	width: 1400px;
+	margin: 0 auto;
+	margin-top: 50px;
+}
+.lm-title{
+	width: 100%;
+	text-align: center;
+	h1{
+		font-size: 36px;
+		color: @purple;
+		font-family: @FBold;
+	}
+}
+.lm-content{
+	width: 100%;
+	margin-top: 50px;
+	padding-left: 20px;
+	padding-right: 20px;
+	>div{
+		position: relative;
+		float: left;
+		width:660px;
+		height:60px;
+		margin-bottom: 40px;
+		background:#fff;
+		box-shadow:0 0 50px 0 rgba(31,44,92,0.10);
+		border-radius:2px;
+		>input{
+			width: 100%;
+			height: 100%;
+			font-size: 20px;
+			color: @purple;
+			padding-left: 70px;
+			padding-right: 20px;
+		}
+		.active-input{border:1px solid red;}
+		:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+			.purpleRgb(0.3);font-size: 20px; 
+		}
+
+		::-moz-placeholder { /* Mozilla Firefox 19+ */
+			.purpleRgb(0.3);font-size: 20px;
+		}
+
+		input:-ms-input-placeholder{
+			.purpleRgb(0.3);font-size: 20px;
+		}
+
+		input::-webkit-input-placeholder{
+			.purpleRgb(0.3);font-size: 20px;
+		}
+	}
+	.flight-num-wrap,.name-wrap{margin-right: 40px;}
+	.dropdownMenu-wrap{
+		display: none;
+		position: absolute;
+		top: 90px;
+		z-index: 9;
+		width: 660px;
+		height: 318px;
+		box-shadow: 0 0 50px 0 rgba(31, 44, 92, 0.1);
+		&:before{
+			position: absolute;
+			top: -13px;
+			left: 50%;
+		    margin-left: -14px;
+			z-index: 9;
+			filter: alpha(opacity=0);
+			content: "";
+			display: block;
+			width: 0;
+			height: 0;
+			border-left: 14px solid transparent;
+			border-right: 14px solid transparent;
+			border-bottom: 14px solid #fff;
+			transition: opacity 0.2s ease-out;
+			-webkit-transition: opacity 0.2s ease-out;
+		}
+		.menu-com{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width:100%;
+			height: 100%;
+			padding: 20px;
+			padding-bottom: 10px;
+			font-size: 16px;
+			color: rgba(31, 44, 92, 0.5);
+			background: #fff;
+			z-index: 999;
+			border-radius: 2px;
+			border-top: none;
+			overflow-y: auto;
+			>li{
+				float: left;
+				width: 25%;
+				padding-left: 30px;
+				padding-right: 10px;
+				margin-bottom: 10px;
+				background: url('@{url}city-icon.png') left center no-repeat;
+				cursor: pointer;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				transition: all .3s;
+				-webkit-transition: all .3s;
+				&:hover{
+					color: #8ec060;
+					background: url('@{url}city-icon-active.png') left center no-repeat;
+				}
+				span{
+					color: #1f2c5c;
+				}
+				a{
+					display: inline-block;
+					width: 100%;
+					height: 40px;
+					font-size: 14px;
+					padding: 0px 20px;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+					&:hover{
+						background: #8ec060;
+						color: #fff;
+					}
+				}
+			}
+			.no-result-match{width: 100%;}
+		}
+	}
+	.dataMenu-wrap{
+		width: 312px;
+		height: 279px;
+	}
+	.name-wrap{
+		position: relative;
+		input{
+			width: 100%;
+			float: left;
+		}
+		.input-line{
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin-left: -1px;
+		    margin-top: -16px;
+			display: block;
+			width:2px;
+			height:32px;
+			.purpleBgRgb(0.3);
+			border-radius:1px;
+		}
+		.firstName-input{padding-left: 20px;}
+	}
+	.flight-num-wrap input{background: url('@{url}flight-number.png') 20px center no-repeat;}
+	.date-wrap input{background: url('@{url}date.png') 20px center no-repeat;}
+	.name-wrap .lastName-input{background: url('@{url}baggageName.png') 20px center no-repeat;}
+	.passport-wrap input{background: url('@{url}passport.png') 20px center no-repeat;}
+}
+
+/* 修改日期样式 */
+.daterangepicker.ltr .calendar.left{
+	margin-top: 6px;
+}
+
+/* 屏幕适配 */
+@media screen and (max-width: 1440px) {
+	.lm-section{
+		width: 990px;
+	}
+	.lm-content {
+		> div{
+			width: 460px;
+		}
+		.dropdownMenu-wrap{
+			width: 460px;
+		}
+		.dataMenu-wrap{
+			width: 312px;
+		}
+		.flight-num-wrap,.name-wrap{
+			margin-right: 30px;
+		}
+	}
+}
+@media screen and (max-width: 992px) {
+	.lm-section{
+		width: 100%;
+	}
+	.lm-content {
+		> div{width: 100%;}
+		.flight-num-wrap,.name-wrap{margin-right: 0;}
+	}
+}
+@media screen and (max-width: 767px) {
+	.lm-section{
+		padding: .3rem .15rem .1rem;
+		margin-top: 0;
+	}
+	.lm-title h1{
+		font-size: .2rem;
+	}
+	.lm-content {
+		margin-top: 0.2rem;
+		padding: 0;
+		>div{
+			height: 50px;
+			margin-bottom: 0.2rem;
+			>input{
+				font-size: 16px;
+				background-size: 24px !important;
+				background-position: 13px center !important;
+				padding-left: 50px;
+			}
+			:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+				font-size: 14px; 
+			}
+
+			::-moz-placeholder { /* Mozilla Firefox 19+ */
+				font-size: 14px;
+			}
+
+			input:-ms-input-placeholder{
+				font-size: 14px;
+			}
+
+			input::-webkit-input-placeholder{
+				font-size: 14px;
+			}
+		}
+		.national-baggage{
+			>span{display: block;}
+		}
+		.dropdownMenu-wrap{
+			width: 100%;
+			top: 100px;
+			.menu-com {
+				font-size: 14px;
+				> li{
+					width: 50%;
+					line-height: 24px;
+				}
+			}
+		}
+		.dataMenu-wrap{width: 300px;}
+		.flight-num-wrap input{background: url('@{url}svg/flightNum.svg') 20px center no-repeat;}
+		.date-wrap input{background: url('@{url}svg/date.svg') 20px center no-repeat;}
+		.name-wrap {
+			.lastName-input{background: url('@{url}svg/baggageName.svg') 20px center no-repeat;}
+			.input-line{
+				height: 22px;
+				margin-top: -11px;
+			}
+			.lastName-input{padding-right: 10px;}
+			.firstName-input{padding-left: 10px;}
+		}
+		.passport-wrap input{background: url('@{url}svg/passport.svg') 20px center no-repeat;}
+		.dropdownMenu-wrap .menu-com > li{background: url('@{url}svg/city-icon.svg') left center no-repeat;}
+		.dropdownMenu-wrap .menu-com > li:hover{background: url('@{url}svg/city-icon-active.svg') left center no-repeat;}
+	}
+	.daterangepicker{width: 300px;}
+}

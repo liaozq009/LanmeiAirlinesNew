@@ -46,7 +46,16 @@
 </head>
 <body>
 	<!-- 页面顶部 -->
-	<header class="lm-header lm-sub-header"></header>
+	<header class="lm-header lm-sub-header lm-subLogin-header"></header>
+
+	<!-- 登录模态框 -->
+	<div class="modal fade" id="logonModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"></div>
+
+	<!-- 注册模态框 -->
+	<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"></div>
+
+	<!-- 忘记密码模态框 -->
+	<div class="modal fade" id="forgetModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"></div>
 
 	<!-- 主体内容 -->
 	<section class="lm-section js-lm-section">
@@ -533,13 +542,16 @@
 
 	<!-- 第三方库-->
 	<script type="text/javascript" src="../../libs/jQuery/jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="../../libs/jQuery/jquery.cookie.js"></script>
 	<script type="text/javascript" src="../../libs/bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="../../libs/layer/layer.js"></script>
 	<script type="text/javascript" src="../../libs/daterange/moment.js"></script>
 	<script type="text/javascript" src="../../libs/daterange/daterangepicker.js"></script>
+	<script type="text/javascript" src="../../libs/auto-complete-mail.js"></script>
 	<script type="text/javascript" src="../../libs/viewer/viewer-jquery.min.js"></script>
 	<!-- 公共JS -->
 	<script type="text/javascript" src="../../common/EN/js/head-footer.js"></script>
+	<script type="text/javascript" src="../../common/EN/js/login-register.js"></script>
 	<script type="text/javascript" src="../../common/EN/js/common-autoComplete.js"></script>
 	<script type="text/javascript" src="../../common/EN/js/common-daterange.js"></script>
 	<script type="text/javascript" src="../../common/EN/js/common-data.js"></script>

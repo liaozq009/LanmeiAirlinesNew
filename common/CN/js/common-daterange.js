@@ -79,9 +79,9 @@ if(!window.jQuery){
 			endTimeStr = new Date(new Date(this.endTimeVal).getTime());
 		}
 
-		var startTime = formatDate(startTimeStr.getDate()) + ' ' + formatMonth((startTimeStr.getMonth() + 1));
-		var endTime = formatDate(endTimeStr.getDate()) + ' ' + formatMonth((endTimeStr.getMonth() + 1));
-		var maxTime = formatDate(today.getDate()) + ' ' + formatMonth((today.getMonth() + 1));
+		var startTime = formatMonth((startTimeStr.getMonth() + 1)) + ' ' + formatDate(startTimeStr.getDate());
+		var endTime = formatMonth((endTimeStr.getMonth() + 1)) + ' ' + formatDate(endTimeStr.getDate());
+		var maxTime = formatMonth((today.getMonth() + 1)) + ' ' + formatDate(today.getDate());
 
 		// 初始化日期的值
 		if (this.single) {
