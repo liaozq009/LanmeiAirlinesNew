@@ -5,8 +5,19 @@
   font-weight: bold;
 }
 /* 定义变量 */
+body:before {
+  content: ' ';
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: url('../../images/resource/checkIn-bg.jpg') center no-repeat;
+  background-size: cover;
+}
 .lm-section {
-  width: 1400px;
+  width: 1200px;
   margin: 0 auto;
   margin-top: 50px;
 }
@@ -16,26 +27,25 @@
 }
 .lm-title h1 {
   font-size: 36px;
-  color: #1f2c5c;
+  color: #fff;
   font-family: NotoSansBold;
 }
-.lm-content {
+.lm-input {
+  display: inline-block;
   width: 100%;
   margin-top: 50px;
-  padding-left: 20px;
-  padding-right: 20px;
 }
-.lm-content > div {
+.lm-input > div {
   position: relative;
   float: left;
-  width: 660px;
+  width: 580px;
   height: 60px;
   margin-bottom: 40px;
   background: #fff;
   box-shadow: 0 0 50px 0 rgba(31, 44, 92, 0.1);
   border-radius: 2px;
 }
-.lm-content > div > input {
+.lm-input > div > input {
   width: 100%;
   height: 100%;
   font-size: 20px;
@@ -43,32 +53,32 @@
   padding-left: 70px;
   padding-right: 20px;
 }
-.lm-content > div .active-input {
+.lm-input > div .active-input {
   border: 1px solid red;
 }
-.lm-content > div :-moz-placeholder {
+.lm-input > div :-moz-placeholder {
   /* Mozilla Firefox 4 to 18 */
   color: rgba(31, 44, 92, 0.3);
   font-size: 20px;
 }
-.lm-content > div ::-moz-placeholder {
+.lm-input > div ::-moz-placeholder {
   /* Mozilla Firefox 19+ */
   color: rgba(31, 44, 92, 0.3);
   font-size: 20px;
 }
-.lm-content > div input:-ms-input-placeholder {
+.lm-input > div input:-ms-input-placeholder {
   color: rgba(31, 44, 92, 0.3);
   font-size: 20px;
 }
-.lm-content > div input::-webkit-input-placeholder {
+.lm-input > div input::-webkit-input-placeholder {
   color: rgba(31, 44, 92, 0.3);
   font-size: 20px;
 }
-.lm-content .flight-num-wrap,
-.lm-content .name-wrap {
+.lm-input .from-city-wrap,
+.lm-input .name-wrap {
   margin-right: 40px;
 }
-.lm-content .dropdownMenu-wrap {
+.lm-input .dropdownMenu-wrap {
   display: none;
   position: absolute;
   top: 90px;
@@ -77,7 +87,7 @@
   height: 318px;
   box-shadow: 0 0 50px 0 rgba(31, 44, 92, 0.1);
 }
-.lm-content .dropdownMenu-wrap:before {
+.lm-input .dropdownMenu-wrap:before {
   position: absolute;
   top: -13px;
   left: 50%;
@@ -94,7 +104,7 @@
   transition: opacity 0.2s ease-out;
   -webkit-transition: opacity 0.2s ease-out;
 }
-.lm-content .dropdownMenu-wrap .menu-com {
+.lm-input .dropdownMenu-wrap .menu-com {
   position: absolute;
   top: 0;
   left: 0;
@@ -110,7 +120,7 @@
   border-top: none;
   overflow-y: auto;
 }
-.lm-content .dropdownMenu-wrap .menu-com > li {
+.lm-input .dropdownMenu-wrap .menu-com > li {
   float: left;
   width: 25%;
   padding-left: 30px;
@@ -124,14 +134,14 @@
   transition: all .3s;
   -webkit-transition: all .3s;
 }
-.lm-content .dropdownMenu-wrap .menu-com > li:hover {
+.lm-input .dropdownMenu-wrap .menu-com > li:hover {
   color: #8ec060;
   background: url('../../images/EN/city-icon-active.png') left center no-repeat;
 }
-.lm-content .dropdownMenu-wrap .menu-com > li span {
+.lm-input .dropdownMenu-wrap .menu-com > li span {
   color: #1f2c5c;
 }
-.lm-content .dropdownMenu-wrap .menu-com > li a {
+.lm-input .dropdownMenu-wrap .menu-com > li a {
   display: inline-block;
   width: 100%;
   height: 40px;
@@ -141,25 +151,52 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.lm-content .dropdownMenu-wrap .menu-com > li a:hover {
+.lm-input .dropdownMenu-wrap .menu-com > li a:hover {
   background: #8ec060;
   color: #fff;
 }
-.lm-content .dropdownMenu-wrap .menu-com .no-result-match {
+.lm-input .dropdownMenu-wrap .menu-com .no-result-match {
   width: 100%;
 }
-.lm-content .dataMenu-wrap {
-  width: 312px;
-  height: 279px;
+.lm-input .passport-wrap input {
+  padding-left: 160px;
+  background: url('../../images/EN/ticket-num.png') 20px center no-repeat;
 }
-.lm-content .name-wrap {
+.lm-input .passport-wrap .select-option {
+  position: absolute;
+  height: 100%;
+  padding-left: 70px;
+  padding-top: 14px;
+}
+.lm-input .passport-wrap .select-option > span {
+  display: block;
+  height: 32px;
+  line-height: 32px;
+  padding-right: 40px;
+  border-right: 2px solid rgba(31, 44, 92, 0.3);
+  text-decoration: underline;
+  cursor: pointer;
+}
+.lm-input .passport-wrap .select-option > span::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  margin-top: -3px;
+  right: 20px;
+  width: 0;
+  height: 0;
+  border-width: 6px;
+  border-style: solid;
+  border-color: #1f2c5c transparent transparent transparent;
+}
+.lm-input .name-wrap {
   position: relative;
 }
-.lm-content .name-wrap input {
+.lm-input .name-wrap input {
   width: 100%;
   float: left;
 }
-.lm-content .name-wrap .input-line {
+.lm-input .name-wrap .input-line {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -171,20 +208,150 @@
   background: rgba(31, 44, 92, 0.3);
   border-radius: 1px;
 }
-.lm-content .name-wrap .firstName-input {
+.lm-input .name-wrap .firstName-input {
   padding-left: 20px;
 }
-.lm-content .flight-num-wrap input {
-  background: url('../../images/EN/flight-number.png') 20px center no-repeat;
+.lm-input .from-city-wrap input {
+  background: url('../../images/EN/city-from.png') 20px center no-repeat;
 }
-.lm-content .date-wrap input {
-  background: url('../../images/EN/date.png') 20px center no-repeat;
-}
-.lm-content .name-wrap .lastName-input {
+.lm-input .name-wrap .lastName-input {
   background: url('../../images/EN/baggageName.png') 20px center no-repeat;
 }
-.lm-content .passport-wrap input {
-  background: url('../../images/EN/passport.png') 20px center no-repeat;
+.lm-input .phone-wrap input {
+  background: url('../../images/EN/ticket-phone.png') 20px center no-repeat;
+}
+.lm-button {
+  width: 240px;
+  height: 60px;
+  line-height: 60px;
+  color: #fff;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  background: #42958a;
+  background: -webkit-linear-gradient(left, #42958a 0%, #1f2c5c 100%);
+  background: -o-linear-gradient(right, #42958a 0%, #1f2c5c 100%);
+  background: -moz-linear-gradient(right, #42958a 0%, #1f2c5c 100%);
+  background: linear-gradient(to right, #42958a 0%, #1f2c5c 100%);
+}
+.lm-button img,
+.lm-button i {
+  margin-left: 20px;
+  display: initial;
+  vertical-align: sub;
+}
+.lm-search {
+  color: #fff;
+  overflow: hidden;
+}
+.lm-search .notes-inner {
+  float: left;
+  width: 70%;
+}
+.lm-search .notes-inner h3 {
+  font-size: 16px;
+  margin-bottom: 16px;
+  font-family: NotoSansBold;
+}
+.lm-search .notes-inner p {
+  font-size: 14px;
+  line-height: 26px;
+}
+.lm-search .search-inner {
+  float: right;
+}
+.lm-search .search-inner > a {
+  width: 100%;
+  display: block;
+  text-align: right;
+  color: #fff;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+  font-size: 16px;
+  margin-top: 20px;
+  text-decoration: underline;
+}
+.lm-info {
+  margin-top: 40px;
+  margin-bottom: 60px;
+  overflow: hidden;
+}
+.lm-info .lm-info-inner {
+  position: relative;
+  padding: 20px;
+  margin-bottom: 20px;
+  background: #fff;
+  border-radius: 2px;
+}
+.lm-info .lm-button {
+  float: right;
+}
+.lm-info .mobile-right-arrow {
+  display: none;
+}
+.lm-info .flight-airport {
+  text-align: center;
+  border-bottom: 1px solid rgba(31, 44, 92, 0.1);
+  overflow: hidden;
+}
+.lm-info .flight-airport .airport-com {
+  width: 430px;
+  height: 60px;
+  line-height: 60px;
+  font-size: 18px;
+  color: #1f2c5c;
+  font-family: NotoSansBold;
+  text-align: center;
+}
+.lm-info .flight-airport .from-airport {
+  float: left;
+}
+.lm-info .flight-airport .flight-num {
+  display: inline-block;
+  width: 300px;
+  font-size: 16px;
+  color: rgba(31, 44, 92, 0.5);
+}
+.lm-info .flight-airport .to-airport {
+  float: right;
+}
+.lm-info .flight-info {
+  font-size: 14px;
+  color: rgba(31, 44, 92, 0.5);
+  padding-top: 20px;
+  overflow: hidden;
+  text-align: center;
+}
+.lm-info .flight-info > li {
+  width: 25%;
+  float: left;
+  border-right: 1px solid rgba(31, 44, 92, 0.5);
+}
+.lm-info .flight-info > li:last-child {
+  border-right: none;
+}
+.lm-info .flight-info .can-handle span {
+  color: #8ec06c;
+}
+.lm-info .flight-info .not-avail span {
+  color: #FF8989;
+}
+.lm-info .flight-info .already-handle {
+  color: #1f2c5c;
+}
+.lm-info .select-radio {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(31, 44, 92, 0.2);
+  cursor: pointer;
+}
+.lm-info .select-ok {
+  background: url('../../images/resource/icon-select.png') center no-repeat;
 }
 /* 修改日期样式 */
 .daterangepicker.ltr .calendar.left {
