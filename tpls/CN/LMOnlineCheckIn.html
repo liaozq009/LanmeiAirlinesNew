@@ -13,6 +13,7 @@
 	<!-- 引入图标 -->
 	<link rel="icon" href="../../images/CN/lanmeiLogo.ico">
 	<link rel="stylesheet" type="text/css" href="../../common/CN/fonts/lm-iconfont.css">
+	<link rel="stylesheet" type="text/css" href="../../common/CN/css/animate.css">
 	<link rel="stylesheet" type="text/css" href="../../libs/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../../libs/daterange/daterangepicker.css">
 	<link rel="stylesheet" type="text/css" href="../../libsEdit/css/lanmeiLibsEdit.css">
@@ -44,9 +45,9 @@
 			</div>
 			<div class="lm-input">
 				<div class="from-city-wrap">
-					<input type="text" class="js-fromCity-input" data="fromMenu" name="" value="" placeholder="出发地">
+					<input type="text" class="js-fromCity-input" data="fromcityMenu" name="" value="" placeholder="出发地">
 					<div class="dropdownMenu-wrap">
-						<ul class="fromMenu menu-com" data="from-menu">
+						<ul class="fromcityMenu js-fromMenu menu-com">
 							
 						</ul>
 					</div>
@@ -54,17 +55,14 @@
 				<div class="passport-wrap">
 					<div class="select-option">
 						<span class="js-select-option">票号</span>
-						<div class="dropdownMenu-wrap">
-							<ul class="menu-com">
-								<li>票号</li>
-								<li>护照号</li>
+						<div class="dropdownMenu-wrap ticketMenu-wrap">
+							<ul class="js-ticketMenu menu-com">
+								<li data-id="ticketNum" title="票号">票号</li>
+								<li data-id="passportNum" title="护照号">护照号</li>
 							</ul>
 						</div>
 					</div>
-					<input type="text" class="js-date-input" name="" value="">
-					<div class="dropdownMenu-wrap dataMenu-wrap">
-						<div class="flightDate-container js-flightDate-container"></div>
-					</div>
+					<input type="text" class="js-date-input" name="ticketNum" value="">
 				</div>
 				<div class="name-wrap">
 					<input type="text" class="lastName-input js-lastName-input" name="" value="" placeholder="姓/名(拼音Li/si)">
@@ -88,7 +86,7 @@
 			<div class="lm-info">
 				<div class="lm-info-box">
 					<div class="lm-info-inner">
-						<p class="select-radio select-ok"></p>
+						<p class="select-radio js-select-radio select-ok"></p>
 						<div class="flight-airport">
 							<div class="from-airport airport-com">广州国际白云机场</div>
 							<div class="flight-num">
@@ -106,7 +104,7 @@
 						</ul>
 					</div>
 					<div class="lm-info-inner">
-						<p class="select-radio"></p>
+						<p class="select-radio js-select-radio"></p>
 						<div class="flight-airport">
 							<div class="from-airport airport-com">金边国际机场</div>
 							<div class="flight-num">
@@ -127,7 +125,251 @@
 				<button class="lm-button js-search-flight">下一步 <i class="iconfont icon-right-arrow2"></i></button>
 			</div>
 		</div>
-		
+		<div class="lm-section-checkIn">
+			<div class="lm-seat-wrap">
+				<div class="aircraft-rest-wrap">
+					<p class="aircraft-WC"></p>
+					<p class="aircraft-meals"></p>
+				</div>
+				<div class="seat-cell-wrap">
+					<div class="seat-wrap-one seat-wrap-com">
+						<ul class="row-1">
+							<li class="cell-1 seat-sold" data-name="" data-seatId=""></li>
+							<li class="cell-2" data-name="" data-seatId=""></li>
+							<li class="cell-3" data-name="" data-seatId=""></li>
+							<li class="row-num">1</li>
+							<li class="cell-4" data-name="" data-seatId=""></li>
+							<li class="cell-5 seat-sold" data-name="" data-seatId=""></li>
+							<li class="cell-6" data-name="" data-seatId=""></li>
+						</ul>
+						<ul class="row-2">
+							<li class="cell-1" data-name="" data-seatId=""></li>
+							<li class="cell-2" data-name="" data-seatId=""></li>
+							<li class="cell-3 seat-sold" data-name="" data-seatId=""></li>
+							<li class="row-num">2</li>
+							<li class="cell-4" data-name="" data-seatId=""></li>
+							<li class="cell-5" data-name="" data-seatId=""></li>
+							<li class="cell-6" data-name="" data-seatId=""></li>
+						</ul>
+						<ul class="row-3">
+							<li class="cell-1" data-name="" data-seatId=""></li>
+							<li class="cell-2 seat-sold" data-name="" data-seatId=""></li>
+							<li class="cell-3" data-name="" data-seatId=""></li>
+							<li class="row-num">3</li>
+							<li class="cell-4" data-name="" data-seatId=""></li>
+							<li class="cell-5" data-name="" data-seatId=""></li>
+							<li class="cell-6" data-name="" data-seatId=""></li>
+						</ul>
+						<ul class="row-4">
+							<li class="cell-1" data-name="" data-seatId=""></li>
+							<li class="cell-2" data-name="" data-seatId=""></li>
+							<li class="cell-3" data-name="" data-seatId=""></li>
+							<li class="row-num">4</li>
+							<li class="cell-4" data-name="" data-seatId=""></li>
+							<li class="cell-5" data-name="" data-seatId=""></li>
+							<li class="cell-6" data-name="" data-seatId=""></li>
+						</ul>
+						<ul class="row-5">
+							<li class="cell-1" data-name="" data-seatId=""></li>
+							<li class="cell-2" data-name="" data-seatId=""></li>
+							<li class="cell-3" data-name="" data-seatId=""></li>
+							<li class="row-num">5</li>
+							<li class="cell-4" data-name="" data-seatId=""></li>
+							<li class="cell-5" data-name="" data-seatId=""></li>
+							<li class="cell-6" data-name="" data-seatId=""></li>
+						</ul>
+						<ul class="row-6">
+							<li class="cell-1" data-name="" data-seatId=""></li>
+							<li class="cell-2" data-name="" data-seatId=""></li>
+							<li class="cell-3 seat-sold" data-name="" data-seatId=""></li>
+							<li class="row-num">6</li>
+							<li class="cell-4" data-name="" data-seatId=""></li>
+							<li class="cell-5" data-name="" data-seatId=""></li>
+							<li class="cell-6" data-name="" data-seatId=""></li>
+						</ul>
+						<ul class="row-7">
+							<li class="cell-1" data-name="" data-seatId=""></li>
+							<li class="cell-2" data-name="" data-seatId=""></li>
+							<li class="cell-3" data-name="" data-seatId=""></li>
+							<li class="row-num">7</li>
+							<li class="cell-4" data-name="" data-seatId=""></li>
+							<li class="cell-5" data-name="" data-seatId=""></li>
+							<li class="cell-6" data-name="" data-seatId=""></li>
+						</ul>
+						<ul class="row-8">
+							<li class="cell-1" data-name="" data-seatId=""></li>
+							<li class="cell-2" data-name="" data-seatId=""></li>
+							<li class="cell-3 seat-sold" data-name="" data-seatId=""></li>
+							<li class="row-num">8</li>
+							<li class="cell-4" data-name="" data-seatId=""></li>
+							<li class="cell-5" data-name="" data-seatId=""></li>
+							<li class="cell-6" data-name="" data-seatId=""></li>
+						</ul>
+						<ul class="row-9">
+							<li class="cell-1" data-name="" data-seatId=""></li>
+							<li class="cell-2" data-name="" data-seatId=""></li>
+							<li class="cell-3" data-name="" data-seatId=""></li>
+							<li class="row-num">9</li>
+							<li class="cell-4" data-name="" data-seatId=""></li>
+							<li class="cell-5 seat-sold" data-name="" data-seatId=""></li>
+							<li class="cell-6" data-name="" data-seatId=""></li>
+						</ul>
+					</div>
+					<div class="seat-wrap-two seat-wrap-com">
+						<ul class="row-10">
+							<li class="cell-1" data-name="" data-seatId=""></li>
+							<li class="cell-2" data-name="" data-seatId=""></li>
+							<li class="cell-3" data-name="" data-seatId=""></li>
+							<li class="row-num">10</li>
+							<li class="cell-4" data-name="" data-seatId=""></li>
+							<li class="cell-5" data-name="" data-seatId=""></li>
+							<li class="cell-6" data-name="" data-seatId=""></li>
+						</ul>
+						<ul class="row-11">
+							<li class="cell-1" data-name="" data-seatId=""></li>
+							<li class="cell-2" data-name="" data-seatId=""></li>
+							<li class="cell-3" data-name="" data-seatId=""></li>
+							<li class="row-num">11</li>
+							<li class="cell-4" data-name="" data-seatId=""></li>
+							<li class="cell-5" data-name="" data-seatId=""></li>
+							<li class="cell-6" data-name="" data-seatId=""></li>
+						</ul>
+						<ul class="row-12">
+							<li class="cell-1" data-name="" data-seatId=""></li>
+							<li class="cell-2" data-name="" data-seatId=""></li>
+							<li class="cell-3" data-name="" data-seatId=""></li>
+							<li class="row-num">12</li>
+							<li class="cell-4" data-name="" data-seatId=""></li>
+							<li class="cell-5" data-name="" data-seatId=""></li>
+							<li class="cell-6" data-name="" data-seatId=""></li>
+						</ul>
+						<ul class="row-13">
+							<li class="cell-1" data-name="" data-seatId=""></li>
+							<li class="cell-2" data-name="" data-seatId=""></li>
+							<li class="cell-3" data-name="" data-seatId=""></li>
+							<li class="row-num">13</li>
+							<li class="cell-4" data-name="" data-seatId=""></li>
+							<li class="cell-5" data-name="" data-seatId=""></li>
+							<li class="cell-6" data-name="" data-seatId=""></li>
+						</ul>
+						<ul class="row-14">
+							<li class="cell-1" data-name="" data-seatId=""></li>
+							<li class="cell-2" data-name="" data-seatId=""></li>
+							<li class="cell-3" data-name="" data-seatId=""></li>
+							<li class="row-num">14</li>
+							<li class="cell-4" data-name="" data-seatId=""></li>
+							<li class="cell-5" data-name="" data-seatId=""></li>
+							<li class="cell-6" data-name="" data-seatId=""></li>
+						</ul>
+						<ul class="row-15">
+							<li class="cell-1" data-name="" data-seatId=""></li>
+							<li class="cell-2" data-name="" data-seatId=""></li>
+							<li class="cell-3" data-name="" data-seatId=""></li>
+							<li class="row-num">15</li>
+							<li class="cell-4" data-name="" data-seatId=""></li>
+							<li class="cell-5" data-name="" data-seatId=""></li>
+							<li class="cell-6" data-name="" data-seatId=""></li>
+						</ul>
+						<ul class="row-16">
+							<li class="cell-1" data-name="" data-seatId=""></li>
+							<li class="cell-2" data-name="" data-seatId=""></li>
+							<li class="cell-3" data-name="" data-seatId=""></li>
+							<li class="row-num">16</li>
+							<li class="cell-4" data-name="" data-seatId=""></li>
+							<li class="cell-5" data-name="" data-seatId=""></li>
+							<li class="cell-6" data-name="" data-seatId=""></li>
+						</ul>
+						<ul class="row-17">
+							<li class="cell-1" data-name="" data-seatId=""></li>
+							<li class="cell-2" data-name="" data-seatId=""></li>
+							<li class="cell-3" data-name="" data-seatId=""></li>
+							<li class="row-num">17</li>
+							<li class="cell-4" data-name="" data-seatId=""></li>
+							<li class="cell-5" data-name="" data-seatId=""></li>
+							<li class="cell-6" data-name="" data-seatId=""></li>
+						</ul>
+						<ul class="row-18">
+							<li class="cell-1" data-name="" data-seatId=""></li>
+							<li class="cell-2" data-name="" data-seatId=""></li>
+							<li class="cell-3" data-name="" data-seatId=""></li>
+							<li class="row-num">18</li>
+							<li class="cell-4" data-name="" data-seatId=""></li>
+							<li class="cell-5" data-name="" data-seatId=""></li>
+							<li class="cell-6" data-name="" data-seatId=""></li>
+						</ul>
+					</div>
+					<div class="seat-wrap-three seat-wrap-com">
+						<ul class="row-19">
+							<li class="cell-1" data-name="" data-seatId=""></li>
+							<li class="cell-2" data-name="" data-seatId=""></li>
+							<li class="cell-3" data-name="" data-seatId=""></li>
+							<li class="row-num">19</li>
+							<li class="cell-4" data-name="" data-seatId=""></li>
+							<li class="cell-5" data-name="" data-seatId=""></li>
+							<li class="cell-6" data-name="" data-seatId=""></li>
+						</ul>
+						<ul class="row-20">
+							<li class="cell-1" data-name="" data-seatId=""></li>
+							<li class="cell-2" data-name="" data-seatId=""></li>
+							<li class="cell-3" data-name="" data-seatId=""></li>
+							<li class="row-num">20</li>
+							<li class="cell-4" data-name="" data-seatId=""></li>
+							<li class="cell-5" data-name="" data-seatId=""></li>
+							<li class="cell-6" data-name="" data-seatId=""></li>
+						</ul>
+						<ul class="row-21">
+							<li class="cell-1" data-name="" data-seatId=""></li>
+							<li class="cell-2" data-name="" data-seatId=""></li>
+							<li class="cell-3 seat-sold" data-name="" data-seatId=""></li>
+							<li class="row-num">21</li>
+							<li class="cell-4" data-name="" data-seatId=""></li>
+							<li class="cell-5" data-name="" data-seatId=""></li>
+							<li class="cell-6" data-name="" data-seatId=""></li>
+						</ul>
+						<ul class="row-22">
+							<li class="cell-1" data-name="" data-seatId=""></li>
+							<li class="cell-2" data-name="" data-seatId=""></li>
+							<li class="cell-3" data-name="" data-seatId=""></li>
+							<li class="row-num">22</li>
+							<li class="cell-4" data-name="" data-seatId=""></li>
+							<li class="cell-5" data-name="" data-seatId=""></li>
+							<li class="cell-6" data-name="" data-seatId=""></li>
+						</ul>
+						<ul class="row-23">
+							<li class="cell-1" data-name="" data-seatId=""></li>
+							<li class="cell-2" data-name="" data-seatId=""></li>
+							<li class="cell-3" data-name="" data-seatId=""></li>
+							<li class="row-num">23</li>
+							<li class="cell-4" data-name="" data-seatId=""></li>
+							<li class="cell-5" data-name="" data-seatId=""></li>
+							<li class="cell-6" data-name="" data-seatId=""></li>
+						</ul>
+						<ul class="row-24">
+							<li class="cell-1" data-name="" data-seatId=""></li>
+							<li class="cell-2" data-name="" data-seatId=""></li>
+							<li class="cell-3" data-name="" data-seatId=""></li>
+							<li class="row-num">24</li>
+							<li class="cell-4" data-name="" data-seatId=""></li>
+							<li class="cell-5" data-name="" data-seatId=""></li>
+							<li class="cell-6" data-name="" data-seatId=""></li>
+						</ul>
+						<ul class="row-25">
+							<li class="cell-1" data-name="" data-seatId=""></li>
+							<li class="cell-2" data-name="" data-seatId=""></li>
+							<li class="cell-3" data-name="" data-seatId=""></li>
+							<li class="row-num">25</li>
+							<li class="cell-4" data-name="" data-seatId=""></li>
+							<li class="cell-5" data-name="" data-seatId=""></li>
+							<li class="cell-6" data-name="" data-seatId=""></li>
+						</ul>
+					</div>
+				</div>
+				<div class="aircraft-rest-wrap aricraft-rest-footer">
+					<p class="aircraft-WC"></p>
+					<p class="aircraft-meals"></p>
+				</div>
+			</div>
+		</div>
 	</section>
 
 	<!-- 页脚 -->
@@ -153,6 +395,6 @@
 	<script type="text/javascript" src="../../common/CN/js/common-daterange.js"></script>
 	<script type="text/javascript" src="../../common/CN/js/Lanmei-common.js"></script>
 	<!-- 业务代码 -->
-	<script type="text/javascript" src="../../js/CN/LMBaggagePurchase.js"></script>
+	<script type="text/javascript" src="../../js/CN/LMOnlineCheckIn.js"></script>
 </body>
 </html>

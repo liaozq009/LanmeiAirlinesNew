@@ -59,7 +59,7 @@ if(!window.jQuery){
 		        $('.'+data).append('<li title="'+val+'">'+searchVal+'</li>');
 		    });
 		    if(srdata.length==0){ 
-		        $('.'+data).append('<li class="no-result-match">No results match "'+searchText+'"</li>');
+		        $('.'+data).append('<li class="no-result-match">没有匹配 "'+searchText+'"</li>');
 		    }
 		    if(currentVal===''){
 		        $('.'+data).empty();

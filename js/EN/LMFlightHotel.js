@@ -674,8 +674,9 @@ var lmFlightHotel = {
             $('.js-from-input,.js-to-input').attr('readonly',true);
         }
 
-        $('.js-ticketHotel-pay').click(function(event) {
-            $('#passengerInfoModal').modal();
+        //退改签规则
+        $('.js-open-rules').click(function(event) {
+            $('#ruleModal').modal();
         });
     },
 };
