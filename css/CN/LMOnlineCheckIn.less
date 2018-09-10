@@ -428,6 +428,7 @@ body:before {
 			padding-right: 20px;
 			margin-top: 54px;
 			>li{
+				position: relative;
 				float: left;
 				width: 56px;
 				height: 48px;
@@ -436,6 +437,38 @@ body:before {
 				text-align: center;
 				background: url('@{url2}seat-cell.png') center no-repeat;
 				cursor: pointer;
+				.seat-info-wrap{
+					display: none;
+					position: absolute;
+					bottom: 56px;
+					left: 0;
+					z-index: 9;
+					width: 240px;
+					padding:10px 20px;
+					text-align: left;
+					border-radius: 2px;
+					background: #00908C;
+					background:linear-gradient(315deg,#00908C 0%,#B4EC80 100%);
+					box-shadow: 0 0 50px 0 rgba(31,44,92,.3);
+					.seat-class{
+						font-size: 14px;
+						color: #fff;
+						opacity: 0.7;
+						.filter(70);
+						line-height: 26px;
+					}
+					.seat-num{
+						font-size: 36px;
+						font-family: @FBold;
+						color: #fff;
+					}
+				}
+			}
+			.cell-4,.cell-5,.cell-6{
+				.seat-info-wrap{
+					right: 0;
+					left: auto;
+				}
 			}
 			.seat-checked{
 				background: url('@{url2}seat-checked.png') center no-repeat;
@@ -507,6 +540,9 @@ body:before {
 				height: 48px;
 				background: url('@{url2}seat-backRow.png') center no-repeat;
 			}
+			.seat-checked{
+				background: url('@{url2}seat-backRow-checked.png') center no-repeat;
+			}
 			.seat-sold{
 				background: url('@{url2}seat-backRow-sold.png') center no-repeat;
 			}
@@ -522,7 +558,251 @@ body:before {
 			}
 		}
 	}
+	.flight-aside{
+		position: fixed;
+		top: 140px;
+		left: 0;
+		padding: 30px;
+		background: #fff;
+		box-shadow:0px 0px 100px 0px rgba(31,44,92,1);
+		border-radius:0px 2px 2px 0px;
+		.from-airport,.to-airport{
+			margin-top: 30px;
+			font-size: 12px;
+			.purpleRgb(0.5);
+			p{
+				font-size: 20px;
+				font-family: @FBold;
+				color: @purple;
+				max-width: 400px;
+			    overflow: hidden;
+			    text-overflow: ellipsis;
+			    white-space: nowrap;
+			}
+		}
+		.to-airport{
+			margin-top: 20px;
+		}
+		.flight-date-wrap{
+			overflow: hidden;
+			margin-top: 30px;
+		}
+		.flight-date,.flight-num{
+			float: left;
+			width: 200px;
+			font-size: 14px;
+			.purpleRgb(0.5);
+			text-align: center;
+			p{
+				font-size: 36px;
+				font-family: @FBold;
+				color: @purple;
+			}
+		}
+		.flight-line{
+			float: left;
+			width:2px;
+			height:50px;
+			.purpleBgRgb(0.1);
+		}
+	}
+	.seat-arrow{
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		cursor: pointer;
+	}
+	.seat-aside{
+		position: fixed;
+		top: 140px;
+		right: 0;
+		padding: 30px;
+		background: #fff;
+		box-shadow:0px 0px 100px 0px rgba(31,44,92,1);
+		border-radius:2px 0px 0px 2px;
+		.seat-arrow{
+			left: 20px;
+		}
+		>div{
+			height: 34px;
+			line-height: 34px;
+			margin-top: 20px;
+			padding-right: 40px;
+			font-size: 18px;
+			color: @purple;
+			text-align: right;
+			>span{margin-right: 20px;}
+		}
+		.sold-icon{
+			background: url('@{url2}seat-free-small.png') right no-repeat;
+		}
+		.checked-icon{
+			background: url('@{url2}seat-checked-small.png') right no-repeat;
+		}
+		.option-icon{
+			background: url('@{url2}seat-cell-small.png') right no-repeat;
+		}
+		.exit-icon{
+			background: url('@{url2}seat-exit.png') 95% no-repeat;
+		}
+		>ul{
+			margin-top: 30px;
+			overflow: hidden;
+			>li{
+				float: left;
+				margin-right: 40px;
+				font-size: 18px;
+				line-height: 26px;
+				text-align: center;
+			}
+			.seat-class1{
+				color: @red;
+			}
+			.seat-class2{
+				color: @green;
+			}
+			.seat-class3{
+				color: @purple;
+			}
+			.seat-free{
+				margin-right: 0;
+				.purpleRgb(.5);
+			}
+		}
+	}
+	.checkIn-aside{
+		position: fixed;
+		top: 600px;
+		right: 0;
+		width: 370px;
+		padding: 30px;
+		background: #fff;
+		box-shadow:0px 0px 100px 0px rgba(31,44,92,1);
+		border-radius:2px 0px 0px 2px;
+		.seat-arrow{
+			left: 20px;
+		}
+		.pas-name{
+			font-size: 12px;
+			.purpleRgb(0.5);
+			text-align: right;
+			p{
+				font-size: 20px;
+				font-family: @FBold;
+				color: @purple;
+			}
+		}
+		.seat-cabin{
+			margin-top: 10px;
+			font-size: 12px;
+			.purpleRgb(0.5);
+			text-align: right;
+			p{
+				font-size: 30px;
+				font-family: @FBold;
+				color: @purple;
+			}
+		}
+		.member-no{
+			width:100%;
+			margin-top: 10px;
+			text-align: right;
+			.member-no-input{
+				width: 290px;
+				height:36px;
+				padding-left: 10px;
+				padding-right: 10px;
+				text-align: right;
+				font-size: 16px;
+				border-radius:2px;
+				border:1px solid rgba(31,44,92,.2);
+			}
+		}
+		.agree-rule{
+			margin-top: 20px;
+			text-align: right;
+			label{
+				font-size: 14px;
+				.purpleRgb(0.5);
+			}
+			a{
+				display: block;
+				color: @link;
+				font-size: 14px;
+				text-decoration: underline;
+			}
+		}
+		.check-in{
+			margin-top: 20px;
+			overflow: hidden;
+			>a{
+				display: block;
+				float: right;
+				width:140px;
+				height:40px;
+				line-height: 40px;
+				text-align: center;
+				color: #fff;
+				font-size: 16px;
+				border-radius:2px;
+			}
+			.prev-btn{
+				background:@purple;
+			}
+			.checkIn-btn{
+				margin-left: 10px;
+				background: #00908C;
+				background:linear-gradient(315deg,rgba(0,144,140,1) 0%,rgba(180,236,128,1) 100%);
+			}
+		}
+		:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+			.purpleRgb(0.3);font-size: 16px; 
+		}
+
+		::-moz-placeholder { /* Mozilla Firefox 19+ */
+			.purpleRgb(0.3);font-size: 16px;
+		}
+
+		input:-ms-input-placeholder{
+			.purpleRgb(0.3);font-size: 16px;
+		}
+
+		input::-webkit-input-placeholder{
+			.purpleRgb(0.3);font-size: 16px;
+		}
+	}
+	.MiniMap-aside{
+		position: fixed;
+		top: 600px;
+		left: 80px;
+		width:240px;
+		height:260px;
+		.purpleBgRgb(0.8);
+		border-radius:2px;
+		.small-flight{
+			position: relative;
+			width: 180px;
+			height: 180px;
+			margin-top: 50px;
+			margin-left:30px;
+			border: 1px dashed rgba(255,255,255,0.7);
+			background: url('@{url2}aircraft-small.png') center no-repeat;
+			.slide{
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				margin-left: -70px;
+				width: 140px;
+				height: 40px;
+				background: rgba(142,192,96,0.2);
+				border: 1px dashed rgba(255,255,255,0.7);
+				cursor: pointer;
+			}
+		}
+	}
 }
+
+.BackToTop{display: none !important;}
 
 /* 修改日期样式 */
 .daterangepicker.ltr .calendar.left{

@@ -165,9 +165,16 @@ var lmFlightHotel = {
     flightCheckIn:function(){
         // 选中座位
         $('.seat-wrap-com>ul>li').click(function(event) {
-            if(!$(this).hasClass('seat-sold')){
+            if(!$(this).hasClass('seat-sold') && !$(this).hasClass('row-num')){
                 $('.seat-wrap-com>ul>li').removeClass('seat-checked');
                 $(this).addClass('seat-checked');
+                
+                 $('.seat-info-wrap').hide();
+                $(this).children('.seat-info-wrap').addClass('animated2 moveInDown').show();
+                var that = this;
+                setTimeout(function(){
+                    $(that).children('.seat-info-wrap').removeClass('moveInDown');
+                }, 500);
             }
         });
     },
