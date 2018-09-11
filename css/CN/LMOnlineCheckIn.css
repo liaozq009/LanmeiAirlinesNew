@@ -410,6 +410,9 @@ body:before {
 .lm-section-checkIn .seat-cell-wrap {
   margin-top: 100px;
 }
+.lm-section-checkIn .seat-wrap-com {
+  position: relative;
+}
 .lm-section-checkIn .seat-wrap-com > ul {
   height: 48px;
   padding-left: 20px;
@@ -427,31 +430,14 @@ body:before {
   background: url('../../images/resource/checkIn/seat-cell.png') center no-repeat;
   cursor: pointer;
 }
-.lm-section-checkIn .seat-wrap-com > ul > li .seat-info-wrap {
-  display: none;
+.lm-section-checkIn .seat-wrap-com > ul > li span {
   position: absolute;
-  bottom: 56px;
-  left: 0;
-  z-index: 9;
-  width: 240px;
-  padding: 10px 20px;
-  text-align: left;
-  border-radius: 2px;
-  background: #00908C;
-  background: linear-gradient(315deg, #00908C 0%, #B4EC80 100%);
-  box-shadow: 0 0 50px 0 rgba(31, 44, 92, 0.3);
-}
-.lm-section-checkIn .seat-wrap-com > ul > li .seat-info-wrap .seat-class {
-  font-size: 14px;
-  color: #fff;
-  opacity: 0.7;
-  filter: alpha(opacity=70);
-  line-height: 26px;
-}
-.lm-section-checkIn .seat-wrap-com > ul > li .seat-info-wrap .seat-num {
-  font-size: 36px;
+  top: -42px;
+  display: block;
+  width: 56px;
+  text-align: center;
+  color: rgba(31, 44, 92, 0.2);
   font-family: NotoSansBold;
-  color: #fff;
 }
 .lm-section-checkIn .seat-wrap-com > ul .cell-4 .seat-info-wrap,
 .lm-section-checkIn .seat-wrap-com > ul .cell-5 .seat-info-wrap,
@@ -476,58 +462,104 @@ body:before {
   color: rgba(31, 44, 92, 0.2);
   cursor: default;
 }
-.lm-section-checkIn .seat-wrap-one .row-1 > li {
+.lm-section-checkIn .seat-wrap-com .seat-num {
+  position: absolute;
+  top: -30px;
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.lm-section-checkIn .seat-wrap-com .seat-num p {
+  float: left;
+  width: 56px;
+  height: 20px;
+  margin-right: 8px;
+  text-align: center;
+  font-family: NotoSansBold;
+  color: rgba(31, 44, 92, 0.2);
+}
+.lm-section-checkIn .seat-wrap-com .seat-num .p6 {
+  margin-right: 0;
+}
+.lm-section-checkIn .seat-wrap-com .seat-num .row-num {
+  width: 36px;
+}
+.lm-section-checkIn .seat-wrap-com .seat-num .left-exit {
+  left: 0;
+}
+.lm-section-checkIn .seat-wrap-com .seat-num .right-exit {
+  right: 0;
+}
+.lm-section-checkIn .seat-wrap-1 .row-1 > li {
   background: url('../../images/resource/checkIn/seat-class1.png') center no-repeat;
 }
-.lm-section-checkIn .seat-wrap-one .row-1 .seat-checked {
+.lm-section-checkIn .seat-wrap-1 .row-1 .seat-checked {
   background: url('../../images/resource/checkIn/seat-checked.png') center no-repeat;
 }
-.lm-section-checkIn .seat-wrap-one .row-1 .seat-sold {
+.lm-section-checkIn .seat-wrap-1 .row-1 .seat-sold {
   background: url('../../images/resource/checkIn/seat-class1-sold.png') center no-repeat;
 }
-.lm-section-checkIn .seat-wrap-one .row-2 > li {
+.lm-section-checkIn .seat-wrap-1 .row-2 > li {
   background: url('../../images/resource/checkIn/seat-class2.png') center no-repeat;
 }
-.lm-section-checkIn .seat-wrap-one .row-2 .seat-checked {
+.lm-section-checkIn .seat-wrap-1 .row-2 .seat-checked {
   background: url('../../images/resource/checkIn/seat-checked.png') center no-repeat;
 }
-.lm-section-checkIn .seat-wrap-one .row-2 .seat-sold {
+.lm-section-checkIn .seat-wrap-1 .row-2 .seat-sold {
   background: url('../../images/resource/checkIn/seat-class2-sold.png') center no-repeat;
 }
-.lm-section-checkIn .seat-wrap-one .row-3 > li {
+.lm-section-checkIn .seat-wrap-1 .row-3 > li {
   background: url('../../images/resource/checkIn/seat-class3.png') center no-repeat;
 }
-.lm-section-checkIn .seat-wrap-one .row-3 .seat-checked {
+.lm-section-checkIn .seat-wrap-1 .row-3 .seat-checked {
   background: url('../../images/resource/checkIn/seat-checked.png') center no-repeat;
 }
-.lm-section-checkIn .seat-wrap-one .row-3 .seat-sold {
+.lm-section-checkIn .seat-wrap-1 .row-3 .seat-sold {
   background: url('../../images/resource/checkIn/seat-class3-sold.png') center no-repeat;
 }
-.lm-section-checkIn .seat-wrap-two {
+.lm-section-checkIn .seat-wrap-2 {
   margin-top: 62px;
 }
-.lm-section-checkIn .seat-wrap-two > ul {
+.lm-section-checkIn .seat-wrap-2 > ul {
   margin-top: 42px;
 }
-.lm-section-checkIn .seat-wrap-three > ul {
+.lm-section-checkIn .seat-wrap-2 .seat-exit {
+  position: absolute;
+  top: -30px;
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: rgba(31, 44, 92, 0.7);
+  font-family: NotoSansBold;
+}
+.lm-section-checkIn .seat-wrap-2 .seat-exit .left-exit {
+  float: left;
+}
+.lm-section-checkIn .seat-wrap-2 .seat-exit .right-exit {
+  float: right;
+}
+.lm-section-checkIn .seat-wrap-2 .seat-num {
+  top: 60px;
+}
+.lm-section-checkIn .seat-wrap-3 > ul {
   margin-top: 40px;
 }
-.lm-section-checkIn .seat-wrap-three .row-25 {
+.lm-section-checkIn .seat-wrap-3 .row-25 {
   padding-left: 40px;
   padding-right: 40px;
 }
-.lm-section-checkIn .seat-wrap-three .row-25 > li {
+.lm-section-checkIn .seat-wrap-3 .row-25 > li {
   width: 48px;
   height: 48px;
   background: url('../../images/resource/checkIn/seat-backRow.png') center no-repeat;
 }
-.lm-section-checkIn .seat-wrap-three .row-25 .seat-checked {
+.lm-section-checkIn .seat-wrap-3 .row-25 .seat-checked {
   background: url('../../images/resource/checkIn/seat-backRow-checked.png') center no-repeat;
 }
-.lm-section-checkIn .seat-wrap-three .row-25 .seat-sold {
+.lm-section-checkIn .seat-wrap-3 .row-25 .seat-sold {
   background: url('../../images/resource/checkIn/seat-backRow-sold.png') center no-repeat;
 }
-.lm-section-checkIn .seat-wrap-three .row-25 .row-num {
+.lm-section-checkIn .seat-wrap-3 .row-25 .row-num {
   width: 36px;
 }
 .lm-section-checkIn .seat-wrap-com > ul .row-num {
@@ -537,10 +569,13 @@ body:before {
   position: fixed;
   top: 140px;
   left: 0;
+  z-index: 9;
   padding: 30px;
   background: #fff;
   box-shadow: 0px 0px 100px 0px #1f2c5c;
   border-radius: 0px 2px 2px 0px;
+  transition: left .3s;
+  -webkit-transition: left .3s;
 }
 .lm-section-checkIn .flight-aside .from-airport,
 .lm-section-checkIn .flight-aside .to-airport {
@@ -595,10 +630,14 @@ body:before {
   position: fixed;
   top: 140px;
   right: 0;
+  z-index: 9;
+  width: 370px;
   padding: 30px;
   background: #fff;
   box-shadow: 0px 0px 100px 0px #1f2c5c;
   border-radius: 2px 0px 0px 2px;
+  transition: right .3s;
+  -webkit-transition: right .3s;
 }
 .lm-section-checkIn .seat-aside .seat-arrow {
   left: 20px;
@@ -653,13 +692,16 @@ body:before {
 }
 .lm-section-checkIn .checkIn-aside {
   position: fixed;
-  top: 600px;
+  top: 560px;
   right: 0;
+  z-index: 9;
   width: 370px;
   padding: 30px;
   background: #fff;
   box-shadow: 0px 0px 100px 0px #1f2c5c;
   border-radius: 2px 0px 0px 2px;
+  transition: right .3s;
+  -webkit-transition: right .3s;
 }
 .lm-section-checkIn .checkIn-aside .seat-arrow {
   left: 20px;
@@ -757,21 +799,20 @@ body:before {
 }
 .lm-section-checkIn .MiniMap-aside {
   position: fixed;
-  top: 600px;
+  top: 660px;
   left: 80px;
+  z-index: 9;
   width: 240px;
   height: 260px;
-  background: rgba(31, 44, 92, 0.8);
   border-radius: 2px;
+  background: url('../../images/resource/checkIn/aircraft-small.png') center no-repeat rgba(31, 44, 92, 0.8);
 }
 .lm-section-checkIn .MiniMap-aside .small-flight {
   position: relative;
-  width: 180px;
+  width: 140px;
   height: 180px;
-  margin-top: 50px;
-  margin-left: 30px;
-  border: 1px dashed rgba(255, 255, 255, 0.7);
-  background: url('../../images/resource/checkIn/aircraft-small.png') center no-repeat;
+  margin: 0 auto;
+  margin-top: 40px;
 }
 .lm-section-checkIn .MiniMap-aside .small-flight .slide {
   position: absolute;
@@ -781,11 +822,34 @@ body:before {
   width: 140px;
   height: 40px;
   background: rgba(142, 192, 96, 0.2);
-  border: 1px dashed rgba(255, 255, 255, 0.7);
   cursor: pointer;
 }
 .BackToTop {
   display: none !important;
+}
+.lm-sub-header {
+  position: fixed;
+}
+.lm-section {
+  padding-top: 60px;
+}
+.header-mask {
+  position: fixed;
+  top: 60px;
+  width: 100%;
+  height: 120px;
+  background: linear-gradient(180deg, #1f2c5c 0%, rgba(31, 44, 92, 0) 100%);
+  opacity: 0.4;
+  filter: alpha(opacity=40);
+}
+.footer-mask {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 120px;
+  background: linear-gradient(360deg, #1f2c5c 0%, rgba(31, 44, 92, 0) 100%);
+  opacity: 0.4;
+  filter: alpha(opacity=40);
 }
 /* 修改日期样式 */
 .daterangepicker.ltr .calendar.left {

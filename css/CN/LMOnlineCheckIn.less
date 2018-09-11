@@ -44,9 +44,6 @@ body:before {
 	background-size: cover;
 }
 
-.lm-section{
-	
-}
 .lm-section-info{
 	display: none;
 	width: 1200px;
@@ -422,6 +419,7 @@ body:before {
 		margin-top: 100px;
 	}
 	.seat-wrap-com{
+		position: relative;
 		>ul{
 			height: 48px;
 			padding-left: 20px;
@@ -437,31 +435,14 @@ body:before {
 				text-align: center;
 				background: url('@{url2}seat-cell.png') center no-repeat;
 				cursor: pointer;
-				.seat-info-wrap{
-					display: none;
+				span{
 					position: absolute;
-					bottom: 56px;
-					left: 0;
-					z-index: 9;
-					width: 240px;
-					padding:10px 20px;
-					text-align: left;
-					border-radius: 2px;
-					background: #00908C;
-					background:linear-gradient(315deg,#00908C 0%,#B4EC80 100%);
-					box-shadow: 0 0 50px 0 rgba(31,44,92,.3);
-					.seat-class{
-						font-size: 14px;
-						color: #fff;
-						opacity: 0.7;
-						.filter(70);
-						line-height: 26px;
-					}
-					.seat-num{
-						font-size: 36px;
-						font-family: @FBold;
-						color: #fff;
-					}
+					top: -42px;
+					display: block;
+					width: 56px;
+					text-align: center;
+					.purpleRgb(0.2);
+					font-family: @FBold;
 				}
 			}
 			.cell-4,.cell-5,.cell-6{
@@ -486,8 +467,34 @@ body:before {
 				cursor: default;
 			}
 		}
+		.seat-num{
+			position: absolute;
+			top: -30px;
+			width: 100%;
+			padding-left: 20px;
+			padding-right: 20px;
+			p{
+				float: left;
+				width: 56px;
+				height: 20px;
+				margin-right: 8px;
+				text-align: center;
+				font-family: @FBold;
+				.purpleRgb(0.2);
+			}
+			.p6{margin-right: 0;}
+			.row-num{
+				width: 36px;
+			}
+			.left-exit{
+				left: 0;
+			}
+			.right-exit{
+				right: 0;
+			}
+		}
 	}
-	.seat-wrap-one{
+	.seat-wrap-1{
 		.row-1{
 			>li{
 				background: url('@{url2}seat-class1.png') center no-repeat;
@@ -522,13 +529,31 @@ body:before {
 			}
 		}
 	}
-	.seat-wrap-two{
+	.seat-wrap-2{
 		margin-top: 62px;
 		>ul{
 			margin-top: 42px;
 		}
+		.seat-exit{
+			position: absolute;
+			top: -30px;
+			width: 100%;
+			padding-left: 20px;
+			padding-right: 20px;
+			.purpleRgb(0.7);
+			font-family: @FBold;
+			.left-exit{
+				float: left;
+			}
+			.right-exit{
+				float: right;
+			}
+		}
+		.seat-num{
+			top: 60px;
+		}
 	}
-	.seat-wrap-three{
+	.seat-wrap-3{
 		>ul{
 			margin-top: 40px;
 		}
@@ -562,10 +587,13 @@ body:before {
 		position: fixed;
 		top: 140px;
 		left: 0;
+		z-index: 9;
 		padding: 30px;
 		background: #fff;
 		box-shadow:0px 0px 100px 0px rgba(31,44,92,1);
 		border-radius:0px 2px 2px 0px;
+		transition: left .3s;
+		-webkit-transition: left .3s;
 		.from-airport,.to-airport{
 			margin-top: 30px;
 			font-size: 12px;
@@ -616,10 +644,14 @@ body:before {
 		position: fixed;
 		top: 140px;
 		right: 0;
+		z-index: 9;
+		width: 370px;
 		padding: 30px;
 		background: #fff;
 		box-shadow:0px 0px 100px 0px rgba(31,44,92,1);
 		border-radius:2px 0px 0px 2px;
+		transition: right .3s;
+		-webkit-transition: right .3s;
 		.seat-arrow{
 			left: 20px;
 		}
@@ -672,13 +704,16 @@ body:before {
 	}
 	.checkIn-aside{
 		position: fixed;
-		top: 600px;
+		top: 560px;
 		right: 0;
+		z-index: 9;
 		width: 370px;
 		padding: 30px;
 		background: #fff;
 		box-shadow:0px 0px 100px 0px rgba(31,44,92,1);
 		border-radius:2px 0px 0px 2px;
+		transition: right .3s;
+		-webkit-transition: right .3s;
 		.seat-arrow{
 			left: 20px;
 		}
@@ -773,20 +808,19 @@ body:before {
 	}
 	.MiniMap-aside{
 		position: fixed;
-		top: 600px;
+		top: 660px;
 		left: 80px;
+		z-index: 9;
 		width:240px;
 		height:260px;
-		.purpleBgRgb(0.8);
 		border-radius:2px;
+		background: url('@{url2}aircraft-small.png') center no-repeat rgba(31,44,92,0.8);
 		.small-flight{
 			position: relative;
-			width: 180px;
+			width: 140px;
 			height: 180px;
-			margin-top: 50px;
-			margin-left:30px;
-			border: 1px dashed rgba(255,255,255,0.7);
-			background: url('@{url2}aircraft-small.png') center no-repeat;
+			margin: 0 auto;
+			margin-top: 40px;
 			.slide{
 				position: absolute;
 				left: 50%;
@@ -795,7 +829,6 @@ body:before {
 				width: 140px;
 				height: 40px;
 				background: rgba(142,192,96,0.2);
-				border: 1px dashed rgba(255,255,255,0.7);
 				cursor: pointer;
 			}
 		}
@@ -803,6 +836,30 @@ body:before {
 }
 
 .BackToTop{display: none !important;}
+.lm-sub-header{
+	position: fixed;
+}
+.lm-section{
+	padding-top: 60px;
+}
+.header-mask{
+	position: fixed;
+	top: 60px;
+	width:100%;
+	height:120px;
+	background:linear-gradient(180deg,rgba(31,44,92,1) 0%,rgba(31,44,92,0) 100%);
+	opacity:0.4;
+	.filter(40);
+}
+.footer-mask{
+	position: fixed;
+	bottom: 0;
+	width:100%;
+	height:120px;
+	background:linear-gradient(360deg,rgba(31,44,92,1) 0%,rgba(31,44,92,0) 100%);
+	opacity:0.4;
+	.filter(40);
+}
 
 /* 修改日期样式 */
 .daterangepicker.ltr .calendar.left{
