@@ -45,7 +45,7 @@ body:before {
 }
 
 .lm-section-info{
-	display: none;
+	// display: none;
 	width: 1200px;
 	margin: 0 auto;
 	margin-top: 50px;
@@ -387,6 +387,7 @@ body:before {
 }
 
 .lm-section-checkIn{
+	display: none;
 	height: 4180px;
 	background: url('@{url2}lm-A319.png') center top no-repeat;
 	// background-size: 900px;
@@ -588,6 +589,7 @@ body:before {
 		top: 140px;
 		left: 0;
 		z-index: 9;
+		width: 462px;
 		padding: 30px;
 		background: #fff;
 		box-shadow:0px 0px 100px 0px rgba(31,44,92,1);
@@ -636,8 +638,12 @@ body:before {
 	}
 	.seat-arrow{
 		position: absolute;
-		top: 20px;
-		right: 20px;
+		top: 10px;
+		right: 10px;
+		width: 40px;
+	    height: 40px;
+	    line-height: 40px;
+        text-align: center;
 		cursor: pointer;
 	}
 	.seat-aside{
@@ -653,7 +659,7 @@ body:before {
 		transition: right .3s;
 		-webkit-transition: right .3s;
 		.seat-arrow{
-			left: 20px;
+			left: 10px;
 		}
 		>div{
 			height: 34px;
@@ -715,7 +721,7 @@ body:before {
 		transition: right .3s;
 		-webkit-transition: right .3s;
 		.seat-arrow{
-			left: 20px;
+			left: 10px;
 		}
 		.pas-name{
 			font-size: 12px;
@@ -808,7 +814,7 @@ body:before {
 	}
 	.MiniMap-aside{
 		position: fixed;
-		top: 660px;
+		bottom: 80px;
 		left: 80px;
 		z-index: 9;
 		width:240px;
@@ -835,6 +841,119 @@ body:before {
 	}
 }
 
+.lm-section-complete{
+	display: none;
+	width: 1200px;
+	margin: 180px auto 180px;
+	.success-tips{
+		width: 100%;
+		padding: 40px;
+		background: #fff;
+		border-radius: 2px;
+		.success-box{
+			height: 102px;
+			text-align: center;
+			>div{
+				position: relative;
+				top: 20px;
+				height: 102px;
+				display: inline-block;
+				margin-left: 30px;
+				h2{
+					font-size: 36px;
+					font-family: @FBold;
+					color: @purple;
+				}
+				p{
+					position: relative;
+				    top: 10px;
+					font-size: 16px;
+					.purpleRgb(0.5);
+				}
+			}
+		}
+	}
+	.success-inner{
+		position: relative;
+		padding: 40px;
+		margin-top: 20px;
+		background: #fff;
+		border-radius: 2px;
+		.mobile-right-arrow{display: none;}
+		.flight-airport{
+			padding-bottom: 30px;
+			text-align: center;
+			border-bottom: 1px solid rgba(31,44,92,0.1);
+			overflow: hidden;
+			.airport-com{
+				width: 410px;
+				height: 60px;
+				font-size: 30px;
+				color: @purple;
+				font-family: @FBold;
+				text-align: center;
+				p{
+					font-size: 14px;
+					.purpleRgb(0.5);
+				}
+			}
+			.from-airport{
+				float: left;
+			}
+			.flight-num{
+				display: inline-block;
+				width: 300px;
+				font-size: 16px;
+				.purpleRgb(.5);
+			}
+			.to-airport{
+				float: right;
+			}
+		}
+		.flight-info{
+			font-size: 30px;
+			color: @purple;
+			font-family: @FBold;
+			padding-top: 30px;
+			overflow: hidden;
+			text-align: center;
+			>li{
+				width: 50%;
+				float: left;
+				border-right: 1px solid rgba(31,44,92,0.5);
+				p{
+					font-size: 14px;
+					.purpleRgb(0.5);
+				}
+				&:last-child{
+					border-right: none;
+				}
+			}
+		}
+	}
+	.success-operation{
+		margin-top: 40px;
+		text-align: center;
+		>a{
+			display: inline-block;
+			width: 250px;
+			height: 60px;
+			line-height: 60px;
+			text-align: center;
+			color: #fff;
+			font-size: 18px;
+			border-radius: 2px;
+		}
+		.export-PDF{
+			background:linear-gradient(315deg,#00908C 0%,#B4EC80 100%);
+		}
+		.continue-checkIn{
+			margin-left: 50px;
+			background:linear-gradient(135deg,#00908C 0%,#1f2c5c 100%);
+		}
+	}
+}
+
 .BackToTop{display: none !important;}
 .lm-sub-header{
 	position: fixed;
@@ -843,19 +962,21 @@ body:before {
 	padding-top: 60px;
 }
 .header-mask{
+	display: none;
 	position: fixed;
 	top: 60px;
 	width:100%;
-	height:120px;
+	height:80px;
 	background:linear-gradient(180deg,rgba(31,44,92,1) 0%,rgba(31,44,92,0) 100%);
 	opacity:0.4;
 	.filter(40);
 }
 .footer-mask{
+	display: none;
 	position: fixed;
 	bottom: 0;
 	width:100%;
-	height:120px;
+	height:80px;
 	background:linear-gradient(360deg,rgba(31,44,92,1) 0%,rgba(31,44,92,0) 100%);
 	opacity:0.4;
 	.filter(40);
@@ -867,33 +988,90 @@ body:before {
 }
 
 /* 屏幕适配 */
-@media screen and (max-width: 1440px) {
-	.lm-section{
-		width: 990px;
+@media screen and (max-width: 1900px) {
+	.lm-section-checkIn {
+		.flight-aside{
+			width: 342px;
+			top: 100px;
+			padding: 20px;
+			>img{height: 18px;}
+			.from-airport{
+				margin-top: 20px;
+				p{font-size: 18px;}
+			}
+			.to-airport{
+				margin-top: 10px;
+				p{font-size: 18px;}
+			}
+			.flight-date-wrap{
+				margin-top: 20px;
+			}
+			.flight-date,.flight-num{
+				width: 150px;
+				p{font-size: 26px;}
+			}
+		}
+		.seat-aside{
+			width: 270px;
+			top: 100px;
+			padding: 20px;
+			>div{
+				margin-top: 10px;
+				padding-right: 30px;
+				font-size: 14px;
+			}
+			.sold-icon,.checked-icon,.option-icon{
+				background-size: 30px;
+			}
+			.exit-icon{
+				background-size: 6px;
+				background-position-x: 97%;
+			}
+			>ul{
+				margin-top: 20px;
+				>li{
+					margin-right: 27px;
+					font-size: 14px;
+					>img{width: 30px;}
+				}
+			}
+		}
+		.checkIn-aside{
+			width: 270px;
+			top: 420px;
+			padding: 20px;
+			.pas-name {
+				p{font-size: 18px;}
+			}
+			.member-no .member-no-input{
+				width: 230px;
+			}
+			.seat-cabin {
+				p{
+					font-size: 20px;
+				}
+			}
+			.agree-rule,.check-in{
+				margin-top: 16px;
+			}
+			.check-in > a{
+				width: 110px;
+				height: 30px;
+				line-height: 30px;
+			}
+		}
+		.MiniMap-aside{
+			bottom: 40px;
+			left: 40px;
+		}
 	}
-	.lm-content {
-		> div{
-			width: 460px;
-		}
-		.dropdownMenu-wrap{
-			width: 460px;
-		}
-		.dataMenu-wrap{
-			width: 312px;
-		}
-		.flight-num-wrap,.name-wrap{
-			margin-right: 30px;
-		}
+	.lm-section-complete{
+		margin-top: 100px;
+		margin-bottom: 100px;
 	}
 }
 @media screen and (max-width: 992px) {
-	.lm-section{
-		width: 100%;
-	}
-	.lm-content {
-		> div{width: 100%;}
-		.flight-num-wrap,.name-wrap{margin-right: 0;}
-	}
+	
 }
 @media screen and (max-width: 767px) {
 	.lm-section{

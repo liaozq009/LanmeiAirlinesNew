@@ -81,6 +81,7 @@
 						}
 					}
 					handler.css({cursor:'move'}).mousedown(function(e){
+						// console.log('mousedown');
 						isDown = true;
 						X = e.pageX;
 						Y = e.pageY;
@@ -90,8 +91,13 @@
 						fun.dragStart(parseInt(element.css('left')),parseInt(element.css('top')));
 						return false;
 					});
-					$(document).mouseup(function(e){fun.dragEnd(parseInt(element.css('left')),parseInt(element.css('top')));element.removeClass('on');isDown = false;});
-					$(document).mousemove(function(e){
+					parent.mouseup(function(e){
+						// console.log('mouseup');
+						fun.dragEnd(parseInt(element.css('left')),parseInt(element.css('top')));
+						element.removeClass('on');isDown = false;
+					});
+					parent.mousemove(function(e){
+						// console.log('mousemove');
 						moveX = $this.x+e.pageX-X;
 						moveY = $this.y+e.pageY-Y;
 						function thisXMove(){ //x轴移动

@@ -28,8 +28,7 @@ var lmFlightHotel = {
         var flag = IsPC(); //true为PC端，false为手机端
 
         if(flag){
-            
-           
+            this.pcEvent();           
         }else{
             
         }
@@ -108,57 +107,57 @@ var lmFlightHotel = {
         });
 
         //查询
-        $('.js-search-flight').click(function(event) {
-            var $from = $('.js-fromCity-input');
-            var $ticket = $('.js-date-input');
-            var $name = $('.js-lastName-input');
-            var $phone = $('.js-phone-input');
+        // $('.js-search-flight').click(function(event) {
+        //     var $from = $('.js-fromCity-input');
+        //     var $ticket = $('.js-date-input');
+        //     var $name = $('.js-lastName-input');
+        //     var $phone = $('.js-phone-input');
 
-            if($from.val()==''){
-                $from.addClass('warnTip');
-                $from.focus();
-                layer.open({
-                  title: '信息'
-                  ,content: '请检查您的出发地是否正确'
-                });
-                return;
-            }else{
-                $from.removeClass('warnTip');
-            }
-            if($ticket.val()==''){
-                $ticket.addClass('warnTip');
-                $ticket.focus();
-                layer.open({
-                  title: '信息'
-                  ,content: '请检查您的票号或护照号是否正确'
-                });
-                return;
-            }else{
-                $ticket.removeClass('warnTip');
-            }
-            if($name.val()==''){
-                $name.addClass('warnTip');
-                $name.focus();
-                layer.open({
-                  title: '信息'
-                  ,content: '请检查您的姓名是否正确'
-                });
-                return;
-            }else{
-                $name.removeClass('warnTip');
-            }
-            if($phone.val()==''){
-                $phone.addClass('warnTip');
-                $phone.focus();
-                layer.open({
-                  title: '信息'
-                  ,content: '请检查您的号码是否正确'
-                });
-                return;
-            }else{
-                $phone.removeClass('warnTip');
-            }
-        });
+        //     if($from.val()==''){
+        //         $from.addClass('warnTip');
+        //         $from.focus();
+        //         layer.open({
+        //           title: '信息'
+        //           ,content: '请检查您的出发地是否正确'
+        //         });
+        //         return;
+        //     }else{
+        //         $from.removeClass('warnTip');
+        //     }
+        //     if($ticket.val()==''){
+        //         $ticket.addClass('warnTip');
+        //         $ticket.focus();
+        //         layer.open({
+        //           title: '信息'
+        //           ,content: '请检查您的票号或护照号是否正确'
+        //         });
+        //         return;
+        //     }else{
+        //         $ticket.removeClass('warnTip');
+        //     }
+        //     if($name.val()==''){
+        //         $name.addClass('warnTip');
+        //         $name.focus();
+        //         layer.open({
+        //           title: '信息'
+        //           ,content: '请检查您的姓名是否正确'
+        //         });
+        //         return;
+        //     }else{
+        //         $name.removeClass('warnTip');
+        //     }
+        //     if($phone.val()==''){
+        //         $phone.addClass('warnTip');
+        //         $phone.focus();
+        //         layer.open({
+        //           title: '信息'
+        //           ,content: '请检查您的号码是否正确'
+        //         });
+        //         return;
+        //     }else{
+        //         $phone.removeClass('warnTip');
+        //     }
+        // });
     },
 
     /* 座位选择 */
@@ -248,26 +247,40 @@ var lmFlightHotel = {
         });
 
         // 收缩
-        $('.js-flight-arrow').click(function(event) {
-           $(this).parent().css('left',-442);
-        });
+        if(this.winWidth<1900){
+            $('.js-flight-arrow').click(function(event) {
+               $(this).parent().css('left',-332);
+            });
+            $('.js-seat-arrow').click(function(event) {
+               $(this).parent().css('right',-260);
+            });
+            $('.js-checkIn-arrow').click(function(event) {
+               $(this).parent().css('right',-260);
+            });
+        }else{
+            $('.js-flight-arrow').click(function(event) {
+               $(this).parent().css('left',-442);
+            });
+            $('.js-seat-arrow').click(function(event) {
+               $(this).parent().css('right',-350);
+            });
+            $('.js-checkIn-arrow').click(function(event) {
+               $(this).parent().css('right',-350);
+            });
+        }
+        
         $('.js-flight-aside').mouseenter(function(event) {
            $(this).css('left',0);
         });
-        $('.js-seat-arrow').click(function(event) {
-           $(this).parent().css('right',-350);
-        });
         $('.js-seat-aside').mouseenter(function(event) {
            $(this).css('right',0);
-        });
-        $('.js-checkIn-arrow').click(function(event) {
-           $(this).parent().css('right',-350);
         });
         $('.js-checkIn-aside').mouseenter(function(event) {
            $(this).css('right',0);
         });
 
         // 拖拽
+        var curentHeight = 3535;
         $('.js-miniMap-slide').myDrag({
             parent:'.js-miniMap-wrap', //定义拖动不能超出的外框,拖动范围
             randomPosition:true, //初始化随机位置
@@ -275,23 +288,65 @@ var lmFlightHotel = {
             direction:'y', //方向
             handler:false, //把手
             dragStart:function(x,y){}, //拖动开始 x,y为当前坐标
-            dragEnd:function(x,y){}, //拖动停止 x,y为当前坐标
+            dragEnd:function(x,y){
+                $('html, body').animate({scrollTop:(y/140)*curentHeight}, 'slow');
+            }, //拖动停止 x,y为当前坐标
             dragMove:function(x,y){ //140 4180
-                // console.log(x,y);
+               
             }
         });
 
         $(window).scroll(function(){
             var winHeigh = $(this).scrollTop(); //页面滚动的高度
-            // console.log(winHeigh);
-            $('.js-miniMap-slide').css('top',(winHeigh/3538)*140);
+            $('.js-miniMap-slide').css('top',(winHeigh/curentHeight)*140);
+        });
+    },
+
+    /* pc端事件 */
+    pcEvent:function(){
+        // 定义滚动条
+        var nice = $("html").niceScroll({
+            cursorborderradius: 0,
+            cursorwidth: "8px",
+            cursorfixedheight: 150,
+            cursorcolor: "#1f2c5c",
+            zindex: 9999,
+            cursorborder: 0,
+            scrollspeed: 26,
+            mousescrollstep: 36,
         });
     },
 
     /* 其他事件 */
     addEvend: function () {
-        $('.js-ticketHotel-pay').click(function(event) {
-            $('#passengerInfoModal').modal();
+        var $sectionInfo = $('.lm-section-info');
+        var $sectionCheckIn = $('.lm-section-checkIn');
+        var $sectionComplete = $('.lm-section-complete');
+
+        var $mask = $('.header-mask,.footer-mask');
+
+        $('.js-search-flight').click(function(event) {
+            $sectionInfo.hide();
+            $sectionCheckIn.show();
+            $mask.show();
+        });
+
+        $('.js-prev-btn').click(function(event) {
+            $sectionInfo.show();
+            $sectionCheckIn.hide();
+            $mask.hide();
+        });
+
+        $('.js-checkIn-btn').click(function(event) {
+            $sectionCheckIn.hide();
+            $sectionComplete.show();
+            $mask.hide();
+        });
+
+        $('.js-continue-checkIn').click(function(event) {
+            $sectionInfo.show();
+            $sectionComplete.hide();
+            $mask.hide();
         });
     },
 };
