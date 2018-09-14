@@ -247,35 +247,105 @@ var lmFlightHotel = {
         });
 
         // 收缩
-        if(this.winWidth<1900){
-            $('.js-flight-arrow').click(function(event) {
-               $(this).parent().css('left',-332);
-            });
-            $('.js-seat-arrow').click(function(event) {
-               $(this).parent().css('right',-260);
-            });
-            $('.js-checkIn-arrow').click(function(event) {
-               $(this).parent().css('right',-260);
-            });
-        }else{
-            $('.js-flight-arrow').click(function(event) {
+        var $flightAside =  $('.js-flight-aside');
+        var $seatAside =  $('.js-seat-aside');
+        var $checkInAside =  $('.js-checkIn-aside');
+        var $flightArrow =  $('.js-flight-arrow');
+        var $seatArrow =  $('.js-seat-arrow');
+        var $checkInArrow =  $('.js-checkIn-arrow');
+
+        if(this.winWidth>1900){
+            $flightArrow.click(function(event) {
                $(this).parent().css('left',-442);
             });
-            $('.js-seat-arrow').click(function(event) {
+            $seatArrow.click(function(event) {
                $(this).parent().css('right',-350);
             });
-            $('.js-checkIn-arrow').click(function(event) {
+            $checkInArrow.click(function(event) {
                $(this).parent().css('right',-350);
+            });
+            
+        }else if(this.winWidth<1900 && this.winWidth>1200){
+            $flightArrow.click(function(event) {
+               $(this).parent().css('left',-332);
+            });
+            $seatArrow.click(function(event) {
+               $(this).parent().css('right',-260);
+            });
+            $checkInArrow.click(function(event) {
+               $(this).parent().css('right',-260);
+            });
+        }else if(this.winWidth<1200 && this.winWidth>700){
+            $flightArrow.click(function(event) {
+                event.stopPropagation();
+                if($flightAside.hasClass('flight-aside-scale')){
+                    $flightAside.removeClass('flight-aside-scale');
+                }else{
+                    $flightAside.addClass('flight-aside-scale');
+                }
+            });
+            $seatArrow.click(function(event) {
+                event.stopPropagation();
+                if($seatAside.hasClass('seat-aside-scale')){
+                   $seatAside.removeClass('seat-aside-scale');
+               }else{
+                   $seatAside.addClass('seat-aside-scale');
+               }
+            });
+            $checkInArrow.click(function(event) {
+                event.stopPropagation();
+                if($checkInAside.hasClass('checkIn-aside-scale')){
+                   $checkInAside.removeClass('checkIn-aside-scale');
+               }else{
+                   $checkInAside.addClass('checkIn-aside-scale');
+               }
+            });
+
+            $flightAside.click(function(event) {
+              $(this).removeClass('flight-aside-scale');
+            });
+            $seatAside.click(function(event) {
+              $(this).removeClass('seat-aside-scale');
+            });
+            $checkInAside.click(function(event) {
+               $(this).removeClass('checkIn-aside-scale');
+            });
+
+            var scrolltop = new Array();
+            var i = 0;
+            scrolltop[0] = 0;
+            $(document).scroll(function(){
+                i++;
+                scrolltop[i] = $(document).scrollTop();
+                if (scrolltop[i] > scrolltop[i-1]) {
+                    //鼠标向下滚动
+                    if(scrolltop[i]>150){
+                        $flightAside.addClass('flight-aside-scale');
+                        $seatAside.addClass('seat-aside-scale');
+                        $checkInAside.addClass('checkIn-aside-scale');
+                    }
+                }else{
+                    //鼠标向上滚动
+                    if(scrolltop[i]<150){
+                        $flightAside.removeClass('flight-aside-scale');
+                        $seatAside.removeClass('seat-aside-scale');
+                        $checkInAside.removeClass('checkIn-aside-scale');
+                    }
+                };
+            });
+
+            $('.seat-wrap-com').on('click','>ul>li',function(event) {
+                $checkInAside.removeClass('checkIn-aside-scale');
             });
         }
         
-        $('.js-flight-aside').mouseenter(function(event) {
+        $flightAside.mouseenter(function(event) {
            $(this).css('left',0);
         });
-        $('.js-seat-aside').mouseenter(function(event) {
+        $seatAside.mouseenter(function(event) {
            $(this).css('right',0);
         });
-        $('.js-checkIn-aside').mouseenter(function(event) {
+        $checkInAside.mouseenter(function(event) {
            $(this).css('right',0);
         });
 
