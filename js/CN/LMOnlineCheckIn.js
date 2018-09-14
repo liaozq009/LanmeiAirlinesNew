@@ -256,25 +256,15 @@ var lmFlightHotel = {
 
         if(this.winWidth>1900){
             $flightArrow.click(function(event) {
-               $(this).parent().css('left',-442);
+               $(this).parent().css('left',-322);
             });
             $seatArrow.click(function(event) {
-               $(this).parent().css('right',-350);
+               $(this).parent().css('right',-250);
             });
             $checkInArrow.click(function(event) {
-               $(this).parent().css('right',-350);
+               $(this).parent().css('right',-250);
             });
             
-        }else if(this.winWidth<1900 && this.winWidth>1200){
-            $flightArrow.click(function(event) {
-               $(this).parent().css('left',-332);
-            });
-            $seatArrow.click(function(event) {
-               $(this).parent().css('right',-260);
-            });
-            $checkInArrow.click(function(event) {
-               $(this).parent().css('right',-260);
-            });
         }else if(this.winWidth<1200 && this.winWidth>700){
             $flightArrow.click(function(event) {
                 event.stopPropagation();
@@ -365,7 +355,6 @@ var lmFlightHotel = {
                
             }
         });
-
         $(window).scroll(function(){
             var winHeigh = $(this).scrollTop(); //页面滚动的高度
             $('.js-miniMap-slide').css('top',(winHeigh/curentHeight)*90);

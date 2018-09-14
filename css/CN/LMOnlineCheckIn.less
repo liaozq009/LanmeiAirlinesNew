@@ -760,11 +760,11 @@ body:before {
 			}
 		}
 		.member-no{
-			width:230px;
+			width:100%;
 			margin-top: 10px;
 			text-align: right;
 			.member-no-input{
-				width: 100%;
+				width: 230px;
 				height:36px;
 				padding-left: 10px;
 				padding-right: 10px;
@@ -1010,13 +1010,15 @@ body:before {
 @media screen and (max-width: 1900px) {
 	.lm-section-checkIn {
 		.flight-aside{
+			top: 90px;
 			padding: 10px;
 		}
 		.seat-aside{
+			top: 90px;
 			padding: 10px;
 		}
 		.checkIn-aside{
-			top: 400px;
+			top: 380px;
 			padding: 10px;
 		}
 		.MiniMap-aside{
@@ -1027,6 +1029,23 @@ body:before {
 	.lm-section-complete{
 		margin-top: 100px;
 		margin-bottom: 100px;
+	}
+}
+@media screen and (max-width: 1300px) {
+	.lm-section-checkIn {
+		.flight-aside{
+			top: 60px;
+		}
+		.seat-aside{
+			top: 60px;
+		}
+		.checkIn-aside{
+			top: 340px;
+		}
+		.MiniMap-aside{
+			bottom: 20px;
+			left: 20px;
+		}
 	}
 }
 @media screen and (max-width: 1200px) {
@@ -1246,6 +1265,7 @@ body:before {
 	}
 	.lm-section-checkIn {
 		background-size: 2760px;
+		// background: url('@{url2}lm-A319-mobile.png') center top no-repeat; 
 		.flight-aside{display: none;}
 		.seat-aside{display: none;}
 		.checkIn-aside{display: none;}
