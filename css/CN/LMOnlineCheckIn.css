@@ -1259,83 +1259,245 @@ body:before {
     margin-bottom: 6px;
   }
   .lm-section-checkIn {
-    background-size: 2760px;
+    width: 320px;
+    height: 1900px;
+    margin: 0 auto;
+    background: url('../../images/resource/checkIn/lm-A319-mobile.png') center 34% no-repeat;
+    background-size: 2700px;
+  }
+  .lm-section-checkIn .seat-arrow {
+    top: 0;
+    height: 20px;
+    line-height: 20px;
+  }
+  .lm-section-checkIn .seat-arrow > img {
+    width: 14px;
   }
   .lm-section-checkIn .flight-aside {
+    top: 70px;
+    width: 190px;
+    box-shadow: 0px 0px 100px 0px rgba(31, 44, 92, 0.39);
+  }
+  .lm-section-checkIn .flight-aside > img {
     display: none;
+  }
+  .lm-section-checkIn .flight-aside .seat-arrow {
+    right: 0;
+  }
+  .lm-section-checkIn .flight-aside .from-airport,
+  .lm-section-checkIn .flight-aside .to-airport {
+    width: 100%;
+    font-size: 12px;
+  }
+  .lm-section-checkIn .flight-aside .from-airport p,
+  .lm-section-checkIn .flight-aside .to-airport p {
+    font-size: 14px;
+  }
+  .lm-section-checkIn .flight-aside .flight-date,
+  .lm-section-checkIn .flight-aside .flight-num {
+    width: 84px;
+  }
+  .lm-section-checkIn .flight-aside .flight-date p,
+  .lm-section-checkIn .flight-aside .flight-num p {
+    font-size: 14px;
+  }
+  .lm-section-checkIn .flight-aside .flight-line {
+    height: 40px;
   }
   .lm-section-checkIn .seat-aside {
-    display: none;
+    top: 70px;
+    width: 126px;
+    box-shadow: 0px 0px 100px 0px rgba(31, 44, 92, 0.39);
+  }
+  .lm-section-checkIn .seat-aside > div {
+    height: 20px;
+    line-height: 20px;
+    padding-right: 20px;
+  }
+  .lm-section-checkIn .seat-aside > div > span {
+    font-size: 12px;
+    margin-right: 10px;
+  }
+  .lm-section-checkIn .seat-aside .sold-icon,
+  .lm-section-checkIn .seat-aside .checked-icon,
+  .lm-section-checkIn .seat-aside .option-icon {
+    background-size: 20px;
+  }
+  .lm-section-checkIn .seat-aside > ul {
+    margin-top: 10px;
+  }
+  .lm-section-checkIn .seat-aside > ul > li {
+    float: none;
+    font-size: 12px;
+    line-height: 22px;
+    margin-right: 0;
+    text-align: right;
+  }
+  .lm-section-checkIn .seat-aside > ul > li > img {
+    width: 20px;
+  }
+  .lm-section-checkIn .seat-aside > ul > li > p {
+    float: left;
+    width: 70%;
+  }
+  .lm-section-checkIn .seat-aside .seat-arrow {
+    left: 0;
   }
   .lm-section-checkIn .checkIn-aside {
-    display: none;
+    top: auto;
+    bottom: 10px;
+    width: auto;
+    padding: 10px;
+    -webkit-transform: scale(0.2);
+    transform: scale(0.2);
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
+    box-shadow: 0px 0px 100px 0px rgba(31, 44, 92, 0.39);
+  }
+  .lm-section-checkIn .checkIn-aside .pas-name p {
+    font-size: 16px;
+  }
+  .lm-section-checkIn .checkIn-aside .member-no .member-no-input {
+    width: 180px;
+    height: 26px;
+    font-size: 14px;
+  }
+  .lm-section-checkIn .checkIn-aside .member-no :-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    font-size: 14px;
+  }
+  .lm-section-checkIn .checkIn-aside .member-no ::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    font-size: 14px;
+  }
+  .lm-section-checkIn .checkIn-aside .member-no input:-ms-input-placeholder {
+    font-size: 14px;
+  }
+  .lm-section-checkIn .checkIn-aside .member-no input::-webkit-input-placeholder {
+    font-size: 14px;
+  }
+  .lm-section-checkIn .checkIn-aside .seat-cabin p {
+    font-size: 16px;
+  }
+  .lm-section-checkIn .checkIn-aside .agree-rule {
+    margin-top: 10px;
+  }
+  .lm-section-checkIn .checkIn-aside .check-in > a {
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+  }
+  .lm-section-checkIn .checkIn-aside .seat-arrow {
+    left: 0;
   }
   .lm-section-checkIn .lm-seat-wrap {
-    width: 290px;
-    padding-top: 340px;
+    padding-top: 220px;
+    -webkit-transform: scale(0.62);
+    transform: scale(0.62);
+    -webkit-transform-origin: 10% top;
+    transform-origin: 10% top;
   }
-  .lm-section-checkIn .seat-wrap-com > ul {
-    padding-left: 0;
-    padding-right: 0;
-    margin-top: 23px;
+  .lm-section-checkIn .flight-aside-scale {
+    -webkit-transform: scale(0.2);
+    transform: scale(0.2);
+    -webkit-transform-origin: left top;
+    transform-origin: left top;
   }
-  .lm-section-checkIn .seat-wrap-com > ul > li {
-    width: 38px;
-    margin-right: 6px;
-    background-size: 38px;
+  .lm-section-checkIn .seat-aside-scale {
+    -webkit-transform: scale(0.3);
+    transform: scale(0.3);
+    -webkit-transform-origin: right top;
+    transform-origin: right top;
   }
-  .lm-section-checkIn .seat-wrap-com > ul .seat-sold {
-    background-size: 38px;
+  .lm-section-checkIn .checkIn-aside-scale {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
   }
-  .lm-section-checkIn .seat-wrap-com > ul .row-num {
-    width: 26px;
+  .header-mask,
+  .footer-mask {
+    height: 40px;
   }
-  .lm-section-checkIn .seat-wrap-com .row-1 .seat-sold,
-  .lm-section-checkIn .seat-wrap-com .row-2 .seat-sold,
-  .lm-section-checkIn .seat-wrap-com .row-3 .seat-sold,
-  .lm-section-checkIn .seat-wrap-com .row-25 .seat-sold,
-  .lm-section-checkIn .seat-wrap-com .row-1 li,
-  .lm-section-checkIn .seat-wrap-com .row-2 li,
-  .lm-section-checkIn .seat-wrap-com .row-3 li,
-  .lm-section-checkIn .seat-wrap-com .row-25 li {
-    background-size: 38px;
+  .lm-section-complete {
+    margin-top: 30px;
+    margin-bottom: 30px;
   }
-  .lm-section-checkIn .seat-wrap-com .seat-num {
-    top: -20px;
+  .lm-section-complete .success-tips {
+    padding: 10px;
+  }
+  .lm-section-complete .success-tips .success-box {
+    height: auto;
+  }
+  .lm-section-complete .success-tips .success-box > img {
+    width: 50px;
+  }
+  .lm-section-complete .success-tips .success-box > div {
+    display: block;
+    position: static;
+    height: auto;
+    margin-left: 0;
+    margin-top: 10px;
+  }
+  .lm-section-complete .success-tips .success-box > div h2 {
+    font-size: 18px;
+  }
+  .lm-section-complete .success-tips .success-box > div p {
+    position: static;
+    font-size: 12px;
+    margin-top: 6px;
+  }
+  .lm-section-complete .success-inner {
+    padding: 10px;
+  }
+  .lm-section-complete .success-inner .flight-airport {
+    padding-bottom: 10px;
+  }
+  .lm-section-complete .success-inner .flight-airport .airport-com {
     width: 100%;
-    padding-left: 0;
-    padding-right: 0;
+    height: auto;
+    font-size: 16px;
   }
-  .lm-section-checkIn .seat-wrap-com .seat-num p {
-    width: 38px;
-    height: 20px;
-    margin-right: 6px;
+  .lm-section-complete .success-inner .flight-airport .airport-com p {
+    font-size: 12px;
   }
-  .lm-section-checkIn .seat-wrap-com .seat-num .p6 {
-    margin-right: 0;
+  .lm-section-complete .success-inner .flight-airport .flight-num {
+    width: 100%;
+    font-size: 14px;
+    margin-top: 10px;
   }
-  .lm-section-checkIn .seat-wrap-com .seat-num .row-num {
-    width: 26px;
+  .lm-section-complete .success-inner .flight-airport .flight-num img {
+    width: auto;
   }
-  .lm-section-checkIn .seat-cell-wrap {
-    margin-top: 60px;
+  .lm-section-complete .success-inner .flight-airport .flight-num .pc-right-arrow {
+    display: none;
   }
-  .lm-section-checkIn .aircraft-rest-wrap {
-    padding-left: 30px;
-    padding-right: 30px;
+  .lm-section-complete .success-inner .flight-airport .flight-num .mobile-right-arrow {
+    width: auto;
+    display: block;
+    margin: 0 auto;
   }
-  .lm-section-checkIn .aircraft-rest-wrap .aircraft-WC,
-  .lm-section-checkIn .aircraft-rest-wrap .aircraft-meals {
-    background-size: 80px;
+  .lm-section-complete .success-inner .flight-airport .to-airport {
+    margin-top: 10px;
   }
-  .lm-section-checkIn .aircraft-rest-wrap .aircraft-WC {
-    margin-right: 70px;
+  .lm-section-complete .success-inner .flight-info {
+    font-size: 16px;
   }
-  .lm-section-checkIn .aircraft-rest-wrap > p {
-    width: 80px;
-    height: 62px;
+  .lm-section-complete .success-inner .flight-info > li p {
+    font-size: 12px;
   }
-  .lm-section-checkIn .seat-wrap-2 .seat-exit {
-    top: -48px;
+  .lm-section-complete .success-operation {
+    margin-top: 30px;
+    overflow: hidden;
+  }
+  .lm-section-complete .success-operation > a {
+    float: left;
+    width: 48%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+  }
+  .lm-section-complete .success-operation .continue-checkIn {
+    margin-left: 4%;
   }
 }

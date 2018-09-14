@@ -30,7 +30,7 @@ var lmFlightHotel = {
         if(flag){
             this.pcEvent();           
         }else{
-            
+            this.mobileEvent();
         }
     },
 
@@ -376,6 +376,79 @@ var lmFlightHotel = {
         });
     },
 
+    /* 移动端事件 */
+    mobileEvent:function(){
+        // 收缩
+        var $flightAside =  $('.js-flight-aside');
+        var $seatAside =  $('.js-seat-aside');
+        var $checkInAside =  $('.js-checkIn-aside');
+        var $flightArrow =  $('.js-flight-arrow');
+        var $seatArrow =  $('.js-seat-arrow');
+        var $checkInArrow =  $('.js-checkIn-arrow');
+
+        $flightArrow.click(function(event) {
+            event.stopPropagation();
+            if($flightAside.hasClass('flight-aside-scale')){
+                $flightAside.removeClass('flight-aside-scale');
+            }else{
+                $flightAside.addClass('flight-aside-scale');
+            }
+        });
+        $seatArrow.click(function(event) {
+            event.stopPropagation();
+            if($seatAside.hasClass('seat-aside-scale')){
+               $seatAside.removeClass('seat-aside-scale');
+           }else{
+               $seatAside.addClass('seat-aside-scale');
+           }
+        });
+        $checkInArrow.click(function(event) {
+            event.stopPropagation();
+            if($checkInAside.hasClass('checkIn-aside-scale')){
+               $checkInAside.removeClass('checkIn-aside-scale');
+           }else{
+               $checkInAside.addClass('checkIn-aside-scale');
+           }
+        });
+
+        $flightAside.click(function(event) {
+          $(this).removeClass('flight-aside-scale');
+        });
+        $seatAside.click(function(event) {
+          $(this).removeClass('seat-aside-scale');
+        });
+        $checkInAside.click(function(event) {
+           $(this).addClass('checkIn-aside-scale');
+        });
+
+        var scrolltop = new Array();
+        var i = 0;
+        scrolltop[0] = 0;
+        $(document).scroll(function(){
+            i++;
+            scrolltop[i] = $(document).scrollTop();
+            if (scrolltop[i] > scrolltop[i-1]) {
+                //鼠标向下滚动
+                if(scrolltop[i]>50){
+                    $flightAside.addClass('flight-aside-scale');
+                    $seatAside.addClass('seat-aside-scale');
+                    // $checkInAside.addClass('checkIn-aside-scale');
+                }
+            }else{
+                //鼠标向上滚动
+                if(scrolltop[i]<50){
+                    $flightAside.removeClass('flight-aside-scale');
+                    $seatAside.removeClass('seat-aside-scale');
+                    $checkInAside.removeClass('checkIn-aside-scale');
+                }
+            };
+        });
+
+        $('.seat-wrap-com').on('click','>ul>li',function(event) {
+            $checkInAside.addClass('checkIn-aside-scale');
+        });
+    },
+
     /* 其他事件 */
     addEvend: function () {
         var $sectionInfo = $('.lm-section-info');
@@ -388,6 +461,7 @@ var lmFlightHotel = {
             $sectionInfo.hide();
             $sectionCheckIn.show();
             $mask.show();
+            $('html, body').stop().animate({scrollTop:0}, 'slow');
         });
 
         $('.js-prev-btn').click(function(event) {

@@ -1263,73 +1263,214 @@ body:before {
 			}
 		}
 	}
-	.lm-section-checkIn {
-		background-size: 2760px;
-		// background: url('@{url2}lm-A319-mobile.png') center top no-repeat; 
-		.flight-aside{display: none;}
-		.seat-aside{display: none;}
-		.checkIn-aside{display: none;}
-		.lm-seat-wrap{
-			width: 290px;
-			padding-top: 340px;
+	.lm-section-checkIn{
+		width: 320px;
+		height: 1900px;
+		margin: 0 auto;
+		background: url('@{url2}lm-A319-mobile.png') center 34% no-repeat; 
+		background-size: 2700px;
+		.seat-arrow{
+			top: 0;
+			height: 20px;
+			line-height: 20px;
+			>img{width: 14px;}
 		}
-		.seat-wrap-com {
-			> ul{
-				padding-left: 0;
-				padding-right: 0;
-				margin-top: 23px;
-				>li{
-					width: 38px;
-					margin-right: 6px;
-					background-size: 38px;
-				}
-				.seat-sold{
-					background-size: 38px;
-				}
-				.row-num{
-					width: 26px;
-				}
-			}
-			.row-1,.row-2,.row-3,.row-25 {
-				.seat-sold,li{
-					background-size: 38px;
-				}
-			}
-			.seat-num{
-				top: -20px;
+		.flight-aside{
+			top: 70px;
+			width: 190px;
+			box-shadow: 0px 0px 100px 0px rgba(31,44,92,.39);
+			>img{display: none;}
+			.seat-arrow{right: 0;}
+			.from-airport,.to-airport{
 				width: 100%;
-				padding-left: 0;
-				padding-right: 0;
-				p{
-					width: 38px;
-					height: 20px;
-					margin-right: 6px;
+				font-size: 12px;
+				p{font-size: 14px;}
+			}
+			.flight-date,.flight-num{
+				width: 84px;
+				p{font-size: 14px;}
+			}
+			.flight-line{height: 40px;}
+		}
+		.seat-aside{
+			top: 70px;
+			width: 126px;
+			box-shadow: 0px 0px 100px 0px rgba(31,44,92,.39);
+			> div {
+				height: 20px;
+				line-height: 20px;
+				padding-right: 20px;
+				> span{
+					font-size: 12px;
+					margin-right: 10px;
 				}
-				.p6{margin-right: 0;}
-				.row-num{
-					width: 26px;
+			}
+			.sold-icon,.checked-icon,.option-icon{
+				background-size: 20px;
+			}
+			>ul{
+				margin-top: 10px;
+				>li{
+					float: none;
+					font-size: 12px;
+					line-height: 22px;
+					margin-right: 0;
+					text-align: right;
+					>img{width: 20px;}
+					>p{
+						float: left;
+						width: 70%;
+					}
+				}
+			}
+			.seat-arrow{
+				left: 0;
+			}
+		}
+		.checkIn-aside{
+			top: auto;
+			bottom: 10px;
+			width: auto;
+			padding: 10px;
+			-webkit-transform: scale(.2);
+		    transform: scale(.2);
+		    -webkit-transform-origin: right bottom;
+		    transform-origin: right bottom;
+			box-shadow: 0px 0px 100px 0px rgba(31,44,92,.39);
+			.pas-name p{font-size: 16px;}
+			.member-no {
+				.member-no-input{
+					width: 180px;
+					height: 26px;
+					font-size: 14px;
+				}
+				:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+					font-size: 14px; 
+				}
+
+				::-moz-placeholder { /* Mozilla Firefox 19+ */
+					font-size: 14px;
+				}
+
+				input:-ms-input-placeholder{
+					font-size: 14px;
+				}
+
+				input::-webkit-input-placeholder{
+					font-size: 14px;
+				}
+			}
+			.seat-cabin p{font-size: 16px;}
+			.agree-rule{margin-top: 10px;}
+			.check-in {
+				> a{
+					width: 100px;
+					height: 30px;
+					line-height: 30px;
+				}
+			}
+			.seat-arrow{
+				left: 0;
+			}
+		}
+		.lm-seat-wrap {
+			padding-top: 220px;
+			-webkit-transform: scale(.62);
+		    transform: scale(.62);
+		    -webkit-transform-origin: 10% top;
+		    transform-origin: 10% top;
+		}
+		.flight-aside-scale{
+			-webkit-transform: scale(.2);
+		    transform: scale(.2);
+		    -webkit-transform-origin: left top;
+		    transform-origin: left top;
+		}
+		.seat-aside-scale {
+			-webkit-transform: scale(.3);
+		    transform: scale(.3);
+		    -webkit-transform-origin: right top;
+		    transform-origin: right top;
+		}
+		.checkIn-aside-scale{
+				-webkit-transform: scale(1);
+			    transform: scale(1);
+			    -webkit-transform-origin: right bottom;
+			    transform-origin: right bottom;
+		}
+	}
+	.header-mask,.footer-mask{
+		height: 40px;
+	}
+	.lm-section-complete{
+		margin-top: 30px;
+		margin-bottom: 30px;
+		.success-tips{
+			padding: 10px;
+			.success-box{
+				height: auto;
+				>img{width: 50px;}
+				>div{
+					display: block;
+					position: static;
+					height: auto;
+					margin-left: 0;
+					margin-top: 10px;
+					h2{font-size: 18px;}
+					p{
+						position: static;
+						font-size: 12px;
+						margin-top: 6px;
+					}
 				}
 			}
 		}
-		.seat-cell-wrap{
-			margin-top: 60px;
+		.success-inner{
+			padding: 10px;
+			.flight-airport {
+				padding-bottom: 10px;
+				.airport-com{
+					width: 100%;
+					height: auto;
+					font-size: 16px;
+					p{font-size: 12px;}
+				}
+				.flight-num{
+					width: 100%;
+					font-size: 14px;
+					margin-top: 10px;
+					img{width: auto;}
+					.pc-right-arrow{display: none;}
+					.mobile-right-arrow{
+						width: auto;
+						display: block;
+						margin: 0 auto;
+					}
+				}
+				.to-airport {
+					margin-top: 10px;
+				}
+			}
+			.flight-info{
+				font-size: 16px;
+				>li{
+					p{font-size: 12px;}
+				}
+			}
 		}
-		.aircraft-rest-wrap{
-			padding-left: 30px;
-			padding-right: 30px;
-			.aircraft-WC,.aircraft-meals{
-				background-size: 80px;
+		.success-operation{
+			margin-top: 30px;
+			overflow: hidden;
+			>a{
+				float: left;
+				width: 48%;
+				height: 40px;
+				line-height: 40px;
+				font-size: 16px;
 			}
-			.aircraft-WC{
-				margin-right: 70px;
+			.continue-checkIn{
+				margin-left: 4%;
 			}
-			>p{
-				width: 80px;
-			    height: 62px;
-			}
-		}
-		.seat-wrap-2 .seat-exit{
-			top: -48px;
 		}
 	}
 }
