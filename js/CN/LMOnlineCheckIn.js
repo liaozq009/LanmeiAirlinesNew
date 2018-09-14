@@ -354,12 +354,12 @@ var lmFlightHotel = {
         $('.js-miniMap-slide').myDrag({
             parent:'.js-miniMap-wrap', //定义拖动不能超出的外框,拖动范围
             randomPosition:true, //初始化随机位置
-            fixedPosition:10, //初始化固定位置
+            fixedPosition:0, //初始化固定位置
             direction:'y', //方向
             handler:false, //把手
             dragStart:function(x,y){}, //拖动开始 x,y为当前坐标
             dragEnd:function(x,y){
-                $('html, body').animate({scrollTop:(y/140)*curentHeight}, 'slow');
+                $('html, body').animate({scrollTop:(y/90)*curentHeight}, 'slow');
             }, //拖动停止 x,y为当前坐标
             dragMove:function(x,y){ //140 4180
                
@@ -368,7 +368,7 @@ var lmFlightHotel = {
 
         $(window).scroll(function(){
             var winHeigh = $(this).scrollTop(); //页面滚动的高度
-            $('.js-miniMap-slide').css('top',(winHeigh/curentHeight)*140);
+            $('.js-miniMap-slide').css('top',(winHeigh/curentHeight)*90);
         });
     },
 

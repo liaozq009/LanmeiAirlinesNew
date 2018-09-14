@@ -573,26 +573,28 @@ body:before {
 }
 .lm-section-checkIn .flight-aside {
   position: fixed;
-  top: 140px;
+  top: 100px;
   left: 0;
   z-index: 9;
-  width: 462px;
-  padding: 30px;
+  width: 342px;
+  padding: 20px;
   background: #fff;
   box-shadow: 0px 0px 100px 0px #1f2c5c;
   border-radius: 0px 2px 2px 0px;
   transition: left .3s;
   -webkit-transition: left .3s;
 }
+.lm-section-checkIn .flight-aside > img {
+  height: 18px;
+}
 .lm-section-checkIn .flight-aside .from-airport,
 .lm-section-checkIn .flight-aside .to-airport {
-  margin-top: 30px;
   font-size: 12px;
   color: rgba(31, 44, 92, 0.5);
 }
 .lm-section-checkIn .flight-aside .from-airport p,
 .lm-section-checkIn .flight-aside .to-airport p {
-  font-size: 20px;
+  font-size: 18px;
   font-family: NotoSansBold;
   color: #1f2c5c;
   max-width: 400px;
@@ -600,24 +602,27 @@ body:before {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.lm-section-checkIn .flight-aside .to-airport {
+.lm-section-checkIn .flight-aside .from-airport {
   margin-top: 20px;
+}
+.lm-section-checkIn .flight-aside .to-airport {
+  margin-top: 10px;
 }
 .lm-section-checkIn .flight-aside .flight-date-wrap {
   overflow: hidden;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 .lm-section-checkIn .flight-aside .flight-date,
 .lm-section-checkIn .flight-aside .flight-num {
   float: left;
-  width: 200px;
+  width: 150px;
   font-size: 14px;
   color: rgba(31, 44, 92, 0.5);
   text-align: center;
 }
 .lm-section-checkIn .flight-aside .flight-date p,
 .lm-section-checkIn .flight-aside .flight-num p {
-  font-size: 36px;
+  font-size: 26px;
   font-family: NotoSansBold;
   color: #1f2c5c;
 }
@@ -639,11 +644,11 @@ body:before {
 }
 .lm-section-checkIn .seat-aside {
   position: fixed;
-  top: 140px;
   right: 0;
   z-index: 9;
-  width: 370px;
-  padding: 30px;
+  width: 270px;
+  top: 100px;
+  padding: 20px;
   background: #fff;
   box-shadow: 0px 0px 100px 0px #1f2c5c;
   border-radius: 2px 0px 0px 2px;
@@ -656,9 +661,9 @@ body:before {
 .lm-section-checkIn .seat-aside > div {
   height: 34px;
   line-height: 34px;
-  margin-top: 20px;
-  padding-right: 40px;
-  font-size: 18px;
+  margin-top: 10px;
+  padding-right: 30px;
+  font-size: 14px;
   color: #1f2c5c;
   text-align: right;
 }
@@ -667,26 +672,33 @@ body:before {
 }
 .lm-section-checkIn .seat-aside .sold-icon {
   background: url('../../images/resource/checkIn/seat-free-small.png') right no-repeat;
+  background-size: 30px;
 }
 .lm-section-checkIn .seat-aside .checked-icon {
   background: url('../../images/resource/checkIn/seat-checked-small.png') right no-repeat;
+  background-size: 30px;
 }
 .lm-section-checkIn .seat-aside .option-icon {
   background: url('../../images/resource/checkIn/seat-cell-small.png') right no-repeat;
+  background-size: 30px;
 }
 .lm-section-checkIn .seat-aside .exit-icon {
-  background: url('../../images/resource/checkIn/seat-exit.png') 95% no-repeat;
+  background: url('../../images/resource/checkIn/seat-exit.png') 97% no-repeat;
+  background-size: 6px;
 }
 .lm-section-checkIn .seat-aside > ul {
-  margin-top: 30px;
+  margin-top: 20px;
   overflow: hidden;
 }
 .lm-section-checkIn .seat-aside > ul > li {
   float: left;
-  margin-right: 40px;
-  font-size: 18px;
+  margin-right: 27px;
+  font-size: 14px;
   line-height: 26px;
   text-align: center;
+}
+.lm-section-checkIn .seat-aside > ul > li > img {
+  width: 30px;
 }
 .lm-section-checkIn .seat-aside > ul .seat-class1 {
   color: #FF8989;
@@ -703,11 +715,11 @@ body:before {
 }
 .lm-section-checkIn .checkIn-aside {
   position: fixed;
-  top: 560px;
+  top: 420px;
   right: 0;
   z-index: 9;
-  width: 370px;
-  padding: 30px;
+  width: 270px;
+  padding: 20px;
   background: #fff;
   box-shadow: 0px 0px 100px 0px #1f2c5c;
   border-radius: 2px 0px 0px 2px;
@@ -723,7 +735,7 @@ body:before {
   text-align: right;
 }
 .lm-section-checkIn .checkIn-aside .pas-name p {
-  font-size: 20px;
+  font-size: 18px;
   font-family: NotoSansBold;
   color: #1f2c5c;
 }
@@ -734,17 +746,17 @@ body:before {
   text-align: right;
 }
 .lm-section-checkIn .checkIn-aside .seat-cabin p {
-  font-size: 30px;
+  font-size: 20px;
   font-family: NotoSansBold;
   color: #1f2c5c;
 }
 .lm-section-checkIn .checkIn-aside .member-no {
-  width: 100%;
+  width: 230px;
   margin-top: 10px;
   text-align: right;
 }
 .lm-section-checkIn .checkIn-aside .member-no .member-no-input {
-  width: 290px;
+  width: 100%;
   height: 36px;
   padding-left: 10px;
   padding-right: 10px;
@@ -754,7 +766,7 @@ body:before {
   border: 1px solid rgba(31, 44, 92, 0.2);
 }
 .lm-section-checkIn .checkIn-aside .agree-rule {
-  margin-top: 20px;
+  margin-top: 16px;
   text-align: right;
 }
 .lm-section-checkIn .checkIn-aside .agree-rule label {
@@ -768,15 +780,15 @@ body:before {
   text-decoration: underline;
 }
 .lm-section-checkIn .checkIn-aside .check-in {
-  margin-top: 20px;
+  margin-top: 16px;
   overflow: hidden;
 }
 .lm-section-checkIn .checkIn-aside .check-in > a {
   display: block;
   float: right;
-  width: 140px;
-  height: 40px;
-  line-height: 40px;
+  width: 110px;
+  height: 30px;
+  line-height: 30px;
   text-align: center;
   color: #fff;
   font-size: 16px;
@@ -810,28 +822,29 @@ body:before {
 }
 .lm-section-checkIn .MiniMap-aside {
   position: fixed;
-  bottom: 80px;
-  left: 80px;
+  bottom: 40px;
+  left: 40px;
   z-index: 9;
-  width: 240px;
-  height: 260px;
+  width: 160px;
+  height: 160px;
   border-radius: 2px;
   background: url('../../images/resource/checkIn/aircraft-small.png') center no-repeat rgba(31, 44, 92, 0.8);
+  background-size: 120px;
 }
 .lm-section-checkIn .MiniMap-aside .small-flight {
   position: relative;
-  width: 140px;
-  height: 180px;
+  width: 120px;
+  height: 120px;
   margin: 0 auto;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 .lm-section-checkIn .MiniMap-aside .small-flight .slide {
   position: absolute;
   left: 50%;
   top: 50%;
-  margin-left: -70px;
-  width: 140px;
-  height: 40px;
+  margin-left: -60px;
+  width: 120px;
+  height: 30px;
   background: rgba(142, 192, 96, 0.2);
   cursor: pointer;
 }
@@ -988,87 +1001,14 @@ body:before {
 /* 屏幕适配 */
 @media screen and (max-width: 1900px) {
   .lm-section-checkIn .flight-aside {
-    width: 342px;
-    top: 100px;
-    padding: 20px;
-  }
-  .lm-section-checkIn .flight-aside > img {
-    height: 18px;
-  }
-  .lm-section-checkIn .flight-aside .from-airport {
-    margin-top: 20px;
-  }
-  .lm-section-checkIn .flight-aside .from-airport p {
-    font-size: 18px;
-  }
-  .lm-section-checkIn .flight-aside .to-airport {
-    margin-top: 10px;
-  }
-  .lm-section-checkIn .flight-aside .to-airport p {
-    font-size: 18px;
-  }
-  .lm-section-checkIn .flight-aside .flight-date-wrap {
-    margin-top: 20px;
-  }
-  .lm-section-checkIn .flight-aside .flight-date,
-  .lm-section-checkIn .flight-aside .flight-num {
-    width: 150px;
-  }
-  .lm-section-checkIn .flight-aside .flight-date p,
-  .lm-section-checkIn .flight-aside .flight-num p {
-    font-size: 26px;
+    padding: 10px;
   }
   .lm-section-checkIn .seat-aside {
-    width: 270px;
-    top: 100px;
-    padding: 20px;
-  }
-  .lm-section-checkIn .seat-aside > div {
-    margin-top: 10px;
-    padding-right: 30px;
-    font-size: 14px;
-  }
-  .lm-section-checkIn .seat-aside .sold-icon,
-  .lm-section-checkIn .seat-aside .checked-icon,
-  .lm-section-checkIn .seat-aside .option-icon {
-    background-size: 30px;
-  }
-  .lm-section-checkIn .seat-aside .exit-icon {
-    background-size: 6px;
-    background-position-x: 97%;
-  }
-  .lm-section-checkIn .seat-aside > ul {
-    margin-top: 20px;
-  }
-  .lm-section-checkIn .seat-aside > ul > li {
-    margin-right: 27px;
-    font-size: 14px;
-  }
-  .lm-section-checkIn .seat-aside > ul > li > img {
-    width: 30px;
+    padding: 10px;
   }
   .lm-section-checkIn .checkIn-aside {
-    width: 270px;
-    top: 420px;
-    padding: 20px;
-  }
-  .lm-section-checkIn .checkIn-aside .pas-name p {
-    font-size: 18px;
-  }
-  .lm-section-checkIn .checkIn-aside .member-no .member-no-input {
-    width: 230px;
-  }
-  .lm-section-checkIn .checkIn-aside .seat-cabin p {
-    font-size: 20px;
-  }
-  .lm-section-checkIn .checkIn-aside .agree-rule,
-  .lm-section-checkIn .checkIn-aside .check-in {
-    margin-top: 16px;
-  }
-  .lm-section-checkIn .checkIn-aside .check-in > a {
-    width: 110px;
-    height: 30px;
-    line-height: 30px;
+    top: 400px;
+    padding: 10px;
   }
   .lm-section-checkIn .MiniMap-aside {
     bottom: 40px;

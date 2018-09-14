@@ -592,22 +592,22 @@ body:before {
 	}
 	.flight-aside{
 		position: fixed;
-		top: 140px;
+		top: 100px;
 		left: 0;
 		z-index: 9;
-		width: 462px;
-		padding: 30px;
+		width: 342px;
+		padding: 20px;
 		background: #fff;
 		box-shadow:0px 0px 100px 0px rgba(31,44,92,1);
 		border-radius:0px 2px 2px 0px;
 		transition: left .3s;
 		-webkit-transition: left .3s;
+		>img{height: 18px;}
 		.from-airport,.to-airport{
-			margin-top: 30px;
 			font-size: 12px;
 			.purpleRgb(0.5);
 			p{
-				font-size: 20px;
+				font-size: 18px;
 				font-family: @FBold;
 				color: @purple;
 				max-width: 400px;
@@ -616,21 +616,24 @@ body:before {
 			    white-space: nowrap;
 			}
 		}
-		.to-airport{
+		.from-airport{
 			margin-top: 20px;
+		}
+		.to-airport{
+			margin-top: 10px;
 		}
 		.flight-date-wrap{
 			overflow: hidden;
-			margin-top: 30px;
+			margin-top: 20px;
 		}
 		.flight-date,.flight-num{
 			float: left;
-			width: 200px;
+			width:150px;
 			font-size: 14px;
 			.purpleRgb(0.5);
 			text-align: center;
 			p{
-				font-size: 36px;
+				font-size: 26px;
 				font-family: @FBold;
 				color: @purple;
 			}
@@ -654,11 +657,12 @@ body:before {
 	}
 	.seat-aside{
 		position: fixed;
-		top: 140px;
+		top: 100px;
 		right: 0;
 		z-index: 9;
-		width: 370px;
-		padding: 30px;
+		width: 270px;
+		top: 100px;
+		padding: 20px;
 		background: #fff;
 		box-shadow:0px 0px 100px 0px rgba(31,44,92,1);
 		border-radius:2px 0px 0px 2px;
@@ -670,34 +674,39 @@ body:before {
 		>div{
 			height: 34px;
 			line-height: 34px;
-			margin-top: 20px;
-			padding-right: 40px;
-			font-size: 18px;
+			margin-top: 10px;
+			padding-right: 30px;
+			font-size: 14px;
 			color: @purple;
 			text-align: right;
 			>span{margin-right: 20px;}
 		}
 		.sold-icon{
 			background: url('@{url2}seat-free-small.png') right no-repeat;
+			background-size: 30px;
 		}
 		.checked-icon{
 			background: url('@{url2}seat-checked-small.png') right no-repeat;
+			background-size: 30px;
 		}
 		.option-icon{
 			background: url('@{url2}seat-cell-small.png') right no-repeat;
+			background-size: 30px;
 		}
 		.exit-icon{
-			background: url('@{url2}seat-exit.png') 95% no-repeat;
+			background: url('@{url2}seat-exit.png') 97% no-repeat;
+			background-size: 6px;
 		}
 		>ul{
-			margin-top: 30px;
+			margin-top: 20px;
 			overflow: hidden;
 			>li{
 				float: left;
-				margin-right: 40px;
-				font-size: 18px;
+				margin-right: 27px;
+				font-size: 14px;
 				line-height: 26px;
 				text-align: center;
+				>img{width: 30px;}
 			}
 			.seat-class1{
 				color: @red;
@@ -716,11 +725,11 @@ body:before {
 	}
 	.checkIn-aside{
 		position: fixed;
-		top: 560px;
+		top: 420px;
 		right: 0;
 		z-index: 9;
-		width: 370px;
-		padding: 30px;
+		width: 270px;
+		padding: 20px;
 		background: #fff;
 		box-shadow:0px 0px 100px 0px rgba(31,44,92,1);
 		border-radius:2px 0px 0px 2px;
@@ -734,7 +743,7 @@ body:before {
 			.purpleRgb(0.5);
 			text-align: right;
 			p{
-				font-size: 20px;
+				font-size: 18px;
 				font-family: @FBold;
 				color: @purple;
 			}
@@ -745,17 +754,17 @@ body:before {
 			.purpleRgb(0.5);
 			text-align: right;
 			p{
-				font-size: 30px;
+				font-size: 20px;
 				font-family: @FBold;
 				color: @purple;
 			}
 		}
 		.member-no{
-			width:100%;
+			width:230px;
 			margin-top: 10px;
 			text-align: right;
 			.member-no-input{
-				width: 290px;
+				width: 100%;
 				height:36px;
 				padding-left: 10px;
 				padding-right: 10px;
@@ -766,7 +775,7 @@ body:before {
 			}
 		}
 		.agree-rule{
-			margin-top: 20px;
+			margin-top: 16px;
 			text-align: right;
 			label{
 				font-size: 14px;
@@ -780,14 +789,14 @@ body:before {
 			}
 		}
 		.check-in{
-			margin-top: 20px;
+			margin-top: 16px;
 			overflow: hidden;
 			>a{
 				display: block;
 				float: right;
-				width:140px;
-				height:40px;
-				line-height: 40px;
+				width:110px;
+				height:30px;
+				line-height: 30px;
 				text-align: center;
 				color: #fff;
 				font-size: 16px;
@@ -820,26 +829,27 @@ body:before {
 	}
 	.MiniMap-aside{
 		position: fixed;
-		bottom: 80px;
-		left: 80px;
+		bottom: 40px;
+		left: 40px;
 		z-index: 9;
-		width:240px;
-		height:260px;
+		width:160px;
+		height:160px;
 		border-radius:2px;
 		background: url('@{url2}aircraft-small.png') center no-repeat rgba(31,44,92,0.8);
+		background-size: 120px;
 		.small-flight{
 			position: relative;
-			width: 140px;
-			height: 180px;
+			width: 120px;
+			height: 120px;
 			margin: 0 auto;
-			margin-top: 40px;
+			margin-top: 20px;
 			.slide{
 				position: absolute;
 				left: 50%;
 				top: 50%;
-				margin-left: -70px;
-				width: 140px;
-				height: 40px;
+				margin-left: -60px;
+				width: 120px;
+				height: 30px;
 				background: rgba(142,192,96,0.2);
 				cursor: pointer;
 			}
@@ -1000,74 +1010,14 @@ body:before {
 @media screen and (max-width: 1900px) {
 	.lm-section-checkIn {
 		.flight-aside{
-			width: 342px;
-			top: 100px;
-			padding: 20px;
-			>img{height: 18px;}
-			.from-airport{
-				margin-top: 20px;
-				p{font-size: 18px;}
-			}
-			.to-airport{
-				margin-top: 10px;
-				p{font-size: 18px;}
-			}
-			.flight-date-wrap{
-				margin-top: 20px;
-			}
-			.flight-date,.flight-num{
-				width: 150px;
-				p{font-size: 26px;}
-			}
+			padding: 10px;
 		}
 		.seat-aside{
-			width: 270px;
-			top: 100px;
-			padding: 20px;
-			>div{
-				margin-top: 10px;
-				padding-right: 30px;
-				font-size: 14px;
-			}
-			.sold-icon,.checked-icon,.option-icon{
-				background-size: 30px;
-			}
-			.exit-icon{
-				background-size: 6px;
-				background-position-x: 97%;
-			}
-			>ul{
-				margin-top: 20px;
-				>li{
-					margin-right: 27px;
-					font-size: 14px;
-					>img{width: 30px;}
-				}
-			}
+			padding: 10px;
 		}
 		.checkIn-aside{
-			width: 270px;
-			top: 420px;
-			padding: 20px;
-			.pas-name {
-				p{font-size: 18px;}
-			}
-			.member-no .member-no-input{
-				width: 230px;
-			}
-			.seat-cabin {
-				p{
-					font-size: 20px;
-				}
-			}
-			.agree-rule,.check-in{
-				margin-top: 16px;
-			}
-			.check-in > a{
-				width: 110px;
-				height: 30px;
-				line-height: 30px;
-			}
+			top: 400px;
+			padding: 10px;
 		}
 		.MiniMap-aside{
 			bottom: 40px;
