@@ -87,7 +87,7 @@ body:before {
   top: 90px;
   z-index: 9;
   width: 580px;
-  height: 318px;
+  height: 256px;
   box-shadow: 0 0 50px 0 rgba(31, 44, 92, 0.1);
 }
 .lm-input .dropdownMenu-wrap:before {
