@@ -461,18 +461,19 @@ var lmFlightHotel = {
             $sectionInfo.hide();
             $sectionCheckIn.show();
             $mask.show();
-            $('html, body').stop().animate({scrollTop:0}, 'slow',function(){
-                setTimeout(function(){
-                    $('.lm-section-checkIn').addClass('checkIn-pos-top');
-                },1000);
-                setTimeout(function(){
-                    $('.lm-section-checkIn').addClass('checkIn-size-scale');
-                },2200);
-                setTimeout(function(){
-                    $('.lm-seat-wrap').fadeIn();
-                },3200);
-                
-            });
+
+            setTimeout(function(){
+                $('.lm-section-checkIn').addClass('checkIn-pos-top');
+            },1000);
+            setTimeout(function(){
+                $('.lm-section-checkIn').addClass('checkIn-size-scale');
+            },2200);
+            setTimeout(function(){
+                $('.lm-seat-wrap').fadeIn();
+            },3200);
+            setTimeout(function(){
+                $('html, body').stop().animate({scrollTop:500}, 'slow');
+            },4200);
         });
 
         $('.js-prev-btn').click(function(event) {
