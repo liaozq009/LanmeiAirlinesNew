@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>勾选</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="100%" y1="100%" x2="0%" y2="0%" id="linearGradient-1">
+            <stop stop-color="#00928D" offset="0%"></stop>
+            <stop stop-color="#B4EC80" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="信息录入" transform="translate(-1600.000000, -749.000000)">
+            <g id="2" transform="translate(280.000000, 574.000000)">
+                <g id="行程信息-copy-4" transform="translate(0.000000, 165.000000)">
+                    <g id="勾选" transform="translate(1320.000000, 10.000000)">
+                        <circle id="Combined-Shape" fill="url(#linearGradient-1)" cx="10" cy="10" r="10"></circle>
+                        <polygon id="Combined-Shape" fill="#FFFFFF" points="8 11.7142857 14.6666667 6 16 7.14285714 8 14 4 10.5714286 5.33333333 9.42857143"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

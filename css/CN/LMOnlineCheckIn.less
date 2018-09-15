@@ -268,6 +268,14 @@ body:before {
 	background: @o-linear;
 	background: @moz-linear;
 	background: @linear;
+	>span{
+		display: inline-block;
+		width: 20px;
+		height: 20px;
+		margin-left: 20px;
+		vertical-align: sub;
+		background: url('../../images/resource/circle-arrow-right.png') center no-repeat;
+	}
 	img,i{
 		margin-left: 20px;
 		display: initial;
@@ -396,8 +404,8 @@ body:before {
 	display: none;
 	height: 4180px;
 	background: url('@{url2}lm-A319.png') center top no-repeat;
-	// background-size: 900px;
 	.lm-seat-wrap{
+		display: none;
 		width: 460px;
 		margin: 0 auto;
 		padding-top: 566px;
@@ -655,6 +663,12 @@ body:before {
         text-align: center;
 		cursor: pointer;
 	}
+	.seat-left-arrow{
+		background: url('@{url2}seat-leftArrow.png') center no-repeat; 
+	}
+	.seat-right-arrow{
+		background: url('@{url2}seat-rightArrow.png') center no-repeat; 
+	}
 	.seat-aside{
 		position: fixed;
 		top: 100px;
@@ -856,7 +870,6 @@ body:before {
 		}
 	}
 }
-
 .lm-section-complete{
 	display: none;
 	width: 1200px;
@@ -1048,6 +1061,20 @@ body:before {
 		}
 	}
 }
+@media screen and (min-width: 1200px) {
+	.lm-section-checkIn{
+		background-size: 1200px;
+		background-position-y: 800px;
+		transition: all 1s;
+		-webkit-transition: all 1s;
+	}
+	.checkIn-pos-top{
+		background-position-y: 0;
+	}
+	.checkIn-size-scale{
+		background-size: 4211px;
+	}
+}
 @media screen and (max-width: 1200px) {
 	.lm-section-info{
 		// display: none;
@@ -1175,16 +1202,9 @@ body:before {
 		    	font-size: 14px;
 		    }
 		}
-		.from-city-wrap,.passport-wrap,.phone-wrap {
-			input,.passport-num{
-				background-size: 24px;
-				background-position-x:12px;
-			}
-		}
-		.name-wrap .lastName-input{
-			background-size: 24px;
-			background-position-x:12px;
-		}
+		.from-city-wrap input{background: url('@{url}svg/city-from.svg') 20px center no-repeat;}
+		.name-wrap .lastName-input{background: url('@{url}svg/baggageName.svg') 20px center no-repeat;}
+		.phone-wrap input{background: url('@{url}svg/ticket-phone.svg') 20px center no-repeat;}
 		.passport-wrap {
 			.select-option{
 				padding-left: 50px;
@@ -1195,8 +1215,22 @@ body:before {
 			    }
 			}
 			input{
-				padding-left: 130px;
+				padding-left: 140px;
+				background: url('@{url}svg/ticket-num.svg') 20px center no-repeat;
 			}
+			.passport-num{
+				background: url('@{url}svg/passport.svg') 20px center no-repeat;
+			}
+		}
+		.from-city-wrap,.passport-wrap,.phone-wrap {
+			input,.passport-num{
+				background-size: 24px;
+				background-position-x:12px;
+			}
+		}
+		.name-wrap .lastName-input{
+			background-size: 24px;
+			background-position-x:12px;
 		}
 		.dropdownMenu-wrap{
 			top: 54px;
@@ -1232,6 +1266,9 @@ body:before {
 		width: 100%;
 		height: 40px;
 		line-height: 40px;
+		>span{
+			background: url('@{url2}svg/circle-arrow-right.svg') center no-repeat;
+		}
 	}
 	.lm-info{
 		margin-top: 30px;
@@ -1262,6 +1299,9 @@ body:before {
 			    margin-bottom: 6px;
 			}
 		}
+		.select-ok{
+			background: url('@{url2}svg/icon-select.svg') center no-repeat;
+		}
 	}
 	.lm-section-checkIn{
 		width: 320px;
@@ -1274,6 +1314,14 @@ body:before {
 			height: 20px;
 			line-height: 20px;
 			>img{width: 14px;}
+		}
+		.seat-left-arrow{
+			background: url('@{url2}svg/seat-leftArrow.svg') center no-repeat; 
+			background-size: 14px;
+		}
+		.seat-right-arrow{
+			background: url('@{url2}svg/seat-rightArrow.svg') center no-repeat; 
+			background-size: 14px;
 		}
 		.flight-aside{
 			top: 70px;
