@@ -70,15 +70,39 @@
 					<input type="text" class="lastName-input js-lastName-input" name="" value="" placeholder="姓/名(拼音Li/si)">
 				</div>
 				<div class="phone-wrap">
+					<div class="select-option">
+						<span class="js-select-option" title="国家或地区区号">国家或地区区号</span>
+						<div class="dropdownMenu-wrap codeMenu-wrap">
+							<div class="code-input-wrap">
+								<input type="text" class="js-search-code" data="js-codeMenu" name="" value="" placeholder="搜索">
+							</div>
+							<ul class="js-codeMenu menu-com">
+								<li title="中国(+86)">中国(+86)</li>
+								<li title="中国香港(+852)">中国香港(+852)</li>
+								<li title="中国澳门(+853)">中国澳门(+853)</li>
+								<li title="中国(+86)">中国台湾(+886)</li>
+								<li title="中国香港(+852)">中国香港(+852)</li>
+								<li title="中国澳门(+853)">中国澳门(+853)</li>
+								<li title="中国(+86)">中国(+86)</li>
+								<li title="中国香港(+852)">中国香港(+852)</li>
+								<li title="中国澳门(+853)">中国澳门(+853)</li>
+								<li title="中国(+86)">中国(+86)</li>
+								<li title="中国香港(+852)">中国香港(+852)</li>
+								<li title="中国澳门(+853)">中国澳门(+853)</li>
+							</ul>
+						</div>
+					</div>
 					<input type="text" class="js-phone-input" name="" value="" placeholder="电话号码">
 				</div>
 			</div>
 			<div class="lm-search">
 				<div class="notes-inner">
 					<h3>温馨提示：</h3>
-					<p>1、每日14:00后可办理次日航空承运的广州、始发国内航班的值机手续，航班起飞时间前2小时停止办理；</p>
-					<p>2、暂不支持办理需要特殊服务或者需要其他乘机证明方可运输的旅客，如重要旅客、病残、儿童、婴儿、孕妇、老年旅客、特殊餐食、携带婴儿等旅客，如有需要请您直接到机场航空公司值机柜台办理；</p> 
-					<p>3、如已办理网上直接手续，也可以通过查询办理取消值机或者重新打印登机牌。</p>
+					<p>1、暂时仅支持澜湄航空官网购票的旅客提前办理网上值机；</p>
+					<p>2、请于航班起飞前24小时办理网上值机手续；</p>
+					<p>3、暂不支持办理特殊服务需求或者须其他乘机证明方可运输的旅客；</p>
+					<p>4、重要旅客、病残、儿童、婴儿、孕妇、老年旅客、特殊餐食、携带婴儿等旅客，如有需要请您前往机场澜湄航空值机柜台办理；</p>
+					<p>5、如已办理网上值机手续，您也可通过查询办理取消网上值机或者重新打印登机牌。</p>
 				</div>
 				<div class="search-inner">
 					<button class="lm-button js-search-flight">查&nbsp;&nbsp;询 <span></span></button>
@@ -87,8 +111,8 @@
 			</div>
 			<div class="lm-info">
 				<div class="lm-info-box">
-					<div class="lm-info-inner">
-						<p class="select-radio js-select-radio select-ok"></p>
+					<div class="lm-info-inner" data-state="state-03">
+						<p class="select-radio js-select-radio"></p>
 						<div class="flight-airport">
 							<div class="from-airport airport-com">广州国际白云机场</div>
 							<div class="flight-num">
@@ -101,11 +125,29 @@
 						<ul class="flight-info">
 							<li>票号：961-564678963</li>
 							<li>出发日期：2018-09-05</li>
-							<li>舱位等级：Y</li>
-							<li class="can-handle">当前状态：<span>可办理</span></li>
+							<li>舱位等级：C</li>
+							<li class="not-avail" title="请于航班起飞前24小时办理网上值机手续">当前状态：<span>不可办理</span></li>
 						</ul>
 					</div>
-					<div class="lm-info-inner">
+					<div class="lm-info-inner" data-state="state-01">
+						<p class="select-radio js-select-radio select-ok"></p>
+						<div class="flight-airport">
+							<div class="from-airport airport-com">金边国际机场</div>
+							<div class="flight-num">
+								<span>LQ315</span>
+								<img src="../../images/resource/ticketHotel-line.png" class="pc-right-arrow">
+								<img src="../../images/resource/ticketHotel-line-mobile.png" class="mobile-right-arrow">
+							</div>
+							<div class="to-airport airport-com">暹粒吴哥国际机场</div>
+						</div>
+						<ul class="flight-info">
+							<li>票号：961-868678963</li>
+							<li>出发日期：2018-09-09</li>
+							<li>舱位等级：Y</li>
+							<li class="can-handle">当前状态：<span>未办理</span></li>
+						</ul>
+					</div>
+					<div class="lm-info-inner" data-state="state-02">
 						<p class="select-radio js-select-radio"></p>
 						<div class="flight-airport">
 							<div class="from-airport airport-com">金边国际机场</div>
@@ -119,12 +161,12 @@
 						<ul class="flight-info">
 							<li>票号：961-898678963</li>
 							<li>出发日期：2018-09-06</li>
-							<li>舱位等级：Y</li>
-							<li class="can-handle">当前状态：<span>可办理</span></li>
+							<li>舱位等级：L</li>
+							<li class="already-handle">当前状态：<span>已办理</span></li>
 						</ul>
 					</div>
 				</div>
-				<button class="lm-button js-search-flight">下一步 <i class="iconfont icon-right-arrow2"></i></button>
+				<button class="lm-button js-search-flight"><p>下一步</p> <i class="iconfont icon-right-arrow2"></i></button>
 			</div>
 		</div>
 		<div class="lm-section-checkIn">
@@ -439,7 +481,7 @@
 					<input type="text" name="" value="" class="member-no-input" placeholder="会员号" autocomplete="off">
 				</div>
 				<div class="seat-cabin">
-					舱位：Y
+					￥324
 					<p class="js-flight-num">座位号：<span></span></p>
 				</div>
 				<div class="agree-rule">

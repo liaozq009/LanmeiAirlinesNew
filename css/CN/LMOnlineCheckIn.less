@@ -179,7 +179,7 @@ body:before {
 			.no-result-match{width: 100%;}
 		}
 	}
-	.ticketMenu-wrap{
+	.ticketMenu-wrap,.codeMenu-wrap{
 		width: 100%;
 		height: 92px;
 		left: 0;
@@ -194,8 +194,9 @@ body:before {
 			}
 		}
 	}
-	.passport-wrap{
-		input{
+	.passport-wrap,
+	.phone-wrap{
+		>input{
 			padding-left: 160px;
 			background: url('@{url}ticket-num.png') 20px center no-repeat;
 		}
@@ -210,7 +211,6 @@ body:before {
 				line-height: 32px;
 				padding-right: 40px;
 				border-right: 2px solid rgba(31,44,92,0.3);
-				text-decoration:underline;
 				cursor: pointer;
 				&::after{
 					content: '';
@@ -228,6 +228,56 @@ body:before {
 		}
 		.passport-num{
 			background: url('@{url}passport.png') 20px center no-repeat;
+		}
+	}
+	.phone-wrap{
+		>input{
+			padding-left:220px;
+			background: url('@{url}icon-areaCode.png') 20px center no-repeat;
+		}
+		.select-option>span{
+			width: 140px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+		.dropdownMenu-wrap{
+			height: auto;
+			background: #fff;
+			.code-input-wrap{
+				padding:10px 20px 0;
+			}
+			.menu-com{
+				max-height: 146px;
+				overflow-y: auto;
+			}
+			input{
+				width: 100%;
+				height: 30px;
+				font-size:14px;
+				border: 1px solid rgba(31,44,92,.3);
+				padding-left:10px;
+				padding-right:10px;
+				border-radius: 2px;
+			}
+			:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+				font-size: 14px; 
+			}
+
+			::-moz-placeholder { /* Mozilla Firefox 19+ */
+				font-size: 14px;
+			}
+
+			input:-ms-input-placeholder{
+				;font-size: 14px;
+			}
+
+			input::-webkit-input-placeholder{
+				font-size: 14px;
+			}
+			.menu-com{
+				position: static;
+			}
 		}
 	}
 	.name-wrap{
@@ -252,7 +302,6 @@ body:before {
 	}
 	.from-city-wrap input{background: url('@{url}city-from.png') 20px center no-repeat;}
 	.name-wrap .lastName-input{background: url('@{url}baggageName.png') 20px center no-repeat;}
-	.phone-wrap input{background: url('@{url}ticket-phone.png') 20px center no-repeat;}
 }
 .lm-button{
 	width: 240px;
@@ -276,6 +325,7 @@ body:before {
 		vertical-align: sub;
 		background: url('../../images/resource/circle-arrow-right.png') center no-repeat;
 	}
+	>p{display: inline-block;}
 	img,i{
 		margin-left: 20px;
 		display: initial;
@@ -324,6 +374,7 @@ body:before {
 		margin-bottom: 20px;
 		background: #fff;
 		border-radius: 2px;
+		cursor: pointer;
 	}
 	.lm-button{
 		float: right;
@@ -764,12 +815,12 @@ body:before {
 		}
 		.seat-cabin{
 			margin-top: 10px;
-			font-size: 12px;
-			.purpleRgb(0.5);
+			font-size: 18px;
+			font-family: @FBold;
+			color: @red;
 			text-align: right;
 			p{
 				font-size: 20px;
-				font-family: @FBold;
 				color: @purple;
 			}
 		}
@@ -977,6 +1028,7 @@ body:before {
 			border-radius: 2px;
 		}
 		.export-PDF{
+			display: none;
 			background:linear-gradient(315deg,#00908C 0%,#B4EC80 100%);
 		}
 		.continue-checkIn{
@@ -1204,7 +1256,7 @@ body:before {
 		}
 		.from-city-wrap input{background: url('@{url}svg/city-from.svg') 20px center no-repeat;}
 		.name-wrap .lastName-input{background: url('@{url}svg/baggageName.svg') 20px center no-repeat;}
-		.phone-wrap input{background: url('@{url}svg/ticket-phone.svg') 20px center no-repeat;}
+		.phone-wrap input{background: url('@{url}svg/icon-areaCode.svg') 20px center no-repeat;}
 		.passport-wrap {
 			.select-option{
 				padding-left: 50px;

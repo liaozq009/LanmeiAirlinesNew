@@ -100,10 +100,32 @@ var lmFlightHotel = {
             }
         });
 
+        //搜索国家区号
+        $('.js-search-code').click(function(e) {
+           e.stopPropagation();
+        });
+
+        $('.js-codeMenu').on('click','>li',function(){
+            var text1 = $(this).attr('title');
+            var $box = $(this).parents('.codeMenu-wrap');
+            $box.siblings('span').html(text1).attr('title',text1); 
+        });
+
+        this.autoComplete('.js-search-code');
+
         // 选择值机航班
-        $('.js-select-radio').click(function(event) {
-            $('.js-select-radio').removeClass('select-ok');
-            $(this).addClass('select-ok');
+        $('.lm-info-inner').click(function(event) {
+            //state-01未办理 state-02已办理 state-03不可办理
+            var state = $(this).attr('data-state');
+            if(state !='state-03'){
+                $('.js-select-radio').removeClass('select-ok');
+                $(this).find('.js-select-radio').addClass('select-ok');
+                if(state =='state-01'){
+                    $('.js-search-flight>p').html('下一步');
+                }else{
+                     $('.js-search-flight>p').html('修改值机');
+                }
+            }
         });
 
         //查询
@@ -254,7 +276,7 @@ var lmFlightHotel = {
         var $seatArrow =  $('.js-seat-arrow');
         var $checkInArrow =  $('.js-checkIn-arrow');
 
-        if(this.winWidth>1900){
+        if(this.winWidth>1200){
             $flightArrow.click(function(event) {
                $(this).parent().css('left',-322);
             });
@@ -364,16 +386,16 @@ var lmFlightHotel = {
     /* pc端事件 */
     pcEvent:function(){
         // 定义滚动条
-        var nice = $("html").niceScroll({
-            cursorborderradius: 0,
-            cursorwidth: "8px",
-            cursorfixedheight: 150,
-            cursorcolor: "#1f2c5c",
-            zindex: 9999,
-            cursorborder: 0,
-            scrollspeed: 26,
-            mousescrollstep: 36,
-        });
+        // var nice = $("html").niceScroll({
+        //     cursorborderradius: 0,
+        //     cursorwidth: "8px",
+        //     cursorfixedheight: 150,
+        //     cursorcolor: "#1f2c5c",
+        //     zindex: 9999,
+        //     cursorborder: 0,
+        //     scrollspeed: 26,
+        //     mousescrollstep: 36,
+        // });
     },
 
     /* 移动端事件 */
@@ -446,6 +468,58 @@ var lmFlightHotel = {
 
         $('.seat-wrap-com').on('click','>ul>li',function(event) {
             $checkInAside.addClass('checkIn-aside-scale');
+        });
+    },
+
+    /* 模糊匹配 */
+    autoComplete:function(id){
+        var that = this;
+        /* 机票模糊匹配 */
+        $(id).on('input',function(event) {
+            var searchText = $(this).val();
+            var currenData = ['中国(+86)','中国香港(+852)','中国澳门(+853)','中国台湾(+886)'];
+            var data = $(this).attr('data');
+
+            // if(data=='js-fNumber-menu'){
+            //     currenData=that.fNumberData
+            // }else{
+            //     currenData=that.cityData;
+            //     if(id=='.js-thFrom-input'){
+            //         currenData = that.thFromCityData;
+            //     }
+            //     if(id=='.js-thTo-input'){
+            //         currenData = that.thToCityData;
+            //     }
+            // }
+
+            var currentVal = searchText.toLowerCase();
+            var srdata = [];
+            for (var i = 0; i < currenData.length; i++) {
+                if (currentVal.trim().length > 0 && currenData[i].toLowerCase().indexOf(currentVal) > -1) {
+                    srdata.push(currenData[i]);
+                }
+            }
+
+            $('.'+data).empty();
+            var escapedSearchText,zregex,startpos,text,searchVal;
+            $.each(srdata,function(i,val){
+                escapedSearchText = searchText.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+                zregex = new RegExp(escapedSearchText, 'i');
+                startpos = val.search(zregex);
+                text = val.substr(0, startpos + searchText.length) + '</span>' + val.substr(startpos + searchText.length);
+                searchVal = text.substr(0, startpos) + '<span>' + text.substr(startpos);
+
+                $('.'+data).append('<li title="'+val+'">'+searchVal+'</li>');
+            });
+            if(srdata.length==0){ 
+                $('.'+data).append('<li style="width:100%;">No results match "'+searchText+'"</li>');
+            }
+            if(currentVal===''){
+                $('.'+data).empty();
+                $.each(currenData,function(i,val){
+                    $('.'+data).append('<li title="'+val+'">'+val+'</li>');
+                });
+            }
         });
     },
 
