@@ -166,7 +166,7 @@
 						</ul>
 					</div>
 				</div>
-				<button class="lm-button js-search-flight"><p>下一步</p> <i class="iconfont icon-right-arrow2"></i></button>
+				<button class="lm-button js-next-flight"><p>下一步</p> <i class="iconfont icon-right-arrow2"></i></button>
 			</div>
 		</div>
 		<div class="lm-section-checkIn">
@@ -481,8 +481,8 @@
 					<input type="text" name="" value="" class="member-no-input" placeholder="会员号" autocomplete="off">
 				</div>
 				<div class="seat-cabin">
-					￥324
-					<p class="js-flight-num">座位号：<span></span></p>
+					<p class="difference-price js-difference-price">￥466</p>
+					<p class="flight-num js-flight-num">座位号：<span></span></p>
 				</div>
 				<div class="agree-rule">
 					<label>
@@ -491,7 +491,7 @@
 					<a href="javascript:;">网上值机条款</a>
 				</div>
 				<div class="check-in">
-					<a href="javascript:;" class="checkIn-btn js-checkIn-btn">确定</a>
+					<a href="javascript:;" class="checkIn-btn js-checkIn-btn">确认值机</a>
 					<a href="javascript:;" class="prev-btn js-prev-btn">上一步</a>
 				</div>
 			</div>
@@ -502,34 +502,27 @@
 			</div>
 		</div>
 		<div class="lm-section-complete">
-			<div class="success-tips">
-				<div class="success-box">
-					<img src="../../images/resource/checkIn/checkIn-success.png" alt="">
-					<div>
-						<h2>值机成功</h2>
-						<p>您已成功值机，请确认您的值机信息。</p>
+			
+		</div>
+		<!-- 选择支付方式模态框 -->
+		<div class="modal fade payModal" id="payModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">关闭<span aria-hidden="true">&times;</span></button>
+					</div>
+					<div class="modal-body">
+						<h2 class="loginTitle">请选择支付方式</h2>
+						<div class="pay-content">
+							<div class="pay-select js-pay-select">
+								<input type="hidden" name="" value="" class="js-pay-method">
+								<a href="javascript:;" class="PayPal active js-PayPal" data-pay="paypal"></a>
+								<a href="javascript:;" class="AliPay js-AliPay" data-pay="alipay"></a>
+							</div>
+							<a href="javascript:;" class="pay-catering js-pay-checkIn">支付</a>
+						</div>
 					</div>
 				</div>
-			</div>
-			<div class="success-inner">
-				<p class="select-radio js-select-radio select-ok"></p>
-				<div class="flight-airport">
-					<div class="from-airport airport-com">广州国际白云机场 <p>出发</p></div>
-					<div class="flight-num">
-						<span>LQ909</span>
-						<img src="../../images/resource/ticketHotel-line.png" class="pc-right-arrow">
-						<img src="../../images/resource/ticketHotel-line-mobile.png" class="mobile-right-arrow">
-					</div>
-					<div class="to-airport airport-com">金边国际机场 <p>到达</p></div>
-				</div>
-				<ul class="flight-info">
-					<li>2018-09-05<p>出发日期</p></li>
-					<li>8D<p>座位号</p></li>
-				</ul>
-			</div>
-			<div class="success-operation">
-				<a href="javascript:;" class="export-PDF js-export-PDF">导出PDF</a>
-				<a href="javascript:;" class="continue-checkIn js-continue-checkIn">继续值机</a>
 			</div>
 		</div>
 	</section>

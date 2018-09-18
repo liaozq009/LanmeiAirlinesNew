@@ -6,6 +6,7 @@ var lmFlightHotel = {
         this.isPc();
         this.flightInfo();
         this.flightCheckIn();
+        this.complete();
         this.addEvend();
     },
 
@@ -67,7 +68,6 @@ var lmFlightHotel = {
             cityFn();
             dropdownFn(this);
         });
-
         $('.js-fromMenu').on('click','>li',function(){
             var text1 = $(this).attr('title');
             var text2 = text1.split('/');
@@ -84,7 +84,6 @@ var lmFlightHotel = {
            event.stopPropagation();
            dropdownFn(this);
         });
-
         $('.js-ticketMenu').on('click','>li',function(){
             var text1 = $(this).attr('title');
             var id = $(this).attr('data-id');
@@ -100,18 +99,107 @@ var lmFlightHotel = {
             }
         });
 
+        $('.js-lastName-input').keyup(function(event) {
+            $(this).val($(this).val().replace(/[^A-Za-z\/]/ig,''));
+        });
+
+        $('.js-date-input').keyup(function(event) {
+            $(this).val($(this).val().replace(/[^\w-]/ig,''));
+        });
+
         //搜索国家区号
         $('.js-search-code').click(function(e) {
            e.stopPropagation();
         });
-
         $('.js-codeMenu').on('click','>li',function(){
             var text1 = $(this).attr('title');
             var $box = $(this).parents('.codeMenu-wrap');
             $box.siblings('span').html(text1).attr('title',text1); 
         });
+        this.autoComplete('.js-search-code'); //国家区号模糊匹配
 
-        this.autoComplete('.js-search-code');
+        // 手机号只能输入数字
+        $('.js-phone-input').keyup(function(event) {
+            $(this).val($(this).val().replace(/[^\d]/ig,''));
+        });
+
+        // 查询航班信息
+        var $sectionInfo = $('.lm-section-info');
+        var $sectionCheckIn = $('.lm-section-checkIn');
+        var $sectionComplete = $('.lm-section-complete');
+        var $mask = $('.header-mask,.footer-mask');
+
+        $('.js-search-flight').click(function(event) {
+            var $from = $('.js-fromCity-input');
+            var $ticket = $('.js-date-input');
+            var $name = $('.js-lastName-input');
+            var $phone = $('.js-phone-input');
+
+            if($from.val()==''){
+                $from.addClass('warnTip');
+                $from.focus();
+                layer.open({
+                  title: '信息'
+                  ,content: '请检查您的出发地是否正确'
+                });
+                return;
+            }else{
+                $from.removeClass('warnTip');
+            }
+            if($ticket.val()==''){
+                $ticket.addClass('warnTip');
+                $ticket.focus();
+                layer.open({
+                  title: '信息'
+                  ,content: '请检查您的票号或护照号是否正确'
+                });
+                return;
+            }else{
+                $ticket.removeClass('warnTip');
+            }
+            if($name.val()==''){
+                $name.addClass('warnTip');
+                $name.focus();
+                layer.open({
+                  title: '信息'
+                  ,content: '请检查您的姓名是否正确'
+                });
+                return;
+            }else{
+                $name.removeClass('warnTip');
+            }
+            if($phone.val()==''){
+                $phone.addClass('warnTip');
+                $phone.focus();
+                layer.open({
+                  title: '信息'
+                  ,content: '请检查您的号码是否正确'
+                });
+                return;
+            }else{
+                $phone.removeClass('warnTip');
+            }
+        });
+
+        // 下一步
+        $('.lm-info').on('click','.js-next-flight',function(event) {
+            $sectionInfo.hide();
+            $sectionCheckIn.show();
+            $mask.show();
+
+            setTimeout(function(){
+                $sectionCheckIn.addClass('checkIn-pos-top');
+            },1000);
+            setTimeout(function(){
+                $sectionCheckIn.addClass('checkIn-size-scale');
+            },2200);
+            setTimeout(function(){
+                $('.lm-seat-wrap').fadeIn();
+            },3200);
+            setTimeout(function(){
+                $('html, body').stop().animate({scrollTop:500}, 'slow');
+            },4200);
+        });
 
         // 选择值机航班
         $('.lm-info-inner').click(function(event) {
@@ -127,59 +215,6 @@ var lmFlightHotel = {
                 }
             }
         });
-
-        //查询
-        // $('.js-search-flight').click(function(event) {
-        //     var $from = $('.js-fromCity-input');
-        //     var $ticket = $('.js-date-input');
-        //     var $name = $('.js-lastName-input');
-        //     var $phone = $('.js-phone-input');
-
-        //     if($from.val()==''){
-        //         $from.addClass('warnTip');
-        //         $from.focus();
-        //         layer.open({
-        //           title: '信息'
-        //           ,content: '请检查您的出发地是否正确'
-        //         });
-        //         return;
-        //     }else{
-        //         $from.removeClass('warnTip');
-        //     }
-        //     if($ticket.val()==''){
-        //         $ticket.addClass('warnTip');
-        //         $ticket.focus();
-        //         layer.open({
-        //           title: '信息'
-        //           ,content: '请检查您的票号或护照号是否正确'
-        //         });
-        //         return;
-        //     }else{
-        //         $ticket.removeClass('warnTip');
-        //     }
-        //     if($name.val()==''){
-        //         $name.addClass('warnTip');
-        //         $name.focus();
-        //         layer.open({
-        //           title: '信息'
-        //           ,content: '请检查您的姓名是否正确'
-        //         });
-        //         return;
-        //     }else{
-        //         $name.removeClass('warnTip');
-        //     }
-        //     if($phone.val()==''){
-        //         $phone.addClass('warnTip');
-        //         $phone.focus();
-        //         layer.open({
-        //           title: '信息'
-        //           ,content: '请检查您的号码是否正确'
-        //         });
-        //         return;
-        //     }else{
-        //         $phone.removeClass('warnTip');
-        //     }
-        // });
     },
 
     /* 座位选择 */
@@ -381,6 +416,117 @@ var lmFlightHotel = {
             var winHeigh = $(this).scrollTop(); //页面滚动的高度
             $('.js-miniMap-slide').css('top',(winHeigh/curentHeight)*90);
         });
+
+        // 上一步
+        var $sectionInfo = $('.lm-section-info');
+        var $sectionCheckIn = $('.lm-section-checkIn');
+        var $sectionComplete = $('.lm-section-complete');
+        var $mask = $('.header-mask,.footer-mask');
+        $('.js-prev-btn').click(function(event) {
+            $sectionInfo.show();
+            $sectionCheckIn.hide();
+            $mask.hide();
+            $('html, body').stop().animate({scrollTop:0}, 'slow');
+        });
+
+        var $payChild = '<div class="success-inner success-pay-inner">'+
+                    '<p class="select-radio js-select-radio select-ok"></p>'+
+                    '<div class="flight-airport">'+
+                        '<div class="from-airport airport-com">广州国际白云机场 <p>出发</p></div>'+
+                        '<div class="flight-num">'+
+                            '<span>LQ909</span>'+
+                            '<img src="../../images/resource/ticketHotel-line.png" class="pc-right-arrow">'+
+                            '<img src="../../images/resource/ticketHotel-line-mobile.png" class="mobile-right-arrow">'+
+                        '</div>'+
+                       ' <div class="to-airport airport-com">金边国际机场 <p>到达</p></div>'+
+                    '</div>'+
+                    '<ul class="flight-info">'+
+                       ' <li>2018-09-05<p>出发日期</p></li>'+
+                       ' <li>8D<p>座位号</p></li>'+
+                        '<li class="price">￥466<p>价格</p></li>'+
+                   ' </ul>'+
+                '</div>'+
+               ' <div class="success-operation">'+
+                   ' <a href="javascript:;" class="continue-checkIn js-checkIn-pay">支付</a>'+
+                '</div>';
+
+        var $successChild = '<div class="success-tips">'+
+                    '<div class="success-box">'+
+                        '<img src="../../images/resource/checkIn/checkIn-success.png" alt="">'+
+                        '<div>'+
+                           ' <h2>值机成功</h2>'+
+                            '<p>您已成功值机，请确认您的值机信息。</p>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+                '<div class="success-inner">'+
+                    '<p class="select-radio js-select-radio select-ok"></p>'+
+                    '<div class="flight-airport">'+
+                        '<div class="from-airport airport-com">广州国际白云机场 <p>出发</p></div>'+
+                       ' <div class="flight-num">'+
+                            '<span>LQ909</span>'+
+                           ' <img src="../../images/resource/ticketHotel-line.png" class="pc-right-arrow">'+
+                            '<img src="../../images/resource/ticketHotel-line-mobile.png" class="mobile-right-arrow">'+
+                        '</div>'+
+                        '<div class="to-airport airport-com">金边国际机场 <p>到达</p></div>'+
+                    '</div>'+
+                    '<ul class="flight-info">'+
+                       ' <li>2018-09-05<p>出发日期</p></li>'+
+                        '<li>8D<p>座位号</p></li>'+
+                    '</ul>'+
+               ' </div>'+
+                '<div class="success-operation">'+
+                    '<a href="javascript:;" class="export-PDF js-export-PDF">导出PDF</a>'+
+                    '<a href="javascript:;" class="continue-checkIn js-continue-checkIn">继续值机</a>'+
+                '</div>';
+
+        // 确定值机
+        var checkInPrice = true;
+        $('.js-checkIn-btn').click(function(event) {
+            $sectionCheckIn.hide();
+            $sectionComplete.show();
+            $mask.hide();
+            if(checkInPrice){
+                $sectionComplete.html($payChild); //支付
+            }else{
+                $sectionComplete.html($successChild); //不用支付
+            }
+            $('html, body').stop().animate({scrollTop:0}, 'slow');
+        });
+
+        // 点击支付
+        $('.js-pay-checkIn').click(function(){
+            $('#payModal').modal('hide');
+            $sectionComplete.html($successChild); //不用支付
+            $('html, body').stop().animate({scrollTop:0}, 'slow');
+        });
+    },
+
+    /* 完成或支付 */
+    complete:function(){
+        var $sectionInfo = $('.lm-section-info');
+        var $sectionCheckIn = $('.lm-section-checkIn');
+        var $sectionComplete = $('.lm-section-complete');
+        var $mask = $('.header-mask,.footer-mask');
+
+        $sectionComplete.on('click','.js-continue-checkIn',function(event) {
+            $sectionInfo.show();
+            $sectionComplete.hide();
+            $mask.hide();
+            $('html, body').stop().animate({scrollTop:0}, 'slow');
+        });
+
+        // 支付
+        $sectionComplete.on('click','.js-checkIn-pay',function(event) {
+            $('#payModal').modal();
+        });
+
+        // 选择支付方式
+        $('.js-pay-select>a').click(function(event) {
+            $(this).addClass('active').siblings('a').removeClass('active');
+            var dataPay = $(this).attr('data-pay');
+            $('.js-pay-method').val(dataPay);
+        });
     },
 
     /* pc端事件 */
@@ -525,49 +671,7 @@ var lmFlightHotel = {
 
     /* 其他事件 */
     addEvend: function () {
-        var $sectionInfo = $('.lm-section-info');
-        var $sectionCheckIn = $('.lm-section-checkIn');
-        var $sectionComplete = $('.lm-section-complete');
-
-        var $mask = $('.header-mask,.footer-mask');
-
-        $('.js-search-flight').click(function(event) {
-            $sectionInfo.hide();
-            $sectionCheckIn.show();
-            $mask.show();
-
-            setTimeout(function(){
-                $('.lm-section-checkIn').addClass('checkIn-pos-top');
-            },1000);
-            setTimeout(function(){
-                $('.lm-section-checkIn').addClass('checkIn-size-scale');
-            },2200);
-            setTimeout(function(){
-                $('.lm-seat-wrap').fadeIn();
-            },3200);
-            setTimeout(function(){
-                $('html, body').stop().animate({scrollTop:500}, 'slow');
-            },4200);
-        });
-
-        $('.js-prev-btn').click(function(event) {
-            $sectionInfo.show();
-            $sectionCheckIn.hide();
-            $mask.hide();
-        });
-
-        $('.js-checkIn-btn').click(function(event) {
-            $sectionCheckIn.hide();
-            $sectionComplete.show();
-            $mask.hide();
-            $('html, body').stop().animate({scrollTop:0}, 'slow');
-        });
-
-        $('.js-continue-checkIn').click(function(event) {
-            $sectionInfo.show();
-            $sectionComplete.hide();
-            $mask.hide();
-        });
+        
     },
 };
 

@@ -194,8 +194,7 @@ body:before {
 			}
 		}
 	}
-	.passport-wrap,
-	.phone-wrap{
+	.passport-wrap,.phone-wrap{
 		>input{
 			padding-left: 160px;
 			background: url('@{url}ticket-num.png') 20px center no-repeat;
@@ -661,7 +660,10 @@ body:before {
 		border-radius:0px 2px 2px 0px;
 		transition: left .3s;
 		-webkit-transition: left .3s;
-		>img{height: 18px;}
+		>img{
+			display: none;
+			height: 18px;
+		}
 		.from-airport,.to-airport{
 			font-size: 12px;
 			.purpleRgb(0.5);
@@ -706,8 +708,8 @@ body:before {
 	}
 	.seat-arrow{
 		position: absolute;
-		top: 10px;
-		right: 10px;
+		top: 0;
+		right: 0;
 		width: 40px;
 	    height: 40px;
 	    line-height: 40px;
@@ -734,7 +736,7 @@ body:before {
 		transition: right .3s;
 		-webkit-transition: right .3s;
 		.seat-arrow{
-			left: 10px;
+			left: 0;
 		}
 		>div{
 			height: 34px;
@@ -801,7 +803,7 @@ body:before {
 		transition: right .3s;
 		-webkit-transition: right .3s;
 		.seat-arrow{
-			left: 10px;
+			left: 0;
 		}
 		.pas-name{
 			font-size: 12px;
@@ -815,11 +817,13 @@ body:before {
 		}
 		.seat-cabin{
 			margin-top: 10px;
-			font-size: 18px;
 			font-family: @FBold;
-			color: @red;
 			text-align: right;
-			p{
+			.difference-price{
+				font-size: 18px;
+				color: @red;
+			}
+			.flight-num{
 				font-size: 20px;
 				color: @purple;
 			}
@@ -1032,10 +1036,64 @@ body:before {
 			background:linear-gradient(315deg,#00908C 0%,#B4EC80 100%);
 		}
 		.continue-checkIn{
-			margin-left: 50px;
 			background:linear-gradient(135deg,#00908C 0%,#1f2c5c 100%);
 		}
 	}
+	.success-pay-inner{
+		.flight-info{
+			> li{
+				width: 33.33%;
+			}
+			.price{
+				color: @red;
+			}
+		}
+	}
+}
+.pay-content{
+	margin-top: 30px;
+	padding:0 10px 20px;
+	overflow: hidden;
+	.pay-select{
+		float: left;
+		width: 100%;
+		text-align: center;
+		>a{
+			display: inline-block;
+			width: 176px;
+			height: 80px;
+		}
+	}
+	.AliPay{background: url('@{url}AliPay.png') center no-repeat;background-size: 176px;}
+	.AliPay.active{background: url('@{url}AliPay-active.png') center no-repeat;background-size: 176px;}
+	.PayPal{background: url('@{url}PayPal.png') center no-repeat;margin-right: 10px;background-size: 176px;}
+	.PayPal.active{background: url('@{url}PayPal-active.png') center no-repeat;margin-right: 10px;background-size: 176px;}
+	.pay-catering{
+		width:100%;
+		height:50px;
+		line-height: 50px;
+		float: right;
+		margin-top: 10px;
+		text-align: center;
+		font-size: 20px;
+		color: #fff;
+		border-radius:2px;
+		background:@purple;
+		transition: background .3s;
+		-webkit-transition: background .3s;
+		&:hover{
+			background: @green;
+			transition: background .3s;
+			-webkit-transition: background .3s;
+		}
+	}
+}
+.payModal .modal-dialog .modal-content .modal-body .loginTitle{
+	font-size: 24px;
+	font-family: @FBold;
+}
+.payModal{
+	z-index: 999999999;
 }
 
 .BackToTop{display: none !important;}
@@ -1256,7 +1314,7 @@ body:before {
 		}
 		.from-city-wrap input{background: url('@{url}svg/city-from.svg') 20px center no-repeat;}
 		.name-wrap .lastName-input{background: url('@{url}svg/baggageName.svg') 20px center no-repeat;}
-		.phone-wrap input{background: url('@{url}svg/icon-areaCode.svg') 20px center no-repeat;}
+		.phone-wrap input{background: url('@{url}svg/ticket-phone.svg') 20px center no-repeat;}
 		.passport-wrap {
 			.select-option{
 				padding-left: 50px;
@@ -1568,7 +1626,8 @@ body:before {
 				font-size: 16px;
 			}
 			.continue-checkIn{
-				margin-left: 4%;
+				margin-left: 0;
+				float: none;
 			}
 		}
 	}

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 @charset "utf-8";
 @font-face {
   font-family: NotoSansBold;
@@ -162,43 +161,50 @@ body:before {
 .lm-input .dropdownMenu-wrap .menu-com .no-result-match {
   width: 100%;
 }
-.lm-input .ticketMenu-wrap {
+.lm-input .ticketMenu-wrap,
+.lm-input .codeMenu-wrap {
   width: 100%;
   height: 92px;
   left: 0;
 }
-.lm-input .ticketMenu-wrap .menu-com {
+.lm-input .ticketMenu-wrap .menu-com,
+.lm-input .codeMenu-wrap .menu-com {
   overflow: hidden;
 }
-.lm-input .ticketMenu-wrap .menu-com > li {
+.lm-input .ticketMenu-wrap .menu-com > li,
+.lm-input .codeMenu-wrap .menu-com > li {
   float: none;
   width: 100%;
   padding-left: 10px;
   background: none;
 }
-.lm-input .ticketMenu-wrap .menu-com > li:hover {
+.lm-input .ticketMenu-wrap .menu-com > li:hover,
+.lm-input .codeMenu-wrap .menu-com > li:hover {
   background: none;
 }
-.lm-input .passport-wrap input {
+.lm-input .passport-wrap > input,
+.lm-input .phone-wrap > input {
   padding-left: 160px;
   background: url('../../images/EN/ticket-num.png') 20px center no-repeat;
 }
-.lm-input .passport-wrap .select-option {
+.lm-input .passport-wrap .select-option,
+.lm-input .phone-wrap .select-option {
   position: absolute;
   height: 100%;
   padding-left: 70px;
   padding-top: 14px;
 }
-.lm-input .passport-wrap .select-option > span {
+.lm-input .passport-wrap .select-option > span,
+.lm-input .phone-wrap .select-option > span {
   display: block;
   height: 32px;
   line-height: 32px;
   padding-right: 40px;
   border-right: 2px solid rgba(31, 44, 92, 0.3);
-  text-decoration: underline;
   cursor: pointer;
 }
-.lm-input .passport-wrap .select-option > span::after {
+.lm-input .passport-wrap .select-option > span::after,
+.lm-input .phone-wrap .select-option > span::after {
   content: '';
   position: absolute;
   top: 50%;
@@ -210,8 +216,56 @@ body:before {
   border-style: solid;
   border-color: #1f2c5c transparent transparent transparent;
 }
-.lm-input .passport-wrap .passport-num {
+.lm-input .passport-wrap .passport-num,
+.lm-input .phone-wrap .passport-num {
   background: url('../../images/EN/passport.png') 20px center no-repeat;
+}
+.lm-input .phone-wrap > input {
+  padding-left: 220px;
+  background: url('../../images/EN/icon-areaCode.png') 20px center no-repeat;
+}
+.lm-input .phone-wrap .select-option > span {
+  width: 140px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.lm-input .phone-wrap .dropdownMenu-wrap {
+  height: auto;
+  background: #fff;
+}
+.lm-input .phone-wrap .dropdownMenu-wrap .code-input-wrap {
+  padding: 10px 20px 0;
+}
+.lm-input .phone-wrap .dropdownMenu-wrap .menu-com {
+  max-height: 146px;
+  overflow-y: auto;
+}
+.lm-input .phone-wrap .dropdownMenu-wrap input {
+  width: 100%;
+  height: 30px;
+  font-size: 14px;
+  border: 1px solid rgba(31, 44, 92, 0.3);
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 2px;
+}
+.lm-input .phone-wrap .dropdownMenu-wrap :-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  font-size: 14px;
+}
+.lm-input .phone-wrap .dropdownMenu-wrap ::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  font-size: 14px;
+}
+.lm-input .phone-wrap .dropdownMenu-wrap input:-ms-input-placeholder {
+  font-size: 14px;
+}
+.lm-input .phone-wrap .dropdownMenu-wrap input::-webkit-input-placeholder {
+  font-size: 14px;
+}
+.lm-input .phone-wrap .dropdownMenu-wrap .menu-com {
+  position: static;
 }
 .lm-input .name-wrap {
   position: relative;
@@ -241,9 +295,6 @@ body:before {
 .lm-input .name-wrap .lastName-input {
   background: url('../../images/EN/baggageName.png') 20px center no-repeat;
 }
-.lm-input .phone-wrap input {
-  background: url('../../images/EN/ticket-phone.png') 20px center no-repeat;
-}
 .lm-button {
   width: 240px;
   height: 60px;
@@ -266,6 +317,9 @@ body:before {
   margin-left: 20px;
   vertical-align: sub;
   background: url('../../images/resource/circle-arrow-right.png') center no-repeat;
+}
+.lm-button > p {
+  display: inline-block;
 }
 .lm-button img,
 .lm-button i {
@@ -316,6 +370,7 @@ body:before {
   margin-bottom: 20px;
   background: #fff;
   border-radius: 2px;
+  cursor: pointer;
 }
 .lm-info .lm-button {
   float: right;
@@ -595,6 +650,7 @@ body:before {
   -webkit-transition: left .3s;
 }
 .lm-section-checkIn .flight-aside > img {
+  display: none;
   height: 18px;
 }
 .lm-section-checkIn .flight-aside .from-airport,
@@ -644,8 +700,8 @@ body:before {
 }
 .lm-section-checkIn .seat-arrow {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 0;
+  right: 0;
   width: 40px;
   height: 40px;
   line-height: 40px;
@@ -672,7 +728,7 @@ body:before {
   -webkit-transition: right .3s;
 }
 .lm-section-checkIn .seat-aside .seat-arrow {
-  left: 10px;
+  left: 0;
 }
 .lm-section-checkIn .seat-aside > div {
   height: 34px;
@@ -743,7 +799,7 @@ body:before {
   -webkit-transition: right .3s;
 }
 .lm-section-checkIn .checkIn-aside .seat-arrow {
-  left: 10px;
+  left: 0;
 }
 .lm-section-checkIn .checkIn-aside .pas-name {
   font-size: 12px;
@@ -757,13 +813,15 @@ body:before {
 }
 .lm-section-checkIn .checkIn-aside .seat-cabin {
   margin-top: 10px;
-  font-size: 12px;
-  color: rgba(31, 44, 92, 0.5);
+  font-family: NotoSansBold;
   text-align: right;
 }
-.lm-section-checkIn .checkIn-aside .seat-cabin p {
+.lm-section-checkIn .checkIn-aside .seat-cabin .difference-price {
+  font-size: 18px;
+  color: #FF8989;
+}
+.lm-section-checkIn .checkIn-aside .seat-cabin .flight-num {
   font-size: 20px;
-  font-family: NotoSansBold;
   color: #1f2c5c;
 }
 .lm-section-checkIn .checkIn-aside .member-no {
@@ -975,11 +1033,76 @@ body:before {
   border-radius: 2px;
 }
 .lm-section-complete .success-operation .export-PDF {
+  display: none;
   background: linear-gradient(315deg, #00908C 0%, #B4EC80 100%);
 }
 .lm-section-complete .success-operation .continue-checkIn {
-  margin-left: 50px;
   background: linear-gradient(135deg, #00908C 0%, #1f2c5c 100%);
+}
+.lm-section-complete .success-pay-inner .flight-info > li {
+  width: 33.33%;
+}
+.lm-section-complete .success-pay-inner .flight-info .price {
+  color: #FF8989;
+}
+.pay-content {
+  margin-top: 30px;
+  padding: 0 10px 20px;
+  overflow: hidden;
+}
+.pay-content .pay-select {
+  float: left;
+  width: 100%;
+  text-align: center;
+}
+.pay-content .pay-select > a {
+  display: inline-block;
+  width: 176px;
+  height: 80px;
+}
+.pay-content .AliPay {
+  background: url('../../images/EN/AliPay.png') center no-repeat;
+  background-size: 176px;
+}
+.pay-content .AliPay.active {
+  background: url('../../images/EN/AliPay-active.png') center no-repeat;
+  background-size: 176px;
+}
+.pay-content .PayPal {
+  background: url('../../images/EN/PayPal.png') center no-repeat;
+  margin-right: 10px;
+  background-size: 176px;
+}
+.pay-content .PayPal.active {
+  background: url('../../images/EN/PayPal-active.png') center no-repeat;
+  margin-right: 10px;
+  background-size: 176px;
+}
+.pay-content .pay-catering {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  float: right;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 20px;
+  color: #fff;
+  border-radius: 2px;
+  background: #1f2c5c;
+  transition: background .3s;
+  -webkit-transition: background .3s;
+}
+.pay-content .pay-catering:hover {
+  background: #8ec06c;
+  transition: background .3s;
+  -webkit-transition: background .3s;
+}
+.payModal .modal-dialog .modal-content .modal-body .loginTitle {
+  font-size: 24px;
+  font-family: NotoSansBold;
+}
+.payModal {
+  z-index: 999999999;
 }
 .BackToTop {
   display: none !important;
@@ -1554,9 +1677,7 @@ body:before {
     font-size: 16px;
   }
   .lm-section-complete .success-operation .continue-checkIn {
-    margin-left: 4%;
+    margin-left: 0;
+    float: none;
   }
 }
-=======
-@charset "utf-8";@font-face{font-family:NotoSansBold;src:url(../../common/CN/fonts/NotoSans/SourceHanSansCN-Bold.otf);font-weight:700}body:before{content:' ';position:fixed;z-index:-1;top:0;right:0;bottom:0;left:0;background:url(../../images/resource/checkIn/checkIn-bg.jpg) center no-repeat;background-size:cover}.lm-section-info{width:1200px;margin:0 auto;margin-top:50px}.lm-title{width:100%;text-align:center}.lm-title h1{font-size:36px;color:#fff;font-family:NotoSansBold}.lm-input{display:inline-block;width:100%;margin-top:50px}.lm-input>div{position:relative;float:left;width:580px;height:60px;margin-bottom:40px;background:#fff;box-shadow:0 0 50px 0 rgba(31,44,92,.1);border-radius:2px}.lm-input>div>input{width:100%;height:100%;font-size:20px;color:#1f2c5c;padding-left:70px;padding-right:20px}.lm-input>div .active-input{border:1px solid red}.lm-input>div :-moz-placeholder{color:rgba(31,44,92,.3);font-size:20px}.lm-input>div ::-moz-placeholder{color:rgba(31,44,92,.3);font-size:20px}.lm-input>div input:-ms-input-placeholder{color:rgba(31,44,92,.3);font-size:20px}.lm-input>div input::-webkit-input-placeholder{color:rgba(31,44,92,.3);font-size:20px}.lm-input>div .warnTip{border:2px solid #ff8989}.lm-input .from-city-wrap,.lm-input .name-wrap{margin-right:40px}.lm-input .dropdownMenu-wrap{display:none;position:absolute;top:90px;z-index:9;width:580px;height:256px;box-shadow:0 0 50px 0 rgba(31,44,92,.1)}.lm-input .dropdownMenu-wrap:before{position:absolute;top:-13px;left:50%;margin-left:-14px;z-index:9;filter:alpha(opacity=0);content:"";display:block;width:0;height:0;border-left:14px solid transparent;border-right:14px solid transparent;border-bottom:14px solid #fff;transition:opacity .2s ease-out;-webkit-transition:opacity .2s ease-out}.lm-input .dropdownMenu-wrap .menu-com{position:absolute;top:0;left:0;width:100%;height:100%;padding:20px;padding-bottom:10px;font-size:16px;color:rgba(31,44,92,.5);background:#fff;z-index:999;border-radius:2px;border-top:0;overflow-y:auto}.lm-input .dropdownMenu-wrap .menu-com>li{float:left;width:50%;padding-left:30px;padding-right:10px;margin-bottom:10px;background:url(../../images/EN/city-icon.png) left center no-repeat;cursor:pointer;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;transition:all .3s;-webkit-transition:all .3s}.lm-input .dropdownMenu-wrap .menu-com>li:hover{color:#8ec060;background:url(../../images/EN/city-icon-active.png) left center no-repeat}.lm-input .dropdownMenu-wrap .menu-com>li span{color:#1f2c5c}.lm-input .dropdownMenu-wrap .menu-com>li a{display:inline-block;width:100%;height:40px;font-size:14px;padding:0 20px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.lm-input .dropdownMenu-wrap .menu-com>li a:hover{background:#8ec060;color:#fff}.lm-input .dropdownMenu-wrap .menu-com .no-result-match{width:100%}.lm-input .ticketMenu-wrap,.lm-input .codeMenu-wrap{width:100%;height:92px;left:0}.lm-input .ticketMenu-wrap .menu-com,.lm-input .codeMenu-wrap .menu-com{overflow:hidden}.lm-input .ticketMenu-wrap .menu-com>li,.lm-input .codeMenu-wrap .menu-com>li{float:none;width:100%;padding-left:10px;background:0 0}.lm-input .ticketMenu-wrap .menu-com>li:hover,.lm-input .codeMenu-wrap .menu-com>li:hover{background:0 0}.lm-input .passport-wrap>input,.lm-input .phone-wrap>input{padding-left:160px;background:url(../../images/EN/ticket-num.png) 20px center no-repeat}.lm-input .passport-wrap .select-option,.lm-input .phone-wrap .select-option{position:absolute;height:100%;padding-left:70px;padding-top:14px}.lm-input .passport-wrap .select-option>span,.lm-input .phone-wrap .select-option>span{display:block;height:32px;line-height:32px;padding-right:40px;border-right:2px solid rgba(31,44,92,.3);cursor:pointer}.lm-input .passport-wrap .select-option>span::after,.lm-input .phone-wrap .select-option>span::after{content:'';position:absolute;top:50%;margin-top:-3px;right:20px;width:0;height:0;border-width:6px;border-style:solid;border-color:#1f2c5c transparent transparent}.lm-input .passport-wrap .passport-num,.lm-input .phone-wrap .passport-num{background:url(../../images/EN/passport.png) 20px center no-repeat}.lm-input .phone-wrap>input{padding-left:220px;background:url(../../images/EN/icon-areaCode.png) 20px center no-repeat}.lm-input .phone-wrap .select-option>span{width:140px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.lm-input .phone-wrap .dropdownMenu-wrap{height:auto;background:#fff}.lm-input .phone-wrap .dropdownMenu-wrap .code-input-wrap{padding:10px 20px 0}.lm-input .phone-wrap .dropdownMenu-wrap .menu-com{max-height:146px;overflow-y:auto}.lm-input .phone-wrap .dropdownMenu-wrap input{width:100%;height:30px;font-size:14px;border:1px solid rgba(31,44,92,.3);padding-left:10px;padding-right:10px;border-radius:2px}.lm-input .phone-wrap .dropdownMenu-wrap :-moz-placeholder{font-size:14px}.lm-input .phone-wrap .dropdownMenu-wrap ::-moz-placeholder{font-size:14px}.lm-input .phone-wrap .dropdownMenu-wrap input:-ms-input-placeholder{font-size:14px}.lm-input .phone-wrap .dropdownMenu-wrap input::-webkit-input-placeholder{font-size:14px}.lm-input .phone-wrap .dropdownMenu-wrap .menu-com{position:static}.lm-input .name-wrap{position:relative}.lm-input .name-wrap input{width:100%;float:left}.lm-input .name-wrap .input-line{position:absolute;left:50%;top:50%;margin-left:-1px;margin-top:-16px;display:block;width:2px;height:32px;background:rgba(31,44,92,.3);border-radius:1px}.lm-input .name-wrap .firstName-input{padding-left:20px}.lm-input .from-city-wrap input{background:url(../../images/EN/city-from.png) 20px center no-repeat}.lm-input .name-wrap .lastName-input{background:url(../../images/EN/baggageName.png) 20px center no-repeat}.lm-button{width:240px;height:60px;line-height:60px;color:#fff;font-size:18px;border:0;outline:0;border-radius:2px;background:#42958a;background:-webkit-linear-gradient(left,#42958a 0,#1f2c5c 100%);background:-o-linear-gradient(right,#42958a 0,#1f2c5c 100%);background:-moz-linear-gradient(right,#42958a 0,#1f2c5c 100%);background:linear-gradient(to right,#42958a 0,#1f2c5c 100%)}.lm-button>span{display:inline-block;width:20px;height:20px;margin-left:20px;vertical-align:sub;background:url(../../images/resource/circle-arrow-right.png) center no-repeat}.lm-button>p{display:inline-block}.lm-button img,.lm-button i{margin-left:20px;display:initial;vertical-align:sub}.lm-search{color:#fff;overflow:hidden}.lm-search .notes-inner{float:left;width:70%}.lm-search .notes-inner h3{font-size:16px;margin-bottom:16px;font-family:NotoSansBold}.lm-search .notes-inner p{font-size:14px;line-height:26px}.lm-search .search-inner{float:right}.lm-search .search-inner>a{width:100%;display:block;display:none;text-align:right;color:#fff;opacity:.5;filter:alpha(opacity=50);font-size:16px;margin-top:20px;text-decoration:underline}.lm-info{margin-top:40px;margin-bottom:60px;overflow:hidden}.lm-info .lm-info-inner{position:relative;padding:20px;margin-bottom:20px;background:#fff;border-radius:2px;cursor:pointer}.lm-info .lm-button{float:right}.lm-info .mobile-right-arrow{display:none}.lm-info .flight-airport{text-align:center;border-bottom:1px solid rgba(31,44,92,.1);overflow:hidden}.lm-info .flight-airport .airport-com{width:430px;height:60px;line-height:60px;font-size:18px;color:#1f2c5c;font-family:NotoSansBold;text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.lm-info .flight-airport .from-airport{float:left}.lm-info .flight-airport .flight-num{display:inline-block;width:300px;font-size:16px;color:rgba(31,44,92,.5)}.lm-info .flight-airport .to-airport{float:right}.lm-info .flight-info{font-size:14px;color:rgba(31,44,92,.5);padding-top:20px;overflow:hidden;text-align:center}.lm-info .flight-info>li{width:25%;float:left;border-right:1px solid rgba(31,44,92,.5);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.lm-info .flight-info>li:last-child{border-right:0}.lm-info .flight-info .can-handle span{color:#8ec06c}.lm-info .flight-info .not-avail span{color:#ff8989}.lm-info .flight-info .already-handle{color:#1f2c5c}.lm-info .select-radio{position:absolute;right:20px;top:10px;width:20px;height:20px;border-radius:50%;background:rgba(31,44,92,.2);cursor:pointer}.lm-info .select-ok{background:url(../../images/resource/checkIn/icon-select.png) center no-repeat}.lm-section-checkIn{display:none;height:4180px;background:url(../../images/resource/checkIn/lm-A319.png) center top no-repeat}.lm-section-checkIn .lm-seat-wrap{display:none;width:460px;margin:0 auto;padding-top:566px}.lm-section-checkIn .aircraft-rest-wrap{padding-left:60px;padding-right:60px;overflow:hidden}.lm-section-checkIn .aircraft-rest-wrap>p{float:left;width:130px;height:100px}.lm-section-checkIn .aircraft-rest-wrap .aircraft-WC{background:url(../../images/resource/checkIn/aircraft-WC.png) center no-repeat;margin-right:80px}.lm-section-checkIn .aircraft-rest-wrap .aircraft-meals{background:url(../../images/resource/checkIn/aircraft-meals.png) center no-repeat}.lm-section-checkIn .aricraft-rest-footer{margin-top:20px}.lm-section-checkIn .seat-cell-wrap{margin-top:100px}.lm-section-checkIn .seat-wrap-com{position:relative}.lm-section-checkIn .seat-wrap-com>ul{height:48px;padding-left:20px;padding-right:20px;margin-top:54px}.lm-section-checkIn .seat-wrap-com>ul>li{position:relative;float:left;width:56px;height:48px;line-height:48px;margin-right:8px;text-align:center;background:url(../../images/resource/checkIn/seat-cell.png) center no-repeat;cursor:pointer}.lm-section-checkIn .seat-wrap-com>ul>li span{position:absolute;top:-42px;display:block;width:56px;text-align:center;color:rgba(31,44,92,.2);font-family:NotoSansBold}.lm-section-checkIn .seat-wrap-com>ul .cell-4 .seat-info-wrap,.lm-section-checkIn .seat-wrap-com>ul .cell-5 .seat-info-wrap,.lm-section-checkIn .seat-wrap-com>ul .cell-6 .seat-info-wrap{right:0;left:auto}.lm-section-checkIn .seat-wrap-com>ul .seat-checked{background:url(../../images/resource/checkIn/seat-checked.png) center no-repeat}.lm-section-checkIn .seat-wrap-com>ul .seat-sold{background:url(../../images/resource/checkIn/seat-free-sold.png) center no-repeat;cursor:default}.lm-section-checkIn .seat-wrap-com>ul .cell-6{margin-right:0}.lm-section-checkIn .seat-wrap-com>ul .row-num{width:36px;font-size:16px;font-family:NotoSansBold;color:rgba(31,44,92,.2);cursor:default}.lm-section-checkIn .seat-wrap-com .seat-num{position:absolute;top:-30px;width:100%;padding-left:20px;padding-right:20px}.lm-section-checkIn .seat-wrap-com .seat-num p{float:left;width:56px;height:20px;margin-right:8px;text-align:center;font-family:NotoSansBold;color:rgba(31,44,92,.2)}.lm-section-checkIn .seat-wrap-com .seat-num .p6{margin-right:0}.lm-section-checkIn .seat-wrap-com .seat-num .row-num{width:36px}.lm-section-checkIn .seat-wrap-com .seat-num .left-exit{left:0}.lm-section-checkIn .seat-wrap-com .seat-num .right-exit{right:0}.lm-section-checkIn .seat-wrap-1 .row-1>li{background:url(../../images/resource/checkIn/seat-class1.png) center no-repeat}.lm-section-checkIn .seat-wrap-1 .row-1 .seat-checked{background:url(../../images/resource/checkIn/seat-checked.png) center no-repeat}.lm-section-checkIn .seat-wrap-1 .row-1 .seat-sold{background:url(../../images/resource/checkIn/seat-class1-sold.png) center no-repeat}.lm-section-checkIn .seat-wrap-1 .row-2>li{background:url(../../images/resource/checkIn/seat-class2.png) center no-repeat}.lm-section-checkIn .seat-wrap-1 .row-2 .seat-checked{background:url(../../images/resource/checkIn/seat-checked.png) center no-repeat}.lm-section-checkIn .seat-wrap-1 .row-2 .seat-sold{background:url(../../images/resource/checkIn/seat-class2-sold.png) center no-repeat}.lm-section-checkIn .seat-wrap-1 .row-3>li{background:url(../../images/resource/checkIn/seat-class3.png) center no-repeat}.lm-section-checkIn .seat-wrap-1 .row-3 .seat-checked{background:url(../../images/resource/checkIn/seat-checked.png) center no-repeat}.lm-section-checkIn .seat-wrap-1 .row-3 .seat-sold{background:url(../../images/resource/checkIn/seat-class3-sold.png) center no-repeat}.lm-section-checkIn .seat-wrap-2{margin-top:62px}.lm-section-checkIn .seat-wrap-2>ul{margin-top:42px}.lm-section-checkIn .seat-wrap-2 .seat-exit{position:absolute;top:-30px;width:100%;padding-left:20px;padding-right:20px;color:rgba(31,44,92,.7);font-family:NotoSansBold}.lm-section-checkIn .seat-wrap-2 .seat-exit .left-exit{float:left}.lm-section-checkIn .seat-wrap-2 .seat-exit .right-exit{float:right}.lm-section-checkIn .seat-wrap-2 .seat-num{top:60px}.lm-section-checkIn .seat-wrap-3>ul{margin-top:40px}.lm-section-checkIn .seat-wrap-3 .row-25{padding-left:40px;padding-right:40px}.lm-section-checkIn .seat-wrap-3 .row-25>li{width:48px;height:48px;background:url(../../images/resource/checkIn/seat-backRow.png) center no-repeat}.lm-section-checkIn .seat-wrap-3 .row-25 .seat-checked{background:url(../../images/resource/checkIn/seat-backRow-checked.png) center no-repeat}.lm-section-checkIn .seat-wrap-3 .row-25 .seat-sold{background:url(../../images/resource/checkIn/seat-backRow-sold.png) center no-repeat}.lm-section-checkIn .seat-wrap-3 .row-25 .row-num{width:36px}.lm-section-checkIn .seat-wrap-com>ul .row-num{background:0 0}.lm-section-checkIn .flight-aside{position:fixed;top:100px;left:0;z-index:9;width:342px;padding:20px;background:#fff;box-shadow:0 0 100px 0 #1f2c5c;border-radius:0 2px 2px 0;transition:left .3s;-webkit-transition:left .3s}.lm-section-checkIn .flight-aside>img{height:18px}.lm-section-checkIn .flight-aside .from-airport,.lm-section-checkIn .flight-aside .to-airport{font-size:12px;color:rgba(31,44,92,.5)}.lm-section-checkIn .flight-aside .from-airport p,.lm-section-checkIn .flight-aside .to-airport p{font-size:18px;font-family:NotoSansBold;color:#1f2c5c;max-width:400px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.lm-section-checkIn .flight-aside .from-airport{margin-top:20px}.lm-section-checkIn .flight-aside .to-airport{margin-top:10px}.lm-section-checkIn .flight-aside .flight-date-wrap{overflow:hidden;margin-top:20px}.lm-section-checkIn .flight-aside .flight-date,.lm-section-checkIn .flight-aside .flight-num{float:left;width:150px;font-size:14px;color:rgba(31,44,92,.5);text-align:center}.lm-section-checkIn .flight-aside .flight-date p,.lm-section-checkIn .flight-aside .flight-num p{font-size:26px;font-family:NotoSansBold;color:#1f2c5c}.lm-section-checkIn .flight-aside .flight-line{float:left;width:2px;height:50px;background:rgba(31,44,92,.1)}.lm-section-checkIn .seat-arrow{position:absolute;top:10px;right:10px;width:40px;height:40px;line-height:40px;text-align:center;cursor:pointer}.lm-section-checkIn .seat-left-arrow{background:url(../../images/resource/checkIn/seat-leftArrow.png) center no-repeat}.lm-section-checkIn .seat-right-arrow{background:url(../../images/resource/checkIn/seat-rightArrow.png) center no-repeat}.lm-section-checkIn .seat-aside{position:fixed;right:0;z-index:9;width:270px;top:100px;padding:20px;background:#fff;box-shadow:0 0 100px 0 #1f2c5c;border-radius:2px 0 0 2px;transition:right .3s;-webkit-transition:right .3s}.lm-section-checkIn .seat-aside .seat-arrow{left:10px}.lm-section-checkIn .seat-aside>div{height:34px;line-height:34px;margin-top:10px;padding-right:30px;font-size:14px;color:#1f2c5c;text-align:right}.lm-section-checkIn .seat-aside>div>span{margin-right:20px}.lm-section-checkIn .seat-aside .sold-icon{background:url(../../images/resource/checkIn/seat-free-small.png) right no-repeat;background-size:30px}.lm-section-checkIn .seat-aside .checked-icon{background:url(../../images/resource/checkIn/seat-checked-small.png) right no-repeat;background-size:30px}.lm-section-checkIn .seat-aside .option-icon{background:url(../../images/resource/checkIn/seat-cell-small.png) right no-repeat;background-size:30px}.lm-section-checkIn .seat-aside .exit-icon{background:url(../../images/resource/checkIn/seat-exit.png) 97% no-repeat;background-size:6px}.lm-section-checkIn .seat-aside>ul{margin-top:20px;overflow:hidden}.lm-section-checkIn .seat-aside>ul>li{float:left;margin-right:27px;font-size:14px;line-height:26px;text-align:center}.lm-section-checkIn .seat-aside>ul>li>img{width:30px}.lm-section-checkIn .seat-aside>ul .seat-class1{color:#ff8989}.lm-section-checkIn .seat-aside>ul .seat-class2{color:#8ec06c}.lm-section-checkIn .seat-aside>ul .seat-class3{color:#1f2c5c}.lm-section-checkIn .seat-aside>ul .seat-free{margin-right:0;color:rgba(31,44,92,.5)}.lm-section-checkIn .checkIn-aside{position:fixed;top:420px;right:0;z-index:9;width:270px;padding:20px;background:#fff;box-shadow:0 0 100px 0 #1f2c5c;border-radius:2px 0 0 2px;transition:right .3s;-webkit-transition:right .3s}.lm-section-checkIn .checkIn-aside .seat-arrow{left:10px}.lm-section-checkIn .checkIn-aside .pas-name{font-size:12px;color:rgba(31,44,92,.5);text-align:right}.lm-section-checkIn .checkIn-aside .pas-name p{font-size:18px;font-family:NotoSansBold;color:#1f2c5c}.lm-section-checkIn .checkIn-aside .seat-cabin{margin-top:10px;font-size:18px;font-family:NotoSansBold;color:#ff8989;text-align:right}.lm-section-checkIn .checkIn-aside .seat-cabin p{font-size:20px;color:#1f2c5c}.lm-section-checkIn .checkIn-aside .member-no{width:100%;margin-top:10px;text-align:right}.lm-section-checkIn .checkIn-aside .member-no .member-no-input{width:230px;height:36px;padding-left:10px;padding-right:10px;text-align:right;font-size:16px;border-radius:2px;border:1px solid rgba(31,44,92,.2)}.lm-section-checkIn .checkIn-aside .agree-rule{margin-top:16px;text-align:right}.lm-section-checkIn .checkIn-aside .agree-rule label{font-size:14px;color:rgba(31,44,92,.5)}.lm-section-checkIn .checkIn-aside .agree-rule a{display:block;color:#42958a;font-size:14px;text-decoration:underline}.lm-section-checkIn .checkIn-aside .check-in{margin-top:16px;overflow:hidden}.lm-section-checkIn .checkIn-aside .check-in>a{display:block;float:right;width:110px;height:30px;line-height:30px;text-align:center;color:#fff;font-size:16px;border-radius:2px}.lm-section-checkIn .checkIn-aside .check-in .prev-btn{background:#1f2c5c}.lm-section-checkIn .checkIn-aside .check-in .checkIn-btn{margin-left:10px;background:#00908C;background:linear-gradient(315deg,#00908c 0,#b4ec80 100%)}.lm-section-checkIn .checkIn-aside :-moz-placeholder{color:rgba(31,44,92,.3);font-size:16px}.lm-section-checkIn .checkIn-aside ::-moz-placeholder{color:rgba(31,44,92,.3);font-size:16px}.lm-section-checkIn .checkIn-aside input:-ms-input-placeholder{color:rgba(31,44,92,.3);font-size:16px}.lm-section-checkIn .checkIn-aside input::-webkit-input-placeholder{color:rgba(31,44,92,.3);font-size:16px}.lm-section-checkIn .MiniMap-aside{position:fixed;bottom:40px;left:40px;z-index:9;width:160px;height:160px;border-radius:2px;background:url(../../images/resource/checkIn/aircraft-small.png) center no-repeat rgba(31,44,92,.8);background-size:120px}.lm-section-checkIn .MiniMap-aside .small-flight{position:relative;width:120px;height:120px;margin:0 auto;margin-top:20px}.lm-section-checkIn .MiniMap-aside .small-flight .slide{position:absolute;left:50%;top:50%;margin-left:-60px;width:120px;height:30px;background:rgba(142,192,96,.2);cursor:pointer}.lm-section-complete{display:none;width:1200px;margin:180px auto}.lm-section-complete .success-tips{width:100%;padding:40px;background:#fff;border-radius:2px}.lm-section-complete .success-tips .success-box{height:102px;text-align:center}.lm-section-complete .success-tips .success-box>div{position:relative;top:20px;height:102px;display:inline-block;margin-left:30px}.lm-section-complete .success-tips .success-box>div h2{font-size:36px;font-family:NotoSansBold;color:#1f2c5c}.lm-section-complete .success-tips .success-box>div p{position:relative;top:10px;font-size:16px;color:rgba(31,44,92,.5)}.lm-section-complete .success-inner{position:relative;padding:40px;margin-top:20px;background:#fff;border-radius:2px}.lm-section-complete .success-inner .mobile-right-arrow{display:none}.lm-section-complete .success-inner .flight-airport{padding-bottom:30px;text-align:center;border-bottom:1px solid rgba(31,44,92,.1);overflow:hidden}.lm-section-complete .success-inner .flight-airport .airport-com{width:410px;height:60px;font-size:30px;color:#1f2c5c;font-family:NotoSansBold;text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.lm-section-complete .success-inner .flight-airport .airport-com p{font-size:14px;color:rgba(31,44,92,.5)}.lm-section-complete .success-inner .flight-airport .from-airport{float:left}.lm-section-complete .success-inner .flight-airport .flight-num{display:inline-block;width:300px;font-size:16px;color:rgba(31,44,92,.5)}.lm-section-complete .success-inner .flight-airport .to-airport{float:right}.lm-section-complete .success-inner .flight-info{font-size:30px;color:#1f2c5c;font-family:NotoSansBold;padding-top:30px;overflow:hidden;text-align:center}.lm-section-complete .success-inner .flight-info>li{width:50%;float:left;border-right:1px solid rgba(31,44,92,.5)}.lm-section-complete .success-inner .flight-info>li p{font-size:14px;color:rgba(31,44,92,.5)}.lm-section-complete .success-inner .flight-info>li:last-child{border-right:0}.lm-section-complete .success-operation{margin-top:40px;text-align:center}.lm-section-complete .success-operation>a{display:inline-block;width:250px;height:60px;line-height:60px;text-align:center;color:#fff;font-size:18px;border-radius:2px}.lm-section-complete .success-operation .export-PDF{display:none;background:linear-gradient(315deg,#00908c 0,#b4ec80 100%)}.lm-section-complete .success-operation .continue-checkIn{margin-left:50px;background:linear-gradient(135deg,#00908c 0,#1f2c5c 100%)}.BackToTop{display:none!important}.lm-sub-header{position:fixed}.lm-section{padding-top:60px}.header-mask{display:none;position:fixed;top:60px;width:100%;height:80px;background:linear-gradient(180deg,#1f2c5c 0,rgba(31,44,92,0) 100%);opacity:.4;filter:alpha(opacity=40)}.footer-mask{display:none;position:fixed;bottom:0;width:100%;height:80px;background:linear-gradient(360deg,#1f2c5c 0,rgba(31,44,92,0) 100%);opacity:.4;filter:alpha(opacity=40)}.daterangepicker.ltr .calendar.left{margin-top:6px}@media screen and (max-width:1900px){.lm-section-checkIn .flight-aside{top:90px;padding:10px}.lm-section-checkIn .seat-aside{top:90px;padding:10px}.lm-section-checkIn .checkIn-aside{top:380px;padding:10px}.lm-section-checkIn .MiniMap-aside{bottom:40px;left:40px}.lm-section-complete{margin-top:100px;margin-bottom:100px}}@media screen and (max-width:1300px){.lm-section-checkIn .flight-aside{top:60px}.lm-section-checkIn .seat-aside{top:60px}.lm-section-checkIn .checkIn-aside{top:340px}.lm-section-checkIn .MiniMap-aside{bottom:20px;left:20px}}@media screen and (min-width:1200px){.lm-section-checkIn{background-size:3000px;background-position-y:600px;transition:all 1s;-webkit-transition:all 1s}.checkIn-pos-top{background-position-y:0}.checkIn-size-scale{background-size:4211px}}@media screen and (max-width:1200px){.lm-section-info{width:100%;padding-left:15px;padding-right:15px}.lm-input>div{width:100%}.lm-input .from-city-wrap,.lm-input .name-wrap{width:100%}.lm-input .dropdownMenu-wrap{width:100%}.lm-search .notes-inner{width:100%}.lm-search .search-inner{width:100%;margin-top:40px;text-align:right}.lm-info .flight-airport .airport-com{width:36%}.lm-info .flight-airport .flight-num{width:28%}.lm-info .flight-airport .flight-num img{width:100%}.lm-section-checkIn{width:100%}.lm-section-checkIn .MiniMap-aside{display:none}.lm-section-checkIn .flight-aside,.lm-section-checkIn .seat-aside,.lm-section-checkIn .checkIn-aside{transition:all .3s;-webkit-transition:all .3s}.lm-section-checkIn .flight-aside-scale{-webkit-transform:scale(0.5);transform:scale(0.5);-webkit-transform-origin:left;transform-origin:left;transition:all .3s;-webkit-transition:all .3s}.lm-section-checkIn .seat-aside-scale{-webkit-transform:scale(0.6);transform:scale(0.6);-webkit-transform-origin:right;transform-origin:right;transition:all .3s;-webkit-transition:all .3s}.lm-section-checkIn .checkIn-aside-scale{-webkit-transform:scale(0.6);transform:scale(0.6);-webkit-transform-origin:right;transform-origin:right;transition:all .3s;-webkit-transition:all .3s}.lm-section-complete{width:100%;padding-left:15px;padding-right:15px}.lm-section-complete .success-tips{padding:20px}.lm-section-complete .success-inner{padding:20px}.lm-section-complete .success-inner .flight-airport{padding-bottom:0}.lm-section-complete .success-inner .flight-airport .airport-com{width:36%;font-size:20px}.lm-section-complete .success-inner .flight-airport .flight-num{width:28%}.lm-section-complete .success-inner .flight-airport .flight-num img{width:100%}.lm-section-complete .success-inner .flight-info{padding-top:10px;font-size:20px}}@media screen and (max-width:767px){.lm-section-info{margin-top:30px;padding-left:10px;padding-right:10px}.lm-title h1{font-size:.2rem}.lm-input{margin-top:20px}.lm-input>div{height:40px;margin-bottom:10px}.lm-input>div>input{font-size:14px;padding-left:50px}.lm-input>div :-moz-placeholder{font-size:14px}.lm-input>div ::-moz-placeholder{font-size:14px}.lm-input>div input:-ms-input-placeholder{font-size:14px}.lm-input>div input::-webkit-input-placeholder{font-size:14px}.lm-input .from-city-wrap input{background:url(../../images/EN/svg/city-from.svg) 20px center no-repeat}.lm-input .name-wrap .lastName-input{background:url(../../images/EN/svg/baggageName.svg) 20px center no-repeat}.lm-input .phone-wrap input{background:url(../../images/EN/svg/icon-areaCode.svg) 20px center no-repeat}.lm-input .passport-wrap .select-option{padding-left:50px;padding-top:9px}.lm-input .passport-wrap .select-option span{height:22px;line-height:22px}.lm-input .passport-wrap input{padding-left:140px;background:url(../../images/EN/svg/ticket-num.svg) 20px center no-repeat}.lm-input .passport-wrap .passport-num{background:url(../../images/EN/svg/passport.svg) 20px center no-repeat}.lm-input .from-city-wrap input,.lm-input .passport-wrap input,.lm-input .phone-wrap input,.lm-input .from-city-wrap .passport-num,.lm-input .passport-wrap .passport-num,.lm-input .phone-wrap .passport-num{background-size:24px;background-position-x:12px}.lm-input .name-wrap .lastName-input{background-size:24px;background-position-x:12px}.lm-input .dropdownMenu-wrap{top:54px}.lm-input .dropdownMenu-wrap .menu-com{padding:10px}.lm-input .dropdownMenu-wrap .menu-com li{width:100%;font-size:14px}.lm-input .ticketMenu-wrap{height:72px}.lm-search{margin-top:10px}.lm-search .notes-inner h3{font-size:14px;margin-bottom:10px}.lm-search .notes-inner p{font-size:12px;line-height:22px}.lm-search .search-inner{margin-top:20px}.lm-button{width:100%;height:40px;line-height:40px}.lm-button>span{background:url(../../images/resource/checkIn/svg/circle-arrow-right.svg) center no-repeat}.lm-info{margin-top:30px;margin-bottom:30px}.lm-info .lm-info-inner{padding:10px}.lm-info .flight-airport{padding-bottom:2px}.lm-info .flight-airport .airport-com{font-size:16px;width:100%;height:40px;line-height:40px}.lm-info .flight-airport .flight-num{font-size:14px}.lm-info .flight-airport .flight-num .pc-right-arrow{display:none}.lm-info .flight-airport .flight-num .mobile-right-arrow{display:block}.lm-info .flight-info{padding-top:10px}.lm-info .flight-info>li{width:100%;text-align:left;border:0;margin-bottom:6px}.lm-info .select-ok{background:url(../../images/resource/checkIn/svg/icon-select.svg) center no-repeat}.lm-section-checkIn{width:320px;height:1900px;margin:0 auto;background:url(../../images/resource/checkIn/lm-A319-mobile.png) center 34% no-repeat;background-size:2700px}.lm-section-checkIn .seat-arrow{top:0;height:20px;line-height:20px}.lm-section-checkIn .seat-arrow>img{width:14px}.lm-section-checkIn .seat-left-arrow{background:url(../../images/resource/checkIn/svg/seat-leftArrow.svg) center no-repeat;background-size:14px}.lm-section-checkIn .seat-right-arrow{background:url(../../images/resource/checkIn/svg/seat-rightArrow.svg) center no-repeat;background-size:14px}.lm-section-checkIn .flight-aside{top:70px;width:190px;box-shadow:0 0 100px 0 rgba(31,44,92,.39)}.lm-section-checkIn .flight-aside>img{display:none}.lm-section-checkIn .flight-aside .seat-arrow{right:0}.lm-section-checkIn .flight-aside .from-airport,.lm-section-checkIn .flight-aside .to-airport{width:100%;font-size:12px}.lm-section-checkIn .flight-aside .from-airport p,.lm-section-checkIn .flight-aside .to-airport p{font-size:14px}.lm-section-checkIn .flight-aside .flight-date,.lm-section-checkIn .flight-aside .flight-num{width:84px}.lm-section-checkIn .flight-aside .flight-date p,.lm-section-checkIn .flight-aside .flight-num p{font-size:14px}.lm-section-checkIn .flight-aside .flight-line{height:40px}.lm-section-checkIn .seat-aside{top:70px;width:126px;box-shadow:0 0 100px 0 rgba(31,44,92,.39)}.lm-section-checkIn .seat-aside>div{height:20px;line-height:20px;padding-right:20px}.lm-section-checkIn .seat-aside>div>span{font-size:12px;margin-right:10px}.lm-section-checkIn .seat-aside .sold-icon,.lm-section-checkIn .seat-aside .checked-icon,.lm-section-checkIn .seat-aside .option-icon{background-size:20px}.lm-section-checkIn .seat-aside>ul{margin-top:10px}.lm-section-checkIn .seat-aside>ul>li{float:none;font-size:12px;line-height:22px;margin-right:0;text-align:right}.lm-section-checkIn .seat-aside>ul>li>img{width:20px}.lm-section-checkIn .seat-aside>ul>li>p{float:left;width:70%}.lm-section-checkIn .seat-aside .seat-arrow{left:0}.lm-section-checkIn .checkIn-aside{top:auto;bottom:10px;width:auto;padding:10px;-webkit-transform:scale(0.2);transform:scale(0.2);-webkit-transform-origin:right bottom;transform-origin:right bottom;box-shadow:0 0 100px 0 rgba(31,44,92,.39)}.lm-section-checkIn .checkIn-aside .pas-name p{font-size:16px}.lm-section-checkIn .checkIn-aside .member-no .member-no-input{width:180px;height:26px;font-size:14px}.lm-section-checkIn .checkIn-aside .member-no :-moz-placeholder{font-size:14px}.lm-section-checkIn .checkIn-aside .member-no ::-moz-placeholder{font-size:14px}.lm-section-checkIn .checkIn-aside .member-no input:-ms-input-placeholder{font-size:14px}.lm-section-checkIn .checkIn-aside .member-no input::-webkit-input-placeholder{font-size:14px}.lm-section-checkIn .checkIn-aside .seat-cabin p{font-size:16px}.lm-section-checkIn .checkIn-aside .agree-rule{margin-top:10px}.lm-section-checkIn .checkIn-aside .check-in>a{width:100px;height:30px;line-height:30px}.lm-section-checkIn .checkIn-aside .seat-arrow{left:0}.lm-section-checkIn .lm-seat-wrap{padding-top:220px;-webkit-transform:scale(0.62);transform:scale(0.62);-webkit-transform-origin:10% top;transform-origin:10% top}.lm-section-checkIn .flight-aside-scale{-webkit-transform:scale(0.2);transform:scale(0.2);-webkit-transform-origin:left top;transform-origin:left top}.lm-section-checkIn .seat-aside-scale{-webkit-transform:scale(0.3);transform:scale(0.3);-webkit-transform-origin:right top;transform-origin:right top}.lm-section-checkIn .checkIn-aside-scale{-webkit-transform:scale(1);transform:scale(1);-webkit-transform-origin:right bottom;transform-origin:right bottom}.header-mask,.footer-mask{height:40px}.lm-section-complete{margin-top:30px;margin-bottom:30px}.lm-section-complete .success-tips{padding:10px}.lm-section-complete .success-tips .success-box{height:auto}.lm-section-complete .success-tips .success-box>img{width:50px}.lm-section-complete .success-tips .success-box>div{display:block;position:static;height:auto;margin-left:0;margin-top:10px}.lm-section-complete .success-tips .success-box>div h2{font-size:18px}.lm-section-complete .success-tips .success-box>div p{position:static;font-size:12px;margin-top:6px}.lm-section-complete .success-inner{padding:10px}.lm-section-complete .success-inner .flight-airport{padding-bottom:10px}.lm-section-complete .success-inner .flight-airport .airport-com{width:100%;height:auto;font-size:16px}.lm-section-complete .success-inner .flight-airport .airport-com p{font-size:12px}.lm-section-complete .success-inner .flight-airport .flight-num{width:100%;font-size:14px;margin-top:10px}.lm-section-complete .success-inner .flight-airport .flight-num img{width:auto}.lm-section-complete .success-inner .flight-airport .flight-num .pc-right-arrow{display:none}.lm-section-complete .success-inner .flight-airport .flight-num .mobile-right-arrow{width:auto;display:block;margin:0 auto}.lm-section-complete .success-inner .flight-airport .to-airport{margin-top:10px}.lm-section-complete .success-inner .flight-info{font-size:16px}.lm-section-complete .success-inner .flight-info>li p{font-size:12px}.lm-section-complete .success-operation{margin-top:30px;overflow:hidden}.lm-section-complete .success-operation>a{float:left;width:48%;height:40px;line-height:40px;font-size:16px}.lm-section-complete .success-operation .continue-checkIn{margin-left:4%}}
->>>>>>> 97290f8d136e7eff0ab3ed444cd6fc2dff7a339b
