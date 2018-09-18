@@ -186,19 +186,6 @@ var lmFlightHotel = {
             $sectionInfo.hide();
             $sectionCheckIn.show();
             $mask.show();
-
-            setTimeout(function(){
-                $sectionCheckIn.addClass('checkIn-pos-top');
-            },1000);
-            setTimeout(function(){
-                $sectionCheckIn.addClass('checkIn-size-scale');
-            },2200);
-            setTimeout(function(){
-                $('.lm-seat-wrap').fadeIn();
-            },3200);
-            setTimeout(function(){
-                $('html, body').stop().animate({scrollTop:500}, 'slow');
-            },4200);
         });
 
         // 选择值机航班
@@ -542,6 +529,23 @@ var lmFlightHotel = {
         //     scrollspeed: 26,
         //     mousescrollstep: 36,
         // });
+
+        // 下一步 进入选座页面
+        var $sectionCheckIn = $('.lm-section-checkIn');
+        $('.lm-info').on('click','.js-next-flight',function(event) {
+            setTimeout(function(){
+                $sectionCheckIn.addClass('checkIn-pos-top');
+            },1000);
+            setTimeout(function(){
+                $sectionCheckIn.addClass('checkIn-size-scale');
+            },2200);
+            setTimeout(function(){
+                $('.lm-seat-wrap').fadeIn();
+            },3200);
+            setTimeout(function(){
+                $('html, body').stop().animate({scrollTop:500}, 'slow');
+            },4200);
+        });
     },
 
     /* 移动端事件 */
@@ -612,6 +616,12 @@ var lmFlightHotel = {
             };
         });
 
+         // 下一步 进入选座页面
+        $('.lm-info').on('click','.js-next-flight',function(event) {
+            $('.lm-seat-wrap').fadeIn();
+            $('html, body').stop().animate({scrollTop:0}, 'slow');
+        });
+
         $('.seat-wrap-com').on('click','>ul>li',function(event) {
             $checkInAside.addClass('checkIn-aside-scale');
         });
@@ -658,7 +668,7 @@ var lmFlightHotel = {
                 $('.'+data).append('<li title="'+val+'">'+searchVal+'</li>');
             });
             if(srdata.length==0){ 
-                $('.'+data).append('<li style="width:100%;">No results match "'+searchText+'"</li>');
+                $('.'+data).append('<li style="width:100%;">没有结果匹配 "'+searchText+'"</li>');
             }
             if(currentVal===''){
                 $('.'+data).empty();

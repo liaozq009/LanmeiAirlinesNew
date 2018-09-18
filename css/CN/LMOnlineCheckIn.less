@@ -1314,7 +1314,16 @@ body:before {
 		}
 		.from-city-wrap input{background: url('@{url}svg/city-from.svg') 20px center no-repeat;}
 		.name-wrap .lastName-input{background: url('@{url}svg/baggageName.svg') 20px center no-repeat;}
-		.phone-wrap input{background: url('@{url}svg/ticket-phone.svg') 20px center no-repeat;}
+		.phone-wrap {
+			>input{
+				padding-left: 200px;
+				background: url('@{url}svg/icon-areaCode.svg') 20px center no-repeat;
+			}
+			.select-option{
+				padding-left: 50px;
+				padding-top: 4px;
+			}
+		}
 		.passport-wrap {
 			.select-option{
 				padding-left: 50px;
