@@ -1315,8 +1315,7 @@ body:before {
   }
   .lm-section-checkIn .seat-arrow {
     top: 0;
-    height: 20px;
-    line-height: 20px;
+    height: 30px;
   }
   .lm-section-checkIn .seat-arrow > img {
     width: 14px;
