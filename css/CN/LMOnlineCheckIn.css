@@ -56,6 +56,12 @@ body:before {
 .lm-input > div .active-input {
   border: 1px solid red;
 }
+.lm-input > div input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+.lm-input > div input[type="number"] {
+  -moz-appearance: textfield;
+}
 .lm-input > div :-moz-placeholder {
   /* Mozilla Firefox 4 to 18 */
   color: rgba(31, 44, 92, 0.3);
@@ -448,9 +454,47 @@ body:before {
   background: url('../../images/resource/checkIn/icon-select.png') center no-repeat;
 }
 .lm-section-checkIn {
+  position: relative;
   display: none;
   height: 4180px;
   background: url('../../images/resource/checkIn/lm-A319.png') center top no-repeat;
+}
+.lm-section-checkIn .lm-cloud-wrap {
+  display: none;
+  position: fixed;
+  top: 50%;
+  z-index: 9;
+  margin-top: -145px;
+  width: 100%;
+  height: 440px;
+}
+.lm-section-checkIn .lm-cloud-wrap img {
+  position: absolute;
+  width: 600px;
+}
+.lm-section-checkIn .lm-cloud-wrap .img-01 {
+  left: 50%;
+  margin-left: -600px;
+  top: 0;
+  z-index: 10;
+}
+.lm-section-checkIn .lm-cloud-wrap .img-02 {
+  right: 50%;
+  margin-right: -600px;
+  top: 0;
+  z-index: 8;
+}
+.lm-section-checkIn .lm-cloud-wrap .img-03 {
+  left: 50%;
+  margin-left: -600px;
+  top: 180px;
+  z-index: 8;
+}
+.lm-section-checkIn .lm-cloud-wrap .img-04 {
+  right: 50%;
+  margin-right: -600px;
+  top: 180px;
+  z-index: 10;
 }
 .lm-section-checkIn .lm-seat-wrap {
   display: none;

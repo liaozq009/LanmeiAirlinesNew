@@ -534,6 +534,12 @@ var lmFlightHotel = {
         var $sectionCheckIn = $('.lm-section-checkIn');
         $('.lm-info').on('click','.js-next-flight',function(event) {
             setTimeout(function(){
+                // $('.lm-cloud-wrap .img-01').addClass('animated3 fadeOutLeft');
+                // $('.lm-cloud-wrap .img-02').addClass('animated3 fadeOutRight');
+                // $('.lm-cloud-wrap .img-03').addClass('animated3 fadeOutLeft');
+                // $('.lm-cloud-wrap .img-04').addClass('animated3 fadeOutRight');
+            },1000);
+            setTimeout(function(){
                 $sectionCheckIn.addClass('checkIn-pos-top');
             },1000);
             setTimeout(function(){

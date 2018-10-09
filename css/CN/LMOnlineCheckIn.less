@@ -81,6 +81,12 @@ body:before {
 			padding-right: 20px;
 		}
 		.active-input{border:1px solid red;}
+		input::-webkit-inner-spin-button {
+		    -webkit-appearance: none;
+		}
+		input[type="number"]{
+		    -moz-appearance: textfield;
+		}
 		:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
 			.purpleRgb(0.3);font-size: 20px; 
 		}
@@ -451,9 +457,50 @@ body:before {
 }
 
 .lm-section-checkIn{
+	position: relative;
 	display: none;
 	height: 4180px;
 	background: url('@{url2}lm-A319.png') center top no-repeat;
+	.lm-cloud-wrap{
+		display: none;
+		position: fixed;
+		// left: 50%;
+		top: 50%;
+		z-index: 9;
+		// margin-left: -325px;
+		margin-top: -145px;
+		// width: 800px;
+		width: 100%;
+		height: 440px;
+		img{
+			position: absolute;
+			width: 600px;
+		}
+		.img-01{
+			left: 50%;
+		    margin-left: -600px;
+			top: 0;
+			z-index: 10;
+		}
+		.img-02{
+			right: 50%;
+		    margin-right: -600px;
+			top: 0;
+			z-index: 8;
+		}
+		.img-03{
+			left: 50%;
+		    margin-left: -600px;
+			top: 180px;
+			z-index: 8;
+		}
+		.img-04{
+			right: 50%;
+		    margin-right: -600px;
+			top: 180px;
+			z-index: 10;
+		}
+	}
 	.lm-seat-wrap{
 		display: none;
 		width: 460px;
