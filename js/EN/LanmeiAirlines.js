@@ -1136,7 +1136,7 @@ var LanmeiAirlines = {
 		/* c3动画 */
 		var popupShow = function(){
 			$mask.fadeIn(); //显示遮罩层
-			$mask2.fadeIn(); //显示遮罩层
+			// $mask2.fadeIn(); //显示遮罩层
 			$ticketChange.show(); //显示出发地和目的地切换
 			$box.addClass('popup-box-before'); //展示小箭头
 			$content.removeClass('popup-inactive').addClass('popup-active'); 
@@ -1207,6 +1207,9 @@ var LanmeiAirlines = {
 		/* 点击机票出发地 */
 		var zoomShow = true;
 		var oneClick = true;
+		$selectWay.css({'height':'auto','margin-top':'30px'}); //展示单程往返
+		$zoom.addClass('animated fadeInUp').css('visibility','visible');
+		$ticketChange.show(); //显示出发地和目的地切换
 		$fromInput.click(function(){
 			if(oneClick){ //防止点击取消后，快速点击出发地产生的bug
 				fromCityVal($toInput.attr('data-city')); //下拉菜单赋值
@@ -1222,14 +1225,14 @@ var LanmeiAirlines = {
 				$toBox.hide(); $dateBox.hide(); $peopleBox.hide();
 
 				$popupContent.css('z-index','1'); //覆盖cancel按钮
-				if(zoomShow){
+				/*if(zoomShow){
 					$selectWay.css({'height':'auto','margin-top':'40px'}); //展示单程往返
 					$zoom.addClass('animated fadeInUp').css('visibility','visible');
 					zoomShow = false; //重新点击出发地时再次显示目的地、日期、人数的动画
 					setTimeout(function(){
 						$zoom.removeClass('animated fadeInUp');
 					}, 2200);
-				}
+				}*/
 			}
 		});
 
@@ -1275,7 +1278,7 @@ var LanmeiAirlines = {
 		});
 
 		/* 点击取消 */
-		var cancel = function(){
+		/*var cancel = function(){
 			oneClick = false; //防止快速点击出发地
 
 			$zoom.addClass('animated fadeOutDown');
@@ -1300,15 +1303,17 @@ var LanmeiAirlines = {
 
 		      oneClick = true; //可以继续点击出发地
 		    }, 2200);
-		};
+		};*/
 
 		/* 点击遮罩层 */
 		$mask.click(function(){
-			cancel();
-		});
-		$mask2.click(function(){
+			// cancel();
 			popupHide(); //隐藏弹出内容层
 			$(this).fadeOut();
+		});
+		$mask2.click(function(){
+			// popupHide(); //隐藏弹出内容层
+			// $(this).fadeOut();
 		});
 		$('.js-select-way,.js-tips-com').click(function(event) {
 			popupHide(); //隐藏弹出内容层
@@ -1317,7 +1322,7 @@ var LanmeiAirlines = {
 
 		/* 点击取消 */
 		$('.js-ticket-cancel').click(function(){
-			cancel();
+			// cancel();
 		});
 
 		/* 删除数组中某个元素 */
@@ -3920,38 +3925,70 @@ var LanmeiAirlines = {
 			'<div class="slick-item slick-item-1">'+
 			'<img src="images/EN/ticket-coupons.png" class="coupons-img">'+
 			'<div class="slick-content">'+
-			'<h2><span class="s2">90</span><span class="s1">% off</span></h2>'+
-			'<p class="p1">Air Ticket Coupon</p>'+
-			'<p class="p2">Receive Immediately</p>'+
+			'<div class="slick-content-left">'+
+			'<h3 title="Phnom Penh - Guangzhou&nbsp;&nbsp;Guangzhou-Phnom Penh&nbsp;&nbsp;Siem Reap-Xi`an&nbsp;&nbsp;Xi`an-Siem Reap">Phnom Penh - Guangzhou&nbsp;&nbsp;Guangzhou-Phnom Penh&nbsp;&nbsp;Siem Reap-Xi`an&nbsp;&nbsp;Xi`an-Siem Reap'+
+			'<p>Apply to the above routes</p>'+
+			'</h3>'+
+			'<a href="javascript:;" class="js-coupons-instructions">Instructions</a>'+
+			'<p><span>Travel Date: </span>16 Oct.2018 - 16 Oct.2019</p>'+
 			'</div>'+
-			'<a href="javascript:;"></a>'+
+			'<div class="slick-content-right">'+
+			'<h2>15</h2>'+
+			'<p>USD</p>'+
+			'<a href="javascript:;">Receive</a>'+
+			'</div>'+
+			'</div>'+
 			'</div>'+
 			'<div class="slick-item slick-item-2">'+
 			'<img src="images/EN/ticket-coupons.png" class="coupons-img">'+
 			'<div class="slick-content">'+
-			'<h2><span class="s2">5</span><span class="s1">$</span></h2>'+
-			'<p class="p1">Air Ticket Coupon</p>'+
-			'<p class="p2">Receive Immediately</p>'+
+			'<div class="slick-content-left">'+
+			'<h3 title="Sihanoukville - Phnom Penh&nbsp;&nbsp;Phnom Penh-Sihanoukville&nbsp;&nbsp;Siem Reap-Xi`an&nbsp;&nbsp;Xi`an-Siem Reap">Sihanoukville - Phnom Penh&nbsp;&nbsp;Phnom Penh-Sihanoukville&nbsp;&nbsp;Siem Reap-Xi`an&nbsp;&nbsp;Xi`an-Siem Reap'+
+			'<p>Apply to the above routes</p>'+
+			'</h3>'+
+			'<a href="javascript:;" class="js-coupons-instructions">Instructions</a>'+
+			'<p><span>Travel Date: </span>16 Oct.2018 - 16 Oct.2019</p>'+
 			'</div>'+
-			'<a href="javascript:;"></a>'+
+			'<div class="slick-content-right">'+
+			'<h2>10</h2>'+
+			'<p>USD</p>'+
+			'<a href="javascript:;">Receive</a>'+
+			'</div>'+
+			'</div>'+
 			'</div>'+
 			'<div class="slick-item slick-item-3">'+
 			'<img src="images/EN/ticket-coupons.png" class="coupons-img">'+
 			'<div class="slick-content">'+
-			'<h2><span class="s2">50</span><span class="s1">$</span></h2>'+
-			'<p class="p1">Air Ticket Coupon</p>'+
-			'<p class="p2">Receive Immediately</p>'+
+			'<div class="slick-content-left">'+
+			'<h3 title="Phnom Penh - Siem Reap&nbsp;&nbsp;Siem Reap-Phnom Penh&nbsp;&nbsp;Siem Reap-Xi`an&nbsp;&nbsp;Xi`an-Siem Reap">Phnom Penh - Siem Reap&nbsp;&nbsp;Siem Reap-Phnom Penh&nbsp;&nbsp;Siem Reap-Xi`an&nbsp;&nbsp;Xi`an-Siem Reap'+
+			'<p>Apply to the above routes</p>'+
+			'</h3>'+
+			'<a href="javascript:;" class="js-coupons-instructions">Instructions</a>'+
+			'<p><span>Travel Date: </span>16 Oct.2018 - 16 Oct.2019</p>'+
 			'</div>'+
-			'<a href="javascript:;"></a>'+
+			'<div class="slick-content-right">'+
+			'<h2>25</h2>'+
+			'<p>USD</p>'+
+			'<a href="javascript:;">Receive</a>'+
+			'</div>'+
+			'</div>'+
 			'</div>'+
 			'<div class="slick-item slick-item-4">'+
 			'<img src="images/EN/ticket-coupons.png" class="coupons-img">'+
 			'<div class="slick-content">'+
-			'<h2><span class="s2">20</span><span class="s1">$</span></h2>'+
-			'<p class="p1">Air Ticket Coupon</p>'+
-			'<p class="p2">Receive Immediately</p>'+
+			'<div class="slick-content-left">'+
+			'<h3 title="Phnom Penh - Guangzhou&nbsp;&nbsp;Guangzhou-Phnom Penh&nbsp;&nbsp;Siem Reap-Xi`an&nbsp;&nbsp;Xi`an-Siem Reap">Phnom Penh - Guangzhou&nbsp;&nbsp;Guangzhou-Phnom Penh&nbsp;&nbsp;Siem Reap-Xi`an&nbsp;&nbsp;Xi`an-Siem Reap'+
+			'<p>Apply to the above routes</p>'+
+			'</h3>'+
+			'<a href="javascript:;" class="js-coupons-instructions">Instructions</a>'+
+			'<p><span>Travel Date: </span>16 Oct.2018 - 16 Oct.2019</p>'+
 			'</div>'+
-			'<a href="javascript:;"></a>'+
+			'<div class="slick-content-right">'+
+			'<h2>30</h2>'+
+			'<p>USD</p>'+
+			'<a href="javascript:;">Receive</a>'+
+			'</div>'+
+			'</div>'+
 			'</div>'+
 		'</div>';
 
@@ -4044,14 +4081,14 @@ var LanmeiAirlines = {
 				variableWidth: true,
 				responsive: [
 					{
-						breakpoint: 992,
+						breakpoint: 1400,
 						settings: {
 							slidesToShow: 2,
 							slidesToScroll: 1,
 						}
 					},
 					{
-						breakpoint: 767,
+						breakpoint: 1200,
 						settings: {
 							slidesToShow: 1,
 							slidesToScroll: 1,
@@ -4066,6 +4103,20 @@ var LanmeiAirlines = {
 		var $content = $('.js-coupons-content');
 		$content.html(ticketStr);
 		slick('#js-ticket-coupons');
+
+		//优惠券说明
+		$('.js-coupons-content').on('click','.js-coupons-instructions',function(){
+			layer.open({
+			  type: 1, //Page层类型
+			  area: ['680px', 'auto'],
+			  title: false,
+			  shadeClose: true, //点击遮罩关闭
+			  shade: 0.6, //遮罩透明度
+			  maxmin: false, //允许全屏最小化
+			  anim: 1, //0-6的动画形式，-1不开启
+			  content: '<div class="layer-coupons-info"><h2>Instructions</h2><div><p>1.instructions1</p><p>2.instructions2</p></div></div>'
+			}); 
+		});
 
 		// 切换优惠券
 		var $loading = $('.js-coupons-loading');
@@ -4349,7 +4400,7 @@ var LanmeiAirlines = {
 	otherEvent:function(){
 		/* 首屏自适应高度 */
 		var winHeight = $(window).height();
-		$('.js-section-main').height(winHeight);
+		$('.js-section-main').height(winHeight-60);
 		$('.js-aside-code').height(winHeight-60);
 
 		/* 文字滚动 */

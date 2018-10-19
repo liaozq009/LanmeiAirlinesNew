@@ -157,6 +157,13 @@ body {
   color: #42958a;
   cursor: pointer;
   font-family: CamptonBookBold;
+  transition: color .3s;
+  -webkit-transition: color .3s;
+}
+.activity-tips-wrap span:hover {
+  color: #8ec060;
+  transition: color .3s;
+  -webkit-transition: color .3s;
 }
 /* 时钟样式调整 */
 .flip-clock-wrapper {
