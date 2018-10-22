@@ -108,7 +108,8 @@ label {
   font-family: CamptonBookBold;
   margin-top: 24px;
 }
-.modal .modal-dialog .modal-content .modal-body .verifyInfo {
+.modal .modal-dialog .modal-content .modal-body .verifyInfo,
+.modal .modal-dialog .modal-content .modal-body .verifyInfoForget {
   visibility: hidden;
   display: inline-block;
   width: 100%;
@@ -529,6 +530,9 @@ label {
   padding: 0;
   text-align: left;
   display: none;
+}
+.registerWrapper .registerContent .getVerCode p {
+  visibility: hidden;
 }
 .registerWrapper .registerContent .agree {
   margin-top: 0 !important;

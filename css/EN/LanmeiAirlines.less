@@ -2,14 +2,6 @@
 
 /* 引入字体 */
 @font-face {
-	font-family: CamptonBook;
-	src: url(../../common/EN/fonts/Campton/Rene.Bieder_Campton.Book.otf);
-}
-@font-face {
-	font-family: CamptonBookLight;
-	src: url(../../common/EN/fonts/Campton/Rene.Bieder_Campton.Light.otf);
-}
-@font-face {
 	font-family: CamptonBookBold;
 	src: url(../../common/EN/fonts/Campton/Rene.Bieder_Campton.Bold.otf);
 	font-weight:bold;
@@ -27,9 +19,7 @@
 @moz-linear:-moz-linear-gradient(right, #42958a 0%, #1f2c5c 100%);
 @linear:linear-gradient(to right, #42958a 0%, #1f2c5c 100%);
 @filter:alpha progid:DXImageTransform.Microsoft.gradient(startcolorstr=#42958a, endcolorstr=#1f2c5c, gradientType=1); /*ie8*/
-@FBook:CamptonBook;
 @FBold:CamptonBookBold;
-@FLight:CamptonBookLight;
 
 .greenRgb(@opacity){
 	color: rgba(142,192,96,@opacity);
@@ -232,7 +222,6 @@ body{
 	width: 100%;
 	height: 768px;
 	min-height: 300px;
-	overflow: hidden;
 }
 .flight-loading{
 	display: none;
@@ -417,7 +406,7 @@ body{
 	background:#000;
 }
 .lm-aside-code{
-	position: absolute;
+	position: fixed;
 	right: -200px;
 	top: 60px;
 	z-index: 98;
@@ -491,7 +480,7 @@ body{
 }
 .lm-important{
 	position: absolute;
-	bottom: 150px;
+	bottom: 90px;
 	right: 0; 
 	width:580px;
 	height:60px;
@@ -2018,7 +2007,7 @@ body{
 		transform-origin: top;
 	}
 	.lm-important{
-		right: -60px;
+		right: -58px;
 	}
 	.content-com-wrap{
 		height: 176px;
@@ -2046,9 +2035,10 @@ body{
 	.flight-com{
 		width: 100%;
 	}
+	.lm-aside-code .small-code{top: 50px;}
 	.lm-important{
-		right: -88px;
-		bottom: 70px;
+		right: -86px;
+		bottom: 20px;
 	}
 }
 /* 适配1366 */
@@ -2580,7 +2570,6 @@ body{
 					height: 20px;
 					line-height: 24px;
 					margin-top: 5px;
-					font-family: @FLight;
 					font-size: 14px;
 					.blackRgb(.3);
 					cursor: pointer;
@@ -3787,7 +3776,6 @@ body{
 				}
 				.p2{
 					margin-top: 5px;
-					font-family: @FLight;
 					font-size: 14px;
 					.blackRgb(.3);
 					cursor: pointer;
