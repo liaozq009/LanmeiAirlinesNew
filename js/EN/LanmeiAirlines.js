@@ -3926,14 +3926,14 @@ var LanmeiAirlines = {
 			'<img src="images/EN/ticket-coupons.png" class="coupons-img">'+
 			'<div class="slick-content">'+
 			'<div class="slick-content-left">'+
-			'<h3 title="Phnom Penh - Guangzhou&nbsp;&nbsp;Guangzhou-Phnom Penh&nbsp;&nbsp;Siem Reap-Xi`an&nbsp;&nbsp;Xi`an-Siem Reap">Phnom Penh - Guangzhou&nbsp;&nbsp;Guangzhou-Phnom Penh&nbsp;&nbsp;Siem Reap-Xi`an&nbsp;&nbsp;Xi`an-Siem Reap'+
+			'<h3 title="">--'+
 			'<p>Apply to the above routes</p>'+
 			'</h3>'+
 			'<a href="javascript:;" class="js-coupons-instructions">Instructions</a>'+
-			'<p><span>Travel Date: </span>16 Oct.2018 - 16 Oct.2019</p>'+
+			'<p><span>Travel Date: </span>--</p>'+
 			'</div>'+
 			'<div class="slick-content-right">'+
-			'<h2>15</h2>'+
+			'<h2>--</h2>'+
 			'<p>USD</p>'+
 			'<a href="javascript:;">Receive</a>'+
 			'</div>'+
@@ -3960,16 +3960,16 @@ var LanmeiAirlines = {
 			'<img src="images/EN/ticket-coupons.png" class="coupons-img">'+
 			'<div class="slick-content">'+
 			'<div class="slick-content-left">'+
-			'<h3 title="Phnom Penh - Siem Reap&nbsp;&nbsp;Siem Reap-Phnom Penh&nbsp;&nbsp;Siem Reap-Xi`an&nbsp;&nbsp;Xi`an-Siem Reap">Phnom Penh - Siem Reap&nbsp;&nbsp;Siem Reap-Phnom Penh&nbsp;&nbsp;Siem Reap-Xi`an&nbsp;&nbsp;Xi`an-Siem Reap'+
-			'<p>Apply to the above routes</p>'+
+			'<h3 title="金边 - 暹粒&nbsp;&nbsp;暹粒-金边&nbsp;&nbsp;暹粒-西安&nbsp;&nbsp;西安-暹粒">金边 - 暹粒&nbsp;&nbsp;暹粒-金边&nbsp;&nbsp;暹粒-西安&nbsp;&nbsp;西安-暹粒'+
+			'<p>适用以上航线</p>'+
 			'</h3>'+
-			'<a href="javascript:;" class="js-coupons-instructions">Instructions</a>'+
-			'<p><span>Travel Date: </span>16 Oct.2018 - 16 Oct.2019</p>'+
+			'<a href="javascript:;" class="js-coupons-instructions">使用说明</a>'+
+			'<p><span>旅行日期： </span>2018.10.23 - 2019.01.23</p>'+
 			'</div>'+
 			'<div class="slick-content-right">'+
 			'<h2>25</h2>'+
-			'<p>USD</p>'+
-			'<a href="javascript:;">Receive</a>'+
+			'<p>CNY</p>'+
+			'<a href="javascript:;">领取</a>'+
 			'</div>'+
 			'</div>'+
 			'</div>'+
