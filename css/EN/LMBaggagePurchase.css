@@ -451,6 +451,9 @@
   .lm-select-baggage .name-wrap {
     margin-right: 0;
   }
+  .lm-select-baggage .baggage-wrap-tips {
+    position: static;
+  }
 }
 @media screen and (max-width: 767px) {
   .lm-section {
@@ -558,7 +561,7 @@
     width: 300px;
   }
   .lm-select-baggage {
-    padding-top: .6rem;
+    padding-top: .4rem;
   }
   .lm-select-baggage .baggage-wrap {
     font-size: .14rem;
