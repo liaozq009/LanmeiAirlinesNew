@@ -4352,25 +4352,37 @@ var LanmeiAirlines = {
 			}
 		};
 
+		var canRun1 = true;
+		var canRun2 = true;
 		$('.js-news-left').click(function(event) {
-			$newsContent.slick('slickPrev');
-			if(page<=1){
-				page=(Number(totalPage)+1);
-			}
-			page--;
-			$('.js-news-pages>.s1').text(page);
+			if(!canRun1){return};
+			canRun1 = false;
+			setTimeout(function(){
+				$newsContent.slick('slickPrev');
+				if(page<=1){
+					page=(Number(totalPage)+1);
+				}
+				page--;
+				$('.js-news-pages>.s1').text(page);
 
-			changeInfo();
+				changeInfo();
+				canRun1 = true;
+			},300);
 		});
 		$('.js-news-right').click(function(event) {
-			$newsContent.slick('slickNext');
-			if(page>=totalPage){
-				page=0;
-			}
-			page++;
-			$('.js-news-pages>.s1').text(page);
+			if(!canRun2){return};
+			canRun2 = false;
+			setTimeout(function(){
+				$newsContent.slick('slickNext');
+				if(page>=totalPage){
+					page=0;
+				}
+				page++;
+				$('.js-news-pages>.s1').text(page);
 
-			changeInfo();
+				changeInfo();
+				canRun2 = true;
+			},300);
 		});
 
 		// 动态改变mask的阴影
