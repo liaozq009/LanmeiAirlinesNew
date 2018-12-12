@@ -644,7 +644,6 @@ var LMComLoginReg = {
 		$('#registerUserName').one('click',function(){
 			if(!loginCode){return}
 			$("#registerBtn").click(function(){
-				alert('可以注册');
 				//email
 				if(!userNameVerify($("#registerUserName").val())){
 					return;
@@ -715,6 +714,7 @@ var LMComLoginReg = {
 						layer.open({
 							  title: 'Register prompt.'
 							  ,content: 'The server is busy. Please try again later！.'
+							  ,btn:["Confirm"]
 						});    
 					}
 				});

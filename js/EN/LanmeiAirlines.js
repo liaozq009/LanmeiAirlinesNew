@@ -124,6 +124,8 @@ var LanmeiAirlines = {
 				// console.log(222);
 				// $('.section-4').css('backgroundPosition','center 0');
 			}
+
+			if(sTop>150){$('.lm-aside-code .small-code').fadeOut()}else{$('.lm-aside-code .small-code').fadeIn()}
 		});
 	},
 
