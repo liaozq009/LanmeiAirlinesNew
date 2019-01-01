@@ -1,0 +1,33 @@
+/* 定义变量 */
+@url:"../images/CN/";
+/* 定义颜色变量 */
+@green:#8ec060;
+@purple:#1f2c5c;
+@gray:#808080;
+@red:#d0011b;
+@link:#4aa374;
+
+.lm-section{
+	.bag-table thead tr{
+		color:@purple;
+		font-size: 14px;
+		th{vertical-align: middle;}
+	}
+	.bag-table tbody tr td{
+		color:@gray;
+		font-size: 14px;
+		vertical-align: middle;
+	}
+}
+
+@media screen and (max-width:992px){
+	.lm-section{
+		.bag-table thead tr{
+			font-size: 0.12rem;
+		}
+		.bag-table tbody tr td{
+			font-size: 0.12rem;
+		}
+	}
+
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>澜湄航空圣诞2018</title>
+<link href="css/lm-snow.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<canvas width="100%" height="100%" class="snow"></canvas>
+	<canvas width="100%" height="100%" class="flake"></canvas>
+	<div class="Christmas-bg"><img src="images/bg.png" class="bg-img"></div>
+	<div class="Christmas-main"><img src="images/christmas2018.png"></div>
+
+	<script src="../../libs/jQuery/jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="js/lm-snow.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			//雪花
+			$("canvas.snow").let_it_snow({
+				windPower: 3,
+				speed: 1,
+				count: 250,
+				size: 0
+			});
+			//小碎片
+			$("canvas.flake").let_it_snow({
+				windPower: -3,
+				speed: 1,
+				count: 20,
+				size: 10,
+				image: "images/white-snowflake.png"
+			});
+
+			var flag = true;
+			setInterval(function(){
+				if(flag){
+					$('.bg-img').css('opacity',0.6);
+					flag = false;
+				}else{
+					$('.bg-img').css('opacity',1);
+					flag = true;
+				}
+			}, 1500);
+
+		});
+	</script>
+</body>
+</html>

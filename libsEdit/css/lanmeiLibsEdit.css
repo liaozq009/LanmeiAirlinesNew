@@ -493,6 +493,18 @@ label {
   background: #1f2c5c;
   color: #fff;
 }
+.registerWrapper .registerContent .registerName input {
+  width: 160px !important;
+}
+.registerWrapper .registerContent .registerName .lastName {
+  margin-right: 20px !important;
+}
+.registerWrapper .registerContent .registerName p {
+  padding: 8px 10px 10px 29px;
+  text-align: left;
+  color: #d0011b;
+  margin-bottom: 10px;
+}
 .registerWrapper .registerContent .registerPassword p {
   color: #ccc;
 }
@@ -633,5 +645,15 @@ body .layui-layer-page .layui-layer-content {
   .modal .modal-dialog .modal-content .modal-body form .getVerCode-login {
     margin-top: 10px;
     margin-bottom: 10px;
+  }
+  .registerWrapper .registerContent .registerName input {
+    width: 90% !important;
+  }
+  .registerWrapper .registerContent .registerName .lastName {
+    margin-right: 0 !important;
+    margin-bottom: 20px !important;
+  }
+  .registerWrapper .registerContent .registerName p {
+    margin-bottom: 0;
   }
 }
