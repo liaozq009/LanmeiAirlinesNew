@@ -24,7 +24,7 @@ jQuery.browser = {}; (function() {
 				var liVal = $(event.target).text();
 				$this.val(liVal);
 				blus();
-				$('#LanmeiPassword').focus(); //密码自动获取焦点
+				// $('#LanmeiPassword').focus(); //密码自动获取焦点
 			});
 			$('html').click(function(){
 				blus();
@@ -140,7 +140,7 @@ jQuery.browser = {}; (function() {
 				}else if(event.which == 13){ //回车
 					var liVal = $(value.divTip).children().eq(indexLi).text();
 					$this.val(liVal);
-					$('#LanmeiPassword').focus(); //密码自动获取焦点
+					// $('#LanmeiPassword').focus(); //密码自动获取焦点
 					blus();
 				}
 			});			
