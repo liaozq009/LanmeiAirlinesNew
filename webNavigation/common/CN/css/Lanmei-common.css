@@ -1,14 +1,5 @@
 @charset "utf-8";
 /* 引入字体 */
-@font-face {
-  font-family: NotoSans;
-  src: url(../fonts/NotoSans/SourceHanSansCN-Regular.otf);
-}
-@font-face {
-  font-family: NotoSansBold;
-  src: url(../fonts/NotoSans/SourceHanSansCN-Bold.otf);
-  font-weight: bold;
-}
 /* 定义变量 */
 /* 定义颜色变量 */
 /*ie8*/
@@ -97,7 +88,6 @@ input::-ms-clear {
 body {
   min-width: 320px;
   max-width: 1920px;
-  font-family: NotoSans;
   font-size: 14px;
   background: #FAFBFF;
 }
@@ -213,7 +203,6 @@ body {
 .lm-header .h-right .h-login .login-menu > h2 {
   color: rgba(31, 44, 92, 0.8);
   font-size: 20px;
-  font-family: NotoSansBold;
 }
 .lm-header .h-right .h-login .login-menu > a {
   display: block;
@@ -304,7 +293,6 @@ body {
 .lm-header .h-phone .phone-menu > h2 {
   color: rgba(31, 44, 92, 0.8);
   font-size: 20px;
-  font-family: NotoSansBold;
 }
 .lm-header .h-phone .phone-menu > p {
   font-size: 16px;
@@ -364,7 +352,6 @@ body {
 .lm-header .h-lang .lang-menu > h2 {
   color: rgba(31, 44, 92, 0.8);
   font-size: 20px;
-  font-family: NotoSansBold;
 }
 .lm-header .h-lang .lang-menu > a {
   display: block;
