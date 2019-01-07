@@ -1,13 +1,13 @@
 
 $(document).ready(function($) {
-	var $header = '<a href="http://lanmeiairlines.com" class="h-logo-wrap"></a>'+
+	var $header = '<a href="javascript:;" class="h-logo-wrap"></a>'+
 					'<div class="h-right">'+
-						'<div class="h-phone js-h-phone">'+
+						/*'<div class="h-phone js-h-phone">'+
 							'<div class="phone-menu js-phone-menu">'+
 								'<h2>Hotline:</h2>'+
 								'<p class="p1">+855 23981800</p>'+
 							'</div>'+
-						'</div>'+
+						'</div>'+*/
 						'<div class="v-line"><img src="images/icon/v-line.png" alt="line"></div>'+
 						'<div class="h-login">'+
 							'<a href="javascript:;" class="loginBtn">'+
@@ -31,8 +31,8 @@ $(document).ready(function($) {
 							'<p class="js-choose-lang"></p>'+
 							'<div class="lang-menu js-lang-menu">'+
 								'<h2>Choose a language:</h2>'+
-								'<a href="http://lanmeiairlines.com" class="lang-en" data="en">English</a>'+
-								'<a href="http://lanmeiairlines.com/index_cn.html" class="lang-zh" data="zh">简体中文</a>'+
+								'<a href="./index.html" class="lang-en" data="en">English</a>'+
+								'<a href="./index_cn.html" class="lang-zh" data="zh">简体中文</a>'+
 							'</div>'+
 						'</div>'+
 					'</div>';
@@ -55,6 +55,6 @@ $(document).ready(function($) {
 				'</div>';
 
 	$('.lm-sub-header').html($header);
-	$('.lm-footer').html($footer);
+	// $('.lm-footer').html($footer);
 	$('.BackToTop').html($getTop);
 });

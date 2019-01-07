@@ -149,7 +149,6 @@ body {
   width: 262px;
   height: 60px;
   margin: 0 auto;
-  background: url('../../../images/icon/logo.png') center no-repeat;
 }
 .lm-header .h-right {
   position: absolute;
@@ -517,7 +516,6 @@ body {
   width: 140px;
   height: 53px;
   margin: 0 auto;
-  background: url('../../../images/icon/lanmeiFooterLogo.png') center no-repeat;
 }
 .lm-footer .facebook {
   margin-top: 16px;
@@ -714,7 +712,6 @@ body {
   }
   .lm-header .h-logo-wrap {
     width: 100px;
-    background: url('../../../images/icon/svg/lanmeiFooterLogo.svg') center no-repeat;
     background-size: 100px;
   }
   .lm-header .h-right > div {
@@ -813,7 +810,6 @@ body {
     width: 100px;
     height: 38px;
     margin: 0 auto;
-    background: url('../../../images/icon/svg/lanmeiFooterLogo.svg') center no-repeat;
   }
   .lm-footer .facebook {
     margin-top: 12px;

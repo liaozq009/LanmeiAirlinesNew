@@ -3,6 +3,9 @@ body {
   background: #F8FAFE;
   background-size: cover;
 }
+.lm-sub-header {
+  background: #253F64;
+}
 .lm-logo-wrap {
   text-align: center;
   margin-top: 50px;
@@ -74,11 +77,8 @@ body {
 .lm-searchList-wrap .searchList-box h2 {
   color: #1f2c5c;
   font-size: 22px;
-}
-.lm-searchList-wrap .searchList-box h2 img {
-  margin-right: 10px;
-  height: 26px;
-  vertical-align: bottom;
+  border-left: 4px solid #253F64;
+  padding-left: 10px;
 }
 .lm-searchList-wrap .searchList-box .list-inner {
   display: inline-block;
@@ -99,6 +99,7 @@ body {
   padding: 10px;
   background: #fff;
   box-shadow: 0 2px 2px rgba(84, 48, 132, 0.06);
+  cursor: pointer;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -171,9 +172,6 @@ body {
   }
   .lm-searchList-wrap .searchList-box h2 {
     font-size: 18px;
-  }
-  .lm-searchList-wrap .searchList-box h2 img {
-    height: 20px;
   }
   .lm-searchList-wrap .searchList-box .list-inner li {
     width: 50%;

@@ -13,6 +13,9 @@ body{
 	// background: url('@{url2}body.jpg') center no-repeat;
     background-size: cover;
 }
+.lm-sub-header{
+	background: #253F64;
+}
 .lm-logo-wrap{
 	text-align: center;
 	margin-top: 50px;
@@ -87,11 +90,13 @@ body{
 		h2{
 			color: @purple;
 			font-size: 22px;
-			img{
-				margin-right: 10px;
-				height: 26px;
-			    vertical-align: bottom;
-			}
+			border-left: 4px solid #253F64;
+			padding-left: 10px;
+			// img{
+			// 	margin-right: 10px;
+			// 	height: 26px;
+			//     vertical-align: bottom;
+			// }
 		}
 		.list-inner{
 			display: inline-block;
@@ -110,6 +115,7 @@ body{
 		        	padding: 10px;
 		        	background: #fff;
 		        	box-shadow: 0 2px 2px rgba(84, 48, 132, 0.06);
+		        	cursor: pointer;
         		    overflow: hidden;
         	        text-overflow: ellipsis;
         	        white-space: nowrap;
@@ -193,7 +199,7 @@ body{
 			margin-bottom: 20px;
 			h2{
 				font-size: 18px;
-				img{height: 20px;}
+				// img{height: 20px;}
 			}
 			.list-inner li{
 				width: 50%;
