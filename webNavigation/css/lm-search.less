@@ -1,12 +1,18 @@
 @charset "utf-8";
 
 @url:"../images/icon/";
+@url2:"../images/resource/";
 @color_1: #42958a;
 @purple: #1f2c5c;
 @purple: #1f2c5c;
 @green: #8ec060;
-@gray: #7C7D7F;
+@gray: #181819;
 
+body{
+	background: #F8FAFE;
+	// background: url('@{url2}body.jpg') center no-repeat;
+    background-size: cover;
+}
 .lm-logo-wrap{
 	text-align: center;
 	margin-top: 50px;
@@ -37,17 +43,15 @@
 
 .lm-hotSearch-wrap{
 	width: 1190px;
-	margin: 0 auto;
-	padding-left: 20px;
-	padding-right: 20px;
+	padding-top: 50px;
+	margin: 0 auto 50px;
 	.hotSearch-box{
 		overflow: hidden;
 		>li{
 			float: left;
-			width: 50px;
+			width: 10%;
+			height: 62px;
 			text-align: center;
-			margin-left: 50px;
-			margin-bottom: 30px;
 			p{
 				margin-top: 10px;
 				font-size: 14px;
@@ -57,6 +61,8 @@
 			    white-space: nowrap;
 			}
 			img{
+				width: 100%;
+				height: 100%;
 				transition: all .3s;
 				-webkit-transition: all .3s;
 			}
@@ -76,26 +82,46 @@
 	margin: 20px auto 100px;
 	overflow: hidden;
 	.searchList-box{
-		width: 32%;
-		height: 150px;
-		float: left;
+		width: 100%;
 		margin-bottom: 30px;
 		h2{
 			color: @purple;
-			font-size: 24px;
+			font-size: 22px;
+			img{
+				margin-right: 10px;
+				height: 26px;
+			    vertical-align: bottom;
+			}
 		}
 		.list-inner{
-			overflow: hidden;
+			display: inline-block;
+			width: 100%;
 			li{
-				width: 33.33%;
+				width: 20%;
 				float: left;
-				height: 30px;
-			    line-height: 30px;
-			    margin-top: 10px;
+			    margin-top: 20px;
+			    padding-left: 10px;
 			    padding-right: 10px;
-			    overflow: hidden;
 		        text-overflow: ellipsis;
 		        white-space: nowrap;
+		        >div{
+		        	width: 100%;
+		        	height: 100%;
+		        	padding: 10px;
+		        	background: #fff;
+		        	box-shadow: 0 2px 2px rgba(84, 48, 132, 0.06);
+        		    overflow: hidden;
+        	        text-overflow: ellipsis;
+        	        white-space: nowrap;
+		        	-webkit-transition: all .2s;
+		        	transition: all .2s;
+		        	&:hover{
+		        		box-shadow: 0 30px 28px -16px rgba(0, 0, 0, 0.26);
+	        		    transform: translate(0, -4px);
+	        		    -webkit-transition: all .2s;
+	        		    transition: all .2s;
+		        	}
+		        }
 			    a{
 			    	color: @gray;
 			    	font-size: 16px;
@@ -107,75 +133,89 @@
 			    		-webkit-transition: color .3s;
 			    	}
 			    }
+			    p{
+			    	margin-top: 10px;
+			    	font-size: 14px;
+			    	color: rgba(31,44,92,.3);
+	    		    overflow: hidden;
+	    	        text-overflow: ellipsis;
+	    	        white-space: nowrap;
+			    }
 			}
 		}
 	}
-	.searchList-center{
-		margin-left: 2%;
-		margin-right: 2%;
-	}
 }
 
-@media (max-width: 992px){
+@media (max-width: 1200px){
+	.section-wrap{
+		padding-left: 20px;
+		padding-right: 20px;
+	}
 	.lm-hotSearch-wrap{
 		width: 100%;
-		.hotSearch-box > li{
-			width: 12.5%;
-			margin-left: 0;
+	}
+	.lm-searchList-wrap{
+		width: 100%;
+	}
+}
+@media (max-width: 992px){
+	.lm-hotSearch-wrap {
+		.hotSearch-box {
+			> li{
+				width: 20%;
+				height: auto;
+			}
 		}
 	}
 	.lm-searchList-wrap {
-		width: 100%;
-		.searchList-box{
-			width: 100%;
-			height: auto;
-			padding-left: 20px;
-			padding-right: 20px;
+		.searchList-box {
+			.list-inner li{width: 25%;}
 		}
 	}
 }
-
 @media (max-width: 767px){
-	.lm-search-wrap{
-		width: 100%;
-		padding-left: 15px;
-		padding-right: 15px;
-		input{
-			width: 80%;
-		}
-		.search-button{
-			width: 20%;
-		}
+	.section-wrap{
+		padding-left: 10px;
+		padding-right: 10px;
 	}
 	.lm-hotSearch-wrap{
-		padding-left: 15px;
-		padding-right: 15px;
+		padding-top: 20px;
+		margin-bottom: 20px;
 		.hotSearch-box {
-			> li {
-				width: 20%;
-				margin-bottom: 0.2rem;
-				img{width: 30px;}
-				p{font-size: 0.12rem;}
+			> li{
+				width: 25%;
 			}
 		}
 	}
-	.lm-logo-wrap{
-		margin-top: 0.3rem;
-		font-size: 0.24rem;
-	}
-	.lm-search-wrap{
-		margin-top: 0.1rem;
-		margin-bottom: 0.3rem;
-	}
-	.lm-searchList-wrap{
-		margin-top: 0.1rem;
-		margin-bottom: 0.2rem;
+	.lm-searchList-wrap {
+		margin-bottom: 30px;
 		.searchList-box {
-			h2{font-size: 0.2rem;}
+			margin-bottom: 20px;
+			h2{
+				font-size: 18px;
+				img{height: 20px;}
+			}
 			.list-inner li{
-				height: 0.3rem;
-				line-height: 0.3rem;
-				a{font-size: 0.14rem;}
+				width: 50%;
+				margin-top: 10px;
+				padding-left: 5px;
+				padding-right: 5px;
+				&:nth-child(odd){
+					padding-left: 0;
+				}
+				&:nth-child(even){
+					padding-right: 0;
+				}
+				>div{
+					&:hover{
+						box-shadow: 0 20px 10px -16px rgba(0, 0, 0, 0.26);
+					}
+				}
+				a{font-size: 14px;}
+				p{
+					margin-top: 6px;
+					font-size: 12px;
+				}
 			}
 		}
 	}
