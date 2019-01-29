@@ -190,7 +190,6 @@ body {
   width: 100%;
   height: 768px;
   min-height: 300px;
-  overflow: hidden;
 }
 .flight-loading {
   display: none;
@@ -244,7 +243,7 @@ body {
   background-image: -webkit-linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 100%);
 }
 .content-com-inner {
-  padding-top: 60px;
+  padding-top: 40px;
 }
 .content-com-inner > h1 {
   opacity: 0.9;
@@ -388,7 +387,7 @@ body {
   background: #000;
 }
 .lm-aside-code {
-  position: absolute;
+  position: fixed;
   right: -200px;
   top: 60px;
   z-index: 98;
@@ -446,7 +445,7 @@ body {
   display: block;
 }
 .lm-aside-code .lm-service-number {
-  top: 20%;
+  top: 16%;
 }
 .lm-aside-code .lm-subscribe-number {
   top: 50%;
@@ -467,26 +466,24 @@ body {
 }
 .lm-important {
   position: absolute;
-  bottom: 150px;
+  bottom: 90px;
   right: 0;
-  width: 500px;
+  width: 580px;
   height: 60px;
   padding-left: 30px;
   background: #fff;
   box-shadow: 0 0 50px 0 rgba(31, 44, 92, 0.2);
   border-radius: 30px 0 0 30px;
 }
-.lm-important > a {
-  color: #fff;
-}
-.lm-important > a h3 {
+.lm-important > h3 {
   position: relative;
   float: left;
   width: 110px;
   height: 30px;
-  line-height: 30px;
+  line-height: 34px;
   margin-top: 15px;
   padding-left: 30px;
+  color: #fff;
   font-size: 14px;
   font-family: NotoSansBold;
   background: -webkit-linear-gradient(left, #42958a 0%, #1f2c5c 100%);
@@ -497,16 +494,11 @@ body {
   /*ie8*/
   /*ie9*/
   border-radius: 0 20px 20px 0;
-  transition: all .3s;
 }
-.lm-important > a h3 :root .gradient {
+.lm-important > h3 :root .gradient {
   filter: none;
 }
-.lm-important > a h3:hover {
-  color: #8ec060;
-  transition: all .3s;
-}
-.lm-important > a h3 > p {
+.lm-important > h3 > p {
   display: inline-block;
   position: absolute;
   left: -20px;
@@ -518,6 +510,24 @@ body {
   background: #fff;
   box-shadow: 0 0 10px 0 rgba(31, 44, 92, 0.2);
   border-radius: 100%;
+}
+.lm-important > a {
+  display: block;
+  float: right;
+  height: 60px;
+  line-height: 60px;
+  padding-left: 10px;
+  padding-right: 20px;
+  color: #42958a;
+  font-family: NotoSansBold;
+  font-size: 14px;
+  transition: color .3s;
+  -webkit-transition: color .3s;
+}
+.lm-important > a:hover {
+  color: #8ec060;
+  transition: color .3s;
+  -webkit-transition: color .3s;
 }
 .lm-important > ul {
   height: 40px;
@@ -546,7 +556,7 @@ body {
 }
 .flight-com {
   position: absolute;
-  top: 240px;
+  top: 210px;
   right: 0;
   z-index: 11;
   width: 94%;
@@ -1129,6 +1139,16 @@ body {
   z-index: 999;
   background: url('../../images/CN/flight-loader.gif') center no-repeat rgba(255, 255, 255, 0.6);
 }
+.layer-coupons-info h2 {
+  font-size: 30px;
+  color: #1f2c5c;
+}
+.layer-coupons-info > div {
+  margin-top: 20px;
+  color: rgba(31, 44, 92, 0.5);
+  text-align: left;
+  line-height: 26px;
+}
 .lm-section-fares {
   display: none;
   margin-bottom: 30px;
@@ -1618,7 +1638,7 @@ body {
 }
 .lm-section-news .news-detail .news-arrow .news-arrow-box > p {
   float: left;
-  width: 40px;
+  width: 46px;
   margin-left: 5px;
   margin-right: 5px;
   text-align: center;
@@ -1994,7 +2014,7 @@ body {
     transform-origin: top;
   }
   .lm-important {
-    right: -50px;
+    right: -58px;
   }
   .content-com-wrap {
     height: 136px;
@@ -2022,9 +2042,12 @@ body {
   .flight-com {
     width: 100%;
   }
+  .lm-aside-code .small-code {
+    top: 50px;
+  }
   .lm-important {
-    right: -75px;
-    bottom: 70px;
+    right: -86px;
+    bottom: 20px;
   }
 }
 /* 适配1366 */
@@ -2072,36 +2095,8 @@ body {
   .lm-section-coupons .coupons-anchor .anchor-center {
     margin-right: 24px;
   }
-  .lm-section-coupons .coupons-content {
-    height: 176px;
-  }
-  .lm-section-coupons .coupons-content .slick-item > img {
-    width: 404px;
-  }
-  .lm-section-coupons .coupons-content .slick-item .slick-content {
-    top: 26px;
-    width: 230px;
-    margin-left: -115px;
-  }
-  .lm-section-coupons .coupons-content .slick-item .slick-content .s1 {
-    font-size: 24px;
-  }
-  .lm-section-coupons .coupons-content .slick-item .slick-content .s2 {
-    font-size: 58px;
-  }
-  .lm-section-coupons .coupons-content .slick-item .slick-content .p1 {
-    font-size: 16px;
-  }
-  .lm-section-coupons .coupons-content .slick-item .slick-content .p2 {
-    height: 24px;
-    line-height: 24px;
-    margin-top: 6px;
-  }
-  .lm-section-coupons .coupons-content .slick-item-1 {
-    padding-left: 76px;
-  }
-  .lm-section-coupons .coupons-content .slick-item-1 .slick-content {
-    margin-left: -68px;
+  .lm-section-coupons .coupons-content .slick-item {
+    margin-right: 20px;
   }
   .slick-prev,
   .slick-next {
@@ -2585,7 +2580,7 @@ body {
   .popup-content .popup-people .s-rooms .people-prompt .p1 {
     height: 50px;
     line-height: 50px;
-    background: url('../../images/CN/rooms-icon.png') 4px center no-repeat;
+    background: url('../../images/CN/rooms-icon.png') left center no-repeat;
   }
   .popup-content .popup-people .s-adult .people-prompt .p1 {
     background: url('../../images/CN/adult-icon.png') left center no-repeat;
@@ -3030,9 +3025,6 @@ body {
   }
   .lm-section-coupons .coupons-content .slick-item-1 {
     padding-left: 16px;
-  }
-  .lm-section-coupons .coupons-content .slick-item-1 .slick-content {
-    margin-left: -102px;
   }
   .lm-section-fares .fares-item-1 {
     padding-left: 36px;
@@ -4329,16 +4321,49 @@ body {
     margin-right: 10px;
   }
   .lm-section-coupons .coupons-content {
+    height: 100px;
+  }
+  .lm-section-coupons .coupons-content .slick-list {
     height: 120px;
+    padding-left: 15px;
   }
   .lm-section-coupons .coupons-content .slick-item > img {
-    width: 320px;
+    width: 290px;
   }
   .lm-section-coupons .coupons-content .slick-item .slick-content {
-    width: 200px;
-    height: 120px;
-    top: 22px;
-    margin-left: -100px;
+    width: 100%;
+    height: 100%;
+    top: 0;
+  }
+  .lm-section-coupons .coupons-content .slick-item .slick-content .slick-content-left {
+    width: 198px;
+    height: 100%;
+    padding: 10px;
+  }
+  .lm-section-coupons .coupons-content .slick-item .slick-content .slick-content-left h3 {
+    height: 40px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .lm-section-coupons .coupons-content .slick-item .slick-content .slick-content-left > p {
+    margin-top: 4px;
+  }
+  .lm-section-coupons .coupons-content .slick-item .slick-content .slick-content-left > p span {
+    display: none;
+  }
+  .lm-section-coupons .coupons-content .slick-item .slick-content .slick-content-right {
+    width: 92px;
+    height: 100%;
+    padding: 10px;
+  }
+  .lm-section-coupons .coupons-content .slick-item .slick-content .slick-content-right h2 {
+    font-size: 33px;
+  }
+  .lm-section-coupons .coupons-content .slick-item .slick-content .slick-content-right p {
+    font-size: 14px;
+  }
+  .lm-section-coupons .coupons-content .slick-item .slick-content .slick-content-right a {
+    font-size: 12px;
   }
   .lm-section-coupons .coupons-content .slick-item .slick-content .s2 {
     font-size: 40px;
@@ -4359,7 +4384,15 @@ body {
     padding-left: 0;
   }
   .lm-section-coupons .coupons-content .slick-item-1 .slick-content {
-    margin-left: -100px;
+    margin-left: 0;
+  }
+  .layer-coupons-info h2 {
+    font-size: 20px;
+  }
+  .layer-coupons-info > div {
+    margin-top: 10px;
+    line-height: 22px;
+    font-size: 14px;
   }
   .lm-section-fares .fares-item {
     margin-left: 0;

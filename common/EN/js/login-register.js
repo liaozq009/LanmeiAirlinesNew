@@ -5,146 +5,162 @@ var LMComLoginReg = {
 		this.login();
 		this.register();
 	},
-	commonHtml:function(){
-		var $login = '<div class="modal-dialog" role="document">'+
-		        '<div class="modal-content">'+
-		            '<div class="modal-header">'+
-		                '<button type="button" class="close" data-dismiss="modal" aria-label="Close">Close<span aria-hidden="true">&times;</span></button>'+
-		            '</div>'+
-		            '<div class="modal-body">'+
-		                '<h2 class="loginTitle">Login</h2>'+
-		                '<span class="verifyInfo">Account or password error !</span>'+
-		                '<form id="loginForm" method="POST" action="">'+
-		                    '<div class="form-group">'+
-		                        '<input type="text" class="form-control" id="LanmeiUserName" placeholder="Email" autocomplete="off">'+
-		                       ' <ul class="login_on_changes on_changes">'+
-		                            '<li email="@gmail.com"></li>'+
-		                            '<li email="@qq.com"></li>'+
-		                            '<li email="@sina.com"></li>'+
-		                            '<li email="@163.com"></li>'+
-		                            '<li email="@hotmail.com"></li>'+
-		                           	'<li email="@126.com"></li>'+
-		                            '<li email="@yahoo.com"></li>'+
-		                        '</ul>'+
-		                    '</div>'+
-		                    '<div class="form-group">'+
-		                        '<input type="password" class="form-control" id="LanmeiPassword" placeholder="Password" autocomplete="off">'+
-		                    '</div>'+
-		                    '<div class="agree form-group">'+
-		                        '<span class="" style="display:none;"></span>'+
-		                        '<p style="display:none;">Remember me next 30 days</p>'+
-		                        '<a href="#" class="forgetBtn">Forget ?</a>'+
-		                    '</div>'+
-		                    '<div class="getVerCode getVerCode-login">'+
-		                        '<input type="text" name="" value="" id="getVerCode-input" placeholder="Security Code" autocomplete="off">'+
-		                       	'<img src="./images/resource/call.jpg" id="getVerCode-img" alt="验证码" style="cursor:pointer;">'+
-		                    '</div>'+
-		                    '<div class="form-group">'+
-		                        '<button type="button" class="btn userLoginBtn">Login</button>'+
-		                    '</div>'+
-		                '</form>'+
-		            '</div>'+
-		            '<div class="modal-footer">'+
-		                '<a href="javascript:void(0)" class="regBtn">Sign up Now !</a>'+
-		            '</div>'+
-		        '</div>'+
-		    '</div>';
+	commonHtml: function () {
+        var $login = '<div class="modal-dialog" role="document">' +
+            '<div class="modal-content">' +
+            '<div class="modal-header">' +
+            '<button type="button" class="close" data-dismiss="modal" aria-label="Close">Close<span aria-hidden="true">&times;</span></button>' +
+            '</div>' +
+            '<div class="modal-body">' +
+            '<h2 class="loginTitle">Login</h2>' +
+            '<span class="verifyInfo">Account or password error !</span>' +
+            '<form id="loginForm" method="POST" action="">' +
+            '<div class="form-group">' +
+            '<input type="text" class="form-control" id="LanmeiUserName" placeholder="Email" autocomplete="off">' +
+            ' <ul class="login_on_changes on_changes">' +
+            '<li email="@gmail.com"></li>' +
+            '<li email="@qq.com"></li>' +
+            '<li email="@sina.com"></li>' +
+            '<li email="@163.com"></li>' +
+            '<li email="@hotmail.com"></li>' +
+            '<li email="@126.com"></li>' +
+            '<li email="@yahoo.com"></li>' +
+            '</ul>' +
+            '</div>' +
+            '<div class="form-group">' +
+            '<input type="password" class="form-control" id="LanmeiPassword" placeholder="Password" autocomplete="off">' +
+            '</div>' +
+            '<div class="agree form-group">' +
+            '<span class="" style="display:none;"></span>' +
+            '<p style="display:none;">Remember me next 30 days</p>' +
+            '<a href="#" class="forgetBtn">Forget ?</a>' +
+            '</div>' +
+            '<div class="getVerCode getVerCode-login">'+
+                '<input type="text" name="captcha" value="" class="captcha-input" placeholder="Security Code" autocomplete="off">'+
+                '<img src="/admin/common/captcha.jhtml?width=100&height=34&fontsize=30" class="captcha-image" alt="Security Code" style="cursor:pointer;">'+
+            '</div>'+
+            '<div class="form-group">' +
+            '<button type="button" class="btn userLoginBtn">Login</button>' +
+            '</div>' +
+            '</form>' +
+            '</div>' +
+            '<div class="modal-footer">' +
+            '<a href="javascript:void(0)" class="regBtn">Sign up Now !</a>' +
+            '</div>' +
+            '</div>' +
+            '</div>';
 
-		var $register = '<div class="modal-dialog" role="document">'+
-		        '<div class="modal-content">'+
-		            '<div class="modal-header">'+
-		                '<button type="button" class="close" data-dismiss="modal" aria-label="Close">Close<span aria-hidden="true">&times;</span></button>'+
-		            '</div>'+
-		            '<div class="modal-body">'+
-		               ' <form class="registerWrapper" method="POST" action="">'+
-		                    '<h2>Sign up</h2>'+
-		                    '<div class="registerContent">'+
-		                        '<div class="registerInfo">'+
-		                            '<input type="text" name="" value="" id="registerUserName" placeholder="Please enter email address" autocomplete="off">'+
-		                           '<p>This email is already in use !</p>'+
-		                            '<ul class="register_on_changes on_changes">'+
-		                                '<li email="@gmail.com"></li>'+
-		                                '<li email="@qq.com"></li>'+
-		                                '<li email="@sina.com"></li>'+
-		                                '<li email="@163.com"></li>'+
-		                                '<li email="@hotmail.com"></li>'+
-		                                '<li email="@126.com"></li>'+
-		                                '<li email="@yahoo.com"></li>'+
-		                            '</ul>'+
-		                        '</div>'+
-		                        '<div class="registerPassword">'+
-		                           ' <input type="password" name="" value="" id="registerPassword" placeholder="Password with 8-16 characters" autocomplete="off">'+
-		                            '<p>Password strength : <span><i class="i1"></i><i class="i2"></i><i class="i3"></i><i class="i4"></i><i class="i5"></i><i class="i6"></i></span></p>'+
-		                        '</div>'+
-		                        '<div class="repeatPassword">'+
-		                            '<input type="password" name="" value="" id="repeatPassword" placeholder="Please repeat password" autocomplete="off">'+
-		                           ' <p>Passwords don’t match !</p>'+
-		                            '<span>Password must be with 3 or 4 combination with number (0-9), lowercase letter (a-z), uppercase letter (A-Z) or special characters.</span>'+
-		                        '</div>'+
-		                        '<div class="getVerCode">'+
-		                            '<input type="text" name="" value="" id="getVerCode-input" placeholder="Security Code" autocomplete="off">'+
-		                           	// '<button type="button" id="getVerCode-btn">Get Security Code</button>'+
-		                           	'<img src="./images/resource/call.jpg" id="getVerCode-img" alt="验证码" style="cursor:pointer;">'+
-		                        '</div>'+
-		                        '<div class="agree">'+
-		                            '<span></span>'+
-		                            '<p>I hereby agree to <a href="https://lanmeiairlines.com/lanmeiairlines2.0/default/menus/EN/aboutUs/LMPrivacy.html" target="_blank">Lanmeiairlines’ terms and conditions</a></p>'+
-		                        '</div>'+
-		                        '<div class="registerBtn">'+
-		                            '<button id="registerBtn">Sign up</button>'+
-		                        '</div>'+
-		                    '</div>'+
-		                '</form>'+
-		            '</div>'+
-		            '<div class="modal-footer">'+
-		                '<a href="javascript:void(0)" class="reg-loginBtn">Login Now !</a>'+
-		            '</div>'+
-		        '</div>'+
-		    '</div>';
+        var $register = '<div class="modal-dialog" role="document">' +
+            '<div class="modal-content">' +
+            '<div class="modal-header">' +
+            '<button type="button" class="close" data-dismiss="modal" aria-label="Close">Close<span aria-hidden="true">&times;</span></button>' +
+            '</div>' +
+            '<div class="modal-body">' +
+            ' <form class="registerWrapper" method="POST" action="">' +
+            '<h2>Sign up</h2>' +
+            '<span class="verifyInfoRegis"></span>' +
+            '<div class="registerContent">' +
+            '<div class="registerInfo">' +
+            '<input type="text" name="" value="" id="registerUserName" placeholder="Please enter email address" autocomplete="off">' +
+            '<p>This email is already in use !</p>' +
+            '<ul class="register_on_changes on_changes">' +
+            '<li email="@gmail.com"></li>' +
+            '<li email="@qq.com"></li>' +
+            '<li email="@sina.com"></li>' +
+            '<li email="@163.com"></li>' +
+            '<li email="@hotmail.com"></li>' +
+            '<li email="@126.com"></li>' +
+            '<li email="@yahoo.com"></li>' +
+            '</ul>' +
+            '</div>' +
+            '<div class="registerName">'+
+                 '<input type="text" class="lastName js-lastName" placeholder="Surname" autocomplete="off"/>'+
+                 '<input type="text" class="firstName js-firstName" placeholder="First&Middle Name" autocomplete="off"/>'+
+                 '<input type="hidden" class="js-name" name="name_EN" value=""/>'+
+            ' </div>'+
+            '<div class="registerPassport">'+
+                '<input type="text" class="passport js-passport" placeholder="Passport No." autocomplete="off"/>'+
+                '<p>Full name and passport no. must be the same as passport info to avoid the effect on member rights.</p>'+
+            ' </div>'+
+            '<div class="registerPassword">' +
+            ' <input type="password" name="" value="" id="registerPassword" placeholder="Password with 8-16 characters" autocomplete="off">' +
+            '<p>Password strength : <span><i class="i1"></i><i class="i2"></i><i class="i3"></i><i class="i4"></i><i class="i5"></i><i class="i6"></i></span></p>' +
+            '</div>' +
+            '<div class="repeatPassword">' +
+            '<input type="password" name="" value="" id="repeatPassword" placeholder="Please repeat password" autocomplete="off">' +
+            ' <p>Passwords don’t match !</p>' +
+            '<span>Password must be with 3 or 4 combination with number (0-9), lowercase letter (a-z), uppercase letter (A-Z) or special characters.</span>' +
+            '</div>' +
+            '<div class="getVerCode">' +
+            /*  '<input type="text" name="" value="" id="getVerCode-input" placeholder="Security Code" autocomplete="off">'+*/
+            '<input type="text" name="captcha" value="" id="captcha-input" class="captcha-input" placeholder="Email safety code" autocomplete="off">' +
+            /*'<img class="captcha-image" src="/admin/common/captcha.jhtml?width=100&height=34&fontsize=30" title="Security Code")}" style="cursor:pointer"/>' +*/
+            '<button type="button" class="getVerCode-btn">Get Captcha</button>' +
+            '<p style="margin-top: 10px;"></p>' +
+            '</div>' +
+            '<div class="agree">' +
+            '<span></span>' +
+            '<p>I hereby agree to <a href="https://lanmeiairlines.com/lanmeiairlines2.0/default/menus/EN/aboutUs/LMPrivacy.html" target="_blank">Lanmeiairlines’ terms and conditions</a></p>' +
+            '</div>' +
+            '<div class="registerBtn">' +
+            '<button id="registerBtn">Sign up</button>' +
+            '</div>' +
+            '</div>' +
+            '</form>' +
+            '</div>' +
+            '<div class="modal-footer">' +
+            '<a href="javascript:void(0)" class="reg-loginBtn">Login Now !</a>' +
+            '</div>' +
+            '</div>' +
+            '</div>';
 
-		var $forgetPassword = '<div class="modal-dialog" role="document">'+
-		        '<div class="modal-content">'+
-		            '<div class="modal-header">'+
-		                '<button type="button" class="close" data-dismiss="modal" aria-label="Close">Close<span aria-hidden="true">&times;</span></button>'+
-		            '</div>'+
-		            '<div class="modal-body">'+
-		                '<h2 class="loginTitle">Forget Password</h2>'+
-		                '<span class="verifyInfo">Account or password error !</span>'+
-		                '<form id="f-loginForm" method="POST" action="">'+
-		                    '<div class="form-group">'+
-		                        '<input type="text" class="form-control" id="f-LanmeiUserName" placeholder="Email" autocomplete="off">'+
-		                        '<ul class="forget_on_changes on_changes">'+
-		                           '<li email="@gmail.com"></li>'+
-		                            '<li email="@qq.com"></li>'+
-		                            '<li email="@sina.com"></li>'+
-		                            '<li email="@163.com"></li>'+
-		                            '<li email="@hotmail.com"></li>'+
-		                            '<li email="@126.com"></li>'+
-		                            '<li email="@yahoo.com"></li>'+
-		                        '</ul>'+
-		                    '</div>'+
-		                    '<div class="form-group">'+
-		                        '<input type="password" class="form-control" id="f-LanmeiPassword" placeholder="Password" autocomplete="off">'+
-		                        '<button type="button" id="f-getPasswordBtn">Get Password</button>'+
-		                    '</div>'+
-		                   ' <div class="agree form-group">'+
-		                        '<p>Please pay attention to the E-mail information</p>'+
-		                    '</div>'+
-		                    '<div class="form-group">'+
-		                       ' <button type="button" class="btn f-userLoginBtn">Login</button>'+
-		                   ' </div>'+
-		                '</form>'+
-		            '</div>'+
-		            '<div class="modal-footer">'+
-		                '<a href="#" class="a_login">Login</a><a href="javascript:void(0)" class="a_registered">Sign up</a>'+
-		            '</div>'+
-		        '</div>'+
-		    '</div>';
+        var $forgetPassword = '<div class="modal-dialog" role="document">' +
+            '<div class="modal-content">' +
+            '<div class="modal-header">' +
+            '<button type="button" class="close" data-dismiss="modal" aria-label="Close">Close<span aria-hidden="true">&times;</span></button>' +
+            '</div>' +
+            '<div class="modal-body">' +
+            '<h2 class="loginTitle">Forget Password</h2>' +
+            '<span class="verifyInfoForget">Account or password error !</span>' +
+            '<form id="f-loginForm" method="POST" action="">' +
+            '<div class="form-group">' +
+            '<input type="text" class="form-control" id="f-LanmeiUserName" placeholder="Email" autocomplete="off">' +
+            '<ul class="forget_on_changes on_changes">' +
+            '<li email="@gmail.com"></li>' +
+            '<li email="@qq.com"></li>' +
+            '<li email="@sina.com"></li>' +
+            '<li email="@163.com"></li>' +
+            '<li email="@hotmail.com"></li>' +
+            '<li email="@126.com"></li>' +
+            '<li email="@yahoo.com"></li>' +
+            '</ul>' +
+            '</div>' +
+            '<div class="form-group">' +
+            '<input type="password" class="form-control" id="f-LanmeiPassword" placeholder="Password" autocomplete="off">' +
+            '<button type="button" id="f-getPasswordBtn">Get Password</button>' +
+            '</div>' +
+            '<div class="getVerCode getVerCode-login">'+
+            '<input type="text" name="captcha" value="" class="captcha-input" placeholder="Security Code" autocomplete="off">'+
+            '<img src="/admin/common/captcha.jhtml?width=100&height=34&fontsize=30" class="captcha-image" alt="Security Code" style="cursor:pointer;">'+
+            '</div>'+
+            ' <div class="agree form-group">' +
+            '<p>Please pay attention to the E-mail information</p>' +
+            '</div>' +
+            '<div class="form-group">' +
+            ' <button type="button" class="btn f-userLoginBtn">Login</button>' +
+            ' </div>' +
+            '</form>' +
+            '</div>' +
+            '<div class="modal-footer">' +
+            '<a href="#" class="a_login">Login</a><a href="javascript:void(0)" class="a_registered">Sign up</a>' +
+            '</div>' +
+            '</div>' +
+            '</div>';
 
-		$('#logonModal').html($login);
-		$('#registerModal').html($register);
-		$('#forgetModal').html($forgetPassword);
-	},
+        $('#logonModal').html($login);
+        $('#registerModal').html($register);
+        $('#forgetModal').html($forgetPassword);
+    },
 
 	login:function(){
 	    var reg1=/^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$/; //邮箱
