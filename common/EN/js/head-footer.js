@@ -4,7 +4,7 @@ $(document).ready(function($) {
 					'<span>Navigation</span>'+
 					'</div>'+
 					'<div class="menu-guide bounce-left">Click here to view more!</div>'+
-					'<a href="http://192.168.3.10/LanmeiAirlinesNew/index.html?lang=en" class="h-logo-wrap"></a>'+
+					'<a href="https://lanmeiairlines.com/index.html?lang=en" class="h-logo-wrap"></a>'+
 					'<div class="h-right">'+
 						'<div class="h-phone js-h-phone">'+
 							'<div class="phone-menu js-phone-menu">'+
@@ -35,8 +35,8 @@ $(document).ready(function($) {
 							'<p class="js-choose-lang"></p>'+
 							'<div class="lang-menu js-lang-menu">'+
 								'<h2>Choose a language:</h2>'+
-								'<a href="http://192.168.3.10/LanmeiAirlinesNew/index.html?lang=en" class="lang-en" data="en">English</a>'+
-								'<a href="http://192.168.3.10/LanmeiAirlinesNew/index_cn.html?lang=cn" class="lang-zh" data="zh">简体中文</a>'+
+								'<a href="https://lanmeiairlines.com/index.html?lang=en" class="lang-en" data="en">English</a>'+
+								'<a href="https://lanmeiairlines.com/index_cn.html?lang=cn" class="lang-zh" data="zh">简体中文</a>'+
 							'</div>'+
 						'</div>'+
 					'</div>';
@@ -57,16 +57,17 @@ $(document).ready(function($) {
 				'<div class="footer-right">'+
 					'<div class="footer-box-1 footer-box">'+
 						'<h2>Travel Preparation</h2>'+
-						'<a href="http://lanmeiairlines.com/lanmeiairlines2.0/default/menus/EN/experience/LMVisa.html" target="_blank" title="Passport and visa">Passport and visa</a>'+
-						'<a href="http://lanmeiairlines.com/lanmeiairlines2.0/default/menus/EN/experience/LMTransport.html" target="_blank" title="General conditions of carriage">General conditions of carriage</a>'+
-						'<a href="http://lanmeiairlines.com/lanmeiairlines2.0/default/menus/EN/experience/LMSpecialPassengers.html" target="_blank" title="Special services">Special services</a>'+
-						'<a href="http://lanmeiairlines.com/lanmeiairlines2.0/default/menus/EN/experience/LMNoticePassengers.html" target="_blank" title="Notice to passengers">Notice to passengers</a>'+
+						'<a href="https://lanmeiairlines.com/lanmeiairlines2.0/default/menus/EN/experience/LMVisa.html" target="_blank" title="Passport and visa">Passport and visa</a>'+
+						'<a href="https://lanmeiairlines.com/lanmeiairlines2.0/default/menus/EN/experience/LMTransport.html" target="_blank" title="General conditions of carriage">General conditions of carriage</a>'+
+						'<a href="https://lanmeiairlines.com/lanmeiairlines2.0/default/menus/EN/experience/LMSpecialPassengers.html" target="_blank" title="Special services">Special services</a>'+
+						'<a href="https://lanmeiairlines.com/lanmeiairlines2.0/default/menus/EN/experience/LMNoticePassengers.html" target="_blank" title="Notice to passengers">Notice to passengers</a>'+
+						'<a href="https://lanmeiairlines.com/lanmeiairlines2.0/default/menus/EN/aboutUs/LMFAQ.html" target="_blank" title="Q&A">Q & A</a>'+
 					'</div>'+
 					'<div class="footer-box-2 footer-box">'+
 						'<h2>Check In</h2>'+
-						'<a href="http://lanmeiairlines.com/lanmeiairlines2.0/default/menus/EN/experience/LMCheckOnline.html" target="_blank" title="Check in online">Check in online</a>'+
-						'<a href="http://lanmeiairlines.com/lanmeiairlines2.0/default/menus/EN/experience/LMCheckAirport.html" target="_blank" title="Check in at airport">Check in at airport</a>'+
-						'<a href="http://lanmeiairlines.com/lanmeiairlines2.0/default/menus/EN/experience/LMCheckTime.html" target="_blank"  title="Check-in and baggage drop-off times">Check-in and baggage drop-off times</a>'+
+						'<a href="https://lanmeiairlines.com/lanmeiairlines2.0/default/menus/EN/experience/LMCheckOnline.html" target="_blank" title="Check in online">Check in online</a>'+
+						'<a href="https://lanmeiairlines.com/lanmeiairlines2.0/default/menus/EN/experience/LMCheckAirport.html" target="_blank" title="Check in at airport">Check in at airport</a>'+
+						'<a href="https://lanmeiairlines.com/lanmeiairlines2.0/default/menus/EN/experience/LMCheckTime.html" target="_blank"  title="Check-in and baggage drop-off times">Check-in and baggage drop-off times</a>'+
 					'</div>'+
 					'<div class="footer-box-3 footer-box">'+
 						'<h2>Your Baggage</h2>'+
@@ -75,11 +76,11 @@ $(document).ready(function($) {
 					'</div>'+
 					'<div class="footer-box-4 footer-box">'+
 						'<h2>ABOUT US</h2>'+
-						'<a href="http://lanmeiairlines.com/lanmeiairlines2.0/default/menus/EN/aboutUs/LMSiteMap.html" target="_blank" title="Sitemap">Sitemap</a>'+
-						'<a href="http://lanmeiairlines.com/lanmeiairlines2.0/default/menus/EN/aboutUs/LMHistory.html" target="_blank" title="Lanmei History">Lanmei History</a>'+
-						'<a href="http://lanmeiairlines.com/lanmeiairlines2.0/default/menus/EN/aboutUs/LMContact.html" target="_blank" title="Contact Us">Contact Us</a>'+
-						'<a href="http://lanmeiairlines.com/lanmeiairlines2.0/default/menus/EN/aboutUs/LMHire.html" target="_blank" title="Join Us">Join Us</a>'+
-						'<a href="http://lanmeiairlines.com/lanmeiairlines2.0/default/menus/EN/aboutUs/LMPrivacy.html" target="_blank">Privacy Policy</a>'+
+						'<a href="https://lanmeiairlines.com/lanmeiairlines2.0/default/menus/EN/aboutUs/LMSiteMap.html" target="_blank" title="Sitemap">Sitemap</a>'+
+						'<a href="https://lanmeiairlines.com/lanmeiairlines2.0/default/menus/EN/aboutUs/LMHistory.html" target="_blank" title="Lanmei History">Lanmei History</a>'+
+						'<a href="https://lanmeiairlines.com/lanmeiairlines2.0/default/menus/EN/aboutUs/LMContact.html" target="_blank" title="Contact Us">Contact Us</a>'+
+						'<a href="https://lanmeiairlines.com/lanmeiairlines2.0/default/menus/EN/aboutUs/LMHire.html" target="_blank" title="Join Us">Join Us</a>'+
+						'<a href="https://lanmeiairlines.com/lanmeiairlines2.0/default/menus/EN/aboutUs/LMPrivacy.html" target="_blank">Privacy Policy</a>'+
 					'</div>'+
 				'</div>'+
 				'<div class="footer-bottom">'+
