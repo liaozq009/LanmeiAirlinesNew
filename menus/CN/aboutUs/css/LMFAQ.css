@@ -2,7 +2,7 @@
 /* 定义变量 */
 /* 定义颜色变量 */
 .lm-section {
-  min-height: auto;
+  min-height: initial;
   padding-bottom: 0;
 }
 .FAQWrapper {
@@ -86,6 +86,9 @@
   }
   .FAQWrapper .site-map-box .site-map-content {
     padding-bottom: 0.1rem;
+  }
+  .FAQWrapper .site-map-box .site-map-content > li {
+    font-size: 0.14rem;
   }
   .FAQWrapper .site-map-box .site-map-content > li img {
     width: 100%;
