@@ -291,7 +291,7 @@ body{
 	left: 28px;
 	z-index: 9;
 	width: 110px;
-	height: 500px;
+	height: 400px;
 	border-radius: 2px;
 	background: #fff;
 	>ul{
@@ -338,15 +338,15 @@ body{
 			a{background: url('@{url}hotel-icon.png') center 30% no-repeat;}
 			.active{background: url('@{url}hotel-icon-active.png') center 30% no-repeat;}
 		}
-		.li-child3{
+		/*.li-child3{
 			a{background: url('@{url}ticketHotel-icon.png') center 30% no-repeat;}
 			.active{background: url('@{url}ticketHotel-icon-active.png') center 30% no-repeat;}
-		}
-		.li-child4{
+		}*/
+		.li-child3{
 			a{background: url('@{url}car-icon.png') center 30% no-repeat;}
 			.active{background: url('@{url}car-icon-active.png') center 30% no-repeat;}
 		}
-		.li-child5{
+		.li-child4{
 			a{background: url('@{url}flight-icon.png') center 30% no-repeat;}
 			.active{background: url('@{url}flight-icon-active.png') center 30% no-repeat;}
 		}
@@ -2046,36 +2046,12 @@ body{
 	.nav-container {
 		.m-nav-1,.m-nav-2,.m-nav-3{padding-top: 100px;}
 	}
-	.lm-section-banner,.lm-section-service,.lm-section-hotel{
-		margin-bottom: 40px;
-	}
 	.lm-section-banner .slick-item .slick-detail p{font-size: 14px;}
 	.lm-section-coupons{
 		margin-bottom: 30px;
 	}
 	.lm-section-fares{
 		margin-bottom: 10px;
-	}
-	.lm-section-news{
-		margin-bottom: 120px;
-	}
-	.section-content-title{
-		font-size: 72px;
-		height: 104px;
-		line-height: 106px;
-		>h2{font-size: 20px;}
-	}
-	.lm-section-coupons .coupons-anchor{
-		margin-bottom: 14px;
-		>a{
-			width: 160px;
-			height: 40px;
-			line-height: 40px;
-			font-size: 14px;
-		}
-		.anchor-center{
-			margin-right: 24px;
-		}
 	}
 	.lm-section-coupons .coupons-content .slick-item{margin-right: 20px;}
 	.slick-prev, .slick-next{
@@ -2121,25 +2097,6 @@ body{
 			padding-left: 96px;
 		}
 	}
-	.lm-section-service{
-		height: 240px;
-		.service-bg{padding-top: 64px;}
-		ul{
-			width: 544px;
-			height: 112px;
-			>li{
-				width: 112px;
-				height: 112px;
-				margin-left: 32px;
-				a{
-					img{
-						margin-top: 12px;
-					}
-					p{margin-top: 10px;font-size: 12px;}
-				}
-			}
-		}
-	}
 	.lm-section-travel .travel-item{
 		width: 320px;
 		>a>img{
@@ -2167,6 +2124,115 @@ body{
 			}
 		}
 	}
+	
+	/* 1366新调整20190218 */
+	.content-com-wrap{
+		top: 50px;
+	}
+	.flight-com{
+		top: 194px;
+	}
+	.lm-aside-flight{
+		top: 96px;
+	    left: 10px;
+	}
+	.lm-scroll-down{
+		background-size: 20px;
+		bottom: 30px;
+	}
+	.lm-aside-code {
+		width: 160px;
+		right: -160px;
+		.small-code{
+			left: -60px;
+			width: 60px;
+		    height: 268px;
+		    background-size: 34px;
+		    >img{width: 60px;}
+		}
+		>h3{
+			font-size: 14px;
+			margin-top: 40px;
+		}
+		>p{
+			img{width: 100px;}
+			span{font-size: 12px;}
+		}
+		.facebook-icon{
+			a{
+				i{font-size: 20px;}
+			}
+			a:nth-child(2){margin-left: 50px;}
+			.img-2{margin-left: 0;}
+		}
+	}
+	.section-content-title{
+		font-size: 60px;
+		height: 90px;
+		line-height: 90px;
+		margin-bottom: 20px;
+		>h2{font-size: 18px;}
+	}
+	.lm-section-banner,.lm-section-service,.lm-section-hotel{
+		margin-bottom: 30px;
+	}
+	.lm-section-coupons .coupons-anchor{
+		margin-bottom: 20px;
+		>a{
+			width: 160px;
+			height: 40px;
+			line-height: 40px;
+			font-size: 14px;
+		}
+		.anchor-center{
+			margin-right: 24px;
+		}
+	}
+	.lm-section-service{
+		height: 240px;
+		.service-bg{padding-top: 72px;}
+		ul{
+			width: 544px;
+			height: 100px;
+			>li{
+				width: 112px;
+				height: 100px;
+				margin-left: 32px;
+				a{
+					img{
+						width: 50px;
+						margin-top: 12px;
+					}
+					p{margin-top: 10px;font-size: 12px;}
+				}
+			}
+			>li:nth-child(3){
+				a{
+					&:hover{background: none;}
+					p{
+						color: rgba(255,255,255,.3);
+					}
+				}
+			}
+		}
+	}
+	.lm-section-hotel .hotel-com .hotel-img {
+		.book-hotel{
+			width: 120px;
+		    height: 40px;
+		    line-height: 40px;
+		    margin-left: -60px;
+	        margin-top: -20px;
+		    font-size: 14px;
+		}
+		.save-percent{
+			top: 20px;
+			font-size: 12px;
+		    height: 26px;
+		    line-height: 28px;
+		    padding: 0 8px;
+		}
+	}
 	.lm-section-hotel .hotel-com {
 		.hotel-detail{
 			height: 240px;
@@ -2174,10 +2240,12 @@ body{
 			>h2{font-size: 20px;}
 			.country{
 				margin-top: 24px;
-				font-size: 16px;
+				font-size: 14px;
 			}
+			.area{font-size: 12px;}
 			.price-wrap {
 				margin-top: 18px;
+				.night{font-size: 16px;}
 				.price{
 					font-size: 28px;
 				}
@@ -2188,12 +2256,14 @@ body{
 		}
 	}
 	.lm-section-news {
+		margin-bottom: 60px;
 		.news-detail{
 			width: 480px;
 			height: 370px;
 			margin-left: 96px;
+			font-size: 12px;
 			.news-info{
-				height: 320px;
+				height: 300px;
 				padding: 32px 24px;
 				>h2{
 					font-size: 20px;
@@ -2201,22 +2271,29 @@ body{
 				>div .news-info-detail{
 					margin-top: 16px;
 					>p{
+						line-height: 18px;
 						display: -webkit-box;
-				    -webkit-box-orient: vertical;
-				    -webkit-line-clamp: 6;
-				    overflow: hidden;
-				    white-space: normal!important;
-				    text-overflow: ellipsis;
-				    word-wrap: break-word;
+					    -webkit-box-orient: vertical;
+					    -webkit-line-clamp: 6;
+					    overflow: hidden;
+					    white-space: normal!important;
+					    text-overflow: ellipsis;
+					    word-wrap: break-word;
 					}
+				}
+				> div {
+					> h2 > a{
+						font-size: 20px;
+					}
+					>p{font-size: 12px;}
 				}
 			}
 		}
 		.news-content{
 			margin-left: 576px;
 			.news-item>a>img{
-				width: 528px;
-				height: 420px;
+				width: 468px;
+				height: 372px;
 			}
 		}
 	}
@@ -3599,7 +3676,7 @@ body{
 			overflow: hidden;
 			background: #fff;
 			>li{
-				width: 20%;
+				width: 25%;
 				height: 60px;
 				float: left;
 				>a{
@@ -3611,10 +3688,11 @@ body{
 			.li-child1,.li-child2,.li-child3,.li-child4,.li-child5{
 				a{background-size:30px 30px !important;font-size: 10px;}
 			}
-			.li-child5 a span{
+			.li-child3{display: none;}
+			/*.li-child5 a span{
 				display: block;
 				width: 50px;
-			}
+			}*/
 			.li-slide{display: none;}
 			.li-child1 a{background: url('@{url}svg/ticket-icon.svg') center 30% no-repeat;}
 			.li-child1 .active{background: url('@{url}svg/ticket-icon-active.svg') center 30% no-repeat;}
