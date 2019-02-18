@@ -719,8 +719,15 @@ body {
   .lm-footer {
     height: 226px;
   }
+  .lm-footer .footer-left {
+    width: 340px;
+  }
+  .lm-footer .footer-right {
+    margin-left: 340px;
+  }
   .lm-footer .footer-box h2 {
-    font-size: 20px;
+    margin-bottom: 10px;
+    font-size: 18px;
   }
   .lm-footer .footer-box a {
     font-size: 12px;

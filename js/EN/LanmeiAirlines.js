@@ -4395,7 +4395,8 @@ var LanmeiAirlines = {
 				$('.js-news-mask').width(conWidth-398);
 				$('.js-from-input,.js-to-input,.js-routeId-input,.js-ticketType-input,.js-fNumber-input,.js-routeFrom-input,.js-routeTo-input').attr('readonly','readonly');
 			}else if(winWidth<=1400){
-				$('.js-news-mask').width(conWidth-550);
+				$('.js-news-mask').width(conWidth-490);
+				console.log($('.js-news-mask').width());
 			}else{
 				$('.js-news-mask').width(conWidth-680);
 			}
