@@ -387,7 +387,7 @@ var LanmeiAirlines = {
 			$('.js-a-car').addClass('active');
 			$('.js-flight-com').hide();
 			$('.js-car-wrap').show();
-			animate(330);
+			animate(230);
 			$blurImg.fadeOut();
 			$('.blur-img-car').fadeIn();
 			$loader.fadeOut();
@@ -397,7 +397,7 @@ var LanmeiAirlines = {
 			$('.js-a-flight').addClass('active');
 			$('.js-flight-com').hide();
 			$('.js-fStatus-wrap').show();
-			animate(430);
+			animate(330);
 			$blurImg.fadeOut();
 			$('.blur-img-flight').fadeIn();
 			$loader.fadeOut();
@@ -3923,76 +3923,7 @@ var LanmeiAirlines = {
 
 	/* 优惠券 */
 	selectCoupons:function(){
-		var ticketStr = '<div class="ticket-coupons" id="js-ticket-coupons">'+
-			'<div class="slick-item slick-item-1">'+
-			'<img src="images/EN/ticket-coupons.png" class="coupons-img">'+
-			'<div class="slick-content">'+
-			'<div class="slick-content-left">'+
-			'<h3 title="">--'+
-			'<p>Apply to the above routes</p>'+
-			'</h3>'+
-			'<a href="javascript:;" class="js-coupons-instructions">Instructions</a>'+
-			'<p><span>Travel Date: </span>--</p>'+
-			'</div>'+
-			'<div class="slick-content-right">'+
-			'<h2>--</h2>'+
-			'<p>USD</p>'+
-			'<a href="javascript:;">Receive</a>'+
-			'</div>'+
-			'</div>'+
-			'</div>'+
-			'<div class="slick-item slick-item-2">'+
-			'<img src="images/EN/ticket-coupons.png" class="coupons-img">'+
-			'<div class="slick-content">'+
-			'<div class="slick-content-left">'+
-			'<h3 title="Sihanoukville - Phnom Penh&nbsp;&nbsp;Phnom Penh-Sihanoukville&nbsp;&nbsp;Siem Reap-Xi`an&nbsp;&nbsp;Xi`an-Siem Reap">Sihanoukville - Phnom Penh&nbsp;&nbsp;Phnom Penh-Sihanoukville&nbsp;&nbsp;Siem Reap-Xi`an&nbsp;&nbsp;Xi`an-Siem Reap'+
-			'<p>Apply to the above routes</p>'+
-			'</h3>'+
-			'<a href="javascript:;" class="js-coupons-instructions">Instructions</a>'+
-			'<p><span>Travel Date: </span>16 Oct.2018 - 16 Oct.2019</p>'+
-			'</div>'+
-			'<div class="slick-content-right">'+
-			'<h2>10</h2>'+
-			'<p>USD</p>'+
-			'<a href="javascript:;">Receive</a>'+
-			'</div>'+
-			'</div>'+
-			'</div>'+
-			'<div class="slick-item slick-item-3">'+
-			'<img src="images/EN/ticket-coupons.png" class="coupons-img">'+
-			'<div class="slick-content">'+
-			'<div class="slick-content-left">'+
-			'<h3 title="金边 - 暹粒&nbsp;&nbsp;暹粒-金边&nbsp;&nbsp;暹粒-西安&nbsp;&nbsp;西安-暹粒">金边 - 暹粒&nbsp;&nbsp;暹粒-金边&nbsp;&nbsp;暹粒-西安&nbsp;&nbsp;西安-暹粒'+
-			'<p>适用以上航线</p>'+
-			'</h3>'+
-			'<a href="javascript:;" class="js-coupons-instructions">使用说明</a>'+
-			'<p><span>旅行日期： </span>2018.10.23 - 2019.01.23</p>'+
-			'</div>'+
-			'<div class="slick-content-right">'+
-			'<h2>25</h2>'+
-			'<p>CNY</p>'+
-			'<a href="javascript:;">领取</a>'+
-			'</div>'+
-			'</div>'+
-			'</div>'+
-			'<div class="slick-item slick-item-4">'+
-			'<img src="images/EN/ticket-coupons.png" class="coupons-img">'+
-			'<div class="slick-content">'+
-			'<div class="slick-content-left">'+
-			'<h3 title="Phnom Penh - Guangzhou&nbsp;&nbsp;Guangzhou-Phnom Penh&nbsp;&nbsp;Siem Reap-Xi`an&nbsp;&nbsp;Xi`an-Siem Reap">Phnom Penh - Guangzhou&nbsp;&nbsp;Guangzhou-Phnom Penh&nbsp;&nbsp;Siem Reap-Xi`an&nbsp;&nbsp;Xi`an-Siem Reap'+
-			'<p>Apply to the above routes</p>'+
-			'</h3>'+
-			'<a href="javascript:;" class="js-coupons-instructions">Instructions</a>'+
-			'<p><span>Travel Date: </span>16 Oct.2018 - 16 Oct.2019</p>'+
-			'</div>'+
-			'<div class="slick-content-right">'+
-			'<h2>30</h2>'+
-			'<p>USD</p>'+
-			'<a href="javascript:;">Receive</a>'+
-			'</div>'+
-			'</div>'+
-			'</div>'+
-		'</div>';
+		var ticketStr = '<div class="ticket-coupons" id="js-ticket-coupons"></div>';
 
 		var shoppingStr = '<div class="shopping-coupons" id="js-shopping-coupons">'+
 			'<div class="slick-item slick-item-1">'+
@@ -4072,6 +4003,272 @@ var LanmeiAirlines = {
 			'</div>'+
 		'</div>';
 
+		var $content = $('.js-coupons-content');
+		$content.html(ticketStr);
+
+		// $.ajax({
+		// 	url: 'http://172.16.100.118:8080/coupon/queryCouponByType.jhtml',
+		// 	type: 'GET',
+		// 	dataType: 'json',
+		// 	data: {language: 'ENGLISH',type:'TICKET-COUPONS'},
+		// })
+		// .done(function(result) {
+			// console.log(result.data);
+			var result00 = {
+			    "code": 1,
+			    "data": [
+			        {
+			            "beginDate": "01 Feb. 2019",
+			            "routes": [
+			                {
+			                    "fromCity": "暹粒",
+			                    "toCity": "澳门"
+			                },
+			                {
+			                    "fromCity": "澳门",
+			                    "toCity": "金边"
+			                },
+			                {
+			                    "fromCity": "香港",
+			                    "toCity": "金边"
+			                },
+			                {
+			                    "fromCity": "河内",
+			                    "toCity": "金边"
+			                },
+			                {
+			                    "fromCity": "胡志明",
+			                    "toCity": "金边"
+			                },
+			                {
+			                    "fromCity": "金边",
+			                    "toCity": "曼谷"
+			                },
+			                {
+			                    "fromCity": "金边",
+			                    "toCity": "广州"
+			                },
+			                {
+			                    "fromCity": "南宁",
+			                    "toCity": "暹粒"
+			                },
+			                {
+			                    "fromCity": "Guangzhou",
+			                    "toCity": "Phnom Penh"
+			                }
+			            ],
+			            "iscollected": false,
+			            "preferentialWay": "STRAIGHT_SALE",
+			            "endDate": "30 Mar. 2019",
+			            "salePrice": 1,
+			            "discount": null,
+			            "rules": [
+			                "1.使用说明1\r\n",
+			                "2.使用说明2\r\n",
+			                "3.使用说明3\r\n",
+			                "4.使用说明4"
+			            ],
+			            "id": 257
+			        },
+			        {
+			            "beginDate": "01 Feb. 2019",
+			            "routes": [
+			                {
+			                    "fromCity": "暹粒",
+			                    "toCity": "澳门"
+			                },
+			                {
+			                    "fromCity": "澳门",
+			                    "toCity": "金边"
+			                },
+			                {
+			                    "fromCity": "香港",
+			                    "toCity": "金边"
+			                },
+			                {
+			                    "fromCity": "河内",
+			                    "toCity": "金边"
+			                },
+			                {
+			                    "fromCity": "胡志明",
+			                    "toCity": "金边"
+			                },
+			                {
+			                    "fromCity": "金边",
+			                    "toCity": "曼谷"
+			                },
+			                {
+			                    "fromCity": "金边",
+			                    "toCity": "广州"
+			                },
+			                {
+			                    "fromCity": "南宁",
+			                    "toCity": "暹粒"
+			                },
+			                {
+			                    "fromCity": "Guangzhou",
+			                    "toCity": "Phnom Penh"
+			                }
+			            ],
+			            "iscollected": false,
+			            "preferentialWay": "STRAIGHT_SALE",
+			            "endDate": "30 Mar. 2019",
+			            "salePrice": 1,
+			            "discount": null,
+			            "rules": [
+			                "1.使用说明1\r\n",
+			                "2.使用说明2\r\n",
+			                "3.使用说明3\r\n",
+			                "4.使用说明4"
+			            ],
+			            "id": 257
+			        },
+			        {
+			            "beginDate": "01 Feb. 2019",
+			            "routes": [
+			                {
+			                    "fromCity": "暹粒",
+			                    "toCity": "澳门"
+			                },
+			                {
+			                    "fromCity": "澳门",
+			                    "toCity": "金边"
+			                },
+			                {
+			                    "fromCity": "香港",
+			                    "toCity": "金边"
+			                },
+			                {
+			                    "fromCity": "河内",
+			                    "toCity": "金边"
+			                },
+			                {
+			                    "fromCity": "胡志明",
+			                    "toCity": "金边"
+			                },
+			                {
+			                    "fromCity": "金边",
+			                    "toCity": "曼谷"
+			                },
+			                {
+			                    "fromCity": "金边",
+			                    "toCity": "广州"
+			                },
+			                {
+			                    "fromCity": "南宁",
+			                    "toCity": "暹粒"
+			                },
+			                {
+			                    "fromCity": "Guangzhou",
+			                    "toCity": "Phnom Penh"
+			                }
+			            ],
+			            "iscollected": false,
+			            "preferentialWay": "STRAIGHT_SALE",
+			            "endDate": "30 Mar. 2019",
+			            "salePrice": 1,
+			            "discount": null,
+			            "rules": [
+			                "1.使用说明1\r\n",
+			                "2.使用说明2\r\n",
+			                "3.使用说明3\r\n",
+			                "4.使用说明4"
+			            ],
+			            "id": 257
+			        },
+			        {
+			            "beginDate": "01 Feb. 2019",
+			            "routes": [
+			                {
+			                    "fromCity": "暹粒",
+			                    "toCity": "澳门"
+			                },
+			                {
+			                    "fromCity": "澳门",
+			                    "toCity": "金边"
+			                },
+			                {
+			                    "fromCity": "香港",
+			                    "toCity": "金边"
+			                },
+			                {
+			                    "fromCity": "河内",
+			                    "toCity": "金边"
+			                },
+			                {
+			                    "fromCity": "胡志明",
+			                    "toCity": "金边"
+			                },
+			                {
+			                    "fromCity": "金边",
+			                    "toCity": "曼谷"
+			                },
+			                {
+			                    "fromCity": "金边",
+			                    "toCity": "广州"
+			                },
+			                {
+			                    "fromCity": "南宁",
+			                    "toCity": "暹粒"
+			                },
+			                {
+			                    "fromCity": "Guangzhou",
+			                    "toCity": "Phnom Penh"
+			                }
+			            ],
+			            "iscollected": false,
+			            "preferentialWay": "STRAIGHT_SALE",
+			            "endDate": "30 Mar. 2019",
+			            "salePrice": 1,
+			            "discount": null,
+			            "rules": [
+			                "1.使用说明1\r\n",
+			                "2.使用说明2\r\n",
+			                "3.使用说明3\r\n",
+			                "4.使用说明4"
+			            ],
+			            "id": 257
+			        }
+			    ],
+			    "message": "成功"
+			};
+			var resultData = result00.data;
+			$.each(resultData,function(idx, val) {
+				var routesStr = '';
+				if(val.routes.length==0){
+					routesStr = '--';
+				}else{
+					$.each(val.routes,function(idx2, val2) {
+						routesStr += val2.fromCity+'-'+val2.toCity+',';
+					});
+				}
+				var price = '';
+				val.salePrice='' ? '--' : price=val.salePrice;
+				
+				var str = '<div class="slick-item slick-item-'+(idx+1)+'">';
+				str += '<img src="images/EN/ticket-coupons.png" class="coupons-img">';
+				str += '<div class="slick-content">';
+				str += '<div class="slick-content-left">';
+				str += '<h3 title="'+routesStr+'">'+routesStr+'<p>Apply to the above routes</p></h3>';
+				str += '<a href="javascript:;" class="js-coupons-instructions" data-info="'+val.rules+'">Instructions</a>';
+				str += '<p><span>Travel Date: </span>'+val.beginDate+'-'+val.endDate+'</p>';
+				str += '</div>';
+				str += '<div class="slick-content-right">';
+				str += '<h2>'+price+'</h2>';
+				str += '<p>USD</p>';
+				str += '<a href="javascript:;">Receive</a>';
+				str += '</div>';
+				str += '</div>';
+				str += '</div>';
+
+				$('#js-ticket-coupons').append(str);
+			});
+		// })
+		// .fail(function() {
+		// 	console.log("error");
+		// });
+		
+
 		var slick = function(id){
 			$(id).slick({
 				dots: false,
@@ -4101,13 +4298,13 @@ var LanmeiAirlines = {
 				],
 			});
 		};
-		
-		var $content = $('.js-coupons-content');
-		$content.html(ticketStr);
 		slick('#js-ticket-coupons');
 
 		//优惠券说明
 		$('.js-coupons-content').on('click','.js-coupons-instructions',function(){
+			var infos = $(this).attr('data-info');
+			var str = infos.split(',');
+			var result = '<p>'+str.join('</p><p>')+'</p>';
 			layer.open({
 			  type: 1, //Page层类型
 			  area: ['680px', 'auto'],
@@ -4116,7 +4313,7 @@ var LanmeiAirlines = {
 			  shade: 0.6, //遮罩透明度
 			  maxmin: false, //允许全屏最小化
 			  anim: 1, //0-6的动画形式，-1不开启
-			  content: '<div class="layer-coupons-info"><h2>Instructions</h2><div><p>1.instructions1</p><p>2.instructions2</p></div></div>'
+			  content: '<div class="layer-coupons-info"><h2>Instructions</h2><div>'+result+'</div></div>'
 			}); 
 		});
 
@@ -4124,7 +4321,7 @@ var LanmeiAirlines = {
 		var $loading = $('.js-coupons-loading');
 		$('.js-coupons-anchor>a').click(function(e) {
 			e.preventDefault();e.stopPropagation();
-			// $loading.show();
+			$loading.show();
 			$(this).addClass('active').removeClass('hover-active').siblings('a').addClass('hover-active').removeClass('active');
 			var id = $(this).attr('href');
 
@@ -4137,20 +4334,20 @@ var LanmeiAirlines = {
 				case '#js-ticket-coupons':
 				$content.html(ticketStr);
 				slick('#js-ticket-coupons');
-					// hideLoading();
-					break;
-					case '#js-shopping-coupons':
-					$content.html(shoppingStr);
-					slick('#js-shopping-coupons');
-					// hideLoading();
-					break;
-					case '#js-hotel-coupons':
-					$content.html(hotelStr);
-					slick('#js-hotel-coupons');
-					// hideLoading();
-					break;
-				}
-			});
+				hideLoading();
+				break;
+				case '#js-shopping-coupons':
+				$content.html(shoppingStr);
+				slick('#js-shopping-coupons');
+				hideLoading();
+				break;
+				case '#js-hotel-coupons':
+				$content.html(hotelStr);
+				slick('#js-hotel-coupons');
+				hideLoading();
+				break;
+			}
+		});
 	},
 
 	/* 特价机票 */
@@ -4396,7 +4593,6 @@ var LanmeiAirlines = {
 				$('.js-from-input,.js-to-input,.js-routeId-input,.js-ticketType-input,.js-fNumber-input,.js-routeFrom-input,.js-routeTo-input').attr('readonly','readonly');
 			}else if(winWidth<=1400){
 				$('.js-news-mask').width(conWidth-490);
-				console.log($('.js-news-mask').width());
 			}else{
 				$('.js-news-mask').width(conWidth-680);
 			}
@@ -4415,8 +4611,8 @@ var LanmeiAirlines = {
 	otherEvent:function(){
 		/* 首屏自适应高度 */
 		var winHeight = $(window).height();
-		$('.js-section-main').height(winHeight-60);
-		$('.js-aside-code').height(winHeight-60);
+		$('.js-section-main').height(winHeight-130);
+		$('.js-aside-code').height(winHeight-50);
 
 		/* 文字滚动 */
 		var slideUp = function(){

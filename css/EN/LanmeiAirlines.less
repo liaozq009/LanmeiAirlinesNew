@@ -338,15 +338,16 @@ body{
 			a{background: url('@{url}hotel-icon.png') center 30% no-repeat;}
 			.active{background: url('@{url}hotel-icon-active.png') center 30% no-repeat;}
 		}
-		/*.li-child3{
+		.li-child3{
+			display: none;
 			a{background: url('@{url}ticketHotel-icon.png') center 30% no-repeat;}
 			.active{background: url('@{url}ticketHotel-icon-active.png') center 30% no-repeat;}
-		}*/
-		.li-child3{
+		}
+		.li-child4{
 			a{background: url('@{url}car-icon.png') center 30% no-repeat;}
 			.active{background: url('@{url}car-icon-active.png') center 30% no-repeat;}
 		}
-		.li-child4{
+		.li-child5{
 			a{background: url('@{url}flight-icon.png') center 30% no-repeat;}
 			.active{background: url('@{url}flight-icon-active.png') center 30% no-repeat;}
 		}
@@ -387,7 +388,7 @@ body{
 	left: 0;
 	top: 50%;
 	width: 6%;
-	height: 42%;
+	height: 50%;
 	overflow: hidden;
 	.blur-img{
 		-webkit-filter: blur(4px);filter: blur(4px);
@@ -2150,6 +2151,7 @@ body{
 	.lm-aside-code {
 		width: 160px;
 		right: -160px;
+		top: 50px;
 		.small-code{
 			left: -60px;
 			width: 60px;
@@ -3142,6 +3144,7 @@ body{
 		overflow: initial;
 		height: 508px !important;
 	}
+	.lm-nav-wrap {padding-top: 50px;}
 	.ticket-bg{
 		background: url('@{url2}ticket-bg-mobile.jpg') center no-repeat;
 		background-size: cover;
@@ -3696,7 +3699,6 @@ body{
 			.li-child1,.li-child2,.li-child3,.li-child4,.li-child5{
 				a{background-size:30px 30px !important;font-size: 10px;}
 			}
-			.li-child3{display: none;}
 			/*.li-child5 a span{
 				display: block;
 				width: 50px;

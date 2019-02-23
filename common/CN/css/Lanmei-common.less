@@ -664,6 +664,88 @@ body {
 	.blackRgb(.8);
 }
 
+/* 1366新调整20190218 */
+@media screen and (max-width: 1400px) {
+	.lm-header{
+		height: 50px;
+		line-height: 50px;
+		.h-menu{
+			width: 90px;
+			height: 50px;
+			font-size: 16px;
+		}
+		.menu-guide{
+			top: 10px;
+		}
+		.h-logo-wrap{
+			height: 50px;
+		}
+		.h-phone{
+			background-position-y:13px; 
+			.phone-menu {
+				padding: 18px;
+				> h2{
+					font-size: 18px;
+				}
+				>p{
+					padding-left: 30px;
+					font-size: 14px;
+				}
+				.p1{margin-top: 14px;}
+			}
+		}
+		.h-lang{
+			>p{
+				background-size: 26px;
+				background-position-y:12px; 
+			}
+			.lang-menu {
+				height: 146px;
+				padding: 18px;
+				> h2{
+					font-size: 18px;
+				}
+				>a{font-size: 14px;}
+				.lang-en{margin-top: 14px;}
+			}
+		}
+		.h-right .h-login .loginBtn .head-portrait{
+			height: 50px;
+		}
+		.h-right > div > .REGISTEREDBtn > span{
+			margin-left: 8px;
+		}
+	}
+	.lm-footer {
+		height: 226px;
+		.footer-left {width: 340px;}
+		.footer-right {margin-left: 340px;}
+		.footer-box {
+			h2{
+				margin-bottom: 10px;
+				font-size: 18px;
+			}
+			a{
+				font-size: 12px;
+				margin-top: 4px;
+			}
+		}
+		.f-local a,
+		.f-email a,
+		.footer-bottom .copyright{
+			font-size: 12px;
+		}
+		.f-email {
+			text-align: left;
+		    padding-left: 9px;
+		}
+		.footer-bottom {
+			padding-left: 30px;
+		    margin-top: -20px;
+		}
+	}
+}
+
 /* 移动端新增代码 */
 @media screen and (max-width: 1200px) {
 	.lm-header{
@@ -724,6 +806,7 @@ body {
 			padding-left: 0; 
 			padding-right: 0; 
 		}
+		.f-email{text-align: center;}
 		.f-local,.copyright{display: block;}
 		.facebook,.f-email{margin-top: 16px;}
 	}
@@ -788,7 +871,7 @@ body {
 				.head-portrait{
 					width: 30px;
 					height: 30px;
-					margin-top: 15px;
+					margin-top: 10px;
 					background: url('@{url}svg/m-login.svg') right center no-repeat;
 					background-size: 30px 30px;
 				}
@@ -887,6 +970,7 @@ body {
 			.a1{margin-right: 20px;}
 		}
 		.f-email{
+			text-align: center;
 			margin-top: 12px;
 			>i{margin-right: 8px;}
 		}
