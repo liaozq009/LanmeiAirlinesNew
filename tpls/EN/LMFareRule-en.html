@@ -51,6 +51,9 @@
 		.lm-table .table tbody .tr-rebook1{
 			background: #F1F3F9;
 		}
+		.lm-table .table tbody .tr-refund td,.lm-table .table tbody .tr-mixing td.nth-child3{
+			text-align: left;
+		}
 		.lm-table .table tbody .tr-rebook2{
 			background: #fff !important;
 		}
@@ -90,14 +93,14 @@
 			<!-- 头部 -->
 			<thead>
 				<tr>
-					<th width="112px">项目</th>
-					<th width="50px">条款序号</th>
-					<th colspan="4">规则详情</th>
+					<th width="112px">Content</th>
+					<th width="50px">ATPCO Category No.</th>
+					<th colspan="4">Description</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
-					<td>舱位</td>
+					<td>Booking Class</td>
 					<td>-</td>
 					<td>W/Y</td>
 					<td>B/H</td>
@@ -105,111 +108,111 @@
 					<td>Q/T/V</td>
 				</tr>
 				<tr>
-					<td>无陪伴儿童</td>
+					<td>Unaccompanied Minors</td>
 					<td>1</td>
-					<td colspan="4">不适用</td>
+					<td colspan="4">Not applicable.</td>
 				</tr>
 				<tr>
-					<td>适用航班</td>
+					<td>Flight Application</td>
 					<td>4</td>
-					<td colspan="4">只适用于LQ承运航班</td>
+					<td colspan="4">LQ operating flights only.</td>
 				</tr>
 				<tr>
-					<td>订座及出票</td>
+					<td>Reservations/Ticketing</td>
 					<td>5</td>
-					<td colspan="5">往返程均需订妥座位。适用系统出票时限。 </td>
+					<td colspan="5">Confirmed reservation must be made for entire journey.Normal system ticketing deadline is applied. </td>
 				</tr>
 				<tr>
-					<td>经停</td>
+					<td>Minimum Stay</td>
 					<td>8</td>
 					<td colspan="4">
-						允许，不收取费用。
+						Permitted without charges.
 					</td>
 				</tr>
 				<tr>
-					<td>中转</td>
+					<td>Maximum Stay</td>
 					<td>9</td>
 					<td colspan="4">
-						允许，不收取费用。
+						Permitted without charges.
 					</td>
 				</tr>
 				<tr class="tr-mixing">
-					<td>混舱及缺口程</td>
+					<td>Mix Class and Open Jaw</td>
 					<td>10</td>
 					<td colspan="4" class="nth-child3">
-						A) 对于公布运价或同一开票代码中的私有运价的票价组合，允许。<br>
-						B) 票价按各航线实际票价对应的1/2RT相加得出。
+						Permitted. <br>
+						Fare is calculated as sum of 50% round-trip prices respectively of both booking classes.
 					</td>
 				</tr>
 				<tr>
-					<td>签转及更改行程</td>
+					<td>Endorse / Reroute</td>
 					<td>16</td>
-					<td colspan="4">不允许。</td>
+					<td colspan="4">Not permitted.</td>
 				</tr>
 				<tr class="tr-mixing">
-					<td>误机费</td>
+					<td>No Show</td>
 					<td>16</td>
 					<td colspan="3" class="nth-child3">
-						每张客票收取30美金。  <br>
-						( 等值于 CNY210 / HKD240 / MOP240 / THB 1000 / SGD 40)
+						USD 30   <br>
+						(or equivalent CNY210 / HKD240 / MOP240 / THB 1000 / SGD 40) per ticket.
 					</td>
-					<td colspan="5">不适用</td>
+					<td colspan="5">Not applicable.</td>
 				</tr>
 				<tr class="tr-rebook1">
-					<td rowspan="2">改期</td>
+					<td rowspan="2">Rebook</td>
 					<td rowspan="2">16</td>
-					<td>免改期费</td>
-					<td>每张客票每次收取30美金改期费。 (等值于 CNY210 / HKD240 / MOP240 / THB 1000 / SGD 40)</td>
-					<td>每张客票每次收取50美金改期费。 (等值于 CNY340 / HKD400 / MOP400 / THB 1600 / SGD 68)</td>
-					<td>每张客票每次收取60美金改期费。 (等值于 CNY410 / HKD480 / MOP480 / THB 1900 / SGD 82)</td>
+					<td>Permitted without charges.</td>
+					<td>Rebooking fee USD 30 (or equivalent CNY210 / HKD240 / MOP240 / THB 1000 / SGD 40) per ticket per transaction.</td>
+					<td>Rebooking fee USD 50 (or equivalent CNY340 / HKD400 / MOP400 / THB 1600 / SGD 68) per ticket per transaction.</td>
+					<td>Rebooking fee USD 60 (or equivalent CNY410 / HKD480 / MOP480 / THB 1900 / SGD 82) per ticket per transaction.</td>
 				</tr>
 				<tr class="tr-refund tr-rebook1">
 					<td colspan="4">
-						A) 低票价变更至高票价：收取相应票价的差额。 <br>
-						B) 高票价变更至低票价：票价差额不予退还。 <br>
-						* 旅客必须于航班起飞前24小时取消原有航班，否则将收取误机费。 <br>
-						* 婴儿票不收取改期费。
+						A) Rebooked to higher class (fare): fare difference would be charged. <br>
+						B) Rebooked to lower class (fare): residual fare value is non-refundable. <br>
+						* The original sector(s) must be cancelled 24 hours before departure; otherwise, no-show fee will be charged. <br>
+						* Infants are exempt from Rebooking Fee.
 					</td>
 				</tr>
 				<tr class="tr-rebook2">
-					<td rowspan="2">退票</td>
+					<td rowspan="2">Refund</td>
 					<td rowspan="2">16</td>
-					<td>每张客票每次收取20美金退票费。 (等值于CNY140 / HKD160 / MOP160 / THB 650 / SGD 28)</td>
-					<td>每张客票每次收取30美金退票费。 (等值于 CNY210 / HKD240 / MOP240 / THB 1000 / SGD 40)</td>
-					<td>每张客票每次收取50美金退票费。 (等值于 CNY340 / HKD400 / MOP400 / THB 1600 / SGD 68)</td>
-					<td>每张客票每次收取60美金退票费。 (等值于 CNY410 / HKD480 / MOP480 / THB 1900 / SGD 82)</td>
+					<td>Refund fee USD 20  (or equivalent CNY140 / HKD160 / MOP160 / THB 650 / SGD 28)per ticket.</td>
+					<td>Refund fee USD 30  (or equivalent CNY210 / HKD240 / MOP240 / THB 1000 / SGD 40) per ticket.</td>
+					<td>Refund fee USD 50 (or equivalent CNY340 / HKD400 / MOP400 / THB 1600 / SGD 68) per ticket.</td>
+					<td>Refund fee USD 60 (or equivalent CNY410 / HKD480 / MOP480 / THB 1900 / SGD 82) per ticket.</td>
 				</tr>
 				<tr class="tr-refund">
 					<td colspan="4">
-						* 旅客必须于航班起飞前24小时取消原有航班，否则将收取误机费。<br>
-						* 客票全部未使用：允许退票；客票已部分使用：不允许退票。 <br>
-						* 燃油附加费不予退还。 <br>
-						* 婴儿不收取退票费。
+						* The original sector(s) must be cancelled 24 hours before departure; otherwise, no-show fee will be charged.<br>
+						* For totally unused ticket: Permitted; For partially used ticket: Non-refundable. <br>
+						* Fuel surcharges are non-refundable. <br>
+						* Infants are exempt from Refund Fee.
 					</td>
 				</tr>
 				<tr>
-					<td>签转栏</td>
+					<td>Ticket Endorsement Box</td>
 					<td>18</td>
-					<td>不允许更改行程/转签，免改期费，退票费20美元，误机费30美元</td>
-					<td>不允许更改行程/转签，改期费30美元，退票费30美元，误机费30美元</td>
-					<td>不允许更改行程/转签，改期费50美元，退票费50美元，误机费30美元</td>
-					<td>不允许更改行程/转签，改期费60美元，退票费60美元，误机费30美元</td>
+					<td>Q/NON-RER/END, REF USD20, NOSH USD30</td>
+					<td>Q/NON-RER/END, REB USD30, REF USD30, NOSH USD30</td>
+					<td>Q/NON-RER/END, REB USD50, REF USD50, NOSH USD30</td>
+					<td>Q/NON-RER/END, REB USD60, REF USD60, NOSH USD30</td>
 				</tr>
 				<tr>
-					<td>儿童（2-12岁）折扣</td>
+					<td>Child (between 2 and 12 years old) Discount</td>
 					<td>16</td>
-					<td colspan="4">成人适用票价的75%，Fare Basis栏中加注“/CH25”。</td>
+					<td colspan="4">Charge 75% of corresponding adult fare. Please insert "/CH25" in fare basis.</td>
 				</tr>
 				<tr class="tr-mixing">
-					<td>婴儿（2岁以下）折扣</td>
+					<td>Infant (under 2 years old) Discount</td>
 					<td>16</td>
 					<td colspan="4" class="nth-child3">
-						A) 对于不占座婴儿，收取成人适用票价的10%，Fare Basis栏中加注“/IN90”。<br>
-						B) 对于占座婴儿，收取成人适用票价的75%，Fare Basis栏中加注“/IN25”。
+						A) Charge 10% of corresponding adult fare (without seat offered). Please insert "/IN90" in fare basis.<br>
+						B) Charge 75% of corresponding adult fare (with seat offered). Please insert "/IN25" in fare basis.
 					</td>
 				</tr>
 				<tr>
-					<td>票价栏</td>
+					<td>Fare Box</td>
 					<td>35</td>
 					<td colspan="4">IT</td>
 				</tr>
@@ -223,40 +226,40 @@
 		</table>
 
 		<div class="remarks">
-			<h2>备注:</h2>
-			<p>1、票价不含税及其他附加费。</p>
-			<p>2、票价和航班时刻可能变动，请留意最新发布票价及GDS系统中航班时刻。</p>
-			<p>3、去程第一段航程的始发日期决定了整个行程的票价。</p>
-			<p>4、婴儿免改期费和退票费。改期、误机、退票、行政费和其它收费项目没有儿童折扣。</p>
-			<p>5、所有客票必须按顺序使用。</p>
-			<p>6、升舱、改期必须在客票有效期内进行。</p>
-			<p>7、若此规则和GDS不一致时，则以GDS为准。</p>
+			<h2>Remarks:</h2>
+			<p>1. Fares are exclusive of taxes and other surcharges.</p>
+			<p>2. Please refer to GDS display for latest update on flight schedule, fares and taxes.</p>
+			<p>3. Departure date of the first outbound sector determines the fare for the entire journey.</p>
+			<p>4. No child discount is applied to Rebooking/No-show/Refund/Handling Fee and other charges.</p>
+			<p>5. All sectors must be used in sequence.</p>
+			<p>6. All rebooking must be applied within ticket validity.</p>
+			<p>7. Should there be any discrepancy between this rule and what shown in GDS, the latter prevail.</p>
 		</div>
 
 		<table class="routes table" align="center" cellspacing="0" cellpadding="0">
 			<thead>
 				<tr>
-					<th>适用航线</th>
-					<th>舱位</th>
+					<th>Applicable Routes</th>
+					<th>Booking Class</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
-					<td>金边=香港</td>
+					<td>Phnom Penh=Hong Kong</td>
 					<td rowspan="14">W/D/J/Y/B/H/K/L/M/N/S/X/Q/T/V</td>
 				</tr>
-				<tr><td>金边=广州</td></tr>
-				<tr><td>广州=金边</td></tr>
-				<tr><td>金边=曼谷</td></tr>
-				<tr><td>曼谷=金边</td></tr>
-				<tr><td>暹粒=曼谷</td></tr>
-				<tr><td>曼谷=暹粒</td></tr>
-				<tr><td>金边=暹粒</td></tr>
-				<tr><td>暹粒=金边</td></tr>
-				<tr><td>金边=西哈努克港</td></tr>
-				<tr><td>西哈努克港=金边</td></tr>
-				<tr><td>暹粒=西哈努克港</td></tr>
-				<tr><td>西哈努克港=暹粒</td></tr>
+				<tr><td>Phnom Penh=Guangzhou</td></tr>
+				<tr><td>Guangzhou=Phnom Penh</td></tr>
+				<tr><td>Phnom Penh=Bangkok</td></tr>
+				<tr><td>Bangkok=Phnom Penh</td></tr>
+				<tr><td>Siem Reap=Bangkok</td></tr>
+				<tr><td>Bangkok=Siem Reap</td></tr>
+				<tr><td>Phnom Penh=Siem Reap</td></tr>
+				<tr><td>Siem Reap=Phnom Penh</td></tr>
+				<tr><td>Phnom Penh=Sihanoukville</td></tr>
+				<tr><td>Sihanoukville=Phnom Penh</td></tr>
+				<tr><td>Siem Reap=Sihanoukville</td></tr>
+				<tr><td>Sihanoukville=Siem Reap</td></tr>
 			</tbody>
 		</table>
 	</div>
@@ -271,14 +274,14 @@
 			<!-- 头部 -->
 			<thead>
 				<tr>
-					<th width="112px">项目</th>
-					<th width="50px">条款序号</th>
-					<th colspan="6">规则详情</th>
+					<th width="112px">Content</th>
+					<th width="50px">ATPCO Category No.</th>
+					<th colspan="6">Description</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
-					<td>舱位</td>
+					<td>Booking Class</td>
 					<td>-</td>
 					<td>Y/B/H</td>
 					<td>K/L/M</td>
@@ -288,130 +291,133 @@
 					<td>O/U</td>
 				</tr>
 				<tr>
-					<td>无陪伴儿童</td>
+					<td>Unaccompanied Minors</td>
 					<td>1</td>
-					<td colspan="6">不适用</td>
+					<td colspan="6">Not applicable.</td>
 				</tr>
 				<tr>
-					<td>适用航班</td>
+					<td>Flight Application</td>
 					<td>4</td>
-					<td colspan="6">只适用于LQ承运航班</td>
+					<td colspan="6">LQ operating flights only.</td>
 				</tr>
 				<tr class="tr-mixing">
-					<td>订座及出票</td>
+					<td>Reservations/Ticketing</td>
 					<td>5</td>
-					<td colspan="5">往返程均需订妥座位。适用系统出票时限。</td>
+					<td colspan="5">Confirmed reservation must be made for entire journey.Normal system ticketing deadline is applied.</td>
 					<td class="nth-child3">
-						A）AP14票价：预订的航班必须在出发前至少14天完成。 <br>
-						B）AP30票价：所有的预订必须在出发前至少30天。 <br>
-						C）AP45票价：预订的航班必须在出发前至少45天完成。
+						A) For -14KH type fares: <br>
+						Reservations for all sectors are required at least 14 days before departure. Ticketing must be completed within 3 days after reservations are made or at least 14 days before departure whichever is earlier. <br>
+						B) For -30KH type fares: <br>
+						Reservations for all sectors are required at least 30 days before departure. Ticketing must be completed within 3 days after reservations are made or at least 30 days before departure whichever is earlier. <br>
+						C) For -45KH type fares: <br>
+						Reservations for all sectors are required at least 45 days before departure. Ticketing must be completed within 3 days after reservations are made or at least 45 days before departure whichever is earlier.
 					</td>
 				</tr>
 				<tr>
-					<td>经停</td>
+					<td>Minimum Stay</td>
 					<td>8</td>
-					<td colspan="6">允许，不收取费用。</td>
+					<td colspan="6">Permitted without charges.</td>
 				</tr>
 				<tr>
-					<td>中转</td>
+					<td>Maximum Stay</td>
 					<td>9</td>
-					<td colspan="6">允许，不收取费用。</td>
+					<td colspan="6">Permitted without charges.</td>
 				</tr>
 				<tr class="tr-mixing">
-					<td>混舱及缺口程</td>
+					<td>Mix Class and Open Jaw</td>
 					<td>10</td>
 					<td colspan="5" class="nth-child3">
-						A) 对于公布运价或同一开票代码中的私有运价的票价组合，允许。  <br>
-						B) 票价按各航线实际票价对应的1/2RT相加得出。
+						Permitted.  <br>
+						Fare is calculated as sum of 50% round-trip prices respectively of both booking classes.
 					</td>
 					<td></td>
 				</tr>
 				<tr>
-					<td>签转及更改行程</td>
+					<td>Endorse / Reroute</td>
 					<td>16</td>
 					<td colspan="6">
-						不允许
+						Not permitted.
 					</td>
 				</tr>
 				<tr>
-					<td>误机费</td>
+					<td>No Show</td>
 					<td>16</td>
 					<td colspan="3">
-						每张客票收取10美金。 ( 等值于 THB 340 / HKD 80 / MOP 80 / GBP 8 / CNY 70 / AUD 13 / SGD 14 / KRW 11200 / EUR 9)
+						USD 10 ( or equivalent THB 340 / HKD 80 / MOP 80 / GBP 8 / CNY 70 / AUD 13 / SGD 14 / KRW 11200 / EUR 9) per ticket.
 					</td>
 					<td colspan="3"></td>
 				</tr>
 				<tr class="tr-rebook1 tr-mixing">
-					<td rowspan="2">改期</td>
+					<td rowspan="2">Rebook</td>
 					<td rowspan="2">16</td>
-					<td>每张客票每次收取20美金改期费。 ( 等值于 THB 670 / HKD 160 / MOP 160 / GBP 16 / CNY 140 / AUD 27 / SGD 27 / KRW 22400 / EUR 17 )</td>
-					<td colspan="2">每张客票每次收取30美金改期费。 (等值于 THB 1000 / HKD 240 / MOP 240 / GBP 23 / CNY 210 / AUD 40 / SGD 40 / KRW 33600 / EUR 26)</td>
-					<td rowspan="2" colspan="2">不允许</td>
+					<td>Rebooking fee USD 20 (or equivalent THB 670 / HKD 160 / MOP 160 / GBP 16 / CNY 140 / AUD 27 / SGD 27 / KRW 22400 / EUR 17 )per ticket per transaction.</td>
+					<td colspan="2">Rebooking fee USD 30 (or equivalent THB 1000 / HKD 240 / MOP 240 / GBP 23 / CNY 210 / AUD 40 / SGD 40 / KRW 33600 / EUR 26) per ticket per transaction.</td>
+					<td rowspan="2" colspan="2">Not permitted.</td>
 					<td rowspan="2" class="nth-child3">
-						每张客票每次收取40美金改期费。(等值于280人民币） <br>
-						A) 低票价变更至高票价：收取相应票价的差额。 <br>
-						B) 高票价变更至低票价：票价差额不予退还。 <br>
-						* 适用于公布运价或同一开票代码中的私有运价。 <br>
-						* 旅客必须于航班起飞前24小时取消原有航班，否则将收取误机费。 <br>
-						* 婴儿票不收取改期费。
+						Rebooking fee USD 40 (or equivalent CNY280) per ticket per transaction. <br>
+						A) Rebooked to higher class (fare): fare difference would be charged. <br>
+						B) Rebooked to lower class (fare): residual fare value is non-refundable. <br>
+						* Rebooking is permitted for public fares or for private fares listed under the same tour code. <br>
+						* The original sector(s) must be cancelled 24 hours before departure; otherwise, no-show fee will be charged. <br>
+						* Infants are exempt from Rebooking Fee.
 					</td>
 				</tr>
 				<tr class="tr-refund tr-rebook1">
 					<td colspan="3">
-						A) 低票价变更至高票价：收取相应票价的差额。<br>
-						B) 高票价变更至低票价：票价差额不予退还。<br>
-						* 适用于公布运价或同一开票代码中的私有运价。<br>
-						* 旅客必须于航班起飞前24小时取消原有航班，否则将收取误机费。<br>
-						* 婴儿票不收取改期费。
+						A) Rebooked to higher class (fare): fare difference would be charged.<br>
+						B) Rebooked to lower class (fare): residual fare value is non-refundable.<br>
+						* Rebooking is permitted for public fares or for private fares listed under the same tour code.<br>
+						*The original sector(s) must be cancelled 24 hours before departure; otherwise, no-show fee will be charged.<br>
+						* Infants are exempt from Rebooking Fee.
 					</td>
 				</tr>
 				<tr class="tr-rebook2">
-					<td rowspan="2">退票</td>
+					<td rowspan="2">Refund</td>
 					<td rowspan="2">16</td>
-					<td>每张客票每次收取30美金退票费。 (等值于THB 1000 / HKD 240 / MOP 240 / GBP 23 / CNY 210 / AUD 40 / SGD 40 / KRW 33600 / EUR 26)</td>
-					<td colspan="2">每张客票每次收取40美金退票费。 (等值于 THB 1350 / HKD 320 / MOP 320 / GBP 31 / CNY 270 / AUD 55 / SGD 55 / KRW 44800 / EUR 35)</td>
-					<td rowspan="2" colspan="2">不允许退票</td>
+					<td>Refund fee USD 30 (or equivalent THB 1000 / HKD 240 / MOP 240 / GBP 23 / CNY 210 / AUD 40 / SGD 40 / KRW 33600 / EUR 26) per ticket per transaction.</td>
+					<td colspan="2">Refund fee USD 40 (or equivalent THB 1350 / HKD 320 / MOP 320 / GBP 31 / CNY 270 / AUD 55 / SGD 55 / KRW 44800 / EUR 35) per ticket per transaction.</td>
+					<td rowspan="2" colspan="2">Non-refundable.</td>
 					<td rowspan="2">
-						不允许退票。
+						Non-refundable.
 					</td>
 				</tr>
 				<tr class="tr-refund">
 					<td colspan="3">
-						* 旅客必须于航班起飞前24小时取消原有航班，否则将收取误机费。 <br>
-						* 客票全部未使用：允许退票；客票已部分使用：不允许退票。 <br>
-						* 燃油附加费不予退还。 <br>
-						* 婴儿不收取退票费。
+						* The original sector(s) must be cancelled 24 hours before departure; otherwise, no-show fee will be charged. <br>
+						* Refund is only permitted for totally unused ticket. For partially used ticket: non-refundable. <br>
+						* Fuel surcharges are non-refundable. <br>
+						* Infants are exempt from Refund Fee.
 					</td>
 				</tr>
 				<tr>
-					<td>签转栏</td>
+					<td>Ticket Endorsement Box</td>
 					<td>18</td>
-					<td>不允许更改行程/转签，改期费20美元，退票费30美元，误机费10美元</td>
-					<td colspan="2">不允许更改行程/转签，改期费30美元，退票费40美元，误机费10美元</td>
-					<td colspan="2">不允许更改行程/转签/退票/改期</td>
-					<td>不允许更改行程/转签/退票/改期费40美元</td>
+					<td>Q/NON-END/RER, REB USD20, REF USD30, NOSH USD10</td>
+					<td colspan="2">Q/NON-END/RER, REB USD30, REF USD40, NOSH USD10</td>
+					<td colspan="2">Q/NON-END/RER/REB/REF</td>
+					<td>Q/NON-END/RER/REF, REB USD 40</td>
 				</tr>
 				<tr>
-					<td>儿童（2-12岁）折扣</td>
+					<td>Child (between 2 and 12 years old) Discount</td>
 					<td>16</td>
-					<td colspan="4">成人适用票价的75%，Fare Basis栏中加注“/CH25”。</td>
-					<td colspan="2">不适用</td>
+					<td colspan="4">Charge 75% of corresponding adult fare. Please insert "/CH25" in fare basis.</td>
+					<td colspan="2">Not applicable.</td>
 				</tr>
 				<tr class="tr-mixing">
-					<td>婴儿（2岁以下）折扣</td>
+					<td>Infant (under 2 years old) Discount</td>
 					<td>16</td>
 					<td colspan="4" class="nth-child3">
-						A) 对于不占座婴儿，收取成人适用票价的10%，Fare Basis栏中加注“/IN90”。 <br>
-						B) 对于占座婴儿，收取成人适用票价的75%，Fare Basis栏中加注“/IN25”。
+						A) Charge 10% of corresponding adult fare (without seat offered). Please insert "/IN90" in fare basis. <br>
+						B) Charge 75% of corresponding adult fare (with seat offered). Please insert "/IN25" in fare basis.
 					</td>
-					<td colspan="2">不适用</td>
+					<td colspan="2">Not applicable.</td>
 				</tr>
 				<tr class="tr-mixing">
-					<td>票价栏</td>
+					<td>Fare Box</td>
 					<td>35</td>
 					<td colspan="6" class="nth-child3">
-						对于泰国市场，票价栏显示票价。 <br>
-						对于其他市场，票价栏显示IT。
+						For Thailand market, the fare box is gross fare. <br>
+						For other markets, the fare box is IT.
 					</td>
 				</tr>
 			</tbody>
@@ -424,25 +430,25 @@
 		</table>
 
 		<div class="remarks">
-			<h2>备注:</h2>
-			<p>1. 票价不含税及其他附加费。</p>
-			<p>2. 票价和航班时刻可能变动，请留意最新发布票价及GDS系统中航班时刻。</p>
-			<p>3. 去程第一段航程的始发日期决定了整个行程的票价。</p>
-			<p>4. 改期、误机、退票、行政费和其它收费项目没有儿童折扣。</p>
-			<p>5. 所有航段必须按顺序使用。</p>
-			<p>6. 当规则和GDS不一致时，请以GDS为准。</p>
+			<h2>Remarks:</h2>
+			<p>1. Fares are exclusive of taxes and other surcharges.</p>
+			<p>2. Please refer to GDS display for latest update on flight schedule, fares and taxes.</p>
+			<p>3. Departure date of the first outbound sector determines the fare for the entire journey.</p>
+			<p>4. No child discount is applied to Rebooking/No-show/Refund/Handling Fee and other charges.</p>
+			<p>5. All sectors must be used in sequence.</p>
+			<p>6. Should there be any discrepancy between this rule and what shown in GDS, the latter prevail.</p>
 		</div>
 
 		<table class="routes table" align="center" cellspacing="0" cellpadding="0">
 			<thead>
 				<tr>
-					<th>适用航线</th>
-					<th>舱位</th>
+					<th>Applicable Routes</th>
+					<th>Booking Class</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
-					<td>香港=金边</td>
+					<td>Hong Kong=Phnom Penh</td>
 					<td>Y/B/H/K/L/M/N/S/X/V/P/O/U</td>
 				</tr>
 			</tbody>
@@ -459,14 +465,14 @@
 			<!-- 头部 -->
 			<thead>
 				<tr>
-					<th width="112px">项目</th>
-					<th width="50px">条款序号</th>
-					<th colspan="5">规则详情</th>
+					<th width="112px">Content</th>
+					<th width="50px">ATPCO Category No.</th>
+					<th colspan="5">Description</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
-					<td>舱位</td>
+					<td>Booking Class</td>
 					<td>-</td>
 					<td>Y/B/H</td>
 					<td>K/L/M</td>
@@ -474,109 +480,110 @@
 					<td>Q/T/V</td>
 				</tr>
 				<tr>
-					<td>无陪伴儿童</td>
+					<td>Unaccompanied Minors</td>
 					<td>1</td>
-					<td colspan="4">不适用</td>
+					<td colspan="4">Not applicable.</td>
 				</tr>
 				<tr>
-					<td>适用航班</td>
+					<td>Flight Application</td>
 					<td>4</td>
-					<td colspan="4">只适用于LQ承运航班</td>
+					<td colspan="4">LQ operating flights only.</td>
 				</tr>
 				<tr>
-					<td>订座及出票</td>
+					<td>Reservations/Ticketing</td>
 					<td>5</td>
-					<td colspan="4">往返程均需订妥座位。适用系统出票时限。 </td>
+					<td colspan="4">Confirmed reservation must be made for entire journey.Normal system ticketing deadline is applied. </td>
 				</tr>
 				<tr>
-					<td>经停</td>
+					<td>Minimum Stay</td>
 					<td>8</td>
-					<td colspan="4">允许，不收取费用。</td>
+					<td colspan="4">Permitted without charges.</td>
 				</tr>
 				<tr>
-					<td>中转</td>
+					<td>Maximum Stay</td>
 					<td>9</td>
-					<td colspan="4">允许，不收取费用。</td>
+					<td colspan="4">Permitted without charges.</td>
 				</tr>
 				<tr class="tr-mixing">
-					<td>混舱及缺口程</td>
+					<td>Mix Class and Open Jaw</td>
 					<td>10</td>
 					<td colspan="4">
-						允许。票价按各航线实际票价对应的1/2RT相加得出。
+						Permitted. <br>
+						Fare is calculated as sum of 50% round-trip prices respectively of both booking classes.
 					</td>
 				</tr>
 				<tr>
-					<td>签转及更改行程</td>
+					<td>Endorse / Reroute</td>
 					<td>16</td>
 					<td colspan="4">
-						不允许
+						Not permitted.
 					</td>
 				</tr>
 				<tr>
-					<td>误机费</td>
+					<td>No Show</td>
 					<td>16</td>
 					<td colspan="3">
-						每张客票收取10美金。
+						USD 10 per ticket.
 					</td>
 					<td></td>
 				</tr>
 				<tr>
-					<td rowspan="2">改期</td>
+					<td rowspan="2">Rebook</td>
 					<td rowspan="2">16</td>
-					<td>每张客票每次收取30美金改期费。</td>
-					<td colspan="2">每张客票每次收取40美金改期费。 </td>
-					<td rowspan="2">不允许</td>
+					<td>Rebooking fee USD 30 per ticket per transaction.</td>
+					<td colspan="2">Rebooking fee USD 40  per ticket per transaction.</td>
+					<td rowspan="2">Not permitted.</td>
 				</tr>
 				<tr class="tr-refund tr-rebook1">
 					<td colspan="3">
-						A) 低票价变更至高票价：收取相应票价的差额。	<br>
-						B) 高票价变更至低票价：票价差额不予退还。<br>
-						* 适用于公布运价或同一开票代码中的私有运价。<br>
-						* 旅客必须于航班起飞前24小时取消原有航班，否则将收取误机费。<br>
-						* 婴儿票不收取改期费。
+						A) Rebooked to higher class (fare): fare difference would be charged.	<br>
+						B) Rebooked to lower class (fare): residual fare value is non-refundable.<br>
+						* Rebooking is permitted for public fares or for private fares listed under the same tour code.<br>
+						* The original sector(s) must be cancelled 24 hours before departure; otherwise, no-show fee will be charged.<br>
+						* Infants are exempt from Rebooking Fee.
 					</td>
 				</tr>
 				<tr class="tr-rebook2">
-					<td rowspan="2">退票</td>
+					<td rowspan="2">Refund</td>
 					<td rowspan="2">16</td>
-					<td>每张客票每次收取60美金退票费。</td>
-					<td colspan="2">每张客票每次收取80美金退票费。 </td>
-					<td rowspan="2">不允许退票</td>
+					<td>Refund fee USD 60 per ticket per transaction.</td>
+					<td colspan="2">Refund fee USD 80 per ticket per transaction. </td>
+					<td rowspan="2">Non-refundable.</td>
 				</tr>
 				<tr class="tr-refund">
 					<td colspan="3">
-						* 旅客必须于航班起飞前24小时取消原有航班，否则将收取误机费。	<br>
-						* 客票全部未使用：允许退票；客票已部分使用：不允许退票。 <br>
-						* 燃油附加费不予退还。 <br>
-						* 婴儿不收取退票费。
+						* The original sector(s) must be cancelled 24 hours before departure; otherwise, no-show fee will be charged.	<br>
+						* Refund is only permitted for totally unused ticket. For partially used ticket: non-refundable. <br>
+						* Fuel surcharges are non-refundable. <br>
+						* Infants are exempt from Refund Fee.
 					</td>
 				</tr>
 				<tr>
-					<td>签转栏</td>
+					<td>Ticket Endorsement Box</td>
 					<td>18</td>
-					<td>不允许更改行程/转签，改期费30美元，退票费60美元，误机费10美元</td>
-					<td colspan="2">不允许更改行程/转签，改期费40美元，退票费80美元，误机费10美元</td>
-					<td>不允许更改行程/转签/退票/改期</td>
+					<td>Q/NON-END/RER, REB USD30, REF USD60, NOSH USD10</td>
+					<td colspan="2">NQ/NON-END/RER, REB USD40, REF USD80, NOSH USD10</td>
+					<td>Q/NON-END/RER/REB/REF</td>
 				</tr>
 				<tr>
-					<td>儿童（2-12岁）折扣</td>
+					<td>Child (between 2 and 12 years old) Discount</td>
 					<td>16</td>
-					<td colspan="4">成人适用票价的75%，Fare Basis栏中加注“/CH25”。</td>
+					<td colspan="4">Charge 75% of corresponding adult fare. Please insert "/CH25" in fare basis.</td>
 				</tr>
 				<tr class="tr-mixing">
-					<td>婴儿（2岁以下）折扣</td>
+					<td>Infant (under 2 years old) Discount</td>
 					<td>16</td>
 					<td colspan="4" class="nth-child3">
-						A) 对于不占座婴儿，收取成人适用票价的10%，Fare Basis栏中加注“/IN90”。 <br>
-						B) 对于占座婴儿，收取成人适用票价的75%，Fare Basis栏中加注“/IN25”。
+						A) Charge 10% of corresponding adult fare (without seat offered). Please insert "/IN90" in fare basis. <br>
+						B) Charge 75% of corresponding adult fare (with seat offered). Please insert "/IN25" in fare basis.
 					</td>
 				</tr>
 				<tr class="tr-mixing">
-					<td>票价栏</td>
+					<td>Fare Box</td>
 					<td>35</td>
 					<td colspan="5" class="nth-child3">
-						对于泰国市场，票价栏显示票价。 <br>
-						对于其他市场，票价栏显示IT。
+						For Thailand market, the fare box is gross fare. <br>
+						For other markets, the fare box is IT.
 					</td>
 				</tr>
 			</tbody>
@@ -589,29 +596,29 @@
 		</table>
 
 		<div class="remarks">
-			<h2>备注:</h2>
-			<p>1. 票价不含税及其他附加费。</p>
-			<p>2. 票价和航班时刻可能变动，请留意最新发布票价及GDS系统中航班时刻。</p>
-			<p>3. 去程第一段航程的始发日期决定了整个行程的票价。</p>
-			<p>4. 改期、误机、退票、行政费和其它收费项目没有儿童折扣。</p>
-			<p>5. 所有航段必须按顺序使用。</p>
-			<p>6. 当规则和GDS不一致时，请以GDS为准。</p>
+			<h2>Remarks:</h2>
+			<p>1. Fares are exclusive of taxes and other surcharges.</p>
+			<p>2. Please refer to GDS display for latest update on flight schedule, fares and taxes.</p>
+			<p>3. Departure date of the first outbound sector determines the fare for the entire journey.</p>
+			<p>4. No child discount is applied to Rebooking/No-show/Refund/Handling Fee and other charges.</p>
+			<p>5. All sectors must be used in sequence.</p>
+			<p>6. Should there be any discrepancy between this rule and what shown in GDS, the latter prevail.</p>
 		</div>
 
 		<table class="routes table" align="center" cellspacing="0" cellpadding="0">
 			<thead>
 				<tr>
-					<th>适用航线</th>
-					<th>舱位</th>
+					<th>Applicable Routes</th>
+					<th>Booking Class</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
-					<td>广州=西哈努克港</td>
+					<td>Guangzhou=Sihanoukville</td>
 					<td>Y/B/H/K/L/M/N/S/X/Q/T/V</td>
 				</tr>
 				<tr>
-					<td>金西哈努克港=广州</td>
+					<td>Sihanoukville=Guangzhou</td>
 					<td>Y/B/H/K/L/M/N/S/X/Q/T/V</td>
 				</tr>
 			</tbody>
@@ -628,14 +635,14 @@
 			<!-- 头部 -->
 			<thead>
 				<tr>
-					<th width="112px">项目</th>
-					<th width="50px">条款序号</th>
-					<th colspan="5">规则详情</th>
+					<th width="112px">Content</th>
+					<th width="50px">ATPCO Category No.</th>
+					<th colspan="5">Description</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
-					<td>舱位</td>
+					<td>Booking Class</td>
 					<td>-</td>
 					<td>Y</td>
 					<td>B</td>
@@ -644,116 +651,117 @@
 					<td>N/S/X/Q/T/V/P/O/E/U</td>
 				</tr>
 				<tr>
-					<td>无陪伴儿童</td>
+					<td>Unaccompanied Minors</td>
 					<td>1</td>
-					<td colspan="5">不适用</td>
+					<td colspan="5">Not applicable.</td>
 				</tr>
 				<tr>
-					<td>适用航班</td>
+					<td>Flight Application</td>
 					<td>4</td>
-					<td colspan="5">只适用于LQ承运航班</td>
+					<td colspan="5">LQ operating flights only.</td>
 				</tr>
 				<tr>
-					<td>订座及出票</td>
+					<td>Reservations/Ticketing</td>
 					<td>5</td>
-					<td colspan="5">往返程均需订妥座位。适用系统出票时限。 </td>
+					<td colspan="5">Confirmed reservation must be made for entire journey.Normal system ticketing deadline is applied. </td>
 				</tr>
 				<tr>
-					<td>经停</td>
+					<td>Minimum Stay</td>
 					<td>8</td>
 					<td colspan="5">
-						允许，不收取费用。
+						Permitted without charges.
 					</td>
 				</tr>
 				<tr>
-					<td>中转</td>
+					<td>Maximum Stay</td>
 					<td>9</td>
 					<td colspan="5">
-						允许，不收取费用。
+						Permitted without charges.
 					</td>
 				</tr>
 				<tr class="tr-mixing">
-					<td>混舱及缺口程</td>
+					<td>Mix Class and Open Jaw</td>
 					<td>10</td>
 					<td colspan="5">
-						允许。票价按各航线实际票价对应的1/2RT相加得出。
+						Permitted. <br>
+						Fare is calculated as sum of 50% round-trip prices respectively of both booking classes.
 					</td>
 				</tr>
 				<tr>
-					<td>签转及更改行程</td>
+					<td>Endorse / Reroute</td>
 					<td>16</td>
-					<td colspan="5">不允许。</td>
+					<td colspan="5">Not permitted.</td>
 				</tr>
 				<tr>
-					<td>误机费</td>
+					<td>No Show</td>
 					<td>16</td>
-					<td colspan="4">误机不可退票和改签，只可退税。</td>
+					<td colspan="4">For NO SHOW circumstance, rebooking and refund is not permitted, only tax is refundable.</td>
 					<td></td>
 				</tr>
 				<tr class="tr-rebook1">
-					<td rowspan="2">改期</td>
+					<td rowspan="2">Rebook</td>
 					<td rowspan="2">16</td>
-					<td>每张客票每次收取30美金改期费。</td>
-					<td>每张客票每次收取50美金改期费。</td>
-					<td>每张客票每次收取80美金改期费。</td>
-					<td>每张客票每次收取100美金改期费。</td>
-					<td rowspan="2">不允许</td>
+					<td>Rebooking fee USD 30 per ticket per transaction.</td>
+					<td>Rebooking fee USD 50 per ticket per transaction.</td>
+					<td>Rebooking fee USD 80 per ticket per transaction.</td>
+					<td>Rebooking fee USD 100 per ticket per transaction.</td>
+					<td rowspan="2">Not permitted.</td>
 				</tr>
 				<tr class="tr-refund tr-rebook1">
 					<td colspan="4">
-						A) 低票价变更至高票价：收取相应票价的差额。 <br>
-						B) 高票价变更至低票价：票价差额不予退还。 <br>
-						* 旅客必须于航班起飞前24小时取消原有航班，否则视为误机。 <br>
-						* 婴儿票不收取改期费。
+						A) Rebooked to higher class (fare): fare difference would be charged <br>
+						B) Rebooked to lower class (fare): residual fare value is non-refundable. <br>
+						* The original sector(s) must be cancelled 24 hours before departure; otherwise, will be treated as NO SHOW. <br>
+						* Infants are exempt from Rebooking Fee.
 					</td>
 				</tr>
 				<tr class="tr-rebook2">
-					<td rowspan="2">退票</td>
+					<td rowspan="2">Refund</td>
 					<td rowspan="2">16</td>
-					<td>每张客票每次收取50美金退票费。</td>
-					<td>每张客票每次收取80美金退票费。</td>
-					<td>每张客票每次收取100美金退票费。</td>
-					<td>每张客票每次收取120美金退票费。</td>
-					<td rowspan="2">不允许</td>
+					<td>Refund fee USD 50 per ticket per transaction.</td>
+					<td>Refund fee USD 80 per ticket per transaction.</td>
+					<td>Refund fee USD 100 per ticket per transaction.。</td>
+					<td>Refund fee USD 120 per ticket per transaction.</td>
+					<td rowspan="2">Not permitted.</td>
 				</tr>
 				<tr class="tr-refund">
 					<td colspan="4">
-						* 旅客必须于航班起飞前24小时取消原有航班，否则视为误机。 <br>
-						* 客票全部未使用：允许退票；客票已部分使用：不允许退票。 <br>
-						* 燃油附加费不予退还。 <br>
-						* 婴儿不收取退票费。
+						* The original sector(s) must be cancelled 24 hours before departure; otherwise, will be treated as NO SHOW. <br>
+						*  Refund is only permitted for totally unused ticket. For partially used ticket: non-refundable. <br>
+						*  Fuel surcharges are non-refundable. <br>
+						*  Fuel surcharges are non-refundable.
 					</td>
 				</tr>
 				<tr>
-					<td>签转栏</td>
+					<td>Ticket Endorsement Box</td>
 					<td>18</td>
-					<td>不允许更改行程/转签，改期费30美元，退票费50美元</td>
-					<td>不允许更改行程/转签，改期费50美元，退票费80美元</td>
-					<td>不允许更改行程/转签，改期费80美元，退票费100美元</td>
-					<td>不允许更改行程/转签，改期费100美元，退票费120美元</td>
-					<td>不允许更改行程/转签/退票/改期</td>
+					<td>Q/NON-END/RER, REB USD30, REF USD50</td>
+					<td>Q/NON-END/RER, REB USD50, REF USD80</td>
+					<td>Q/NON-END/RER, REB USD80, REF USD100</td>
+					<td>Q/NON-END/RER, REB USD100, REF USD120</td>
+					<td>Q/NON-END/RER/REF</td>
 				</tr>
 				<tr>
-					<td>儿童（2-12岁）折扣</td>
+					<td>Child (between 2 and 12 years old) Discount</td>
 					<td>16</td>
-					<td colspan="4">收取100%成人适用票价</td>
+					<td colspan="4">Charge 100% of corresponding adult fare.</td>
 					<td></td>
 				</tr>
 				<tr class="tr-mixing">
-					<td>婴儿（2岁以下）折扣</td>
+					<td>Infant (under 2 years old) Discount</td>
 					<td>19</td>
 					<td class="nth-child3">
-						A) 对于不占座婴儿，收取10%成人适用票价，Fare Basis栏中加注“/IN90”。 <br>
-						B) 对于占座婴儿，收取100%成人适用票价。
+						A) Charge 10% of corresponding adult fare (without seat offered). Please insert "/IN90" in fare basis. <br>
+						B) Charge 100% of corresponding adult fare (with seat offered).
 					</td>
-					<td colspan="4">收取100%成人适用票价</td>
+					<td colspan="4">Charge 100% of corresponding adult fare.</td>
 				</tr>
 				<tr class="tr-mixing">
-					<td>票价栏</td>
+					<td>Fare Box</td>
 					<td>35</td>
 					<td colspan="5" class="nth-child3">
-						对于泰国市场，票价栏显示票价。 <br>
-						对于其他市场，票价栏显示IT。
+						For Thailand market, the fare box is gross fare. <br>
+						For other markets, the fare box is IT.
 					</td>
 				</tr>
 			</tbody>
@@ -766,35 +774,35 @@
 		</table>
 
 		<div class="remarks">
-			<h2>备注:</h2>
-			<p>1. 票价不含税及其他附加费。</p>
-			<p>2. 票价和航班时刻可能变动，请留意最新发布票价及GDS系统中航班时刻。</p>
-			<p>3. 去程第一段航程的始发日期决定了整个行程的票价。</p>
-			<p>4. 改期、误机、退票、行政费和其它收费项目没有儿童折扣。</p>
-			<p>5. 所有航段必须按顺序使用。</p>
-			<p>6. 当规则和GDS不一致时，请以GDS为准。</p>
+			<h2>Remarks:</h2>
+			<p>1. Fares are exclusive of taxes and other surcharges.</p>
+			<p>2. Please refer to GDS display for latest update on flight schedule, fares and taxes.</p>
+			<p>3. Departure date of the first outbound sector determines the fare for the entire journey.</p>
+			<p>4. No child discount is applied to Rebooking/No-show/Refund/Handling Fee and other charges.</p>
+			<p>5. All sectors must be used in sequence.</p>
+			<p>6. Should there be any discrepancy between this rule and what shown in GDS, the latter prevail.</p>
 		</div>
 
 		<table class="routes table" align="center" cellspacing="0" cellpadding="0">
 			<thead>
 				<tr>
-					<th>适用航线</th>
-					<th>舱位</th>
+					<th>Applicable Routes</th>
+					<th>Booking Class</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
-					<td>澳门=暹粒</td>
+					<td>Macau=Siem Reap</td>
 					<td rowspan="4">Y/B/H/K/L/M/N/S/X/Q/T/V</td>
 				</tr>
 				<tr>
-					<td>暹粒=澳门</td>
+					<td>Siem Reap=Macau</td>
 				</tr>
 				<tr>
-					<td>澳门=西哈努克港</td>
+					<td>Macau=Sihanoukville</td>
 				</tr>
 				<tr>
-					<td>西哈努克港=澳门</td>
+					<td>Sihanoukville=Macau</td>
 				</tr>
 			</tbody>
 		</table>
