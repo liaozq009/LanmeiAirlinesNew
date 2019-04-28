@@ -1,6 +1,7 @@
 
 var LanmeiAirlines = {
 	cityData: LMComData.cityData,
+	cityDataAuto: LMComData.cityDataAuto,
 	thFromCityData: LMThData.thFromCityData,
 	thToCityData: LMThData.thToCityData,
 	fNumberData: LMComData.fNumberData,
@@ -869,7 +870,10 @@ var LanmeiAirlines = {
 			if(data=='js-fNumber-menu'){
 				currenData=that.fNumberData
 			}else{
-				currenData=that.cityData;
+				// 机票
+				currenData = that.fromToAuto(id);
+
+				// 机+酒
 				if(id=='.js-thFrom-input'){
 					currenData = that.thFromCityData;
 				}
@@ -898,7 +902,7 @@ var LanmeiAirlines = {
 				$('.'+data).append('<li title="'+val+'">'+searchVal+'</li>');
 			});
 			if(srdata.length==0){ 
-				$('.'+data).append('<li style="width:100%;">No results match "'+searchText+'"</li>');
+				$('.'+data).append('<p style="width:100%;">No results match "'+searchText+'"</p>');
 			}
 			if(currentVal===''){
 				$('.'+data).empty();
@@ -907,6 +911,26 @@ var LanmeiAirlines = {
 				});
 			}
 		});
+	},
+
+	/* 出发地和目的地匹配 */
+	fromToAuto:function(id){
+		var that = this;
+		var currenData;
+		var searchVal = $('.js-city-search').attr('data');
+		if(((id=='.js-from-input' || searchVal=='js-from-menu') && $('.js-to-input').val()=='') || ((id=='.js-to-input' || searchVal=='js-to-menu') && $('.js-from-input').val()=='')){
+			currenData = that.cityData;
+		}
+		var fromVal = $.trim($('.js-from-input').attr('data-city'));
+		var toVal = $.trim($('.js-to-input').attr('data-city'));
+		if((id=='.js-from-input' || searchVal=='js-from-menu')){
+			currenData = that.cityData
+		}else if((id=='.js-to-input' || searchVal=='js-to-menu') && $('.js-from-input').val()!='' && that.cityDataAuto[fromVal]!=undefined){
+			currenData = that.cityDataAuto[fromVal]
+		}else if(that.cityDataAuto[fromVal]==undefined || that.cityDataAuto[toVal]==undefined){
+			currenData = [];
+		}
+		return currenData;
 	},
 
 	/* 键盘事件 */
@@ -939,8 +963,12 @@ var LanmeiAirlines = {
 
 		/* 设置目的地下拉的值 */
 		var toCityVal = function(text){
-			var tocityArr = that.cityData;
+			var tocityArr = that.fromToAuto('.js-to-input');
 			$toMenuSub.empty();
+			$toInput.val('');
+			if(tocityArr.length == 0){
+				$toMenuSub.html('<p style="width:100%;">No matching flights!</p>');
+			}
 			$.each(tocityArr,function(i,val){
 				$toMenuSub.append('<li title="'+val+'">'+val+'</li>');
 			});	
@@ -1002,7 +1030,11 @@ var LanmeiAirlines = {
 				}else if(event.which == 13){ //回车
 
 					var text1 = $fUl.children().eq(indexLi).attr('title');
-					var text2 = text1.split('/');
+					if(text1!==undefined){
+						var text2 = text1.split('/');
+					}else{
+						return;
+					}
 					if(input=='.js-from-input'){
 						$fromInput.val(text2[0]+'/'+text2[1]).attr('data-city',text1); //出发地赋值
 						toCityVal(text1); //下拉菜单赋值筛选
@@ -1135,6 +1167,10 @@ var LanmeiAirlines = {
 		
 		var $popupContent = $('.popup-content'); 
 
+		// 初始化
+		$fromInput.val('Phnom Penh/PNH').attr('data-city','Phnom Penh/PNH/Cambodia');
+		$toInput.val('Guangzhou/CAN').attr('data-city','Guangzhou/CAN/China');
+
 		/* c3动画 */
 		var popupShow = function(){
 			$mask.fadeIn(); //显示遮罩层
@@ -1184,7 +1220,8 @@ var LanmeiAirlines = {
 
 		/* 设置出发地下拉的值 */
 		var fromCityVal = function(text){ 
-			var fromcityArr = that.cityData;
+			// var fromcityArr = that.cityData;
+			var fromcityArr = that.fromToAuto('.js-from-input');
 			// var fromcityArr = that.cityData.slice(0);
 			// fromcityArr.remove(text);
 			$fromMenuSub.empty();
@@ -1196,10 +1233,14 @@ var LanmeiAirlines = {
 
 		/* 设置目的地下拉的值 */
 		var toCityVal = function(text){
-			var tocityArr = that.cityData;
+			var tocityArr = that.fromToAuto('.js-to-input');
 			// var tocityArr = that.cityData.slice(0);
 			// tocityArr.remove(text);
 			$toMenuSub.empty();
+			$toInput.val('');
+			if(tocityArr.length == 0){
+				$toMenuSub.html('<p style="width:100%;">No matching flights!</p>');
+			}
 			$.each(tocityArr,function(i,val){
 				$toMenuSub.append('<li title="'+val+'">'+val+'</li>');
 			});	
@@ -1469,6 +1510,15 @@ var LanmeiAirlines = {
 			$('html,body').addClass('ovfHiden'); //使网页不可滚动
 		};
 
+		// 初始化
+		function setInitVal(text1,$input,$span){
+			var text2 = text1.split('/');
+			$input.val(text2[1]).attr('data-city',text1).parent().addClass('m-city-result');
+			$span.text(text2[0]+'/'+text2[2]);
+		}
+		setInitVal('Phnom Penh/PNH/Cambodia',$fromInput,$fromSpan);
+		setInitVal('Guangzhou/CAN/China',$toInput,$toSpan);
+
 		// 关闭弹出框
 		$close.click(function(event) {
 			hideContainer();
@@ -1479,15 +1529,16 @@ var LanmeiAirlines = {
 			$fromMenuSub.empty();
 			$('.js-popup-content>div').hide(); //初始化隐藏出发地、目的地、日期、人数
 			$('.js-airport-from').show();
+			$searchInput.show().attr('data','js-from-menu').val('');
+
 			var toVal = $toInput.attr('data-city'); //获取目的地的值进行过滤
-			$.each(that.cityData,function(i,val){
+			$.each(that.fromToAuto('.js-from-input'),function(i,val){
 				$fromMenuSub.append('<li title="'+val+'">'+val+'</li>');
 			});
-			$fromMenuSub.children('li:contains('+toVal+')').remove(); //过滤
+			// $fromMenuSub.children('li:contains('+toVal+')').remove(); //过滤
 
 			ovfHiden(); //使网页不可滚动
-			$box.height(winHeight-108);
-			$searchInput.show().attr('data','js-from-menu').val('');
+			$box.height(winHeight-98);
 			$searchTitle.html('Select origin');
 
 			$container.addClass('is-show');
@@ -1499,6 +1550,10 @@ var LanmeiAirlines = {
 			var text2 = text1.split('/');
 			$fromInput.val(text2[1]).attr('data-city',text1).parent().addClass('m-city-result');
 			$fromSpan.text(text2[0]+'/'+text2[2]);
+			// 清除目的地的值
+			$toInput.val('');
+			$toSpan.text('');
+			
 			hideContainer();
 		});
 
@@ -1507,16 +1562,21 @@ var LanmeiAirlines = {
 			$toMenuSub.empty();
 			$('.js-popup-content>div').hide(); //初始化隐藏出发地、目的地、日期、人数
 			$('.js-airport-to').show();
+			$searchInput.show().attr('data','js-to-menu').val('');
+
 			var fromVal = $fromInput.attr('data-city'); //获取出发地的值进行过滤
-			$.each(that.cityData,function(i,val){
+			var tocityArr = that.fromToAuto('.js-to-input');
+			if(tocityArr.length == 0){
+				$toMenuSub.html('<p style="width:100%;">No matching flights!</p>');
+			}
+			$.each(tocityArr,function(i,val){
 				$toMenuSub.append('<li title="'+val+'">'+val+'</li>');
 			});
 
-			$toMenuSub.children('li:contains('+fromVal+')').remove(); //过滤
+			// $toMenuSub.children('li:contains('+fromVal+')').remove(); //过滤
 
 			ovfHiden(); //使网页不可滚动
-			$box.height(winHeight-108);
-			$searchInput.show().attr('data','js-to-menu').val('');
+			$box.height(winHeight-98);
 			$searchTitle.html('Select destination');
 
 			$container.addClass('is-show');
@@ -1840,7 +1900,7 @@ var LanmeiAirlines = {
 			// });
 
 			ovfHiden(); //使网页不可滚动
-			$hotelBox.height(winHeight-108);
+			$hotelBox.height(winHeight-98);
 			$searchInput.show().val('');
 			
 			$searchTitle.html('Select destination');
@@ -2268,7 +2328,7 @@ var LanmeiAirlines = {
 			$fromMenuSub.children('li:contains('+toVal+')').remove(); //过滤
 
 			ovfHiden(); //使网页不可滚动
-			$box.height(winHeight-108);
+			$box.height(winHeight-98);
 			$searchInput.show().attr('data','js-thFrom-menu').val('');
 			$searchTitle.html('Select origin');
 
@@ -2297,7 +2357,7 @@ var LanmeiAirlines = {
 			$toMenuSub.children('li:contains('+fromVal+')').remove(); //过滤
 
 			ovfHiden(); //使网页不可滚动
-			$box.height(winHeight-108);
+			$box.height(winHeight-98);
 			$searchInput.show().attr('data','js-thTo-menu').val('');
 			$searchTitle.html('Select destination');
 
@@ -3076,7 +3136,7 @@ var LanmeiAirlines = {
 
 			ovfHiden(); //使网页不可滚动
 			$searchInput.show();
-			$fStatusBox.height(winHeight-108);
+			$fStatusBox.height(winHeight-98);
 			$searchInput.show().attr('data','js-fNumber-menu').val('');
 			$searchTitle.html('Select destination');
 
@@ -3121,7 +3181,7 @@ var LanmeiAirlines = {
 
 			ovfHiden(); //使网页不可滚动
 			$searchInput.show();
-			$fStatusBox.height(winHeight-108);
+			$fStatusBox.height(winHeight-98);
 			$searchInput.show().attr('data','js-routeFrom-menu').val('');
 			$searchTitle.html('Select origin');
 
@@ -3151,7 +3211,7 @@ var LanmeiAirlines = {
 
 			ovfHiden(); //使网页不可滚动
 			$searchInput.show();
-			$fStatusBox.height(winHeight-108);
+			$fStatusBox.height(winHeight-98);
 			$searchInput.show().attr('data','js-routeTo-menu').val('');
 			$searchTitle.html('Select destination');
 
