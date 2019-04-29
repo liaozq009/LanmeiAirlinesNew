@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>animateDemo</title>
+	<link rel="stylesheet" type="text/css" href="../../css/EN/animate.css">
+	<style type="text/css">
+		body {
+			overflow-x: hidden;
+		}
+		.button-container button {
+			margin-left: 10px;
+			margin-bottom: 10px;
+			border: none;
+			padding: 4px;
+			outline: none;
+			cursor: pointer;
+		}
+		button.active {
+			background: #4CAF50;
+			color: #fff;
+		}
+		.container {
+			width: 300px;
+			margin: 30px auto;
+			text-align: center;
+		}
+		.animate-container > div {
+			float: left;
+			padding: 10px;
+		}
+		p {
+			font-size: 16px;
+			text-align: center;
+		}
+		img {
+			width: 300px;
+			height: 200px;
+		}
+	</style>
+</head>
+<body>
+	<div class="button-container"></div>
+	<div class="container">
+		<select class="select-container" style="display: none;"></select>
+		<button class="js-animate" style="display: none;">查看当前动画</button>
+		<button class="js-changeImg">换一张图片</button>
+		<div class="animate-container">
+			<div class="animated"><p>bounce</p><img src="../../images/EN/s10.jpg"></div>
+		</div>
+	</div>
+	<script type="text/javascript" src="../../libs/jQuery/jquery-1.11.3.js"></script>
+	<script type="text/javascript">
+		var arr = ['bounce','flash','pulse','rubberBand','shake','headShake','swing','tada','wobble','jello','bounceIn','bounceIn2','bounceInDown','bounceInLeft','bounceInRight','bounceInUp','bounceOut','bounceOutDown','bounceOutLeft','bounceOutRight','bounceOutUp','fadeIn','fadeInDown','fadeInDownBig','fadeInLeft','fadeInLeftBig','fadeInRight','fadeInRightBig','fadeInUp','fadeInUpBig','fadeOut','fadeOutDown','fadeOutDownBig','fadeOutLeft','fadeOutLeftBig','fadeOutRight','fadeOutRightBig','fadeOutUp','fadeOutUpBig','flip','flipInX','flipInY','flipOutX','flipOutY','lightSpeedIn','lightSpeedOut','rotateIn','rotateInDownLeft','rotateInDownRight','rotateInUpLeft','rotateInUpRight','rotateOut','rotateOutDownLeft','rotateOutDownRight','rotateOutUpLeft','rotateOutUpRight','hinge','rollIn','rollOut','zoomIn','zoomInDown','zoomInLeft','zoomInRight','zoomInUp','zoomOut','zoomOutDown','zoomOutLeft','zoomOutRight','zoomOutUp','slideInDown','slideInLeft','slideInRight','slideInUp','slideOutDown','slideOutLeft','slideOutRight','slideOutUp','rotate360','Xzhankai','Yzhankai','XZzhankai','XYzhankai','YYSzhankai','YYXzhankai','ZSzhankai','ZXzhankai','YXzhankai','YSzhankai','LXfeiru','LXfeichu','magic','openDownLeft','openDownRight','openUpLeft','openUpRight','openDownLeftRetourn','openDownRightRetourn','openUpLeftRetourn','openUpRightRetourn','openDownLeftOut','openDownRightOut','openUpLeftOut','openUpRightOut','perspectiveDown','perspectiveLeft','perspectiveRight','perspectiveUp','perspectiveDownRetourn','perspectiveLeftRetourn','perspectiveRightRetourn','perspectiveUpRetourn','puffIn','puffOut','rotateDown','rotateLeft','rotateRight','rotateUp','slideDown','slideLeft','slideRight','slideUp','slideDownRetourn','slideLeftRetourn','slideRightRetourn','slideUpRetourn','swap','twisterInDown','twisterInUp','vanishIn','vanishOut','swashOut','swashIn','foolishOut','foolishIn','holeOut','tinRightOut','tinLeftOut','tinUpOut','tinDownOut','tinRightIn','tinLeftIn','tinUpIn','tinDownIn','bombRightOut','bombLeftOut','boingInUp','boingOutDown','spaceOutUp','spaceOutRight','spaceOutDown','spaceOutLeft','spaceInUp','spaceInRight','spaceInDown','spaceInLeft'];
+
+		arr.forEach( function(element, index) {
+			// $('.animate-container').append(`<div class="animated ${element}"><p>${element}</p><img src="../../images/EN/s${num+1}.jpg"></div>`);
+			$('.select-container').append(`<option value="${element}">${element}</option>`);
+			$('.button-container').append(`<button>${element}</button>`);
+		});
+
+		/*$('.select-container').change(function(event) {
+			var val = $(this).val();
+			$('.animate-container > div').addClass(val);
+			$('.animate-container > div p').html(val);
+			setTimeout(function(){
+				$('.animate-container > div').removeClass(val);
+			},1600);
+		}); 
+		$('.js-animate').click(function(){
+			var val = $('.select-container').val();
+			$('.animate-container > div').addClass(val);
+			setTimeout(function(){
+				$('.animate-container > div').removeClass(val);
+			},1600);
+		}); */
+		$('.button-container').on('click','button',function(){
+			$(this).addClass('active').siblings('button').removeClass('active');
+			var val = $(this).html();
+			$('.animate-container > div').addClass(val);
+			$('.animate-container > div p').html(val);
+			setTimeout(function(){
+				$('.animate-container > div').removeClass(val);
+			},1600);
+		});
+		$('.js-changeImg').click(function(){
+			var num = Math.random(1,15).toFixed(1)*10;
+			$('.animate-container > div img').attr('src',`../../images/EN/s${num+1}.jpg`);
+		});
+	</script>
+</body>
+</html>
