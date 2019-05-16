@@ -1,0 +1,172 @@
+/* 定义变量 */
+/* 定义公共样式 */
+/* 内容样式 */
+.lm-banner {
+  width: 100%;
+  height: 650px;
+  padding-top: 20px;
+  background: url("../../images/EN/lm-live-bg.png") center no-repeat;
+}
+.lm-banner .lm-video-main {
+  width: 940px;
+  height: 610px;
+  margin: 0 auto;
+  padding: 20px;
+  padding-top: 120px;
+  background: url("../../images/EN/lm-video-bg.png") center no-repeat;
+}
+.lm-banner .lm-video-main .lm-video-content {
+  width: 760px;
+  height: 100%;
+  float: left;
+}
+.lm-banner .lm-video-main .lm-video-list {
+  width: 120px;
+  height: 100%;
+  float: right;
+}
+.lm-banner .lm-video-main .lm-video-list .video-list-inner {
+  width: 100%;
+  height: 384px;
+  background: rgba(0, 0, 0, 0.3);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4C000000", endColorstr="#4C000000");
+  border-radius: 4px;
+  padding-top: 14px;
+}
+.lm-banner .lm-video-main .lm-video-list .video-list-inner > li {
+  position: relative;
+  width: 92px;
+  height: 60px;
+  margin-bottom: 14px;
+  margin-left: 14px;
+  cursor: pointer;
+}
+.lm-banner .lm-video-main .lm-video-list .video-list-inner > li > img {
+  width: 92px;
+  height: 60px;
+}
+.lm-banner .lm-video-main .lm-video-list .video-list-inner > li .video-list-active {
+  position: absolute;
+  left: -8px;
+  top: 0;
+  visibility: hidden;
+}
+.lm-banner .lm-video-main .lm-video-list .video-list-inner .active .video-list-active {
+  visibility: visible;
+}
+.lm-banner .lm-video-main .lm-video-list .video-list-refresh {
+  margin-top: 14px;
+  overflow: hidden;
+  text-align: center;
+  color: #fff;
+}
+.lm-banner .lm-video-main .lm-video-list .video-list-refresh .v-refresh {
+  float: left;
+}
+.lm-banner .lm-video-main .lm-video-list .video-list-refresh .v-enter {
+  float: right;
+}
+.lm-banner .lm-video-main .lm-video-list .video-list-refresh a {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  display: inline-block;
+  background: #ffffff;
+  border-radius: 100%;
+}
+.lm-banner .lm-video-main .lm-video-list .video-list-refresh p {
+  margin-top: 8px;
+}
+.lm-video-wrap-1 {
+  width: 960px;
+  margin: 0 auto;
+  padding: 50px 10px;
+}
+.lm-video-wrap-1 .lm-video-search {
+  height: 40px;
+  line-height: 40px;
+}
+.lm-video-wrap-1 .lm-video-search .v-search-left {
+  float: left;
+  color: #00908c;
+  font-size: 18px;
+}
+.lm-video-wrap-1 .lm-video-search .v-search-left > div {
+  position: relative;
+  float: left;
+  margin-right: 40px;
+  cursor: pointer;
+}
+.lm-video-wrap-1 .lm-video-search .v-search-left > div > ul {
+  display: none;
+  position: absolute;
+  top: 36px;
+  left: 0px;
+  z-index: 99;
+  width: 120px;
+  background: #fff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#99000000", endColorstr="#99000000");
+}
+.lm-video-wrap-1 .lm-video-search .v-search-left > div > ul li {
+  height: 20px;
+  line-height: 20px;
+  padding: 0 6px;
+  color: #1f2c5c;
+}
+.lm-video-wrap-1 .lm-video-search .v-search-left > div > ul li:hover {
+  color: #8ec060;
+}
+.lm-video-wrap-1 .lm-video-search .v-search-right {
+  float: right;
+  position: relative;
+}
+.lm-video-wrap-1 .lm-video-search .v-search-right input {
+  width: 300px;
+  height: 40px;
+  border: 1px solid #ccc;
+  border-radius: 100px;
+  font-size: 14px;
+  padding: 10px;
+  padding-right: 90px;
+}
+.lm-video-wrap-1 .lm-video-search .v-search-right a {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.lm-ad-wrap {
+  width: 100%;
+  height: 124px;
+  background: #1f2c5c;
+}
+.lm-ad-wrap .lm-ad-inner {
+  width: 100%;
+  height: 124px;
+  background: url("../../images/EN/lm-ad-bg.png") center no-repeat;
+}
+.lm-video-wrap-2 {
+  width: 960px;
+  margin: 0 auto;
+  padding: 50px 10px 140px 10px;
+}
+.lm-video-wrap-2 .lm-video-detail {
+  margin-top: 0;
+}
+.lm-video-wrap-2 .lm-video-detail .v-detail-inner .v-detail-content-large {
+  width: 470px;
+}
+.lm-video-wrap-2 .lm-video-detail .v-detail-inner .v-detail-content-large .v-detail-content .v-detail-content-bg {
+  width: 470px;
+  height: 260px;
+  line-height: 260px;
+}
+/* 配置屏幕 */
+@media screen and (max-width: 960px), (max-device-width: 960px) {
+  .lm-header,
+  .lm-banner,
+  .lm-ad-wrap,
+  .lm-footer {
+    width: 960px;
+  }
+}

@@ -1,0 +1,107 @@
+@charset "utf-8";
+
+
+/* 定义变量 */
+@url:"../images/";
+/* 定义颜色变量 */
+@green:#8ec060;
+@purple:#1f2c5c;
+@gray:#808080;
+@red:#d0011b;
+@link:#4aa374;
+
+.lm-section{
+	min-height: initial;
+	padding-bottom: 0;
+}
+.FAQWrapper{
+	width: 960px;
+	min-height: 300px;
+	margin:0 auto 56px;
+	padding:0 10px;
+	.site-map-box{
+		background:#fff;
+		border-radius:10px;
+		padding:0 20px;
+		margin-bottom: 20px;
+		.site-map-title{
+			height: 60px;
+			padding:0 10px;
+			cursor:pointer;
+			h2{
+				float: left;
+				height: 60px;
+				line-height: 60px;
+				font-size: 20px;
+				color: @purple;
+			}
+			img{
+				float: right;
+				margin-top: 28px;
+			}
+			.img01{
+				display: none;
+				margin-top: 20px;
+			}
+		}
+		.site-map-content{
+			overflow:hidden;
+			padding-bottom: 20px;
+			border-top:1px solid #ccc;
+			>li{
+				font-size: 16px;
+				color: #7C7D7F;
+				margin-top: 16px;
+				span{
+					color: #1f2c5c;
+				}
+				a{
+					color: #4aa374;
+				}
+			}
+		}
+	}
+}
+
+/* 配置屏幕 */
+@media screen and (max-width: 992px) {
+	.FAQWrapper{
+		width: 100%;
+		padding:15px;
+		margin-top: 0.1rem;
+		margin-bottom: 0.1rem;
+		.site-map-box{
+			.site-map-title{
+				height: auto;
+			    padding: 0.1rem;
+				h2{
+					float: none;
+					height: auto;
+					line-height: normal;
+				}
+				img{display: none !important;}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.lm-section .lm-title{margin-bottom: 0;}
+	.FAQWrapper{
+		.site-map-box{
+			padding: 0.1rem;
+			.site-map-title{
+				h2{
+					font-size: 0.16rem;
+				}
+			}
+			.site-map-content {
+				padding-bottom: 0.1rem;
+				> li {
+					font-size: 0.14rem;
+					img{width: 100%;}
+				}
+			}
+		}
+	}
+}

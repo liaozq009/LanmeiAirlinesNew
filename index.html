@@ -58,6 +58,9 @@
 
 			if((language.slice(0,2)=='zh') && (lmLang=='cn' || lmLang==null)){
 				// location.href="http://192.168.3.10/LanmeiAirlinesNew/index_cn.html";
+				// location.href="https://lanmeiairlines.com/index_cn.html";
+			}else{
+				// location.href="https://lanmeiairlines.com";
 			}
 		})(); 
 	</script>
@@ -313,7 +316,7 @@
 			<div class="ticket-bg bg-com js-ticket-bg">
 				<iframe src="" scrolling="auto" width="100%" height="100%" class="cloud-iframe js-cloud-iframe"></iframe>
 				<!-- <video width="100%" height="auto" class="videoSource" id="videoSource" autoplay="autoplay" loop="loop" muted="true" poster="/">
-					<source src="" type="video/mp4">
+					<source src="video/cloud-video.mp4" type="video/mp4">
 				</video> -->
 			</div>
 			<!-- 白云上面的内容 -->
@@ -344,13 +347,13 @@
 					</div>
 					<div class="select-air-time select-air-com">
 						<div class="from-com js-ticket-from animated fadeInUp">
-							<input type="text" class="t-from-input js-from-input" value="Phnom Penh/PNH" data="js-from-menu" placeholder="From" autocomplete="off">
+							<input type="text" class="t-from-input js-from-input" value="" data="js-from-menu" data-city="" placeholder="From" autocomplete="off">
 							<span class="m-city-from js-m-Fcity">Phnom Penh/PNH</span>
 							<i class="local-change js-ticket-change animated fadeInUp"></i>
 						</div>
 						<i class="local-change m-local-change js-mTicket-change animated fadeInUp"></i>
 						<div class="to-com js-ticket-to">
-							<input type="text" class="t-to-input js-to-input" value="Siem Reap/Cambodia" data="js-to-menu" placeholder="To" autocomplete="off">
+							<input type="text" class="t-to-input js-to-input" value="" data="js-to-menu" placeholder="To" autocomplete="off">
 							<span class="m-city-to js-m-Tcity">Siem Reap/Cambodia</span>
 						</div>
 						<div class="date-com js-ticket-date">
@@ -374,7 +377,7 @@
 					<div class="popup-title-wrap">
 						<p class="popup-title js-popup-title">Select origin</p>
 						<p class="popup-close js-popup-close"></p>
-						<input type="text" name="" class="city-search js-city-search" value="" data="js-from-menu" placeholder="Search">
+						<input type="text" name="" class="city-search js-city-search" value="" data="" placeholder="Search">
 					</div>
 					<div class="popup-box js-popup-box">
 						<div class="popup-content popup-inactive js-popup-content">
@@ -932,8 +935,8 @@
 				<li class="li-child1"><a href="javascript:;" data-href="ticket-content" class="nth-child1 active js-a-ticket"><span>Ticket</span></a></li>
 				<li class="li-child2"><a href="javascript:;" data-href="hotel-content" class="nth-child2 js-a-hotel"><span>Hotel</span></a></li>
 				<li class="li-child3"><a href="javascript:;" data-href="ticketHotel-content" class="nth-child3 js-a-ticketHotel"><span>Flight+Hotel</span></a></li>
-				<li class="li-child4"><a href="javascript:;" data-href="car-content" class="nth-child4 js-a-car"><span>Car</span></a></li>
-				<li class="li-child5"><a href="javascript:;" data-href="flight-content" class="nth-child5 js-a-flight"><span>Flight info</span></a></li>
+				<li class="li-child4"><a href="javascript:;" data-href="car-content" class="nth-child3 js-a-car"><span>Car</span></a></li>
+				<li class="li-child5"><a href="javascript:;" data-href="flight-content" class="nth-child4 js-a-flight"><span>Flight status</span></a></li>
 				<li class="li-slide"></li>
 			</ul>
 			<!-- <a href="javascript:void(0)" class="flight-up-arrow js-flight-up"></a>
@@ -1037,7 +1040,7 @@
 		<div class="coupons-content js-coupons-content">
 			
 		</div>
-		<!-- <div class="coupons-loading js-coupons-loading"></div> -->
+		<div class="coupons-loading js-coupons-loading"></div>
 	</section>
 
 	<!-- 特价机票 -->

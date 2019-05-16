@@ -1,0 +1,96 @@
+@charset "utf-8";
+/* 定义变量 */
+/* 定义颜色变量 */
+.lm-section {
+  min-height: initial;
+  padding-bottom: 0;
+}
+.FAQWrapper {
+  width: 960px;
+  min-height: 300px;
+  margin: 0 auto 56px;
+  padding: 0 10px;
+}
+.FAQWrapper .site-map-box {
+  background: #fff;
+  border-radius: 10px;
+  padding: 0 20px;
+  margin-bottom: 20px;
+}
+.FAQWrapper .site-map-box .site-map-title {
+  height: 60px;
+  padding: 0 10px;
+  cursor: pointer;
+}
+.FAQWrapper .site-map-box .site-map-title h2 {
+  float: left;
+  height: 60px;
+  line-height: 60px;
+  font-size: 20px;
+  color: #1f2c5c;
+}
+.FAQWrapper .site-map-box .site-map-title img {
+  float: right;
+  margin-top: 28px;
+}
+.FAQWrapper .site-map-box .site-map-title .img01 {
+  display: none;
+  margin-top: 20px;
+}
+.FAQWrapper .site-map-box .site-map-content {
+  overflow: hidden;
+  padding-bottom: 20px;
+  border-top: 1px solid #ccc;
+}
+.FAQWrapper .site-map-box .site-map-content > li {
+  font-size: 16px;
+  color: #7C7D7F;
+  margin-top: 16px;
+}
+.FAQWrapper .site-map-box .site-map-content > li span {
+  color: #1f2c5c;
+}
+.FAQWrapper .site-map-box .site-map-content > li a {
+  color: #4aa374;
+}
+/* 配置屏幕 */
+@media screen and (max-width: 992px) {
+  .FAQWrapper {
+    width: 100%;
+    padding: 15px;
+    margin-top: 0.1rem;
+    margin-bottom: 0.1rem;
+  }
+  .FAQWrapper .site-map-box .site-map-title {
+    height: auto;
+    padding: 0.1rem;
+  }
+  .FAQWrapper .site-map-box .site-map-title h2 {
+    float: none;
+    height: auto;
+    line-height: normal;
+  }
+  .FAQWrapper .site-map-box .site-map-title img {
+    display: none !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  .lm-section .lm-title {
+    margin-bottom: 0;
+  }
+  .FAQWrapper .site-map-box {
+    padding: 0.1rem;
+  }
+  .FAQWrapper .site-map-box .site-map-title h2 {
+    font-size: 0.16rem;
+  }
+  .FAQWrapper .site-map-box .site-map-content {
+    padding-bottom: 0.1rem;
+  }
+  .FAQWrapper .site-map-box .site-map-content > li {
+    font-size: 0.14rem;
+  }
+  .FAQWrapper .site-map-box .site-map-content > li img {
+    width: 100%;
+  }
+}

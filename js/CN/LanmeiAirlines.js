@@ -2893,122 +2893,72 @@ var LanmeiAirlines = {
 
 	/* 优惠券 */
 	selectCoupons:function(){
-		var ticketStr = '<div class="ticket-coupons" id="js-ticket-coupons">'+
-			'<div class="slick-item slick-item-1">'+
-			'<img src="images/EN/ticket-coupons.png" class="coupons-img">'+
-			'<div class="slick-content">'+
-			'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
-			'<p class="p1">Air Ticket Coupon</p>'+
-			'<p class="p2">Receive Immediately</p>'+
-			'</div>'+
-			'<a href="javascript:;"></a>'+
-			'</div>'+
-			'<div class="slick-item slick-item-2">'+
-			'<img src="images/EN/ticket-coupons.png" class="coupons-img">'+
-			'<div class="slick-content">'+
-			'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
-			'<p class="p1">Air Ticket Coupon</p>'+
-			'<p class="p2">Receive Immediately</p>'+
-			'</div>'+
-			'<a href="javascript:;"></a>'+
-			'</div>'+
-			'<div class="slick-item slick-item-3">'+
-			'<img src="images/EN/ticket-coupons.png" class="coupons-img">'+
-			'<div class="slick-content">'+
-			'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
-			'<p class="p1">Air Ticket Coupon</p>'+
-			'<p class="p2">Receive Immediately</p>'+
-			'</div>'+
-			'<a href="javascript:;"></a>'+
-			'</div>'+
-			'<div class="slick-item slick-item-4">'+
-			'<img src="images/EN/ticket-coupons.png" class="coupons-img">'+
-			'<div class="slick-content">'+
-			'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
-			'<p class="p1">Air Ticket Coupon</p>'+
-			'<p class="p2">Receive Immediately</p>'+
-			'</div>'+
-			'<a href="javascript:;"></a>'+
-			'</div>'+
-		'</div>';
-
-		var shoppingStr = '<div class="shopping-coupons" id="js-shopping-coupons">'+
-			'<div class="slick-item slick-item-1">'+
-			'<img src="images/EN/shopping-coupons.png" class="coupons-img">'+
-			'<div class="slick-content">'+
-			'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
-			'<p class="p1">Air Ticket Coupon</p>'+
-			'<p class="p2">Receive Immediately</p>'+
-			'</div>'+
-			'<a href="javascript:;"></a>'+
-			'</div>'+
-			'<div class="slick-item slick-item-2">'+
-			'<img src="images/EN/shopping-coupons.png" class="coupons-img">'+
-			'<div class="slick-content">'+
-			'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
-			'<p class="p1">Air Ticket Coupon</p>'+
-			'<p class="p2">Receive Immediately</p>'+
-			'</div>'+
-			'<a href="javascript:;"></a>'+
-			'</div>'+
-			'<div class="slick-item slick-item-3">'+
-			'<img src="images/EN/shopping-coupons.png" class="coupons-img">'+
-			'<div class="slick-content">'+
-			'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
-			'<p class="p1">Air Ticket Coupon</p>'+
-			'<p class="p2">Receive Immediately</p>'+
-			'</div>'+
-			'<a href="javascript:;"></a>'+
-			'</div>'+
-			'<div class="slick-item slick-item-4">'+
-			'<img src="images/EN/shopping-coupons.png" class="coupons-img">'+
-			'<div class="slick-content">'+
-			'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
-			'<p class="p1">Air Ticket Coupon</p>'+
-			'<p class="p2">Receive Immediately</p>'+
-			'</div>'+
-			'<a href="javascript:;"></a>'+
-			'</div>'+
-		'</div>';
+		var ticketStr = '<div class="ticket-coupons" id="js-ticket-coupons"></div>';
 
 		var hotelStr = '<div class="hotel-coupons" id="js-hotel-coupons">'+
 			'<div class="slick-item slick-item-1">'+
-			'<img src="images/EN/hotel-coupons.png" class="coupons-img">'+
-			'<div class="slick-content">'+
-			'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
-			'<p class="p1">Air Ticket Coupon</p>'+
-			'<p class="p2">Receive Immediately</p>'+
-			'</div>'+
-			'<a href="javascript:;"></a>'+
+				'<img src="images/CN/ticket-coupons.png" class="coupons-img">'+
+				'<div class="slick-content">'+
+				'<div class="slick-content-left">'+
+				'<h3 title="">--<p>适用以上航线</p></h3>'+
+				'<a href="javascript:;" class="js-hotelCoupons-instructions" data-info="">使用说明</a>'+
+				'<p><span>旅行日期: </span>--</p>'+
+				'</div>'+
+				'<div class="slick-content-right">'+
+				'<h2>--</h2>'+
+				'<p>CNY</p>'+
+				'<a href="javascript:;" class="js-hotelCoupons-receive" data-id="">领取</a>'+
+				'</div>'+
+				'</div>'+
 			'</div>'+
 			'<div class="slick-item slick-item-2">'+
-			'<img src="images/EN/hotel-coupons.png" class="coupons-img">'+
-			'<div class="slick-content">'+
-			'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
-			'<p class="p1">Air Ticket Coupon</p>'+
-			'<p class="p2">Receive Immediately</p>'+
-			'</div>'+
-			'<a href="javascript:;"></a>'+
+				'<img src="images/CN/ticket-coupons.png" class="coupons-img">'+
+				'<div class="slick-content">'+
+				'<div class="slick-content-left">'+
+				'<h3 title="">--<p>适用以上航线</p></h3>'+
+				'<a href="javascript:;" class="js-hotelCoupons-instructions" data-info="">使用说明</a>'+
+				'<p><span>旅行日期: </span>--</p>'+
+				'</div>'+
+				'<div class="slick-content-right">'+
+				'<h2>--</h2>'+
+				'<p>CNY</p>'+
+				'<a href="javascript:;" class="js-hotelCoupons-receive" data-id="">领取</a>'+
+				'</div>'+
+				'</div>'+
 			'</div>'+
 			'<div class="slick-item slick-item-3">'+
-			'<img src="images/EN/hotel-coupons.png" class="coupons-img">'+
-			'<div class="slick-content">'+
-			'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
-			'<p class="p1">Air Ticket Coupon</p>'+
-			'<p class="p2">Receive Immediately</p>'+
-			'</div>'+
-			'<a href="javascript:;"></a>'+
+				'<img src="images/CN/ticket-coupons.png" class="coupons-img">'+
+				'<div class="slick-content">'+
+				'<div class="slick-content-left">'+
+				'<h3 title="">--<p>适用以上航线</p></h3>'+
+				'<a href="javascript:;" class="js-hotelCoupons-instructions" data-info="">使用说明</a>'+
+				'<p><span>旅行日期: </span>--</p>'+
+				'</div>'+
+				'<div class="slick-content-right">'+
+				'<h2>--</h2>'+
+				'<p>CNY</p>'+
+				'<a href="javascript:;" class="js-hotelCoupons-receive" data-id="">领取</a>'+
+				'</div>'+
+				'</div>'+
 			'</div>'+
 			'<div class="slick-item slick-item-4">'+
-			'<img src="images/EN/hotel-coupons.png" class="coupons-img">'+
-			'<div class="slick-content">'+
-			'<h2><span class="s1">$</span><span class="s2">200</span></h2>'+
-			'<p class="p1">Air Ticket Coupon</p>'+
-			'<p class="p2">Receive Immediately</p>'+
-			'</div>'+
-			'<a href="javascript:;"></a>'+
+				'<img src="images/CN/ticket-coupons.png" class="coupons-img">'+
+				'<div class="slick-content">'+
+				'<div class="slick-content-left">'+
+				'<h3 title="">--<p>适用以上航线</p></h3>'+
+				'<a href="javascript:;" class="js-hotelCoupons-instructions" data-info="">使用说明</a>'+
+				'<p><span>旅行日期: </span>--</p>'+
+				'</div>'+
+				'<div class="slick-content-right">'+
+				'<h2>--</h2>'+
+				'<p>CNY</p>'+
+				'<a href="javascript:;" class="js-hotelCoupons-receive" data-id="">领取</a>'+
+				'</div>'+
+				'</div>'+
 			'</div>'+
 		'</div>';
+
+		var shoppingStr = '';
 
 		var slick = function(id){
 			$(id).slick({
@@ -3021,14 +2971,14 @@ var LanmeiAirlines = {
 				variableWidth: true,
 				responsive: [
 					{
-						breakpoint: 992,
+						breakpoint: 1400,
 						settings: {
 							slidesToShow: 2,
 							slidesToScroll: 1,
 						}
 					},
 					{
-						breakpoint: 767,
+						breakpoint: 1200,
 						settings: {
 							slidesToShow: 1,
 							slidesToScroll: 1,
@@ -3039,42 +2989,171 @@ var LanmeiAirlines = {
 				],
 			});
 		};
-		
+
+		var $loading = $('.js-coupons-loading');
+		function ajaxTicket(){
+			$loading.show();
+			$.ajax({
+				url: 'apis/coupon/queryCouponByType.jhtml',
+				type: 'GET',
+				// async:false, 
+				dataType: 'json',
+				data: {language: 'CHINESE',type:'TICKET-COUPONS'},
+				success: function(result){
+					if(result.code==200){
+						var resultData = result.data;
+						// console.log(resultData);
+						$.each(resultData,function(idx, val) {
+							var routesStr = '';
+							if(val.routes.length==0){
+								routesStr = '--';
+							}else{
+								$.each(val.routes,function(idx2, val2) {
+									routesStr += val2.fromCity+'-'+val2.toCity+',';
+								});
+							}
+							var price = '';
+							val.salePrice='' ? '--' : price=val.salePrice;
+							
+							var str = '<div class="slick-item slick-item-'+(idx+1)+'">';
+							str += '<img src="images/CN/ticket-coupons.png" class="coupons-img">';
+							str += '<div class="slick-content">';
+							str += '<div class="slick-content-left">';
+							str += '<h3 title="'+routesStr+'">'+routesStr+'<p>适用以上航线</p></h3>';
+							str += '<a href="javascript:;" class="js-coupons-instructions" data-info="'+val.rules+'">使用说明</a>';
+							str += '<p><span>旅行日期: </span>'+val.beginDate+'-'+val.endDate+'</p>';
+							str += '</div>';
+							str += '<div class="slick-content-right">';
+							str += '<h2>'+price+'</h2>';
+							str += '<p>CNY</p>';
+							if(val.iscollected){
+								str += '<a href="javascript:;" data-id="'+val.codeId+'" style="text-decoration: none;opacity: 0.3;cursor: default;">已领取</a>';
+							}else{
+								str += '<a href="javascript:;" class="js-coupons-receive" data-id="'+val.codeId+'">领取</a>';
+							}
+							str += '</div>';
+							str += '</div>';
+							str += '</div>';
+
+							$('#js-ticket-coupons').append(str);
+						});
+						slick('#js-ticket-coupons');
+					}
+					if(result.code==400){
+						layer.open({
+							title:'温馨提示',
+							content:'<p>获取失败！</p>',
+							btn:['确定']
+						});
+					}
+					if(result.code==500){
+						layer.open({
+							title:'温馨提示',
+							content:'<p>服务器繁忙！</p>',
+							btn:['确定']
+						});
+					}
+					$loading.hide();
+				},
+				error: function(){
+					console.log("error");
+				}
+			});
+		}
+		function ajaxHotel(){
+			slick('#js-hotel-coupons');
+		}
+		function ajaxShopping(){
+			slick('#js-shopping-coupons');
+		}
+
 		var $content = $('.js-coupons-content');
-		$content.html(shoppingStr);
-		slick('#js-shopping-coupons');
+		$content.html(ticketStr);
+		ajaxTicket();
+
+		//优惠券说明
+		$('.js-coupons-content').on('click','.js-coupons-instructions',function(){
+			var infos = $(this).attr('data-info');
+			var str = infos.split(',');
+			var result = '<p>'+str.join('</p><p>')+'</p>';
+			layer.open({
+			  type: 1, //Page层类型
+			  area: ['680px', 'auto'],
+			  title: false,
+			  shadeClose: true, //点击遮罩关闭
+			  shade: 0.6, //遮罩透明度
+			  maxmin: false, //允许全屏最小化
+			  anim: 1, //0-6的动画形式，-1不开启
+			  content: '<div class="layer-coupons-info"><h2>使用说明</h2><div>'+result+'</div></div>'
+			}); 
+		});
+
+		// 领取优惠券
+		$('.js-coupons-content').on('click','.js-coupons-receive',function(){
+			var id = $(this).attr('data-id');
+			$.ajax({
+				url: 'apis/coupon/getCouponCode.jhtml',
+				type: 'GET',
+				async:false, 
+				dataType: 'json',
+				data: {codeId: id},
+				success: function(result){
+					if(result.code==5){
+						$('#logonModal').modal();
+						return;
+					}
+					if(result.code==6){
+						layer.open({
+							title:'温馨提示',
+							content:'您已领取该优惠券！',
+							btn:['确定']
+						});
+						return;
+					}
+					if(result.code==7){
+						layer.open({
+							title:'温馨提示',
+							content:'该优惠券已被领完！',
+							btn:['确定']
+						});
+						return;
+					}
+					if(result.code==200){
+						layer.open({
+							title:'温馨提示',
+							content:'领取成功！',
+							btn:['确定']
+						});
+					}
+				},
+				error: function(){
+					console.log("error");
+				}
+			});
+		});
 
 		// 切换优惠券
-		var $loading = $('.js-coupons-loading');
 		$('.js-coupons-anchor>a').click(function(e) {
 			e.preventDefault();e.stopPropagation();
-			// $loading.show();
-			$(this).addClass('active').siblings('a').removeClass('active');
+			
+			$(this).addClass('active').removeClass('hover-active').siblings('a').addClass('hover-active').removeClass('active');
 			var id = $(this).attr('href');
 
-			var hideLoading = function(){
-				setTimeout(function(){
-					$loading.hide();
-				},600);
-			};
 			switch (id) {
 				case '#js-ticket-coupons':
 				$content.html(ticketStr);
-				slick('#js-ticket-coupons');
-					// hideLoading();
-					break;
-					case '#js-shopping-coupons':
-					$content.html(shoppingStr);
-					slick('#js-shopping-coupons');
-					// hideLoading();
-					break;
-					case '#js-hotel-coupons':
-					$content.html(hotelStr);
-					slick('#js-hotel-coupons');
-					// hideLoading();
-					break;
-				}
-			});
+				ajaxTicket();
+				break;
+				case '#js-hotel-coupons':
+				$content.html(hotelStr);
+				ajaxHotel();
+				break;
+				case '#js-shopping-coupons':
+				$content.html(shoppingStr);
+				ajaxShopping();
+				break;
+			}
+		});
 	},
 
 	/* 特价机票 */

@@ -67,6 +67,11 @@ var LMComLoginReg = {
 		                                '<li email="@yahoo.com"></li>'+
 		                            '</ul>'+
 		                        '</div>'+
+		                         '<div class="registerName">'+
+		                             '<input type="text" class="lastName" name="" value="" placeholder="姓氏" autocomplete="off"/>'+
+		                             '<input type="text" class="firstName" name="" value="" placeholder="名字" autocomplete="off"/>'+
+		                             '<p>必填项，请保证姓名的真实性，以免影响会员享受权益！</p>'+
+		                        ' </div>'+
 		                        '<div class="registerPassword">'+
 		                            '<input type="password" name="" value="" id="registerPassword" placeholder="8-16个字符的密码" autocomplete="off"/>'+
 		                            '<p>密码强度： <span><i class="i1"></i><i class="i2"></i><i class="i3"></i><i class="i4"></i><i class="i5"></i><i class="i6"></i></span></p>'+
@@ -624,6 +629,15 @@ var LMComLoginReg = {
 		$("#registerBtn").click(function(){
 			//email
 			if(!userNameVerify($("#registerUserName").val())){
+				return;
+			}
+
+			if($('.lastName').val()==''){
+				$('.lastName').focus();
+				return;
+			}
+			if($('.firstName').val()==''){
+				$('.firstName').focus();
 				return;
 			}
 

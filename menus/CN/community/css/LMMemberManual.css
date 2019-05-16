@@ -1,0 +1,33 @@
+/* 定义变量 */
+/* 定义颜色变量 */
+.lm-section .bag-table thead tr {
+  color: #1f2c5c;
+  font-size: 14px;
+}
+.lm-section .bag-table thead tr th {
+  vertical-align: middle;
+}
+.lm-section .bag-table tbody tr td {
+  color: #808080;
+  font-size: 14px;
+  vertical-align: middle;
+}
+.lm-section .card-wrap {
+  overflow: hidden;
+}
+.lm-section .card-wrap > div {
+  float: left;
+  width: 50%;
+  text-align: center;
+}
+@media screen and (max-width: 992px) {
+  .lm-section .bag-table thead tr {
+    font-size: 0.12rem;
+  }
+  .lm-section .bag-table tbody tr td {
+    font-size: 0.12rem;
+  }
+  .lm-section .card-wrap > div {
+    width: 100%;
+  }
+}
