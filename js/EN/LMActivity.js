@@ -53,7 +53,7 @@ $(document).ready(function(){
 	};
 
 	// 周六
-	layerMember("https://lanmeiairlines.com/upload/image/201809/1cn11.jpg","#scroll-anchors");
+	// layerMember("https://lanmeiairlines.com/upload/image/201809/1cn11.jpg","#scroll-anchors");
 
 	// 双送
 	// layerMember("https://lanmeiairlines.com/upload/image/201809/en7.jpg","http://lanmeiairlines.com/lanmeiairlines2.0/default/tpls/EN/LMFreeActivity.html");

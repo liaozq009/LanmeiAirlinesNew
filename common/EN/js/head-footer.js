@@ -1,9 +1,8 @@
 
 $(document).ready(function($) {
-	var $header = '<div class="h-menu js-h-menu">'+
+	var $header = '<div class="header-wrap"><div class="h-menu js-h-menu">'+
 					'<span>Navigation</span>'+
 					'</div>'+
-					'<div class="menu-guide bounce-left">Click here to view more!</div>'+
 					'<a href="https://lanmeiairlines.com/index.html?lang=en" class="h-logo-wrap"></a>'+
 					'<div class="h-right">'+
 						'<div class="h-phone js-h-phone">'+
@@ -39,7 +38,7 @@ $(document).ready(function($) {
 								'<a href="https://lanmeiairlines.com/index_cn.html?lang=cn" class="lang-zh" data="zh">简体中文</a>'+
 							'</div>'+
 						'</div>'+
-					'</div>';
+					'</div></div>';
 
 	var $footer = '<div class="footer-left">'+
 					'<p class="lm-logo"></p>'+

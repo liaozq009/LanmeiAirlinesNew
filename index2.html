@@ -1,0 +1,1511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="Cache-Control" content="no-transform">
+	<meta http-equiv="Cache-Control" content="no-siteapp" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<!-- uc强制竖屏 -->
+	<meta name="screen-orientation" content="portrait">
+	<!-- QQ强制竖屏 -->
+	<meta name="x5-orientation" content="portrait">
+	<!-- UC强制全屏 -->
+	<!-- <meta name="full-screen" content="yes"> -->
+	<!-- QQ强制全屏 -->
+	<!-- <meta name="x5-fullscreen" content="true"> -->
+
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+	<meta name="description" content="Be Unique,lanmei Airlines offical website find great deals now&nbsp;to our worldwide destinations.Cambodia,booking flights">
+	<meta name="keywords" content="lanmei airlines,六国,柬埔寨,澜湄航空,机票预订,lanmei,LQ,Fly to Cambodia,Special Ticket,lanmei A320,booking,ticket booking,booking flights">
+	<meta name="baidu-site-verification" content="wL5we2b5k5" />
+	<title>Be Unique, Lanmei Airlines</title>
+
+
+	<script type="text/javascript">
+		(function(){ 
+			if (navigator.language) {
+				var language = navigator.language;
+			}else {
+				var language = navigator.browserLanguage;
+			}
+
+			// 订票页面跳转参数设置
+			function GetRequest() {   
+			   var url = location.search;
+			   var theRequest = {};   
+
+			   if (url.indexOf("?") != -1) { 
+			      var str = url.substr(1);   
+			      strs = str.split("&");   
+			      for(var i = 0; i < strs.length; i ++) {   
+			         theRequest[strs[i].split("=")[0]]=decodeURIComponent(strs[i].split("=")[1]); 
+			      }   
+			   }   
+			   return theRequest.lang; 
+			}
+
+			var lmLang;
+			if(GetRequest() == 'cn'){
+				lmLang='cn';
+			}else if(GetRequest() == 'en'){
+				lmLang='en';
+			}else{
+				lmLang==null
+			}
+
+			if((language.slice(0,2)=='zh') && (lmLang=='cn' || lmLang==null)){
+				// location.href="http://192.168.3.10/LanmeiAirlinesNew/index_cn.html";
+				// location.href="https://lanmeiairlines.com/index_cn.html";
+			}else{
+				// location.href="https://lanmeiairlines.com";
+			}
+		})(); 
+	</script>
+
+	<!-- 引入图标 -->
+	<link rel="icon" href="images/EN/lanmeiLogo.ico">
+	<link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="common/EN/fonts/lm-iconfont.css">
+	<link rel="stylesheet" href="libs/daterange/daterangepicker.css">
+	<link rel="stylesheet" href="libs/lmslick/slick.css">
+	<link rel="stylesheet" href="common/EN/css/animate.css">
+	<link rel="stylesheet" href="libsEdit/css/lanmeiLibsEdit.css">
+	<link rel="stylesheet" href="common/EN/css/Lanmei-common2.css">
+	<link rel="stylesheet" href="css/EN/LMActivity.css">
+	<link rel="stylesheet" href="css/EN/LanmeiAirlines2.css">
+
+	<!--[if IE 8]>
+		<html class="ie8 lte_ie9" lang="en">
+	<![endif]-->
+
+	<!--[if lte IE 9]>
+		<script src="libs/bootstrap/js/html5shiv.min.js"></script>
+		<script src="libs/bootstrap/js/respond.min.js"></script>
+		<html class="lte_ie9" lang="en">
+	<![endif]-->
+
+	<!--[if !IE]><!-->
+	    <script>
+	        // 针对IE10
+	        if (/*@cc_on!@*/false) {
+	            document.documentElement.className += ' ie' + document.documentMode;
+	        }
+	        // 针对IE11及非IE浏览器，
+	        if (/*@cc_on!@*/true) {
+	            document.documentElement.className += ' ie' + document.documentMode;
+	        }
+	    </script>
+	<!--<![endif]-->
+
+	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "https://hm.baidu.com/hm.js?ab7fede74c0b7d053e582bc301a6af31";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+
+</head>
+<body>
+	<!-- 页面loading -->
+	<div class="lm-loading"><img src="images/EN/construction.gif" alt="loading"></div>
+	<!-- 页面顶部 -->
+	<header class="lm-header">
+		
+	</header>
+
+	<!-- 登录模态框 -->
+	<div class="modal fade" id="logonModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+		
+	</div>
+
+	<!-- 注册模态框 -->
+	<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+		
+	</div>
+
+	<!-- 忘记密码模态框 -->
+	<div class="modal fade" id="forgetModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+		
+	</div>
+
+	<!-- 导航栏 -->
+	<section class="lm-nav-wrap">
+		<div class="nav-container pc-nav-container js-nav-container">
+			<div class="nav-menu-close js-menu-close">Close</div>
+			<div class="m-nav-back js-navBack-second"><i class="iconfont icon-left-arrow"></i></div>
+			<div class="m-nav-back js-navBack-three"><i class="iconfont icon-left-arrow"></i></div>
+			<div class="nav-box js-nav-box">
+				<ul class="m-nav-1 m-nav-list js-nav-first">
+					<li><i></i><a href="#f-list-1">Plan Travel</a></li>
+					<li><i></i><a href="#f-list-2">Experience</a></li>
+					<li><i></i><a href="#f-list-3">Community</a></li>
+					<li><i></i><a href="#f-list-4">Travel</a></li>
+					<li><i></i><a href="#f-list-5">Shopping</a></li>
+					<li><i></i><a href="#f-list-6">About Us</a></li>
+				</ul>
+				<div class="m-nav-sub js-nav-sub">
+					<div class="m-nav-2 js-nav-second">
+						<ul class="m-nav-list" id="f-list-1">
+							<li><i></i><a href="#one-s-list-1">Special Offers</a></li>
+							<li><i></i><a href="#one-s-list-2">Destinations</a></li>
+							<li><i></i><a href="#one-s-list-3">Flight Subscription</a></li>
+							<li><i></i><a href="#one-s-list-4">Hotel Booking</a></li>
+						</ul>
+						<ul class="m-nav-list" id="f-list-2">
+							<li class="nth-child1"><i></i><a href="#two-s-list-1">Travel Preparation</a></li>
+							<li class="nth-child2"><i></i><a href="#two-s-list-2">Flight Status</a></li>
+							<li class="nth-child3"><i></i><a href="#two-s-list-3">Airport Services</a></li>
+							<li class="nth-child4"><i></i><a href="#two-s-list-4">Check In</a></li>
+							<li class="nth-child5"><i></i><a href="#two-s-list-5">Your Baggage</a></li>
+							<li class="nth-child6"><i></i><a href="#two-s-list-6">Invoice Tracking</a></li>
+							<li class="nth-child7"><i></i><a href="#two-s-list-7">Enjoy Services</a></li>
+						</ul>
+						<ul class="m-nav-list" id="f-list-3">
+							<li><i></i><a href="#three-s-list-1">Lanmei Member</a></li>
+							<li><i></i><a href="#three-s-list-2">Lanmei Forum</a></li>
+							<li><i></i><a href="live/LMLive.html" data-href="true" target="_blank">Lanmei Live</a></li>
+						</ul>
+						<ul class="m-nav-list" id="f-list-4">
+							<li><i></i><a href="#four-s-list-1">Phnom Penh</a></li>
+							<li><i></i><a href="travel/tpls/CN/LMTravelInfo.html" data-href="true" target="_blank">Sihanoukville</a></li>
+							<li><i></i><a href="#four-s-list-3">Siem Reap</a></li>
+							<li><i></i><a href="#four-s-list-3">Macau</a></li>
+							<li><i></i><a href="#four-s-list-4">Palau</a></li>
+						</ul>
+						<ul class="m-nav-list" id="f-list-5">
+							<!-- <li><a href="menus/EN/shopping/LMDFC20170907.html" data-href="true">吴哥免税店</a></li> -->
+						</ul>
+						<ul class="m-nav-list" id="f-list-6">
+							<li><i></i><a href="menus/EN/aboutUs/LMSiteMap.html" data-href="true" target="_blank">Sitemap</a></li>
+							<li><i></i><a href="menus/EN/aboutUs/LMHistory.html" data-href="true" target="_blank">Lanmei History</a></li>
+							<li><i></i><a href="menus/EN/aboutUs/LMContact.html" data-href="true" target="_blank">Contact Us</a></li>
+							<li><i></i><a href="menus/EN/aboutUs/LMHire.html" data-href="true" target="_blank">Join Us</a></li>
+							<li><i></i><a href="#six-s-list-4" data-href="true">Social Responsibility</a></li>
+							<li><i></i><a href="#six-s-list-5" data-href="true">E-magazine</a></li>
+							<li><i></i><a href="menus/EN/aboutUs/LMCopyright.html" data-href="true" target="_blank">Copyright</a></li>
+							<li><i></i><a href="#six-s-list-8" data-href="true">FQA</a></li>
+							<li><i></i><a href="menus/EN/aboutUs/LMPrivacy.html" data-href="true" target="_blank">Privacy Policy</a></li>
+							<li><i></i><a href="menus/EN/aboutUs/LMLegalStatement.html" data-href="true" target="_blank">Legal Statement</a></li>
+						</ul>
+					</div>
+					<div class="m-nav-3 js-nav-three">
+						<!-- 计划旅行 -->
+						<ul class="three-f-list-1" id="one-s-list-1">
+							<li><a href="javascript:void(0)">Special tickets</a></li>
+							<li><a href="javascript:void(0)">Special hotels</a></li>
+							<li><a href="javascript:void(0)">Special rental cars</a></li>
+							<li><a href="javascript:void(0)">Special sales</a></li>
+							<li><a href="javascript:void(0)">Special travel</a></li>
+						</ul>
+						<ul class="three-f-list-1" id="one-s-list-2">
+							<li><a href="javascript:void(0)">Phnom Penh</a></li>
+							<li><a href="javascript:void(0)">Siem Reap</a></li>
+							<li><a href="travel/LMTravel.html">Sihanoukville</a></li>
+							<li><a href="javascript:void(0)">Macau</a></li>
+							<li><a href="javascript:void(0)">Palau</a></li>
+						</ul>
+						<ul class="three-f-list-1" id="one-s-list-3">
+							<li><a href="javascript:void(0)" class="a-search-flight">Flight search</a></li>
+							<li><a href="javascript:void(0)">Check in</a></li>
+							<li><a href="javascript:void(0)">My trip</a></li>
+							<li><a href="javascript:void(0)">Change or cancel flights</a></li>
+						</ul>
+						<ul class="three-f-list-1" id="one-s-list-4">
+							<li><a href="javascript:void(0)">Hotel search</a></li>
+							<li><a href="javascript:void(0)">My hotel</a></li>
+							<li><a href="javascript:void(0)">Car rental</a></li>
+						</ul>
+						<!-- 体验澜湄 -->
+						<ul class="three-f-list-2 nth-child1" id="two-s-list-1">
+							<li><a href="menus/EN/experience/LMVisa.html" target="_blank">Passport and visa</a></li>
+							<li><a href="menus/EN/experience/LMTransport.html" target="_blank">General conditions of carriage</a></li>
+							<li><a href="menus/EN/experience/LMSpecialPassengers.html">Special services</a></li>
+							<li><a href="menus/EN/experience/LMNoticePassengers.html">Notice to passengers</a></li>
+							<li><a href="menus/EN/experience/LMCommitmenService.html">Commitment to customer service</a></li>
+						</ul>
+						<ul class="three-f-list-2 nth-child2" id="two-s-list-2">
+							<li><a href="javascript:void(0)">Dynamic information</a></li>
+							<li><a href="javascript:void(0)">Flight Subscription</a></li>
+							<li><a href="javascript:void(0)">Real-time notification for Flight Info</a></li>
+						</ul>
+						<ul class="three-f-list-2 nth-child3" id="two-s-list-3">
+							<li><a href="menus/EN/experience/LMPhnomPenhAirportInfo.html" title="Phnom Penh International Airport " target="_blank">Phnom Penh International Airport </a></li>
+							<li><a href="menus/EN/experience/LMSiemReapAirportInfo.html" title="Siem Reap International Airport" target="_blank">Siem Reap International Airport</a></li>
+							<li><a href="menus/EN/experience/LMMacauAirportInfo.html" title="Macau International Airport" target="_blank">Macau International Airport</a></li>
+						</ul>
+						<ul class="three-f-list-2 nth-child4" id="two-s-list-4">
+							<li><a href="menus/EN/experience/LMCheckOnline.html" target="_blank">Check in online</a></li>
+							<li><a href="menus/EN/experience/LMCheckAirport.html" target="_blank">Check in at airport</a></li>
+							<li><a href="menus/EN/experience/LMCheckTime.html" target="_blank">Check-in and baggage drop-off times</a></li>
+						</ul>
+						<ul class="three-f-list-2 nth-child5" id="two-s-list-5">
+							<li><a href="menus/EN/experience/LMBaggage.html" target="_blank">About baggage</a></li>
+							<li><a href="menus/EN/experience/LMMisBaggage.html" target="_blank">Mishandled baggage</a></li>
+							<li><a href="javascript:void(0)">Dangerous goods</a></li>
+						</ul>
+						<ul class="three-f-list-2 nth-child6" id="two-s-list-6">
+							<li><a href="javascript:void(0)">Invoice Inquiry</a></li>
+						</ul>
+						<ul class="three-f-list-2 nth-child7" id="two-s-list-7">
+							<li><a href="menus/EN/experience/LMCate.html" target="_blank">Catering service</a></li>
+							<li><a href="javascript:void(0)">Excess baggage service</a></li>
+							<li><a href="javascript:void(0)">Extended seats service</a></li>
+							<li><a href="javascript:void(0)">Seat selection in advance</a></li>
+							<li><a href="javascript:void(0)">Special service application</a></li>
+						</ul>
+						<!-- 澜湄社区 -->
+						<ul class="three-f-list-3" id="three-s-list-1">
+							<li><a href="javascript:void(0)">Member registration</a></li>
+							<li><a href="javascript:void(0)">Lanmei travel companion</a></li>
+							<li><a href="javascript:void(0)">Lanmei members FAQ</a></li>
+							<li><a href="javascript:void(0)">Member information</a></li>
+							<li><a href="javascript:void(0)">Flight chart</a></li>
+							<li><a href="javascript:void(0)">Coupon</a></li>
+							<li><a href="javascript:void(0)">Order</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<div class="nav-settings js-nav-settings">
+				<div class="h-lang js-mh-lang">
+					<span>Language</span>
+					<div class="lang-menu js-mLang-menu">
+						<a href="http://192.168.1.19/LanmeiAirlinesNew/index.html?lang=en" class="lang-en" data="en">English</a>
+						<a href="http://192.168.1.19/LanmeiAirlinesNew/index_cn.html?lang=cn" class="lang-zh" data="zh">简体中文</a>
+					</div>
+				</div>
+				<div class="customer-service">
+					<span class="js-mh-phone">Customer service</span>
+					<div class="phone-menu js-mPhone-menu">
+						<h2>Hotline:</h2>
+						<p class="p1">+855 23981800</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="m-nav-mask js-nav-mask"></div>
+	</section>
+
+	<!-- 首屏 -->
+	<section class="lm-section-main js-section-main">
+		<div class="lm-activity-tips"> 
+			<span>Happy LanMei Saturday !</span>
+			<ul class="countdown js-countdown">
+				<li class="activity-day" style="margin-right: 10px;">Countdown:</li>
+			    <li class="countdown-day"> <span class="days">00</span>
+			    </li>
+			    <li class="seperator">:</li>
+			    <li class="countdown-day"> <span class="hours">00</span>
+			    </li>
+			    <li class="seperator">:</li>
+			    <li class="countdown-day"> <span class="minutes">00</span>
+			    </li>
+			    <li class="seperator">:</li>
+			    <li class="countdown-day"> <span class="seconds">00</span>
+			    </li>
+			</ul>
+		</div>
+		<!-- 机票选择 -->
+		<div class="ticket-content-wrap js-flight-com js-ticket-wrap">
+			<!-- 炫酷白云 -->
+			<div class="ticket-bg bg-com js-ticket-bg">
+				<iframe src="" scrolling="auto" width="100%" height="100%" class="cloud-iframe js-cloud-iframe"></iframe>
+				<!-- <video width="100%" height="auto" class="videoSource" id="videoSource" autoplay="autoplay" loop="loop" muted="true" poster="/">
+					<source src="video/cloud-video.mp4" type="video/mp4">
+				</video> -->
+			</div>
+			<!-- 白云上面的内容 -->
+			<div class="content-com-wrap" style="display: none;">
+				<div class="content-com-inner">
+					<h1 class="animated fadeInUp">Be unique <br>Lanmei Airlines </h1>
+				</div>
+			</div>
+			<!-- 航班选择 -->
+			<div class="ticket-content flight-com js-ticket-content">
+				<form id="air-ticket-form" target="_blank">
+					<input type="hidden" name="tripType" id="tripType" value="OW">
+					<input type="hidden" name="orgcity" id="orgcity" value="PNH">
+					<input type="hidden" name="dstcity" id="dstcity" value="REP">
+					<input type="hidden" name="takeoffDate" id="takeoffDate" value="">
+					<input type="hidden" name="returnDate" id="returnDate" value="">
+					<input type="hidden" name="adultCount" id="adultCount" value="">
+					<input type="hidden" name="childCount" id="childCount" value="">
+					<input type="hidden" name="infantCount" id="infantCount" value="">
+					<input type="hidden" name="language" value="US">
+					<input type="hidden" name="CURRENCY" value="USD">
+					
+					<p class="tips-com js-tips-com" style="display: none;">- &nbsp;Make each one of us unique</p>
+					<div class="select-way js-select-way animated fadeInUp" style="display: none;">
+						<a href="javascript:;" class="round-trip active" data-way="round">Round trip</a>
+						<a href="javascript:;" class="one-way" data-way="one">One-way</a>
+						<a href="javascript:;" class="multi" data-way="multi">Stopover/Multi-city</a>
+					</div>
+					<div class="select-air-time select-air-com">
+						<div class="from-com js-ticket-from">
+							<input type="text" class="t-from-input js-from-input" value="" data="js-from-menu" data-city="" placeholder="From" autocomplete="off">
+							<span class="m-city-from js-m-Fcity">Phnom Penh/PNH</span>
+							<i class="local-change js-ticket-change"></i>
+						</div>
+						<i class="local-change m-local-change js-mTicket-change"></i>
+						<div class="to-com js-ticket-to">
+							<input type="text" class="t-to-input js-to-input" value="" data="js-to-menu" placeholder="To" autocomplete="off">
+							<span class="m-city-to js-m-Tcity">Siem Reap/Cambodia</span>
+						</div>
+						<div class="date-com js-ticket-date">
+							<span class="date-result js-date-result" id="js-mDate-result"></span>
+						</div>
+						<div class="people-com js-ticket-people">
+							<div class="t-people-result hidden-infant">
+								<p class="p-adult js-p-adult">x <span>1</span></p>
+								<p class="p-child js-p-child">x <span>0</span></p>
+								<p class="p-infant js-p-infant">x <span>0</span></p>
+							</div>
+						</div>
+					</div>
+					<div class="search-flight-wrap js-search-ticket">
+						<a href="https://lanmeiairlines.com/routemsg/verification.jhtml?language=EN" class="flight-cancel js-ticket-cancel" style="background:#1f2c5c;display: none;" target="_blank"><img src="https://lanmeiairlines.com/lanmeiairlines2.0/default/images/CN/lanmeiServe4.png" style="height: 40px;margin-right:10px;" />Ticket Verification</a>
+						<a href="javascript:;" class="flight-search js-ticket-search">Search</a>
+					</div>
+				</form>
+				<!-- 下拉选择菜单 -->
+				<div class="popup-container js-popup-container">
+					<div class="popup-title-wrap">
+						<p class="popup-title js-popup-title">Select origin</p>
+						<p class="popup-close js-popup-close"></p>
+						<input type="text" name="" class="city-search js-city-search" value="" data="" placeholder="Search">
+					</div>
+					<div class="popup-box js-popup-box">
+						<div class="popup-content popup-inactive js-popup-content">
+							<!-- 出发地目的地选择 -->
+							<div class="popup-airport-from popup-airport js-airport-from">
+								<h2>Origin Airport :</h2>
+								<ul class="flight-list-wrap js-from-menu">
+									
+								</ul>
+							</div>
+							<div class="popup-airport-to popup-airport js-airport-to">
+								<h2>Destination Airport :</h2>
+								<ul class="flight-list-wrap js-to-menu">
+
+								</ul>
+							</div>
+							<!-- 日期选择 -->
+							<div class="popup-date js-popup-date">
+								
+							</div>
+							<!-- 人数选择 -->
+							<div class="popup-people js-popup-people">
+								<p class="people-title">Number of passengers :</p>
+								<div class="select-people-container">
+									<div class="s-adult s-people-com js-s-adult">
+										<div class="people-prompt">
+											<p class="p1">Adult</p>
+											<p class="p2 adult-tip">( 12+ )</p>
+										</div>
+										<div class="people-number">
+											<a href="javascript:;" class="sub-people off-sub-operation js-adult-sub"></a>
+											<span class="adult-num">1</span>
+											<a href="javascript:;" class="add-people js-adult-add"></a>
+										</div>
+									</div>
+									<div class="s-child s-people-com js-s-child">
+										<div class="people-prompt">
+											<p class="p1">Child</p>
+											<p class="p2 child-tip">(2-11)</p>
+										</div>
+										<div class="people-number disable">
+											<a href="javascript:;" class="sub-people off-sub-operation js-child-sub"></a>
+											<span class="child-num">0</span>
+											<a href="javascript:;" class="add-people js-child-add"></a>
+										</div>
+									</div>
+									<div class="s-infant s-people-com">
+										<div class="people-prompt">
+											<p class="p1"><img src="images/EN/infant-icon.png">Infant</p>
+											<p class="p2 infant-tip">( < 2 )</p>
+										</div>
+										<div class="people-number disable">
+											<a href="javascript:;" class="sub-people off-sub-operation js-infant-sub"></a>
+											<span class="infant-num">0</span>
+											<a href="javascript:;" class="add-people js-infant-add"></a>
+										</div>
+									</div>
+								</div>
+								<div class="m-select-people"><a href="javascript:;" class="js-mSelect-people">SAVE</a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- 酒店选择 -->
+		<div class="hotel-content-wrap js-flight-com js-hotel-wrap">
+			<!-- 背景 -->
+			<div class="hotel-bg bg-com"></div>
+			<!-- 背景上的内容 -->
+			<div class="content-com-wrap">
+				<div class="content-com-inner">
+					<h1 class="animated fadeInUp">Lanmei Hotel <br> Reservation Service</h1>
+				</div>
+			</div>
+			<!-- 酒店选择 -->
+			<div class="hotel-content flight-com">
+				<form id="air-hotel-form" action="" method="POST" target="_blank">
+					<input type="hidden" name="txtHotelID" id="txtHotelID" value="">
+					<input type="hidden" name="datefrom" id="datefrom" value="">
+					<input type="hidden" name="dateto" id="dateto" value="">
+					<input type="hidden" name="data-cate" id="data-cate" value="">
+					<input type="hidden" name="data-id" id="data-id" value="">
+					<input type="hidden" id="tempName" value="">
+
+					<p class="tips-com animated fadeInUp js-tips-com">The ideal choice for your journey</p>
+					<div class="select-hotel-time select-air-com">
+						<div class="from-com hotel-from js-hotel-from animated fadeInUp">
+							<input type="text" class="h-from-input js-hotelFrom-input" data="js-from-menu" placeholder="City, hotel name or landmark in English" autocomplete="off">
+						</div>
+						<div class="date-com js-hotel-date">
+							<span class="date-result h-date-result js-hotelDate-result"></span>
+							<p class="hotel-day">3</p>
+						</div>
+						<div class="people-com js-hotel-people">
+							<div class="t-people-result">
+								<p class="p-hotelRooms js-p-hotelRooms">x <span>1</span></p>
+								<p class="p-hotelAdult js-p-hotelAdult">x <span>2</span></p>
+								<p class="p-hotelChild js-p-hotelChild">x <span>0</span></p>
+							</div>
+						</div>
+					</div>
+					<div class="search-flight-wrap js-search-hotel">
+						<a href="javascript:;" class="flight-cancel js-hotel-cancel">Cancel</a>
+						<a href="javascript:;" class="flight-search js-hotel-search">Search</a>
+					</div>
+				</form>
+				<!-- 下拉选择菜单 -->
+				<div class="popup-container js-popup-container">
+					<div class="popup-title-wrap">
+						<p class="popup-title js-hotelPopup-title">Select destination</p>
+						<p class="popup-close js-hotelPopup-close"></p>
+						<input type="text" name="" class="city-search js-hotelCity-search" value="" data="js-hotelFrom-menu" placeholder="City, hotel name or landmark in English" autocomplete="off">
+					</div>
+					<div class="popup-box js-hotelPopup-box">
+						<div class="popup-content hotel-popup-content popup-inactive js-hotelPopup-content">
+							<!-- 出发地目的地选择 -->
+							<div class="popup-hotel-from popup-airport js-hotelPopup-from">
+								<h2>Choose the hotel you want :</h2>
+								<ul class="flight-list-wrap hotel-list-wrap js-hotelFrom-menu">
+								 
+								</ul>
+							</div>
+							<!-- 日期选择 -->
+							<div class="popup-date js-hotelPopup-date">
+
+							</div>
+							<!-- 人数选择 -->
+							<div class="hotel-popus-people popup-people js-hotelPopup-people">
+								<p class="people-title js-rooms-title">Room and number of choices :</p>
+								<div class="select-people-container js-rooms-container">
+									<div class="s-room-1 s-room-com s-people-com animated fadeInUp" id="js-room1-inner">
+										<p class="rooms-title">Room 1</p>
+										<div class="adult-rooms-content rooms-content-com js-adultRooms-content">
+											<div class="hotel-people-prompt people-prompt">
+												<p class="p1">Adult</p>
+											</div>
+											<div class="hotel-people-number people-number">
+												<a href="javascript:;" class="sub-people off-sub-operation js-hotelAdult-sub"></a>
+												<span class="adult-num js-hotelAdult-num">2</span>
+												<a href="javascript:;" class="add-people js-hotelAdult-add"></a>
+											</div>
+										</div>
+										<div class="child-rooms-content rooms-content-com js-childRooms-content">
+											<div class="hotel-people-prompt people-prompt">
+												<p class="p1">Child</p>
+											</div>
+											<div class="hotel-people-number people-number disable">
+												<a href="javascript:;" class="sub-people off-sub-operation js-hotelChild-sub"></a>
+												<span class="child-num js-hotelChild-num">0</span>
+												<a href="javascript:;" class="add-people js-hotelChild-add"></a>
+											</div>
+										</div>
+										<div class="age-rooms-com rooms-content-com animated fadeInUp js-age-1">
+											<div class="hotel-people-prompt people-prompt">
+												<p class="p1">Age/1</p>
+											</div>
+											<div class="hotel-age-wrap people-number">
+												<span class="age-result js-age-result">1</span>
+												<div class="age-menu-box js-age-box">
+													<ul class="hotel-age-menu js-age-menu">
+														<li title="Age < 1 year old">&lt; 1</li>
+														<li>2</li>
+														<li>3</li>
+														<li>4</li>
+														<li>5</li>
+														<li>6</li>
+														<li>7</li>
+														<li>8</li>
+														<li>9</li>
+														<li>10</li>
+														<li>11</li>
+														<li>12</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+										<div class="age-rooms-com rooms-content-com animated fadeInUp js-age-2">
+											<div class="hotel-people-prompt people-prompt">
+												<p class="p1">Age/2</p>
+											</div>
+											<div class="hotel-age-wrap people-number">
+												<span class="age-result js-age-result">1</span>
+												<div class="age-menu-box js-age-box">
+													<ul class="hotel-age-menu js-age-menu">
+														<li title="Age < 1 year old">&lt; 1</li>
+														<li>2</li>
+														<li>3</li>
+														<li>4</li>
+														<li>5</li>
+														<li>6</li>
+														<li>7</li>
+														<li>8</li>
+														<li>9</li>
+														<li>10</li>
+														<li>11</li>
+														<li>12</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+										<div class="age-rooms-com rooms-content-com animated fadeInUp js-age-3">
+											<div class="hotel-people-prompt people-prompt">
+												<p class="p1">Age/3</p>
+											</div>
+											<div class="hotel-age-wrap people-number">
+												<span class="age-result js-age-result">1</span>
+												<div class="age-menu-box js-age-box">
+													<ul class="hotel-age-menu js-age-menu">
+														<li title="Age < 1 year old">&lt; 1</li>
+														<li>2</li>
+														<li>3</li>
+														<li>4</li>
+														<li>5</li>
+														<li>6</li>
+														<li>7</li>
+														<li>8</li>
+														<li>9</li>
+														<li>10</li>
+														<li>11</li>
+														<li>12</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="add-rooms-wrap">
+									<div class="add-rooms-content js-add-roomsTab">
+										<p class="" data-room="js-room1-inner"><span>Room 1</span><b>×</b></p>
+									</div>
+									<p class="add-rooms-btn js-add-rooms">Add</p>
+								</div>
+								<div class="m-select-rooms"><a href="javascript:;" class="js-mSelect-rooms">SAVE</a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- 机+酒选择 -->
+		<div class="ticketHotel-content-wrap js-flight-com js-ticketHotel-wrap">
+			<!-- 背景 -->
+			<div class="ticketHotel-bg bg-com js-ticketHotel-bg"></div>
+			<!-- 背景上面的内容 -->
+			<div class="content-com-wrap">
+				<div class="content-com-inner">
+					<h1 class="animated fadeInUp">Best ticket,hotel <br>package!</h1>
+				</div>
+			</div>
+			<!-- 航班选择 -->
+			<div class="ticketHotel-content flight-com js-ticketHotel-content">
+				<form id="air-ticketHotel-form" action="" method="POST" target="_blank">
+					<input type="hidden" name="tripType" id="th-tripType" value="OW">
+					<input type="hidden" name="orgcity" id="th-orgcity" value="PNH">
+					<input type="hidden" name="dstcity" id="th-dstcity" value="REP">
+					<input type="hidden" name="takeoffDate" id="th-takeoffDate" value="">
+					<input type="hidden" name="returnDate" id="th-returnDate" value="">
+					<input type="hidden" name="adultCount" id="th-adultCount" value="">
+					<input type="hidden" name="childCount" id="th-childCount" value="">
+					<input type="hidden" name="roomCount" id="th-roomCount" value="">
+					<input type="hidden" name="language" value="US">
+					<input type="hidden" name="CURRENCY" value="USD">
+					
+					<p class="tips-com animated fadeInUp js-tips-com">Heart is not as good as action!</p>
+					<div class="select-way js-thSelect-way animated fadeInUp">
+						<a href="javascript:;" class="round-trip active" data-way="round">Round trip</a>
+						<a href="javascript:;" class="one-way" data-way="one">One-way</a>
+					</div>
+					<div class="select-air-com">
+						<div class="from-com js-ticketHotel-from animated fadeInUp">
+							<input type="text" class="t-from-input js-thFrom-input" data="js-thFrom-menu" placeholder="From" autocomplete="off">
+							<span class="m-city-from js-m-thFcity">Phnom Penh/PNH</span>
+							<i class="local-change js-ticketHotel-change animated fadeInUp"></i>
+						</div>
+						<i class="local-change m-local-change js-mTicketHotel-change animated fadeInUp"></i>
+						<div class="to-com js-ticketHotel-to">
+							<input type="text" class="t-to-input js-thTo-input" data="js-thTo-menu" placeholder="To" autocomplete="off">
+							<span class="m-city-to js-m-thTcity">Siem Reap/Cambodia</span>
+						</div>
+						<div class="date-com js-ticketHotel-date">
+							<span class="date-result js-thDate-result" id="js-thMDate-result"></span>
+						</div>
+						<div class="people-com js-ticketHotel-people">
+							<div class="t-people-result">
+								<p class="p-hotelRooms js-p-ticketHotelRooms">x <span></span></p>
+								<p class="p-hotelAdult js-p-ticketHotelAdult">x <span></span></p>
+								<p class="p-hotelChild js-p-ticketHotelChild">x <span></span></p>
+							</div>
+						</div>
+					</div>
+					<div class="search-flight-wrap js-search-ticketHotel">
+						<a href="javascript:;" class="flight-cancel js-ticketHotel-cancel">Cancel</a>
+						<a href="tpls/EN/LMFlightHotel.html" class="flight-search js-ticketHotel-search" target="_blank">Search</a>
+					</div>
+				</form>
+				<!-- 下拉选择菜单 -->
+				<div class="popup-container js-popup-container">
+					<div class="popup-title-wrap">
+						<p class="popup-title js-thPopup-title">Select origin</p>
+						<p class="popup-close js-thPopup-close"></p>
+						<input type="text" name="" class="city-search js-thCity-search" value="" data="js-thFrom-menu" placeholder="Search">
+					</div>
+					<div class="popup-box js-thPopup-box">
+						<div class="popup-content th-popup-content popup-inactive js-thPopup-content">
+							<!-- 出发地目的地选择 -->
+							<div class="popup-airport-from popup-airport js-thAirport-from">
+								<h2>Origin Airport :</h2>
+								<ul class="flight-list-wrap js-thFrom-menu">
+									
+								</ul>
+							</div>
+							<div class="popup-airport-to popup-airport js-thAirport-to">
+								<h2>Destination Airport :</h2>
+								<ul class="flight-list-wrap js-thTo-menu">
+
+								</ul>
+							</div>
+							<!-- 日期选择 -->
+							<div class="popup-date js-thPopup-date">
+								
+							</div>
+							<!-- 人数选择 -->
+							<div class="popup-people hotel-popus-people th-popus-people js-ticketHotelPopup-people">
+								<p class="people-title">Room and number of choices :</p>
+								<div class="select-people-container js-thPeople-container">
+									<div class="s-rooms s-people-com js-s-thRoom">
+										<div class="people-prompt people-rooms-prompt">
+											<p class="p1">Rooms</p>
+											<!-- <p class="p2 thRooms-tip">( 12+ )</p> -->
+										</div>
+										<div class="people-number">
+											<a href="javascript:;" class="sub-people off-sub-operation js-thRooms-sub"></a>
+											<span class="rooms-num">1</span>
+											<a href="javascript:;" class="add-people js-thRooms-add"></a>
+										</div>
+									</div>
+									<div class="s-adult s-people-com js-s-thAdult">
+										<div class="people-prompt people-rooms-prompt">
+											<p class="p1">Adult</p>
+											<p class="p2 thAdult-tip">( 12+ )</p>
+										</div>
+										<div class="people-number">
+											<a href="javascript:;" class="sub-people off-sub-operation js-thAdult-sub"></a>
+											<span class="adult-num">1</span>
+											<a href="javascript:;" class="add-people js-thAdult-add"></a>
+										</div>
+									</div>
+									<div class="s-child s-people-com js-s-thChild">
+										<div class="people-prompt people-rooms-prompt">
+											<p class="p1">Child</p>
+											<p class="p2 thChild-tip">(2-11)</p>
+										</div>
+										<div class="people-number disable">
+											<a href="javascript:;" class="sub-people off-sub-operation js-thChild-sub"></a>
+											<span class="child-num">0</span>
+											<a href="javascript:;" class="add-people js-thChild-add"></a>
+										</div>
+									</div>
+									<div class="child-age-container js-child-container">
+										<p class="child-age-title js-childAge-title">Age of children</p>
+									</div>
+								</div>
+								<div class="m-select-people"><a href="javascript:;" class="js-mThSelect-people">SAVE</a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- 租车选择 -->
+		<div class="car-content-wrap js-flight-com js-car-wrap">
+			<!-- 背景 -->
+			<div class="car-bg bg-com"></div>
+			<!-- 背景上的内容 -->
+			<div class="content-com-wrap">
+				<div class="car-content-inner content-com-inner">
+					<h1 class="animated fadeInUp">Airport Shuttle Bus <br> has arrived !!!</h1>
+				</div>
+			</div>
+			<!-- 租车内容 -->
+			<div class="car-content flight-com js-car-content">
+				<form id="air-car-form" action="" method="POST" target="_blank">
+					<input type="hidden" class="busType" value="04">
+					<input type="hidden" class="busRoute" value="01">
+					<p class="tips-com animated fadeInUp js-tips-com">Choose the car you want.</p>
+					<div class="select-car-time select-air-com js-car-time">
+						<div class="car-route-id from-com js-route-id animated fadeInUp">
+							<input type="text" class="route-id-input js-routeId-input" name="" value="" placeholder="Route id" readonly autocomplete="off">
+						</div>
+						<div class="ticket-type-box car-com js-ticket-type animated fadeInUp">
+							<input type="text" class="ticket-type-input js-ticketType-input" name="" value="" placeholder="Ticket type" readonly autocomplete="off">
+						</div>
+						<div class="car-people-num car-com js-people-num animated fadeInUp">
+							<input type="number" class="people-num-input js-peopleNum-input" name="" value="" pattern="[0-9]*" placeholder="People number" autocomplete="off">
+						</div>
+					</div>
+					<div class="search-flight-wrap js-search-car">
+						<a href="javascript:;" class="flight-cancel js-car-cancel">Cancel</a>
+						<a href="javascript:;" class="flight-search js-car-search">Search</a>
+					</div>
+				</form>
+				<!-- 下拉选择菜单 -->
+				<div class="popup-container js-popup-container">
+					<div class="popup-title-wrap">
+						<p class="popup-title js-carPouple-title">Choose your car</p>
+						<p class="popup-close js-carPopup-close"></p>
+						<input type="text" name="" class="city-search js-routeId-search" value=""  placeholder="Search" autocomplete="off">
+					</div>
+					<div class="popup-box js-carPopup-box">
+						<div class="popup-content popup-inactive js-carPopup-content">
+							<div class="popup-route-id popup-airport js-carPopup-routeId">
+								<h2>Choose your route id :</h2>
+								<ul class="flight-list-wrap car-list-wrap js-routeId-menu">
+									
+								</ul>
+							</div>
+							<div class="popup-ticket-type popup-airport js-carPopup-ticketType">
+								<h2>Choose your ticket type :</h2>
+								<ul class="flight-list-wrap car-list-wrap js-ticketType-menu">
+									
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 租车路线弹出框 -->
+			<div class="modal fade route-id-modal" id="js-routeIdModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">Close<span aria-hidden="true">&times;</span></button>
+						</div>
+						<div class="modal-body">
+							<h2>Schedule:</h2>
+							<div class="route-id-title">
+								<p>Off-Peak: 60 minutes /bus</p>
+								<p>Peak hour: 30 minutes /bus</p>
+								<p>Operation Time：09:00~17:50</p>
+							</div>
+							<h2>Route details:</h2>
+							<div class="route-id-content js-routeId-content">
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- 航班动态选择 -->
+		<div class="fStatus-content-wrap js-flight-com js-fStatus-wrap">
+			<!-- 背景 -->
+			<div class="fStatus-bg bg-com"></div>
+			<!-- 背景内容 -->
+			<div class="content-com-wrap">
+				<div class="fStatus-content-inner content-com-inner">
+					<h1 class="animated fadeInUp">Pay close attention to <br>  flight info!</h1>
+				</div>
+			</div>
+			<!-- 航班选择 -->
+			<div class="ticket-content flight-com js-fStatus-content">
+				<form id="air-fStatus-form" action="" method="POST" target="_blank">
+					<input type="hidden" name="routeType" id="routeType" value="0">
+					<input type="hidden"  name="timeFrom" id="fStatus-timeFrom" value="0">
+					
+					<p class="tips-com animated fadeInUp js-tips-com">Check it out at a glance</p>
+					<div class="select-way js-flight-way animated fadeInUp">
+						<a href="javascript:;" class="by-flight-number active" data-way="js-by-number">By flight number</a>
+						<a href="javascript:;" class="by-route" data-way="js-by-route">By route</a>
+					</div>
+					<!-- 航班号查询 -->
+					<div class="select-fStatus-time select-air-com js-status-com js-by-number">
+						<div class="flight-number-box from-com js-flight-number animated fadeInUp">
+							<input type="text" class="f-from-input js-fNumber-input" name="flightNum" value="" data="js-fNumber-menu" placeholder="What is your flight number ?" autocomplete="off">
+						</div>
+						<div class="fStatus-date date-com js-fStatus-date">
+							<span class="date-result js-numDate-result"></span>
+						</div>
+					</div>
+					<!-- 路线查询 -->
+					<div class="select-fStatus-time select-air-com js-status-com js-by-route" style="display: none;">
+						<div class="route-from-box from-com js-route-from animated fadeInUp">
+							<input type="text" class="t-from-input js-routeFrom-input" name="fromCity" value="" data="js-routeFrom-menu" placeholder="Origin" autocomplete="off">
+							<span class="m-city-from js-m-fRouteCity">Phnom Penh/PNH</span>
+							<i class="local-change js-route-change animated fadeInUp"></i>
+						</div>
+						<i class="local-change m-local-change js-mfStatus-change animated fadeInUp"></i>
+						<div class="route-to-box to-com js-route-to animated fadeInUp">
+							<input type="text" class="t-to-input js-routeTo-input" name="toCity" value="" data="js-routeTo-menu" placeholder="Destination" autocomplete="off">
+							<span class="m-city-to js-m-tRouteCity">Siem Reap/Cambodia</span>
+						</div>
+						<div class="route-date-box fStatus-date js-route-date animated fadeInUp">
+							<span class="date-result js-routeDate-result"></span>
+						</div>
+					</div>
+					<div class="search-flight-wrap js-search-route">
+						<a href="javascript:;" class="flight-cancel js-route-cancel">Cancel</a>
+						<a href="javascript:;" class="flight-search js-route-search">Search</a>
+					</div>
+				</form>
+				<!-- 下拉选择菜单 -->
+				<div class="popup-container js-popup-container">
+					<div class="popup-title-wrap">
+						<p class="popup-title js-fStatusPopup-title">Select destination</p>
+						<p class="popup-close js-fStatusPopup-close"></p>
+						<input type="text" name="" class="city-search js-fStatusCity-search" value="" data="js-fNumber-menu" placeholder="Search" autocomplete="off">
+					</div>
+					<div class="popup-box js-fStatusPopup-box">
+						<div class="popup-content popup-inactive js-fStatusPopup-content">
+							<!-- 出发地目的地选择 -->
+							<div class="popup-route-from popup-airport js-routeBox-from">
+								<h2>Origin Airport :</h2>
+								<ul class="flight-list-wrap js-routeFrom-menu">
+									
+								</ul>
+							</div>
+							<div class="popup-route-to popup-airport js-routeBox-to">
+								<h2>Destination Airport :</h2>
+								<ul class="flight-list-wrap js-routeTo-menu">
+									
+								</ul>
+							</div>
+							<!-- 航班号日期选择 -->
+							<div class="popup-date js-numPopup-date">
+								
+							</div>
+							<!-- 航班号选择 -->
+							<div class="popup-fNum-from popup-airport js-fNumBox-from">
+								<h2>Flight :</h2>
+								<ul class="flight-list-wrap js-fNumber-menu">
+									
+								</ul>
+							</div>
+							<!-- 路线日期选择 -->
+							<div class="popup-date js-routePopup-date">
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- 航班切换loading -->
+		<div class="flight-loading js-flight-loading"></div>
+
+		<!-- 左侧航班选择 -->
+		<aside class="lm-aside-flight">
+			<ul class="js-aside-flight">
+				<li class="li-child1"><a href="javascript:;" data-href="ticket-content" class="nth-child1 active js-a-ticket"><span>Ticket</span></a></li>
+				<li class="li-child2"><a href="javascript:;" data-href="hotel-content" class="nth-child2 js-a-hotel"><span>Hotel</span></a></li>
+				<li class="li-child3"><a href="javascript:;" data-href="ticketHotel-content" class="nth-child3 js-a-ticketHotel"><span>Flight+Hotel</span></a></li>
+				<li class="li-child4"><a href="javascript:;" data-href="car-content" class="nth-child3 js-a-car"><span>Car</span></a></li>
+				<li class="li-child5"><a href="javascript:;" data-href="flight-content" class="nth-child4 js-a-flight"><span>Flight status</span></a></li>
+				<li class="li-slide" style="display: none;"></li>
+			</ul>
+			<!-- <a href="javascript:void(0)" class="flight-up-arrow js-flight-up"></a>
+			<a href="javascript:void(0)" class="flight-down-arrow js-flight-down"></a> -->
+		</aside>
+
+		<!-- 左侧blur内容 -->
+		<aside class="lm-aside-blur js-aside-blur" style="display: none;">
+			<img src="imgage_demo/blur-01.jpg" alt="blur" class="blur-img-ticket blur-img">
+			<img src="imgage_demo/blur-02.jpg" alt="blur" class="blur-img-hotel blur-img">
+			<img src="imgage_demo/blur-03.jpg" alt="blur" class="blur-img-ticketHotel blur-img">
+			<img src="imgage_demo/blur-04.jpg" alt="blur" class="blur-img-car blur-img">
+			<img src="imgage_demo/blur-05.jpg" alt="blur" class="blur-img-flight blur-img">
+		</aside>
+
+		<!-- 重要提醒 -->
+		<div class="lm-important">
+			<h3><p><img src="images/EN/important.png" alt="important"></p>Important</h3>
+			<ul class="line js-important-line">
+				<li><a href="javascript:;" title="Important information about round-trip tickets that passengers must have for entry to Palau">Important information about round-trip tickets that passengers must have for entry to Palau</a></li>
+				<li><a href="javascript:;" title="The website is under constructioning,please look forward to...">The website is under constructioning,please look forward to...</a></li>
+			</ul>
+			<a href="#">More &gt; </a>
+		</div>
+		
+		<!-- 提示往下滚动 -->
+		<div class="lm-scroll-down"></div>
+	</section>
+
+	<!-- 右侧二维码 -->
+	<aside class="lm-aside-code js-aside-code">
+		<div class="small-code"><img src="images/EN/QR-code-bg.png"></div>
+		<h3>Follow us :</h3>
+		<p class="lm-service-number"><img src="images/EN/lm-service-number.png"><span>WeChat Service Account</span></p>
+		<p class="lm-subscribe-number"><img src="images/EN/lm-subscribe-number.png"><span>WeChat Subscription Account</span></p>
+		<div class="facebook-icon">
+			<a href="https://www.facebook.com/lanmeiairlines/" target="_blank"><i class="iconfont icon-facebook img-1"></i></a>
+			<a href="http://weibo.com/lanmeiair" target="_blank"><i class="iconfont icon-wb img-2"></i></a>
+		</div>
+	</aside>
+	<div class="aside-code-mask js-code-mask"></div>
+
+	<!-- banner -->
+	<section class="lm-section-banner">
+		<div class="slick-banner js-slick-banner">
+			<div class="slick-item">
+				<img src="imgage_demo/banner01.jpg">
+				<div class="slick-content">
+					<!-- <h2>Palau dream trip</h2> -->
+					<div class="slick-detail">
+						<p>Travel Period: 16 May - 20 May 2018 (LQ908)</p> <br>
+						<p>Sales Period: From Now On - 15 May</p> <br>
+					</div>
+					<a href="javascript:;" class="slick-link-pointer" title="More details"></a>
+				</div>
+			</div>
+			<div class="slick-item slick-item-hover">
+				<img src="imgage_demo/banner02.jpg">
+				<div class="slick-content">
+					<!-- <h2>Iceland ticket sales</h2> -->
+					<div class="slick-detail">
+						<p>Inaugural Flight:15 May.</p> <br>
+					</div>
+					<a href="javascript:;"></a>
+				</div>
+			</div>
+			<div class="slick-item slick-item-hover">
+				<img src="imgage_demo/banner03.jpg">
+				<div class="slick-content">
+					<!-- <h2>Palau dream trip</h2> -->
+					<div class="slick-detail">
+						<p>1、more comfortable</p> <br>
+						<p>2、more convenient</p> <br>
+						<p>3、more economic</p> <br>
+					</div>
+					<a href="javascript:;"></a>
+				</div>
+			</div>
+			<div class="slick-item slick-item-hover">
+				<img src="imgage_demo/banner04.jpg">
+				<div class="slick-content">
+					<!-- <h2>Palau dream trip</h2> -->
+					<div class="slick-detail">
+						<p>TRAVEL PERIOD:15 MAY 18</p> <br>
+						<p>GUANG ZHOU = PHNOM PENHONE-WAY(ALL IN)：570 RMB ROUND TRIP(ALL IN)：1080 RMB</p> <br>
+						<p>PHNOM PENH = GUANG ZHOUONE-WAY(ALL IN)：106 USD ROUND TRIP(ALL IN)：170.3 USD</p> <br>
+					</div>
+					<a href="javascript:;"></a>
+				</div>
+			</div>
+		</div>
+		<b class="banner-click-hover">×</b>
+	</section>
+
+	<!-- 优惠券 -->
+	<section class="lm-section-coupons">
+		<div class="section-content-title">Special Offers<h2>Coupons</h2></div>
+		<div class="coupons-anchor js-coupons-anchor">
+			<a href="#js-ticket-coupons" class="anchor-center active" name="scroll-anchors" data-text="Ticket coupons">Ticket coupons</a><a href="#js-hotel-coupons" class="hover-active" data-text="Hotel coupons">Hotel coupons</a>
+		</div>
+		<div class="coupons-content js-coupons-content">
+			
+		</div>
+		<div class="coupons-loading js-coupons-loading"></div>
+	</section>
+
+	<!-- 特价机票 -->
+	<section class="lm-section-fares">
+		<div class="section-content-title">Wise Choice<h2>Special Tickets</h2></div>
+		<div class="fares-content js-fares-content">
+			<div class="fares-item fares-item-1">
+				<div class="fares-trip">
+					<p class="p1"><img src="images/EN/fares-icon.png"><span>Round Trip</span></p>
+					<h2><span class="s1">Phnom Penh</span><span class="s2">Sihanoukville</span></h2>
+					<p class="p2">Date : <span>Wed , 07 Mar 2018 - Thu , 12 Apr 2018</span></p>
+				</div>
+				<div class="fares-price">
+					<h2>$ <span>120</span></h2>
+					<a href="javascript:;" class="js-fares-modal">Buy</a>
+				</div>
+			</div>
+			<div class="fares-item fares-item-2">
+				<div class="fares-trip">
+					<p class="p1"><img src="images/EN/fares-icon.png"><span>Round Trip</span></p>
+					<h2><span class="s1">Phnom Penh</span><span class="s2">Sihanoukville</span></h2>
+					<p class="p2">Date : <span>Wed , 07 Mar 2018 - Thu , 12 Apr 2018</span></p>
+				</div>
+				<div class="fares-price">
+					<h2>$ <span>120</span></h2>
+					<a href="javascript:;" class="js-fares-modal">Buy</a>
+				</div>
+			</div>
+			<div class="fares-item fares-item-3">
+				<div class="fares-trip">
+					<p class="p1"><img src="images/EN/fares-icon.png"><span>Round Trip</span></p>
+					<h2><span class="s1">Phnom Penh</span><span class="s2">Sihanoukville</span></h2>
+					<p class="p2">Date : <span>Wed , 07 Mar 2018 - Thu , 12 Apr 2018</span></p>
+				</div>
+				<div class="fares-price">
+					<h2>$ <span>120</span></h2>
+					<a href="javascript:;" class="js-fares-modal">Buy</a>
+				</div>
+			</div>
+		</div>
+		<div class="clear-both"></div>
+	</section>
+
+	<!-- 特价机票模态框 -->
+	<div class="modal fade" id="js-faresModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">Close<span aria-hidden="true">&times;</span></button>
+				</div>
+				<div class="modal-body">
+					<h2 class="loginTitle"></h2>
+					<form class="js-faresForm" method="POST" action="">
+						<div class="select-air-com select-fares">
+							<div class="date-com">
+								<span class="date-result js-faresDate-result" data-start="" data-end=""></span>
+								<div class="faresDate-container js-faresDate-container"></div>
+							</div>
+							<div class="people-com js-fares-people">
+								<div class="t-people-result hidden-infant">
+									<p class="p-adult js-p-adult">x <span>1</span></p>
+									<p class="p-child js-p-child">x <span>0</span></p>
+									<p class="p-infant js-p-infant">x <span>0</span></p>
+								</div>
+								<div class="popup-content fares-people-container js-faresPeople-container">
+									<div class="popup-people js-faresMenu-people">
+										<b class="close-faresMenu js-close-faresMenu">×</b>
+										<p class="people-title">Number of passengers :</p>
+										<div class="select-people-container">
+											<div class="s-adult s-people-com js-s-adult">
+												<div class="people-prompt">
+													<p class="p1">Adult</p>
+													<p class="p2 adult-tip-fares">( 12+ )</p>
+												</div>
+												<div class="people-number">
+													<a href="javascript:;" class="sub-people off-sub-operation js-adult-sub"></a>
+													<span class="adult-num">1</span>
+													<a href="javascript:;" class="add-people js-adult-add"></a>
+												</div>
+											</div>
+											<div class="s-child s-people-com js-s-child">
+												<div class="people-prompt">
+													<p class="p1">Child</p>
+													<p class="p2 child-tip-fares">(2-11)</p>
+												</div>
+												<div class="people-number disable">
+													<a href="javascript:;" class="sub-people off-sub-operation js-child-sub"></a>
+													<span class="child-num">0</span>
+													<a href="javascript:;" class="add-people js-child-add"></a>
+												</div>
+											</div>
+											<div class="s-infant s-people-com">
+												<div class="people-prompt">
+													<p class="p1"><img src="images/EN/infant-icon.png">Infant</p>
+													<p class="p2 infant-tip-fares">(< 2)</p>
+												</div>
+												<div class="people-number disable">
+													<a href="javascript:;" class="sub-people off-sub-operation js-infant-sub"></a>
+													<span class="infant-num">0</span>
+													<a href="javascript:;" class="add-people js-infant-add"></a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<a href="javascript:;" class="fares-search js-fares-search lm-btn">Search</a>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 澜湄服务 -->
+	<section class="lm-section-service js-section-service">
+		<div class="service-bg">
+			<ul>
+				<li class="nth-child1">
+					<a href="javascript:void(0)">
+						<img src="images/EN/lanmeiServe1.png">
+						<p>Checked Luggage</p>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0)">
+						<img src="images/EN/lanmeiServe2.png">
+						<p>On-board Meals</p>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0)">
+						<img src="images/EN/lanmeiServe3.png">
+						<p>Seat Selection</p>
+					</a>
+				</li>
+				<li>
+					<a href="/routemsg/verification.jhtml?language=EN" target="_blank">
+						<img src="images/EN/lanmeiServe4.png">
+						<p>Ticket Verification</p>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</section>
+
+	<!-- 推荐旅游 -->
+	<section class="lm-section-travel">
+		<div class="section-content-title">Pop Travel Plan<h2>Pop Travel Notes</h2></div>
+		<div class="travel-content js-travel-content">
+			<div class="travel-item travel-item-1">
+				<a href="javascript:;"><img src="imgage_demo/travel-img-01.jpg"></a>
+				<div class="travel-inner">
+					<h2>Over the life of the mountain</h2>
+					<p class="price-wrap"><span class="price">$420.00+</span><span class="nights">/ 4 days 3 nights</span></p>
+					<div class="locale-wrap">
+						<p class="locale"><i class="iconfont icon-local"></i> Tsinling Mountains</p>
+						<p class="see">1,000 <i class="iconfont icon-see"></i></p>
+					</div>
+					<a href="javascript:;" class="view">View</a>
+				</div>
+			</div>
+			<div class="travel-item travel-item-2">
+				<a href="javascript:;"><img src="imgage_demo/travel-img-02.jpg"></a>
+				<div class="travel-inner">
+					<h2>Start your trip to Europe</h2>
+					<p class="price-wrap"><span class="price">$ 842.00+</span><span class="nights">/ 5 days 4 nights</span></p>
+					<div class="locale-wrap">
+						<p class="locale"><i class="iconfont icon-local"></i>Berlin</p>
+						<p class="see">999 <i class="iconfont icon-see"></i></p>
+					</div>
+					<a href="javascript:;" class="view">View</a>
+				</div>
+			</div>
+			<div class="travel-item travel-item-3">
+				<a href="javascript:;"><img src="imgage_demo/travel-img-03.jpg"></a>
+				<div class="travel-inner">
+					<h2>The other side of the moun</h2>
+					<p class="price-wrap"><span class="price">$ 532.00+</span><span class="nights">/ 7 days 6 nights</span></p>
+					<div class="locale-wrap">
+						<p class="locale"><i class="iconfont icon-local"></i>Altay Mountains</p>
+						<p class="see">1,200 <i class="iconfont icon-see"></i></p>
+					</div>
+					<a href="javascript:;" class="view">View</a>
+				</div>
+			</div>
+			<div class="travel-item travel-item-4">
+				<a href="javascript:;"><img src="imgage_demo/travel-img-04.jpg"></a>
+				<div class="travel-inner">
+					<h2>Over the life of the mountain</h2>
+					<p class="price-wrap"><span class="price">$ 1420.00+</span><span class="nights">/ 9 days 8 nights</span></p>
+					<div class="locale-wrap">
+						<p class="locale"><i class="iconfont icon-local"></i>Tsinling Mountains</p>
+						<p class="see">663 <i class="iconfont icon-see"></i></p>
+					</div>
+					<a href="javascript:;" class="view">View</a>
+				</div>
+			</div>
+			<div class="travel-item travel-item-5">
+				<a href="javascript:;"><img src="imgage_demo/travel-img-01.jpg"></a>
+				<div class="travel-inner">
+					<h2>Over the life of the mountain</h2>
+					<p class="price-wrap"><span class="price">$ 420.00+</span><span class="nights">/ 4 days 3 nights</span></p>
+					<div class="locale-wrap">
+						<p class="locale"><i class="iconfont icon-local"></i>Tsinling Mountains</p>
+						<p class="see">1,000 <i class="iconfont icon-see"></i></p>
+					</div>
+					<a href="javascript:;" class="view">View</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- 推荐酒店 -->
+	<section class="lm-section-hotel">
+		<div class="section-content-title">Comfortable Choice<h2>Pop Hotels</h2></div>
+		<div class="comfortHotel-content pc-comfortHotel-content js-comfortHotel-content">
+			<div class="comfortHotel-item comfortHotel-item-1">
+				<div class="hotel-one hotel-com">
+					<div class="hotel-img">
+						<img src="imgage_demo/comfortHotel-1.jpg" alt="">
+						<a href="javascript:;" class="book-hotel">Book now</a>
+						<b></b>
+						<p class="save-percent">Save 40%</p>
+					</div>
+					<div class="hotel-detail">
+						<h2>Oasis Hotel</h2>
+						<p class="stars">
+							<img src="images/EN/comfortHotel-star.png" alt="">
+							<img src="images/EN/comfortHotel-star.png" alt="">
+							<img src="images/EN/comfortHotel-star.png" alt="">
+						</p>
+						<p class="country">Republic of Bashkortostan Russia</p>
+						<p class="area">Gogolya 155 Pribrezhny District Sterlitamak</p>
+						<p class="price-wrap"><span class="price">$ 7.05+</span><span class="night">/ night</span></p>
+					</div>
+				</div>
+				<div class="hotel-two hotel-com">
+					<div class="hotel-detail">
+						<h2>Amaks Tourist Hotel</h2>
+						<p class="stars">
+							<img src="images/EN/comfortHotel-star.png" alt="">
+							<img src="images/EN/comfortHotel-star.png" alt="">
+							<img src="images/EN/comfortHotel-star.png" alt="">
+						</p>
+						<p class="country">Republic of Bashkortostan Russia</p>
+						<p class="area">Richarda Zorge Street 17 Ufa</p>
+						<p class="price-wrap"><span class="price">$ 33.28+</span><span class="night">/ night</span></p>
+					</div>
+					<div class="hotel-img">
+						<img src="imgage_demo/comfortHotel-2.jpg" alt="">
+						<a href="javascript:;" class="book-hotel">Book now</a>
+						<b></b>
+						<p class="save-percent">Save 30%</p>
+					</div>
+				</div>
+			</div>
+			<div class="comfortHotel-item comfortHotel-item-2">
+				<div class="hotel-one hotel-com">
+					<div class="hotel-img">
+						<img src="imgage_demo/comfortHotel-3.jpg" alt="">
+						<a href="javascript:;" class="book-hotel">Book now</a>
+						<b></b>
+						<p class="save-percent">Save 20%</p>
+					</div>
+					<div class="hotel-detail">
+						<h2>Svoyak Hotel</h2>
+						<p class="stars">
+							<img src="images/EN/comfortHotel-star.png" alt="">
+							<img src="images/EN/comfortHotel-star.png" alt="">
+							<img src="images/EN/comfortHotel-star.png" alt="">
+						</p>
+						<p class="country">Republic of Bashkortostan Russia</p>
+						<p class="area">Entuziastov Street 3 Ufa</p>
+						<p class="price-wrap"><span class="price">$ 26.42+</span><span class="night">/ night</span></p>
+					</div>
+				</div>
+				<div class="hotel-two hotel-com">
+					<div class="hotel-detail">
+						<h2>Azimut Hotel Ufa</h2>
+						<p class="stars">
+							<img src="images/EN/comfortHotel-star.png" alt="">
+							<img src="images/EN/comfortHotel-star.png" alt="">
+							<img src="images/EN/comfortHotel-star.png" alt="">
+						</p>
+						<p class="country">Republic of Bashkortostan Russia</p>
+						<p class="area">81 Pr Oktyabrya Ufa</p>
+						<p class="price-wrap"><span class="price">$ 41.10+</span><span class="night">/ night</span></p>
+					</div>
+					<div class="hotel-img">
+						<img src="imgage_demo/comfortHotel-2.jpg" alt="">
+						<a href="javascript:;" class="book-hotel">Book now</a>
+						<b></b>
+						<p class="save-percent">Save 10%</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 移动端推荐酒店 -->
+		<div class="comfortHotel-content mobile-comfortHotel-content js-mComfortHotel-content">
+			<div class="comfortHotel-item comfortHotel-item-1">
+				<div class="hotel-one hotel-com">
+					<div class="hotel-img">
+						<a href="javascript:;" class="m-book-hotel"><img src="imgage_demo/comfortHotel-1.jpg" alt=""></a>
+						<a href="javascript:;" class="book-hotel">Book now</a>
+						<b></b>
+						<p class="save-percent">Save 40%</p>
+					</div>
+					<div class="hotel-detail">
+						<h2>Oasis Hotel</h2>
+						<p class="stars">
+							<img src="images/EN/comfortHotel-star.png" alt="">
+							<img src="images/EN/comfortHotel-star.png" alt="">
+							<img src="images/EN/comfortHotel-star.png" alt="">
+						</p>
+						<p class="country">Republic of Bashkortostan Russia</p>
+						<p class="area">Gogolya 155 Pribrezhny District Sterlitamak</p>
+						<p class="price-wrap"><span class="price">$ 7.05+</span><span class="night">/ night</span></p>
+					</div>
+				</div>
+			</div>
+			<div class="comfortHotel-item comfortHotel-item-2">
+				<div class="hotel-two hotel-com">
+					<div class="hotel-img">
+						<a href="javascript:;" class="m-book-hotel"><img src="imgage_demo/comfortHotel-2.jpg" alt=""></a>
+						<a href="javascript:;" class="book-hotel">Book now</a>
+						<b></b>
+						<p class="save-percent">Save 30%</p>
+					</div>
+					<div class="hotel-detail">
+						<h2>Amaks Tourist Hotel</h2>
+						<p class="stars">
+							<img src="images/EN/comfortHotel-star.png" alt="">
+							<img src="images/EN/comfortHotel-star.png" alt="">
+							<img src="images/EN/comfortHotel-star.png" alt="">
+						</p>
+						<p class="country">Republic of Bashkortostan Russia</p>
+						<p class="area">Richarda Zorge Street 17 Ufa</p>
+						<p class="price-wrap"><span class="price">$ 33.28+</span><span class="night">/ night</span></p>
+					</div>
+				</div>
+			</div>
+			<div class="comfortHotel-item comfortHotel-item-3">
+				<div class="hotel-one hotel-com">
+					<div class="hotel-img">
+						<a href="javascript:;" class="m-book-hotel"><img src="imgage_demo/comfortHotel-3.jpg" alt=""></a>
+						<a href="javascript:;" class="book-hotel">Book now</a>
+						<b></b>
+						<p class="save-percent">Save 20%</p>
+					</div>
+					<div class="hotel-detail">
+						<h2>Svoyak Hotel</h2>
+						<p class="stars">
+							<img src="images/EN/comfortHotel-star.png" alt="">
+							<img src="images/EN/comfortHotel-star.png" alt="">
+							<img src="images/EN/comfortHotel-star.png" alt="">
+						</p>
+						<p class="country">Republic of Bashkortostan Russia</p>
+						<p class="area">Entuziastov Street 3 Ufa</p>
+						<p class="price-wrap"><span class="price">$ 26.42+</span><span class="night">/ night</span></p>
+					</div>
+				</div>
+			</div>
+			<div class="comfortHotel-item comfortHotel-item-4">
+				<div class="hotel-two hotel-com">
+					<div class="hotel-img">
+						<a href="javascript:;" class="m-book-hotel"><img src="imgage_demo/comfortHotel-2.jpg" alt=""></a>
+						<a href="javascript:;" class="book-hotel">Book now</a>
+						<b></b>
+						<p class="save-percent">Save 10%</p>
+					</div>
+					<div class="hotel-detail">
+						<h2>Azimut Hotel Ufa</h2>
+						<p class="stars">
+							<img src="images/EN/comfortHotel-star.png" alt="">
+							<img src="images/EN/comfortHotel-star.png" alt="">
+							<img src="images/EN/comfortHotel-star.png" alt="">
+						</p>
+						<p class="country">Republic of Bashkortostan Russia</p>
+						<p class="area">81 Pr Oktyabrya Ufa</p>
+						<p class="price-wrap"><span class="price">$ 41.10+</span><span class="night">/ night</span></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- 澜湄新闻 -->
+	<section class="lm-section-news">
+		<div class="section-content-title">Latest Status Query<h2>Lanmei Status</h2></div>
+		<div class="news-wrap">
+			<div class="news-detail">
+				<div class="news-arrow">
+					<div class="news-arrow-box">
+						<a href="javascript:;" class="news-arrow-left news-arrow-com js-news-left"></a>
+						<p class="js-news-pages"><span class="s1">1</span> / <span class="s2">3</span></p>
+						<a href="javascript:;" class="news-arrow-right news-arrow-com js-news-right"></a>
+					</div>
+					<a href="javascript:;" class="news-more">More</a>
+				</div>
+				<div class="news-info js-news-info">
+					<div class="js-news-1 js-news-com">
+						<h2 class="animated fadeInUp"><a href="javascript:;">Lanmei Airlines launches flights in Cambodia, sets up "sky highway" for Mekong countries</a></h2>
+						<p class="animated fadeInUp">2017-11-03 01:34:04</p>
+						<div class="news-info-detail">
+							<p class="animated fadeInUp">On Oct.9th, 2017, Lanmei Airlines (Cambodia) Co., Ltd. (referred as “Lanmei Airlines”) held a grand ceremony of Lanmei Six Nations Flights Launching and the “One-hundred Riel” Thanksgiving Foundation at Phnom Penh.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="news-content js-news-content">
+				<div class="news-item news-item-1">
+					<a href="javascript:;"><img src="imgage_demo/news-01.jpg"></a>
+				</div>
+				<div class="news-item news-item-2">
+					<a href="javascript:;"><img src="imgage_demo/news-02.jpg"></a>
+				</div>
+				<div class="news-item news-item-3">
+					<a href="javascript:;"><img src="imgage_demo/news-03.jpg"></a>
+				</div>
+			</div>
+			<div class="news-mask js-news-mask"></div>
+		</div>
+	</section>
+
+	<!-- 页脚 -->
+	<footer class="lm-footer">
+		
+	</footer>
+
+	<div class="BackToTop">
+		
+	</div>
+
+	<!-- 选择航班遮罩层 -->
+	<div class="lm-flight-mask js-ticket-mask"></div>
+	<div class="lm-flight-mask2 js-ticket-mask2"></div>
+	<div class="lm-flight-mask js-hotel-mask"></div>
+	<div class="lm-flight-mask2 js-hotel-mask2"></div>
+	<div class="lm-flight-mask js-fStatus-mask"></div>
+	<div class="lm-flight-mask2 js-fStatus-mask2"></div>
+
+	<!-- 第三方库-->
+	<script src="libs/jQuery/jquery-1.11.3.js"></script>
+	<script src="libs/jQuery/jquery.cookie.js"></script>
+	<script src="libs/bootstrap/js/bootstrap.min.js"></script>
+	<script src="libs/layer/layer.js"></script>
+	<script src="libs/lm-nicescroll.min.js"></script>
+	<script src="libs/auto-complete-mail.js"></script>
+	<script src="libs/lmslick/slick.min.js"></script>
+	<script src="libs/downCount/jquery.downCount.js"></script>
+	<script src="libs/daterange/moment.js"></script>
+	<script src="libs/daterange/daterangepicker.js"></script>
+
+	<!-- 公共JS -->
+	<script src="common/EN/js/head-footer.js"></script>
+	<script src="common/EN/js/common-data.js"></script>
+	<script src="common/EN/js/ticketHotel-data.js"></script>
+	<script src="common/EN/js/login-register.js"></script>
+	<script src="common/EN/js/Lanmei-common.js"></script>
+
+	<!-- 业务代码 -->
+	<script src="js/EN/LanmeiAirlines2.js"></script>
+	<script src="js/EN/LMActivity.js"></script>
+</body>
+</html>
