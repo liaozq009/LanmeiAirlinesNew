@@ -8,6 +8,19 @@
 /* 定义变量 */
 /* 定义颜色变量 */
 /*ie8*/
+.linearBg {
+  background: #42958a;
+  background: -webkit-linear-gradient(left, #42958a 0%, #1f2c5c 100%);
+  background: -o-linear-gradient(right, #42958a 0%, #1f2c5c 100%);
+  background: -moz-linear-gradient(right, #42958a 0%, #1f2c5c 100%);
+  background: linear-gradient(to right, #42958a 0%, #1f2c5c 100%);
+  filter: alpha progid:DXImageTransform.Microsoft.gradient(startcolorstr=#42958a, endcolorstr=#1f2c5c, gradientType=1);
+  /*ie8*/
+  /*ie9*/
+}
+.linearBg :root .gradient {
+  filter: none;
+}
 /* 公共样式 */
 input {
   -webkit-appearance: none;
@@ -18,94 +31,6 @@ input {
 }
 body {
   background: #FAFBFF;
-}
-/* 导航栏 */
-.pc-nav-container {
-  position: absolute;
-  left: 500px;
-  z-index: 100;
-}
-.pc-nav-container .nav-menu-close {
-  display: none;
-}
-.pc-nav-container .m-nav-1 {
-  height: 60px;
-  line-height: 60px;
-  overflow: hidden;
-}
-.pc-nav-container .m-nav-1 > li {
-  float: left;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-.pc-nav-container .m-nav-1 > li a {
-  color: #fff;
-}
-.pc-nav-container .m-nav-1 .active {
-  background: #fff;
-}
-.pc-nav-container .m-nav-1 .active a {
-  color: #1f2c5c;
-}
-.pc-nav-container .m-nav-sub {
-  position: absolute;
-  left: -264px;
-  display: none;
-  width: 1200px;
-  padding: 30px;
-  background: #fff;
-}
-.pc-nav-container .m-nav-2 > ul {
-  display: none;
-  margin-bottom: 10px;
-  overflow: hidden;
-}
-.pc-nav-container .m-nav-2 > ul > li {
-  float: left;
-  width: 25%;
-}
-.pc-nav-container .m-nav-2 > ul > li a {
-  font-size: 16px;
-  color: #1f2c5c;
-  font-weight: bold;
-}
-.pc-nav-container .m-nav-2 #f-list-2 .nth-child5,
-.pc-nav-container .m-nav-2 #f-list-2 .nth-child6,
-.pc-nav-container .m-nav-2 #f-list-2 .nth-child7 {
-  position: absolute;
-  top: 240px;
-}
-.pc-nav-container .m-nav-2 #f-list-2 .nth-child6 {
-  left: 315px;
-}
-.pc-nav-container .m-nav-2 #f-list-2 .nth-child7 {
-  left: 630px;
-}
-.pc-nav-container .m-nav-3 {
-  overflow: hidden;
-}
-.pc-nav-container .m-nav-3 > ul {
-  display: none;
-  float: left;
-  width: 25%;
-}
-.pc-nav-container .m-nav-3 > ul > li {
-  margin-top: 10px;
-}
-.pc-nav-container .m-nav-3 > ul > li a {
-  font-size: 14px;
-  color: rgba(31, 44, 92, 0.6);
-}
-.pc-nav-container .m-nav-3 .three-f-list-2.nth-child1,
-.pc-nav-container .m-nav-3 .three-f-list-2.nth-child2,
-.pc-nav-container .m-nav-3 .three-f-list-2.nth-child3,
-.pc-nav-container .m-nav-3 .three-f-list-2.nth-child4 {
-  height: 150px;
-}
-.pc-nav-container .m-nav-3 .three-f-list-2.nth-child5,
-.pc-nav-container .m-nav-3 .three-f-list-2.nth-child6,
-.pc-nav-container .m-nav-3 .three-f-list-2.nth-child7 {
-  margin-top: 50px;
 }
 /* 内容样式 */
 .lm-section-main {
@@ -178,117 +103,6 @@ body {
 }
 .content-com-inner > h1 span {
   color: #8ec060;
-}
-.lm-aside-flight {
-  position: absolute;
-  top: 300px;
-  left: 280px;
-  z-index: 9;
-  width: 440px;
-  height: 100px;
-  border-radius: 2px;
-  background: #fff;
-}
-.lm-aside-flight > ul {
-  border-radius: 2px;
-}
-.lm-aside-flight > ul li {
-  float: left;
-  width: 110px;
-  height: 100px;
-}
-.lm-aside-flight > ul li a {
-  display: inline-block;
-  width: 110px;
-  height: 100px;
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent !important;
-  color: rgba(31, 44, 92, 0.2);
-  text-align: center;
-  background-size: 50px 50px !important;
-}
-.lm-aside-flight > ul li a span {
-  position: relative;
-  top: 70px;
-  text-align: left;
-  line-height: 10px;
-}
-.lm-aside-flight > ul li .active {
-  color: #1f2c5c;
-}
-.lm-aside-flight > ul .li-slide {
-  position: absolute;
-  left: 0;
-  top: 30px;
-  width: 6px;
-  height: 40px;
-  background: #8EC060;
-  animation-timing-function: ease-out;
-  -webkit-animation-timing-function: ease-out;
-  /* Safari and Chrome */
-}
-.lm-aside-flight > ul .li-child1 a {
-  background: url('../../images/EN/ticket-icon.png') center 30% no-repeat;
-}
-.lm-aside-flight > ul .li-child1 .active {
-  background: url('../../images/EN/ticket-icon-active.png') center 30% no-repeat;
-}
-.lm-aside-flight > ul .li-child2 a {
-  background: url('../../images/EN/hotel-icon.png') center 30% no-repeat;
-}
-.lm-aside-flight > ul .li-child2 .active {
-  background: url('../../images/EN/hotel-icon-active.png') center 30% no-repeat;
-}
-.lm-aside-flight > ul .li-child3 {
-  display: none;
-}
-.lm-aside-flight > ul .li-child3 a {
-  background: url('../../images/EN/ticketHotel-icon.png') center 30% no-repeat;
-}
-.lm-aside-flight > ul .li-child3 .active {
-  background: url('../../images/EN/ticketHotel-icon-active.png') center 30% no-repeat;
-}
-.lm-aside-flight > ul .li-child4 a {
-  background: url('../../images/EN/car-icon.png') center 30% no-repeat;
-}
-.lm-aside-flight > ul .li-child4 .active {
-  background: url('../../images/EN/car-icon-active.png') center 30% no-repeat;
-}
-.lm-aside-flight > ul .li-child5 a {
-  background: url('../../images/EN/flight-icon.png') center 30% no-repeat;
-}
-.lm-aside-flight > ul .li-child5 .active {
-  background: url('../../images/EN/flight-icon-active.png') center 30% no-repeat;
-}
-.lm-aside-flight > a {
-  display: block;
-  position: absolute;
-  bottom: -220px;
-  left: 60px;
-  width: 80px;
-  height: 80px;
-  border-radius: 2px;
-}
-.lm-aside-flight .flight-up-arrow {
-  background: url('../../images/EN/f-arrow-up.png') center no-repeat #1f2c5c;
-  transition: all .3s;
-  -webkit-transition: all .3s;
-}
-.lm-aside-flight .flight-up-arrow:hover {
-  background: url('../../images/EN/f-arrow-up-active.png') center no-repeat #8ec060;
-  transition: all .3s;
-  -webkit-transition: all .3s;
-}
-.lm-aside-flight .flight-down-arrow {
-  left: 170px;
-  background: url('../../images/EN/f-arrow-down.png') center no-repeat #1f2c5c;
-  transition: all .3s;
-  -webkit-transition: all .3s;
-}
-.lm-aside-flight .flight-down-arrow:hover {
-  background: url('../../images/EN/f-arrow-down-active.png') center no-repeat #8ec060;
-  transition: all .3s;
-  -webkit-transition: all .3s;
 }
 .lm-aside-blur {
   position: absolute;
@@ -395,9 +209,10 @@ body {
 .lm-important {
   position: absolute;
   bottom: 90px;
-  right: 0;
-  width: 580px;
+  left: 50%;
+  width: 1200px;
   height: 60px;
+  margin-left: -600px;
   padding-left: 30px;
   background: #fff;
   box-shadow: 0 0 50px 0 rgba(31, 44, 92, 0.2);
@@ -414,6 +229,7 @@ body {
   color: #fff;
   font-size: 14px;
   font-family: CamptonBookBold;
+  background: #42958a;
   background: -webkit-linear-gradient(left, #42958a 0%, #1f2c5c 100%);
   background: -o-linear-gradient(right, #42958a 0%, #1f2c5c 100%);
   background: -moz-linear-gradient(right, #42958a 0%, #1f2c5c 100%);
@@ -484,11 +300,11 @@ body {
 }
 .flight-com {
   position: absolute;
-  top: 400px;
-  left: 0%;
+  top: 360px;
+  left: 50%;
   z-index: 11;
-  margin-left: 0px;
-  width: 1360px;
+  width: 1200px;
+  margin-left: -600px;
 }
 .flight-com .tips-com {
   opacity: 0.5;
@@ -542,7 +358,7 @@ body {
   margin-right: 40px;
   margin-bottom: 20px;
   border-radius: 2px;
-  box-shadow: 0 0 50px 0 rgba(31, 44, 92, 0.1);
+  box-shadow: 0 0 0px 0 rgba(31, 44, 92, 0.1);
 }
 .select-air-com > div > input {
   width: 100%;
@@ -578,28 +394,28 @@ body {
   -moz-appearance: textfield;
 }
 .select-air-com > div .t-from-input {
-  background: url('../../images/EN/city-from.png') 20px no-repeat #fff;
+  background: url('../../images/EN/city-from.png') 20px no-repeat rgba(31, 44, 92, 0.04);
 }
 .select-air-com > div .t-to-input {
-  background: url('../../images/EN/city-to.png') 20px no-repeat #fff;
+  background: url('../../images/EN/city-to.png') 20px no-repeat rgba(31, 44, 92, 0.04);
 }
 .select-air-com > div .h-from-input {
-  background: url('../../images/EN/hotel-from.png') 20px no-repeat #fff;
+  background: url('../../images/EN/hotel-from.png') 20px no-repeat rgba(31, 44, 92, 0.04);
 }
 .select-air-com > div .ticket-num-input {
-  background: url('../../images/EN/ticket-num.png') 20px no-repeat #fff;
+  background: url('../../images/EN/ticket-num.png') 20px no-repeat rgba(31, 44, 92, 0.04);
 }
 .select-air-com > div .route-id-input {
-  background: url('../../images/EN/route-id.png') 20px no-repeat #fff;
+  background: url('../../images/EN/route-id.png') 20px no-repeat rgba(31, 44, 92, 0.04);
 }
 .select-air-com > div .ticket-type-input {
-  background: url('../../images/EN/ticket-type.png') 20px no-repeat #fff;
+  background: url('../../images/EN/ticket-type.png') 20px no-repeat rgba(31, 44, 92, 0.04);
 }
 .select-air-com > div .people-num-input {
-  background: url('../../images/EN/adult.png') 20px no-repeat #fff;
+  background: url('../../images/EN/adult.png') 20px no-repeat rgba(31, 44, 92, 0.04);
 }
 .select-air-com > div .f-from-input {
-  background: url('../../images/EN/flight-number.png') 20px no-repeat #fff;
+  background: url('../../images/EN/flight-number.png') 20px no-repeat rgba(31, 44, 92, 0.04);
 }
 .select-air-com .hotel-from {
   width: 660px;
@@ -666,7 +482,7 @@ body {
   font-size: 20px;
   color: #1f2c5c;
   border-radius: 2px;
-  background: url('../../images/EN/date.png') 20px no-repeat #fff;
+  background: url('../../images/EN/date.png') 20px no-repeat rgba(31, 44, 92, 0.04);
 }
 .select-air-com .h-date-result {
   padding-right: 50px;
@@ -697,7 +513,7 @@ body {
   padding-left: 20px;
   padding-right: 20px;
   border-radius: 2px;
-  background: #fff;
+  background: rgba(31, 44, 92, 0.04);
 }
 .select-air-com .people-com .t-people-result > p {
   float: left;
@@ -780,11 +596,10 @@ body {
 }
 .search-flight-wrap {
   margin-top: 20px;
-  padding-left: 350px;
 }
 .search-flight-wrap a {
-  float: left;
-  display: inline-block;
+  float: right;
+  display: block;
   width: 310px;
   height: 60px;
   line-height: 60px;
@@ -803,6 +618,7 @@ body {
   /* Safari 和 Chrome */
 }
 .search-flight-wrap .flight-search {
+  background: #42958a;
   background: -webkit-linear-gradient(left, #42958a 0%, #1f2c5c 100%);
   background: -o-linear-gradient(right, #42958a 0%, #1f2c5c 100%);
   background: -moz-linear-gradient(right, #42958a 0%, #1f2c5c 100%);
@@ -970,11 +786,17 @@ body {
 }
 .lm-section-coupons .coupons-anchor .active {
   color: #fff;
+  background: #42958a;
   background: -webkit-linear-gradient(left, #42958a 0%, #1f2c5c 100%);
   background: -o-linear-gradient(right, #42958a 0%, #1f2c5c 100%);
   background: -moz-linear-gradient(right, #42958a 0%, #1f2c5c 100%);
   background: linear-gradient(to right, #42958a 0%, #1f2c5c 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#42958a', endColorstr='#1f2c5c', GradientType=1);
+  filter: alpha progid:DXImageTransform.Microsoft.gradient(startcolorstr=#42958a, endcolorstr=#1f2c5c, gradientType=1);
+  /*ie8*/
+  /*ie9*/
+}
+.lm-section-coupons .coupons-anchor .active :root .gradient {
+  filter: none;
 }
 .lm-section-coupons .coupons-anchor .hover-active::after {
   content: attr(data-text);
@@ -1366,6 +1188,7 @@ body {
   background: rgba(31, 44, 92, 0.1);
 }
 .lm-section-travel .travel-item .travel-inner .view:hover {
+  background: #42958a;
   background: -webkit-linear-gradient(left, #42958a 0%, #1f2c5c 100%);
   background: -o-linear-gradient(right, #42958a 0%, #1f2c5c 100%);
   background: -moz-linear-gradient(right, #42958a 0%, #1f2c5c 100%);
@@ -1418,6 +1241,7 @@ body {
   border-radius: 2px;
   font-size: 18px;
   color: #fff;
+  background: #42958a;
   background: -webkit-linear-gradient(left, #42958a 0%, #1f2c5c 100%);
   background: -o-linear-gradient(right, #42958a 0%, #1f2c5c 100%);
   background: -moz-linear-gradient(right, #42958a 0%, #1f2c5c 100%);
@@ -1963,6 +1787,197 @@ body {
 }
 .ie8 .lm-section-hotel .hotel-com .hotel-img .save-percent {
   background: #FC4A1A;
+}
+/************************** PC端新增代码 LZQ 20190531 ******************************/
+@media (min-width: 768px) {
+  /* PC端导航栏 */
+  .pc-nav-container {
+    position: absolute;
+    left: 50%;
+    z-index: 100;
+    margin-left: -350px;
+  }
+  .pc-nav-container .nav-menu-close {
+    display: none;
+  }
+  .pc-nav-container .m-nav-1 {
+    height: 60px;
+    line-height: 60px;
+    overflow: hidden;
+  }
+  .pc-nav-container .m-nav-1 > li {
+    float: left;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .pc-nav-container .m-nav-1 > li a {
+    color: #fff;
+  }
+  .pc-nav-container .m-nav-1 .active {
+    background: #fff;
+  }
+  .pc-nav-container .m-nav-1 .active a {
+    color: #1f2c5c;
+  }
+  .pc-nav-container .m-nav-sub {
+    position: absolute;
+    left: -264px;
+    width: 1200px;
+    background: #fff;
+    transition: all 400ms;
+    -webkit-transition: all 400ms;
+    overflow: hidden;
+  }
+  .pc-nav-container .m-nav-2 > ul {
+    display: none;
+    margin-bottom: 10px;
+    overflow: hidden;
+  }
+  .pc-nav-container .m-nav-2 > ul > li {
+    float: left;
+    width: 25%;
+  }
+  .pc-nav-container .m-nav-2 > ul > li a {
+    font-size: 16px;
+    color: #1f2c5c;
+    font-weight: bold;
+  }
+  .pc-nav-container .m-nav-2 #f-list-2 .nth-child5,
+  .pc-nav-container .m-nav-2 #f-list-2 .nth-child6,
+  .pc-nav-container .m-nav-2 #f-list-2 .nth-child7 {
+    position: absolute;
+    top: 240px;
+  }
+  .pc-nav-container .m-nav-2 #f-list-2 .nth-child6 {
+    left: 315px;
+  }
+  .pc-nav-container .m-nav-2 #f-list-2 .nth-child7 {
+    left: 630px;
+  }
+  .pc-nav-container .m-nav-3 {
+    overflow: hidden;
+  }
+  .pc-nav-container .m-nav-3 > ul {
+    display: none;
+    float: left;
+    width: 25%;
+  }
+  .pc-nav-container .m-nav-3 > ul > li {
+    margin-top: 10px;
+  }
+  .pc-nav-container .m-nav-3 > ul > li a {
+    font-size: 14px;
+    color: rgba(31, 44, 92, 0.6);
+  }
+  .pc-nav-container .m-nav-3 .three-f-list-2.nth-child1,
+  .pc-nav-container .m-nav-3 .three-f-list-2.nth-child2,
+  .pc-nav-container .m-nav-3 .three-f-list-2.nth-child3,
+  .pc-nav-container .m-nav-3 .three-f-list-2.nth-child4 {
+    height: 150px;
+  }
+  .pc-nav-container .m-nav-3 .three-f-list-2.nth-child5,
+  .pc-nav-container .m-nav-3 .three-f-list-2.nth-child6,
+  .pc-nav-container .m-nav-3 .three-f-list-2.nth-child7 {
+    margin-top: 50px;
+  }
+  /* PC端侧边栏 */
+  .pc-section-main .lm-aside-flight {
+    position: absolute;
+    top: 300px;
+    left: 50%;
+    z-index: 9;
+    width: 1200px;
+    height: 100px;
+    margin-left: -600px;
+  }
+  .pc-section-main .lm-aside-flight > ul > li {
+    float: left;
+    width: 200px;
+    height: 60px;
+    background: #42958a;
+    background: -webkit-linear-gradient(left, #42958a 0%, #1f2c5c 100%);
+    background: -o-linear-gradient(right, #42958a 0%, #1f2c5c 100%);
+    background: -moz-linear-gradient(right, #42958a 0%, #1f2c5c 100%);
+    background: linear-gradient(to right, #42958a 0%, #1f2c5c 100%);
+    filter: alpha progid:DXImageTransform.Microsoft.gradient(startcolorstr=#42958a, endcolorstr=#1f2c5c, gradientType=1);
+    /*ie8*/
+    /*ie9*/
+    margin-right: 20px;
+    border-top-right-radius: 60px;
+  }
+  .pc-section-main .lm-aside-flight > ul > li :root .gradient {
+    filter: none;
+  }
+  .pc-section-main .lm-aside-flight > ul > li a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent !important;
+    color: rgba(31, 44, 92, 0.2);
+    text-align: center;
+    background-size: 50px 50px !important;
+  }
+  .pc-section-main .lm-aside-flight > ul > li a span {
+    display: inline-block;
+    height: 100%;
+    padding-left: 60px;
+    line-height: 60px;
+  }
+  .pc-section-main .lm-aside-flight > ul li.active {
+    background: #fff;
+  }
+  .pc-section-main .lm-aside-flight > ul li.active a {
+    color: #1f2c5c;
+  }
+  .pc-section-main .lm-aside-flight > ul .li-child1 a {
+    background: url('../../images/EN/ticket-icon.png') 20% center no-repeat;
+  }
+  .pc-section-main .lm-aside-flight > ul .li-child1.active a {
+    background: url('../../images/EN/ticket-icon-active.png') 20% center no-repeat;
+  }
+  .pc-section-main .lm-aside-flight > ul .li-child2 a {
+    background: url('../../images/EN/hotel-icon.png') 20% center no-repeat;
+  }
+  .pc-section-main .lm-aside-flight > ul .li-child2.active a {
+    background: url('../../images/EN/hotel-icon-active.png') 20% center no-repeat;
+  }
+  .pc-section-main .lm-aside-flight > ul .li-child3 {
+    display: none;
+  }
+  .pc-section-main .lm-aside-flight > ul .li-child3 a {
+    background: url('../../images/EN/ticketHotel-icon.png') 20% center no-repeat;
+  }
+  .pc-section-main .lm-aside-flight > ul .li-child3.active a {
+    background: url('../../images/EN/ticketHotel-icon-active.png') 20% center no-repeat;
+  }
+  .pc-section-main .lm-aside-flight > ul .li-child4 a {
+    background: url('../../images/EN/car-icon.png') 20% center no-repeat;
+  }
+  .pc-section-main .lm-aside-flight > ul .li-child4.active a {
+    background: url('../../images/EN/car-icon-active.png') 20% center no-repeat;
+  }
+  .pc-section-main .lm-aside-flight > ul .li-child5 a {
+    background: url('../../images/EN/flight-icon.png') 20% center no-repeat;
+  }
+  .pc-section-main .lm-aside-flight > ul .li-child5.active a {
+    background: url('../../images/EN/flight-icon-active.png') 20% center no-repeat;
+  }
+  /* PC端航班选择 */
+  .pc-section-main .select-air-com {
+    padding-left: 30px;
+  }
+  .pc-section-main .select-air-com > div {
+    width: 254px;
+  }
+  .pc-section-main .flight-com {
+    background: #fff;
+  }
+  .pc-section-main .search-flight-wrap {
+    margin-bottom: 20px;
+    padding-right: 30px;
+    overflow: hidden;
+  }
 }
 /* 屏幕缩放 */
 @media screen and (max-width: 1660px) {
@@ -2661,11 +2676,18 @@ body {
     line-height: 46px;
     padding: 4px;
     text-align: center;
+    background: #42958a;
     background: -webkit-linear-gradient(left, #42958a 0%, #1f2c5c 100%);
     background: -o-linear-gradient(right, #42958a 0%, #1f2c5c 100%);
     background: -moz-linear-gradient(right, #42958a 0%, #1f2c5c 100%);
     background: linear-gradient(to right, #42958a 0%, #1f2c5c 100%);
+    filter: alpha progid:DXImageTransform.Microsoft.gradient(startcolorstr=#42958a, endcolorstr=#1f2c5c, gradientType=1);
+    /*ie8*/
+    /*ie9*/
     border-radius: 2px;
+  }
+  .popup-content .popup-people .people-number :root .gradient {
+    filter: none;
   }
   .popup-content .popup-people .people-number > a {
     display: inline-block;
@@ -3600,6 +3622,7 @@ body {
     width: 100%;
     left: 0;
     top: 90px;
+    margin-left: 0;
     -webkit-transform: scale(1);
     transform: scale(1);
     -webkit-transform-origin: top;
@@ -3790,6 +3813,7 @@ body {
     padding-left: 10px;
     padding-right: 10px;
     text-align: center;
+    background: #fff;
   }
   .select-air-com .people-com .t-people-result .p-hotelRooms {
     background: url('../../images/EN/svg/rooms.svg') 0 center no-repeat;
@@ -3858,13 +3882,17 @@ body {
   }
   .lm-aside-flight {
     display: block;
-    width: 100%;
-    height: 60px;
+    position: absolute;
     top: auto;
     left: 0;
+    z-index: 9;
+    width: 100%;
+    height: 60px;
     bottom: 30px;
     padding-left: 15px;
     padding-right: 15px;
+    margin-left: 0;
+    border-radius: 2px;
     background: none;
     -webkit-transform: scale(1);
     transform: scale(1);
@@ -3876,6 +3904,7 @@ body {
     -webkit-animation-delay: .6s;
   }
   .lm-aside-flight > ul {
+    border-radius: 2px;
     overflow: hidden;
     background: #fff;
     /*.li-child5 a span{
@@ -3889,11 +3918,23 @@ body {
     float: left;
   }
   .lm-aside-flight > ul > li > a {
+    display: inline-block;
     width: 100%;
     height: 100%;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent !important;
+    color: rgba(31, 44, 92, 0.2);
+    text-align: center;
+    background-size: 50px 50px !important;
   }
   .lm-aside-flight > ul > li > a span {
+    position: relative;
     top: 40px;
+    text-align: left;
+    line-height: 10px;
+  }
+  .lm-aside-flight > ul > li .active {
+    color: #1f2c5c;
   }
   .lm-aside-flight > ul .li-child1 a,
   .lm-aside-flight > ul .li-child2 a,
@@ -3902,9 +3943,6 @@ body {
   .lm-aside-flight > ul .li-child5 a {
     background-size: 30px 30px !important;
     font-size: 10px;
-  }
-  .lm-aside-flight > ul .li-slide {
-    display: none;
   }
   .lm-aside-flight > ul .li-child1 a {
     background: url('../../images/EN/svg/ticket-icon.svg') center 30% no-repeat;
@@ -3917,6 +3955,9 @@ body {
   }
   .lm-aside-flight > ul .li-child2 .active {
     background: url('../../images/EN/svg/hotel-icon-active.svg') center 30% no-repeat;
+  }
+  .lm-aside-flight > ul .li-child3 {
+    display: none;
   }
   .lm-aside-flight > ul .li-child3 a {
     background: url('../../images/EN/svg/ticketHotel-icon.svg') center 30% no-repeat;
@@ -4090,11 +4131,18 @@ body {
     line-height: 46px;
     padding: 4px;
     text-align: center;
+    background: #42958a;
     background: -webkit-linear-gradient(left, #42958a 0%, #1f2c5c 100%);
     background: -o-linear-gradient(right, #42958a 0%, #1f2c5c 100%);
     background: -moz-linear-gradient(right, #42958a 0%, #1f2c5c 100%);
     background: linear-gradient(to right, #42958a 0%, #1f2c5c 100%);
+    filter: alpha progid:DXImageTransform.Microsoft.gradient(startcolorstr=#42958a, endcolorstr=#1f2c5c, gradientType=1);
+    /*ie8*/
+    /*ie9*/
     border-radius: 2px;
+  }
+  .popup-content .popup-people .people-number :root .gradient {
+    filter: none;
   }
   .popup-content .popup-people .people-number > a {
     display: inline-block;
