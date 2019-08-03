@@ -7,6 +7,10 @@ function initMap() {
 	/* 初始化map */
 	map = new google.maps.Map(document.getElementById('planningMap'), {
 		zoom:7,
+		zoomControl: false,
+	  scaleControl: false,
+	  scrollwheel: false,
+	  disableDoubleClickZoom: true,
 		center: {lat: 23.15, lng: 113.25},
 		mapTypeControl: false,
     	streetViewControl:false, //街景
