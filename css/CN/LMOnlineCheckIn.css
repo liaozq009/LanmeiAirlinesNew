@@ -140,8 +140,8 @@ body:before {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  transition: all .3s;
-  -webkit-transition: all .3s;
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
 }
 .lm-input .dropdownMenu-wrap .menu-com > li:hover {
   color: #8ec060;
@@ -685,13 +685,13 @@ body:before {
   top: 100px;
   left: 0;
   z-index: 9;
-  width: 342px;
-  padding: 20px;
+  width: 362px;
+  padding: 30px;
   background: #fff;
   box-shadow: 0px 0px 100px 0px #1f2c5c;
   border-radius: 0px 2px 2px 0px;
-  transition: left .3s;
-  -webkit-transition: left .3s;
+  transition: left 0.3s;
+  -webkit-transition: left 0.3s;
 }
 .lm-section-checkIn .flight-aside > img {
   display: none;
@@ -746,7 +746,7 @@ body:before {
   position: absolute;
   top: 0;
   right: 0;
-  width: 40px;
+  width: 58px;
   height: 40px;
   line-height: 40px;
   text-align: center;
@@ -762,14 +762,14 @@ body:before {
   position: fixed;
   right: 0;
   z-index: 9;
-  width: 270px;
+  width: 290px;
   top: 100px;
-  padding: 20px;
+  padding: 30px;
   background: #fff;
   box-shadow: 0px 0px 100px 0px #1f2c5c;
   border-radius: 2px 0px 0px 2px;
-  transition: right .3s;
-  -webkit-transition: right .3s;
+  transition: right 0.3s;
+  -webkit-transition: right 0.3s;
 }
 .lm-section-checkIn .seat-aside .seat-arrow {
   left: 0;
@@ -834,13 +834,13 @@ body:before {
   top: 420px;
   right: 0;
   z-index: 9;
-  width: 270px;
-  padding: 20px;
+  width: 290px;
+  padding: 30px;
   background: #fff;
   box-shadow: 0px 0px 100px 0px #1f2c5c;
   border-radius: 2px 0px 0px 2px;
-  transition: right .3s;
-  -webkit-transition: right .3s;
+  transition: right 0.3s;
+  -webkit-transition: right 0.3s;
 }
 .lm-section-checkIn .checkIn-aside .seat-arrow {
   left: 0;
@@ -905,8 +905,8 @@ body:before {
   display: block;
   float: right;
   width: 110px;
-  height: 30px;
-  line-height: 30px;
+  height: 36px;
+  line-height: 36px;
   text-align: center;
   color: #fff;
   font-size: 16px;
@@ -1133,13 +1133,13 @@ body:before {
   color: #fff;
   border-radius: 2px;
   background: #1f2c5c;
-  transition: background .3s;
-  -webkit-transition: background .3s;
+  transition: background 0.3s;
+  -webkit-transition: background 0.3s;
 }
 .pay-content .pay-catering:hover {
   background: #8ec06c;
-  transition: background .3s;
-  -webkit-transition: background .3s;
+  transition: background 0.3s;
+  -webkit-transition: background 0.3s;
 }
 .payModal .modal-dialog .modal-content .modal-body .loginTitle {
   font-size: 24px;
@@ -1185,15 +1185,15 @@ body:before {
 @media screen and (max-width: 1900px) {
   .lm-section-checkIn .flight-aside {
     top: 90px;
-    padding: 10px;
+    padding: 20px;
   }
   .lm-section-checkIn .seat-aside {
     top: 90px;
-    padding: 10px;
+    padding: 20px;
   }
   .lm-section-checkIn .checkIn-aside {
     top: 380px;
-    padding: 10px;
+    padding: 20px;
   }
   .lm-section-checkIn .MiniMap-aside {
     bottom: 40px;
@@ -1275,32 +1275,32 @@ body:before {
   .lm-section-checkIn .flight-aside,
   .lm-section-checkIn .seat-aside,
   .lm-section-checkIn .checkIn-aside {
-    transition: all .3s;
-    -webkit-transition: all .3s;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
   }
   .lm-section-checkIn .flight-aside-scale {
     -webkit-transform: scale(0.5);
     transform: scale(0.5);
     -webkit-transform-origin: left;
     transform-origin: left;
-    transition: all .3s;
-    -webkit-transition: all .3s;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
   }
   .lm-section-checkIn .seat-aside-scale {
     -webkit-transform: scale(0.6);
     transform: scale(0.6);
     -webkit-transform-origin: right;
     transform-origin: right;
-    transition: all .3s;
-    -webkit-transition: all .3s;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
   }
   .lm-section-checkIn .checkIn-aside-scale {
     -webkit-transform: scale(0.6);
     transform: scale(0.6);
     -webkit-transform-origin: right;
     transform-origin: right;
-    transition: all .3s;
-    -webkit-transition: all .3s;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
   }
   .lm-section-complete {
     width: 100%;
@@ -1338,7 +1338,7 @@ body:before {
     padding-right: 10px;
   }
   .lm-title h1 {
-    font-size: .2rem;
+    font-size: 0.2rem;
   }
   .lm-input {
     margin-top: 20px;

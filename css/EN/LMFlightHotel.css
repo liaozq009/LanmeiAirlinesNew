@@ -1338,6 +1338,7 @@ body:before {
   cursor: pointer;
 }
 .hotel-modal .hotel-map-wrap {
+  position: relative;
   width: 100%;
   height: 160px;
   margin-top: 10px;
@@ -1345,6 +1346,9 @@ body:before {
   padding-right: 20px;
 }
 .hotel-modal .hotel-map-wrap .hotel-map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
   width: 100%;
   height: 150px;
 }

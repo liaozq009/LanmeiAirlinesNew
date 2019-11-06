@@ -476,23 +476,23 @@ var lmFlightHotel = {
 
     /* 酒店模态框 */
     hotelModal:function(){
-        // 谷歌地图
+        // mapbox
         function initMap(lat,lng){
-            var coordinate = {lat: lat, lng: lng};
-            var mapProp = {
-                center: coordinate,
-                zoom:8,
-                mapTypeId:google.maps.MapTypeId.ROADMAP
-            };
-            var map=new google.maps.Map(document.getElementById("hotelMap"), mapProp);
-
-            // 添加标记
-            var marker = new google.maps.Marker({
-                position: coordinate,
-                map: map
+            mapboxgl.accessToken = 'pk.eyJ1IjoibGlhb3pxMDA5IiwiYSI6ImNqeHBweDJxZDBrYXUzZG54bmM2bm54c2YifQ.2tBwJn9MFtsTXDM-ZJWEzQ';
+            var map = new mapboxgl.Map({
+              container: 'hotelMap',
+              style: 'mapbox://styles/mapbox/streets-v11',
+              center: [103.8743, 13.3447],
+              zoom: 6
             });
-
+        
+            var marker = new mapboxgl.Marker({
+              draggable: false
+            })
+              .setLngLat([103.8743, 13.3447])
+              .addTo(map);
         };
+
         // 酒店详情弹出模态框
         $('.js-hotel-content').on('click','.js-hotel-title',function(e){
             e.preventDefault();e.stopPropagation();
