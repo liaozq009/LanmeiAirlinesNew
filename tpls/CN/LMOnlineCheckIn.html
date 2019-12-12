@@ -9,7 +9,7 @@
 	<!-- 实现响应式的设置 -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>网上值机</title>
+	<title>提前选座</title>
 	<!-- 引入图标 -->
 	<link rel="icon" href="../../images/CN/lanmeiLogo.ico">
 	<link rel="stylesheet" type="text/css" href="../../common/CN/fonts/lm-iconfont.css">
@@ -39,15 +39,21 @@
 	<!-- 忘记密码模态框 -->
 	<div class="modal fade" id="forgetModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"></div>
 
+	<!-- 返回箭头 -->
+	<div class="return-arrow-wrap">
+		<i class="iconfont icon-left-arrow2"></i>
+		提前选座
+	</div>
+
 	<!-- 主体内容 -->
 	<section class="lm-section">
 		<div class="lm-section-info">
 			<div class="lm-title">
-				<h1>网上值机</h1>
+				<h1>提前选座</h1>
 			</div>
 			<div class="lm-input">
 				<div class="from-city-wrap">
-					<input type="text" class="js-fromCity-input" data="fromcityMenu" name="" value="" placeholder="出发地">
+					<input type="text" class="js-fromCity-input" data="js-fromMenu" name="" value="" placeholder="出发地">
 					<div class="dropdownMenu-wrap">
 						<ul class="fromcityMenu js-fromMenu menu-com">
 							
@@ -67,7 +73,7 @@
 					<input type="text" class="js-date-input" name="ticketNum" value="">
 				</div>
 				<div class="name-wrap">
-					<input type="text" class="lastName-input js-lastName-input" name="" value="" placeholder="姓/名(拼音Li/si)">
+					<input type="text" class="lastName-input js-lastName-input" name="" value="" placeholder="姓/名(拼音zhang/san)">
 				</div>
 				<div class="phone-wrap">
 					<div class="select-option">
@@ -77,18 +83,7 @@
 								<input type="text" class="js-search-code" data="js-codeMenu" name="" value="" placeholder="搜索">
 							</div>
 							<ul class="js-codeMenu menu-com">
-								<li title="中国(+86)">中国(+86)</li>
-								<li title="中国香港(+852)">中国香港(+852)</li>
-								<li title="中国澳门(+853)">中国澳门(+853)</li>
-								<li title="中国(+86)">中国台湾(+886)</li>
-								<li title="中国香港(+852)">中国香港(+852)</li>
-								<li title="中国澳门(+853)">中国澳门(+853)</li>
-								<li title="中国(+86)">中国(+86)</li>
-								<li title="中国香港(+852)">中国香港(+852)</li>
-								<li title="中国澳门(+853)">中国澳门(+853)</li>
-								<li title="中国(+86)">中国(+86)</li>
-								<li title="中国香港(+852)">中国香港(+852)</li>
-								<li title="中国澳门(+853)">中国澳门(+853)</li>
+								
 							</ul>
 						</div>
 					</div>
@@ -98,11 +93,11 @@
 			<div class="lm-search">
 				<div class="notes-inner">
 					<h3>温馨提示：</h3>
-					<p>1、暂时仅支持澜湄航空官网购票的旅客提前办理网上值机；</p>
-					<p>2、请于航班起飞前24小时办理网上值机手续；</p>
+					<p>1、暂时仅支持澜湄航空官网购票的旅客提前办理提前选座；</p>
+					<p>2、请于航班起飞前24小时办理提前选座手续；</p>
 					<p>3、暂不支持办理特殊服务需求或者须其他乘机证明方可运输的旅客；</p>
 					<p>4、重要旅客、病残、儿童、婴儿、孕妇、老年旅客、特殊餐食、携带婴儿等旅客，如有需要请您前往机场澜湄航空值机柜台办理；</p>
-					<p>5、如已办理网上值机手续，您也可通过查询办理取消网上值机或者重新打印登机牌。</p>
+					<p>5、如已办理提前选座手续，您也可通过查询办理取消提前选座或者重新打印登机牌。</p>
 				</div>
 				<div class="search-inner">
 					<button class="lm-button js-search-flight">查&nbsp;&nbsp;询 <span></span></button>
@@ -111,14 +106,14 @@
 			</div>
 			<div class="lm-info">
 				<div class="lm-info-box">
-					<div class="lm-info-inner" data-state="state-03">
+					<div class="lm-info-inner" data-state="state-no">
 						<p class="select-radio js-select-radio"></p>
 						<div class="flight-airport">
 							<div class="from-airport airport-com">广州国际白云机场</div>
 							<div class="flight-num">
 								<span>LQ909</span>
-								<img src="../../images/resource/ticketHotel-line.png" class="pc-right-arrow">
-								<img src="../../images/resource/ticketHotel-line-mobile.png" class="mobile-right-arrow">
+								<img src="../../images/checkIn/ticketHotel-line.png" class="pc-right-arrow">
+								<img src="../../images/checkIn/ticketHotel-line-mobile.png" class="mobile-right-arrow">
 							</div>
 							<div class="to-airport airport-com">金边国际机场</div>
 						</div>
@@ -126,17 +121,17 @@
 							<li>票号：961-564678963</li>
 							<li>出发日期：2018-09-05</li>
 							<li>舱位等级：C</li>
-							<li class="not-avail" title="请于航班起飞前24小时办理网上值机手续">当前状态：<span>不可办理</span></li>
+							<li class="tips-handle" title="请于航班起飞前24小时办理提前选座手续">当前状态：<span>不可办理</span></li>
 						</ul>
 					</div>
-					<div class="lm-info-inner" data-state="state-01">
-						<p class="select-radio js-select-radio select-ok"></p>
+					<div class="lm-info-inner" data-state="state-wait">
+						<p class="select-radio js-select-radio"></p>
 						<div class="flight-airport">
 							<div class="from-airport airport-com">金边国际机场</div>
 							<div class="flight-num">
 								<span>LQ315</span>
-								<img src="../../images/resource/ticketHotel-line.png" class="pc-right-arrow">
-								<img src="../../images/resource/ticketHotel-line-mobile.png" class="mobile-right-arrow">
+								<img src="../../images/checkIn/ticketHotel-line.png" class="pc-right-arrow">
+								<img src="../../images/checkIn/ticketHotel-line-mobile.png" class="mobile-right-arrow">
 							</div>
 							<div class="to-airport airport-com">暹粒吴哥国际机场</div>
 						</div>
@@ -144,17 +139,17 @@
 							<li>票号：961-868678963</li>
 							<li>出发日期：2018-09-09</li>
 							<li>舱位等级：Y</li>
-							<li class="can-handle">当前状态：<span>未办理</span></li>
+							<li class="tips-handle">当前状态：<span>已办理</span></li>
 						</ul>
 					</div>
-					<div class="lm-info-inner" data-state="state-02">
+					<div class="lm-info-inner" data-state="state-ok">
 						<p class="select-radio js-select-radio"></p>
 						<div class="flight-airport">
 							<div class="from-airport airport-com">金边国际机场</div>
 							<div class="flight-num">
 								<span>LQ908</span>
-								<img src="../../images/resource/ticketHotel-line.png" class="pc-right-arrow">
-								<img src="../../images/resource/ticketHotel-line-mobile.png" class="mobile-right-arrow">
+								<img src="../../images/checkIn/ticketHotel-line.png" class="pc-right-arrow">
+								<img src="../../images/checkIn/ticketHotel-line-mobile.png" class="mobile-right-arrow">
 							</div>
 							<div class="to-airport airport-com">广州国际白云机场</div>
 						</div>
@@ -162,7 +157,7 @@
 							<li>票号：961-898678963</li>
 							<li>出发日期：2018-09-06</li>
 							<li>舱位等级：L</li>
-							<li class="already-handle">当前状态：<span>已办理</span></li>
+							<li class="tips-handle">当前状态：<span>未办理</span></li>
 						</ul>
 					</div>
 				</div>
@@ -171,10 +166,10 @@
 		</div>
 		<div class="lm-section-checkIn">
 			<div class="lm-cloud-wrap">
-				<img src="../../images/resource/checkIn/cloud-1.png" class="img-01" />
-				<img src="../../images/resource/checkIn/cloud-2.png" class="img-02" />
-				<img src="../../images/resource/checkIn/cloud-3.png" class="img-03" />
-				<img src="../../images/resource/checkIn/cloud-4.png" class="img-04" />
+				<img src="../../images/checkIn/cloud-1.png" class="img-01" />
+				<img src="../../images/checkIn/cloud-2.png" class="img-02" />
+				<img src="../../images/checkIn/cloud-3.png" class="img-03" />
+				<img src="../../images/checkIn/cloud-4.png" class="img-04" />
 			</div>
 			<div class="lm-seat-wrap">
 				<div class="aircraft-rest-wrap">
@@ -182,7 +177,7 @@
 					<p class="aircraft-meals"></p>
 				</div>
 				<div class="seat-cell-wrap">
-					<div class="seat-wrap-1 seat-wrap-com">
+					<div class="seat-wrap-com js-seat-wrap">
 						<div class="seat-num">
 							<p>A</p>
 							<p>B</p>
@@ -192,257 +187,18 @@
 							<p>E</p>
 							<p class="p6">F</p>
 						</div>
-						<!-- <ul class="row-1">
-							<li class="cell-1 seat-sold" data-name=""  data-seatId=""></li>
-							<li class="cell-2" data-name=""  data-seatId=""></li>
-							<li class="cell-3" data-name=""  data-seatId=""></li>
-							<li class="row-num">1</li>
-							<li class="cell-4" data-name=""  data-seatId=""></li>
-							<li class="cell-5 seat-sold" data-name=""  data-seatId=""></li>
-							<li class="cell-6" data-name=""  data-seatId=""></li>
-						</ul>
-						<ul class="row-2">
-							<li class="cell-1" data-name=""  data-seatId=""></li>
-							<li class="cell-2" data-name=""  data-seatId=""></li>
-							<li class="cell-3 seat-sold" data-name=""  data-seatId=""></li>
-							<li class="row-num">2</li>
-							<li class="cell-4" data-name=""  data-seatId=""></li>
-							<li class="cell-5" data-name=""  data-seatId=""></li>
-							<li class="cell-6" data-name=""  data-seatId=""></li>
-						</ul>
-						<ul class="row-3">
-							<li class="cell-1" data-name=""  data-seatId=""></li>
-							<li class="cell-2 seat-sold" data-name=""  data-seatId=""></li>
-							<li class="cell-3" data-name=""  data-seatId=""></li>
-							<li class="row-num">3</li>
-							<li class="cell-4" data-name=""  data-seatId=""></li>
-							<li class="cell-5" data-name=""  data-seatId=""></li>
-							<li class="cell-6" data-name=""  data-seatId=""></li>
-						</ul>
-						<ul class="row-4">
-							<li class="cell-1" data-name=""  data-seatId=""></li>
-							<li class="cell-2" data-name=""  data-seatId=""></li>
-							<li class="cell-3" data-name=""  data-seatId=""></li>
-							<li class="row-num">4</li>
-							<li class="cell-4" data-name=""  data-seatId=""></li>
-							<li class="cell-5" data-name=""  data-seatId=""></li>
-							<li class="cell-6" data-name=""  data-seatId=""></li>
-						</ul>
-						<ul class="row-5">
-							<li class="cell-1" data-name=""  data-seatId=""></li>
-							<li class="cell-2" data-name=""  data-seatId=""></li>
-							<li class="cell-3" data-name=""  data-seatId=""></li>
-							<li class="row-num">5</li>
-							<li class="cell-4" data-name=""  data-seatId=""></li>
-							<li class="cell-5" data-name=""  data-seatId=""></li>
-							<li class="cell-6" data-name=""  data-seatId=""></li>
-						</ul>
-						<ul class="row-6">
-							<li class="cell-1" data-name=""  data-seatId=""></li>
-							<li class="cell-2" data-name=""  data-seatId=""></li>
-							<li class="cell-3 seat-sold" data-name=""  data-seatId=""></li>
-							<li class="row-num">6</li>
-							<li class="cell-4" data-name=""  data-seatId=""></li>
-							<li class="cell-5" data-name=""  data-seatId=""></li>
-							<li class="cell-6" data-name=""  data-seatId=""></li>
-						</ul>
-						<ul class="row-7">
-							<li class="cell-1" data-name=""  data-seatId=""></li>
-							<li class="cell-2" data-name=""  data-seatId=""></li>
-							<li class="cell-3" data-name=""  data-seatId=""></li>
-							<li class="row-num">7</li>
-							<li class="cell-4" data-name=""  data-seatId=""></li>
-							<li class="cell-5" data-name=""  data-seatId=""></li>
-							<li class="cell-6" data-name=""  data-seatId=""></li>
-						</ul>
-						<ul class="row-8">
-							<li class="cell-1" data-name=""  data-seatId=""></li>
-							<li class="cell-2" data-name=""  data-seatId=""></li>
-							<li class="cell-3 seat-sold" data-name=""  data-seatId=""></li>
-							<li class="row-num">8</li>
-							<li class="cell-4" data-name=""  data-seatId=""></li>
-							<li class="cell-5" data-name=""  data-seatId=""></li>
-							<li class="cell-6" data-name=""  data-seatId=""></li>
-						</ul>
-						<ul class="row-9">
-							<li class="cell-1" data-name=""  data-seatId=""></li>
-							<li class="cell-2" data-name=""  data-seatId=""></li>
-							<li class="cell-3" data-name=""  data-seatId=""></li>
-							<li class="row-num">9</li>
-							<li class="cell-4" data-name=""  data-seatId=""></li>
-							<li class="cell-5 seat-sold" data-name=""  data-seatId=""></li>
-							<li class="cell-6" data-name=""  data-seatId=""></li>
-						</ul> -->
-					</div>
-					<div class="seat-wrap-2 seat-wrap-com">
-						<div class="seat-exit">
-							<p class="left-exit">Exit</p>
-							<p class="right-exit">Exit</p>
-						</div>
-						<div class="seat-num">
-							<p>A</p>
-							<p>B</p>
-							<p>C</p>
-							<p class="row-num"></p>
-							<p>D</p>
-							<p>E</p>
-							<p class="p6">F</p>
-						</div>
-						<!-- <ul class="row-10">
-							<li class="cell-1" data-name=""  data-seatId=""></li>
-							<li class="cell-2" data-name=""  data-seatId=""></li>
-							<li class="cell-3" data-name=""  data-seatId=""></li>
-							<li class="row-num">10</li>
-							<li class="cell-4" data-name=""  data-seatId=""></li>
-							<li class="cell-5" data-name=""  data-seatId=""></li>
-							<li class="cell-6" data-name=""  data-seatId=""></li>
-						</ul>
-						<ul class="row-11">
-							<li class="cell-1" data-name=""  data-seatId=""></li>
-							<li class="cell-2" data-name=""  data-seatId=""></li>
-							<li class="cell-3" data-name=""  data-seatId=""></li>
-							<li class="row-num">11</li>
-							<li class="cell-4" data-name=""  data-seatId=""></li>
-							<li class="cell-5" data-name=""  data-seatId=""></li>
-							<li class="cell-6" data-name=""  data-seatId=""></li>
-						</ul>
-						<ul class="row-12">
-							<li class="cell-1" data-name=""  data-seatId=""></li>
-							<li class="cell-2" data-name=""  data-seatId=""></li>
-							<li class="cell-3" data-name=""  data-seatId=""></li>
-							<li class="row-num">12</li>
-							<li class="cell-4" data-name=""  data-seatId=""></li>
-							<li class="cell-5" data-name=""  data-seatId=""></li>
-							<li class="cell-6" data-name=""  data-seatId=""></li>
-						</ul>
-						<ul class="row-13">
-							<li class="cell-1" data-name=""  data-seatId=""></li>
-							<li class="cell-2" data-name=""  data-seatId=""></li>
-							<li class="cell-3" data-name=""  data-seatId=""></li>
-							<li class="row-num">13</li>
-							<li class="cell-4" data-name=""  data-seatId=""></li>
-							<li class="cell-5" data-name=""  data-seatId=""></li>
-							<li class="cell-6" data-name=""  data-seatId=""></li>
-						</ul>
-						<ul class="row-14">
-							<li class="cell-1" data-name=""  data-seatId=""></li>
-							<li class="cell-2" data-name=""  data-seatId=""></li>
-							<li class="cell-3" data-name=""  data-seatId=""></li>
-							<li class="row-num">14</li>
-							<li class="cell-4" data-name=""  data-seatId=""></li>
-							<li class="cell-5" data-name=""  data-seatId=""></li>
-							<li class="cell-6" data-name=""  data-seatId=""></li>
-						</ul>
-						<ul class="row-15">
-							<li class="cell-1" data-name=""  data-seatId=""></li>
-							<li class="cell-2" data-name=""  data-seatId=""></li>
-							<li class="cell-3" data-name=""  data-seatId=""></li>
-							<li class="row-num">15</li>
-							<li class="cell-4" data-name=""  data-seatId=""></li>
-							<li class="cell-5" data-name=""  data-seatId=""></li>
-							<li class="cell-6" data-name=""  data-seatId=""></li>
-						</ul>
-						<ul class="row-16">
-							<li class="cell-1" data-name=""  data-seatId=""></li>
-							<li class="cell-2" data-name=""  data-seatId=""></li>
-							<li class="cell-3" data-name=""  data-seatId=""></li>
-							<li class="row-num">16</li>
-							<li class="cell-4" data-name=""  data-seatId=""></li>
-							<li class="cell-5" data-name=""  data-seatId=""></li>
-							<li class="cell-6" data-name=""  data-seatId=""></li>
-						</ul>
-						<ul class="row-17">
-							<li class="cell-1" data-name=""  data-seatId=""></li>
-							<li class="cell-2" data-name=""  data-seatId=""></li>
-							<li class="cell-3" data-name=""  data-seatId=""></li>
-							<li class="row-num">17</li>
-							<li class="cell-4" data-name=""  data-seatId=""></li>
-							<li class="cell-5" data-name=""  data-seatId=""></li>
-							<li class="cell-6" data-name=""  data-seatId=""></li>
-						</ul>
-						<ul class="row-18">
-							<li class="cell-1" data-name=""  data-seatId=""></li>
-							<li class="cell-2" data-name=""  data-seatId=""></li>
-							<li class="cell-3" data-name=""  data-seatId=""></li>
-							<li class="row-num">18</li>
-							<li class="cell-4" data-name=""  data-seatId=""></li>
-							<li class="cell-5" data-name=""  data-seatId=""></li>
-							<li class="cell-6" data-name=""  data-seatId=""></li>
-						</ul> -->
-					</div>
-					<div class="seat-wrap-3 seat-wrap-com">
-						<!-- <ul class="row-19">
-							<li class="cell-1" data-name=""  data-seatId=""></li>
-							<li class="cell-2" data-name=""  data-seatId=""></li>
-							<li class="cell-3" data-name=""  data-seatId=""></li>
-							<li class="row-num">19</li>
-							<li class="cell-4" data-name=""  data-seatId=""></li>
-							<li class="cell-5" data-name=""  data-seatId=""></li>
-							<li class="cell-6" data-name=""  data-seatId=""></li>
-						</ul>
-						<ul class="row-20">
-							<li class="cell-1" data-name=""  data-seatId=""></li>
-							<li class="cell-2" data-name=""  data-seatId=""></li>
-							<li class="cell-3" data-name=""  data-seatId=""></li>
-							<li class="row-num">20</li>
-							<li class="cell-4" data-name=""  data-seatId=""></li>
-							<li class="cell-5" data-name=""  data-seatId=""></li>
-							<li class="cell-6" data-name=""  data-seatId=""></li>
-						</ul>
-						<ul class="row-21">
-							<li class="cell-1" data-name=""  data-seatId=""></li>
-							<li class="cell-2" data-name=""  data-seatId=""></li>
-							<li class="cell-3 seat-sold" data-name=""  data-seatId=""></li>
-							<li class="row-num">21</li>
-							<li class="cell-4" data-name=""  data-seatId=""></li>
-							<li class="cell-5" data-name=""  data-seatId=""></li>
-							<li class="cell-6" data-name=""  data-seatId=""></li>
-						</ul>
-						<ul class="row-22">
-							<li class="cell-1" data-name=""  data-seatId=""></li>
-							<li class="cell-2" data-name=""  data-seatId=""></li>
-							<li class="cell-3" data-name=""  data-seatId=""></li>
-							<li class="row-num">22</li>
-							<li class="cell-4" data-name=""  data-seatId=""></li>
-							<li class="cell-5" data-name=""  data-seatId=""></li>
-							<li class="cell-6" data-name=""  data-seatId=""></li>
-						</ul>
-						<ul class="row-23">
-							<li class="cell-1" data-name=""  data-seatId=""></li>
-							<li class="cell-2" data-name=""  data-seatId=""></li>
-							<li class="cell-3" data-name=""  data-seatId=""></li>
-							<li class="row-num">23</li>
-							<li class="cell-4" data-name=""  data-seatId=""></li>
-							<li class="cell-5" data-name=""  data-seatId=""></li>
-							<li class="cell-6" data-name=""  data-seatId=""></li>
-						</ul>
-						<ul class="row-24">
-							<li class="cell-1" data-name=""  data-seatId=""></li>
-							<li class="cell-2" data-name=""  data-seatId=""></li>
-							<li class="cell-3" data-name=""  data-seatId=""></li>
-							<li class="row-num">24</li>
-							<li class="cell-4" data-name=""  data-seatId=""></li>
-							<li class="cell-5" data-name=""  data-seatId=""></li>
-							<li class="cell-6" data-name=""  data-seatId=""></li>
-						</ul>
-						<ul class="row-25">
-							<li class="cell-1" data-name=""  data-seatId=""></li>
-							<li class="cell-2" data-name=""  data-seatId=""></li>
-							<li class="cell-3" data-name=""  data-seatId=""></li>
-							<li class="row-num">25</li>
-							<li class="cell-4" data-name=""  data-seatId=""></li>
-							<li class="cell-5" data-name=""  data-seatId=""></li>
-							<li class="cell-6" data-name=""  data-seatId=""></li>
-						</ul> -->
 					</div>
 				</div>
 				<div class="aircraft-rest-wrap aricraft-rest-footer">
-					<p class="aircraft-WC"></p>
-					<p class="aircraft-meals"></p>
+					<p class="aircraft-WC WC-1"></p>
+					<p class="aircraft-WC WC-2"></p>
+					<p class="aircraft-WC WC-3"></p>
+					<p class="aircraft-meals meals-1"></p>
+					<p class="aircraft-meals-2"></p>
 				</div>
 			</div>
 			<div class="flight-aside js-flight-aside">
-				<img src="../../images/resource/checkIn/logo-small.png">
+				<img src="../../images/checkIn/logo-small.png">
 				<p class="seat-arrow seat-left-arrow js-flight-arrow"></p>
 				<div class="from-airport">
 					从
@@ -471,30 +227,33 @@
 				<div class="option-icon"><span>可选座位</span></div>
 				<div class="exit-icon"><span>紧急出口</span></div> -->
 				<ul>
-					<li class="seat-class1"><img src="../../images/resource/checkIn/seat-class1-small.png"><p>+$324</p></li>
-					<li class="seat-class2"><img src="../../images/resource/checkIn/seat-class2-small.png"><p>+$218</p></li>
-					<li class="seat-class3"><img src="../../images/resource/checkIn/seat-class3-small.png"><p>+$147</p></li>
-					<li class="seat-free"><img src="../../images/resource/checkIn/seat-free-small.png"><p>免费</p></li>
+					<li class="seat-class1"><img src="../../images/checkIn/seat-class1-small.png"><p>+$324</p></li>
+					<li class="seat-class2"><img src="../../images/checkIn/seat-class2-small.png"><p>+$218</p></li>
+					<li class="seat-class3"><img src="../../images/checkIn/seat-class3-small.png"><p>+$147</p></li>
+					<li class="seat-free"><img src="../../images/checkIn/seat-free-small.png"><p>免费</p></li>
 				</ul>
 			</div>
 			<div class="checkIn-aside js-checkIn-aside">
 				<p class="seat-arrow seat-right-arrow js-checkIn-arrow"></p>
-				<div class="pas-name">
-					乘客姓名
-					<p>LZQ</p>
+				<div class="pas-name js-pas-name">
+					<span>乘客姓名</span>
+					<p class="name">LZQ</p>
+				</div>
+				<div class="mobile-name-seat js-pas-name">
+					<span class="name">LZQ</span>:<span class="s1">座位号</span><span class="seat">9A</span>
 				</div>
 				<div class="member-no">
 					<input type="text" name="" value="" class="member-no-input" placeholder="会员号" autocomplete="off">
 				</div>
 				<div class="seat-cabin">
 					<p class="difference-price js-difference-price">￥466</p>
-					<p class="flight-num js-flight-num">座位号：<span></span></p>
+					<p class="flight-num js-flight-num"><span class="s1">座位号：</span><span class="s2"></span></p>
 				</div>
 				<div class="agree-rule">
 					<label>
 						我已经阅读和同意 <input type="checkbox" name="" value="">
 					</label>
-					<a href="javascript:;">网上值机条款</a>
+					<a href="javascript:;">提前选座条款</a>
 				</div>
 				<div class="check-in">
 					<a href="javascript:;" class="checkIn-btn js-checkIn-btn">确认</a>
@@ -502,6 +261,7 @@
 				</div>
 			</div>
 			<div class="MiniMap-aside">
+				<div class="plane-type">机型：<span>A319</span></div>
 				<div class="small-flight js-miniMap-wrap">
 					<p class="slide js-miniMap-slide"></p>
 				</div>
@@ -541,27 +301,34 @@
 	<footer class="lm-footer"></footer>
 
 	<!-- 回到顶部 -->
-	<div class="BackToTop"></div>
+	<!-- <div class="BackToTop"></div> -->
 
 	<!-- 第三方库-->
-	<script type="text/javascript" src="../../libs/jQuery/jquery-1.11.3.js"></script>
-	<script type="text/javascript" src="../../libs/jQuery/jquery.cookie.js"></script>
-	<script type="text/javascript" src="../../libs/bootstrap/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="../../libs/layer/layer.js"></script>
-	<script type="text/javascript" src="../../libs/daterange/moment.js"></script>
-	<script type="text/javascript" src="../../libs/daterange/daterangepicker.js"></script>
-	<script type="text/javascript" src="../../libs/auto-complete-mail.js"></script>
-	<script type="text/javascript" src="../../libs/drag/drag.js"></script>
-	<script type="text/javascript" src="../../libs/lm-nicescroll.min.js"></script>
+	<script src="../../libs/jQuery/jquery-1.11.3.js"></script>
+	<script src="../../libs/jQuery/jquery.cookie.js"></script>
+	<script src="../../libs/bootstrap/js/bootstrap.min.js"></script>
+	<script src="../../libs/layer/layer.js"></script>
+	<script src="../../libs/countryData.js"></script>
+	<script src="../../libs/daterange/moment.js"></script>
+	<script src="../../libs/daterange/daterangepicker.js"></script>
+	<script src="../../libs/auto-complete-mail.js"></script>
+	<script src="../../libs/drag/drag.js"></script>
+	<script src="../../libs/lm-nicescroll.min.js"></script>
 	<!-- 公共JS -->
-	<script type="text/javascript" src="../../common/CN/js/head-footer.js"></script>
-	<script type="text/javascript" src="../../common/CN/js/login-register.js"></script>
-	<script type="text/javascript" src="../../common/CN/js/common-data.js"></script>
-	<script type="text/javascript" src="../../common/CN/js/common-autoComplete.js"></script>
-	<script type="text/javascript" src="../../common/CN/js/common-login.js"></script>
-	<script type="text/javascript" src="../../common/CN/js/common-daterange.js"></script>
-	<script type="text/javascript" src="../../common/CN/js/Lanmei-common.js"></script>
+	<script src="../../common/CN/js/head-footer.js"></script>
+	<script src="../../common/CN/js/login-register.js"></script>
+	<script src="../../common/CN/js/common-data.js"></script>
+	<!-- <script src="../../common/CN/js/common-autoComplete.js"></script> -->
+	<script src="../../common/CN/js/common-login.js"></script>
+	<script src="../../common/CN/js/common-daterange.js"></script>
+	<script src="../../common/CN/js/Lanmei-common.js"></script>
+	<!-- <script src="../../datas/seatDate-319-971.js"></script> -->
+	<!-- <script src="../../datas/seatDate-320-901.js"></script> -->
+	<!-- <script src="../../datas/seatDate-320-903.js"></script> -->
+	<!-- <script src="../../datas/seatDate-320-978.js"></script> -->
+	<!-- <script src="../../datas/seatDate-321-919.js"></script> -->
+	<script src="../../datas/seatDate-321-961.js"></script>
 	<!-- 业务代码 -->
-	<script type="text/javascript" src="../../js/CN/LMOnlineCheckIn.js"></script>
+	<script src="../../js/CN/LMOnlineCheckIn.js"></script>
 </body>
 </html>

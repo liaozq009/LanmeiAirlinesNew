@@ -1,9 +1,4 @@
 @charset "utf-8";
-@font-face {
-  font-family: NotoSansBold;
-  src: url(../../common/CN/fonts/NotoSans/SourceHanSansCN-Bold.otf);
-  font-weight: bold;
-}
 /* 定义变量 */
 body:before {
   content: ' ';
@@ -13,7 +8,7 @@ body:before {
   right: 0;
   bottom: 0;
   left: 0;
-  background: url('../../images/resource/checkIn/checkIn-bg.jpg') center no-repeat;
+  background: url('../../images/checkIn/checkIn-bg.jpg') center no-repeat;
   background-size: cover;
 }
 .lm-section-info {
@@ -28,7 +23,7 @@ body:before {
 .lm-title h1 {
   font-size: 36px;
   color: #fff;
-  font-family: NotoSansBold;
+  font-weight: bold;
 }
 .lm-input {
   display: inline-block;
@@ -135,7 +130,7 @@ body:before {
   padding-left: 30px;
   padding-right: 10px;
   margin-bottom: 10px;
-  background: url('../../images/EN/city-icon.png') left center no-repeat;
+  background: url('../../images/CN/city-icon.png') left center no-repeat;
   cursor: pointer;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -145,7 +140,7 @@ body:before {
 }
 .lm-input .dropdownMenu-wrap .menu-com > li:hover {
   color: #8ec060;
-  background: url('../../images/EN/city-icon-active.png') left center no-repeat;
+  background: url('../../images/CN/city-icon-active.png') left center no-repeat;
 }
 .lm-input .dropdownMenu-wrap .menu-com > li span {
   color: #1f2c5c;
@@ -191,7 +186,7 @@ body:before {
 .lm-input .passport-wrap > input,
 .lm-input .phone-wrap > input {
   padding-left: 160px;
-  background: url('../../images/EN/ticket-num.png') 20px center no-repeat;
+  background: url('../../images/CN/ticket-num.png') 20px center no-repeat;
 }
 .lm-input .passport-wrap .select-option,
 .lm-input .phone-wrap .select-option {
@@ -224,11 +219,11 @@ body:before {
 }
 .lm-input .passport-wrap .passport-num,
 .lm-input .phone-wrap .passport-num {
-  background: url('../../images/EN/passport.png') 20px center no-repeat;
+  background: url('../../images/CN/passport.png') 20px center no-repeat;
 }
 .lm-input .phone-wrap > input {
   padding-left: 220px;
-  background: url('../../images/EN/icon-areaCode.png') 20px center no-repeat;
+  background: url('../../images/CN/icon-areaCode.png') 20px center no-repeat;
 }
 .lm-input .phone-wrap .select-option > span {
   width: 140px;
@@ -296,10 +291,10 @@ body:before {
   padding-left: 20px;
 }
 .lm-input .from-city-wrap input {
-  background: url('../../images/EN/city-from.png') 20px center no-repeat;
+  background: url('../../images/CN/city-from.png') 20px center no-repeat;
 }
 .lm-input .name-wrap .lastName-input {
-  background: url('../../images/EN/baggageName.png') 20px center no-repeat;
+  background: url('../../images/CN/baggageName.png') 20px center no-repeat;
 }
 .lm-button {
   width: 240px;
@@ -344,7 +339,7 @@ body:before {
 .lm-search .notes-inner h3 {
   font-size: 16px;
   margin-bottom: 16px;
-  font-family: NotoSansBold;
+  font-weight: bold;
 }
 .lm-search .notes-inner p {
   font-size: 14px;
@@ -395,7 +390,7 @@ body:before {
   line-height: 60px;
   font-size: 18px;
   color: #1f2c5c;
-  font-family: NotoSansBold;
+  font-weight: bold;
   text-align: center;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -431,15 +426,6 @@ body:before {
 .lm-info .flight-info > li:last-child {
   border-right: none;
 }
-.lm-info .flight-info .can-handle span {
-  color: #8ec06c;
-}
-.lm-info .flight-info .not-avail span {
-  color: #FF8989;
-}
-.lm-info .flight-info .already-handle {
-  color: #1f2c5c;
-}
 .lm-info .select-radio {
   position: absolute;
   right: 20px;
@@ -451,13 +437,20 @@ body:before {
   cursor: pointer;
 }
 .lm-info .select-ok {
-  background: url('../../images/resource/checkIn/icon-select.png') center no-repeat;
+  background: url('../../images/checkIn/icon-select.png') center no-repeat;
+}
+.lm-info [data-state="state-ok"] .tips-handle span {
+  color: #8ec06c;
+}
+.lm-info [data-state="state-wait"] .tips-handle span {
+  color: #1f2c5c;
+}
+.lm-info [data-state="state-no"] .tips-handle span {
+  color: #FF8989;
 }
 .lm-section-checkIn {
   position: relative;
   display: none;
-  height: 4180px;
-  background: url('../../images/resource/checkIn/lm-A319.png') center top no-repeat;
 }
 .lm-section-checkIn .lm-cloud-wrap {
   display: none;
@@ -500,12 +493,11 @@ body:before {
   display: none;
   width: 460px;
   margin: 0 auto;
-  padding-top: 566px;
 }
 .lm-section-checkIn .aircraft-rest-wrap {
   padding-left: 60px;
   padding-right: 60px;
-  overflow: hidden;
+  display: inline-block;
 }
 .lm-section-checkIn .aircraft-rest-wrap > p {
   float: left;
@@ -513,26 +505,57 @@ body:before {
   height: 100px;
 }
 .lm-section-checkIn .aircraft-rest-wrap .aircraft-WC {
-  background: url('../../images/resource/checkIn/aircraft-WC.png') center no-repeat;
+  background: url('../../images/checkIn/aircraft-WC.png') center no-repeat;
   margin-right: 80px;
 }
 .lm-section-checkIn .aircraft-rest-wrap .aircraft-meals {
-  background: url('../../images/resource/checkIn/aircraft-meals.png') center no-repeat;
+  background: url('../../images/checkIn/aircraft-meals.png') center no-repeat;
+}
+.lm-section-checkIn .aircraft-rest-wrap .aircraft-meals-2 {
+  position: relative;
+  left: 30px;
+  width: 280px;
+  margin-top: 62px;
+  background: url('../../images/checkIn/aircraft-meals-2.png') center no-repeat;
 }
 .lm-section-checkIn .aricraft-rest-footer {
-  margin-top: 20px;
-}
-.lm-section-checkIn .seat-cell-wrap {
-  margin-top: 100px;
+  position: relative;
+  margin-top: 50px;
 }
 .lm-section-checkIn .seat-wrap-com {
   position: relative;
 }
+.lm-section-checkIn .seat-wrap-com .row-1 > li {
+  background: url('../../images/checkIn/seat-class1.png') center no-repeat;
+}
+.lm-section-checkIn .seat-wrap-com .row-1 .seat-checked {
+  background: url('../../images/checkIn/seat-checked.png') center no-repeat;
+}
+.lm-section-checkIn .seat-wrap-com .row-1 .seat-sold {
+  background: url('../../images/checkIn/seat-class1-sold.png') center no-repeat;
+}
+.lm-section-checkIn .seat-wrap-com .row-2 > li {
+  background: url('../../images/checkIn/seat-class2.png') center no-repeat;
+}
+.lm-section-checkIn .seat-wrap-com .row-2 .seat-checked {
+  background: url('../../images/checkIn/seat-checked.png') center no-repeat;
+}
+.lm-section-checkIn .seat-wrap-com .row-2 .seat-sold {
+  background: url('../../images/checkIn/seat-class2-sold.png') center no-repeat;
+}
+.lm-section-checkIn .seat-wrap-com .row-3 > li {
+  background: url('../../images/checkIn/seat-class3.png') center no-repeat;
+}
+.lm-section-checkIn .seat-wrap-com .row-3 .seat-checked {
+  background: url('../../images/checkIn/seat-checked.png') center no-repeat;
+}
+.lm-section-checkIn .seat-wrap-com .row-3 .seat-sold {
+  background: url('../../images/checkIn/seat-class3-sold.png') center no-repeat;
+}
 .lm-section-checkIn .seat-wrap-com > ul {
   height: 48px;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-top: 54px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .lm-section-checkIn .seat-wrap-com > ul > li {
   position: relative;
@@ -540,9 +563,9 @@ body:before {
   width: 56px;
   height: 48px;
   line-height: 48px;
-  margin-right: 8px;
+  margin-right: 10px;
   text-align: center;
-  background: url('../../images/resource/checkIn/seat-cell.png') center no-repeat;
+  background: url('../../images/checkIn/seat-cell.png') center no-repeat;
   cursor: pointer;
 }
 .lm-section-checkIn .seat-wrap-com > ul > li span {
@@ -552,7 +575,7 @@ body:before {
   width: 56px;
   text-align: center;
   color: rgba(31, 44, 92, 0.2);
-  font-family: NotoSansBold;
+  font-weight: bold;
 }
 .lm-section-checkIn .seat-wrap-com > ul .cell-4 .seat-info-wrap,
 .lm-section-checkIn .seat-wrap-com > ul .cell-5 .seat-info-wrap,
@@ -561,124 +584,51 @@ body:before {
   left: auto;
 }
 .lm-section-checkIn .seat-wrap-com > ul .seat-checked {
-  background: url('../../images/resource/checkIn/seat-checked.png') center no-repeat;
+  background: url('../../images/checkIn/seat-checked.png') center no-repeat;
 }
 .lm-section-checkIn .seat-wrap-com > ul .seat-sold {
-  background: url('../../images/resource/checkIn/seat-free-sold.png') center no-repeat;
+  background: url('../../images/checkIn/seat-free-sold.png') center no-repeat;
   cursor: default;
 }
 .lm-section-checkIn .seat-wrap-com > ul .cell-6 {
   margin-right: 0;
 }
 .lm-section-checkIn .seat-wrap-com > ul .row-num {
-  width: 36px;
+  width: 44px;
   font-size: 16px;
-  font-family: NotoSansBold;
+  font-weight: bold;
   color: rgba(31, 44, 92, 0.2);
   cursor: default;
+  background: none;
 }
 .lm-section-checkIn .seat-wrap-com .seat-num {
   position: absolute;
-  top: -30px;
+  top: -40px;
   width: 100%;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .lm-section-checkIn .seat-wrap-com .seat-num p {
   float: left;
   width: 56px;
   height: 20px;
   margin-right: 8px;
+  font-size: 18px;
   text-align: center;
-  font-family: NotoSansBold;
+  font-weight: bold;
   color: rgba(31, 44, 92, 0.2);
 }
 .lm-section-checkIn .seat-wrap-com .seat-num .p6 {
   margin-right: 0;
 }
 .lm-section-checkIn .seat-wrap-com .seat-num .row-num {
-  width: 36px;
+  width: 54px;
 }
 .lm-section-checkIn .seat-wrap-com .seat-num .left-exit {
   left: 0;
 }
 .lm-section-checkIn .seat-wrap-com .seat-num .right-exit {
   right: 0;
-}
-.lm-section-checkIn .seat-wrap-1 .row-1 > li {
-  background: url('../../images/resource/checkIn/seat-class1.png') center no-repeat;
-}
-.lm-section-checkIn .seat-wrap-1 .row-1 .seat-checked {
-  background: url('../../images/resource/checkIn/seat-checked.png') center no-repeat;
-}
-.lm-section-checkIn .seat-wrap-1 .row-1 .seat-sold {
-  background: url('../../images/resource/checkIn/seat-class1-sold.png') center no-repeat;
-}
-.lm-section-checkIn .seat-wrap-1 .row-2 > li {
-  background: url('../../images/resource/checkIn/seat-class2.png') center no-repeat;
-}
-.lm-section-checkIn .seat-wrap-1 .row-2 .seat-checked {
-  background: url('../../images/resource/checkIn/seat-checked.png') center no-repeat;
-}
-.lm-section-checkIn .seat-wrap-1 .row-2 .seat-sold {
-  background: url('../../images/resource/checkIn/seat-class2-sold.png') center no-repeat;
-}
-.lm-section-checkIn .seat-wrap-1 .row-3 > li {
-  background: url('../../images/resource/checkIn/seat-class3.png') center no-repeat;
-}
-.lm-section-checkIn .seat-wrap-1 .row-3 .seat-checked {
-  background: url('../../images/resource/checkIn/seat-checked.png') center no-repeat;
-}
-.lm-section-checkIn .seat-wrap-1 .row-3 .seat-sold {
-  background: url('../../images/resource/checkIn/seat-class3-sold.png') center no-repeat;
-}
-.lm-section-checkIn .seat-wrap-2 {
-  margin-top: 62px;
-}
-.lm-section-checkIn .seat-wrap-2 > ul {
-  margin-top: 42px;
-}
-.lm-section-checkIn .seat-wrap-2 .seat-exit {
-  position: absolute;
-  top: -30px;
-  width: 100%;
-  padding-left: 20px;
-  padding-right: 20px;
-  color: rgba(31, 44, 92, 0.7);
-  font-family: NotoSansBold;
-}
-.lm-section-checkIn .seat-wrap-2 .seat-exit .left-exit {
-  float: left;
-}
-.lm-section-checkIn .seat-wrap-2 .seat-exit .right-exit {
-  float: right;
-}
-.lm-section-checkIn .seat-wrap-2 .seat-num {
-  top: 60px;
-}
-.lm-section-checkIn .seat-wrap-3 > ul {
-  margin-top: 40px;
-}
-.lm-section-checkIn .seat-wrap-3 .row-25 {
-  padding-left: 40px;
-  padding-right: 40px;
-}
-.lm-section-checkIn .seat-wrap-3 .row-25 > li {
-  width: 48px;
-  height: 48px;
-  background: url('../../images/resource/checkIn/seat-backRow.png') center no-repeat;
-}
-.lm-section-checkIn .seat-wrap-3 .row-25 .seat-checked {
-  background: url('../../images/resource/checkIn/seat-backRow-checked.png') center no-repeat;
-}
-.lm-section-checkIn .seat-wrap-3 .row-25 .seat-sold {
-  background: url('../../images/resource/checkIn/seat-backRow-sold.png') center no-repeat;
-}
-.lm-section-checkIn .seat-wrap-3 .row-25 .row-num {
-  width: 36px;
-}
-.lm-section-checkIn .seat-wrap-com > ul .row-num {
-  background: none;
 }
 .lm-section-checkIn .flight-aside {
   position: fixed;
@@ -705,7 +655,7 @@ body:before {
 .lm-section-checkIn .flight-aside .from-airport p,
 .lm-section-checkIn .flight-aside .to-airport p {
   font-size: 18px;
-  font-family: NotoSansBold;
+  font-weight: bold;
   color: #1f2c5c;
   max-width: 400px;
   overflow: hidden;
@@ -733,7 +683,7 @@ body:before {
 .lm-section-checkIn .flight-aside .flight-date p,
 .lm-section-checkIn .flight-aside .flight-num p {
   font-size: 26px;
-  font-family: NotoSansBold;
+  font-weight: bold;
   color: #1f2c5c;
 }
 .lm-section-checkIn .flight-aside .flight-line {
@@ -753,10 +703,10 @@ body:before {
   cursor: pointer;
 }
 .lm-section-checkIn .seat-left-arrow {
-  background: url('../../images/resource/checkIn/seat-leftArrow.png') center no-repeat;
+  background: url('../../images/checkIn/seat-leftArrow.png') center no-repeat;
 }
 .lm-section-checkIn .seat-right-arrow {
-  background: url('../../images/resource/checkIn/seat-rightArrow.png') center no-repeat;
+  background: url('../../images/checkIn/seat-rightArrow.png') center no-repeat;
 }
 .lm-section-checkIn .seat-aside {
   position: fixed;
@@ -787,28 +737,29 @@ body:before {
   margin-right: 20px;
 }
 .lm-section-checkIn .seat-aside .sold-icon {
-  background: url('../../images/resource/checkIn/seat-free-small.png') right no-repeat;
+  background: url('../../images/checkIn/seat-free-small.png') right no-repeat;
   background-size: 30px;
 }
 .lm-section-checkIn .seat-aside .checked-icon {
-  background: url('../../images/resource/checkIn/seat-checked-small.png') right no-repeat;
+  background: url('../../images/checkIn/seat-checked-small.png') right no-repeat;
   background-size: 30px;
 }
 .lm-section-checkIn .seat-aside .option-icon {
-  background: url('../../images/resource/checkIn/seat-cell-small.png') right no-repeat;
+  background: url('../../images/checkIn/seat-cell-small.png') right no-repeat;
   background-size: 30px;
 }
 .lm-section-checkIn .seat-aside .exit-icon {
-  background: url('../../images/resource/checkIn/seat-exit.png') 97% no-repeat;
+  background: url('../../images/checkIn/seat-exit.png') 97% no-repeat;
   background-size: 6px;
 }
 .lm-section-checkIn .seat-aside > ul {
-  margin-top: 20px;
+  margin-top: 30px;
   overflow: hidden;
 }
 .lm-section-checkIn .seat-aside > ul > li {
   float: left;
-  margin-right: 27px;
+  width: 20%;
+  margin-right: 6%;
   font-size: 14px;
   line-height: 26px;
   text-align: center;
@@ -852,12 +803,15 @@ body:before {
 }
 .lm-section-checkIn .checkIn-aside .pas-name p {
   font-size: 18px;
-  font-family: NotoSansBold;
+  font-weight: bold;
   color: #1f2c5c;
+}
+.lm-section-checkIn .checkIn-aside .mobile-name-seat {
+  display: none;
 }
 .lm-section-checkIn .checkIn-aside .seat-cabin {
   margin-top: 10px;
-  font-family: NotoSansBold;
+  font-weight: bold;
   text-align: right;
 }
 .lm-section-checkIn .checkIn-aside .seat-cabin .difference-price {
@@ -874,6 +828,7 @@ body:before {
   text-align: right;
 }
 .lm-section-checkIn .checkIn-aside .member-no .member-no-input {
+  display: none;
   width: 230px;
   height: 36px;
   padding-left: 10px;
@@ -940,30 +895,39 @@ body:before {
 }
 .lm-section-checkIn .MiniMap-aside {
   position: fixed;
-  bottom: 40px;
-  left: 40px;
+  bottom: 80px;
+  left: 80px;
   z-index: 9;
-  width: 160px;
-  height: 160px;
+  width: 240px;
+  height: 260px;
   border-radius: 2px;
-  background: url('../../images/resource/checkIn/aircraft-small.png') center no-repeat rgba(31, 44, 92, 0.8);
-  background-size: 120px;
+  background: rgba(31, 44, 92, 0.8);
+}
+.lm-section-checkIn .MiniMap-aside .plane-type {
+  position: absolute;
+  left: 30px;
+  top: 20px;
+  color: #fff;
+  font-size: 16px;
 }
 .lm-section-checkIn .MiniMap-aside .small-flight {
   position: relative;
-  width: 120px;
-  height: 120px;
+  width: 180px;
+  height: 180px;
   margin: 0 auto;
-  margin-top: 20px;
+  margin-top: 50px;
+  background: url('../../images/checkIn/aircraft-small.png') center no-repeat;
+  border: 1px dashed #fff;
 }
 .lm-section-checkIn .MiniMap-aside .small-flight .slide {
   position: absolute;
   left: 50%;
   top: 50%;
-  margin-left: -60px;
-  width: 120px;
-  height: 30px;
-  background: rgba(142, 192, 96, 0.2);
+  margin-left: -70px;
+  width: 140px;
+  height: 40px;
+  background: rgba(142, 192, 96, 0.3);
+  border: 1px solid #fff;
   cursor: pointer;
 }
 .lm-section-complete {
@@ -990,7 +954,7 @@ body:before {
 }
 .lm-section-complete .success-tips .success-box > div h2 {
   font-size: 36px;
-  font-family: NotoSansBold;
+  font-weight: bold;
   color: #1f2c5c;
 }
 .lm-section-complete .success-tips .success-box > div p {
@@ -1020,7 +984,7 @@ body:before {
   height: 60px;
   font-size: 30px;
   color: #1f2c5c;
-  font-family: NotoSansBold;
+  font-weight: bold;
   text-align: center;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1045,7 +1009,7 @@ body:before {
 .lm-section-complete .success-inner .flight-info {
   font-size: 30px;
   color: #1f2c5c;
-  font-family: NotoSansBold;
+  font-weight: bold;
   padding-top: 30px;
   overflow: hidden;
   text-align: center;
@@ -1080,6 +1044,10 @@ body:before {
   display: none;
   background: linear-gradient(315deg, #00908C 0%, #B4EC80 100%);
 }
+.lm-section-complete .success-operation .prev-checkIn {
+  margin-right: 20px;
+  background-color: #1f2c5c;
+}
 .lm-section-complete .success-operation .continue-checkIn {
   background: linear-gradient(135deg, #00908C 0%, #1f2c5c 100%);
 }
@@ -1105,20 +1073,20 @@ body:before {
   height: 80px;
 }
 .pay-content .AliPay {
-  background: url('../../images/EN/AliPay.png') center no-repeat;
+  background: url('../../images/CN/AliPay.png') center no-repeat;
   background-size: 176px;
 }
 .pay-content .AliPay.active {
-  background: url('../../images/EN/AliPay-active.png') center no-repeat;
+  background: url('../../images/CN/AliPay-active.png') center no-repeat;
   background-size: 176px;
 }
 .pay-content .PayPal {
-  background: url('../../images/EN/PayPal.png') center no-repeat;
+  background: url('../../images/CN/PayPal.png') center no-repeat;
   margin-right: 10px;
   background-size: 176px;
 }
 .pay-content .PayPal.active {
-  background: url('../../images/EN/PayPal-active.png') center no-repeat;
+  background: url('../../images/CN/PayPal-active.png') center no-repeat;
   margin-right: 10px;
   background-size: 176px;
 }
@@ -1143,7 +1111,7 @@ body:before {
 }
 .payModal .modal-dialog .modal-content .modal-body .loginTitle {
   font-size: 24px;
-  font-family: NotoSansBold;
+  font-weight: bold;
 }
 .payModal {
   z-index: 999999999;
@@ -1180,6 +1148,582 @@ body:before {
 /* 修改日期样式 */
 .daterangepicker.ltr .calendar.left {
   margin-top: 6px;
+}
+/* 隐藏空座位 */
+li[data-seatStatus=" "],
+.row--1 li {
+  visibility: hidden;
+}
+/* A321 XU919 */
+.lm-A321-XU919 {
+  height: 5331px;
+  background: url('../../images/checkIn/lm-A321.png') center top no-repeat;
+}
+.lm-A321-XU919 .lm-seat-wrap {
+  padding-top: 454px;
+}
+.lm-A321-XU919 .lm-seat-wrap .seat-wrap-com > ul {
+  margin-top: 48px;
+}
+.lm-A321-XU919 .lm-seat-wrap .seat-wrap-com .row-10,
+.lm-A321-XU919 .lm-seat-wrap .seat-wrap-com .row-24 {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+.lm-A321-XU919 .lm-seat-wrap .seat-wrap-com .row-10 > li,
+.lm-A321-XU919 .lm-seat-wrap .seat-wrap-com .row-24 > li {
+  width: 48px;
+  height: 48px;
+  background: url('../../images/checkIn/seat-backRow.png') center no-repeat;
+}
+.lm-A321-XU919 .lm-seat-wrap .seat-wrap-com .row-10 .seat-checked,
+.lm-A321-XU919 .lm-seat-wrap .seat-wrap-com .row-24 .seat-checked {
+  background: url('../../images/checkIn/seat-backRow-checked.png') center no-repeat;
+}
+.lm-A321-XU919 .lm-seat-wrap .seat-wrap-com .row-10 .seat-sold,
+.lm-A321-XU919 .lm-seat-wrap .seat-wrap-com .row-24 .seat-sold {
+  background: url('../../images/checkIn/seat-backRow-sold.png') center no-repeat;
+}
+.lm-A321-XU919 .lm-seat-wrap .seat-wrap-com .row-10 .row-num,
+.lm-A321-XU919 .lm-seat-wrap .seat-wrap-com .row-24 .row-num {
+  width: 64px;
+}
+.lm-A321-XU919 .lm-seat-wrap .seat-wrap-com ul .row-num {
+  background: none;
+}
+.lm-A321-XU919 .lm-seat-wrap .seat-wrap-com .row-1,
+.lm-A321-XU919 .lm-seat-wrap .seat-wrap-com .row-2,
+.lm-A321-XU919 .lm-seat-wrap .seat-wrap-com .row-3,
+.lm-A321-XU919 .lm-seat-wrap .seat-wrap-com .row-4,
+.lm-A321-XU919 .lm-seat-wrap .seat-wrap-com .row-5,
+.lm-A321-XU919 .lm-seat-wrap .seat-wrap-com .row-6 {
+  margin-top: 54px;
+}
+.lm-A321-XU919 .lm-seat-wrap .seat-wrap-com .row-10 {
+  margin-top: 36px;
+}
+.lm-A321-XU919 .lm-seat-wrap .seat-wrap-com .row-11,
+.lm-A321-XU919 .lm-seat-wrap .seat-wrap-com .row-12,
+.lm-A321-XU919 .lm-seat-wrap .seat-wrap-com .row-13,
+.lm-A321-XU919 .lm-seat-wrap .seat-wrap-com .row-14,
+.lm-A321-XU919 .lm-seat-wrap .seat-wrap-com .row-15,
+.lm-A321-XU919 .lm-seat-wrap .seat-wrap-com .row-16,
+.lm-A321-XU919 .lm-seat-wrap .seat-wrap-com .row-17,
+.lm-A321-XU919 .lm-seat-wrap .seat-wrap-com .row-18,
+.lm-A321-XU919 .lm-seat-wrap .seat-wrap-com .row-19,
+.lm-A321-XU919 .lm-seat-wrap .seat-wrap-com .row-20,
+.lm-A321-XU919 .lm-seat-wrap .seat-wrap-com .row-21,
+.lm-A321-XU919 .lm-seat-wrap .seat-wrap-com .row-22,
+.lm-A321-XU919 .lm-seat-wrap .seat-wrap-com .row-23,
+.lm-A321-XU919 .lm-seat-wrap .seat-wrap-com .row-24 {
+  margin-top: 42px;
+}
+.lm-A321-XU919 .lm-seat-wrap .seat-wrap-com .row-25 {
+  margin-top: 8px;
+}
+.lm-A321-XU919 .lm-seat-wrap .seat-wrap-com .row-26,
+.lm-A321-XU919 .lm-seat-wrap .seat-wrap-com .row-27 {
+  margin-top: 58px;
+}
+.lm-A321-XU919 .lm-seat-wrap .seat-wrap-com .row-28,
+.lm-A321-XU919 .lm-seat-wrap .seat-wrap-com .row-29,
+.lm-A321-XU919 .lm-seat-wrap .seat-wrap-com .row-30,
+.lm-A321-XU919 .lm-seat-wrap .seat-wrap-com .row-31,
+.lm-A321-XU919 .lm-seat-wrap .seat-wrap-com .row-32,
+.lm-A321-XU919 .lm-seat-wrap .seat-wrap-com .row-33,
+.lm-A321-XU919 .lm-seat-wrap .seat-wrap-com .row-34,
+.lm-A321-XU919 .lm-seat-wrap .seat-wrap-com .row-35,
+.lm-A321-XU919 .lm-seat-wrap .seat-wrap-com .row-36 {
+  margin-top: 44px;
+}
+.lm-A321-XU919 .lm-seat-wrap .seat-wrap-com .row-37 {
+  margin-top: 46px;
+  padding-left: 30px;
+}
+.lm-A321-XU919 .lm-seat-wrap .seat-wrap-com .row-37 .cell-3 {
+  width: 36px;
+}
+.lm-A321-XU919 .lm-seat-wrap .seat-cell-wrap {
+  margin-top: 203px;
+}
+.lm-A321-XU919 .lm-seat-wrap .aircraft-rest-wrap .WC-2 {
+  position: absolute;
+  right: 60px;
+  top: -114px;
+  margin-right: 0;
+}
+.lm-A321-XU919 .lm-seat-wrap .aircraft-rest-wrap .WC-3 {
+  display: none;
+}
+.lm-A321-XU919 .seat-cell-wrap {
+  margin-top: 100px;
+}
+.lm-A321-XU961 {
+  height: 5331px;
+  background: url('../../images/checkIn/lm-A321.png') center top no-repeat;
+}
+.lm-A321-XU961 .lm-seat-wrap {
+  padding-top: 454px;
+}
+.lm-A321-XU961 .lm-seat-wrap .seat-wrap-com > ul {
+  margin-top: 42px;
+}
+.lm-A321-XU961 .lm-seat-wrap .seat-wrap-com .row-10,
+.lm-A321-XU961 .lm-seat-wrap .seat-wrap-com .row-24 {
+  padding-left: 34px;
+  padding-right: 34px;
+}
+.lm-A321-XU961 .lm-seat-wrap .seat-wrap-com .row-10 > li,
+.lm-A321-XU961 .lm-seat-wrap .seat-wrap-com .row-24 > li {
+  width: 48px;
+  height: 48px;
+  background: url('../../images/checkIn/seat-backRow.png') center no-repeat;
+}
+.lm-A321-XU961 .lm-seat-wrap .seat-wrap-com .row-10 .seat-checked,
+.lm-A321-XU961 .lm-seat-wrap .seat-wrap-com .row-24 .seat-checked {
+  background: url('../../images/checkIn/seat-backRow-checked.png') center no-repeat;
+}
+.lm-A321-XU961 .lm-seat-wrap .seat-wrap-com .row-10 .seat-sold,
+.lm-A321-XU961 .lm-seat-wrap .seat-wrap-com .row-24 .seat-sold {
+  background: url('../../images/checkIn/seat-backRow-sold.png') center no-repeat;
+}
+.lm-A321-XU961 .lm-seat-wrap .seat-wrap-com .row-10 .row-num,
+.lm-A321-XU961 .lm-seat-wrap .seat-wrap-com .row-24 .row-num {
+  width: 44px;
+}
+.lm-A321-XU961 .lm-seat-wrap .seat-wrap-com ul .row-num {
+  background: none;
+}
+.lm-A321-XU961 .lm-seat-wrap .seat-wrap-com .row-1,
+.lm-A321-XU961 .lm-seat-wrap .seat-wrap-com .row-2,
+.lm-A321-XU961 .lm-seat-wrap .seat-wrap-com .row-3,
+.lm-A321-XU961 .lm-seat-wrap .seat-wrap-com .row-4,
+.lm-A321-XU961 .lm-seat-wrap .seat-wrap-com .row-5,
+.lm-A321-XU961 .lm-seat-wrap .seat-wrap-com .row-6 {
+  margin-top: 58px;
+}
+.lm-A321-XU961 .lm-seat-wrap .seat-wrap-com .row-10 {
+  margin-top: 36px;
+}
+.lm-A321-XU961 .lm-seat-wrap .seat-wrap-com .row-11,
+.lm-A321-XU961 .lm-seat-wrap .seat-wrap-com .row-12,
+.lm-A321-XU961 .lm-seat-wrap .seat-wrap-com .row-13,
+.lm-A321-XU961 .lm-seat-wrap .seat-wrap-com .row-14,
+.lm-A321-XU961 .lm-seat-wrap .seat-wrap-com .row-15,
+.lm-A321-XU961 .lm-seat-wrap .seat-wrap-com .row-16,
+.lm-A321-XU961 .lm-seat-wrap .seat-wrap-com .row-17,
+.lm-A321-XU961 .lm-seat-wrap .seat-wrap-com .row-18,
+.lm-A321-XU961 .lm-seat-wrap .seat-wrap-com .row-19,
+.lm-A321-XU961 .lm-seat-wrap .seat-wrap-com .row-20,
+.lm-A321-XU961 .lm-seat-wrap .seat-wrap-com .row-21,
+.lm-A321-XU961 .lm-seat-wrap .seat-wrap-com .row-22,
+.lm-A321-XU961 .lm-seat-wrap .seat-wrap-com .row-23,
+.lm-A321-XU961 .lm-seat-wrap .seat-wrap-com .row-24 {
+  margin-top: 40px;
+}
+.lm-A321-XU961 .lm-seat-wrap .seat-wrap-com .row-25 {
+  margin-top: 16px;
+}
+.lm-A321-XU961 .lm-seat-wrap .seat-wrap-com .row-37 {
+  margin-top: 46px;
+  padding-left: 30px;
+}
+.lm-A321-XU961 .lm-seat-wrap .seat-wrap-com .row-37 .cell-3 {
+  width: 36px;
+}
+.lm-A321-XU961 .lm-seat-wrap .seat-cell-wrap {
+  margin-top: 180px;
+}
+.lm-A321-XU961 .lm-seat-wrap .aircraft-rest-wrap .WC-2 {
+  position: absolute;
+  left: 30px;
+  top: -120px;
+  margin-right: 0;
+}
+.lm-A321-XU961 .lm-seat-wrap .aircraft-rest-wrap .WC-3 {
+  margin-right: 0;
+}
+.lm-A321-XU961 .lm-seat-wrap .aircraft-rest-wrap .meals-1 {
+  display: none;
+}
+.lm-A321-XU961 .lm-seat-wrap .aircraft-rest-wrap .aircraft-meals-2 {
+  margin-top: 130px;
+}
+.lm-A321-XU961 .seat-cell-wrap {
+  margin-top: 100px;
+}
+.lm-A321-XU961 .aricraft-rest-footer {
+  margin-top: 80px;
+}
+/* A319 XU971 */
+.lm-A319-XU971 {
+  height: 4180px;
+  background: url('../../images/checkIn/lm-A319.png') center top no-repeat;
+}
+.lm-A319-XU971 .lm-seat-wrap {
+  padding-top: 534px;
+}
+.lm-A319-XU971 .seat-cell-wrap {
+  margin-top: 162px;
+}
+.lm-A319-XU971 .seat-wrap-com .seat-num {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.lm-A319-XU971 .seat-wrap-com .seat-num p {
+  margin-right: 6px;
+}
+.lm-A319-XU971 .seat-wrap-com .seat-num .row-num {
+  width: 48px;
+}
+.lm-A319-XU971 .seat-wrap-com > ul {
+  margin-top: 44px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.lm-A319-XU971 .seat-wrap-com > ul > li {
+  margin-right: 6px;
+}
+.lm-A319-XU971 .seat-wrap-com > ul .row-num {
+  width: 48px;
+}
+.lm-A319-XU971 .seat-wrap-com .row--1 {
+  margin-top: 0;
+}
+.lm-A319-XU971 .seat-wrap-com .row-10 {
+  margin-top: 18px;
+}
+.lm-A319-XU971 .seat-wrap-com .row-11,
+.lm-A319-XU971 .seat-wrap-com .row-12,
+.lm-A319-XU971 .seat-wrap-com .row-13,
+.lm-A319-XU971 .seat-wrap-com .row-14,
+.lm-A319-XU971 .seat-wrap-com .row-15,
+.lm-A319-XU971 .seat-wrap-com .row-16,
+.lm-A319-XU971 .seat-wrap-com .row-17,
+.lm-A319-XU971 .seat-wrap-com .row-18,
+.lm-A319-XU971 .seat-wrap-com .row-19,
+.lm-A319-XU971 .seat-wrap-com .row-20,
+.lm-A319-XU971 .seat-wrap-com .row-21,
+.lm-A319-XU971 .seat-wrap-com .row-22,
+.lm-A319-XU971 .seat-wrap-com .row-23,
+.lm-A319-XU971 .seat-wrap-com .row-24,
+.lm-A319-XU971 .seat-wrap-com .row-25 {
+  margin-top: 38px;
+}
+.lm-A319-XU971 .seat-wrap-com .row-25 {
+  padding-left: 42px;
+  padding-right: 42px;
+}
+.lm-A319-XU971 .seat-wrap-com .row-25 > li {
+  width: 48px;
+  height: 48px;
+  background: url('../../images/checkIn/seat-backRow.png') center no-repeat;
+}
+.lm-A319-XU971 .seat-wrap-com .row-25 .seat-checked {
+  background: url('../../images/checkIn/seat-backRow-checked.png') center no-repeat;
+}
+.lm-A319-XU971 .seat-wrap-com .row-25 .seat-sold {
+  background: url('../../images/checkIn/seat-backRow-sold.png') center no-repeat;
+}
+.lm-A319-XU971 .seat-wrap-com .row-25 .row-num {
+  background: none;
+  width: 52px;
+}
+.lm-A319-XU971 .aircraft-rest-wrap {
+  margin-top: 40px;
+}
+.lm-A319-XU971 .aircraft-rest-wrap .WC-1,
+.lm-A319-XU971 .aircraft-rest-wrap .WC-2,
+.lm-A319-XU971 .aircraft-rest-wrap .aircraft-meals-2 {
+  display: none;
+}
+/* A320 XU901 */
+.lm-A320-XU901 {
+  height: 4668px;
+  background: url('../../images/checkIn/lm-A320.png') center top no-repeat;
+}
+.lm-A320-XU901 .lm-seat-wrap {
+  padding-top: 470px;
+}
+.lm-A320-XU901 .seat-cell-wrap {
+  margin-top: 140px;
+}
+.lm-A320-XU901 .seat-wrap-com > ul {
+  margin-top: 46px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.lm-A320-XU901 .seat-wrap-com > ul > li {
+  position: relative;
+  margin-right: 4px;
+}
+.lm-A320-XU901 .seat-wrap-com > ul .row-num {
+  width: 60px;
+}
+.lm-A320-XU901 .seat-wrap-com .row-1,
+.lm-A320-XU901 .seat-wrap-com .row-2,
+.lm-A320-XU901 .seat-wrap-com .row-3,
+.lm-A320-XU901 .seat-wrap-com .row-4,
+.lm-A320-XU901 .seat-wrap-com .row-5,
+.lm-A320-XU901 .seat-wrap-com .row-6,
+.lm-A320-XU901 .seat-wrap-com .row-7 {
+  margin-top: 48px;
+}
+.lm-A320-XU901 .seat-wrap-com .row-8,
+.lm-A320-XU901 .seat-wrap-com .row-9,
+.lm-A320-XU901 .seat-wrap-com .row-10,
+.lm-A320-XU901 .seat-wrap-com .row-11 {
+  margin-top: 44px;
+}
+.lm-A320-XU901 .seat-wrap-com .row--1 {
+  margin-top: 0;
+  height: 28px;
+}
+.lm-A320-XU901 .seat-wrap-com .row-14 {
+  margin-top: 44px;
+}
+.lm-A320-XU901 .seat-wrap-com .row-1 .cell-4,
+.lm-A320-XU901 .seat-wrap-com .row-1 .cell-5,
+.lm-A320-XU901 .seat-wrap-com .row-1 .cell-6 {
+  top: 30px;
+}
+.lm-A320-XU901 .seat-wrap-com .row-2 .cell-4,
+.lm-A320-XU901 .seat-wrap-com .row-2 .cell-5,
+.lm-A320-XU901 .seat-wrap-com .row-2 .cell-6 {
+  top: 26px;
+}
+.lm-A320-XU901 .seat-wrap-com .row-3 .cell-4,
+.lm-A320-XU901 .seat-wrap-com .row-3 .cell-5,
+.lm-A320-XU901 .seat-wrap-com .row-3 .cell-6 {
+  top: 26px;
+}
+.lm-A320-XU901 .seat-wrap-com .row-4 .cell-4,
+.lm-A320-XU901 .seat-wrap-com .row-4 .cell-5,
+.lm-A320-XU901 .seat-wrap-com .row-4 .cell-6 {
+  top: 22px;
+}
+.lm-A320-XU901 .seat-wrap-com .row-5 .cell-4,
+.lm-A320-XU901 .seat-wrap-com .row-5 .cell-5,
+.lm-A320-XU901 .seat-wrap-com .row-5 .cell-6 {
+  top: 18px;
+}
+.lm-A320-XU901 .seat-wrap-com .row-6 .cell-4,
+.lm-A320-XU901 .seat-wrap-com .row-6 .cell-5,
+.lm-A320-XU901 .seat-wrap-com .row-6 .cell-6 {
+  top: 14px;
+}
+.lm-A320-XU901 .seat-wrap-com .row-7 .cell-4,
+.lm-A320-XU901 .seat-wrap-com .row-7 .cell-5,
+.lm-A320-XU901 .seat-wrap-com .row-7 .cell-6 {
+  top: 10px;
+}
+.lm-A320-XU901 .seat-wrap-com .row-8 .cell-4,
+.lm-A320-XU901 .seat-wrap-com .row-8 .cell-5,
+.lm-A320-XU901 .seat-wrap-com .row-8 .cell-6 {
+  top: 6px;
+}
+.lm-A320-XU901 .seat-wrap-com .row-15 .cell-4,
+.lm-A320-XU901 .seat-wrap-com .row-15 .cell-5,
+.lm-A320-XU901 .seat-wrap-com .row-15 .cell-6 {
+  top: -2px;
+}
+.lm-A320-XU901 .seat-wrap-com .row-16 .cell-4,
+.lm-A320-XU901 .seat-wrap-com .row-16 .cell-5,
+.lm-A320-XU901 .seat-wrap-com .row-16 .cell-6 {
+  top: -8px;
+}
+.lm-A320-XU901 .seat-wrap-com .row-17 .cell-4,
+.lm-A320-XU901 .seat-wrap-com .row-17 .cell-5,
+.lm-A320-XU901 .seat-wrap-com .row-17 .cell-6 {
+  top: -14px;
+}
+.lm-A320-XU901 .seat-wrap-com .row-18 .cell-4,
+.lm-A320-XU901 .seat-wrap-com .row-18 .cell-5,
+.lm-A320-XU901 .seat-wrap-com .row-18 .cell-6 {
+  top: -20px;
+}
+.lm-A320-XU901 .seat-wrap-com .row-19 .cell-4,
+.lm-A320-XU901 .seat-wrap-com .row-19 .cell-5,
+.lm-A320-XU901 .seat-wrap-com .row-19 .cell-6 {
+  top: -26px;
+}
+.lm-A320-XU901 .seat-wrap-com .row-20 .cell-4,
+.lm-A320-XU901 .seat-wrap-com .row-20 .cell-5,
+.lm-A320-XU901 .seat-wrap-com .row-20 .cell-6 {
+  top: -32px;
+}
+.lm-A320-XU901 .seat-wrap-com .row-21 .cell-4,
+.lm-A320-XU901 .seat-wrap-com .row-21 .cell-5,
+.lm-A320-XU901 .seat-wrap-com .row-21 .cell-6 {
+  top: -38px;
+}
+.lm-A320-XU901 .seat-wrap-com .row-22 .cell-4,
+.lm-A320-XU901 .seat-wrap-com .row-22 .cell-5,
+.lm-A320-XU901 .seat-wrap-com .row-22 .cell-6 {
+  top: -44px;
+}
+.lm-A320-XU901 .seat-wrap-com .row-23 .cell-4,
+.lm-A320-XU901 .seat-wrap-com .row-23 .cell-5,
+.lm-A320-XU901 .seat-wrap-com .row-23 .cell-6 {
+  top: -50px;
+}
+.lm-A320-XU901 .seat-wrap-com .row-24 .cell-4,
+.lm-A320-XU901 .seat-wrap-com .row-24 .cell-5,
+.lm-A320-XU901 .seat-wrap-com .row-24 .cell-6 {
+  top: -56px;
+}
+.lm-A320-XU901 .seat-wrap-com .row-25 .cell-4,
+.lm-A320-XU901 .seat-wrap-com .row-25 .cell-5,
+.lm-A320-XU901 .seat-wrap-com .row-25 .cell-6 {
+  top: -62px;
+}
+.lm-A320-XU901 .seat-wrap-com .row-26 .cell-4,
+.lm-A320-XU901 .seat-wrap-com .row-26 .cell-5,
+.lm-A320-XU901 .seat-wrap-com .row-26 .cell-6 {
+  top: -68px;
+}
+.lm-A320-XU901 .seat-wrap-com .row-27 .cell-4,
+.lm-A320-XU901 .seat-wrap-com .row-27 .cell-5,
+.lm-A320-XU901 .seat-wrap-com .row-27 .cell-6 {
+  top: -74px;
+}
+.lm-A320-XU901 .seat-wrap-com .row-28 .cell-4,
+.lm-A320-XU901 .seat-wrap-com .row-28 .cell-5,
+.lm-A320-XU901 .seat-wrap-com .row-28 .cell-6 {
+  top: -80px;
+}
+.lm-A320-XU901 .seat-wrap-com .row-29 .cell-4,
+.lm-A320-XU901 .seat-wrap-com .row-29 .cell-5,
+.lm-A320-XU901 .seat-wrap-com .row-29 .cell-6 {
+  top: -86px;
+}
+.lm-A320-XU901 .seat-wrap-com .row-30 .cell-4,
+.lm-A320-XU901 .seat-wrap-com .row-30 .cell-5,
+.lm-A320-XU901 .seat-wrap-com .row-30 .cell-6 {
+  top: -92px;
+}
+.lm-A320-XU901 .aircraft-rest-wrap .WC-1,
+.lm-A320-XU901 .aircraft-rest-wrap .aircraft-meals-2 {
+  display: none;
+}
+.lm-A320-XU901 .aircraft-rest-wrap .WC-2 {
+  position: absolute;
+  right: 36px;
+  top: -230px;
+  margin-right: 0;
+}
+.lm-A320-XU901 .aircraft-rest-wrap .WC-3 {
+  margin-left: 20px;
+  margin-right: 40px;
+}
+.lm-A320-XU901 .aricraft-rest-footer {
+  margin-top: 197px;
+}
+/* A320 XU903 */
+.lm-A320-XU903 {
+  height: 4668px;
+  background: url('../../images/checkIn/lm-A320.png') center top no-repeat;
+}
+.lm-A320-XU903 .lm-seat-wrap {
+  padding-top: 460px;
+}
+.lm-A320-XU903 .seat-cell-wrap {
+  margin-top: 208px;
+}
+.lm-A320-XU903 .seat-wrap-com > ul {
+  margin-top: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.lm-A320-XU903 .seat-wrap-com > ul > li {
+  margin-right: 4px;
+}
+.lm-A320-XU903 .seat-wrap-com > ul .row-num {
+  width: 60px;
+}
+.lm-A320-XU903 .seat-wrap-com .row-1,
+.lm-A320-XU903 .seat-wrap-com .row-2,
+.lm-A320-XU903 .seat-wrap-com .row-3,
+.lm-A320-XU903 .seat-wrap-com .row-4,
+.lm-A320-XU903 .seat-wrap-com .row-5 {
+  margin-top: 44px;
+}
+.lm-A320-XU903 .seat-wrap-com .row-6,
+.lm-A320-XU903 .seat-wrap-com .row-7,
+.lm-A320-XU903 .seat-wrap-com .row-8,
+.lm-A320-XU903 .seat-wrap-com .row-9,
+.lm-A320-XU903 .seat-wrap-com .row-10,
+.lm-A320-XU903 .seat-wrap-com .row-11 {
+  margin-top: 42px;
+}
+.lm-A320-XU903 .seat-wrap-com .row--1 {
+  margin-top: 0px;
+  height: 18px;
+}
+.lm-A320-XU903 .seat-wrap-com .row-14 {
+  margin-top: 50px;
+}
+.lm-A320-XU903 .aircraft-rest-wrap .WC-1,
+.lm-A320-XU903 .aircraft-rest-wrap .WC-2 {
+  display: none;
+}
+.lm-A320-XU903 .aircraft-rest-wrap .aircraft-meals-2 {
+  margin-top: 140px;
+}
+.lm-A320-XU903 .aricraft-rest-footer {
+  margin-top: 48px;
+}
+/* A320 XU978 */
+.lm-A320-XU978 {
+  height: 4668px;
+  background: url('../../images/checkIn/lm-A320.png') center top no-repeat;
+}
+.lm-A320-XU978 .lm-seat-wrap {
+  padding-top: 460px;
+}
+.lm-A320-XU978 .seat-cell-wrap {
+  margin-top: 186px;
+}
+.lm-A320-XU978 .seat-wrap-com > ul {
+  margin-top: 42px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.lm-A320-XU978 .seat-wrap-com > ul > li {
+  margin-right: 4px;
+}
+.lm-A320-XU978 .seat-wrap-com > ul .row-num {
+  width: 60px;
+}
+.lm-A320-XU978 .seat-wrap-com .row-1,
+.lm-A320-XU978 .seat-wrap-com .row-2,
+.lm-A320-XU978 .seat-wrap-com .row-3,
+.lm-A320-XU978 .seat-wrap-com .row-4,
+.lm-A320-XU978 .seat-wrap-com .row-5,
+.lm-A320-XU978 .seat-wrap-com .row-6,
+.lm-A320-XU978 .seat-wrap-com .row-7 {
+  margin-top: 44px;
+}
+.lm-A320-XU978 .seat-wrap-com .row--1 {
+  margin-top: 0px;
+  height: 26px;
+}
+.lm-A320-XU978 .seat-wrap-com .row-12 {
+  margin-top: 46px;
+}
+.lm-A320-XU978 .aircraft-rest-wrap .WC-1,
+.lm-A320-XU978 .aircraft-rest-wrap .WC-2 {
+  display: none;
+}
+.lm-A320-XU978 .aircraft-rest-wrap .aircraft-meals-2 {
+  margin-top: 120px;
+}
+.lm-A320-XU978 .aricraft-rest-footer {
+  margin-top: 40px;
+}
+/* 移动端返回箭头 */
+.return-arrow-wrap {
+  display: none;
 }
 /* 屏幕适配 */
 @media screen and (max-width: 1900px) {
@@ -1229,8 +1773,14 @@ body:before {
   .checkIn-pos-top {
     background-position-y: 0;
   }
-  .checkIn-size-scale {
+  .checkIn-size-scale-319 {
     background-size: 4211px;
+  }
+  .checkIn-size-scale-321 {
+    background-size: 4084px;
+  }
+  .checkIn-size-scale-320 {
+    background-size: 4210px;
   }
 }
 @media screen and (max-width: 1200px) {
@@ -1366,14 +1916,14 @@ body:before {
     font-size: 14px;
   }
   .lm-input .from-city-wrap input {
-    background: url('../../images/EN/svg/city-from.svg') 20px center no-repeat;
+    background: url('../../images/CN/svg/city-from.svg') 20px center no-repeat;
   }
   .lm-input .name-wrap .lastName-input {
-    background: url('../../images/EN/svg/baggageName.svg') 20px center no-repeat;
+    background: url('../../images/CN/svg/baggageName.svg') 20px center no-repeat;
   }
   .lm-input .phone-wrap > input {
     padding-left: 200px;
-    background: url('../../images/EN/svg/icon-areaCode.svg') 20px center no-repeat;
+    background: url('../../images/CN/svg/icon-areaCode.svg') 20px center no-repeat;
   }
   .lm-input .phone-wrap .select-option {
     padding-left: 50px;
@@ -1389,10 +1939,10 @@ body:before {
   }
   .lm-input .passport-wrap input {
     padding-left: 140px;
-    background: url('../../images/EN/svg/ticket-num.svg') 20px center no-repeat;
+    background: url('../../images/CN/svg/ticket-num.svg') 20px center no-repeat;
   }
   .lm-input .passport-wrap .passport-num {
-    background: url('../../images/EN/svg/passport.svg') 20px center no-repeat;
+    background: url('../../images/CN/svg/passport.svg') 20px center no-repeat;
   }
   .lm-input .from-city-wrap input,
   .lm-input .passport-wrap input,
@@ -1440,7 +1990,7 @@ body:before {
     line-height: 40px;
   }
   .lm-button > span {
-    background: url('../../images/resource/checkIn/svg/circle-arrow-right.svg') center no-repeat;
+    background: url('../../images/checkIn/svg/circle-arrow-right.svg') center no-repeat;
   }
   .lm-info {
     margin-top: 30px;
@@ -1477,14 +2027,7 @@ body:before {
     margin-bottom: 6px;
   }
   .lm-info .select-ok {
-    background: url('../../images/resource/checkIn/svg/icon-select.svg') center no-repeat;
-  }
-  .lm-section-checkIn {
-    width: 320px;
-    height: 1900px;
-    margin: 0 auto;
-    background: url('../../images/resource/checkIn/lm-A319-mobile.png') center 34% no-repeat;
-    background-size: 2700px;
+    background: url('../../images/checkIn/svg/icon-select.svg') center no-repeat;
   }
   .lm-section-checkIn .seat-arrow {
     top: 0;
@@ -1494,47 +2037,58 @@ body:before {
     width: 14px;
   }
   .lm-section-checkIn .seat-left-arrow {
-    background: url('../../images/resource/checkIn/svg/seat-leftArrow.svg') center no-repeat;
+    background: url('../../images/checkIn/svg/seat-leftArrow.svg') center 74% no-repeat;
     background-size: 14px;
   }
   .lm-section-checkIn .seat-right-arrow {
-    background: url('../../images/resource/checkIn/svg/seat-rightArrow.svg') center no-repeat;
+    background: url('../../images/checkIn/svg/seat-rightArrow.svg') center 74% no-repeat;
     background-size: 14px;
   }
   .lm-section-checkIn .flight-aside {
-    top: 70px;
-    width: 190px;
+    top: 50px;
+    width: 100%;
+    padding: 10px 15px;
     box-shadow: 0px 0px 100px 0px rgba(31, 44, 92, 0.39);
+    z-index: 7;
   }
   .lm-section-checkIn .flight-aside > img {
     display: none;
   }
   .lm-section-checkIn .flight-aside .seat-arrow {
-    right: 0;
+    display: none;
   }
   .lm-section-checkIn .flight-aside .from-airport,
   .lm-section-checkIn .flight-aside .to-airport {
     width: 100%;
     font-size: 12px;
+    line-height: 23px;
+    margin-top: 0;
+    margin-bottom: 8px;
   }
   .lm-section-checkIn .flight-aside .from-airport p,
   .lm-section-checkIn .flight-aside .to-airport p {
     font-size: 14px;
   }
+  .lm-section-checkIn .flight-aside .flight-date-wrap {
+    margin-top: 0;
+  }
   .lm-section-checkIn .flight-aside .flight-date,
   .lm-section-checkIn .flight-aside .flight-num {
-    width: 84px;
+    width: 49.6%;
+    font-size: 12px;
   }
   .lm-section-checkIn .flight-aside .flight-date p,
   .lm-section-checkIn .flight-aside .flight-num p {
-    font-size: 14px;
+    font-size: 24px;
   }
   .lm-section-checkIn .flight-aside .flight-line {
     height: 40px;
   }
   .lm-section-checkIn .seat-aside {
+    display: none;
     top: 70px;
     width: 126px;
+    padding: 10px;
     box-shadow: 0px 0px 100px 0px rgba(31, 44, 92, 0.39);
   }
   .lm-section-checkIn .seat-aside > div {
@@ -1552,7 +2106,7 @@ body:before {
     background-size: 20px;
   }
   .lm-section-checkIn .seat-aside > ul {
-    margin-top: 10px;
+    margin-top: 30px;
   }
   .lm-section-checkIn .seat-aside > ul > li {
     float: none;
@@ -1573,17 +2127,42 @@ body:before {
   }
   .lm-section-checkIn .checkIn-aside {
     top: auto;
-    bottom: 10px;
-    width: auto;
-    padding: 10px;
-    -webkit-transform: scale(0.2);
-    transform: scale(0.2);
-    -webkit-transform-origin: right bottom;
-    transform-origin: right bottom;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 15px;
     box-shadow: 0px 0px 100px 0px rgba(31, 44, 92, 0.39);
+  }
+  .lm-section-checkIn .checkIn-aside .pas-name {
+    display: none;
+  }
+  .lm-section-checkIn .checkIn-aside .pas-name span {
+    display: none;
   }
   .lm-section-checkIn .checkIn-aside .pas-name p {
     font-size: 16px;
+  }
+  .lm-section-checkIn .checkIn-aside .mobile-name-seat {
+    display: block;
+    float: left;
+    height: 34px;
+    line-height: 34px;
+    color: rgba(31, 44, 92, 0.5);
+  }
+  .lm-section-checkIn .checkIn-aside .mobile-name-seat .name {
+    font-size: 14px;
+  }
+  .lm-section-checkIn .checkIn-aside .mobile-name-seat .seat,
+  .lm-section-checkIn .checkIn-aside .mobile-name-seat .s1 {
+    font-weight: bold;
+    font-size: 16px;
+    color: #1f2c5c;
+  }
+  .lm-section-checkIn .checkIn-aside .mobile-name-seat .s1 {
+    margin-left: 5px;
+    margin-right: 10px;
+  }
+  .lm-section-checkIn .checkIn-aside .member-no {
+    display: none;
   }
   .lm-section-checkIn .checkIn-aside .member-no .member-no-input {
     width: 180px;
@@ -1604,32 +2183,60 @@ body:before {
   .lm-section-checkIn .checkIn-aside .member-no input::-webkit-input-placeholder {
     font-size: 14px;
   }
+  .lm-section-checkIn .checkIn-aside .seat-cabin {
+    margin-top: 0;
+  }
+  .lm-section-checkIn .checkIn-aside .seat-cabin .difference-price {
+    font-size: 24px;
+  }
+  .lm-section-checkIn .checkIn-aside .seat-cabin .flight-num {
+    display: none;
+  }
   .lm-section-checkIn .checkIn-aside .seat-cabin p {
     font-size: 16px;
   }
   .lm-section-checkIn .checkIn-aside .agree-rule {
-    margin-top: 10px;
+    float: left;
+    margin-top: 5px;
+    text-align: left;
+  }
+  .lm-section-checkIn .checkIn-aside .check-in {
+    margin-top: 13px;
+  }
+  .lm-section-checkIn .checkIn-aside .check-in .prev-btn {
+    display: none;
   }
   .lm-section-checkIn .checkIn-aside .check-in > a {
     width: 100px;
-    height: 30px;
-    line-height: 30px;
+    height: 34px;
+    line-height: 34px;
+    font-size: 14px;
+  }
+  .lm-section-checkIn .checkIn-aside .check-in input {
+    float: left;
+    margin-right: 10px;
   }
   .lm-section-checkIn .checkIn-aside .seat-arrow {
-    left: 0;
+    display: none;
   }
   .lm-section-checkIn .lm-seat-wrap {
-    padding-top: 220px;
-    -webkit-transform: scale(0.62);
-    transform: scale(0.62);
-    -webkit-transform-origin: 10% top;
-    transform-origin: 10% top;
+    position: absolute;
+    left: 50%;
+    margin-left: -161px;
+    -webkit-transform: scale(0.7);
+    transform: scale(0.7);
+    -webkit-transform-origin: left top;
+    transform-origin: left top;
+    overflow: hidden;
   }
   .lm-section-checkIn .flight-aside-scale {
     -webkit-transform: scale(0.2);
     transform: scale(0.2);
     -webkit-transform-origin: left top;
     transform-origin: left top;
+  }
+  .lm-section-checkIn .flight-aside-toTop {
+    top: -56px;
   }
   .lm-section-checkIn .seat-aside-scale {
     -webkit-transform: scale(0.3);
@@ -1728,5 +2335,43 @@ body:before {
   .lm-section-complete .success-operation .continue-checkIn {
     margin-left: 0;
     float: none;
+  }
+  .lm-section-complete .success-operation .prev-checkIn {
+    display: none;
+  }
+  .header-mask {
+    top: 50px;
+  }
+  .return-arrow-wrap {
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    z-index: 10;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+  }
+  .return-arrow-wrap i {
+    position: absolute;
+    left: 0;
+    width: 48px;
+    height: 50px;
+    line-height: 50px;
+  }
+  .lm-A321-XU919,
+  .lm-A321-XU961 {
+    height: 3731px;
+    background: url('../../images/checkIn/lm-A321-mobile.png') center no-repeat;
+  }
+  .lm-A319-XU971 {
+    height: 2926px;
+    background: url('../../images/checkIn/lm-A319-mobile.png') center no-repeat;
+  }
+  .lm-A320-XU901,
+  .lm-A320-XU903,
+  .lm-A320-XU978 {
+    height: 3267px;
+    background: url('../../images/checkIn/lm-A320-mobile.png') center no-repeat;
   }
 }
